@@ -14,25 +14,24 @@ def function_clear_app(app):
 	mochi.db.query("delete from notifications where app=?", app)
 
 
-#TODO Decide structure
 def function_clear_object(app, object):
 	mochi.db.query("delete from notifications where app=? and object=?", app, object)
 
 
 def function_create(app, category, object, content, link):
-	if not mochi.text.valid(app, "constant"):
+	if not mochi.valid(app, "constant"):
 		return
 
-	if not mochi.text.valid(category, "constant"):
+	if not mochi.valid(category, "constant"):
 		return
 
-	if not mochi.text.valid(object, "path"):
+	if not mochi.valid(object, "path"):
 		return
 
-	if not mochi.text.valid(content, "text"):
+	if not mochi.valid(content, "text"):
 		return
 	
-	if not mochi.text.valid(link, "url"):
+	if not mochi.valid(link, "url"):
 		return
 
 	mochi.db.query("replace into notifications ( app, category, object, content, link, created ) values ( ?, ?, ?, ?, ?, ? )", app, category, object, content, link, mochi.time.now())
