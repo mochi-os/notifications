@@ -2,8 +2,15 @@
 	"version": "1.0",
 	"label": "app_name",
 	"engine": {"architecture": "starlark", "version": 2},
-	"files": [ "notifications.star" ],
-	"database": {"file": "notifications.db", "create": "database_create"},
+	"files": [ "notifications.star", "database.star" ],
+
+	"database": {
+		"version": 1,
+		"file": "notifications.db",
+		"create": {"function": "database_create"},
+		"upgrade": {"function": "database_upgrade"},
+		"downgrade": {"function": "database_downgrade"}
+	},
 
 	"services": {
 		"notifications": {
