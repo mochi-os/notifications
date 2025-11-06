@@ -2,7 +2,7 @@
 	"version": "1.0",
 	"label": "app_name",
 	"engine": {"architecture": "starlark", "version": 2},
-	"files": [ "notifications.star", "database.star" ],
+	"files": [ "notifications.star" ],
 
 	"database": {
 		"version": 1,
