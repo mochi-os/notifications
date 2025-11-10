@@ -3,7 +3,6 @@
 
 def database_create():
 	mochi.db.query("create table notifications ( app text not null, category text not null, object text not null, content text not null, link text not null default '', created integer not null, primary key ( app, category, object ) )")
-	return 1
 
 def function_clear_all():
 	mochi.db.query("delete from notifications")
