@@ -1,13 +1,19 @@
+import { useEffect } from 'react'
 import {
   BadgeCheck,
   Bell,
   ChevronsUpDown,
   CreditCard,
   LogOut,
+  Moon,
+  Sun,
+  Check,
+  Monitor,
 } from 'lucide-react'
 import { useAuthStore } from '@/stores/auth-store'
 import useDialogState from '@/hooks/use-dialog-state'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { useTheme } from '@/context/theme-provider'
+import { cn } from '@/lib/utils'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,6 +21,9 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import {
@@ -28,20 +37,19 @@ import { SignOutDialog } from '@/components/sign-out-dialog'
 export function NavUser() {
   const { isMobile } = useSidebar()
   const [open, setOpen] = useDialogState()
+  const { theme, setTheme } = useTheme()
 
   // Use email from auth store (Home mirrors core auth cookie shape)
   const email = useAuthStore((state) => state.email)
   const displayName = email ? email.split('@')[0] : 'User'
   const displayEmail = email || 'user@example.com'
-  const displayAvatar = ''
 
-  // Generate initials from name
-  const initials = displayName
-    .split(' ')
-    .map((n: string) => n[0] || '')
-    .join('')
-    .toUpperCase()
-    .slice(0, 2)
+  /* Update theme-color meta tag when theme is updated */
+  useEffect(() => {
+    const themeColor = theme === 'dark' ? '#020817' : '#fff'
+    const metaThemeColor = document.querySelector("meta[name='theme-color']")
+    if (metaThemeColor) metaThemeColor.setAttribute('content', themeColor)
+  }, [theme])
 
   return (
     <>
@@ -53,12 +61,6 @@ export function NavUser() {
                 size='lg'
                 className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'
               >
-                <Avatar className='h-8 w-8 rounded-lg'>
-                  <AvatarImage src={displayAvatar} alt={displayName} />
-                  <AvatarFallback className='rounded-lg'>
-                    {initials}
-                  </AvatarFallback>
-                </Avatar>
                 <div className='grid flex-1 text-start text-sm leading-tight'>
                   <span className='truncate font-semibold'>{displayName}</span>
                   <span className='truncate text-xs'>{displayEmail}</span>
@@ -73,19 +75,11 @@ export function NavUser() {
               sideOffset={4}
             >
               <DropdownMenuLabel className='p-0 font-normal'>
-                <div className='flex items-center gap-2 px-1 py-1.5 text-start text-sm'>
-                  <Avatar className='h-8 w-8 rounded-lg'>
-                    <AvatarImage src={displayAvatar} alt={displayName} />
-                    <AvatarFallback className='rounded-lg'>
-                      {initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className='grid flex-1 text-start text-sm leading-tight'>
-                    <span className='truncate font-semibold'>
-                      {displayName}
-                    </span>
-                    <span className='truncate text-xs'>{displayEmail}</span>
-                  </div>
+                <div className='grid px-1 py-1.5 text-start text-sm leading-tight'>
+                  <span className='truncate font-semibold'>
+                    {displayName}
+                  </span>
+                  <span className='truncate text-xs'>{displayEmail}</span>
                 </div>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
@@ -110,6 +104,39 @@ export function NavUser() {
                   Notifications
                 </DropdownMenuItem>
               </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>
+                  <Sun />
+                  Theme
+                </DropdownMenuSubTrigger>
+                <DropdownMenuSubContent>
+                  <DropdownMenuItem onClick={() => setTheme('light')}>
+                    <Sun />
+                    Light
+                    <Check
+                      size={14}
+                      className={cn('ms-auto', theme !== 'light' && 'hidden')}
+                    />
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme('dark')}>
+                    <Moon />
+                    Dark
+                    <Check
+                      size={14}
+                      className={cn('ms-auto', theme !== 'dark' && 'hidden')}
+                    />
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme('system')}>
+                    <Monitor />
+                    System
+                    <Check
+                      size={14}
+                      className={cn('ms-auto', theme !== 'system' && 'hidden')}
+                    />
+                  </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
               <DropdownMenuSeparator />
               <DropdownMenuItem
                 onClick={() => setOpen(true)}
