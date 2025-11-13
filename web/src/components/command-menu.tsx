@@ -1,8 +1,7 @@
 import React from 'react'
 import { useNavigate } from '@tanstack/react-router'
-import { ArrowRight, ChevronRight, Laptop, Moon, Sun } from 'lucide-react'
+import { ArrowRight, ChevronRight } from 'lucide-react'
 import { useSearch } from '@/context/search-provider'
-import { useTheme } from '@/context/theme-provider'
 import {
   CommandDialog,
   CommandEmpty,
@@ -10,14 +9,12 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
 } from '@/components/ui/command'
 import { sidebarData } from './layout/data/sidebar-data'
 import { ScrollArea } from './ui/scroll-area'
 
 export function CommandMenu() {
   const navigate = useNavigate()
-  const { setTheme } = useTheme()
   const { open, setOpen } = useSearch()
 
   const runCommand = React.useCallback(
@@ -26,6 +23,19 @@ export function CommandMenu() {
       command()
     },
     [setOpen]
+  )
+
+  const navigateTo = React.useCallback(
+    (url: string, external?: boolean) => {
+      runCommand(() => {
+        if (external) {
+          window.location.href = url
+        } else {
+          navigate({ to: url })
+        }
+      })
+    },
+    [navigate, runCommand]
   )
 
   return (
@@ -42,9 +52,9 @@ export function CommandMenu() {
                     <CommandItem
                       key={`${navItem.url}-${i}`}
                       value={navItem.title}
-                      onSelect={() => {
-                        runCommand(() => navigate({ to: navItem.url }))
-                      }}
+                      onSelect={() =>
+                        navigateTo(navItem.url as string, navItem.external)
+                      }
                     >
                       <div className='flex size-4 items-center justify-center'>
                         <ArrowRight className='text-muted-foreground/80 size-2' />
@@ -57,9 +67,9 @@ export function CommandMenu() {
                   <CommandItem
                     key={`${navItem.title}-${subItem.url}-${i}`}
                     value={`${navItem.title}-${subItem.url}`}
-                    onSelect={() => {
-                      runCommand(() => navigate({ to: subItem.url }))
-                    }}
+                    onSelect={() =>
+                      navigateTo(subItem.url as string, subItem.external)
+                    }
                   >
                     <div className='flex size-4 items-center justify-center'>
                       <ArrowRight className='text-muted-foreground/80 size-2' />
@@ -70,20 +80,6 @@ export function CommandMenu() {
               })}
             </CommandGroup>
           ))}
-          <CommandSeparator />
-          <CommandGroup heading='Theme'>
-            <CommandItem onSelect={() => runCommand(() => setTheme('light'))}>
-              <Sun /> <span>Light</span>
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => setTheme('dark'))}>
-              <Moon className='scale-90' />
-              <span>Dark</span>
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => setTheme('system'))}>
-              <Laptop />
-              <span>System</span>
-            </CommandItem>
-          </CommandGroup>
         </ScrollArea>
       </CommandList>
     </CommandDialog>

@@ -162,7 +162,6 @@ function NotificationItem({ notification }: { notification: Notification }) {
           <Icon className='size-3 text-white' />
         </div>
       </div>
-
       <div className='flex-1 space-y-1.5'>
         <div className='flex items-start justify-between gap-2'>
           <div className='flex-1 space-y-0.5'>

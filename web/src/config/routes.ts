@@ -8,7 +8,7 @@ export const APP_ROUTES = {
   // Core app (Authentication)
   CORE: {
     BASE: '/',
-    SIGN_IN: '/sign-in',
+    SIGN_IN: '/login',
     SIGN_UP: '/sign-up',
     FORGOT_PASSWORD: '/forgot-password',
     OTP: '/otp',

@@ -35,7 +35,7 @@ import {
 
 export function NavGroup({ title, items }: NavGroupProps) {
   const { state, isMobile } = useSidebar()
-  const href = useLocation({ select: (location) => location.href })
+  const pathname = useLocation({ select: (location) => location.pathname })
   return (
     <SidebarGroup>
       <SidebarGroupLabel>{title}</SidebarGroupLabel>
@@ -44,14 +44,14 @@ export function NavGroup({ title, items }: NavGroupProps) {
           const key = `${item.title}-${item.url}`
 
           if (!item.items)
-            return <SidebarMenuLink key={key} item={item} href={href} />
+            return <SidebarMenuLink key={key} item={item} pathname={pathname} />
 
           if (state === 'collapsed' && !isMobile)
             return (
-              <SidebarMenuCollapsedDropdown key={key} item={item} href={href} />
+              <SidebarMenuCollapsedDropdown key={key} item={item} pathname={pathname} />
             )
 
-          return <SidebarMenuCollapsible key={key} item={item} href={href} />
+          return <SidebarMenuCollapsible key={key} item={item} pathname={pathname} />
         })}
       </SidebarMenu>
     </SidebarGroup>
@@ -62,7 +62,7 @@ function NavBadge({ children }: { children: ReactNode }) {
   return <Badge className='rounded-full px-1 py-0 text-xs'>{children}</Badge>
 }
 
-function SidebarMenuLink({ item, href }: { item: NavLink; href: string }) {
+function SidebarMenuLink({ item, pathname }: { item: NavLink; pathname: string }) {
   const { setOpenMobile } = useSidebar()
   if (item.external) {
     return (
@@ -81,7 +81,7 @@ function SidebarMenuLink({ item, href }: { item: NavLink; href: string }) {
     <SidebarMenuItem>
       <SidebarMenuButton
         asChild
-        isActive={checkIsActive(href, item)}
+        isActive={checkIsActive(pathname, item)}
         tooltip={item.title}
       >
         <Link to={item.url} onClick={() => setOpenMobile(false)}>
@@ -96,16 +96,16 @@ function SidebarMenuLink({ item, href }: { item: NavLink; href: string }) {
 
 function SidebarMenuCollapsible({
   item,
-  href,
+  pathname,
 }: {
   item: NavCollapsible
-  href: string
+  pathname: string
 }) {
   const { setOpenMobile } = useSidebar()
   return (
     <Collapsible
       asChild
-      defaultOpen={checkIsActive(href, item, true)}
+      defaultOpen={checkIsActive(pathname, item, true)}
       className='group/collapsible'
     >
       <SidebarMenuItem>
@@ -123,7 +123,7 @@ function SidebarMenuCollapsible({
               <SidebarMenuSubItem key={subItem.title}>
                 <SidebarMenuSubButton
                   asChild
-                  isActive={checkIsActive(href, subItem)}
+                  isActive={checkIsActive(pathname, subItem)}
                 >
                   <Link to={subItem.url} onClick={() => setOpenMobile(false)}>
                     {subItem.icon && <subItem.icon />}
@@ -142,10 +142,10 @@ function SidebarMenuCollapsible({
 
 function SidebarMenuCollapsedDropdown({
   item,
-  href,
+  pathname,
 }: {
   item: NavCollapsible
-  href: string
+  pathname: string
 }) {
   return (
     <SidebarMenuItem>
@@ -153,7 +153,7 @@ function SidebarMenuCollapsedDropdown({
         <DropdownMenuTrigger asChild>
           <SidebarMenuButton
             tooltip={item.title}
-            isActive={checkIsActive(href, item)}
+            isActive={checkIsActive(pathname, item)}
           >
             {item.icon && <item.icon />}
             <span>{item.title}</span>
@@ -170,7 +170,7 @@ function SidebarMenuCollapsedDropdown({
             <DropdownMenuItem key={`${sub.title}-${sub.url}`} asChild>
               <Link
                 to={sub.url}
-                className={`${checkIsActive(href, sub) ? 'bg-secondary' : ''}`}
+                className={`${checkIsActive(pathname, sub) ? 'bg-secondary' : ''}`}
               >
                 {sub.icon && <sub.icon />}
                 <span className='max-w-52 text-wrap'>{sub.title}</span>
@@ -186,13 +186,46 @@ function SidebarMenuCollapsedDropdown({
   )
 }
 
-function checkIsActive(href: string, item: NavItem, mainNav = false) {
-  return (
-    href === item.url || // /endpint?search=param
-    href.split('?')[0] === item.url || // endpoint
-    !!item?.items?.filter((i) => i.url === href).length || // if child nav is active
-    (mainNav &&
-      href.split('/')[1] !== '' &&
-      href.split('/')[1] === item?.url?.split('/')[1])
-  )
+function checkIsActive(pathname: string, item: NavItem, mainNav = false) {
+  // Normalize paths for comparison
+  const normalizePath = (path: string): string => {
+    if (!path) return '/'
+    // Handle relative paths like './' or '.'
+    if (path === './' || path === '.') {
+      return '/'
+    }
+    // Remove trailing slashes for consistent comparison (except for root)
+    const trimmed = path.replace(/\/$/, '')
+    return trimmed || '/'
+  }
+  
+  const normalizedPathname = normalizePath(pathname)
+  const normalizedItemUrl = normalizePath(item.url as string)
+  
+  // Check for exact match
+  if (normalizedPathname === normalizedItemUrl) {
+    return true
+  }
+  
+  // Check if any child nav item is active
+  if (item?.items?.length) {
+    const hasActiveChild = item.items.some((i) => {
+      const normalizedChildUrl = normalizePath(i.url as string)
+      return normalizedPathname === normalizedChildUrl
+    })
+    if (hasActiveChild) {
+      return true
+    }
+  }
+  
+  // For main nav items, check if the first segment matches
+  if (mainNav) {
+    const pathnameSegments = normalizedPathname.split('/').filter(Boolean)
+    const itemUrlSegments = normalizedItemUrl.split('/').filter(Boolean)
+    if (pathnameSegments.length > 0 && itemUrlSegments.length > 0) {
+      return pathnameSegments[0] === itemUrlSegments[0]
+    }
+  }
+  
+  return false
 }
