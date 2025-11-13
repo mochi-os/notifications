@@ -29,9 +29,9 @@ export function Search({
         size={16}
       />
       <span className='ms-4'>{placeholder}</span>
-      <kbd className='bg-muted group-hover:bg-accent pointer-events-none absolute end-[0.3rem] top-[0.3rem] hidden h-5 items-center gap-1 rounded-md border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none sm:flex'>
+      {/* <kbd className='bg-muted group-hover:bg-accent pointer-events-none absolute end-[0.3rem] top-[0.3rem] hidden h-5 items-center gap-1 rounded-md border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none sm:flex'>
         <span className='text-xs'>⌘</span>K
-      </kbd>
+      </kbd> */}
     </Button>
   )
 }

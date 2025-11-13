@@ -10,7 +10,6 @@ import { Header } from '@/components/layout/header'
 import { Main } from '@/components/layout/main'
 import { Search } from '@/components/search'
 import { NotificationsDropdown } from '@/components/notifications-dropdown'
-import { ThemeSwitch } from '@/components/theme-switch'
 import { MessagesSquare, UserPlus } from 'lucide-react'
 
 export function Notifications() {
@@ -20,7 +19,6 @@ export function Notifications() {
         <Search />
         <div className='ms-auto flex items-center space-x-4'>
           <NotificationsDropdown />
-          <ThemeSwitch />
         </div>
       </Header>
 
