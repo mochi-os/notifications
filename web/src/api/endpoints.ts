@@ -1,5 +1,11 @@
 const endpoints = {
-  // Home app endpoints (if needed in the future)
+  auth: {
+    login: '/login',
+    signup: '/signup',
+    verify: '/login/auth',
+    logout: '/logout',
+    me: '/me', // Optional: Load user profile for UI
+  },
 } as const
 
 export type Endpoints = typeof endpoints
