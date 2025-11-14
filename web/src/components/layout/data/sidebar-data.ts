@@ -1,10 +1,11 @@
 import {
   MessagesSquare,
   AudioWaveform,
+  Bell,
   Command,
   GalleryVerticalEnd,
-  UserPlus,
   Home,
+  UserPlus,
 } from 'lucide-react'
 import { type SidebarData } from '../types'
 import { APP_ROUTES } from '@/config/routes'
@@ -38,21 +39,26 @@ export const sidebarData: SidebarData = {
       items: [
         {
           title: 'Home',
-          url: "/",
+          url: APP_ROUTES.HOME.HOME,
           icon: Home,
-          badge: '3',
+          external: true,
         },
         {
           title: 'Chat',
           url: APP_ROUTES.CHAT.HOME,
           icon: MessagesSquare,
-          external: true, // Cross-app navigation
+          external: true,
         },
         {
           title: 'Friends',
           url: APP_ROUTES.FRIENDS.HOME,
           icon: UserPlus,
-          external: true, // Cross-app navigation
+          external: true,
+        },
+        {
+          title: 'Notifications',
+          url: APP_ROUTES.NOTIFICATIONS.HOME,
+          icon: Bell,
         },
       ],
     },

@@ -9,6 +9,18 @@
 		"file": "notifications.db",
 		"create": {"function": "database_create"}
 	},
+"icons": [
+		{"path": "notifications", "label": "app_name", "icon": "notifications.png"}
+	],
+	"paths": {
+		"notifications": {
+			"actions": {
+				"": {"file": "web/dist/index.html"},
+				"assets": {"files": "web/dist/assets"},
+				"images": {"files": "web/dist/images"}
+			}
+		}
+	},
 
 	"services": {
 		"notifications": {

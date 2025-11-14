@@ -1,9 +1,6 @@
 import { useEffect } from 'react'
 import {
-  BadgeCheck,
-  Bell,
   ChevronsUpDown,
-  CreditCard,
   LogOut,
   Moon,
   Sun,
@@ -17,7 +14,6 @@ import { cn } from '@/lib/utils'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -41,7 +37,14 @@ export function NavUser() {
 
   // Use email from auth store (Home mirrors core auth cookie shape)
   const email = useAuthStore((state) => state.email)
-  const displayName = email ? email.split('@')[0] : 'User'
+  // Derive name from email (part before "@") and capitalize first letter
+  const displayName = email
+    ? email
+        .split('@')[0]
+        .split(/[._-]/)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ')
+    : 'User'
   const displayEmail = email || 'user@example.com'
 
   /* Update theme-color meta tag when theme is updated */
@@ -83,31 +86,9 @@ export function NavUser() {
                 </div>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              {/* <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  <Sparkles />
-                  Upgrade to Pro
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator /> */}
-              <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  <BadgeCheck />
-                  Account
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <CreditCard />
-                  Billing
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Bell />
-                  Notifications
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
-                  <Sun />
+                <Sun /> {' '}
                   Theme
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent>
@@ -144,7 +125,7 @@ export function NavUser() {
                 className='hover:bg-destructive/10 hover:text-destructive [&_svg]:hover:text-destructive'
               >
                 <LogOut />
-                Sign out
+                Log out
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

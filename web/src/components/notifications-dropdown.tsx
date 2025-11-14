@@ -12,6 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Separator } from '@/components/ui/separator'
+import { APP_ROUTES } from '@/config/routes'
 
 interface Notification {
   id: string
@@ -162,7 +163,6 @@ function NotificationItem({ notification }: { notification: Notification }) {
           <Icon className='size-3 text-white' />
         </div>
       </div>
-
       <div className='flex-1 space-y-1.5'>
         <div className='flex items-start justify-between gap-2'>
           <div className='flex-1 space-y-0.5'>
@@ -221,7 +221,6 @@ function NotificationItem({ notification }: { notification: Notification }) {
 export function NotificationsDropdown() {
   const [open, setOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('all')
-
   const allNotifications = mockNotifications
   const unreadNotifications = mockNotifications.filter((n) => !n.read)
   const unreadCount = unreadNotifications.length
@@ -363,7 +362,7 @@ export function NotificationsDropdown() {
                   className='w-full'
                   onClick={() => {
                     setOpen(false)
-                    // Navigate to full notifications page
+                    window.location.href = APP_ROUTES.NOTIFICATIONS.HOME;
                   }}
                 >
                   View all notifications
