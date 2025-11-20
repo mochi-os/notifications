@@ -1,14 +1,14 @@
 // feat(auth): implement login-header based auth flow
 import { create } from 'zustand'
 import Cookies from 'js-cookie'
+import { readProfileCookie, clearProfileCookie } from '@/lib/profile-cookie'
 
 /**
  * Cookie names for authentication
  * - login: Primary credential (raw value used as Authorization header)
- * - user_email: User email for display purposes (persists across reloads)
+ * - mochi_me: Consolidated profile data (email, name, privacy)
  */
 const LOGIN_COOKIE = 'login'
-const EMAIL_COOKIE = 'user_email'
 
 /**
  * Authentication state interface
@@ -43,7 +43,7 @@ interface AuthState {
  *
  * This store manages authentication state with the following strategy:
  * 1. Primary credential: login (stored in 'login' cookie, set by mochi-core)
- * 2. User email: email (stored in 'user_email' cookie, set by mochi-core)
+ * 2. User profile: email/name/privacy (stored in 'mochi_me' cookie, set by mochi-core)
  * 3. Cookies are the source of truth (survive page refresh)
  * 4. Store provides fast in-memory access
  *
@@ -56,7 +56,8 @@ interface AuthState {
 export const useAuthStore = create<AuthState>()((set, get) => {
   // Initialize from cookies on store creation
   const initialLogin = Cookies.get(LOGIN_COOKIE) || ''
-  const initialEmail = Cookies.get(EMAIL_COOKIE) || ''
+  const profile = readProfileCookie()
+  const initialEmail = profile.email || ''
 
   return {
     // Initial state from cookies
@@ -80,7 +81,8 @@ export const useAuthStore = create<AuthState>()((set, get) => {
      */
     syncFromCookie: () => {
       const cookieLogin = Cookies.get(LOGIN_COOKIE) || ''
-      const cookieEmail = Cookies.get(EMAIL_COOKIE) || ''
+      const profile = readProfileCookie()
+      const cookieEmail = profile.email || ''
       const storeLogin = get().login
       const storeEmail = get().email
 
@@ -104,7 +106,7 @@ export const useAuthStore = create<AuthState>()((set, get) => {
     clearAuth: () => {
       // Remove cookies (feature apps can remove cookies)
       Cookies.remove(LOGIN_COOKIE, { path: '/' })
-      Cookies.remove(EMAIL_COOKIE, { path: '/' })
+      clearProfileCookie()
 
       set({
         login: '',
