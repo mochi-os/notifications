@@ -1,3 +1,4 @@
+import { APP_ROUTES } from '@/config/routes'
 import {
   MessagesSquare,
   AudioWaveform,
@@ -6,9 +7,9 @@ import {
   GalleryVerticalEnd,
   Home,
   UserPlus,
+  Newspaper,
 } from 'lucide-react'
 import { type SidebarData } from '../types'
-import { APP_ROUTES } from '@/config/routes'
 
 export const sidebarData: SidebarData = {
   user: {
@@ -59,6 +60,11 @@ export const sidebarData: SidebarData = {
           title: 'Notifications',
           url: APP_ROUTES.NOTIFICATIONS.HOME,
           icon: Bell,
+        },
+        {
+          title: 'Feeds',
+          url: APP_ROUTES.FEEDS.HOME,
+          icon: Newspaper,
         },
       ],
     },
