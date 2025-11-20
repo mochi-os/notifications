@@ -65,6 +65,7 @@ export const sidebarData: SidebarData = {
           title: 'Feeds',
           url: APP_ROUTES.FEEDS.HOME,
           icon: Newspaper,
+          external: true,
         },
       ],
     },
