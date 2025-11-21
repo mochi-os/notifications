@@ -38,6 +38,11 @@ export const APP_ROUTES = {
     BASE: './',
     HOME: './',
   },
+  // Forums app
+  FORUMS: {
+    BASE: '/forums',
+    HOME: '/forums',
+  },
 } as const
 
 export type AppRoutes = typeof APP_ROUTES

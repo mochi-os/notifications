@@ -10,7 +10,7 @@
  * - 'user_email': User email address (for display and persistence)
  * 
  * UI Preference Cookies (set by this app):
- * - 'vite-ui-theme': Theme preference (light/dark/system)
+ * - 'mochi-ui-theme': Theme preference (light/dark/system)
  * - 'dir': Text direction (ltr/rtl)
  * - 'font': Font preference
  * - 'layout_collapsible': Layout collapsible state
