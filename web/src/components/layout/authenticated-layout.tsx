@@ -24,7 +24,7 @@ export function AuthenticatedLayout({ children }: AuthenticatedLayoutProps) {
             className={cn(
               // Set content container, so we can use container queries
               '@container/content',
-
+              'border',
               // If layout is fixed, set the height
               // to 100svh to prevent overflow
               'has-[[data-layout=fixed]]:h-svh',
