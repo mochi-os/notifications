@@ -1,36 +1,29 @@
 {
 	"version": "1.0",
 	"label": "app_name",
-	"engine": {"architecture": "starlark", "version": 2},
-	"files": [ "notifications.star" ],
+	"paths": ["notifications"],
+	"services": ["notifications"],
+
+	"architecture": {"engine": "starlark", "version": 2},
+	"execute": ["notifications.star"],
 
 	"database": {
 		"schema": 1,
 		"file": "notifications.db",
 		"create": {"function": "database_create"}
 	},
-"icons": [
-		{"path": "notifications", "label": "app_name", "icon": "notifications.png"}
-	],
-	"paths": {
-		"notifications": {
-			"actions": {
-				"": {"file": "web/dist/index.html"},
-				"assets": {"files": "web/dist/assets"},
-				"images": {"files": "web/dist/images"}
-			}
-		}
+
+	"actions": {
+		"": {"file": "web/dist/index.html"},
+		"assets": {"files": "web/dist/assets"},
+		"images": {"files": "web/dist/images"}
 	},
 
-	"services": {
-		"notifications": {
-			"functions": {
-				"clear.all": {"function": "function_clear_all"},
-				"clear.app": {"function": "function_clear_app"},
-				"clear.object": {"function": "function_clear_object"},
-				"create": {"function": "function_create"},
-				"list": {"function": "function_list"}
-			}
-		}
+	"functions": {
+		"clear.all": {"function": "function_clear_all"},
+		"clear.app": {"function": "function_clear_app"},
+		"clear.object": {"function": "function_clear_object"},
+		"create": {"function": "function_create"},
+		"list": {"function": "function_list"}
 	}
 }
