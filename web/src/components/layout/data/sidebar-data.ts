@@ -11,7 +11,7 @@ import {
   LayoutTemplate,
 } from 'lucide-react'
 import { type SidebarData } from '../types'
-import { APP_ROUTES } from '@/config/routes'
+import { getPath } from '@mochi/config/routes'
 
 export const sidebarData: SidebarData = {
   user: {
@@ -42,42 +42,42 @@ export const sidebarData: SidebarData = {
       items: [
         {
           title: 'Home',
-          url: APP_ROUTES.HOME.HOME,
+          url: getPath('home'),
           icon: Home,
           external: true,
         },
         {
           title: 'Chat',
-          url: APP_ROUTES.CHAT.HOME,
+          url: getPath('chat'),
           icon: MessagesSquare,
           external: true,
         },
         {
           title: 'Friends',
-          url: APP_ROUTES.FRIENDS.HOME,
+          url: getPath('friends'),
           icon: UserPlus,
           external: true,
         },
         {
           title: 'Notifications',
-          url: APP_ROUTES.NOTIFICATIONS.HOME,
+          url: './',
           icon: Bell,
         },
         {
           title: 'Feeds',
-          url: APP_ROUTES.FEEDS.HOME,
+          url: getPath('feeds'),
           icon: Newspaper,
           external: true,
         },
         {
           title: 'Forums',
-          url: APP_ROUTES.FORUMS.HOME,
+          url: getPath('forums'),
           icon: MessageSquare,
           external: true,
         },
         {
           title: 'Template',
-          url: APP_ROUTES.TEMPLATE.HOME,
+          url: '/template/',
           icon: LayoutTemplate,
           external: true,
         },

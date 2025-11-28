@@ -1,6 +1,7 @@
 // feat(auth): implement login-header based auth flow
 // Note: Auth is handled by core app, this service only manages local auth state
 import { useAuthStore } from '@/stores/auth-store'
+import { env } from '@mochi/config/env'
 
 const devConsole = globalThis.console
 
@@ -8,7 +9,7 @@ const devConsole = globalThis.console
  * Log errors in development mode only
  */
 const logError = (context: string, error: unknown) => {
-  if (import.meta.env.DEV) {
+  if (env.debug) {
     devConsole?.error?.(`[Auth Service] ${context}`, error)
   }
 }

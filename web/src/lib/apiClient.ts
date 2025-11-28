@@ -3,8 +3,10 @@ import axios, { type AxiosError, type InternalAxiosRequestConfig } from 'axios'
 import { toast } from 'sonner'
 import { useAuthStore } from '@/stores/auth-store'
 import Cookies from 'js-cookie'
+import { env } from '@mochi/config/env'
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+const API_BASE_URL = env.apiBaseUrl
+const isProduction = env.appEnv === 'production'
 
 const devConsole = globalThis.console
 
@@ -12,7 +14,7 @@ const devConsole = globalThis.console
  * Log errors in development mode only
  */
 const logDevError = (message: string, error: unknown) => {
-  if (import.meta.env.DEV) {
+  if (env.debug) {
     devConsole?.error?.(message, error)
   }
 }
@@ -54,13 +56,13 @@ apiClient.interceptors.request.use(
         login.startsWith('Bearer ') ? login : `Bearer ${login}`
 
       // Log auth method in development for debugging
-      if (import.meta.env.DEV) {
+      if (env.debug) {
         devConsole?.log?.(`[API Auth] Using Bearer scheme with login credential`)
       }
     }
 
     // Log request in development
-    if (import.meta.env.DEV) {
+    if (env.debug) {
       devConsole?.log?.(`[API] ${config.method?.toUpperCase()} ${config.url}`)
     }
 
@@ -85,7 +87,7 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => {
     // Log successful response in development
-    if (import.meta.env.DEV) {
+    if (env.debug) {
       devConsole?.log?.(`[API] ${response.config.method?.toUpperCase()} ${response.config.url} → ${response.status}`)
     }
 
@@ -114,7 +116,7 @@ apiClient.interceptors.response.use(
           useAuthStore.getState().clearAuth()
 
           // Show toast in production
-          if (import.meta.env.PROD) {
+          if (isProduction) {
             toast.error('Session expired', {
               description: 'Please log in again to continue.',
             })
@@ -122,7 +124,7 @@ apiClient.interceptors.response.use(
 
           // Redirect to core sign-in
           const currentUrl = window.location.href
-          window.location.href = `${import.meta.env.VITE_AUTH_SIGN_IN_URL}?redirect=${encodeURIComponent(currentUrl)}`
+          window.location.href = `${env.authLoginUrl}?redirect=${encodeURIComponent(currentUrl)}`
         }
         break
       }

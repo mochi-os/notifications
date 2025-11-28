@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Cookies from 'js-cookie'
 import { useAuth } from './useAuth'
+import { env } from '@mochi/config/env'
 
 export function useRequireAuth() {
   const { isAuthenticated, isInitialized, isLoading } = useAuth()
@@ -14,7 +15,7 @@ export function useRequireAuth() {
       if (!login) {
         // Save current location for redirect after login
         const currentPath = window.location.pathname + window.location.search
-        const redirectUrl = `${import.meta.env.VITE_AUTH_SIGN_IN_URL}?redirect=${encodeURIComponent(currentPath)}`
+        const redirectUrl = `${env.authLoginUrl}?redirect=${encodeURIComponent(currentPath)}`
 
         // Use window.location.href for cross-app navigation (full page reload)
         window.location.href = redirectUrl

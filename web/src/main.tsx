@@ -10,6 +10,7 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { toast } from 'sonner'
 import { useAuthStore } from '@/stores/auth-store'
 import { handleServerError } from '@/lib/handle-server-error'
+import { env } from '@mochi/config/env'
 // import { DirectionProvider } from './context/direction-provider' // Commented for future use (RTL support)
 // import { FontProvider } from './context/font-provider' // Commented for future use (Font switching)
 import { ThemeProvider } from './context/theme-provider'
@@ -18,22 +19,24 @@ import { routeTree } from './routeTree.gen'
 // Styles
 import './styles/index.css'
 
+const isProduction = env.appEnv === 'production'
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: (failureCount, error) => {
         // eslint-disable-next-line no-console
-        if (import.meta.env.DEV) console.log({ failureCount, error })
+        if (env.debug) console.log({ failureCount, error })
 
-        if (failureCount >= 0 && import.meta.env.DEV) return false
-        if (failureCount > 3 && import.meta.env.PROD) return false
+        if (failureCount >= 0 && env.debug) return false
+        if (failureCount > 3 && isProduction) return false
 
         return !(
           error instanceof AxiosError &&
           [401, 403].includes(error.response?.status ?? 0)
         )
       },
-      refetchOnWindowFocus: import.meta.env.PROD,
+      refetchOnWindowFocus: isProduction,
       staleTime: 10 * 1000, // 10s
     },
     mutations: {

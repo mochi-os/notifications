@@ -5,6 +5,7 @@ import {
   type AxiosResponse,
 } from 'axios'
 import apiClient from '@/lib/apiClient'
+import { env } from '@mochi/config/env'
 
 const devConsole = globalThis.console
 
@@ -71,7 +72,7 @@ const logRequestError = (
   error: ApiError,
   requestConfig: AxiosRequestConfig
 ): void => {
-  if (!import.meta.env.DEV) {
+  if (!env.debug) {
     return
   }
 

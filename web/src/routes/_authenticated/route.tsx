@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { AuthenticatedLayout } from '@/components/layout/authenticated-layout'
 import { useAuthStore } from '@/stores/auth-store'
 import Cookies from 'js-cookie'
+import { env } from '@mochi/config/env'
 
 /**
  * Protected Route Guard
@@ -32,7 +33,7 @@ export const Route = createFileRoute('/_authenticated')({
     if (!login) {
       // Build redirect URL with return path
       const returnUrl = encodeURIComponent(location.href)
-      const redirectUrl = `${import.meta.env.VITE_AUTH_SIGN_IN_URL}?redirect=${returnUrl}`
+      const redirectUrl = `${env.authLoginUrl}?redirect=${returnUrl}`
 
       // Use window.location.href for cross-app navigation (full page reload)
       window.location.href = redirectUrl
