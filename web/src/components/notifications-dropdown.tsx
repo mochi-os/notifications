@@ -32,74 +32,7 @@ interface Notification {
   }
 }
 
-const mockNotifications: Notification[] = [
-  {
-    id: '1',
-    type: 'comment',
-    read: false,
-    name: 'Pixelwave',
-    message: 'Commented on Classic Car in Studio',
-    timestamp: '1h ago',
-    metadata: {
-      project: 'Classic Car in Studio',
-      comment: 'These draggable sliders look really cool. Maybe these could be displayed when you hold shift, t...',
-    },
-  },
-  {
-    id: '2',
-    type: 'mention',
-    read: false,
-    name: 'Cute Turtle',
-    message: 'is generated',
-    timestamp: '1h ago',
-    metadata: {
-      project: 'Matte texture - UI8 Style',
-    },
-  },
-  {
-    id: '3',
-    type: 'invitation',
-    read: false,
-    name: '3D object',
-    message: 'Invited you to edit Minimalist Architecture Scene',
-    timestamp: '1h ago',
-    actionButtons: {
-      primary: 'Accept',
-      secondary: 'Decline',
-    },
-  },
-  {
-    id: '4',
-    type: 'like',
-    read: true,
-    name: 'Luna',
-    message: 'Liked Classic Car in Studio',
-    timestamp: '1h ago',
-  },
-  {
-    id: '5',
-    type: 'comment',
-    read: true,
-    name: '3D object',
-    message: 'Commented on Classic Car in Studio',
-    timestamp: '1h ago',
-    metadata: {
-      project: 'Classic Car in Studio',
-      comment: 'These draggable sliders look really cool. Maybe these could be displayed when you hold shift, t...',
-    },
-  },
-  {
-    id: '6',
-    type: 'follow',
-    read: false,
-    name: 'Jennifer Lee',
-    message: 'followed you',
-    timestamp: '2h ago',
-    actionButtons: {
-      primary: 'Follow back',
-    },
-  },
-]
+const mockNotifications: Notification[] = []
 
 function getNotificationIcon(type: Notification['type']) {
   switch (type) {
