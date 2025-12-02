@@ -29,6 +29,7 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar'
 import { SignOutDialog } from '@/components/sign-out-dialog'
+import { readProfileCookie } from '@/lib/profile-cookie'
 
 export function NavUser() {
   const { isMobile } = useSidebar()
@@ -37,14 +38,10 @@ export function NavUser() {
 
   // Use email from auth store (Home mirrors core auth cookie shape)
   const email = useAuthStore((state) => state.email)
-  // Derive name from email (part before "@") and capitalize first letter
-  const displayName = email
-    ? email
-        .split('@')[0]
-        .split(/[._-]/)
-        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-        .join(' ')
-    : 'User'
+  
+  // Get name from mochi_me cookie
+  const profile = readProfileCookie()
+  const displayName = profile.name || 'User'
   const displayEmail = email || 'user@example.com'
 
   /* Update theme-color meta tag when theme is updated */
