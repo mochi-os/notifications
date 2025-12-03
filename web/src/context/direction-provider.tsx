@@ -29,7 +29,7 @@ export function DirectionProvider({ children }: { children: React.ReactNode }) {
 
   const setDir = (dir: Direction) => {
     _setDir(dir)
-    setCookie(DIRECTION_COOKIE_NAME, dir, DIRECTION_COOKIE_MAX_AGE)
+    setCookie(DIRECTION_COOKIE_NAME, dir, { maxAge: DIRECTION_COOKIE_MAX_AGE })
   }
 
   const resetDir = () => {
