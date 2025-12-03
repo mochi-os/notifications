@@ -47,13 +47,13 @@ export function LayoutProvider({ children }: LayoutProviderProps) {
     setCookie(
       LAYOUT_COLLAPSIBLE_COOKIE_NAME,
       newCollapsible,
-      LAYOUT_COOKIE_MAX_AGE
+      { maxAge: LAYOUT_COOKIE_MAX_AGE }
     )
   }
 
   const setVariant = (newVariant: Variant) => {
     _setVariant(newVariant)
-    setCookie(LAYOUT_VARIANT_COOKIE_NAME, newVariant, LAYOUT_COOKIE_MAX_AGE)
+    setCookie(LAYOUT_VARIANT_COOKIE_NAME, newVariant, { maxAge: LAYOUT_COOKIE_MAX_AGE })
   }
 
   const resetLayout = () => {

@@ -1,25 +1,7 @@
 import { useAuthStore } from '@/stores/auth-store'
 
-// feat(auth): implement login-header based auth flow
-/**
- * Hook to access authentication state and actions
- * 
- * Provides convenient access to:
- * - Authentication state (login, email, loading, etc.)
- * - Authentication actions (syncFromCookie, logout, etc.)
- * 
- * Usage:
- * ```tsx
- * const { login, email, isAuthenticated, isLoading, logout } = useAuth()
- * 
- * if (isLoading) return <Loading />
- * if (!isAuthenticated) return <Login />
- * 
- * return <div>Welcome {email}</div>
- * ```
- */
 export function useAuth() {
-  const login = useAuthStore((state) => state.login)
+  const token = useAuthStore((state) => state.token)
   const email = useAuthStore((state) => state.email)
   const isLoading = useAuthStore((state) => state.isLoading)
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
@@ -30,8 +12,7 @@ export function useAuth() {
   const clearAuth = useAuthStore((state) => state.clearAuth)
 
   return {
-    // State
-    login,
+    token,
     email,
     isLoading,
     isAuthenticated,
@@ -44,16 +25,10 @@ export function useAuth() {
   }
 }
 
-/**
- * Check if user is authenticated
- */
 export function useIsAuthenticated(): boolean {
   return useAuthStore((state) => state.isAuthenticated)
 }
 
-/**
- * Check if auth is loading
- */
 export function useIsAuthLoading(): boolean {
   return useAuthStore((state) => state.isLoading)
 }
