@@ -11,8 +11,8 @@ export const APP_ROUTES = {
   },
   // Home app
   HOME: {
-    BASE: '/home/',
-    HOME: '/home/',
+    BASE: '/',
+    HOME: '/',
   },
   // Feeds app
   FEEDS: {
