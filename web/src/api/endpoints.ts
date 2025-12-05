@@ -1,10 +1,9 @@
 const endpoints = {
   auth: {
-    login: '/login',
-    signup: '/signup',
-    verify: '/login/auth',
-    logout: '/logout',
-    me: '/me', // Optional: Load user profile for UI
+    code: '/_/code',
+    verify: '/_/verify',
+    identity: '/_/identity',
+    logout: '/_/logout',
   },
 } as const
 
