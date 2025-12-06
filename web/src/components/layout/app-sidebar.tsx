@@ -6,25 +6,22 @@ import {
   SidebarHeader,
   SidebarRail,
 } from '@/components/ui/sidebar'
-// import { AppTitle } from './app-title'
 import { sidebarData } from './data/sidebar-data'
 import { NavGroup } from './nav-group'
 import { NavUser } from './nav-user'
-// import { TeamSwitcher } from './team-switcher' // Removed - no longer using team switcher dropdown
 
 export function AppSidebar() {
   const { collapsible, variant } = useLayout()
   return (
     <Sidebar collapsible={collapsible} variant={variant}>
       <SidebarHeader>
-        {/* <TeamSwitcher teams={sidebarData.teams} /> */}
-        {/* Removed team switcher dropdown */}
-
-        {/* Replace <TeamSwitch /> with the following <AppTitle />
-         /* if you want to use the normal app title instead of TeamSwitch dropdown */}
-        {/* <AppTitle /> */}
-        
-        {/* User dropdown moved up from footer */}
+        <a href="/" className="flex items-center justify-center py-2">
+          <img
+            src="/images/logo-header.svg"
+            alt="mochi"
+            className="h-10 w-10"
+          />
+        </a>
         <NavUser />
       </SidebarHeader>
       <SidebarContent>

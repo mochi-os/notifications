@@ -6,6 +6,7 @@ import {
   Sun,
   Check,
   Monitor,
+  CircleUser,
 } from 'lucide-react'
 import { useAuthStore } from '@/stores/auth-store'
 import { readProfileCookie } from '@/lib/profile-cookie'
@@ -58,13 +59,14 @@ export function NavUser() {
             <DropdownMenuTrigger asChild>
               <SidebarMenuButton
                 size='lg'
-                className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'
+                className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2'
               >
-                <div className='grid flex-1 text-start text-sm leading-tight'>
+                <CircleUser className='hidden size-4 group-data-[collapsible=icon]:block' />
+                <div className='grid flex-1 text-start text-sm leading-tight group-data-[collapsible=icon]:hidden'>
                   <span className='truncate font-semibold'>{displayName}</span>
                   <span className='truncate text-xs'>{displayEmail}</span>
                 </div>
-                <ChevronsUpDown className='ms-auto size-4' />
+                <ChevronsUpDown className='ms-auto size-4 group-data-[collapsible=icon]:hidden' />
               </SidebarMenuButton>
             </DropdownMenuTrigger>
             <DropdownMenuContent
