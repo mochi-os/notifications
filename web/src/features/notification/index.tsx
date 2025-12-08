@@ -1,5 +1,13 @@
 import { useState } from 'react'
-import { Bell, Heart, MessageSquare, UserPlus } from 'lucide-react'
+import {
+  Bell,
+  BellRing,
+  Check,
+  Heart,
+  MessageSquare,
+  UserPlus,
+  X,
+} from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -130,6 +138,7 @@ function NotificationItem({ notification }: { notification: Notification }) {
                   e.stopPropagation()
                 }}
               >
+                <X className='mr-1.5 h-3.5 w-3.5' />
                 {notification.actionButtons.secondary}
               </Button>
             )}
@@ -140,6 +149,7 @@ function NotificationItem({ notification }: { notification: Notification }) {
                 e.stopPropagation()
               }}
             >
+              <Check className='mr-1.5 h-3.5 w-3.5' />
               {notification.actionButtons.primary}
             </Button>
           </div>
@@ -188,6 +198,7 @@ export function Notifications() {
               onClick={handleMarkAllAsRead}
               className='text-sm'
             >
+              <Check className='mr-2 h-4 w-4' />
               Mark all as read
             </Button>
           )}
@@ -201,8 +212,9 @@ export function Notifications() {
               {allNotifications.length > 0 && (
                 <Badge
                   variant='secondary'
-                  className='ml-1.5 size-5 rounded-full p-0 text-[10px]'
+                  className='ml-1.5 flex items-center justify-center gap-0.5 rounded-full px-1 py-0 text-[10px]'
                 >
+                  <Bell className='h-3 w-3' />
                   {allNotifications.length}
                 </Badge>
               )}
@@ -212,8 +224,9 @@ export function Notifications() {
               {unreadCount > 0 && (
                 <Badge
                   variant='default'
-                  className='ml-1.5 size-5 rounded-full p-0 text-[10px]'
+                  className='ml-1.5 flex items-center justify-center gap-0.5 rounded-full px-1 py-0 text-[10px]'
                 >
+                  <BellRing className='h-3 w-3' />
                   {unreadCount}
                 </Badge>
               )}
@@ -286,5 +299,4 @@ export function Notifications() {
     </>
   )
 }
-
 

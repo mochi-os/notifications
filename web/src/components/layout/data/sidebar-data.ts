@@ -1,10 +1,12 @@
-import { APP_ROUTES } from '@/config/routes'
+import { APP_ROUTES } from '@/config/app-routes'
 import {
   MessagesSquare,
   Bell,
   Home,
   UserPlus,
   LayoutTemplate,
+  Newspaper,
+  MessageCircle,
 } from 'lucide-react'
 import { type SidebarData } from '../types'
 
@@ -35,6 +37,18 @@ export const sidebarData: SidebarData = {
           title: 'Notifications',
           url: APP_ROUTES.NOTIFICATIONS.HOME,
           icon: Bell,
+        },
+        {
+          title: 'Feeds',
+          url: APP_ROUTES.FEEDS.HOME,
+          icon: Newspaper,
+          external: true,
+        },
+        {
+          title: 'Forums',
+          url: APP_ROUTES.FORUMS.HOME,
+          icon: MessageCircle,
+          external: true,
         },
         {
           title: 'Template',
