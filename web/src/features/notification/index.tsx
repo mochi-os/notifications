@@ -11,10 +11,8 @@ import {
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Header } from '@/components/layout/header'
-import { Main } from '@/components/layout/main'
+import { TopBar } from '@/components/layout/top-bar'
 import { Search } from '@/components/search'
-import { NotificationsDropdown } from '@/components/notifications-dropdown'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -175,14 +173,11 @@ export function Notifications() {
 
   return (
     <>
-      <Header>
+      <TopBar>
         <Search />
-        <div className='ms-auto flex items-center space-x-4'>
-          <NotificationsDropdown />
-        </div>
-      </Header>
+      </TopBar>
 
-      <Main>
+      <main className='mx-auto max-w-7xl px-4 py-6 sm:px-6'>
         {/* Page Header */}
         <div className='mb-6 flex items-center justify-between space-y-2'>
           <div>
@@ -295,7 +290,7 @@ export function Notifications() {
             </Card>
           </TabsContent>
         </Tabs>
-      </Main>
+      </main>
     </>
   )
 }
