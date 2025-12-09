@@ -31,5 +31,15 @@ def function_create(app, category, object, content, link):
 
 	mochi.db.query("replace into notifications ( app, category, object, content, link, created ) values ( ?, ?, ?, ?, ?, ? )", app, category, object, content, link, mochi.time.now())
 
+def action_list(a):
+	if not a.user.identity.id:
+		a.error(401, "Not logged in")
+		return
+	
+	notifications = mochi.db.query("select * from notifications order by created desc, content")
+	return {
+		"data": notifications
+	}
+
 def function_list():
 	return mochi.db.query("select * from notifications order by created, content")

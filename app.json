@@ -23,7 +23,8 @@
 	"actions": {
 		"": {"file": "web/dist/index.html"},
 		"assets": {"files": "web/dist/assets"},
-		"images": {"files": "web/dist/images"}
+		"images": {"files": "web/dist/images"},
+		"list": {"function": "action_list"}
 	},
 
 	"functions": {

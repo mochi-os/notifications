@@ -1,0 +1,322 @@
+openapi: "3.0.3"
+info:
+  title: "Notifications App API"
+  version: "1.0.0"
+  description: |
+    API for the `notifications` app - A notification management system for tracking user notifications across different apps.
+    
+    **HTTP Endpoints:**
+    - `/notifications` - Web interface (SPA)
+    - `/notifications/list` - Get all notifications as JSON
+    
+    **Service Functions:** Internal functions called by other apps via `mochi.service.call("notifications", "function_name", ...args)`
+
+paths:
+  "/notifications":
+    get:
+      summary: View notifications web interface
+      description: Serves the single-page application for viewing notifications
+      responses:
+        "200":
+          description: Notifications web interface
+          content:
+            text/html:
+              schema:
+                type: string
+
+  "/notifications/assets/{file}":
+    get:
+      summary: Serve static assets
+      description: Serves static assets (JS, CSS) for the web interface
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
+          description: "Asset filename"
+      responses:
+        "200":
+          description: Static asset file
+        "400":
+          description: Invalid file path
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  "/notifications/images/{file}":
+    get:
+      summary: Serve static images
+      description: Serves static images for the web interface
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
+          description: "Image filename"
+      responses:
+        "200":
+          description: Image file
+        "400":
+          description: Invalid file path
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  "/notifications/list":
+    get:
+      summary: List all notifications
+      description: Returns all notifications for the current user, ordered by creation time (newest first)
+      security:
+        - cookieAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of notifications
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Notification'
+        "401":
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: login
+      description: "Login cookie set after successful authentication"
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "JWT token in Authorization header"
+
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: "Error message"
+          example: "Invalid file"
+
+    Notification:
+      type: object
+      properties:
+        app:
+          type: string
+          description: "App identifier (e.g., 'chat', 'feeds', 'forums')"
+          example: "chat"
+        category:
+          type: string
+          description: "Notification category (e.g., 'message', 'new', 'comment')"
+          example: "message"
+        object:
+          type: string
+          description: "Object identifier (chat ID, feed ID, etc.)"
+          example: "abc123xyz"
+        content:
+          type: string
+          description: "Notification content/message"
+          example: "New message from Alice"
+        link:
+          type: string
+          description: "URL link to the notification source"
+          example: "/chat/abc123xyz"
+        created:
+          type: integer
+          description: "Unix timestamp of notification creation"
+          example: 1733385600
+
+    ServiceFunctionReference:
+      type: object
+      description: |
+        **Service Functions** (called internally by other apps via `mochi.service.call()`):
+        
+        ### clear.all()
+        Clear all notifications for the current user.
+        ```starlark
+        mochi.service.call("notifications", "clear.all")
+        ```
+        
+        ### clear.app(app: string)
+        Clear all notifications from a specific app.
+        ```starlark
+        mochi.service.call("notifications", "clear.app", "chat")
+        ```
+        **Parameters:**
+        - `app` (string): App identifier (e.g., "chat", "feeds", "forums")
+        
+        ### clear.object(app: string, object: string)
+        Clear notifications for a specific object within an app.
+        ```starlark
+        mochi.service.call("notifications", "clear.object", "chat", "abc123xyz")
+        ```
+        **Parameters:**
+        - `app` (string): App identifier
+        - `object` (string): Object identifier (chat ID, feed ID, etc.)
+        
+        ### create(app: string, category: string, object: string, content: string, link: string)
+        Create or update a notification.
+        ```starlark
+        mochi.service.call("notifications", "create", "chat", "message", "abc123", "New message from Bob", "/chat/abc123")
+        ```
+        **Parameters:**
+        - `app` (string): App identifier
+        - `category` (string): Notification category
+        - `object` (string): Object identifier
+        - `content` (string): Notification message/content
+        - `link` (string): URL to the notification source
+        
+        **Validation Rules:**
+        - `app`: Must match "constant" pattern (alphanumeric, underscore, hyphen)
+        - `category`: Must match "constant" pattern
+        - `object`: Must match "path" pattern
+        - `content`: Must match "text" pattern (non-empty text)
+        - `link`: Must match "url" pattern (valid URL)
+        
+        ### list() -> array
+        Retrieve all notifications for the current user, ordered by creation time and content.
+        ```starlark
+        notifications = mochi.service.call("notifications", "list")
+        ```
+        **Returns:** Array of notification objects with fields: app, category, object, content, link, created
+        
+        **Database Schema:**
+        ```sql
+        CREATE TABLE notifications (
+          app TEXT NOT NULL,
+          category TEXT NOT NULL,
+          object TEXT NOT NULL,
+          content TEXT NOT NULL,
+          link TEXT NOT NULL DEFAULT '',
+          created INTEGER NOT NULL,
+          PRIMARY KEY (app, category, object)
+        )
+        ```
+        
+        **Usage Example:**
+        ```starlark
+        # Create a notification when a new chat message arrives
+        mochi.service.call("notifications", "create", 
+          "chat", 
+          "message", 
+          chat_id, 
+          user_name + ": " + message_body, 
+          "/chat/" + chat_id
+        )
+        
+        # Clear notifications when user views the chat
+        mochi.service.call("notifications", "clear.object", "chat", chat_id)
+        
+        # List all user notifications
+        all_notifications = mochi.service.call("notifications", "list")
+        ```
+
+x-service-functions:
+  clear.all:
+    summary: Clear all notifications
+    description: Removes all notifications for the current user
+    returns:
+      type: void
+    example: |
+      mochi.service.call("notifications", "clear.all")
+
+  clear.app:
+    summary: Clear app notifications
+    description: Removes all notifications from a specific app
+    parameters:
+      - name: app
+        type: string
+        required: true
+        description: "App identifier"
+        example: "chat"
+    returns:
+      type: void
+    example: |
+      mochi.service.call("notifications", "clear.app", "chat")
+
+  clear.object:
+    summary: Clear object notifications
+    description: Removes notifications for a specific object
+    parameters:
+      - name: app
+        type: string
+        required: true
+        description: "App identifier"
+      - name: object
+        type: string
+        required: true
+        description: "Object identifier"
+    returns:
+      type: void
+    example: |
+      mochi.service.call("notifications", "clear.object", "chat", "abc123")
+
+  create:
+    summary: Create notification
+    description: Creates or updates a notification (uses REPLACE INTO)
+    parameters:
+      - name: app
+        type: string
+        required: true
+        description: "App identifier (constant pattern)"
+        example: "chat"
+      - name: category
+        type: string
+        required: true
+        description: "Notification category (constant pattern)"
+        example: "message"
+      - name: object
+        type: string
+        required: true
+        description: "Object identifier (path pattern)"
+        example: "abc123xyz"
+      - name: content
+        type: string
+        required: true
+        description: "Notification message (text pattern)"
+        example: "New message from Alice"
+      - name: link
+        type: string
+        required: true
+        description: "URL to notification source (url pattern)"
+        example: "/chat/abc123xyz"
+    returns:
+      type: void
+    validation:
+      - app: Must match "constant" pattern
+      - category: Must match "constant" pattern
+      - object: Must match "path" pattern
+      - content: Must match "text" pattern
+      - link: Must match "url" pattern
+    example: |
+      mochi.service.call("notifications", "create", 
+        "chat", "message", "abc123", 
+        "New message from Bob", "/chat/abc123")
+
+  list:
+    summary: List all notifications
+    description: Returns all notifications for the current user, ordered by creation time and content
+    returns:
+      type: array
+      items:
+        $ref: '#/components/schemas/Notification'
+    example: |
+      notifications = mochi.service.call("notifications", "list")
+      for n in notifications:
+          print(n["app"], n["content"])
