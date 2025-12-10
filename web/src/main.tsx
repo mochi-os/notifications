@@ -9,7 +9,6 @@ import {
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { toast } from 'sonner'
 import { useAuthStore } from '@/stores/auth-store'
-import { handleServerError } from '@/lib/handle-server-error'
 // import { DirectionProvider } from './context/direction-provider' // Commented for future use (RTL support)
 // import { FontProvider } from './context/font-provider' // Commented for future use (Font switching)
 import { ThemeProvider } from './context/theme-provider'
@@ -37,7 +36,7 @@ const queryClient = new QueryClient({
     },
     mutations: {
       onError: (error) => {
-        handleServerError(error)
+        // Let individual mutation handlers show their own error messages
 
         if (error instanceof AxiosError) {
           if (error.response?.status === 304) {
