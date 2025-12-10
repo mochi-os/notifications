@@ -12,7 +12,6 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { TopBar } from '@/components/layout/top-bar'
-import { Search } from '@/components/search'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -173,9 +172,7 @@ export function Notifications() {
 
   return (
     <>
-      <TopBar>
-        <Search />
-      </TopBar>
+      <TopBar />
 
       <main className='mx-auto max-w-7xl px-4 py-6 sm:px-6'>
         {/* Page Header */}
