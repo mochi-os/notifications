@@ -67,7 +67,7 @@ const getBasepath = () => {
   const pathname = window.location.pathname;
   // Extract basepath: /chat/ -> /chat/, /chat/some-route -> /chat/
   // Match pattern: /<app-name>/ (with trailing slash)
-  const match = pathname.match(/^(\/[^/]+\/)/);
+  const match = pathname.match(/^(\/[^/]+)/);
   return match ? match[1] : '/';
 };
 

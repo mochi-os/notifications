@@ -2,6 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function() {
+        var path = location.pathname;
+        var match = path.match(/^(\/[^/]+)/);
+        var base = match ? match[1] + '/' : '/';
+        document.write('<base href="' + base + '">');
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
