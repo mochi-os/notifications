@@ -58,7 +58,7 @@ export function TopBar() {
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img
-              src="/images/logo-header.svg"
+              src="./images/logo-header.svg"
               alt="Mochi"
               className="h-8 w-8"
             />
