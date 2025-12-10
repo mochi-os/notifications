@@ -64,6 +64,9 @@ export function TopBar() {
             />
           </a>
 
+          {/* Title */}
+          <h1 className="absolute left-1/2 -translate-x-1/2 text-xl font-light tracking-tight" style={{ fontFamily: 'Nunito, sans-serif' }}>Notifications</h1>
+
           <div className="flex-1" />
 
           {/* User Menu */}
