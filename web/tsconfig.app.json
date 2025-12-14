@@ -6,6 +6,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
 
     /* Bundler mode */
     "moduleResolution": "Bundler",
@@ -18,7 +19,8 @@
     /* Alias */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@mochi/common/*": ["../../../lib/common/src/*"]
     },
 
     /* Linting */

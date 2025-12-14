@@ -1,5 +1,5 @@
 import { Outlet } from '@tanstack/react-router'
-import { SearchProvider } from '@/context/search-provider'
+import { SearchProvider } from '@mochi/common/context/search-provider'
 
 type SimpleLayoutProps = {
   children?: React.ReactNode

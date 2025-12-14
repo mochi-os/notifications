@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import { Bell, Heart, MessageSquare, UserPlus } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { cn } from '@mochi/common/lib/utils'
+import { Button } from '@mochi/common/components/ui/button'
+import { Badge } from '@mochi/common/components/ui/badge'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { ScrollArea } from '@/components/ui/scroll-area'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Separator } from '@/components/ui/separator'
+} from '@mochi/common/components/ui/popover'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@mochi/common/components/ui/tabs'
+import { ScrollArea } from '@mochi/common/components/ui/scroll-area'
+import { Avatar, AvatarFallback, AvatarImage } from '@mochi/common/components/ui/avatar'
+import { Separator } from '@mochi/common/components/ui/separator'
 import { APP_ROUTES } from '@/config/app-routes'
 
 interface Notification {

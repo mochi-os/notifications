@@ -8,13 +8,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@mochi/common/components/ui/dropdown-menu'
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from '@/components/ui/sidebar'
+} from '@mochi/common/components/ui/sidebar'
 
 type TeamSwitcherProps = {
   teams: {

@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from 'react'
 import { type Table } from '@tanstack/react-table'
 import { X } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
+import { cn } from '@mochi/common/lib/utils'
+import { Badge } from '@mochi/common/components/ui/badge'
+import { Button } from '@mochi/common/components/ui/button'
+import { Separator } from '@mochi/common/components/ui/separator'
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from '@/components/ui/tooltip'
+} from '@mochi/common/components/ui/tooltip'
 
 type DataTableBulkActionsProps<TData> = {
   table: Table<TData>

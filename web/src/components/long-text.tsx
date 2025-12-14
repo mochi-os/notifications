@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
-import { cn } from '@/lib/utils'
+import { cn } from '@mochi/common/lib/utils'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover'
+} from '@mochi/common/components/ui/popover'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip'
+} from '@mochi/common/components/ui/tooltip'
 
 type LongTextProps = {
   children: React.ReactNode

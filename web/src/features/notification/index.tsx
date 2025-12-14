@@ -8,17 +8,17 @@ import {
   UserPlus,
   X,
 } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { TopBar } from '@/components/layout/top-bar'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { ScrollArea } from '@/components/ui/scroll-area'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { cn } from '@mochi/common/lib/utils'
+import { Button } from '@mochi/common/components/ui/button'
+import { Badge } from '@mochi/common/components/ui/badge'
+import { TopBar } from '@mochi/common/components/layout/top-bar'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@mochi/common/components/ui/tabs'
+import { ScrollArea } from '@mochi/common/components/ui/scroll-area'
+import { Avatar, AvatarFallback, AvatarImage } from '@mochi/common/components/ui/avatar'
 import {
   Card,
   CardContent,
-} from '@/components/ui/card'
+} from '@mochi/common/components/ui/card'
 
 interface Notification {
   id: string
@@ -172,7 +172,7 @@ export function Notifications() {
 
   return (
     <>
-      <TopBar />
+      <TopBar title="Notifications" />
 
       <main className='mx-auto max-w-7xl px-4 py-6 sm:px-6'>
         {/* Page Header */}

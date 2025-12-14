@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
 import { CircleUser, LogOut, Settings } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { useAuthStore } from '@/stores/auth-store'
-import { readProfileCookie } from '@/lib/profile-cookie'
-import { useTheme } from '@/context/theme-provider'
-import useDialogState from '@/hooks/use-dialog-state'
-import { Button } from '@/components/ui/button'
+import { cn } from '@mochi/common/lib/utils'
+import { useAuthStore } from '@mochi/common/stores/auth-store'
+import { readProfileCookie } from '@mochi/common/lib/profile-cookie'
+import { useTheme } from '@mochi/common/context/theme-provider'
+import useDialogState from '@mochi/common/hooks/use-dialog-state'
+import { Button } from '@mochi/common/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { SignOutDialog } from '@/components/sign-out-dialog'
+} from '@mochi/common/components/ui/dropdown-menu'
+import { SignOutDialog } from '@mochi/common/components/sign-out-dialog'
 import { APP_ROUTES } from '@/config/app-routes'
 
 export function TopBar() {

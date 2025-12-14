@@ -2,6 +2,8 @@
 @import 'tw-animate-css';
 @import './theme.css';
 
+@source "../../../../../lib/common/src/**/*.{ts,tsx}";
+
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
