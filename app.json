@@ -11,9 +11,10 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 1,
+		"schema": 2,
 		"file": "notifications.db",
-		"create": {"function": "database_create"}
+		"create": {"function": "database_create"},
+		"upgrade": {"function": "database_upgrade"}
 	},
 
 	"icons": [
@@ -24,7 +25,10 @@
 		"": {"file": "web/dist/index.html"},
 		"assets": {"files": "web/dist/assets"},
 		"images": {"files": "web/dist/images"},
-		"list": {"function": "action_list"}
+		"list": {"function": "action_list"},
+		"count": {"function": "action_count"},
+		"read": {"function": "action_read"},
+		"read/all": {"function": "action_read_all"}
 	},
 
 	"functions": {
@@ -32,6 +36,9 @@
 		"clear.app": {"function": "function_clear_app"},
 		"clear.object": {"function": "function_clear_object"},
 		"create": {"function": "function_create"},
-		"list": {"function": "function_list"}
+		"list": {"function": "function_list"},
+		"read": {"function": "function_read"},
+		"read/all": {"function": "function_read_all"},
+		"expire": {"function": "function_expire"}
 	}
 }
