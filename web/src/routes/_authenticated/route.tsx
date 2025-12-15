@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { SimpleLayout } from '@/components/layout/simple-layout'
+import { SimpleLayout } from '@mochi/common'
 import { useAuthStore } from '@mochi/common/stores/auth-store'
 import { getCookie } from '@mochi/common/lib/cookies'
 
