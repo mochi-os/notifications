@@ -1,4 +1,10 @@
 const endpoints = {
+  notifications: {
+    list: 'list',
+    count: 'count',
+    read: 'read',
+    readAll: 'read-all',
+  },
   auth: {
     code: '/_/code',
     verify: '/_/verify',
