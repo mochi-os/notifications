@@ -11,7 +11,7 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 2,
+		"schema": 3,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"}
@@ -24,7 +24,8 @@
 		"list": {"function": "action_list"},
 		"count": {"function": "action_count"},
 		"read": {"function": "action_read"},
-		"read/all": {"function": "action_read_all"}
+		"read/all": {"function": "action_read_all"},
+		"clear/all": {"function": "action_clear_all"}
 	},
 
 	"functions": {

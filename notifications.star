@@ -14,6 +14,7 @@ def database_create():
 		read integer not null default 0,
 		unique ( app, category, object )
 	)""")
+	mochi.db.query("create index notifications_created on notifications(created)")
 
 def database_upgrade(version):
 	if version == 2:
@@ -30,6 +31,8 @@ def database_upgrade(version):
 			read integer not null default 0,
 			unique ( app, category, object )
 		)""")
+	if version == 3:
+		mochi.db.query("create index notifications_created on notifications(created)")
 
 # Expiry: 30 days unread, 7 days read
 def function_expire():
@@ -94,29 +97,26 @@ def function_read_all():
 	mochi.websocket.write("notifications", {"type": "read_all"})
 
 def action_list(a):
-	if not a.user.identity.id:
-		a.error(401, "Not logged in")
-		return
 	function_expire()
 	return {"data": function_list()}
 
 def action_count(a):
-	if not a.user.identity.id:
-		a.error(401, "Not logged in")
-		return
 	row = mochi.db.row("select count(*) as count, coalesce(sum(count), 0) as total from notifications where read = 0")
 	return {"data": {"count": row["count"] if row else 0, "total": row["total"] if row else 0}}
 
 def action_read(a):
-	if not a.user.identity.id:
-		a.error(401, "Not logged in")
+	id = a.input("id", "").strip()
+	if not id or len(id) > 64:
+		a.error(400, "Invalid id")
 		return
-	function_read(a.input("id"))
+	function_read(id)
 	return {"data": {}}
 
 def action_read_all(a):
-	if not a.user.identity.id:
-		a.error(401, "Not logged in")
-		return
 	function_read_all()
+	return {"data": {}}
+
+def action_clear_all(a):
+	function_clear_all()
+	mochi.websocket.write("notifications", {"type": "clear_all"})
 	return {"data": {}}

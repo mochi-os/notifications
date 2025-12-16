@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react'
-import { Bell, Check, Loader2 } from 'lucide-react'
+import { Bell, Check, Loader2, Trash2 } from 'lucide-react'
 import { cn } from '@mochi/common/lib/utils'
 import { Button } from '@mochi/common/components/ui/button'
 import { Switch } from '@mochi/common/components/ui/switch'
@@ -8,6 +8,7 @@ import {
   useNotificationsQuery,
   useMarkAsReadMutation,
   useMarkAllAsReadMutation,
+  useClearAllMutation,
 } from '@/hooks/useNotifications'
 import { useNotificationWebSocket } from '@/hooks/useNotificationWebSocket'
 import type { Notification as ApiNotification } from '@/api/notifications'
@@ -88,6 +89,7 @@ export function Notifications() {
   useNotificationWebSocket()
   const markAsReadMutation = useMarkAsReadMutation()
   const markAllAsReadMutation = useMarkAllAsReadMutation()
+  const clearAllMutation = useClearAllMutation()
 
   const allNotifications = useMemo(() => notifications ?? [], [notifications])
   const unreadCount = useMemo(
@@ -107,12 +109,16 @@ export function Notifications() {
     markAllAsReadMutation.mutate()
   }
 
+  const handleClearAll = () => {
+    clearAllMutation.mutate()
+  }
+
   return (
     <main className="mx-auto max-w-2xl px-4 py-6 sm:px-6">
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
         <h1 className="text-xl font-semibold">Notifications</h1>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           {unreadCount > 0 && (
             <Button
               variant="ghost"
@@ -126,6 +132,21 @@ export function Notifications() {
                 <Check className="mr-1.5 size-4" />
               )}
               Mark all read
+            </Button>
+          )}
+          {allNotifications.length > 0 && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleClearAll}
+              disabled={clearAllMutation.isPending}
+            >
+              {clearAllMutation.isPending ? (
+                <Loader2 className="mr-1.5 size-4 animate-spin" />
+              ) : (
+                <Trash2 className="mr-1.5 size-4" />
+              )}
+              Clear all
             </Button>
           )}
         </div>

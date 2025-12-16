@@ -4,6 +4,7 @@ const endpoints = {
     count: 'count',
     read: 'read',
     readAll: 'read/all',
+    clearAll: 'clear/all',
   },
   auth: {
     code: '/_/code',

@@ -38,3 +38,13 @@ export const useMarkAllAsReadMutation = () => {
     },
   })
 }
+
+export const useClearAllMutation = () => {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: () => notificationsApi.clearAll(),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: notificationKeys.all() })
+    },
+  })
+}

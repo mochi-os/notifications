@@ -51,11 +51,16 @@ const markAllAsRead = async (): Promise<void> => {
   await requestHelpers.post(endpoints.notifications.readAll, {})
 }
 
+const clearAll = async (): Promise<void> => {
+  await requestHelpers.post(endpoints.notifications.clearAll, {})
+}
+
 export const notificationsApi = {
   list: listNotifications,
   count: getNotificationCount,
   markAsRead,
   markAllAsRead,
+  clearAll,
 }
 
 export default notificationsApi
