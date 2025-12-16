@@ -17,10 +17,6 @@
 		"upgrade": {"function": "database_upgrade"}
 	},
 
-	"icons": [
-		{"action": "", "label": "app_name", "file": "images/icon.svg"}
-	],
-
 	"actions": {
 		"": {"file": "web/dist/index.html"},
 		"assets": {"files": "web/dist/assets"},

@@ -1,47 +1,18 @@
-import { useState, useMemo } from 'react'
-import {
-  Bell,
-  BellRing,
-  Check,
-  MessageSquare,
-  UserPlus,
-  Users,
-  Loader2,
-} from 'lucide-react'
+import { useState, useMemo, useEffect } from 'react'
+import { Bell, Check, Loader2 } from 'lucide-react'
 import { cn } from '@mochi/common/lib/utils'
 import { Button } from '@mochi/common/components/ui/button'
-import { Badge } from '@mochi/common/components/ui/badge'
-import { TopBar } from '@mochi/common/components/layout/top-bar'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@mochi/common/components/ui/tabs'
-import { ScrollArea } from '@mochi/common/components/ui/scroll-area'
-import {
-  Card,
-  CardContent,
-} from '@mochi/common/components/ui/card'
+import { Switch } from '@mochi/common/components/ui/switch'
+import { Label } from '@mochi/common/components/ui/label'
 import {
   useNotificationsQuery,
   useMarkAsReadMutation,
   useMarkAllAsReadMutation,
 } from '@/hooks/useNotifications'
+import { useNotificationWebSocket } from '@/hooks/useNotificationWebSocket'
 import type { Notification as ApiNotification } from '@/api/notifications'
 
-function getNotificationIcon(app: string, category: string) {
-  if (app === 'friends') {
-    if (category === 'accept') return Users
-    if (category === 'invite') return UserPlus
-  }
-  if (app === 'chat') return MessageSquare
-  return Bell
-}
-
-function getNotificationColor(app: string, category: string) {
-  if (app === 'friends') {
-    if (category === 'accept') return 'bg-green-500'
-    if (category === 'invite') return 'bg-blue-500'
-  }
-  if (app === 'chat') return 'bg-purple-500'
-  return 'bg-gray-500'
-}
+const STORAGE_KEY = 'notifications-show-all'
 
 function formatTimestamp(timestamp: number): string {
   const now = Date.now() / 1000
@@ -53,7 +24,7 @@ function formatTimestamp(timestamp: number): string {
   if (diff < 604800) return `${Math.floor(diff / 86400)}d ago`
 
   const date = new Date(timestamp * 1000)
-  return date.toLocaleDateString()
+  return date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
 }
 
 function NotificationItem({
@@ -63,8 +34,6 @@ function NotificationItem({
   notification: ApiNotification
   onMarkAsRead: (id: string) => void
 }) {
-  const Icon = getNotificationIcon(notification.app, notification.category)
-  const iconColor = getNotificationColor(notification.app, notification.category)
   const isUnread = notification.read === 0
 
   const handleClick = () => {
@@ -77,59 +46,58 @@ function NotificationItem({
   }
 
   return (
-    <div
+    <button
+      type="button"
       onClick={handleClick}
       className={cn(
-        'group relative flex gap-3 rounded-lg p-4 transition-colors hover:bg-accent cursor-pointer',
+        'flex w-full items-start gap-3 rounded-lg px-4 py-3 text-left transition-colors hover:bg-accent',
         isUnread && 'bg-accent/50'
       )}
     >
-      <div className='relative shrink-0'>
-        <div
-          className={cn(
-            'flex size-10 items-center justify-center rounded-full',
-            iconColor
+      {isUnread && (
+        <span className="mt-1.5 size-2 shrink-0 rounded-full bg-primary" />
+      )}
+      <div className={cn('flex-1 min-w-0', !isUnread && 'ml-5')}>
+        <p className="text-sm leading-snug">
+          {notification.content}
+          {notification.count > 1 && (
+            <span className="text-muted-foreground"> ({notification.count})</span>
           )}
-        >
-          <Icon className='size-5 text-white' />
-        </div>
-      </div>
-      <div className='flex-1 space-y-1'>
-        <div className='flex items-start justify-between gap-2'>
-          <div className='flex-1'>
-            <p className='text-sm leading-tight'>
-              {notification.content}
-              {notification.count > 1 && (
-                <span className='text-muted-foreground ml-1'>
-                  ({notification.count})
-                </span>
-              )}
-            </p>
-          </div>
-          {isUnread && (
-            <div className='size-2 shrink-0 rounded-full bg-primary mt-1.5' />
-          )}
-        </div>
-        <p className='text-xs text-muted-foreground'>
+        </p>
+        <p className="mt-0.5 text-xs text-muted-foreground">
           {formatTimestamp(notification.created)}
         </p>
       </div>
-    </div>
+    </button>
   )
 }
 
 export function Notifications() {
-  const [activeTab, setActiveTab] = useState('all')
+  const [showAll, setShowAll] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem(STORAGE_KEY) === 'true'
+    }
+    return false
+  })
   const { data: notifications, isLoading, isError } = useNotificationsQuery()
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, String(showAll))
+  }, [showAll])
+
+  useNotificationWebSocket()
   const markAsReadMutation = useMarkAsReadMutation()
   const markAllAsReadMutation = useMarkAllAsReadMutation()
 
   const allNotifications = useMemo(() => notifications ?? [], [notifications])
-  const unreadNotifications = useMemo(
-    () => allNotifications.filter((n) => n.read === 0),
+  const unreadCount = useMemo(
+    () => allNotifications.filter((n) => n.read === 0).length,
     [allNotifications]
   )
-  const unreadCount = unreadNotifications.length
+
+  const displayedNotifications = showAll
+    ? allNotifications
+    : allNotifications.filter((n) => n.read === 0)
 
   const handleMarkAsRead = (id: string) => {
     markAsReadMutation.mutate(id)
@@ -140,146 +108,78 @@ export function Notifications() {
   }
 
   return (
-    <>
-      <TopBar title="Notifications" />
-
-      <main className='mx-auto max-w-7xl px-4 py-6 sm:px-6'>
-        {/* Page Header */}
-        <div className='mb-6 flex items-center justify-between'>
-          <div>
-            <h1 className='text-2xl font-bold tracking-tight'>Notifications</h1>
-            <p className='text-muted-foreground'>
-              Stay updated with your latest activity
-            </p>
-          </div>
+    <main className="mx-auto max-w-2xl px-4 py-6 sm:px-6">
+      {/* Header */}
+      <div className="mb-4 flex items-center justify-between">
+        <h1 className="text-xl font-semibold">Notifications</h1>
+        <div className="flex items-center gap-4">
           {unreadCount > 0 && (
             <Button
-              variant='outline'
-              size='sm'
+              variant="ghost"
+              size="sm"
               onClick={handleMarkAllAsRead}
               disabled={markAllAsReadMutation.isPending}
-              className='text-sm'
             >
               {markAllAsReadMutation.isPending ? (
-                <Loader2 className='mr-2 h-4 w-4 animate-spin' />
+                <Loader2 className="mr-1.5 size-4 animate-spin" />
               ) : (
-                <Check className='mr-2 h-4 w-4' />
+                <Check className="mr-1.5 size-4" />
               )}
-              Mark all as read
+              Mark all read
             </Button>
           )}
         </div>
+      </div>
 
-        {/* Loading State */}
-        {isLoading && (
-          <div className='flex items-center justify-center py-12'>
-            <Loader2 className='h-8 w-8 animate-spin text-muted-foreground' />
-          </div>
-        )}
+      {/* Filter */}
+      <div className="mb-4 flex items-center gap-2">
+        <Switch
+          id="show-all"
+          checked={showAll}
+          onCheckedChange={setShowAll}
+        />
+        <Label htmlFor="show-all" className="text-sm text-muted-foreground">
+          Show all
+        </Label>
+      </div>
 
-        {/* Error State */}
-        {isError && (
-          <div className='flex flex-col items-center justify-center py-12 text-center'>
-            <p className='text-destructive font-medium'>Failed to load notifications</p>
-          </div>
-        )}
+      {/* Loading */}
+      {isLoading && (
+        <div className="flex items-center justify-center py-12">
+          <Loader2 className="size-6 animate-spin text-muted-foreground" />
+        </div>
+      )}
 
-        {/* Tabs */}
-        {!isLoading && !isError && (
-          <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className='grid w-full max-w-md grid-cols-2'>
-              <TabsTrigger value='all' className='relative'>
-                All
-                {allNotifications.length > 0 && (
-                  <Badge
-                    variant='secondary'
-                    className='ml-1.5 flex items-center justify-center gap-0.5 rounded-full px-1 py-0 text-[10px]'
-                  >
-                    <Bell className='h-3 w-3' />
-                    {allNotifications.length}
-                  </Badge>
-                )}
-              </TabsTrigger>
-              <TabsTrigger value='unread' className='relative'>
-                Unread
-                {unreadCount > 0 && (
-                  <Badge
-                    variant='default'
-                    className='ml-1.5 flex items-center justify-center gap-0.5 rounded-full px-1 py-0 text-[10px]'
-                  >
-                    <BellRing className='h-3 w-3' />
-                    {unreadCount}
-                  </Badge>
-                )}
-              </TabsTrigger>
-            </TabsList>
+      {/* Error */}
+      {isError && (
+        <div className="py-12 text-center text-sm text-destructive">
+          Failed to load notifications
+        </div>
+      )}
 
-            {/* Notifications List */}
-            <TabsContent value='all' className='mt-6'>
-              <Card>
-                <CardContent className='p-0'>
-                  <ScrollArea className='h-[calc(100vh-310px)]'>
-                    <div className='p-4'>
-                      {allNotifications.length === 0 ? (
-                        <div className='flex flex-col items-center justify-center py-12 text-center'>
-                          <Bell className='mb-4 size-12 text-muted-foreground/50' />
-                          <p className='text-sm font-medium text-muted-foreground'>
-                            No notifications
-                          </p>
-                          <p className='mt-1 text-xs text-muted-foreground/80'>
-                            You have no notifications yet
-                          </p>
-                        </div>
-                      ) : (
-                        <div className='space-y-1'>
-                          {allNotifications.map((notification) => (
-                            <NotificationItem
-                              key={notification.id}
-                              notification={notification}
-                              onMarkAsRead={handleMarkAsRead}
-                            />
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value='unread' className='mt-6'>
-              <Card>
-                <CardContent className='p-0'>
-                  <ScrollArea className='h-[calc(100vh-310px)]'>
-                    <div className='p-4'>
-                      {unreadNotifications.length === 0 ? (
-                        <div className='flex flex-col items-center justify-center py-12 text-center'>
-                          <Bell className='mb-4 size-12 text-muted-foreground/50' />
-                          <p className='text-sm font-medium text-muted-foreground'>
-                            All caught up!
-                          </p>
-                          <p className='mt-1 text-xs text-muted-foreground/80'>
-                            You have no unread notifications
-                          </p>
-                        </div>
-                      ) : (
-                        <div className='space-y-1'>
-                          {unreadNotifications.map((notification) => (
-                            <NotificationItem
-                              key={notification.id}
-                              notification={notification}
-                              onMarkAsRead={handleMarkAsRead}
-                            />
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
-        )}
-      </main>
-    </>
+      {/* List */}
+      {!isLoading && !isError && (
+        <>
+          {displayedNotifications.length === 0 ? (
+            <div className="py-12 text-center">
+              <Bell className="mx-auto mb-3 size-10 text-muted-foreground/40" />
+              <p className="text-sm text-muted-foreground">
+                {showAll ? 'No notifications' : 'No unread notifications'}
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-1">
+              {displayedNotifications.map((notification) => (
+                <NotificationItem
+                  key={notification.id}
+                  notification={notification}
+                  onMarkAsRead={handleMarkAsRead}
+                />
+              ))}
+            </div>
+          )}
+        </>
+      )}
+    </main>
   )
 }

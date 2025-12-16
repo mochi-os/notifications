@@ -3,7 +3,7 @@ const endpoints = {
     list: 'list',
     count: 'count',
     read: 'read',
-    readAll: 'read-all',
+    readAll: 'read/all',
   },
   auth: {
     code: '/_/code',
