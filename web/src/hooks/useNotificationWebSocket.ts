@@ -17,7 +17,7 @@ const RECONNECT_DELAY = 3000
 // Build WebSocket URL for notifications
 function getWebSocketUrl(): string {
   const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
-  return `${protocol}//${window.location.host}/websocket?key=notifications`
+  return `${protocol}//${window.location.host}/_/websocket?key=notifications`
 }
 
 // Hook to connect to notification WebSocket and invalidate queries on events
