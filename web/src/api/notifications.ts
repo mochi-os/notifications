@@ -18,18 +18,17 @@ export interface NotificationCount {
   total: number
 }
 
-const listNotifications = async (): Promise<Notification[]> => {
-  const response = await requestHelpers.get<Notification[]>(
-    endpoints.notifications.list
-  )
-  return response ?? []
+export interface NotificationsListResponse {
+  data: Notification[]
+  count: number
+  total: number
 }
 
-const getNotificationCount = async (): Promise<NotificationCount> => {
-  const response = await requestHelpers.get<NotificationCount>(
-    endpoints.notifications.count
+const listNotifications = async (): Promise<NotificationsListResponse> => {
+  const response = await requestHelpers.getRaw<NotificationsListResponse>(
+    endpoints.notifications.list
   )
-  return response ?? { count: 0, total: 0 }
+  return response ?? { data: [], count: 0, total: 0 }
 }
 
 const markAsRead = async (id: string): Promise<void> => {
@@ -57,7 +56,6 @@ const clearAll = async (): Promise<void> => {
 
 export const notificationsApi = {
   list: listNotifications,
-  count: getNotificationCount,
   markAsRead,
   markAllAsRead,
   clearAll,

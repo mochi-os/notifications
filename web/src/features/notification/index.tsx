@@ -80,7 +80,7 @@ export function Notifications() {
     }
     return false
   })
-  const { data: notifications, isLoading, isError } = useNotificationsQuery()
+  const { data, isLoading, isError } = useNotificationsQuery()
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, String(showAll))
@@ -91,7 +91,7 @@ export function Notifications() {
   const markAllAsReadMutation = useMarkAllAsReadMutation()
   const clearAllMutation = useClearAllMutation()
 
-  const allNotifications = useMemo(() => notifications ?? [], [notifications])
+  const allNotifications = useMemo(() => data?.data ?? [], [data])
   const unreadCount = useMemo(
     () => allNotifications.filter((n) => n.read === 0).length,
     [allNotifications]

@@ -98,7 +98,13 @@ def function_read_all():
 
 def action_list(a):
 	function_expire()
-	return {"data": function_list()}
+	rows = function_list()
+	row = mochi.db.row("select count(*) as count, coalesce(sum(count), 0) as total from notifications where read = 0")
+	return {
+		"data": rows,
+		"count": row["count"] if row else 0,
+		"total": row["total"] if row else 0
+	}
 
 def action_count(a):
 	row = mochi.db.row("select count(*) as count, coalesce(sum(count), 0) as total from notifications where read = 0")

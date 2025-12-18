@@ -1,22 +1,15 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { notificationsApi, type Notification } from '@/api/notifications'
+import { notificationsApi, type NotificationsListResponse } from '@/api/notifications'
 
 export const notificationKeys = {
   all: () => ['notifications'] as const,
   list: () => [...notificationKeys.all(), 'list'] as const,
-  count: () => [...notificationKeys.all(), 'count'] as const,
 }
 
 export const useNotificationsQuery = () =>
-  useQuery<Notification[]>({
+  useQuery<NotificationsListResponse>({
     queryKey: notificationKeys.list(),
     queryFn: () => notificationsApi.list(),
-  })
-
-export const useNotificationCountQuery = () =>
-  useQuery({
-    queryKey: notificationKeys.count(),
-    queryFn: () => notificationsApi.count(),
   })
 
 export const useMarkAsReadMutation = () => {

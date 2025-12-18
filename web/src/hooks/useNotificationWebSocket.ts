@@ -40,23 +40,12 @@ export function useNotificationWebSocket() {
 
         switch (data.type) {
           case 'new':
-            // New notification - refresh list and count
-            queryClient.invalidateQueries({ queryKey: notificationKeys.list() })
-            queryClient.invalidateQueries({ queryKey: notificationKeys.count() })
-            break
-
           case 'read':
-            // Single notification read - refresh list and count
-            queryClient.invalidateQueries({ queryKey: notificationKeys.list() })
-            queryClient.invalidateQueries({ queryKey: notificationKeys.count() })
-            break
-
           case 'read_all':
           case 'clear_all':
           case 'clear_app':
           case 'clear_object':
-            // Bulk changes - refresh everything
-            queryClient.invalidateQueries({ queryKey: notificationKeys.all() })
+            queryClient.invalidateQueries({ queryKey: notificationKeys.list() })
             break
         }
       } catch {

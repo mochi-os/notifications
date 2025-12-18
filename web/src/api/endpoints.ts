@@ -1,7 +1,6 @@
 const endpoints = {
   notifications: {
     list: 'list',
-    count: 'count',
     read: 'read',
     readAll: 'read/all',
     clearAll: 'clear/all',
