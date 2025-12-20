@@ -7,7 +7,9 @@
         var path = location.pathname;
         var match = path.match(/^(\/[^/]+)/);
         var base = match ? match[1] + '/' : '/';
-        document.write('<base href="' + base + '">');
+        var baseEl = document.createElement('base');
+        baseEl.href = base;
+        document.head.appendChild(baseEl);
       })();
     </script>
     <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
