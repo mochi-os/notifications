@@ -40,7 +40,7 @@ const queryClient = new QueryClient({
 
         if (error instanceof AxiosError) {
           if (error.response?.status === 304) {
-            toast.error('Content not modified!')
+            toast.error('Content not modified')
           }
         }
       },
@@ -51,7 +51,7 @@ const queryClient = new QueryClient({
       if (error instanceof AxiosError) {
         // 401 is handled centrally in the API client interceptor
         if (error.response?.status === 500) {
-          toast.error('Internal Server Error!')
+          toast.error('Internal server error')
           router.navigate({ to: '/500' })
         }
         if (error.response?.status === 403) {
