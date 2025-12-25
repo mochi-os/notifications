@@ -17,3 +17,4 @@ zip: web/dist/index.html
 	mkdir -p $(BUILD)
 	rm -f $(BUILD)/$(APP)_*.zip
 	zip -r $(BUILD)/$(APP)_$(VERSION).zip app.json *.star labels web/dist
+	git tag -a $(VERSION) -m "$(VERSION)"
