@@ -2,7 +2,7 @@
 # Copyright Alistair Cunningham 2024-2025
 
 def database_create():
-	mochi.db.execute("""create table notifications (
+	mochi.db.execute("""create table if not exists notifications (
 		id text not null primary key,
 		app text not null,
 		category text not null,
@@ -14,7 +14,7 @@ def database_create():
 		read integer not null default 0,
 		unique ( app, category, object )
 	)""")
-	mochi.db.execute("create index notifications_created on notifications(created)")
+	mochi.db.execute("create index if not exists notifications_created on notifications(created)")
 
 def database_upgrade(version):
 	if version == 2:
