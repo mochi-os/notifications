@@ -3,7 +3,7 @@
 
 APP = $(notdir $(CURDIR))
 VERSION = $(shell grep -m1 '"version"' app.json | sed 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/')
-BUILD = ../../build
+RELEASE = ../../release
 
 all: web/dist/index.html
 
@@ -13,8 +13,7 @@ clean:
 web/dist/index.html: $(shell find web/src ../../lib/common/src -type f 2>/dev/null)
 	cd web && pnpm run build
 
-zip: web/dist/index.html
-	mkdir -p $(BUILD)
-	rm -f $(BUILD)/$(APP)_*.zip
-	zip -r $(BUILD)/$(APP)_$(VERSION).zip app.json *.star labels web/dist
+release: web/dist/index.html
+	rm -f $(RELEASE)/$(APP)_*.zip
+	zip -r $(RELEASE)/$(APP)_$(VERSION).zip app.json *.star labels web/dist
 	git tag -a $(VERSION) -m "$(VERSION)"
