@@ -17,3 +17,14 @@ release: web/dist/index.html
 	rm -f $(RELEASE)/$(APP)_*.zip
 	zip -r $(RELEASE)/$(APP)_$(VERSION).zip app.json *.star labels web/dist
 	git tag -a $(VERSION) -m "$(VERSION)"
+
+deploy:
+	../../test/claude/deploy.sh $(APP)
+
+commit:
+	git add -A && git commit -m "$(VERSION)" || true
+
+push:
+	git push --follow-tags
+
+everything: clean release deploy commit push
