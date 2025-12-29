@@ -13,8 +13,7 @@
 	"database": {
 		"schema": 3,
 		"file": "notifications.db",
-		"create": {"function": "database_create"},
-		"upgrade": {"function": "database_upgrade"}
+		"create": {"function": "database_create"}
 	},
 
 	"actions": {

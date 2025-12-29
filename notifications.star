@@ -16,24 +16,6 @@ def database_create():
 	)""")
 	mochi.db.execute("create index if not exists notifications_created on notifications(created)")
 
-def database_upgrade(version):
-	if version == 2:
-		mochi.db.execute("drop table notifications")
-		mochi.db.execute("""create table notifications (
-			id text not null primary key,
-			app text not null,
-			category text not null,
-			object text not null,
-			content text not null,
-			link text not null default '',
-			count integer not null default 1,
-			created integer not null,
-			read integer not null default 0,
-			unique ( app, category, object )
-		)""")
-	if version == 3:
-		mochi.db.execute("create index notifications_created on notifications(created)")
-
 # Expiry: 30 days unread, 7 days read
 def function_expire():
 	now = mochi.time.now()
