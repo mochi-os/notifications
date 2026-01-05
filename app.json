@@ -11,9 +11,11 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 3,
+		"schema": 4,
 		"file": "notifications.db",
-		"create": {"function": "database_create"}
+		"create": {"function": "database_create"},
+		"upgrade": {"function": "database_upgrade"},
+		"downgrade": {"function": "database_downgrade"}
 	},
 
 	"actions": {
@@ -25,7 +27,10 @@
 		"read": {"function": "action_read"},
 		"read/all": {"function": "action_read_all"},
 		"clear/all": {"function": "action_clear_all"},
-		"rss": {"function": "action_rss"}
+		"rss": {"function": "action_rss"},
+		"push/key": {"function": "action_push_key"},
+		"push/subscribe": {"function": "action_push_subscribe"},
+		"push/unsubscribe": {"function": "action_push_unsubscribe"}
 	},
 
 	"functions": {

@@ -1,10 +1,16 @@
 import { useState, useMemo, useEffect } from 'react'
-import { Bell, Check, Copy, Loader2, Rss, Trash2 } from 'lucide-react'
+import { Bell, Check, Copy, Loader2, MoreVertical, Rss, Trash2 } from 'lucide-react'
 import { cn } from '@mochi/common/lib/utils'
-import { toast } from '@mochi/common'
+import { toast, usePush } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
 import { Switch } from '@mochi/common/components/ui/switch'
 import { Label } from '@mochi/common/components/ui/label'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@mochi/common/components/ui/dropdown-menu'
 import {
   Dialog,
   DialogContent,
@@ -103,6 +109,17 @@ export function Notifications() {
   const markAllAsReadMutation = useMarkAllAsReadMutation()
   const clearAllMutation = useClearAllMutation()
   const rssTokenMutation = useRssTokenMutation()
+  const push = usePush()
+
+  const handleTogglePush = () => {
+    if (push.subscribed) {
+      push.unsubscribe()
+      toast.success('Push notifications disabled')
+    } else {
+      push.subscribe()
+      toast.success('Push notifications enabled')
+    }
+  }
 
   const handleOpenRss = () => {
     setRssOpen(true)
@@ -180,27 +197,42 @@ export function Notifications() {
               Mark all read
             </Button>
           )}
-          {allNotifications.length > 0 && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleClearAll}
-              disabled={clearAllMutation.isPending}
-            >
-              {clearAllMutation.isPending ? (
-                <Loader2 className="mr-1.5 size-4 animate-spin" />
-              ) : (
-                <Trash2 className="mr-1.5 size-4" />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <MoreVertical className="size-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {allNotifications.length > 0 && (
+                <DropdownMenuItem
+                  onClick={handleClearAll}
+                  disabled={clearAllMutation.isPending}
+                >
+                  <Trash2 className="mr-2 size-4" />
+                  Clear all
+                </DropdownMenuItem>
               )}
-              Clear all
-            </Button>
-          )}
-          {data?.rss && (
-            <Button variant="ghost" size="sm" onClick={handleOpenRss}>
-              <Rss className="mr-1.5 size-4" />
-              RSS
-            </Button>
-          )}
+              {push.supported && (
+                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                  <Bell className="mr-2 size-4" />
+                  Browser notifications
+                  <Switch
+                    className="ml-auto cursor-pointer"
+                    checked={push.subscribed}
+                    onCheckedChange={handleTogglePush}
+                    disabled={push.isSubscribing || push.isUnsubscribing}
+                  />
+                </DropdownMenuItem>
+              )}
+              {data?.rss && (
+                <DropdownMenuItem onClick={handleOpenRss}>
+                  <Rss className="mr-2 size-4" />
+                  RSS feed
+                </DropdownMenuItem>
+              )}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
 

@@ -15,6 +15,27 @@ def database_create():
 		unique ( app, category, object )
 	)""")
 	mochi.db.execute("create index if not exists notifications_created on notifications(created)")
+	mochi.db.execute("""create table if not exists subscriptions (
+		id text not null primary key,
+		endpoint text not null unique,
+		auth text not null,
+		p256dh text not null,
+		created integer not null
+	)""")
+
+def database_upgrade(to_version):
+	if to_version == 4:
+		mochi.db.execute("""create table if not exists subscriptions (
+			id text not null primary key,
+			endpoint text not null unique,
+			auth text not null,
+			p256dh text not null,
+			created integer not null
+		)""")
+
+def database_downgrade(from_version):
+	if from_version == 4:
+		mochi.db.execute("drop table if exists subscriptions")
 
 # Expiry: 30 days unread, 7 days read
 def function_expire():
@@ -64,6 +85,9 @@ def function_create(app, category, object, content, link):
 		"content": content,
 		"link": link
 	})
+
+	# Send push notification
+	send_push(content, link, app + "-" + category + "-" + object)
 
 def function_list():
 	return mochi.db.rows("select * from notifications order by created desc")
@@ -189,3 +213,69 @@ def action_rss(a):
 
 	a.print('</channel>\n')
 	a.print('</rss>')
+
+# Push notification endpoints
+
+def action_push_key(a):
+	"""Return VAPID public key for client subscription"""
+	key = mochi.webpush.key()
+	if not key:
+		a.error(503, "Push notifications not available")
+		return
+	return {"data": {"key": key}}
+
+def action_push_subscribe(a):
+	"""Subscribe to push notifications"""
+	endpoint = a.input("endpoint", "").strip()
+	auth = a.input("auth", "").strip()
+	p256dh = a.input("p256dh", "").strip()
+
+	if not endpoint or not auth or not p256dh:
+		a.error(400, "Missing subscription data")
+		return
+
+	now = mochi.time.now()
+	id = mochi.uid()
+
+	# Upsert subscription (endpoint is unique per browser)
+	mochi.db.execute("""
+		insert into subscriptions (id, endpoint, auth, p256dh, created)
+		values (?, ?, ?, ?, ?)
+		on conflict(endpoint) do update set auth=?, p256dh=?, created=?
+	""", id, endpoint, auth, p256dh, now, auth, p256dh, now)
+
+	return {"data": {"ok": True}}
+
+def action_push_unsubscribe(a):
+	"""Unsubscribe from push notifications"""
+	endpoint = a.input("endpoint", "").strip()
+
+	if not endpoint:
+		a.error(400, "Missing endpoint")
+		return
+
+	mochi.db.execute("delete from subscriptions where endpoint = ?", endpoint)
+	return {"data": {"ok": True}}
+
+def send_push(body, link, tag):
+	"""Send push notification to all subscriptions"""
+	payload = json.encode({
+		"title": "Mochi",
+		"body": body,
+		"link": link,
+		"tag": tag
+	})
+
+	rows = mochi.db.rows("select endpoint, auth, p256dh from subscriptions")
+
+	for row in rows:
+		success = mochi.webpush.send(
+			endpoint=row["endpoint"],
+			auth=row["auth"],
+			p256dh=row["p256dh"],
+			payload=payload
+		)
+
+		# Remove expired/invalid subscriptions
+		if not success:
+			mochi.db.execute("delete from subscriptions where endpoint = ?", row["endpoint"])
