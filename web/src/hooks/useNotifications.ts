@@ -44,9 +44,7 @@ export const useClearAllMutation = () => {
 }
 
 interface TokenCreateResponse {
-  data: {
-    token: string
-  }
+  token: string
 }
 
 export const useRssTokenMutation = () => {
@@ -56,7 +54,7 @@ export const useRssTokenMutation = () => {
         '/settings/user/account/token/create',
         { name: 'Notifications RSS' }
       )
-      return response.data.token
+      return response.token
     },
   })
 }

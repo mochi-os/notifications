@@ -195,10 +195,12 @@ export function Notifications() {
               Clear all
             </Button>
           )}
-          <Button variant="ghost" size="sm" onClick={handleOpenRss}>
-            <Rss className="mr-1.5 size-4" />
-            RSS
-          </Button>
+          {data?.rss && (
+            <Button variant="ghost" size="sm" onClick={handleOpenRss}>
+              <Rss className="mr-1.5 size-4" />
+              RSS
+            </Button>
+          )}
         </div>
       </div>
 

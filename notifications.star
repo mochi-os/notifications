@@ -78,14 +78,34 @@ def function_read_all():
 	mochi.db.execute("update notifications set read = ?", now)
 	mochi.websocket.write("notifications", {"type": "read_all"})
 
+def version_gte(version, minimum):
+	"""Check if version >= minimum using numeric comparison"""
+	v_parts = version.split(".")
+	m_parts = minimum.split(".")
+	max_len = len(v_parts) if len(v_parts) > len(m_parts) else len(m_parts)
+	for i in range(max_len):
+		v_num = int(v_parts[i]) if i < len(v_parts) else 0
+		m_num = int(m_parts[i]) if i < len(m_parts) else 0
+		if v_num > m_num:
+			return True
+		if v_num < m_num:
+			return False
+	return True
+
 def action_list(a):
 	function_expire()
 	rows = function_list()
 	row = mochi.db.row("select count(*) as count, coalesce(sum(count), 0) as total from notifications where read = 0")
+
+	# Check if RSS tokens are supported (requires server 0.3+)
+	version = mochi.server.version()
+	rss_supported = version_gte(version, "0.3")
+
 	return {
 		"data": rows,
 		"count": row["count"] if row else 0,
-		"total": row["total"] if row else 0
+		"total": row["total"] if row else 0,
+		"rss": rss_supported
 	}
 
 def action_count(a):

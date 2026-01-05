@@ -22,13 +22,14 @@ export interface NotificationsListResponse {
   data: Notification[]
   count: number
   total: number
+  rss: boolean
 }
 
 const listNotifications = async (): Promise<NotificationsListResponse> => {
   const response = await requestHelpers.getRaw<NotificationsListResponse>(
     endpoints.notifications.list
   )
-  return response ?? { data: [], count: 0, total: 0 }
+  return response ?? { data: [], count: 0, total: 0, rss: false }
 }
 
 const markAsRead = async (id: string): Promise<void> => {
