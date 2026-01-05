@@ -1,14 +1,22 @@
 import { useState, useMemo, useEffect } from 'react'
-import { Bell, Check, Loader2, Trash2 } from 'lucide-react'
+import { Bell, Check, Copy, Loader2, Rss, Trash2 } from 'lucide-react'
 import { cn } from '@mochi/common/lib/utils'
+import { toast } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
 import { Switch } from '@mochi/common/components/ui/switch'
 import { Label } from '@mochi/common/components/ui/label'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@mochi/common/components/ui/dialog'
 import {
   useNotificationsQuery,
   useMarkAsReadMutation,
   useMarkAllAsReadMutation,
   useClearAllMutation,
+  useRssTokenMutation,
 } from '@/hooks/useNotifications'
 import { useNotificationWebSocket } from '@/hooks/useNotificationWebSocket'
 import type { Notification as ApiNotification } from '@/api/notifications'
@@ -80,6 +88,10 @@ export function Notifications() {
     }
     return false
   })
+  const [rssOpen, setRssOpen] = useState(false)
+  const [rssUrl, setRssUrl] = useState<string | null>(null)
+  const [copied, setCopied] = useState(false)
+
   const { data, isLoading, isError } = useNotificationsQuery()
 
   useEffect(() => {
@@ -90,6 +102,27 @@ export function Notifications() {
   const markAsReadMutation = useMarkAsReadMutation()
   const markAllAsReadMutation = useMarkAllAsReadMutation()
   const clearAllMutation = useClearAllMutation()
+  const rssTokenMutation = useRssTokenMutation()
+
+  const handleOpenRss = () => {
+    setRssOpen(true)
+    if (!rssUrl) {
+      rssTokenMutation.mutate(undefined, {
+        onSuccess: (token) => {
+          setRssUrl(`${window.location.origin}/notifications/rss?token=${token}`)
+        },
+      })
+    }
+  }
+
+  const handleCopyRss = async () => {
+    if (rssUrl) {
+      await navigator.clipboard.writeText(rssUrl)
+      setCopied(true)
+      toast.success('Copied to clipboard')
+      setTimeout(() => setCopied(false), 2000)
+    }
+  }
 
   const allNotifications = useMemo(() => data?.data ?? [], [data])
   const unreadCount = useMemo(
@@ -114,11 +147,24 @@ export function Notifications() {
   }
 
   return (
-    <main className="mx-auto max-w-2xl px-4 py-6 sm:px-6">
+    <main className="px-4 py-6">
       {/* Header */}
-      <div className="mb-4 flex items-center justify-between">
-        <h1 className="text-xl font-semibold">Notifications</h1>
-        <div className="flex items-center gap-2">
+      <div className="mb-6 flex items-start">
+        <div className="flex-1" />
+        <div className="flex flex-col items-center gap-2">
+          <h1 className="text-2xl font-bold tracking-tight">Notifications</h1>
+          <div className="flex items-center gap-2">
+            <Switch
+              id="show-all"
+              checked={showAll}
+              onCheckedChange={setShowAll}
+            />
+            <Label htmlFor="show-all" className="text-sm text-muted-foreground">
+              Show all
+            </Label>
+          </div>
+        </div>
+        <div className="flex flex-1 items-center justify-end gap-2">
           {unreadCount > 0 && (
             <Button
               variant="ghost"
@@ -149,58 +195,80 @@ export function Notifications() {
               Clear all
             </Button>
           )}
+          <Button variant="ghost" size="sm" onClick={handleOpenRss}>
+            <Rss className="mr-1.5 size-4" />
+            RSS
+          </Button>
         </div>
       </div>
 
-      {/* Filter */}
-      <div className="mb-4 flex items-center gap-2">
-        <Switch
-          id="show-all"
-          checked={showAll}
-          onCheckedChange={setShowAll}
-        />
-        <Label htmlFor="show-all" className="text-sm text-muted-foreground">
-          Show all
-        </Label>
+      {/* Content */}
+      <div className="mx-auto max-w-2xl">
+        {/* Loading */}
+        {isLoading && (
+          <div className="flex items-center justify-center py-12">
+            <Loader2 className="size-6 animate-spin text-muted-foreground" />
+          </div>
+        )}
+
+        {/* Error */}
+        {isError && (
+          <div className="py-12 text-center text-sm text-destructive">
+            Failed to load notifications
+          </div>
+        )}
+
+        {/* List */}
+        {!isLoading && !isError && (
+          <>
+            {displayedNotifications.length === 0 ? (
+              <div className="py-12 text-center">
+                <Bell className="mx-auto mb-3 size-10 text-muted-foreground/40" />
+                <p className="text-sm text-muted-foreground">
+                  {showAll ? 'No notifications' : 'No unread notifications'}
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-1">
+                {displayedNotifications.map((notification) => (
+                  <NotificationItem
+                    key={notification.id}
+                    notification={notification}
+                    onMarkAsRead={handleMarkAsRead}
+                  />
+                ))}
+              </div>
+            )}
+          </>
+        )}
       </div>
 
-      {/* Loading */}
-      {isLoading && (
-        <div className="flex items-center justify-center py-12">
-          <Loader2 className="size-6 animate-spin text-muted-foreground" />
-        </div>
-      )}
-
-      {/* Error */}
-      {isError && (
-        <div className="py-12 text-center text-sm text-destructive">
-          Failed to load notifications
-        </div>
-      )}
-
-      {/* List */}
-      {!isLoading && !isError && (
-        <>
-          {displayedNotifications.length === 0 ? (
-            <div className="py-12 text-center">
-              <Bell className="mx-auto mb-3 size-10 text-muted-foreground/40" />
-              <p className="text-sm text-muted-foreground">
-                {showAll ? 'No notifications' : 'No unread notifications'}
-              </p>
+      {/* RSS Dialog */}
+      <Dialog open={rssOpen} onOpenChange={setRssOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>RSS Feed</DialogTitle>
+          </DialogHeader>
+          {rssTokenMutation.isPending ? (
+            <div className="flex items-center justify-center py-4">
+              <Loader2 className="size-6 animate-spin text-muted-foreground" />
+            </div>
+          ) : rssUrl ? (
+            <div className="flex items-center gap-2 rounded-md bg-muted p-3 font-mono text-sm">
+              <code className="flex-1 break-all">{rssUrl}</code>
+              <Button variant="ghost" size="sm" onClick={handleCopyRss}>
+                {copied ? (
+                  <Check className="size-4" />
+                ) : (
+                  <Copy className="size-4" />
+                )}
+              </Button>
             </div>
           ) : (
-            <div className="space-y-1">
-              {displayedNotifications.map((notification) => (
-                <NotificationItem
-                  key={notification.id}
-                  notification={notification}
-                  onMarkAsRead={handleMarkAsRead}
-                />
-              ))}
-            </div>
+            <p className="text-sm text-destructive">Failed to generate URL</p>
           )}
-        </>
-      )}
+        </DialogContent>
+      </Dialog>
     </main>
   )
 }

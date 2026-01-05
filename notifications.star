@@ -108,3 +108,64 @@ def action_clear_all(a):
 	function_clear_all()
 	mochi.websocket.write("notifications", {"type": "clear_all"})
 	return {"data": {}}
+
+def escape_xml(s):
+	if not s:
+		return ""
+	s = s.replace("&", "&amp;")
+	s = s.replace("<", "&lt;")
+	s = s.replace(">", "&gt;")
+	s = s.replace('"', "&quot;")
+	return s
+
+def action_rss(a):
+	# Support token in query parameter for RSS readers
+	token = a.input("token", "").strip()
+	if token:
+		info = mochi.token.validate(token)
+		if not info:
+			a.error(401, "Invalid token")
+			return
+	elif not a.user:
+		a.error(401, "Authentication required")
+		return
+
+	function_expire()
+	rows = mochi.db.rows("""
+		select id, app, category, content, link, count, created
+		from notifications order by created desc limit 100
+	""")
+
+	base_url = ""
+
+	a.header("Content-Type", "application/rss+xml; charset=utf-8")
+
+	a.print('<?xml version="1.0" encoding="UTF-8"?>\n')
+	a.print('<rss version="2.0">\n')
+	a.print('<channel>\n')
+	a.print('<title>Notifications</title>\n')
+	a.print('<link>' + escape_xml(base_url + '/notifications') + '</link>\n')
+	a.print('<description>Your notifications</description>\n')
+
+	if rows:
+		a.print('<lastBuildDate>' + mochi.time.local(rows[0]["created"], "rfc822") + '</lastBuildDate>\n')
+
+	for row in rows:
+		title = row["app"] + ": " + row["category"]
+		if row["count"] > 1:
+			title = title + " (" + str(row["count"]) + ")"
+
+		link = row["link"] if row["link"] else "/notifications"
+		if link.startswith("/"):
+			link = base_url + link
+
+		a.print('<item>\n')
+		a.print('<title>' + escape_xml(title) + '</title>\n')
+		a.print('<link>' + escape_xml(link) + '</link>\n')
+		a.print('<description>' + escape_xml(row["content"]) + '</description>\n')
+		a.print('<pubDate>' + mochi.time.local(row["created"], "rfc822") + '</pubDate>\n')
+		a.print('<guid isPermaLink="false">' + escape_xml(row["id"]) + '</guid>\n')
+		a.print('</item>\n')
+
+	a.print('</channel>\n')
+	a.print('</rss>')

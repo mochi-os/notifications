@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { notificationsApi, type NotificationsListResponse } from '@/api/notifications'
+import { requestHelpers } from '@mochi/common'
 
 export const notificationKeys = {
   all: () => ['notifications'] as const,
@@ -38,6 +39,22 @@ export const useClearAllMutation = () => {
     mutationFn: () => notificationsApi.clearAll(),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: notificationKeys.all() })
+    },
+  })
+}
+
+interface TokenCreateResponse {
+  token: string
+}
+
+export const useRssTokenMutation = () => {
+  return useMutation({
+    mutationFn: async () => {
+      const response = await requestHelpers.post<TokenCreateResponse>(
+        '/settings/user/account/token/create',
+        { name: 'Notifications RSS' }
+      )
+      return response.token
     },
   })
 }

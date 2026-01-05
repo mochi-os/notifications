@@ -108,6 +108,39 @@ else
     info "WebSocket endpoint returned HTTP $RESPONSE (may need proper WS client)"
 fi
 
+# Test 9: RSS without auth (should fail)
+info "Testing GET /notifications/rss without auth"
+RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" "$BASE_URL/notifications/rss")
+if [ "$RESPONSE" = "401" ]; then
+    pass "RSS endpoint requires authentication (HTTP 401)"
+else
+    fail "RSS endpoint should return 401 without auth, got HTTP $RESPONSE"
+fi
+
+# Test 10: RSS with session auth
+info "Testing GET /notifications/rss with session"
+RESPONSE=$($CURL "$BASE_URL/notifications/rss")
+if echo "$RESPONSE" | grep -q '<?xml' && echo "$RESPONSE" | grep -q '<rss'; then
+    pass "RSS endpoint returns valid RSS XML"
+    # Verify RSS structure
+    if echo "$RESPONSE" | grep -q '<channel>' && echo "$RESPONSE" | grep -q '<title>Notifications</title>'; then
+        pass "RSS feed has correct structure"
+    else
+        fail "RSS feed missing expected elements"
+    fi
+else
+    fail "RSS endpoint failed: $RESPONSE"
+fi
+
+# Test 11: RSS with invalid token
+info "Testing GET /notifications/rss with invalid token"
+RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" "$BASE_URL/notifications/rss?token=invalid")
+if [ "$RESPONSE" = "401" ]; then
+    pass "RSS endpoint rejects invalid token (HTTP 401)"
+else
+    fail "RSS endpoint should return 401 for invalid token, got HTTP $RESPONSE"
+fi
+
 echo
 echo "========================================"
 echo -e "${GREEN}All tests completed${NC}"
