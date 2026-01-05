@@ -180,15 +180,13 @@ def action_rss(a):
 		from notifications order by created desc limit 100
 	""")
 
-	base_url = ""
-
 	a.header("Content-Type", "application/rss+xml; charset=utf-8")
 
 	a.print('<?xml version="1.0" encoding="UTF-8"?>\n')
 	a.print('<rss version="2.0">\n')
 	a.print('<channel>\n')
 	a.print('<title>Notifications</title>\n')
-	a.print('<link>' + escape_xml(base_url + '/notifications') + '</link>\n')
+	a.print('<link>/notifications</link>\n')
 	a.print('<description>Your notifications</description>\n')
 
 	if rows:
@@ -200,8 +198,6 @@ def action_rss(a):
 			title = title + " (" + str(row["count"]) + ")"
 
 		link = row["link"] if row["link"] else "/notifications"
-		if link.startswith("/"):
-			link = base_url + link
 
 		a.print('<item>\n')
 		a.print('<title>' + escape_xml(title) + '</title>\n')
@@ -232,6 +228,10 @@ def action_push_subscribe(a):
 
 	if not endpoint or not auth or not p256dh:
 		a.error(400, "Missing subscription data")
+		return
+
+	if len(endpoint) > 2048 or len(auth) > 256 or len(p256dh) > 256:
+		a.error(400, "Invalid subscription data")
 		return
 
 	now = mochi.time.now()
