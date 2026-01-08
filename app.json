@@ -34,7 +34,15 @@
 		"token/delete": {"function": "action_token_delete"},
 		"push/key": {"function": "action_push_key"},
 		"push/subscribe": {"function": "action_push_subscribe"},
-		"push/unsubscribe": {"function": "action_push_unsubscribe"}
+		"push/unsubscribe": {"function": "action_push_unsubscribe"},
+
+		"-/accounts/providers": {"function": "action_accounts_providers"},
+		"-/accounts/list": {"function": "action_accounts_list"},
+		"-/accounts/add": {"function": "action_accounts_add"},
+		"-/accounts/update": {"function": "action_accounts_update"},
+		"-/accounts/remove": {"function": "action_accounts_remove"},
+		"-/accounts/verify": {"function": "action_accounts_verify"},
+		"-/accounts/vapid": {"function": "action_accounts_vapid"}
 	},
 
 	"functions": {
