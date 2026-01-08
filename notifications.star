@@ -325,6 +325,15 @@ def action_accounts_list(a):
 	capability = a.input("capability")
 	return {"data": mochi.account.list(capability)}
 
+def action_accounts_get(a):
+	"""Get a single connected account"""
+	id = a.input("id", "").strip()
+	if not id or not id.isdigit():
+		a.error(400, "Invalid id")
+		return
+	result = mochi.account.get(int(id))
+	return {"data": result}
+
 def action_accounts_add(a):
 	"""Add a new connected account"""
 	type = a.input("type")
