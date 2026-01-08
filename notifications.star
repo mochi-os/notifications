@@ -209,51 +209,39 @@ def action_rss(a):
 
 def action_token_get(a):
 	"""Get existing token or create first one for RSS access"""
-	if not a.user:
-		a.error(401, "Not logged in")
-		return
 	tokens = mochi.token.list()
 	if tokens and len(tokens) > 0:
-		a.json({"exists": True, "count": len(tokens)})
-		return
-	name = a.input("name") or "RSS feed"
+		return {"data": {"exists": True, "count": len(tokens)}}
+	name = (a.input("name") or "RSS feed").strip()
+	if len(name) > 100:
+		return a.error(400, "Token name is too long")
 	token = mochi.token.create(name, [], 0)
 	if not token:
-		a.error(500, "Failed to create token")
-		return
-	a.json({"exists": False, "token": token})
+		return a.error(500, "Failed to create token")
+	return {"data": {"exists": False, "token": token}}
 
 def action_token_create(a):
 	"""Create a new token for RSS access"""
-	if not a.user:
-		a.error(401, "Not logged in")
-		return
-	name = a.input("name") or "RSS feed"
+	name = (a.input("name") or "RSS feed").strip()
+	if len(name) > 100:
+		return a.error(400, "Token name is too long")
 	token = mochi.token.create(name, [], 0)
 	if not token:
-		a.error(500, "Failed to create token")
-		return
-	a.json({"token": token})
+		return a.error(500, "Failed to create token")
+	return {"data": {"token": token}}
 
 def action_token_list(a):
 	"""List all tokens for RSS access"""
-	if not a.user:
-		a.error(401, "Not logged in")
-		return
 	tokens = mochi.token.list()
-	a.json({"tokens": tokens or []})
+	return {"data": {"tokens": tokens or []}}
 
 def action_token_delete(a):
 	"""Delete a token"""
-	if not a.user:
-		a.error(401, "Not logged in")
-		return
 	hash = a.input("hash", "").strip()
-	if not hash:
-		a.error(400, "Missing hash")
-		return
+	if not hash or len(hash) > 128:
+		return a.error(400, "Invalid hash")
 	mochi.token.delete(hash)
-	a.json({})
+	return {"data": {}}
 
 # Push notification endpoints
 
@@ -324,3 +312,76 @@ def send_push(body, link, tag):
 		# Remove expired/invalid subscriptions
 		if not success:
 			mochi.db.execute("delete from subscriptions where endpoint = ?", row["endpoint"])
+
+# Connected accounts endpoints (thin wrappers around mochi.account.* API)
+
+def action_accounts_providers(a):
+	"""List available account providers"""
+	capability = a.input("capability")
+	return {"data": mochi.account.providers(capability)}
+
+def action_accounts_list(a):
+	"""List user's connected accounts"""
+	capability = a.input("capability")
+	return {"data": mochi.account.list(capability)}
+
+def action_accounts_add(a):
+	"""Add a new connected account"""
+	type = a.input("type")
+	if not type:
+		a.error(400, "type is required")
+		return
+
+	# Build fields dict from form inputs
+	fields = {}
+	for key in ["label", "address", "token", "api_key", "url", "endpoint", "auth", "p256dh"]:
+		val = a.input(key)
+		if val:
+			fields[key] = val
+
+	result = mochi.account.add(type, fields)
+	return {"data": result}
+
+def action_accounts_update(a):
+	"""Update a connected account"""
+	id = a.input("id", "").strip()
+	if not id or not id.isdigit():
+		a.error(400, "Invalid id")
+		return
+
+	# Build fields dict from form inputs
+	fields = {}
+	label = a.input("label")
+	if label != None:
+		fields["label"] = label
+
+	result = mochi.account.update(int(id), fields)
+	return {"data": result}
+
+def action_accounts_remove(a):
+	"""Remove a connected account"""
+	id = a.input("id", "").strip()
+	if not id or not id.isdigit():
+		a.error(400, "Invalid id")
+		return
+
+	result = mochi.account.remove(int(id))
+	return {"data": result}
+
+def action_accounts_verify(a):
+	"""Verify an account or resend verification code"""
+	id = a.input("id", "").strip()
+	if not id or not id.isdigit():
+		a.error(400, "Invalid id")
+		return
+
+	code = a.input("code")
+	result = mochi.account.verify(int(id), code)
+	return {"data": result}
+
+def action_accounts_vapid(a):
+	"""Return VAPID public key for browser push subscription"""
+	key = mochi.webpush.key()
+	if not key:
+		return a.error(503, "Push notifications not available")
+	return {"data": {"key": key}}
