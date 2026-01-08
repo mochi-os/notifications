@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react'
-import { Bell, Check, Copy, Loader2, MoreVertical, Rss, Trash2 } from 'lucide-react'
+import { Bell, Check, Loader2, MoreVertical, Rss, Trash2 } from 'lucide-react'
 import { cn } from '@mochi/common/lib/utils'
 import { toast, usePush } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
@@ -12,18 +12,12 @@ import {
   DropdownMenuTrigger,
 } from '@mochi/common/components/ui/dropdown-menu'
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '@mochi/common/components/ui/dialog'
-import {
   useNotificationsQuery,
   useMarkAsReadMutation,
   useMarkAllAsReadMutation,
   useClearAllMutation,
-  useRssTokenMutation,
 } from '@/hooks/useNotifications'
+import { RssDialog } from '@/components/rss-dialog'
 import { useNotificationWebSocket } from '@/hooks/useNotificationWebSocket'
 import type { Notification as ApiNotification } from '@/api/notifications'
 
@@ -95,8 +89,6 @@ export function Notifications() {
     return false
   })
   const [rssOpen, setRssOpen] = useState(false)
-  const [rssUrl, setRssUrl] = useState<string | null>(null)
-  const [copied, setCopied] = useState(false)
 
   const { data, isLoading, isError } = useNotificationsQuery()
 
@@ -108,7 +100,6 @@ export function Notifications() {
   const markAsReadMutation = useMarkAsReadMutation()
   const markAllAsReadMutation = useMarkAllAsReadMutation()
   const clearAllMutation = useClearAllMutation()
-  const rssTokenMutation = useRssTokenMutation()
   const push = usePush()
 
   const handleTogglePush = () => {
@@ -118,26 +109,6 @@ export function Notifications() {
     } else {
       push.subscribe()
       toast.success('Push notifications enabled')
-    }
-  }
-
-  const handleOpenRss = () => {
-    setRssOpen(true)
-    if (!rssUrl) {
-      rssTokenMutation.mutate(undefined, {
-        onSuccess: (token) => {
-          setRssUrl(`${window.location.origin}/notifications/rss?token=${token}`)
-        },
-      })
-    }
-  }
-
-  const handleCopyRss = async () => {
-    if (rssUrl) {
-      await navigator.clipboard.writeText(rssUrl)
-      setCopied(true)
-      toast.success('Copied to clipboard')
-      setTimeout(() => setCopied(false), 2000)
     }
   }
 
@@ -226,7 +197,7 @@ export function Notifications() {
                 </DropdownMenuItem>
               )}
               {data?.rss && (
-                <DropdownMenuItem onClick={handleOpenRss}>
+                <DropdownMenuItem onClick={() => setRssOpen(true)}>
                   <Rss className="mr-2 size-4" />
                   RSS feed
                 </DropdownMenuItem>
@@ -278,31 +249,7 @@ export function Notifications() {
       </div>
 
       {/* RSS Dialog */}
-      <Dialog open={rssOpen} onOpenChange={setRssOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>RSS Feed</DialogTitle>
-          </DialogHeader>
-          {rssTokenMutation.isPending ? (
-            <div className="flex items-center justify-center py-4">
-              <Loader2 className="size-6 animate-spin text-muted-foreground" />
-            </div>
-          ) : rssUrl ? (
-            <div className="flex items-center gap-2 rounded-md bg-muted p-3 font-mono text-sm">
-              <code className="flex-1 break-all">{rssUrl}</code>
-              <Button variant="ghost" size="sm" onClick={handleCopyRss}>
-                {copied ? (
-                  <Check className="size-4" />
-                ) : (
-                  <Copy className="size-4" />
-                )}
-              </Button>
-            </div>
-          ) : (
-            <p className="text-sm text-destructive">Failed to generate URL</p>
-          )}
-        </DialogContent>
-      </Dialog>
+      <RssDialog open={rssOpen} onOpenChange={setRssOpen} />
     </main>
   )
 }

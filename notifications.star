@@ -163,14 +163,9 @@ def escape_xml(s):
 	return s
 
 def action_rss(a):
-	# Support token in query parameter for RSS readers
-	token = a.input("token", "").strip()
-	if token:
-		info = mochi.token.validate(token)
-		if not info:
-			a.error(401, "Invalid token")
-			return
-	elif not a.user:
+	# Authentication is handled by the server via cookie, Bearer token, or query parameter token.
+	# The server validates the token's app scope automatically.
+	if not a.user:
 		a.error(401, "Authentication required")
 		return
 
@@ -209,6 +204,56 @@ def action_rss(a):
 
 	a.print('</channel>\n')
 	a.print('</rss>')
+
+# Token management endpoints
+
+def action_token_get(a):
+	"""Get existing token or create first one for RSS access"""
+	if not a.user:
+		a.error(401, "Not logged in")
+		return
+	tokens = mochi.token.list()
+	if tokens and len(tokens) > 0:
+		a.json({"exists": True, "count": len(tokens)})
+		return
+	name = a.input("name") or "RSS feed"
+	token = mochi.token.create(name, [], 0)
+	if not token:
+		a.error(500, "Failed to create token")
+		return
+	a.json({"exists": False, "token": token})
+
+def action_token_create(a):
+	"""Create a new token for RSS access"""
+	if not a.user:
+		a.error(401, "Not logged in")
+		return
+	name = a.input("name") or "RSS feed"
+	token = mochi.token.create(name, [], 0)
+	if not token:
+		a.error(500, "Failed to create token")
+		return
+	a.json({"token": token})
+
+def action_token_list(a):
+	"""List all tokens for RSS access"""
+	if not a.user:
+		a.error(401, "Not logged in")
+		return
+	tokens = mochi.token.list()
+	a.json({"tokens": tokens or []})
+
+def action_token_delete(a):
+	"""Delete a token"""
+	if not a.user:
+		a.error(401, "Not logged in")
+		return
+	hash = a.input("hash", "").strip()
+	if not hash:
+		a.error(400, "Missing hash")
+		return
+	mochi.token.delete(hash)
+	a.json({})
 
 # Push notification endpoints
 
