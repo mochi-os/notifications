@@ -15,13 +15,6 @@ def database_create():
 		unique ( app, category, object )
 	)""")
 	mochi.db.execute("create index if not exists notifications_created on notifications(created)")
-	mochi.db.execute("""create table if not exists subscriptions (
-		id text not null primary key,
-		endpoint text not null unique,
-		auth text not null,
-		p256dh text not null,
-		created integer not null
-	)""")
 
 def database_upgrade(to_version):
 	if to_version == 4:
@@ -32,27 +25,47 @@ def database_upgrade(to_version):
 			p256dh text not null,
 			created integer not null
 		)""")
+	if to_version == 5:
+		# Migrate push subscriptions from local table to accounts system
+		rows = mochi.db.rows("select endpoint, auth, p256dh from subscriptions")
+		for row in rows:
+			mochi.account.add("browser", {
+				"endpoint": row["endpoint"],
+				"auth": row["auth"],
+				"p256dh": row["p256dh"],
+			})
+		# Drop the old subscriptions table
+		mochi.db.execute("drop table if exists subscriptions")
 
 def database_downgrade(from_version):
 	if from_version == 4:
 		mochi.db.execute("drop table if exists subscriptions")
+	if from_version == 5:
+		# Recreate subscriptions table (data was migrated to accounts, cannot restore)
+		mochi.db.execute("""create table if not exists subscriptions (
+			id text not null primary key,
+			endpoint text not null unique,
+			auth text not null,
+			p256dh text not null,
+			created integer not null
+		)""")
 
 # Expiry: 30 days unread, 7 days read
-def function_expire():
+def function_expire(context):
 	now = mochi.time.now()
 	mochi.db.execute("delete from notifications where read = 0 and created < ?", now - 30 * 86400)
 	mochi.db.execute("delete from notifications where read != 0 and created < ?", now - 7 * 86400)
 
-def function_clear_all():
+def function_clear_all(context):
 	mochi.db.execute("delete from notifications")
 
-def function_clear_app(app):
+def function_clear_app(context, app):
 	mochi.db.execute("delete from notifications where app = ?", app)
 
-def function_clear_object(app, object):
+def function_clear_object(context, app, object):
 	mochi.db.execute("delete from notifications where app = ? and object = ?", app, object)
 
-def function_create(app, category, object, content, link):
+def function_create(context, app, category, object, content, link):
 	if not mochi.valid(app, "constant"):
 		return
 	if not mochi.valid(category, "constant"):
@@ -89,15 +102,15 @@ def function_create(app, category, object, content, link):
 	# Send push notification
 	send_push(content, link, app + "-" + category + "-" + object)
 
-def function_list():
+def function_list(context):
 	return mochi.db.rows("select * from notifications order by created desc")
 
-def function_read(id):
+def function_read(context, id):
 	now = mochi.time.now()
 	mochi.db.execute("update notifications set read = ? where id = ?", now, id)
 	mochi.websocket.write("notifications", {"type": "read", "id": id})
 
-def function_read_all():
+def function_read_all(context):
 	now = mochi.time.now()
 	mochi.db.execute("update notifications set read = ?", now)
 	mochi.websocket.write("notifications", {"type": "read_all"})
@@ -117,8 +130,8 @@ def version_gte(version, minimum):
 	return True
 
 def action_list(a):
-	function_expire()
-	rows = function_list()
+	function_expire({})
+	rows = function_list({})
 	row = mochi.db.row("select count(*) as count, coalesce(sum(count), 0) as total from notifications where read = 0")
 
 	# Check if RSS tokens are supported (requires server 0.3+)
@@ -141,15 +154,15 @@ def action_read(a):
 	if not id or len(id) > 64:
 		a.error(400, "Invalid id")
 		return
-	function_read(id)
+	function_read({}, id)
 	return {"data": {}}
 
 def action_read_all(a):
-	function_read_all()
+	function_read_all({})
 	return {"data": {}}
 
 def action_clear_all(a):
-	function_clear_all()
+	function_clear_all({})
 	mochi.websocket.write("notifications", {"type": "clear_all"})
 	return {"data": {}}
 
@@ -169,7 +182,7 @@ def action_rss(a):
 		a.error(401, "Authentication required")
 		return
 
-	function_expire()
+	function_expire({})
 	rows = mochi.db.rows("""
 		select id, app, category, content, link, count, created
 		from notifications order by created desc limit 100
@@ -243,75 +256,9 @@ def action_token_delete(a):
 	mochi.token.delete(hash)
 	return {"data": {}}
 
-# Push notification endpoints
-
-def action_push_key(a):
-	"""Return VAPID public key for client subscription"""
-	key = mochi.webpush.key()
-	if not key:
-		a.error(503, "Push notifications not available")
-		return
-	return {"data": {"key": key}}
-
-def action_push_subscribe(a):
-	"""Subscribe to push notifications"""
-	endpoint = a.input("endpoint", "").strip()
-	auth = a.input("auth", "").strip()
-	p256dh = a.input("p256dh", "").strip()
-
-	if not endpoint or not auth or not p256dh:
-		a.error(400, "Missing subscription data")
-		return
-
-	if len(endpoint) > 2048 or len(auth) > 256 or len(p256dh) > 256:
-		a.error(400, "Invalid subscription data")
-		return
-
-	now = mochi.time.now()
-	id = mochi.uid()
-
-	# Upsert subscription (endpoint is unique per browser)
-	mochi.db.execute("""
-		insert into subscriptions (id, endpoint, auth, p256dh, created)
-		values (?, ?, ?, ?, ?)
-		on conflict(endpoint) do update set auth=?, p256dh=?, created=?
-	""", id, endpoint, auth, p256dh, now, auth, p256dh, now)
-
-	return {"data": {"ok": True}}
-
-def action_push_unsubscribe(a):
-	"""Unsubscribe from push notifications"""
-	endpoint = a.input("endpoint", "").strip()
-
-	if not endpoint:
-		a.error(400, "Missing endpoint")
-		return
-
-	mochi.db.execute("delete from subscriptions where endpoint = ?", endpoint)
-	return {"data": {"ok": True}}
-
 def send_push(body, link, tag):
-	"""Send push notification to all subscriptions"""
-	payload = json.encode({
-		"title": "Mochi",
-		"body": body,
-		"link": link,
-		"tag": tag
-	})
-
-	rows = mochi.db.rows("select endpoint, auth, p256dh from subscriptions")
-
-	for row in rows:
-		success = mochi.webpush.send(
-			endpoint=row["endpoint"],
-			auth=row["auth"],
-			p256dh=row["p256dh"],
-			payload=payload
-		)
-
-		# Remove expired/invalid subscriptions
-		if not success:
-			mochi.db.execute("delete from subscriptions where endpoint = ?", row["endpoint"])
+	"""Send push notification to all browser accounts"""
+	mochi.account.notify(title="Mochi", body=body, link=link, tag=tag)
 
 # Connected accounts endpoints (thin wrappers around mochi.account.* API)
 
@@ -394,3 +341,4 @@ def action_accounts_vapid(a):
 	if not key:
 		return a.error(503, "Push notifications not available")
 	return {"data": {"key": key}}
+

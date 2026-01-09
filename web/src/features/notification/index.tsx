@@ -102,13 +102,18 @@ export function Notifications() {
   const clearAllMutation = useClearAllMutation()
   const push = usePush()
 
-  const handleTogglePush = () => {
-    if (push.subscribed) {
-      push.unsubscribe()
-      toast.success('Push notifications disabled')
-    } else {
-      push.subscribe()
-      toast.success('Push notifications enabled')
+  const handleTogglePush = async () => {
+    try {
+      if (push.subscribed) {
+        await push.unsubscribe()
+        toast.success('Browser notifications disabled')
+      } else {
+        await push.subscribe()
+        toast.success('Browser notifications enabled')
+      }
+    } catch (error) {
+      toast.error('Failed to update browser notifications')
+      console.error('Push toggle error:', error)
     }
   }
 

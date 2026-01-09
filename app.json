@@ -7,11 +7,11 @@
 	"paths": ["notifications"],
 	"services": ["notifications"],
 
-	"architecture": {"engine": "starlark", "version": 2},
+	"architecture": {"engine": "starlark", "version": 3},
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 4,
+		"schema": 5,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"},
@@ -32,10 +32,6 @@
 		"token/create": {"function": "action_token_create"},
 		"token/list": {"function": "action_token_list"},
 		"token/delete": {"function": "action_token_delete"},
-		"push/key": {"function": "action_push_key"},
-		"push/subscribe": {"function": "action_push_subscribe"},
-		"push/unsubscribe": {"function": "action_push_unsubscribe"},
-
 		"accounts/providers": {"function": "action_accounts_providers"},
 		"accounts/list": {"function": "action_accounts_list"},
 		"accounts/get": {"function": "action_accounts_get"},
