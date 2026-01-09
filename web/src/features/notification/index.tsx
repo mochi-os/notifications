@@ -112,7 +112,9 @@ export function Notifications() {
         toast.success('Browser notifications enabled')
       }
     } catch (error) {
-      toast.error('Failed to update browser notifications')
+      const message =
+        error instanceof Error ? error.message : 'Failed to update browser notifications'
+      toast.error(message)
       console.error('Push toggle error:', error)
     }
   }
