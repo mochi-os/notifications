@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react'
-import { Bell, Check, Loader2, MoreVertical, Rss, Trash2 } from 'lucide-react'
+import { Bell, Check, Loader2, MoreVertical, Settings2, Trash2 } from 'lucide-react'
 import { cn } from '@mochi/common/lib/utils'
 import { toast, usePush } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
@@ -17,7 +17,7 @@ import {
   useMarkAllAsReadMutation,
   useClearAllMutation,
 } from '@/hooks/useNotifications'
-import { RssDialog } from '@/components/rss-dialog'
+import { DestinationsDialog } from '@/components/destinations-dialog'
 import { useNotificationWebSocket } from '@/hooks/useNotificationWebSocket'
 import type { Notification as ApiNotification } from '@/api/notifications'
 
@@ -203,12 +203,10 @@ export function Notifications() {
                   />
                 </DropdownMenuItem>
               )}
-              {data?.rss && (
-                <DropdownMenuItem onClick={() => setRssOpen(true)}>
-                  <Rss className="mr-2 size-4" />
-                  RSS feed
-                </DropdownMenuItem>
-              )}
+              <DropdownMenuItem onClick={() => setRssOpen(true)}>
+                <Settings2 className="mr-2 size-4" />
+                Manage destinations
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -255,8 +253,8 @@ export function Notifications() {
         )}
       </div>
 
-      {/* RSS Dialog */}
-      <RssDialog open={rssOpen} onOpenChange={setRssOpen} />
+      {/* Destinations Dialog */}
+      <DestinationsDialog open={rssOpen} onOpenChange={setRssOpen} />
     </main>
   )
 }
