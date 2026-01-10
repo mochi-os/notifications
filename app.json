@@ -11,7 +11,7 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 6,
+		"schema": 7,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"},
@@ -38,7 +38,13 @@
 		"accounts/update": {"function": "action_accounts_update"},
 		"accounts/remove": {"function": "action_accounts_remove"},
 		"accounts/verify": {"function": "action_accounts_verify"},
-		"accounts/vapid": {"function": "action_accounts_vapid"}
+		"accounts/vapid": {"function": "action_accounts_vapid"},
+		"subscriptions/list": {"function": "action_subscriptions_list"},
+		"subscriptions/create": {"function": "action_subscriptions_create"},
+		"subscriptions/update": {"function": "action_subscriptions_update"},
+		"subscriptions/delete": {"function": "action_subscriptions_delete"},
+		"destinations/list": {"function": "action_destinations_list"},
+		"test/subscriptions": {"function": "action_test_subscriptions"}
 	},
 
 	"functions": {
@@ -49,6 +55,10 @@
 		"list": {"function": "function_list"},
 		"read": {"function": "function_read"},
 		"read/all": {"function": "function_read_all"},
-		"expire": {"function": "function_expire"}
+		"expire": {"function": "function_expire"},
+		"subscribe": {"function": "function_subscribe"},
+		"send": {"function": "function_send"},
+		"subscriptions": {"function": "function_subscriptions"},
+		"unsubscribe": {"function": "function_unsubscribe"}
 	}
 }

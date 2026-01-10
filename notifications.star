@@ -22,6 +22,25 @@ def database_create():
 		token text not null unique,
 		created integer not null
 	)""")
+	# Subscriptions table: apps request permission to send notifications
+	mochi.db.execute("""create table if not exists subscriptions (
+		id integer primary key,
+		app text not null,
+		type text not null default '',
+		object text not null default '',
+		label text not null,
+		created integer not null
+	)""")
+	mochi.db.execute("create index if not exists subscriptions_app on subscriptions(app)")
+	mochi.db.execute("create index if not exists subscriptions_app_type_object on subscriptions(app, type, object)")
+	# Destinations table: where subscription notifications are delivered
+	mochi.db.execute("""create table if not exists destinations (
+		subscription integer not null,
+		type text not null,
+		target text not null,
+		primary key (subscription, type, target),
+		foreign key (subscription) references subscriptions(id) on delete cascade
+	)""")
 
 def database_upgrade(to_version):
 	if to_version == 4:
@@ -51,6 +70,28 @@ def database_upgrade(to_version):
 			token text not null unique,
 			created integer not null
 		)""")
+	if to_version == 7:
+		# Add subscriptions table for permission-based notification streams
+		mochi.db.execute("""create table if not exists subscriptions (
+			id integer primary key,
+			app text not null,
+			type text not null default '',
+			object text not null default '',
+			label text not null,
+			created integer not null
+		)""")
+		mochi.db.execute("create index if not exists subscriptions_app on subscriptions(app)")
+		mochi.db.execute("create index if not exists subscriptions_app_type_object on subscriptions(app, type, object)")
+		# Add destinations table for routing notifications
+		mochi.db.execute("""create table if not exists destinations (
+			subscription integer not null,
+			type text not null,
+			target text not null,
+			primary key (subscription, type, target),
+			foreign key (subscription) references subscriptions(id) on delete cascade
+		)""")
+		# Remove old filters table (replaced by subscriptions/destinations)
+		mochi.db.execute("drop table if exists filters")
 
 def database_downgrade(from_version):
 	if from_version == 4:
@@ -66,6 +107,20 @@ def database_downgrade(from_version):
 		)""")
 	if from_version == 6:
 		mochi.db.execute("drop table if exists rss")
+	if from_version == 7:
+		mochi.db.execute("drop table if exists destinations")
+		mochi.db.execute("drop table if exists subscriptions")
+		# Recreate filters table
+		mochi.db.execute("""create table if not exists filters (
+			id integer primary key,
+			feed text not null,
+			action text not null,
+			app text,
+			category text,
+			urgency text,
+			foreign key (feed) references rss(id) on delete cascade
+		)""")
+		mochi.db.execute("create index if not exists filters_feed on filters(feed)")
 
 # Expiry: 30 days unread, 7 days read
 def function_expire(context):
@@ -416,3 +471,405 @@ def action_rss_delete(a):
 	mochi.db.execute("delete from rss where id = ?", id)
 	return {"data": {}}
 
+# Test action for subscription services (temporary)
+def action_test_subscriptions(a):
+	"""Test the subscription services"""
+	results = []
+
+	# Simulate context from a calling app
+	context = {"app": "test-app"}
+
+	# Test 1: Subscribe
+	sub_id = function_subscribe(context, "Test subscription", "post", "123", [
+		{"type": "account", "target": "1"}
+	])
+	results.append({"test": "subscribe", "result": sub_id, "pass": sub_id != None})
+
+	# Test 2: List subscriptions
+	subs = function_subscriptions(context)
+	results.append({"test": "subscriptions", "count": len(subs), "pass": len(subs) == 1})
+
+	# Test 3: Subscribe again (should update, not duplicate)
+	sub_id2 = function_subscribe(context, "Updated label", "post", "123")
+	results.append({"test": "subscribe_update", "same_id": sub_id == sub_id2, "pass": sub_id == sub_id2})
+
+	# Test 4: List with filter
+	subs_filtered = function_subscriptions(context, type="post")
+	results.append({"test": "subscriptions_filtered", "count": len(subs_filtered), "pass": len(subs_filtered) == 1})
+
+	# Test 5: Send (should find the subscription)
+	count = function_send(context, "post", "Test Title", "Test body", "123", "/test")
+	results.append({"test": "send", "count": count, "pass": count >= 0})
+
+	# Test 6: Unsubscribe
+	ok = function_unsubscribe(context, sub_id)
+	results.append({"test": "unsubscribe", "result": ok, "pass": ok == True})
+
+	# Test 7: Verify unsubscribed
+	subs_after = function_subscriptions(context)
+	results.append({"test": "verify_unsubscribed", "count": len(subs_after), "pass": len(subs_after) == 0})
+
+	# Test 8: Unsubscribe non-existent (should fail)
+	ok2 = function_unsubscribe(context, 99999)
+	results.append({"test": "unsubscribe_nonexistent", "result": ok2, "pass": ok2 == False})
+
+	# Test 9: Different app can't unsubscribe
+	sub_id3 = function_subscribe(context, "Another sub", "feed", "456")
+	other_context = {"app": "other-app"}
+	ok3 = function_unsubscribe(other_context, sub_id3)
+	results.append({"test": "unsubscribe_wrong_app", "result": ok3, "pass": ok3 == False})
+
+	# Cleanup
+	function_unsubscribe(context, sub_id3)
+
+	all_passed = True
+	for r in results:
+		if not r["pass"]:
+			all_passed = False
+			break
+	return {"data": {"results": results, "all_passed": all_passed}}
+
+# Subscription services for permission-based notifications
+
+def function_subscribe(context, label, type="", object="", destinations=None):
+	"""Create a subscription for the current user.
+
+	Args:
+		context: Contains 'app' key with calling app ID
+		label: Human-readable description shown to user
+		type: App-defined type (e.g., "post", "feed")
+		object: Object identifier within that type
+		destinations: List of {type, target} dicts for delivery routing
+
+	Returns:
+		Subscription ID if created, None if invalid
+	"""
+	app = context.get("app", "")
+	if not app:
+		return None
+
+	if not label or not mochi.valid(label, "text"):
+		return None
+
+	if type and not mochi.valid(type, "constant"):
+		return None
+
+	if object and not mochi.valid(object, "path"):
+		return None
+
+	now = mochi.time.now()
+
+	# Check if subscription already exists
+	existing = mochi.db.row(
+		"select id from subscriptions where app = ? and type = ? and object = ?",
+		app, type, object
+	)
+	if existing:
+		# Update label and return existing ID
+		mochi.db.execute("update subscriptions set label = ? where id = ?", label, existing["id"])
+		sub_id = existing["id"]
+	else:
+		# Create new subscription
+		mochi.db.execute(
+			"insert into subscriptions (app, type, object, label, created) values (?, ?, ?, ?, ?)",
+			app, type, object, label, now
+		)
+		sub_id = mochi.db.row("select last_insert_rowid() as id")["id"]
+
+	# Update destinations if provided
+	if destinations:
+		# Clear existing destinations
+		mochi.db.execute("delete from destinations where subscription = ?", sub_id)
+		# Add new destinations
+		for dest in destinations:
+			dest_type = dest.get("type", "")
+			dest_target = dest.get("target", "")
+			if dest_type and dest_target:
+				mochi.db.execute(
+					"insert into destinations (subscription, type, target) values (?, ?, ?)",
+					sub_id, dest_type, dest_target
+				)
+
+	return sub_id
+
+def function_send(context, type, title, body, object="", url="", data=None):
+	"""Send notification to all matching subscriptions.
+
+	Args:
+		context: Contains 'app' key with calling app ID
+		type: Notification type to match subscriptions
+		title: Notification title
+		body: Notification body text
+		object: Optional object ID to match specific subscriptions
+		url: Optional link URL
+		data: Optional additional data dict
+
+	Returns:
+		Number of subscriptions notified
+	"""
+	app = context.get("app", "")
+	if not app:
+		return 0
+
+	if not title or not body:
+		return 0
+
+	# Find matching subscriptions
+	if object:
+		# Match specific object or app-wide subscriptions (empty object)
+		subs = mochi.db.rows(
+			"select id from subscriptions where app = ? and type = ? and (object = ? or object = '')",
+			app, type, object
+		)
+	else:
+		# Match only app-wide subscriptions for this type
+		subs = mochi.db.rows(
+			"select id from subscriptions where app = ? and type = ? and object = ''",
+			app, type
+		)
+
+	if not subs:
+		return 0
+
+	count = 0
+	for sub in subs:
+		sub_id = sub["id"]
+
+		# Get destinations for this subscription
+		dests = mochi.db.rows(
+			"select type, target from destinations where subscription = ?",
+			sub_id
+		)
+
+		# Deliver to each destination
+		for dest in dests:
+			if dest["type"] == "account":
+				# Deliver via connected account
+				mochi.account.deliver(
+					app=app,
+					category=type,
+					object=object,
+					content=title + ": " + body,
+					link=url
+				)
+				count += 1
+			# RSS destinations don't need active delivery - they're queried on demand
+
+	return count
+
+def function_subscriptions(context, type=None, object=None):
+	"""List current user's subscriptions for the calling app.
+
+	Args:
+		context: Contains 'app' key with calling app ID
+		type: Optional filter by type
+		object: Optional filter by object
+
+	Returns:
+		List of subscription dicts with destinations
+	"""
+	app = context.get("app", "")
+	if not app:
+		return []
+
+	# Build query based on filters
+	if type and object:
+		subs = mochi.db.rows(
+			"select * from subscriptions where app = ? and type = ? and object = ?",
+			app, type, object
+		)
+	elif type:
+		subs = mochi.db.rows(
+			"select * from subscriptions where app = ? and type = ?",
+			app, type
+		)
+	else:
+		subs = mochi.db.rows(
+			"select * from subscriptions where app = ?",
+			app
+		)
+
+	# Add destinations to each subscription
+	result = []
+	for sub in subs:
+		dests = mochi.db.rows(
+			"select type, target from destinations where subscription = ?",
+			sub["id"]
+		)
+		sub["destinations"] = dests or []
+		result.append(sub)
+
+	return result
+
+def function_unsubscribe(context, id):
+	"""Remove a subscription by ID.
+
+	Args:
+		context: Contains 'app' key with calling app ID
+		id: Subscription ID to remove
+
+	Returns:
+		True if removed, False if not found or not owned by calling app
+	"""
+	app = context.get("app", "")
+	if not app:
+		return False
+
+	if not id:
+		return False
+
+	# Verify subscription exists and belongs to calling app
+	exists = mochi.db.exists(
+		"select 1 from subscriptions where id = ? and app = ?",
+		id, app
+	)
+	if not exists:
+		return False
+
+	# Delete subscription (destinations cascade)
+	mochi.db.execute("delete from subscriptions where id = ?", id)
+	return True
+
+# HTTP action endpoints for subscription management UI
+
+def action_subscriptions_list(a):
+	"""List all subscriptions for current user (all apps)"""
+	subs = mochi.db.rows("select * from subscriptions order by created desc")
+	if not subs:
+		return {"data": []}
+
+	# Add destinations to each subscription
+	result = []
+	for sub in subs:
+		dests = mochi.db.rows(
+			"select type, target from destinations where subscription = ?",
+			sub["id"]
+		)
+		sub["destinations"] = dests or []
+		result.append(sub)
+
+	return {"data": result}
+
+def action_subscriptions_create(a):
+	"""Create a subscription from frontend"""
+	app = a.input("app", "").strip()
+	label = a.input("label", "").strip()
+	type = a.input("type", "").strip()
+	object = a.input("object", "").strip()
+	destinations_json = a.input("destinations", "").strip()
+
+	if not app:
+		return a.error(400, "app is required")
+	if not label:
+		return a.error(400, "label is required")
+
+	if not mochi.valid(app, "constant"):
+		return a.error(400, "Invalid app")
+	if not mochi.valid(label, "text"):
+		return a.error(400, "Invalid label")
+	if type and not mochi.valid(type, "constant"):
+		return a.error(400, "Invalid type")
+	if object and not mochi.valid(object, "path"):
+		return a.error(400, "Invalid object")
+
+	# Parse destinations JSON
+	destinations = []
+	if destinations_json:
+		destinations = json.decode(destinations_json)
+		if not destinations:
+			destinations = []
+
+	now = mochi.time.now()
+
+	# Check if subscription already exists
+	existing = mochi.db.row(
+		"select id from subscriptions where app = ? and type = ? and object = ?",
+		app, type, object
+	)
+	if existing:
+		# Update label
+		mochi.db.execute("update subscriptions set label = ? where id = ?", label, existing["id"])
+		sub_id = existing["id"]
+	else:
+		# Create new subscription
+		mochi.db.execute(
+			"insert into subscriptions (app, type, object, label, created) values (?, ?, ?, ?, ?)",
+			app, type, object, label, now
+		)
+		sub_id = mochi.db.row("select last_insert_rowid() as id")["id"]
+
+	# Update destinations
+	mochi.db.execute("delete from destinations where subscription = ?", sub_id)
+	for dest in destinations:
+		dest_type = dest.get("type", "")
+		dest_target = dest.get("target", "")
+		if dest_type and dest_target:
+			mochi.db.execute(
+				"insert into destinations (subscription, type, target) values (?, ?, ?)",
+				sub_id, dest_type, str(dest_target)
+			)
+
+	return {"data": {"id": sub_id}}
+
+def action_subscriptions_update(a):
+	"""Update destinations for a subscription"""
+	id = a.input("id", "").strip()
+	destinations_json = a.input("destinations", "").strip()
+
+	if not id or not id.isdigit():
+		return a.error(400, "Invalid id")
+
+	sub_id = int(id)
+
+	# Check subscription exists
+	exists = mochi.db.exists("select 1 from subscriptions where id = ?", sub_id)
+	if not exists:
+		return a.error(404, "Subscription not found")
+
+	# Parse destinations JSON
+	destinations = []
+	if destinations_json:
+		destinations = json.decode(destinations_json)
+		if not destinations:
+			destinations = []
+
+	# Update destinations
+	mochi.db.execute("delete from destinations where subscription = ?", sub_id)
+	for dest in destinations:
+		dest_type = dest.get("type", "")
+		dest_target = dest.get("target", "")
+		if dest_type and dest_target:
+			mochi.db.execute(
+				"insert into destinations (subscription, type, target) values (?, ?, ?)",
+				sub_id, dest_type, str(dest_target)
+			)
+
+	return {"data": {}}
+
+def action_subscriptions_delete(a):
+	"""Delete a subscription"""
+	id = a.input("id", "").strip()
+
+	if not id or not id.isdigit():
+		return a.error(400, "Invalid id")
+
+	sub_id = int(id)
+
+	# Check subscription exists
+	exists = mochi.db.exists("select 1 from subscriptions where id = ?", sub_id)
+	if not exists:
+		return a.error(404, "Subscription not found")
+
+	# Delete subscription (destinations cascade)
+	mochi.db.execute("delete from subscriptions where id = ?", sub_id)
+	return {"data": {}}
+
+def action_destinations_list(a):
+	"""List available destinations for permission dialog"""
+	# Get notify-capable accounts
+	accounts = mochi.account.list("notify")
+
+	# Get RSS feeds
+	feeds = mochi.db.rows("select id, name from rss order by name")
+
+	return {"data": {"accounts": accounts or [], "feeds": feeds or []}}

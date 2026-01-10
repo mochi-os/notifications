@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { SubscriptionsManager } from './subscriptions-manager'
 import {
   Button,
   Dialog,
@@ -52,6 +53,7 @@ import {
   CheckCircle2,
   Webhook,
   ChevronDown,
+  ListChecks,
 } from 'lucide-react'
 
 interface Feed {
@@ -69,7 +71,7 @@ interface FeedCreateResponse {
   data: Feed
 }
 
-type DialogView = 'list' | 'create-feed'
+type DialogView = 'list' | 'create-feed' | 'subscriptions'
 
 interface DestinationsDialogProps {
   open: boolean
@@ -377,10 +379,17 @@ export function DestinationsDialog({ open, onOpenChange }: DestinationsDialogPro
                 ? newFeed
                   ? 'Feed created'
                   : 'Create RSS feed'
-                : 'Notification destinations'}
+                : view === 'subscriptions'
+                  ? 'Manage subscriptions'
+                  : 'Notification destinations'}
             </DialogTitle>
             {view === 'list' && (
               <DialogDescription>Manage where your notifications are sent.</DialogDescription>
+            )}
+            {view === 'subscriptions' && (
+              <DialogDescription>
+                Manage which apps can send you notifications.
+              </DialogDescription>
             )}
             {view === 'create-feed' && !newFeed && (
               <DialogDescription>
@@ -467,6 +476,29 @@ export function DestinationsDialog({ open, onOpenChange }: DestinationsDialogPro
                 )}
               </CardContent>
             </Card>
+          )}
+
+          {view === 'list' && (
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={() => setView('subscriptions')}
+            >
+              <ListChecks className="mr-2 h-4 w-4" />
+              Manage subscriptions
+            </Button>
+          )}
+
+          {view === 'subscriptions' && (
+            <div className="space-y-4">
+              <SubscriptionsManager />
+              <DialogFooter>
+                <Button variant="outline" onClick={() => setView('list')}>
+                  <ArrowLeft className="h-4 w-4" />
+                  Back
+                </Button>
+              </DialogFooter>
+            </div>
           )}
 
           {view === 'create-feed' && (
