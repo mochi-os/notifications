@@ -11,7 +11,7 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 5,
+		"schema": 6,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"},
@@ -28,10 +28,9 @@
 		"read/all": {"function": "action_read_all"},
 		"clear/all": {"function": "action_clear_all"},
 		"rss": {"function": "action_rss", "public": true},
-		"token/get": {"function": "action_token_get"},
-		"token/create": {"function": "action_token_create"},
-		"token/list": {"function": "action_token_list"},
-		"token/delete": {"function": "action_token_delete"},
+		"rss/list": {"function": "action_rss_list"},
+		"rss/create": {"function": "action_rss_create"},
+		"rss/delete": {"function": "action_rss_delete"},
 		"accounts/providers": {"function": "action_accounts_providers"},
 		"accounts/list": {"function": "action_accounts_list"},
 		"accounts/get": {"function": "action_accounts_get"},
