@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import {
   Button,
@@ -10,6 +10,7 @@ import {
   DialogTitle,
   Input,
   Label,
+  Switch,
   getErrorMessage,
   toast,
   Skeleton,
@@ -29,281 +30,274 @@ import {
   Check,
   Plus,
   Trash2,
-  ArrowLeft,
-  Key,
+  Rss,
+  Pencil,
 } from 'lucide-react'
 
-interface TokenGetResponse {
-  exists: boolean
-  count?: number
-  token?: string
-}
-
-interface TokenCreateResponse {
-  token: string
-}
-
-interface Token {
-  hash: string
+interface RssFeed {
+  id: string
   name: string
+  token: string
   created: number
-  used: number
-  expires: number
+  enabled: number
 }
 
-interface TokenListResponse {
-  tokens: Token[]
-}
-
-function formatDate(timestamp: number): string {
-  if (!timestamp) return 'Never'
-  return new Date(timestamp * 1000).toLocaleDateString()
-}
-
-type DialogView = 'loading' | 'rss' | 'existing' | 'manage' | 'create'
+type DialogView = 'list' | 'create' | 'created'
 
 interface RssDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
+  initialView?: DialogView
 }
 
-export function RssDialog({ open, onOpenChange }: RssDialogProps) {
-  const [view, setView] = useState<DialogView>('loading')
-  const [rssUrl, setRssUrl] = useState<string | null>(null)
+export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialogProps) {
+  const [view, setView] = useState<DialogView>(initialView)
   const [copied, setCopied] = useState(false)
-  const [newTokenName, setNewTokenName] = useState('')
-  const [newToken, setNewToken] = useState<string | null>(null)
-  const [deleteHash, setDeleteHash] = useState<string | null>(null)
+  const [copiedId, setCopiedId] = useState<string | null>(null)
+  const [newFeedName, setNewFeedName] = useState('')
+  const [createdFeed, setCreatedFeed] = useState<RssFeed | null>(null)
+  const [deleteId, setDeleteId] = useState<string | null>(null)
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editingName, setEditingName] = useState('')
   const queryClient = useQueryClient()
 
   const buildRssUrl = (token: string) => {
     return `${window.location.origin}/notifications/rss?token=${token}`
   }
 
-  // Fetch token status when dialog opens
-  useEffect(() => {
-    if (!open) {
-      // Reset state when closing
-      setView('loading')
-      setRssUrl(null)
-      setCopied(false)
-      setNewTokenName('')
-      setNewToken(null)
-      return
-    }
-
-    // Fetch token status on open
-    const fetchTokenStatus = async () => {
-      setView('loading')
-      try {
-        const response = await requestHelpers.post<TokenGetResponse>('token/get', {
-          name: 'RSS feed',
-        })
-        if (response.exists) {
-          setView('existing')
-        } else if (response.token) {
-          setRssUrl(buildRssUrl(response.token))
-          setView('rss')
-        }
-      } catch (error) {
-        toast.error(getErrorMessage(error, 'Failed to get token'))
-        onOpenChange(false)
-      }
-    }
-
-    fetchTokenStatus()
-  }, [open, onOpenChange])
-
-  const { data: tokensData, isLoading: tokensLoading } = useQuery({
-    queryKey: ['rss-tokens'],
+  const { data: feeds = [], isLoading } = useQuery({
+    queryKey: ['rss-feeds'],
     queryFn: async () => {
-      return await requestHelpers.get<TokenListResponse>('token/list')
+      return await requestHelpers.get<RssFeed[]>('rss/list')
     },
-    enabled: open && view === 'manage',
+    enabled: open,
   })
 
   const createMutation = useMutation({
     mutationFn: async (name: string) => {
-      return await requestHelpers.post<TokenCreateResponse>('token/create', { name })
+      return await requestHelpers.post<RssFeed>('rss/create', { name })
     },
-    onSuccess: (data) => {
-      setNewToken(data.token)
-      setNewTokenName('')
-      queryClient.invalidateQueries({ queryKey: ['rss-tokens'] })
+    onSuccess: (feed) => {
+      setCreatedFeed(feed)
+      setNewFeedName('')
+      setView('created')
+      queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error, 'Failed to create token'))
+      toast.error(getErrorMessage(error, 'Failed to create feed'))
     },
   })
 
   const deleteMutation = useMutation({
-    mutationFn: async (hash: string) => {
-      await requestHelpers.post('token/delete', { hash })
+    mutationFn: async (id: string) => {
+      await requestHelpers.post('rss/delete', { id })
     },
     onSuccess: () => {
-      toast.success('Token deleted')
-      queryClient.invalidateQueries({ queryKey: ['rss-tokens'] })
-      setDeleteHash(null)
+      toast.success('Feed deleted')
+      queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
+      setDeleteId(null)
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error, 'Failed to delete token'))
+      toast.error(getErrorMessage(error, 'Failed to delete feed'))
     },
   })
 
-  const handleCopy = () => {
-    if (rssUrl) {
-      navigator.clipboard.writeText(rssUrl)
-      setCopied(true)
-      toast.success('Copied to clipboard')
-      setTimeout(() => setCopied(false), 2000)
-    }
+  const renameMutation = useMutation({
+    mutationFn: async ({ id, name }: { id: string; name: string }) => {
+      await requestHelpers.post('rss/rename', { id, name })
+    },
+    onSuccess: () => {
+      toast.success('Feed renamed')
+      queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
+      setEditingId(null)
+      setEditingName('')
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, 'Failed to rename feed'))
+    },
+  })
+
+  const toggleEnabledMutation = useMutation({
+    mutationFn: async ({ id, enabled }: { id: string; enabled: boolean }) => {
+      await requestHelpers.post('rss/update', { id, enabled: enabled ? '1' : '0' })
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, 'Failed to update feed'))
+    },
+  })
+
+  const handleCopy = (token: string) => {
+    navigator.clipboard.writeText(buildRssUrl(token))
+    setCopied(true)
+    toast.success('Copied to clipboard')
+    setTimeout(() => setCopied(false), 2000)
   }
 
-  const handleCopyNewToken = () => {
-    if (newToken) {
-      navigator.clipboard.writeText(buildRssUrl(newToken))
-      setCopied(true)
-      toast.success('Copied to clipboard')
-      setTimeout(() => setCopied(false), 2000)
-    }
+  const handleCopyFeed = (feed: RssFeed) => {
+    navigator.clipboard.writeText(buildRssUrl(feed.token))
+    setCopiedId(feed.id)
+    toast.success('Copied to clipboard')
+    setTimeout(() => setCopiedId(null), 2000)
   }
 
   const handleCreate = () => {
-    if (!newTokenName.trim()) {
-      toast.error('Please enter a token name')
+    const name = newFeedName.trim() || 'RSS feed'
+    createMutation.mutate(name)
+  }
+
+  const handleStartEdit = (feed: RssFeed) => {
+    setEditingId(feed.id)
+    setEditingName(feed.name)
+  }
+
+  const handleSaveEdit = () => {
+    if (!editingId) return
+    const name = editingName.trim()
+    if (!name) {
+      setEditingId(null)
+      setEditingName('')
       return
     }
-    createMutation.mutate(newTokenName.trim())
+    renameMutation.mutate({ id: editingId, name })
   }
 
-  const tokens = tokensData?.tokens || []
-
-  const getTitle = () => {
-    switch (view) {
-      case 'manage':
-        return 'Manage tokens'
-      case 'create':
-        return newToken ? 'Token created' : 'Create token'
-      default:
-        return 'RSS feed'
-    }
+  const handleCancelEdit = () => {
+    setEditingId(null)
+    setEditingName('')
   }
 
-  const getDescription = () => {
-    switch (view) {
-      case 'existing':
-        return 'You already have authentication tokens. If you have previously set up this RSS feed, your existing URL will work.'
-      case 'manage':
-        return null
-      case 'create':
-        return newToken
-          ? "Save this URL now. You won't be able to see it again."
-          : 'Create a new authentication token.'
-      default:
-        return 'Add this URL to your RSS reader.'
-    }
+  const handleClose = () => {
+    onOpenChange(false)
+    // Reset state after close animation
+    setTimeout(() => {
+      setView(initialView)
+      setNewFeedName('')
+      setCreatedFeed(null)
+      setCopied(false)
+      setCopiedId(null)
+      setEditingId(null)
+      setEditingName('')
+    }, 200)
   }
 
   return (
     <>
-      <Dialog open={open} onOpenChange={onOpenChange}>
+      <Dialog open={open} onOpenChange={handleClose}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>{getTitle()}</DialogTitle>
-            {getDescription() && (
-              <DialogDescription>{getDescription()}</DialogDescription>
+            <DialogTitle>
+              {view === 'create' && 'Create RSS feed'}
+              {view === 'created' && 'Feed created'}
+              {view === 'list' && 'RSS feeds'}
+            </DialogTitle>
+            {view === 'created' && (
+              <DialogDescription>
+                Save this URL now. You won't be able to see the token again.
+              </DialogDescription>
             )}
           </DialogHeader>
 
-          {view === 'loading' && (
-            <div className="flex items-center justify-center py-8">
-              <Loader2 className="h-6 w-6 animate-spin" />
-            </div>
-          )}
-
-          {view === 'rss' && rssUrl && (
+          {view === 'list' && (
             <div className="space-y-4">
-              <div className="bg-muted flex items-center gap-2 rounded-md p-3 font-mono text-sm">
-                <code className="flex-1 break-all select-all">{rssUrl}</code>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleCopy}
-                  className="shrink-0"
-                >
-                  {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                </Button>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Save this URL securely. You won't be able to see it again.
-              </p>
-              <DialogFooter>
-                <Button onClick={() => onOpenChange(false)}>Done</Button>
-              </DialogFooter>
-            </div>
-          )}
-
-          {view === 'existing' && (
-            <div className="space-y-4">
-              <div className="bg-muted rounded-md p-3 font-mono text-sm">
-                <code className="break-all select-all">
-                  {window.location.origin}/notifications/rss?token=...
-                </code>
-              </div>
-              <DialogFooter>
-                <Button variant="outline" onClick={() => setView('manage')}>
-                  <Key className="h-4 w-4" />
-                  Manage tokens
-                </Button>
-              </DialogFooter>
-            </div>
-          )}
-
-          {view === 'manage' && (
-            <div className="space-y-4">
-              {tokensLoading ? (
+              {isLoading ? (
                 <div className="space-y-2">
                   <Skeleton className="h-12 w-full" />
                   <Skeleton className="h-12 w-full" />
                 </div>
-              ) : tokens.length === 0 ? (
-                <p className="text-sm text-muted-foreground py-4 text-center">
-                  No tokens yet.
-                </p>
+              ) : feeds.length === 0 ? (
+                <div className="text-center py-4">
+                  <Rss className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                  <p className="text-sm text-muted-foreground">
+                    No RSS feeds yet. Create one to get started.
+                  </p>
+                </div>
               ) : (
-                <div className="space-y-2 max-h-64 overflow-y-auto">
-                  {tokens.map((token) => (
-                    <div
-                      key={token.hash}
-                      className="flex items-center justify-between p-3 rounded-md border"
-                    >
-                      <div className="min-w-0 flex-1">
-                        <p className="font-medium truncate">{token.name}</p>
-                        <p className="text-xs text-muted-foreground">
-                          Created {formatDate(token.created)}
-                          {token.used ? ` · Last used ${formatDate(token.used)}` : ''}
-                        </p>
-                      </div>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => setDeleteHash(token.hash)}
-                        disabled={deleteMutation.isPending}
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
+                <div className="space-y-3 max-h-72 overflow-y-auto">
+                  {feeds.map((feed) => (
+                    <div key={feed.id} className="rounded-md border p-3">
+                      {editingId === feed.id ? (
+                        <div className="flex items-center gap-2">
+                          <Input
+                            value={editingName}
+                            onChange={(e) => setEditingName(e.target.value)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter') handleSaveEdit()
+                              if (e.key === 'Escape') handleCancelEdit()
+                            }}
+                            className="flex-1"
+                            autoFocus
+                          />
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={handleSaveEdit}
+                            disabled={renameMutation.isPending}
+                          >
+                            {renameMutation.isPending ? (
+                              <Loader2 className="h-4 w-4 animate-spin" />
+                            ) : (
+                              <Check className="h-4 w-4" />
+                            )}
+                          </Button>
+                        </div>
+                      ) : (
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2">
+                            <p className="min-w-0 flex-1 font-medium truncate">
+                              {feed.name}
+                            </p>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => handleCopyFeed(feed)}
+                            >
+                              {copiedId === feed.id ? (
+                                <Check className="h-4 w-4" />
+                              ) : (
+                                <Copy className="h-4 w-4" />
+                              )}
+                            </Button>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => handleStartEdit(feed)}
+                            >
+                              <Pencil className="h-4 w-4" />
+                            </Button>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => setDeleteId(feed.id)}
+                              disabled={deleteMutation.isPending}
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-muted-foreground">
+                              Notify by default
+                            </span>
+                            <Switch
+                              checked={feed.enabled === 1}
+                              onCheckedChange={(checked) =>
+                                toggleEnabledMutation.mutate({ id: feed.id, enabled: checked })
+                              }
+                              aria-label="Notify by default"
+                            />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
               )}
-              <DialogFooter className="flex-row gap-2 sm:justify-between">
-                <Button variant="ghost" onClick={() => setView('existing')}>
-                  <ArrowLeft className="h-4 w-4" />
-                  Back
-                </Button>
+              <DialogFooter>
                 <Button onClick={() => setView('create')}>
                   <Plus className="h-4 w-4" />
-                  Create token
+                  Create feed
                 </Button>
               </DialogFooter>
             </div>
@@ -311,81 +305,70 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
 
           {view === 'create' && (
             <div className="space-y-4">
-              {newToken ? (
-                <>
-                  <div className="bg-muted flex items-center gap-2 rounded-md p-3 font-mono text-sm">
-                    <code className="flex-1 break-all select-all">
-                      {buildRssUrl(newToken)}
-                    </code>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={handleCopyNewToken}
-                      className="shrink-0"
-                    >
-                      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                    </Button>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Save this URL securely. You won't be able to see it again.
-                  </p>
-                  <DialogFooter>
-                    <Button
-                      onClick={() => {
-                        setNewToken(null)
-                        setView('manage')
-                      }}
-                    >
-                      Done
-                    </Button>
-                  </DialogFooter>
-                </>
-              ) : (
-                <>
-                  <div className="space-y-2">
-                    <Label htmlFor="token-name">Token name</Label>
-                    <Input
-                      id="token-name"
-                      placeholder="e.g., Feedly"
-                      value={newTokenName}
-                      onChange={(e) => setNewTokenName(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') handleCreate()
-                      }}
-                    />
-                  </div>
-                  <DialogFooter className="flex-row gap-2 sm:justify-between">
-                    <Button variant="ghost" onClick={() => setView('manage')}>
-                      <ArrowLeft className="h-4 w-4" />
-                      Back
-                    </Button>
-                    <Button onClick={handleCreate} disabled={createMutation.isPending}>
-                      {createMutation.isPending && (
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                      )}
-                      Create
-                    </Button>
-                  </DialogFooter>
-                </>
-              )}
+              <div className="space-y-2">
+                <Label htmlFor="feed-name">Feed name</Label>
+                <Input
+                  id="feed-name"
+                  placeholder="e.g., Feedly, NewsBlur"
+                  value={newFeedName}
+                  onChange={(e) => setNewFeedName(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') handleCreate()
+                  }}
+                />
+              </div>
+              <DialogFooter>
+                <Button variant="outline" onClick={handleClose}>
+                  Cancel
+                </Button>
+                <Button onClick={handleCreate} disabled={createMutation.isPending}>
+                  {createMutation.isPending ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Plus className="h-4 w-4" />
+                  )}
+                  Create feed
+                </Button>
+              </DialogFooter>
+            </div>
+          )}
+
+          {view === 'created' && createdFeed && (
+            <div className="space-y-4">
+              <div className="bg-muted flex items-center gap-2 rounded-md p-3 font-mono text-sm">
+                <code className="flex-1 break-all select-all">
+                  {buildRssUrl(createdFeed.token)}
+                </code>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => handleCopy(createdFeed.token)}
+                  className="shrink-0"
+                >
+                  {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                </Button>
+              </div>
+              <DialogFooter>
+                <Button onClick={() => setView('list')}>Done</Button>
+              </DialogFooter>
             </div>
           )}
         </DialogContent>
       </Dialog>
 
-      <AlertDialog open={!!deleteHash} onOpenChange={() => setDeleteHash(null)}>
+      <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete token?</AlertDialogTitle>
+            <AlertDialogTitle>Delete feed?</AlertDialogTitle>
             <AlertDialogDescription>
-              This will permanently delete this token. Any RSS readers using it will
-              no longer be able to access your feed.
+              This will permanently delete this feed. Any RSS readers using it will
+              no longer be able to access your notifications.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction
-              onClick={() => deleteHash && deleteMutation.mutate(deleteHash)}
+              onClick={() => deleteId && deleteMutation.mutate(deleteId)}
             >
               Delete
             </AlertDialogAction>

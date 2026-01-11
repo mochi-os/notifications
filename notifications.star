@@ -20,7 +20,8 @@ def database_create():
 		id text primary key,
 		name text not null,
 		token text not null unique,
-		created integer not null
+		created integer not null,
+		enabled integer not null default 1
 	)""")
 	# Subscriptions table: apps request permission to send notifications
 	mochi.db.execute("""create table if not exists subscriptions (
@@ -92,6 +93,9 @@ def database_upgrade(to_version):
 		)""")
 		# Remove old filters table (replaced by subscriptions/destinations)
 		mochi.db.execute("drop table if exists filters")
+	if to_version == 8:
+		# Add enabled column to rss table for "notify by default" behavior
+		mochi.db.execute("alter table rss add column enabled integer not null default 1")
 
 def database_downgrade(from_version):
 	if from_version == 4:
@@ -121,6 +125,17 @@ def database_downgrade(from_version):
 			foreign key (feed) references rss(id) on delete cascade
 		)""")
 		mochi.db.execute("create index if not exists filters_feed on filters(feed)")
+	if from_version == 8:
+		# Remove enabled column from rss table (recreate table without it)
+		mochi.db.execute("""create table rss_new (
+			id text primary key,
+			name text not null,
+			token text not null unique,
+			created integer not null
+		)""")
+		mochi.db.execute("insert into rss_new select id, name, token, created from rss")
+		mochi.db.execute("drop table rss")
+		mochi.db.execute("alter table rss_new rename to rss")
 
 # Expiry: 30 days unread, 7 days read
 def function_expire(context):
@@ -136,43 +151,6 @@ def function_clear_app(context, app):
 
 def function_clear_object(context, app, object):
 	mochi.db.execute("delete from notifications where app = ? and object = ?", app, object)
-
-def function_create(context, app, category, object, content, link):
-	if not mochi.valid(app, "constant"):
-		return
-	if not mochi.valid(category, "constant"):
-		return
-	if not mochi.valid(object, "path"):
-		return
-	if not mochi.valid(content, "text"):
-		return
-	if not mochi.valid(link, "url"):
-		return
-
-	now = mochi.time.now()
-	existing = mochi.db.row("select * from notifications where app = ? and category = ? and object = ?", app, category, object)
-
-	if existing and existing["read"] == 0:
-		count = existing["count"] + 1
-		mochi.db.execute("update notifications set content = ?, count = ?, created = ? where id = ?", content, count, now, existing["id"])
-		id = existing["id"]
-	else:
-		id = mochi.uid()
-		mochi.db.execute("""replace into notifications (id, app, category, object, content, link, count, created, read)
-			values (?, ?, ?, ?, ?, ?, 1, ?, 0)""", id, app, category, object, content, link, now)
-
-	mochi.websocket.write("notifications", {
-		"type": "new",
-		"id": id,
-		"app": app,
-		"category": category,
-		"object": object,
-		"content": content,
-		"link": link
-	})
-
-	# Deliver notification to all connected accounts
-	mochi.account.deliver(app=app, category=category, object=object, content=content, link=link)
 
 def function_list(context):
 	return mochi.db.rows("select * from notifications order by created desc")
@@ -427,7 +405,7 @@ def action_accounts_vapid(a):
 
 def action_rss_list(a):
 	"""List all RSS feeds"""
-	rows = mochi.db.rows("select id, name, token, created from rss order by created desc")
+	rows = mochi.db.rows("select id, name, token, created, enabled from rss order by created desc")
 	return {"data": rows or []}
 
 def action_rss_create(a):
@@ -448,7 +426,7 @@ def action_rss_create(a):
 
 	mochi.db.execute("insert into rss (id, name, token, created) values (?, ?, ?, ?)", id, name, token, now)
 
-	return {"data": {"id": id, "name": name, "token": token, "created": now}}
+	return {"data": {"id": id, "name": name, "token": token, "created": now, "enabled": 1}}
 
 def action_rss_delete(a):
 	"""Delete an RSS feed"""
@@ -469,6 +447,36 @@ def action_rss_delete(a):
 			break
 
 	mochi.db.execute("delete from rss where id = ?", id)
+	return {"data": {}}
+
+def action_rss_rename(a):
+	"""Rename an RSS feed (deprecated, use rss/update)"""
+	return action_rss_update(a)
+
+def action_rss_update(a):
+	"""Update an RSS feed"""
+	id = a.input("id", "").strip()
+	if not id or len(id) > 64:
+		return a.error(400, "Invalid id")
+
+	# Check feed exists
+	exists = mochi.db.exists("select 1 from rss where id = ?", id)
+	if not exists:
+		return a.error(404, "Feed not found")
+
+	# Update name if provided
+	name = a.input("name", "").strip()
+	if name:
+		if len(name) > 100:
+			return a.error(400, "Feed name is too long")
+		mochi.db.execute("update rss set name = ? where id = ?", name, id)
+
+	# Update enabled if provided
+	enabled = a.input("enabled", "").strip()
+	if enabled:
+		enabled_val = 1 if enabled == "1" else 0
+		mochi.db.execute("update rss set enabled = ? where id = ?", enabled_val, id)
+
 	return {"data": {}}
 
 # Test action for subscription services (temporary)
@@ -608,30 +616,37 @@ def function_send(context, type, title, body, object="", url="", data=None):
 		Number of subscriptions notified
 	"""
 	app = context.get("app", "")
+	mochi.log.debug("function_send: app=%s type=%s object=%s title=%s", app, type, object, title)
 	if not app:
+		mochi.log.debug("function_send: no app, returning 0")
 		return 0
 
 	if not title or not body:
+		mochi.log.debug("function_send: no title or body, returning 0")
 		return 0
 
 	# Find matching subscriptions
+	# Empty type in subscription means "all types from this app"
 	if object:
 		# Match specific object or app-wide subscriptions (empty object)
 		subs = mochi.db.rows(
-			"select id from subscriptions where app = ? and type = ? and (object = ? or object = '')",
+			"select id from subscriptions where app = ? and (type = ? or type = '') and (object = ? or object = '')",
 			app, type, object
 		)
 	else:
 		# Match only app-wide subscriptions for this type
 		subs = mochi.db.rows(
-			"select id from subscriptions where app = ? and type = ? and object = ''",
+			"select id from subscriptions where app = ? and (type = ? or type = '') and object = ''",
 			app, type
 		)
 
+	mochi.log.debug("function_send: found %d subscriptions", len(subs))
 	if not subs:
 		return 0
 
 	count = 0
+	content = title + ": " + body
+
 	for sub in subs:
 		sub_id = sub["id"]
 
@@ -640,16 +655,60 @@ def function_send(context, type, title, body, object="", url="", data=None):
 			"select type, target from destinations where subscription = ?",
 			sub_id
 		)
+		mochi.log.debug("function_send: subscription %d has %d destinations", sub_id, len(dests))
 
 		# Deliver to each destination
 		for dest in dests:
-			if dest["type"] == "account":
-				# Deliver via connected account
+			if dest["type"] == "web":
+				# Create in-app notification (shows in notification center)
+				now = mochi.time.now()
+				existing = mochi.db.row(
+					"select * from notifications where app = ? and category = ? and object = ?",
+					app, type, object
+				)
+
+				if existing and existing["read"] == 0:
+					# Update existing unread notification
+					new_count = existing["count"] + 1
+					mochi.db.execute(
+						"update notifications set content = ?, count = ?, created = ? where id = ?",
+						content, new_count, now, existing["id"]
+					)
+					notif_id = existing["id"]
+				else:
+					# Create new notification
+					notif_id = mochi.uid()
+					mochi.db.execute(
+						"""replace into notifications (id, app, category, object, content, link, count, created, read)
+						values (?, ?, ?, ?, ?, ?, 1, ?, 0)""",
+						notif_id, app, type, object, content, url, now
+					)
+
+				# Notify connected WebSocket clients
+				mochi.websocket.write("notifications", {
+					"type": "new",
+					"id": notif_id,
+					"app": app,
+					"category": type,
+					"object": object,
+					"content": content,
+					"link": url,
+					"count": 1,
+					"created": now,
+					"read": 0,
+				})
+				count += 1
+
+			elif dest["type"] == "account":
+				# Deliver via connected account (email, browser push, etc.)
+				mochi.log.debug("function_send: delivering to account %s", dest["target"])
 				mochi.account.deliver(
+					account=int(dest["target"]),
 					app=app,
 					category=type,
 					object=object,
-					content=title + ": " + body,
+					title=title,
+					body=body,
 					link=url
 				)
 				count += 1
@@ -870,6 +929,16 @@ def action_destinations_list(a):
 	accounts = mochi.account.list("notify")
 
 	# Get RSS feeds
-	feeds = mochi.db.rows("select id, name from rss order by name")
+	feeds = mochi.db.rows("select id, name, enabled from rss order by name")
 
 	return {"data": {"accounts": accounts or [], "feeds": feeds or []}}
+
+def action_subscriptions_check(a):
+	"""Check if a subscription exists for a given app"""
+	app = a.input("app", "").strip()
+
+	if not app:
+		return a.error(400, "app is required")
+
+	exists = mochi.db.exists("select 1 from subscriptions where app = ?", app)
+	return {"data": {"exists": exists}}

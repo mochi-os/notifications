@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
-import { Bell, Check, Loader2, MoreVertical, Settings2, Trash2 } from 'lucide-react'
+import { Link } from '@tanstack/react-router'
+import { Bell, Check, ListChecks, Loader2, MoreVertical, Trash2 } from 'lucide-react'
 import { cn } from '@mochi/common/lib/utils'
-import { toast, usePush } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
 import { Switch } from '@mochi/common/components/ui/switch'
 import { Label } from '@mochi/common/components/ui/label'
@@ -17,7 +17,6 @@ import {
   useMarkAllAsReadMutation,
   useClearAllMutation,
 } from '@/hooks/useNotifications'
-import { DestinationsDialog } from '@/components/destinations-dialog'
 import { useNotificationWebSocket } from '@/hooks/useNotificationWebSocket'
 import type { Notification as ApiNotification } from '@/api/notifications'
 
@@ -88,7 +87,6 @@ export function Notifications() {
     }
     return false
   })
-  const [rssOpen, setRssOpen] = useState(false)
 
   const { data, isLoading, isError } = useNotificationsQuery()
 
@@ -100,24 +98,6 @@ export function Notifications() {
   const markAsReadMutation = useMarkAsReadMutation()
   const markAllAsReadMutation = useMarkAllAsReadMutation()
   const clearAllMutation = useClearAllMutation()
-  const push = usePush()
-
-  const handleTogglePush = async () => {
-    try {
-      if (push.subscribed) {
-        await push.unsubscribe()
-        toast.success('Browser notifications disabled')
-      } else {
-        await push.subscribe()
-        toast.success('Browser notifications enabled')
-      }
-    } catch (error) {
-      const message =
-        error instanceof Error ? error.message : 'Failed to update browser notifications'
-      toast.error(message)
-      console.error('Push toggle error:', error)
-    }
-  }
 
   const allNotifications = useMemo(() => data?.data ?? [], [data])
   const unreadCount = useMemo(
@@ -191,21 +171,11 @@ export function Notifications() {
                   Clear all
                 </DropdownMenuItem>
               )}
-              {push.supported && (
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  <Bell className="mr-2 size-4" />
-                  Browser notifications
-                  <Switch
-                    className="ml-auto cursor-pointer"
-                    checked={push.subscribed}
-                    onCheckedChange={handleTogglePush}
-                    disabled={push.isSubscribing || push.isUnsubscribing}
-                  />
-                </DropdownMenuItem>
-              )}
-              <DropdownMenuItem onClick={() => setRssOpen(true)}>
-                <Settings2 className="mr-2 size-4" />
-                Manage destinations
+              <DropdownMenuItem asChild>
+                <Link to="/manage">
+                  <ListChecks className="mr-2 size-4" />
+                  Manage notifications
+                </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -253,8 +223,6 @@ export function Notifications() {
         )}
       </div>
 
-      {/* Destinations Dialog */}
-      <DestinationsDialog open={rssOpen} onOpenChange={setRssOpen} />
     </main>
   )
 }

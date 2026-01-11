@@ -169,26 +169,7 @@ components:
         **Parameters:**
         - `app` (string): App identifier
         - `object` (string): Object identifier (chat ID, feed ID, etc.)
-        
-        ### create(app: string, category: string, object: string, content: string, link: string)
-        Create or update a notification.
-        ```starlark
-        mochi.service.call("notifications", "create", "chat", "message", "abc123", "New message from Bob", "/chat/abc123")
-        ```
-        **Parameters:**
-        - `app` (string): App identifier
-        - `category` (string): Notification category
-        - `object` (string): Object identifier
-        - `content` (string): Notification message/content
-        - `link` (string): URL to the notification source
-        
-        **Validation Rules:**
-        - `app`: Must match "constant" pattern (alphanumeric, underscore, hyphen)
-        - `category`: Must match "constant" pattern
-        - `object`: Must match "path" pattern
-        - `content`: Must match "text" pattern (non-empty text)
-        - `link`: Must match "url" pattern (valid URL)
-        
+
         ### list() -> array
         Retrieve all notifications for the current user, ordered by creation time and content.
         ```starlark
@@ -211,18 +192,18 @@ components:
         
         **Usage Example:**
         ```starlark
-        # Create a notification when a new chat message arrives
-        mochi.service.call("notifications", "create", 
-          "chat", 
-          "message", 
-          chat_id, 
-          user_name + ": " + message_body, 
+        # Send a notification when a new chat message arrives
+        mochi.service.call("notifications", "send",
+          "message",
+          "New message",
+          user_name + ": " + message_body,
+          chat_id,
           "/chat/" + chat_id
         )
-        
+
         # Clear notifications when user views the chat
         mochi.service.call("notifications", "clear.object", "chat", chat_id)
-        
+
         # List all user notifications
         all_notifications = mochi.service.call("notifications", "list")
         ```
@@ -266,48 +247,6 @@ x-service-functions:
       type: void
     example: |
       mochi.service.call("notifications", "clear.object", "chat", "abc123")
-
-  create:
-    summary: Create notification
-    description: Creates or updates a notification (uses REPLACE INTO)
-    parameters:
-      - name: app
-        type: string
-        required: true
-        description: "App identifier (constant pattern)"
-        example: "chat"
-      - name: category
-        type: string
-        required: true
-        description: "Notification category (constant pattern)"
-        example: "message"
-      - name: object
-        type: string
-        required: true
-        description: "Object identifier (path pattern)"
-        example: "abc123xyz"
-      - name: content
-        type: string
-        required: true
-        description: "Notification message (text pattern)"
-        example: "New message from Alice"
-      - name: link
-        type: string
-        required: true
-        description: "URL to notification source (url pattern)"
-        example: "/chat/abc123xyz"
-    returns:
-      type: void
-    validation:
-      - app: Must match "constant" pattern
-      - category: Must match "constant" pattern
-      - object: Must match "path" pattern
-      - content: Must match "text" pattern
-      - link: Must match "url" pattern
-    example: |
-      mochi.service.call("notifications", "create", 
-        "chat", "message", "abc123", 
-        "New message from Bob", "/chat/abc123")
 
   list:
     summary: List all notifications

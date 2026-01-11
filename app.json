@@ -11,7 +11,7 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 7,
+		"schema": 8,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"},
@@ -31,6 +31,8 @@
 		"rss/list": {"function": "action_rss_list"},
 		"rss/create": {"function": "action_rss_create"},
 		"rss/delete": {"function": "action_rss_delete"},
+		"rss/rename": {"function": "action_rss_rename"},
+		"rss/update": {"function": "action_rss_update"},
 		"accounts/providers": {"function": "action_accounts_providers"},
 		"accounts/list": {"function": "action_accounts_list"},
 		"accounts/get": {"function": "action_accounts_get"},
@@ -43,6 +45,7 @@
 		"subscriptions/create": {"function": "action_subscriptions_create"},
 		"subscriptions/update": {"function": "action_subscriptions_update"},
 		"subscriptions/delete": {"function": "action_subscriptions_delete"},
+		"subscriptions/check": {"function": "action_subscriptions_check"},
 		"destinations/list": {"function": "action_destinations_list"},
 		"test/subscriptions": {"function": "action_test_subscriptions"}
 	},
@@ -51,7 +54,6 @@
 		"clear.all": {"function": "function_clear_all"},
 		"clear.app": {"function": "function_clear_app"},
 		"clear.object": {"function": "function_clear_object"},
-		"create": {"function": "function_create"},
 		"list": {"function": "function_list"},
 		"read": {"function": "function_read"},
 		"read/all": {"function": "function_read_all"},

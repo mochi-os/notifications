@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { requestHelpers, toast, getErrorMessage } from '@mochi/common'
 
 export interface SubscriptionDestination {
-  type: 'account' | 'rss'
+  type: 'web' | 'account' | 'rss'
   target: string
 }
 
@@ -16,10 +16,6 @@ export interface Subscription {
   destinations: SubscriptionDestination[]
 }
 
-interface SubscriptionsListResponse {
-  data: Subscription[]
-}
-
 export const subscriptionKeys = {
   all: () => ['subscriptions'] as const,
   list: () => [...subscriptionKeys.all(), 'list'] as const,
@@ -27,8 +23,8 @@ export const subscriptionKeys = {
 
 // Fetch all subscriptions
 async function listSubscriptions(): Promise<Subscription[]> {
-  const response = await requestHelpers.get<SubscriptionsListResponse>('subscriptions/list')
-  return response?.data ?? []
+  const response = await requestHelpers.get<Subscription[]>('subscriptions/list')
+  return response ?? []
 }
 
 // Update subscription destinations
@@ -90,10 +86,10 @@ export function useSubscriptions(): UseSubscriptionsResult {
     mutationFn: (id: number) => deleteSubscription(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: subscriptionKeys.all() })
-      toast.success('Unsubscribed')
+      toast.success('Removed')
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error, 'Failed to unsubscribe'))
+      toast.error(getErrorMessage(error, 'Failed to remove'))
     },
   })
 
