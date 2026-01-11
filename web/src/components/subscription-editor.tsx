@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -10,12 +10,16 @@ import {
   Switch,
   Skeleton,
   useDestinations,
+  usePush,
+  toast,
+  push as pushLib,
 } from '@mochi/common'
-import { Loader2, Bell, Mail, Rss, Webhook } from 'lucide-react'
+import { Bell, Loader2, Mail, Rss, Webhook, Globe, Check } from 'lucide-react'
 import type { Subscription, SubscriptionDestination } from '@/hooks/use-subscriptions'
 
 interface DestinationToggle {
   type: 'account' | 'rss'
+  accountType?: string
   id: number | string
   label: string
   identifier?: string
@@ -31,6 +35,9 @@ interface SubscriptionEditorProps {
 }
 
 function getDestinationIcon(type: string, accountType?: string) {
+  if (type === 'web') {
+    return <Globe className="h-4 w-4" />
+  }
   if (type === 'rss') {
     return <Rss className="h-4 w-4" />
   }
@@ -54,18 +61,31 @@ export function SubscriptionEditor({
   isSaving,
 }: SubscriptionEditorProps) {
   const { destinations, isLoading } = useDestinations('/notifications')
+  const push = usePush()
   const [toggles, setToggles] = useState<DestinationToggle[]>([])
+  const [enableWeb, setEnableWeb] = useState(true)
+  const [enableBrowserPush, setEnableBrowserPush] = useState(false)
+  const [isSubscribingPush, setIsSubscribingPush] = useState(false)
+
+  // Check if browser push is already in destinations
+  const hasBrowserDestination = destinations.some((d) => d.accountType === 'browser')
+  // Show browser push option if supported and not already configured
+  const showBrowserPushOption = push.supported && !hasBrowserDestination
 
   // Initialize toggles when destinations load or subscription changes
   useEffect(() => {
-    if (destinations.length > 0 && subscription) {
+    if (subscription) {
       const enabledTargets = new Set(
         subscription.destinations.map((d) => `${d.type}-${d.target}`)
       )
 
+      // Check if web is enabled in existing destinations
+      setEnableWeb(enabledTargets.has('web-default'))
+
       setToggles(
         destinations.map((d) => ({
           type: d.type,
+          accountType: d.accountType,
           id: d.id,
           label: d.label,
           identifier: d.identifier,
@@ -79,6 +99,8 @@ export function SubscriptionEditor({
   useEffect(() => {
     if (!open) {
       setToggles([])
+      setEnableWeb(true)
+      setEnableBrowserPush(false)
     }
   }, [open])
 
@@ -91,26 +113,172 @@ export function SubscriptionEditor({
   const handleSave = async () => {
     if (!subscription) return
 
-    const enabledDestinations: SubscriptionDestination[] = toggles
+    // Check if any browser destination is being enabled (new or existing)
+    const hasBrowserToggleEnabled = toggles.some(
+      (t) => t.enabled && t.accountType === 'browser'
+    )
+    const needsBrowserPermission = enableBrowserPush || hasBrowserToggleEnabled
+
+    // If browser notifications are enabled, ensure we have permission
+    if (needsBrowserPermission && pushLib.getPermission() !== 'granted') {
+      setIsSubscribingPush(true)
+      try {
+        const permission = await pushLib.requestPermission()
+        if (permission !== 'granted') {
+          toast.error('Browser notification permission is required')
+          setIsSubscribingPush(false)
+          return
+        }
+      } catch (error) {
+        const message =
+          error instanceof Error ? error.message : 'Failed to request notification permission'
+        toast.error(message)
+        setIsSubscribingPush(false)
+        return
+      }
+    }
+
+    // Check if existing browser account has a stale endpoint (e.g., after permission was
+    // revoked and re-granted, the push subscription endpoint may have changed)
+    if (hasBrowserToggleEnabled) {
+      setIsSubscribingPush(true)
+      try {
+        const registration = await navigator.serviceWorker.ready
+        const currentSubscription = await registration.pushManager.getSubscription()
+        const browserToggle = toggles.find((t) => t.enabled && t.accountType === 'browser')
+
+        if (browserToggle && currentSubscription) {
+          // Check if the stored endpoint differs from the current subscription
+          if (browserToggle.identifier !== currentSubscription.endpoint) {
+            // Stale account detected - remove old and create new
+            await push.unsubscribe()
+            await push.subscribe()
+            toast.success('Browser notification account has been refreshed. Please save again.')
+            setIsSubscribingPush(false)
+            return
+          }
+        } else if (browserToggle && !currentSubscription) {
+          // No current subscription but browser toggle is enabled - need to resubscribe
+          await push.unsubscribe() // Clean up server-side account
+          await push.subscribe()
+          toast.success('Browser notification account has been refreshed. Please save again.')
+          setIsSubscribingPush(false)
+          return
+        }
+      } catch (error) {
+        const message =
+          error instanceof Error ? error.message : 'Failed to verify browser subscription'
+        toast.error(message)
+        setIsSubscribingPush(false)
+        return
+      }
+      setIsSubscribingPush(false)
+    }
+
+    // If this is a new browser push subscription, subscribe to create the account
+    let newBrowserAccountId: number | null = null
+    if (enableBrowserPush && !push.subscribed) {
+      setIsSubscribingPush(true)
+      try {
+        await push.subscribe()
+        // Fetch fresh accounts list to get the new browser account ID
+        const res = await fetch('/notifications/-/accounts/list?capability=notify', {
+          credentials: 'include',
+        })
+        if (res.ok) {
+          const data = await res.json()
+          const accounts = data?.data || []
+          const browserAccount = accounts.find((a: { type: string; id: number }) => a.type === 'browser')
+          if (browserAccount) {
+            newBrowserAccountId = browserAccount.id
+          }
+        }
+      } catch (error) {
+        const message =
+          error instanceof Error ? error.message : 'Failed to enable browser notifications'
+        toast.error(message)
+        setIsSubscribingPush(false)
+        return
+      }
+      setIsSubscribingPush(false)
+    }
+
+    const enabledDestinations: SubscriptionDestination[] = []
+
+    // Add web destination if enabled
+    if (enableWeb) {
+      enabledDestinations.push({ type: 'web', target: 'default' })
+    }
+
+    // Add account/rss destinations (excluding browser if we just created a new one)
+    toggles
       .filter((t) => t.enabled)
-      .map((t) => ({
-        type: t.type,
-        target: String(t.id),
-      }))
+      .filter((t) => !(newBrowserAccountId !== null && t.accountType === 'browser'))
+      .forEach((t) => {
+        enabledDestinations.push({
+          type: t.type,
+          target: String(t.id),
+        })
+      })
+
+    // Add newly created browser account if applicable
+    if (newBrowserAccountId !== null) {
+      enabledDestinations.push({
+        type: 'account',
+        target: String(newBrowserAccountId),
+      })
+    }
 
     await onSave(subscription.id, enabledDestinations)
     onOpenChange(false)
   }
 
+  // Build unified sorted list of all destination options
+  type UnifiedItem =
+    | { kind: 'web' }
+    | { kind: 'browser' }
+    | { kind: 'toggle'; toggle: DestinationToggle }
+
+  const sortedItems = useMemo((): UnifiedItem[] => {
+    const items: Array<{ label: string; item: UnifiedItem }> = []
+
+    // Add Mochi web
+    items.push({ label: 'Mochi web', item: { kind: 'web' } })
+
+    // Add browser destination option with detected browser name
+    if (showBrowserPushOption) {
+      items.push({ label: pushLib.getBrowserName(), item: { kind: 'browser' } })
+    }
+
+    // Add all toggles (excluding browser accounts to avoid duplicates with showBrowserPushOption)
+    for (const toggle of toggles) {
+      // Skip browser accounts - they're handled by the showBrowserPushOption logic above
+      // or shown as a regular toggle when showBrowserPushOption is false
+      if (toggle.accountType === 'browser' && showBrowserPushOption) {
+        continue
+      }
+      const displayLabel = toggle.accountType === 'email' && toggle.identifier
+        ? toggle.identifier
+        : toggle.label
+      items.push({ label: displayLabel, item: { kind: 'toggle', toggle } })
+    }
+
+    // Sort alphabetically by label
+    items.sort((a, b) => a.label.localeCompare(b.label))
+
+    return items.map((i) => i.item)
+  }, [toggles, showBrowserPushOption])
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <DialogTitle>Edit subscription</DialogTitle>
+          <DialogTitle>
+            {subscription ? subscription.app.charAt(0).toUpperCase() + subscription.app.slice(1) : 'Edit subscription'}
+          </DialogTitle>
           {subscription && (
             <DialogDescription>
               {subscription.label}
-              <span className="block text-xs mt-1">From: {subscription.app}</span>
             </DialogDescription>
           )}
         </DialogHeader>
@@ -121,40 +289,62 @@ export function SubscriptionEditor({
               <Skeleton className="h-12 w-full" />
               <Skeleton className="h-12 w-full" />
             </div>
-          ) : toggles.length === 0 ? (
-            <div className="text-center py-4 text-muted-foreground">
-              <p>No notification destinations available.</p>
-            </div>
           ) : (
-            <div className="space-y-3">
-              <p className="text-sm text-muted-foreground mb-3">
-                Choose where to receive these notifications:
-              </p>
-              {toggles.map((toggle) => (
-                <div
-                  key={`${toggle.type}-${toggle.id}`}
-                  className="flex items-center justify-between rounded-lg border p-3"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted">
-                      {getDestinationIcon(toggle.type, toggle.label)}
+            <div className="space-y-1">
+              {sortedItems.map((item) => {
+                if (item.kind === 'web') {
+                  return (
+                    <div key="web" className="flex items-center justify-between py-2">
+                      <div className="flex items-center gap-3">
+                        <Globe className="h-4 w-4 text-muted-foreground" />
+                        <span className="text-sm">Mochi web</span>
+                      </div>
+                      <Switch
+                        id="edit-toggle-web"
+                        checked={enableWeb}
+                        onCheckedChange={setEnableWeb}
+                      />
                     </div>
-                    <div>
-                      <div className="font-medium text-sm">{toggle.label}</div>
-                      {toggle.identifier && (
-                        <div className="text-xs text-muted-foreground">
-                          {toggle.identifier}
-                        </div>
-                      )}
+                  )
+                }
+                if (item.kind === 'browser') {
+                  return (
+                    <div key="browser" className="flex items-center justify-between py-2">
+                      <div className="flex items-center gap-3">
+                        {getDestinationIcon('account', 'browser')}
+                        <span className="text-sm">{pushLib.getBrowserName()}</span>
+                      </div>
+                      <Switch
+                        id="edit-toggle-browser-push"
+                        checked={enableBrowserPush}
+                        onCheckedChange={setEnableBrowserPush}
+                      />
                     </div>
+                  )
+                }
+                const { toggle } = item
+                const displayLabel = toggle.accountType === 'email' && toggle.identifier
+                  ? toggle.identifier
+                  : toggle.label
+                return (
+                  <div
+                    key={`${toggle.type}-${toggle.id}`}
+                    className="flex items-center justify-between py-2"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-muted-foreground">
+                        {getDestinationIcon(toggle.type, toggle.accountType)}
+                      </span>
+                      <span className="text-sm">{displayLabel}</span>
+                    </div>
+                    <Switch
+                      id={`edit-toggle-${toggle.type}-${toggle.id}`}
+                      checked={toggle.enabled}
+                      onCheckedChange={() => handleToggle(toggle.id)}
+                    />
                   </div>
-                  <Switch
-                    id={`edit-toggle-${toggle.type}-${toggle.id}`}
-                    checked={toggle.enabled}
-                    onCheckedChange={() => handleToggle(toggle.id)}
-                  />
-                </div>
-              ))}
+                )
+              })}
             </div>
           )}
         </div>
@@ -163,8 +353,12 @@ export function SubscriptionEditor({
           <Button variant="outline" onClick={() => onOpenChange(false)}>
             Cancel
           </Button>
-          <Button onClick={handleSave} disabled={isSaving}>
-            {isSaving && <Loader2 className="h-4 w-4 animate-spin" />}
+          <Button onClick={handleSave} disabled={isSaving || isSubscribingPush}>
+            {isSaving || isSubscribingPush ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Check className="h-4 w-4" />
+            )}
             Save
           </Button>
         </DialogFooter>
