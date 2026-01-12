@@ -2,7 +2,6 @@ import { useState, useEffect, useMemo } from 'react'
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -274,13 +273,10 @@ export function SubscriptionEditor({
       <DialogContent className="max-w-md">
         <DialogHeader>
           <DialogTitle>
-            {subscription?.app ? subscription.app.charAt(0).toUpperCase() + subscription.app.slice(1) : 'Edit subscription'}
+            {subscription?.app
+              ? `${subscription.app.charAt(0).toUpperCase() + subscription.app.slice(1)}: ${subscription.label}`
+              : 'Edit subscription'}
           </DialogTitle>
-          {subscription && (
-            <DialogDescription>
-              {subscription.label}
-            </DialogDescription>
-          )}
         </DialogHeader>
 
         <div className="py-4">
