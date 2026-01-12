@@ -2,7 +2,7 @@
 // Copyright Alistair Cunningham 2025
 
 {
-	"version": "1.4",
+	"version": "1.5",
 	"label": "app_name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -20,34 +20,36 @@
 
 	"actions": {
 		"": {"file": "web/dist/index.html"},
+		"manage": {"file": "web/dist/index.html"},
 		"assets": {"files": "web/dist/assets"},
 		"images": {"files": "web/dist/images"},
-		"list": {"function": "action_list"},
-		"count": {"function": "action_count"},
-		"read": {"function": "action_read"},
-		"read/all": {"function": "action_read_all"},
-		"clear/all": {"function": "action_clear_all"},
+		"-/list": {"function": "action_list"},
+		"-/count": {"function": "action_count"},
+		"-/read": {"function": "action_read"},
+		"-/read/all": {"function": "action_read_all"},
+		"-/clear/all": {"function": "action_clear_all"},
 		"rss": {"function": "action_rss", "public": true},
-		"rss/list": {"function": "action_rss_list"},
-		"rss/create": {"function": "action_rss_create"},
-		"rss/delete": {"function": "action_rss_delete"},
-		"rss/rename": {"function": "action_rss_rename"},
-		"rss/update": {"function": "action_rss_update"},
-		"accounts/providers": {"function": "action_accounts_providers"},
-		"accounts/list": {"function": "action_accounts_list"},
-		"accounts/get": {"function": "action_accounts_get"},
-		"accounts/add": {"function": "action_accounts_add"},
-		"accounts/update": {"function": "action_accounts_update"},
-		"accounts/remove": {"function": "action_accounts_remove"},
-		"accounts/verify": {"function": "action_accounts_verify"},
-		"accounts/vapid": {"function": "action_accounts_vapid"},
-		"subscriptions/list": {"function": "action_subscriptions_list"},
-		"subscriptions/create": {"function": "action_subscriptions_create"},
-		"subscriptions/update": {"function": "action_subscriptions_update"},
-		"subscriptions/delete": {"function": "action_subscriptions_delete"},
-		"subscriptions/check": {"function": "action_subscriptions_check"},
-		"destinations/list": {"function": "action_destinations_list"},
-		"test/subscriptions": {"function": "action_test_subscriptions"}
+		"-/rss/list": {"function": "action_rss_list"},
+		"-/rss/create": {"function": "action_rss_create"},
+		"-/rss/delete": {"function": "action_rss_delete"},
+		"-/rss/rename": {"function": "action_rss_rename"},
+		"-/rss/update": {"function": "action_rss_update"},
+		"-/accounts/providers": {"function": "action_accounts_providers"},
+		"-/accounts/list": {"function": "action_accounts_list"},
+		"-/accounts/get": {"function": "action_accounts_get"},
+		"-/accounts/add": {"function": "action_accounts_add"},
+		"-/accounts/update": {"function": "action_accounts_update"},
+		"-/accounts/remove": {"function": "action_accounts_remove"},
+		"-/accounts/verify": {"function": "action_accounts_verify"},
+		"-/accounts/vapid": {"function": "action_accounts_vapid"},
+		"-/subscriptions/list": {"function": "action_subscriptions_list"},
+		"-/subscriptions/create": {"function": "action_subscriptions_create"},
+		"-/subscriptions/update": {"function": "action_subscriptions_update"},
+		"-/subscriptions/delete": {"function": "action_subscriptions_delete"},
+		"-/subscriptions/check": {"function": "action_subscriptions_check"},
+		"-/destinations/list": {"function": "action_destinations_list"},
+		"-/notifications/destinations": {"function": "action_destinations_list"},
+		"-/test/subscriptions": {"function": "action_test_subscriptions"}
 	},
 
 	"functions": {
@@ -61,6 +63,8 @@
 		"subscribe": {"function": "function_subscribe"},
 		"send": {"function": "function_send"},
 		"subscriptions": {"function": "function_subscriptions"},
-		"unsubscribe": {"function": "function_unsubscribe"}
+		"unsubscribe": {"function": "function_unsubscribe"},
+		"add_destination_to_all": {"function": "function_add_destination_to_all"},
+		"destinations": {"function": "function_destinations"}
 	}
 }

@@ -274,7 +274,7 @@ export function SubscriptionEditor({
       <DialogContent className="max-w-md">
         <DialogHeader>
           <DialogTitle>
-            {subscription ? subscription.app.charAt(0).toUpperCase() + subscription.app.slice(1) : 'Edit subscription'}
+            {subscription?.app ? subscription.app.charAt(0).toUpperCase() + subscription.app.slice(1) : 'Edit subscription'}
           </DialogTitle>
           {subscription && (
             <DialogDescription>

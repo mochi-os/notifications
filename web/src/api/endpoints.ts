@@ -1,9 +1,9 @@
 const endpoints = {
   notifications: {
-    list: 'list',
-    read: 'read',
-    readAll: 'read/all',
-    clearAll: 'clear/all',
+    list: '-/list',
+    read: '-/read',
+    readAll: '-/read/all',
+    clearAll: '-/clear/all',
   },
   auth: {
     code: '/_/code',

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { Rss } from 'lucide-react'
-import { Button } from '@mochi/common/components/ui/button'
+import { Button, usePageTitle } from '@mochi/common'
 import { SubscriptionsManager } from '@/components/subscriptions-manager'
 import { RssDialog } from '@/components/rss-dialog'
 
@@ -10,6 +10,7 @@ export const Route = createFileRoute('/_authenticated/manage')({
 })
 
 function ManageNotifications() {
+  usePageTitle('Manage notifications')
   const [rssOpen, setRssOpen] = useState(false)
 
   return (

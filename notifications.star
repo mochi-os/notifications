@@ -349,12 +349,23 @@ def action_accounts_add(a):
 
 	# Build fields dict from form inputs
 	fields = {}
-	for key in ["label", "address", "token", "api_key", "url", "endpoint", "auth", "p256dh", "secret"]:
+	for key in ["label", "address", "token", "api_key", "url", "endpoint", "auth", "p256dh", "secret", "topic", "server"]:
 		val = a.input(key)
 		if val:
 			fields[key] = val
 
+	add_to_existing = a.input("add_to_existing", "1")
+	add_to_existing = add_to_existing == "1" or add_to_existing == "true"
+
 	result = mochi.account.add(type, fields)
+
+	# Set enabled based on add_to_existing and add to existing subscriptions
+	if result and result.get("id"):
+		account_id = result["id"]
+		mochi.account.update(account_id, {"enabled": add_to_existing})
+		if add_to_existing:
+			function_add_destination_to_all({}, "account", account_id)
+
 	return {"data": result}
 
 def action_accounts_update(a):
@@ -416,6 +427,9 @@ def action_rss_create(a):
 	if not name:
 		return a.error(400, "Feed name is required")
 
+	add_to_existing = a.input("add_to_existing", "1")
+	add_to_existing = add_to_existing == "1" or add_to_existing == "true"
+
 	id = mochi.uid()
 	# Create a token via the global token system (stored in users.db tokens table)
 	# This allows the server to authenticate RSS requests via ?token= parameter
@@ -424,9 +438,15 @@ def action_rss_create(a):
 		return a.error(500, "Failed to create token")
 	now = mochi.time.now()
 
-	mochi.db.execute("insert into rss (id, name, token, created) values (?, ?, ?, ?)", id, name, token, now)
+	# Set enabled based on add_to_existing
+	enabled = 1 if add_to_existing else 0
+	mochi.db.execute("insert into rss (id, name, token, created, enabled) values (?, ?, ?, ?, ?)", id, name, token, now, enabled)
 
-	return {"data": {"id": id, "name": name, "token": token, "created": now, "enabled": 1}}
+	# Add to existing subscriptions if requested
+	if add_to_existing:
+		function_add_destination_to_all({}, "rss", id)
+
+	return {"data": {"id": id, "name": name, "token": token, "created": now, "enabled": enabled}}
 
 def action_rss_delete(a):
 	"""Delete an RSS feed"""
@@ -584,8 +604,8 @@ def function_subscribe(context, label, type="", object="", destinations=None):
 		)
 		sub_id = mochi.db.row("select last_insert_rowid() as id")["id"]
 
-	# Update destinations if provided
-	if destinations:
+	# Update destinations if provided (empty list clears all destinations)
+	if destinations != None:
 		# Clear existing destinations
 		mochi.db.execute("delete from destinations where subscription = ?", sub_id)
 		# Add new destinations
@@ -788,6 +808,52 @@ def function_unsubscribe(context, id):
 	# Delete subscription (destinations cascade)
 	mochi.db.execute("delete from subscriptions where id = ?", id)
 	return True
+
+def function_add_destination_to_all(context, type, target):
+	"""Add a destination to all existing subscriptions.
+
+	Args:
+		context: Contains user context
+		type: Destination type ("account" or "rss")
+		target: Destination target (account ID or RSS feed ID)
+
+	Returns:
+		Number of subscriptions updated
+	"""
+	if not type or not target:
+		return 0
+
+	# Get all subscription IDs
+	subs = mochi.db.rows("select id from subscriptions")
+	if not subs:
+		return 0
+
+	count = 0
+	for sub in subs:
+		sub_id = sub["id"]
+		# Check if destination already exists
+		exists = mochi.db.exists(
+			"select 1 from destinations where subscription=? and type=? and target=?",
+			sub_id, type, str(target)
+		)
+		if not exists:
+			mochi.db.execute(
+				"insert into destinations (subscription, type, target) values (?, ?, ?)",
+				sub_id, type, str(target)
+			)
+			count += 1
+
+	return count
+
+def function_destinations(context):
+	"""List available notification destinations for current user.
+
+	Returns:
+		Dict with 'accounts' (notify-capable) and 'feeds' (RSS feeds) lists
+	"""
+	accounts = mochi.account.list("notify")
+	feeds = mochi.db.rows("select id, name, enabled from rss order by name")
+	return {"accounts": accounts or [], "feeds": feeds or []}
 
 # HTTP action endpoints for subscription management UI
 

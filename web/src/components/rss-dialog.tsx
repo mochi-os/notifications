@@ -55,6 +55,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
   const [copied, setCopied] = useState(false)
   const [copiedId, setCopiedId] = useState<string | null>(null)
   const [newFeedName, setNewFeedName] = useState('')
+  const [addToExisting, setAddToExisting] = useState(true)
   const [createdFeed, setCreatedFeed] = useState<RssFeed | null>(null)
   const [deleteId, setDeleteId] = useState<string | null>(null)
   const [editingId, setEditingId] = useState<string | null>(null)
@@ -65,17 +66,20 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
     return `${window.location.origin}/notifications/rss?token=${token}`
   }
 
-  const { data: feeds = [], isLoading } = useQuery({
+  const { data: feedsData, isLoading } = useQuery({
     queryKey: ['rss-feeds'],
     queryFn: async () => {
-      return await requestHelpers.get<RssFeed[]>('rss/list')
+      const result = await requestHelpers.get<RssFeed[]>('-/rss/list')
+      console.log('rss/list response:', result, 'isArray:', Array.isArray(result))
+      return result
     },
     enabled: open,
   })
+  const feeds = Array.isArray(feedsData) ? feedsData : []
 
   const createMutation = useMutation({
-    mutationFn: async (name: string) => {
-      return await requestHelpers.post<RssFeed>('rss/create', { name })
+    mutationFn: async ({ name, addToExisting }: { name: string; addToExisting: boolean }) => {
+      return await requestHelpers.post<RssFeed>('-/rss/create', { name, add_to_existing: addToExisting ? '1' : '0' })
     },
     onSuccess: (feed) => {
       setCreatedFeed(feed)
@@ -90,7 +94,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
 
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      await requestHelpers.post('rss/delete', { id })
+      await requestHelpers.post('-/rss/delete', { id })
     },
     onSuccess: () => {
       toast.success('Feed deleted')
@@ -104,7 +108,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
 
   const renameMutation = useMutation({
     mutationFn: async ({ id, name }: { id: string; name: string }) => {
-      await requestHelpers.post('rss/rename', { id, name })
+      await requestHelpers.post('-/rss/rename', { id, name })
     },
     onSuccess: () => {
       toast.success('Feed renamed')
@@ -119,7 +123,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
 
   const toggleEnabledMutation = useMutation({
     mutationFn: async ({ id, enabled }: { id: string; enabled: boolean }) => {
-      await requestHelpers.post('rss/update', { id, enabled: enabled ? '1' : '0' })
+      await requestHelpers.post('-/rss/update', { id, enabled: enabled ? '1' : '0' })
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
@@ -145,7 +149,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
 
   const handleCreate = () => {
     const name = newFeedName.trim() || 'RSS feed'
-    createMutation.mutate(name)
+    createMutation.mutate({ name, addToExisting })
   }
 
   const handleStartEdit = (feed: RssFeed) => {
@@ -175,6 +179,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
     setTimeout(() => {
       setView(initialView)
       setNewFeedName('')
+      setAddToExisting(true)
       setCreatedFeed(null)
       setCopied(false)
       setCopiedId(null)
@@ -276,7 +281,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
                               <Trash2 className="h-4 w-4" />
                             </Button>
                           </div>
-                          <div className="flex items-center justify-between">
+                          <div className="flex items-center justify-end gap-2">
                             <span className="text-sm text-muted-foreground">
                               Notify by default
                             </span>
@@ -315,6 +320,18 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') handleCreate()
                   }}
+                />
+              </div>
+              <div className="flex items-center justify-between rounded-lg border p-4">
+                <div>
+                  <div className="font-medium">Add to existing subscriptions</div>
+                  <div className="text-sm text-muted-foreground">
+                    Use this feed for your current notification subscriptions
+                  </div>
+                </div>
+                <Switch
+                  checked={addToExisting}
+                  onCheckedChange={setAddToExisting}
                 />
               </div>
               <DialogFooter>

@@ -23,8 +23,21 @@ export const subscriptionKeys = {
 
 // Fetch all subscriptions
 async function listSubscriptions(): Promise<Subscription[]> {
-  const response = await requestHelpers.get<Subscription[]>('subscriptions/list')
-  return response ?? []
+  const response = await requestHelpers.get<Subscription[]>('-/subscriptions/list')
+  // Ensure we always return an array
+  if (!Array.isArray(response)) {
+    console.error('Unexpected subscriptions response:', response)
+    return []
+  }
+  // Filter out any malformed entries
+  return response.filter(
+    (sub): sub is Subscription =>
+      sub != null &&
+      typeof sub === 'object' &&
+      typeof sub.id === 'number' &&
+      typeof sub.app === 'string' &&
+      typeof sub.label === 'string'
+  )
 }
 
 // Update subscription destinations
@@ -33,7 +46,7 @@ async function updateDestinations(id: number, destinations: SubscriptionDestinat
   formData.append('id', String(id))
   formData.append('destinations', JSON.stringify(destinations))
 
-  await requestHelpers.post('subscriptions/update', formData.toString(), {
+  await requestHelpers.post('-/subscriptions/update', formData.toString(), {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
@@ -45,7 +58,7 @@ async function deleteSubscription(id: number): Promise<void> {
   const formData = new URLSearchParams()
   formData.append('id', String(id))
 
-  await requestHelpers.post('subscriptions/delete', formData.toString(), {
+  await requestHelpers.post('-/subscriptions/delete', formData.toString(), {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },

@@ -20,6 +20,7 @@ import { useSubscriptions, type Subscription, type SubscriptionDestination } fro
 import { SubscriptionEditor } from './subscription-editor'
 
 function formatAppName(app: string): string {
+  if (!app) return 'Unknown'
   return app.charAt(0).toUpperCase() + app.slice(1)
 }
 

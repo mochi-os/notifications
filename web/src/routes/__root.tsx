@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { Toaster } from '@mochi/common/components/ui/sonner'
 import { NavigationProgress } from '@mochi/common/components/navigation-progress'
+import { NotificationTitle } from '@mochi/common/components/notification-title'
 import { GeneralError } from '@mochi/common/features/errors/general-error'
 import { NotFoundError } from '@mochi/common/features/errors/not-found-error'
 
@@ -13,6 +14,7 @@ export const Route = createRootRouteWithContext<{
   component: () => {
     return (
       <>
+        <NotificationTitle />
         <NavigationProgress />
         <Outlet />
         <Toaster duration={5000} />
