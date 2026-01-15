@@ -86,6 +86,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
       setNewFeedName('')
       setView('created')
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
+      queryClient.invalidateQueries({ queryKey: ['destinations', '/notifications'] })
     },
     onError: (error) => {
       toast.error(getErrorMessage(error, 'Failed to create feed'))
@@ -99,6 +100,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
     onSuccess: () => {
       toast.success('Feed deleted')
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
+      queryClient.invalidateQueries({ queryKey: ['destinations', '/notifications'] })
       setDeleteId(null)
     },
     onError: (error) => {
