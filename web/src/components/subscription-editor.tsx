@@ -274,7 +274,7 @@ export function SubscriptionEditor({
         <DialogHeader>
           <DialogTitle>
             {subscription?.app
-              ? `${subscription.app.charAt(0).toUpperCase() + subscription.app.slice(1)}: ${subscription.label}`
+              ? `${subscription.app_name || subscription.app.charAt(0).toUpperCase() + subscription.app.slice(1)}: ${subscription.label}`
               : 'Edit subscription'}
           </DialogTitle>
         </DialogHeader>

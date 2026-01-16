@@ -9,6 +9,7 @@ export interface SubscriptionDestination {
 export interface Subscription {
   id: number
   app: string
+  app_name?: string
   type: string
   object: string
   label: string

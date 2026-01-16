@@ -19,13 +19,9 @@ import { MoreHorizontal, Pencil, Trash2, Bell, Loader2 } from 'lucide-react'
 import { useSubscriptions, type Subscription, type SubscriptionDestination } from '@/hooks/use-subscriptions'
 import { SubscriptionEditor } from './subscription-editor'
 
-function formatAppName(app: string): string {
-  if (!app) return 'Unknown'
-  return app.charAt(0).toUpperCase() + app.slice(1)
-}
-
 function formatDisplayName(subscription: Subscription): string {
-  return `${formatAppName(subscription.app)}: ${subscription.label}`
+  const appName = subscription.app_name || subscription.app.charAt(0).toUpperCase() + subscription.app.slice(1)
+  return `${appName}: ${subscription.label}`
 }
 
 function SubscriptionItem({

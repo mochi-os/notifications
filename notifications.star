@@ -863,7 +863,16 @@ def action_subscriptions_list(a):
 	if not subs:
 		return {"data": []}
 
-	# Add destinations to each subscription
+	# Build app name lookup from mochi.app.list()
+	# Maps both app IDs and paths to app names
+	all_apps = mochi.app.list()
+	app_names = {}
+	for app in all_apps:
+		app_names[app["id"]] = app["name"]
+		for path in app.get("paths", []):
+			app_names[path] = app["name"]
+
+	# Add destinations and app name to each subscription
 	result = []
 	for sub in subs:
 		dests = mochi.db.rows(
@@ -871,6 +880,7 @@ def action_subscriptions_list(a):
 			sub["id"]
 		)
 		sub["destinations"] = dests or []
+		sub["app_name"] = app_names.get(sub["app"], sub["app"].capitalize())
 		result.append(sub)
 
 	return {"data": result}
