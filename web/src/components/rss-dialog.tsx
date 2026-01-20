@@ -387,6 +387,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction
+              variant='destructive'
               onClick={() => deleteId && deleteMutation.mutate(deleteId)}
             >
               Delete
