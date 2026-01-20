@@ -247,6 +247,14 @@ def action_rss(a):
 		from notifications order by created desc limit 100
 	""")
 
+	# Build app name lookup from mochi.app.list()
+	all_apps = mochi.app.list()
+	app_names = {}
+	for app in all_apps:
+		app_names[app["id"]] = app["name"]
+		for path in app.get("paths", []):
+			app_names[path] = app["name"]
+
 	a.header("Content-Type", "application/rss+xml; charset=utf-8")
 
 	a.print('<?xml version="1.0" encoding="UTF-8"?>\n')
@@ -260,7 +268,8 @@ def action_rss(a):
 		a.print('<lastBuildDate>' + mochi.time.local(rows[0]["created"], "rfc822") + '</lastBuildDate>\n')
 
 	for row in rows:
-		title = row["app"] + ": " + row["category"]
+		app_name = app_names.get(row["app"], row["app"])
+		title = app_name + ": " + row["category"]
 		if row["count"] > 1:
 			title = title + " (" + str(row["count"]) + ")"
 
