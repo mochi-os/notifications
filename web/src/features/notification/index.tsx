@@ -1,7 +1,11 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Link } from '@tanstack/react-router'
-import { PageHeader, Main } from '@mochi/common'
+import { PageHeader, Main, EmptyState } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
+import {
+  Card,
+  CardContent,
+} from '@mochi/common/components/ui/card'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,6 +16,7 @@ import { Label } from '@mochi/common/components/ui/label'
 import { Switch } from '@mochi/common/components/ui/switch'
 import { cn } from '@mochi/common/lib/utils'
 import {
+  AlertCircle,
   Bell,
   Check,
   ListChecks,
@@ -66,7 +71,7 @@ function NotificationItem({
       type='button'
       onClick={handleClick}
       className={cn(
-        'hover:bg-accent flex w-full items-start gap-3 rounded-lg px-4 py-3 text-left transition-colors',
+        'hover:bg-accent flex w-full items-start gap-3 px-4 py-3 text-left transition-colors first:rounded-t-[10px] last:rounded-b-[10px]',
         isUnread && 'bg-accent/50'
       )}
     >
@@ -198,15 +203,23 @@ export function Notifications() {
         <div className='mx-auto max-w-2xl'>
           {/* Loading */}
           {isLoading && (
-            <div className='flex items-center justify-center py-12'>
-              <Loader2 className='text-muted-foreground size-6 animate-spin' />
+            <div className='py-12'>
+              <EmptyState
+                icon={Loader2}
+                title="Loading notifications..."
+                className="animate-pulse opacity-70"
+              />
             </div>
           )}
 
           {/* Error */}
           {isError && (
-            <div className='text-destructive py-12 text-center text-sm'>
-              Failed to load notifications
+             <div className='py-12'>
+              <EmptyState
+                icon={AlertCircle}
+                title="Failed to load notifications"
+                description="There was a problem loading your notifications. Please try again."
+              />
             </div>
           )}
 
@@ -214,22 +227,27 @@ export function Notifications() {
           {!isLoading && !isError && (
             <>
               {displayedNotifications.length === 0 ? (
-                <div className='py-12 text-center'>
-                  <Bell className='text-muted-foreground/40 mx-auto mb-3 size-10' />
-                  <p className='text-muted-foreground text-sm'>
-                    {showAll ? 'No notifications' : 'No unread notifications'}
-                  </p>
+                <div className='py-12'>
+                  <EmptyState
+                    icon={Bell}
+                    title={showAll ? 'No notifications' : 'No unread notifications'}
+                    description={!showAll ? "You're all caught up!" : undefined}
+                  />
                 </div>
               ) : (
-                <div className='space-y-1'>
-                  {displayedNotifications.map((notification) => (
-                    <NotificationItem
-                      key={notification.id}
-                      notification={notification}
-                      onMarkAsRead={handleMarkAsRead}
-                    />
-                  ))}
-                </div>
+                <Card>
+                  <CardContent className='p-0'>
+                    <div className='divide-y'>
+                      {displayedNotifications.map((notification) => (
+                        <NotificationItem
+                          key={notification.id}
+                          notification={notification}
+                          onMarkAsRead={handleMarkAsRead}
+                        />
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               )}
             </>
           )}

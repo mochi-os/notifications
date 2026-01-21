@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {
   Button,
-  Skeleton,
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -14,7 +13,9 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  EmptyState,
 } from '@mochi/common'
+import { CardContent } from '@mochi/common/components/ui/card'
 import { MoreHorizontal, Pencil, Trash2, Bell, Loader2 } from 'lucide-react'
 import { useSubscriptions, type Subscription, type SubscriptionDestination } from '@/hooks/use-subscriptions'
 import { SubscriptionEditor } from './subscription-editor'
@@ -36,33 +37,33 @@ function SubscriptionItem({
   isDeleting: boolean
 }) {
   return (
-    <div className="flex items-center justify-between py-3 border-b last:border-0">
-      <div className="flex items-center gap-3 flex-1 min-w-0">
-        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-muted shrink-0">
-          <Bell className="h-4 w-4" />
+    <div className='flex items-center justify-between px-4 py-3'>
+      <div className='flex items-center gap-3 flex-1 min-w-0'>
+        <div className='flex h-9 w-9 items-center justify-center rounded-full bg-muted shrink-0'>
+          <Bell className='size-4' />
         </div>
-        <span className="font-medium">{formatDisplayName(subscription)}</span>
+        <span className='font-medium'>{formatDisplayName(subscription)}</span>
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" disabled={isDeleting}>
+          <Button variant='ghost' size='icon' disabled={isDeleting}>
             {isDeleting ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
+              <Loader2 className='size-4 animate-spin' />
             ) : (
-              <MoreHorizontal className="h-4 w-4" />
+              <MoreHorizontal className='size-4' />
             )}
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
+        <DropdownMenuContent align='end'>
           <DropdownMenuItem onClick={onEdit}>
-            <Pencil className="mr-2 h-4 w-4" />
+            <Pencil className='mr-2 size-4' />
             Edit destinations
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onDelete}
-            className="text-destructive focus:text-destructive"
+            className='text-destructive focus:text-destructive'
           >
-            <Trash2 className="mr-2 h-4 w-4" />
+            <Trash2 className='mr-2 size-4' />
             Remove
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -103,26 +104,36 @@ export function SubscriptionsManager() {
   return (
     <>
       {isLoading ? (
-        <div className="space-y-2">
-          <Skeleton className="h-16 w-full" />
-          <Skeleton className="h-16 w-full" />
-        </div>
+        <CardContent>
+          <EmptyState
+            icon={Loader2}
+            title='Loading subscriptions...'
+            className='animate-pulse opacity-70 py-8'
+          />
+        </CardContent>
       ) : subscriptions.length === 0 ? (
-        <div className="text-center py-8 text-muted-foreground">
-          <p>No notifications configured. The defaults apply.</p>
-        </div>
+        <CardContent>
+          <EmptyState
+            icon={Bell}
+            title='No notifications configured'
+            description='The defaults apply.'
+            className='py-8'
+          />
+        </CardContent>
       ) : (
-        <div>
-          {sortedSubscriptions.map((subscription) => (
-            <SubscriptionItem
-              key={subscription.id}
-              subscription={subscription}
-              onEdit={() => setEditSubscription(subscription)}
-              onDelete={() => setDeleteSubscriptionId(subscription.id)}
-              isDeleting={isDeleting}
-            />
-          ))}
-        </div>
+        <CardContent className='p-0'>
+          <div className='divide-y'>
+            {sortedSubscriptions.map((subscription) => (
+              <SubscriptionItem
+                key={subscription.id}
+                subscription={subscription}
+                onEdit={() => setEditSubscription(subscription)}
+                onDelete={() => setDeleteSubscriptionId(subscription.id)}
+                isDeleting={isDeleting}
+              />
+            ))}
+          </div>
+        </CardContent>
       )}
 
       <SubscriptionEditor
