@@ -368,7 +368,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
                 </Button>
               </div>
               <DialogFooter>
-                <Button onClick={() => setView('list')}>Done</Button>
+                <Button variant='outline' onClick={() => setView('list')}>Done</Button>
               </DialogFooter>
             </div>
           )}

@@ -20,7 +20,7 @@ function ManageNotifications() {
         title='Manage notifications'
         icon={<ListChecks className='size-4 md:size-5' />}
         actions={
-          <Button onClick={() => setRssOpen(true)}>
+          <Button variant='outline' onClick={() => setRssOpen(true)}>
             <Rss className='size-4' />
             RSS feeds
           </Button>
