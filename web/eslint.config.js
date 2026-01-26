@@ -1,3 +1,5 @@
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 import globals from 'globals'
 import js from '@eslint/js'
 import pluginQuery from '@tanstack/eslint-plugin-query'
@@ -5,6 +7,9 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig } from 'eslint/config'
 import tseslint from 'typescript-eslint'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 export default defineConfig(
   { ignores: ['dist', 'src/components/ui'] },
@@ -18,6 +23,10 @@ export default defineConfig(
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: {
+        project: ['./tsconfig.app.json', './tsconfig.node.json'],
+        tsconfigRootDir: __dirname,
+      },
     },
     plugins: {
       'react-hooks': reactHooks,
