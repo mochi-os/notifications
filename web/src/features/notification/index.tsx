@@ -16,7 +16,6 @@ import { Label } from '@mochi/common/components/ui/label'
 import { Switch } from '@mochi/common/components/ui/switch'
 import { cn } from '@mochi/common/lib/utils'
 import {
-  AlertCircle,
   Bell,
   Check,
   ListChecks,
