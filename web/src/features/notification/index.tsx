@@ -20,7 +20,7 @@ import {
   Check,
   ListChecks,
   Loader2,
-  MoreVertical,
+  MoreHorizontal,
   Trash2,
 } from 'lucide-react'
 import type { Notification as ApiNotification } from '@/api/notifications'
@@ -174,7 +174,7 @@ export function Notifications() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant='ghost' size='icon'>
-                  <MoreVertical className='size-5' />
+                  <MoreHorizontal className='size-5' />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align='end'>
