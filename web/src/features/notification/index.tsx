@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Link } from '@tanstack/react-router'
-import { PageHeader, Main, EmptyState, Skeleton } from '@mochi/common'
+import { PageHeader, Main, EmptyState, ListSkeleton } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
 import {
   Card,
@@ -104,7 +104,7 @@ export function Notifications() {
     return false
   })
 
-  const { data, isLoading, isError } = useNotificationsQuery()
+  const { data, isLoading, ErrorComponent } = useNotificationsQuery()
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, String(showAll))
@@ -205,34 +205,20 @@ export function Notifications() {
           {isLoading && (
             <Card>
               <CardContent className='p-0'>
-                <div className='divide-y'>
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <div key={i} className='flex w-full items-start gap-3 px-4 py-3'>
-                      <Skeleton className='mt-1.5 size-2 shrink-0 rounded-full' />
-                      <div className='flex-1 space-y-1.5'>
-                        <Skeleton className='h-4 w-11/12' />
-                        <Skeleton className='h-3 w-24' />
-                      </div>
-                    </div>
-                  ))}
-                </div>
+               <ListSkeleton count={5} variant='simple' avatar className='divide-y px-2' />
               </CardContent>
             </Card>
           )}
 
           {/* Error */}
-          {isError && (
+          {ErrorComponent && (
              <div className='py-12'>
-              <EmptyState
-                icon={AlertCircle}
-                title="Failed to load notifications"
-                description="There was a problem loading your notifications. Please try again."
-              />
+              {ErrorComponent}
             </div>
           )}
 
           {/* List */}
-          {!isLoading && !isError && (
+          {!isLoading && !ErrorComponent && (
             <>
               {displayedNotifications.length === 0 ? (
                 <div className='py-12'>

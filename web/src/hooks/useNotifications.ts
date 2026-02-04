@@ -1,4 +1,5 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useQueryWithError } from '@mochi/common'
 import { notificationsApi, type NotificationsListResponse } from '@/api/notifications'
 
 export const notificationKeys = {
@@ -7,7 +8,7 @@ export const notificationKeys = {
 }
 
 export const useNotificationsQuery = () =>
-  useQuery<NotificationsListResponse>({
+  useQueryWithError<NotificationsListResponse, Error>({
     queryKey: notificationKeys.list(),
     queryFn: () => notificationsApi.list(),
   })
