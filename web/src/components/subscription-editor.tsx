@@ -12,6 +12,7 @@ import {
   usePush,
   toast,
   push as pushLib,
+  getErrorMessage,
 } from '@mochi/common'
 import { Bell, Loader2, Mail, Rss, Webhook, Globe, Check } from 'lucide-react'
 import type { Subscription, SubscriptionDestination } from '@/hooks/use-subscriptions'
@@ -129,9 +130,7 @@ export function SubscriptionEditor({
           return
         }
       } catch (error) {
-        const message =
-          error instanceof Error ? error.message : 'Failed to request notification permission'
-        toast.error(message)
+        toast.error(getErrorMessage(error, 'Failed to request notification permission'))
         setIsSubscribingPush(false)
         return
       }
@@ -165,9 +164,7 @@ export function SubscriptionEditor({
           return
         }
       } catch (error) {
-        const message =
-          error instanceof Error ? error.message : 'Failed to verify browser subscription'
-        toast.error(message)
+        toast.error(getErrorMessage(error, 'Failed to verify browser subscription'))
         setIsSubscribingPush(false)
         return
       }
@@ -193,9 +190,7 @@ export function SubscriptionEditor({
           }
         }
       } catch (error) {
-        const message =
-          error instanceof Error ? error.message : 'Failed to enable browser notifications'
-        toast.error(message)
+        toast.error(getErrorMessage(error, 'Failed to enable browser notifications'))
         setIsSubscribingPush(false)
         return
       }
