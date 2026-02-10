@@ -147,6 +147,7 @@ def function_clear_app(context, app):
 
 def function_clear_object(context, app, object):
 	mochi.db.execute("delete from notifications where app = ? and object = ?", app, object)
+	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object})
 
 def function_list(context):
 	return mochi.db.rows("select * from notifications order by created desc")
