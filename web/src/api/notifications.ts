@@ -61,5 +61,3 @@ export const notificationsApi = {
   markAllAsRead,
   clearAll,
 }
-
-export default notificationsApi

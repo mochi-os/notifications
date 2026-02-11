@@ -83,4 +83,3 @@ export function useNotificationWebSocket() {
   }, [connect])
 }
 
-export default useNotificationWebSocket
