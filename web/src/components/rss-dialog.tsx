@@ -23,6 +23,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   requestHelpers,
+  getAppPath,
 } from '@mochi/common'
 import {
   Loader2,
@@ -63,7 +64,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
   const queryClient = useQueryClient()
 
   const buildRssUrl = (token: string) => {
-    return `${window.location.origin}/notifications/rss?token=${token}`
+    return `${window.location.origin}${getAppPath()}/rss?token=${token}`
   }
 
   const { data: feedsData, isLoading } = useQuery({
@@ -86,7 +87,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
       setNewFeedName('')
       setView('created')
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
-      queryClient.invalidateQueries({ queryKey: ['destinations', '/notifications'] })
+      queryClient.invalidateQueries({ queryKey: ['destinations', getAppPath()] })
     },
     onError: (error) => {
       toast.error(getErrorMessage(error, 'Failed to create feed'))
@@ -100,7 +101,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
     onSuccess: () => {
       toast.success('Feed deleted')
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
-      queryClient.invalidateQueries({ queryKey: ['destinations', '/notifications'] })
+      queryClient.invalidateQueries({ queryKey: ['destinations', getAppPath()] })
       setDeleteId(null)
     },
     onError: (error) => {

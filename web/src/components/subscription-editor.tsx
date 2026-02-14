@@ -13,6 +13,7 @@ import {
   toast,
   push as pushLib,
   getErrorMessage,
+  getAppPath,
 } from '@mochi/common'
 import { Bell, Loader2, Mail, Rss, Webhook, Globe, Check } from 'lucide-react'
 import type { Subscription, SubscriptionDestination } from '@/hooks/use-subscriptions'
@@ -60,7 +61,7 @@ export function SubscriptionEditor({
   onSave,
   isSaving,
 }: SubscriptionEditorProps) {
-  const { destinations, isLoading } = useDestinations('/notifications')
+  const { destinations, isLoading } = useDestinations(getAppPath())
   const push = usePush()
   const [toggles, setToggles] = useState<DestinationToggle[]>([])
   const [enableWeb, setEnableWeb] = useState(true)
