@@ -28,7 +28,7 @@
 		"-/read": {"function": "action_read"},
 		"-/read/all": {"function": "action_read_all"},
 		"-/clear/all": {"function": "action_clear_all"},
-		"rss": {"function": "action_rss", "public": true},
+		"-/rss": {"function": "action_rss", "public": true},
 		"-/rss/list": {"function": "action_rss_list"},
 		"-/rss/create": {"function": "action_rss_create"},
 		"-/rss/delete": {"function": "action_rss_delete"},

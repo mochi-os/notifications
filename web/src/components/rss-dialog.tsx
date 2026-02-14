@@ -64,7 +64,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
   const queryClient = useQueryClient()
 
   const buildRssUrl = (token: string) => {
-    return `${window.location.origin}${getAppPath()}/rss?token=${token}`
+    return `${window.location.origin}${getAppPath()}/-/rss?token=${token}`
   }
 
   const { data: feedsData, isLoading } = useQuery({
