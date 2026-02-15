@@ -179,7 +179,7 @@ export function SubscriptionEditor({
       try {
         await push.subscribe()
         // Fetch fresh accounts list to get the new browser account ID
-        const res = await fetch('/notifications/-/accounts/list?capability=notify', {
+        const res = await fetch(`${getAppPath()}/-/accounts/list?capability=notify`, {
           credentials: 'include',
         })
         if (res.ok) {
