@@ -7,7 +7,7 @@
 	"paths": ["notifications"],
 	"services": ["notifications"],
 
-	"architecture": {"engine": "starlark", "version": 3},
+	"architecture": {"engine": "starlark", "version": 4},
 	"execute": ["notifications.star"],
 
 	"database": {
