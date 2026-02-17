@@ -11,9 +11,11 @@ import {
   Input,
   Label,
   Switch,
+  EmptyState,
+  GeneralError,
+  ListSkeleton,
   getErrorMessage,
   toast,
-  Skeleton,
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -25,15 +27,7 @@ import {
   requestHelpers,
   getAppPath,
 } from '@mochi/common'
-import {
-  Loader2,
-  Copy,
-  Check,
-  Plus,
-  Trash2,
-  Rss,
-  Pencil,
-} from 'lucide-react'
+import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil } from 'lucide-react'
 
 interface RssFeed {
   id: string
@@ -67,11 +61,10 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
     return `${window.location.origin}${getAppPath()}/-/rss?token=${token}`
   }
 
-  const { data: feedsData, isLoading } = useQuery({
+  const { data: feedsData, isLoading, isError, error } = useQuery({
     queryKey: ['rss-feeds'],
     queryFn: async () => {
       const result = await requestHelpers.get<RssFeed[]>('-/rss/list')
-      console.log('rss/list response:', result, 'isArray:', Array.isArray(result))
       return result
     },
     enabled: open,
@@ -211,17 +204,21 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
           {view === 'list' && (
             <div className="space-y-4">
               {isLoading ? (
-                <div className="space-y-2">
-                  <Skeleton className="h-12 w-full" />
-                  <Skeleton className="h-12 w-full" />
-                </div>
+                <ListSkeleton variant="simple" height="h-12" count={2} />
+              ) : isError ? (
+                <GeneralError
+                  error={error}
+                  minimal
+                  mode="inline"
+                  className="py-4"
+                />
               ) : feeds.length === 0 ? (
-                <div className="text-center py-4">
-                  <Rss className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-                  <p className="text-sm text-muted-foreground">
-                    No RSS feeds yet. Create one to get started.
-                  </p>
-                </div>
+                <EmptyState
+                  icon={Rss}
+                  title="No RSS feeds yet"
+                  description="Create one to get started."
+                  className="py-4"
+                />
               ) : (
                 <div className="space-y-3 max-h-72 overflow-y-auto">
                   {feeds.map((feed) => (
