@@ -7,7 +7,7 @@ import {
   DialogTitle,
   Button,
   Switch,
-  Skeleton,
+  ListSkeleton,
   useDestinations,
   usePush,
   toast,
@@ -277,10 +277,7 @@ export function SubscriptionEditor({
 
         <div className="py-4">
           {isLoading ? (
-            <div className="space-y-3">
-              <Skeleton className="h-12 w-full" />
-              <Skeleton className="h-12 w-full" />
-            </div>
+            <ListSkeleton variant="simple" height="h-12" count={2} />
           ) : (
             <div className="space-y-1">
               {sortedItems.map((item) => {
