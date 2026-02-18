@@ -89,7 +89,6 @@ export function useSubscriptions(): UseSubscriptionsResult {
       updateDestinations(id, destinations),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: subscriptionKeys.all() })
-      toast.success('Subscription updated')
     },
     onError: (error) => {
       toast.error(getErrorMessage(error, 'Failed to update subscription'))
