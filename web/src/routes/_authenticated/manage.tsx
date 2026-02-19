@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { ListChecks, Rss } from 'lucide-react'
-import { Button, usePageTitle, PageHeader, Main, Section } from '@mochi/common'
+import { Button, usePageTitle, PageHeader, Main } from '@mochi/common'
 import { SubscriptionsManager } from '@/components/subscriptions-manager'
 import { RssDialog } from '@/components/rss-dialog'
 
@@ -29,14 +29,7 @@ function ManageNotifications() {
         }
       />
       <Main>
-        <div className='mx-auto max-w-2xl'>
-          <Section 
-            title="Channels & Subscriptions" 
-            description="Control how and where you receive notifications"
-          >
-            <SubscriptionsManager />
-          </Section>
-        </div>
+        <SubscriptionsManager />
       </Main>
 
       <RssDialog open={rssOpen} onOpenChange={setRssOpen} initialView='list' />
