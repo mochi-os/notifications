@@ -64,8 +64,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
   const { data: feedsData, isLoading, isError, error } = useQuery({
     queryKey: ['rss-feeds'],
     queryFn: async () => {
-      const result = await requestHelpers.get<RssFeed[]>('-/rss/list')
-      return result
+      return await requestHelpers.get<RssFeed[]>('-/rss/list')
     },
     enabled: open,
   })
