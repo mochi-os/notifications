@@ -269,7 +269,7 @@ export function SubscriptionsManager() {
                 let label: string
                 if (col.kind === 'web') {
                   icon = <Globe className='size-3.5' />
-                  label = 'Web'
+                  label = 'Mochi web'
                 } else if (col.kind === 'destination') {
                   icon = destinationIcon(col.destination.type, col.destination.accountType)
                   label = destinationLabel(col.destination)
