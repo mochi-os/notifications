@@ -8,9 +8,7 @@ import { routeTree } from './routeTree.gen'
 // Styles
 import './styles/index.css'
 
-const queryClient = createQueryClient({
-  onServerError: () => router.navigate({ to: '/500' }),
-})
+const queryClient = createQueryClient()
 
 const router = createRouter({
   routeTree,
