@@ -1,11 +1,14 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Link } from '@tanstack/react-router'
-import { PageHeader, Main, EmptyState, ListSkeleton } from '@mochi/common'
-import { Button } from '@mochi/common/components/ui/button'
 import {
-  Card,
-  CardContent,
-} from '@mochi/common/components/ui/card'
+  PageHeader,
+  Main,
+  EmptyState,
+  ListSkeleton,
+  GeneralError,
+} from '@mochi/common'
+import { Button } from '@mochi/common/components/ui/button'
+import { Card, CardContent } from '@mochi/common/components/ui/card'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -103,7 +106,7 @@ export function Notifications() {
     return false
   })
 
-  const { data, isLoading, ErrorComponent } = useNotificationsQuery()
+  const { data, isLoading, error, refetch } = useNotificationsQuery()
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, String(showAll))
@@ -204,26 +207,38 @@ export function Notifications() {
           {isLoading && (
             <Card>
               <CardContent className='p-0'>
-               <ListSkeleton count={5} variant='simple' avatar className='divide-y px-2' />
+                <ListSkeleton
+                  count={5}
+                  variant='simple'
+                  avatar
+                  className='divide-y px-2'
+                />
               </CardContent>
             </Card>
           )}
 
           {/* Error */}
-          {ErrorComponent && (
-             <div className='py-12'>
-              {ErrorComponent}
+          {error && (
+            <div className='py-12'>
+              <GeneralError
+                error={error}
+                minimal
+                mode='inline'
+                reset={() => void refetch()}
+              />
             </div>
           )}
 
           {/* List */}
-          {!isLoading && !ErrorComponent && (
+          {!isLoading && !error && (
             <>
               {displayedNotifications.length === 0 ? (
                 <div className='py-12'>
                   <EmptyState
                     icon={Bell}
-                    title={showAll ? 'No notifications' : 'No unread notifications'}
+                    title={
+                      showAll ? 'No notifications' : 'No unread notifications'
+                    }
                     description={!showAll ? "You're all caught up!" : undefined}
                   />
                 </div>

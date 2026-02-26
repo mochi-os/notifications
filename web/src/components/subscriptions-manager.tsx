@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback } from 'react'
+import { useQueryClient } from '@tanstack/react-query'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -10,6 +11,7 @@ import {
   AlertDialogTitle,
   Checkbox,
   EmptyState,
+  GeneralError,
   Skeleton,
   useDestinations,
   usePush,
@@ -17,24 +19,32 @@ import {
   toast,
   getErrorMessage,
   getAppPath,
+  type Destination,
 } from '@mochi/common'
-import type { Destination } from '@mochi/common'
 import { Bell, Globe, Mail, Rss, Trash2, Webhook } from 'lucide-react'
-import { useQueryClient } from '@tanstack/react-query'
-import { useSubscriptions, type Subscription, type SubscriptionDestination } from '@/hooks/use-subscriptions'
+import {
+  useSubscriptions,
+  type Subscription,
+  type SubscriptionDestination,
+} from '@/hooks/use-subscriptions'
 
 function formatDisplayName(sub: Subscription): string {
-  const appName = sub.app_name || sub.app.charAt(0).toUpperCase() + sub.app.slice(1)
+  const appName =
+    sub.app_name || sub.app.charAt(0).toUpperCase() + sub.app.slice(1)
   return `${appName}: ${sub.label}`
 }
 
 function destinationIcon(type: string, accountType?: string) {
   if (type === 'rss') return <Rss className='size-3.5' />
   switch (accountType) {
-    case 'email': return <Mail className='size-3.5' />
-    case 'browser': return <Bell className='size-3.5' />
-    case 'url': return <Webhook className='size-3.5' />
-    default: return <Bell className='size-3.5' />
+    case 'email':
+      return <Mail className='size-3.5' />
+    case 'browser':
+      return <Bell className='size-3.5' />
+    case 'url':
+      return <Webhook className='size-3.5' />
+    default:
+      return <Bell className='size-3.5' />
   }
 }
 
@@ -50,18 +60,39 @@ type Column =
 
 export function SubscriptionsManager() {
   const queryClient = useQueryClient()
-  const { subscriptions, isLoading, updateDestinations, unsubscribe, isDeleting } = useSubscriptions()
+  const {
+    subscriptions,
+    isLoading,
+    isError,
+    error,
+    refetch,
+    updateDestinations,
+    unsubscribe,
+    isDeleting,
+  } = useSubscriptions()
   const appBase = getAppPath()
-  const { destinations, isLoading: destinationsLoading } = useDestinations(appBase)
+  const {
+    destinations,
+    isLoading: destinationsLoading,
+    isError: destinationsIsError,
+    error: destinationsError,
+    refetch: refetchDestinations,
+  } = useDestinations(appBase)
   const push = usePush()
 
-  const [deleteSubscriptionId, setDeleteSubscriptionId] = useState<number | null>(null)
+  const [deleteSubscriptionId, setDeleteSubscriptionId] = useState<
+    number | null
+  >(null)
   // Optimistic destinations keyed by subscription ID
-  const [optimistic, setOptimistic] = useState<Record<number, SubscriptionDestination[]>>({})
+  const [optimistic, setOptimistic] = useState<
+    Record<number, SubscriptionDestination[]>
+  >({})
   // Subscription IDs currently saving (prevent concurrent saves per row)
   const [savingRows, setSavingRows] = useState<Set<number>>(new Set())
 
-  const hasBrowserDestination = destinations.some((d) => d.accountType === 'browser')
+  const hasBrowserDestination = destinations.some(
+    (d) => d.accountType === 'browser'
+  )
   const showBrowserPushOption = push.supported && !hasBrowserDestination
 
   const columns = useMemo((): Column[] => {
@@ -79,16 +110,23 @@ export function SubscriptionsManager() {
   }, [destinations, showBrowserPushOption])
 
   const sortedSubscriptions = useMemo(
-    () => [...subscriptions].sort((a, b) => formatDisplayName(a).localeCompare(formatDisplayName(b))),
+    () =>
+      [...subscriptions].sort((a, b) =>
+        formatDisplayName(a).localeCompare(formatDisplayName(b))
+      ),
     [subscriptions]
   )
 
-  function getEffectiveDestinations(sub: Subscription): SubscriptionDestination[] {
+  function getEffectiveDestinations(
+    sub: Subscription
+  ): SubscriptionDestination[] {
     return optimistic[sub.id] ?? sub.destinations
   }
 
   function isChecked(sub: Subscription, type: string, target: string): boolean {
-    return getEffectiveDestinations(sub).some((d) => d.type === type && d.target === target)
+    return getEffectiveDestinations(sub).some(
+      (d) => d.type === type && d.target === target
+    )
   }
 
   // Verify a browser push endpoint isn't stale. Returns the new account ID
@@ -114,20 +152,28 @@ export function SubscriptionsManager() {
       if (res.ok) {
         const data = await res.json()
         const accounts = data?.data || []
-        const browserAccount = accounts.find((a: { type: string; id: number }) => a.type === 'browser')
+        const browserAccount = accounts.find(
+          (a: { type: string; id: number }) => a.type === 'browser'
+        )
         if (browserAccount) {
           queryClient.invalidateQueries({ queryKey: ['destinations'] })
           return String(browserAccount.id)
         }
       }
     } catch (error) {
-      toast.error(getErrorMessage(error, 'Failed to verify browser subscription'))
+      toast.error(
+        getErrorMessage(error, 'Failed to verify browser subscription')
+      )
     }
     return target
   }
 
   const handleToggle = useCallback(
-    async (sub: Subscription, type: SubscriptionDestination['type'], target: string) => {
+    async (
+      sub: Subscription,
+      type: SubscriptionDestination['type'],
+      target: string
+    ) => {
       if (savingRows.has(sub.id)) return
 
       const current = getEffectiveDestinations(sub)
@@ -137,7 +183,9 @@ export function SubscriptionsManager() {
 
       // When toggling ON a browser destination, verify the endpoint isn't stale
       if (!exists && type === 'account') {
-        const dest = destinations.find((d) => d.type === type && String(d.id) === target)
+        const dest = destinations.find(
+          (d) => d.type === type && String(d.id) === target
+        )
         if (dest?.accountType === 'browser') {
           setSavingRows((prev) => new Set(prev).add(sub.id))
           effectiveTarget = await refreshBrowserIfStale(dest)
@@ -165,7 +213,16 @@ export function SubscriptionsManager() {
         })
       }
     },
-    [savingRows, optimistic, subscriptions, updateDestinations, destinations, push, appBase, queryClient]
+    [
+      savingRows,
+      optimistic,
+      subscriptions,
+      updateDestinations,
+      destinations,
+      push,
+      appBase,
+      queryClient,
+    ]
   )
 
   const handleBrowserToggle = useCallback(
@@ -188,16 +245,21 @@ export function SubscriptionsManager() {
         await push.subscribe()
 
         // Fetch accounts to get the new browser account ID
-        const res = await fetch(`${appBase}/-/accounts/list?capability=notify`, {
-          credentials: 'include',
-        })
+        const res = await fetch(
+          `${appBase}/-/accounts/list?capability=notify`,
+          {
+            credentials: 'include',
+          }
+        )
         if (!res.ok) {
           toast.error('Failed to get browser account')
           return
         }
         const data = await res.json()
         const accounts = data?.data || []
-        const browserAccount = accounts.find((a: { type: string; id: number }) => a.type === 'browser')
+        const browserAccount = accounts.find(
+          (a: { type: string; id: number }) => a.type === 'browser'
+        )
         if (!browserAccount) {
           toast.error('Browser account not found')
           return
@@ -205,7 +267,10 @@ export function SubscriptionsManager() {
 
         // Save with new browser destination added
         const current = getEffectiveDestinations(sub)
-        const next = [...current, { type: 'account' as const, target: String(browserAccount.id) }]
+        const next = [
+          ...current,
+          { type: 'account' as const, target: String(browserAccount.id) },
+        ]
 
         setOptimistic((prev) => ({ ...prev, [sub.id]: next }))
         await updateDestinations(sub.id, next)
@@ -213,7 +278,9 @@ export function SubscriptionsManager() {
         // Refetch destinations so the browser column appears as a regular destination
         queryClient.invalidateQueries({ queryKey: ['destinations'] })
       } catch (error) {
-        toast.error(getErrorMessage(error, 'Failed to enable browser notifications'))
+        toast.error(
+          getErrorMessage(error, 'Failed to enable browser notifications')
+        )
       } finally {
         setOptimistic((prev) => {
           const { [sub.id]: _, ...rest } = prev
@@ -226,7 +293,15 @@ export function SubscriptionsManager() {
         })
       }
     },
-    [savingRows, optimistic, subscriptions, updateDestinations, push, appBase, queryClient]
+    [
+      savingRows,
+      optimistic,
+      subscriptions,
+      updateDestinations,
+      push,
+      appBase,
+      queryClient,
+    ]
   )
 
   const handleDelete = async () => {
@@ -246,6 +321,21 @@ export function SubscriptionsManager() {
     )
   }
 
+  if (isError || destinationsIsError) {
+    return (
+      <GeneralError
+        error={error ?? destinationsError}
+        minimal
+        mode='inline'
+        reset={() => {
+          refetch()
+          refetchDestinations()
+        }}
+        className='py-8'
+      />
+    )
+  }
+
   if (subscriptions.length === 0) {
     return (
       <EmptyState
@@ -262,8 +352,8 @@ export function SubscriptionsManager() {
       <div>
         <table className='w-full text-sm'>
           <thead>
-            <tr className='border-b text-muted-foreground'>
-              <th className='py-2 px-4' />
+            <tr className='text-muted-foreground border-b'>
+              <th className='px-4 py-2' />
               {columns.map((col, i) => {
                 let icon: React.ReactNode
                 let label: string
@@ -271,22 +361,27 @@ export function SubscriptionsManager() {
                   icon = <Globe className='size-3.5' />
                   label = 'Mochi web'
                 } else if (col.kind === 'destination') {
-                  icon = destinationIcon(col.destination.type, col.destination.accountType)
+                  icon = destinationIcon(
+                    col.destination.type,
+                    col.destination.accountType
+                  )
                   label = destinationLabel(col.destination)
                 } else {
                   icon = <Bell className='size-3.5' />
                   label = pushLib.getBrowserName()
                 }
                 return (
-                  <th key={i} className='font-medium p-0 align-bottom'>
-                    <div className='flex flex-col items-center pb-2 gap-3'>
+                  <th key={i} className='p-0 align-bottom font-medium'>
+                    <div className='flex flex-col items-center gap-3 pb-2'>
                       <span
-                        className='[writing-mode:vertical-rl] -rotate-45 origin-bottom whitespace-nowrap text-xs'
+                        className='origin-bottom -rotate-45 text-xs whitespace-nowrap [writing-mode:vertical-rl]'
                         title={label}
                       >
                         {label}
                       </span>
-                      <span className='text-muted-foreground shrink-0'>{icon}</span>
+                      <span className='text-muted-foreground shrink-0'>
+                        {icon}
+                      </span>
                     </div>
                   </th>
                 )
@@ -297,15 +392,19 @@ export function SubscriptionsManager() {
           <tbody>
             {sortedSubscriptions.map((sub) => (
               <tr key={sub.id} className='border-b last:border-b-0'>
-                <td className='py-2.5 px-4 font-medium'>{formatDisplayName(sub)}</td>
+                <td className='px-4 py-2.5 font-medium'>
+                  {formatDisplayName(sub)}
+                </td>
                 {columns.map((col, i) => {
                   if (col.kind === 'web') {
                     return (
-                      <td key={i} className='py-2.5 px-2 text-center'>
+                      <td key={i} className='px-2 py-2.5 text-center'>
                         <Checkbox
                           checked={isChecked(sub, 'web', 'default')}
                           disabled={savingRows.has(sub.id)}
-                          onCheckedChange={() => handleToggle(sub, 'web', 'default')}
+                          onCheckedChange={() =>
+                            handleToggle(sub, 'web', 'default')
+                          }
                         />
                       </td>
                     )
@@ -313,18 +412,20 @@ export function SubscriptionsManager() {
                   if (col.kind === 'destination') {
                     const d = col.destination
                     return (
-                      <td key={i} className='py-2.5 px-2 text-center'>
+                      <td key={i} className='px-2 py-2.5 text-center'>
                         <Checkbox
                           checked={isChecked(sub, d.type, String(d.id))}
                           disabled={savingRows.has(sub.id)}
-                          onCheckedChange={() => handleToggle(sub, d.type, String(d.id))}
+                          onCheckedChange={() =>
+                            handleToggle(sub, d.type, String(d.id))
+                          }
                         />
                       </td>
                     )
                   }
                   if (col.kind === 'browser-push') {
                     return (
-                      <td key={i} className='py-2.5 px-2 text-center'>
+                      <td key={i} className='px-2 py-2.5 text-center'>
                         <Checkbox
                           checked={false}
                           disabled={savingRows.has(sub.id)}
@@ -335,9 +436,9 @@ export function SubscriptionsManager() {
                   }
                   return null
                 })}
-                <td className='py-2.5 px-2 text-center'>
+                <td className='px-2 py-2.5 text-center'>
                   <button
-                    className='text-muted-foreground hover:text-destructive transition-colors p-1'
+                    className='text-muted-foreground hover:text-destructive p-1 transition-colors'
                     onClick={() => setDeleteSubscriptionId(sub.id)}
                     disabled={isDeleting}
                   >
@@ -358,13 +459,15 @@ export function SubscriptionsManager() {
           <AlertDialogHeader>
             <AlertDialogTitle>Remove?</AlertDialogTitle>
             <AlertDialogDescription>
-              You will no longer receive notifications for this subscription. The app may
-              ask for permission again if you interact with it.
+              You will no longer receive notifications for this subscription.
+              The app may ask for permission again if you interact with it.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction variant='destructive' onClick={handleDelete}>Remove</AlertDialogAction>
+            <AlertDialogAction variant='destructive' onClick={handleDelete}>
+              Remove
+            </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
