@@ -24,11 +24,12 @@ export const subscriptionKeys = {
 
 // Fetch all subscriptions
 async function listSubscriptions(): Promise<Subscription[]> {
-  const response = await requestHelpers.get<Subscription[]>('-/subscriptions/list')
+  const response = await requestHelpers.get<Subscription[]>(
+    '-/subscriptions/list'
+  )
   // Ensure we always return an array
   if (!Array.isArray(response)) {
-    console.error('Unexpected subscriptions response:', response)
-    return []
+    throw new Error('Invalid subscriptions response format')
   }
   // Filter out any malformed entries
   return response.filter(
@@ -42,7 +43,10 @@ async function listSubscriptions(): Promise<Subscription[]> {
 }
 
 // Update subscription destinations
-async function updateDestinations(id: number, destinations: SubscriptionDestination[]): Promise<void> {
+async function updateDestinations(
+  id: number,
+  destinations: SubscriptionDestination[]
+): Promise<void> {
   const formData = new URLSearchParams()
   formData.append('id', String(id))
   formData.append('destinations', JSON.stringify(destinations))
@@ -69,7 +73,12 @@ async function deleteSubscription(id: number): Promise<void> {
 export interface UseSubscriptionsResult {
   subscriptions: Subscription[]
   isLoading: boolean
-  updateDestinations: (id: number, destinations: SubscriptionDestination[]) => Promise<void>
+  isError: boolean
+  error: unknown | null
+  updateDestinations: (
+    id: number,
+    destinations: SubscriptionDestination[]
+  ) => Promise<void>
   unsubscribe: (id: number) => Promise<void>
   isUpdating: boolean
   isDeleting: boolean
@@ -79,14 +88,25 @@ export interface UseSubscriptionsResult {
 export function useSubscriptions(): UseSubscriptionsResult {
   const queryClient = useQueryClient()
 
-  const { data: subscriptions = [], isLoading, refetch } = useQuery({
+  const {
+    data: subscriptions = [],
+    isLoading,
+    isError,
+    error,
+    refetch,
+  } = useQuery({
     queryKey: subscriptionKeys.list(),
     queryFn: listSubscriptions,
   })
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, destinations }: { id: number; destinations: SubscriptionDestination[] }) =>
-      updateDestinations(id, destinations),
+    mutationFn: ({
+      id,
+      destinations,
+    }: {
+      id: number
+      destinations: SubscriptionDestination[]
+    }) => updateDestinations(id, destinations),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: subscriptionKeys.all() })
     },
@@ -109,7 +129,12 @@ export function useSubscriptions(): UseSubscriptionsResult {
   return {
     subscriptions,
     isLoading,
-    updateDestinations: async (id: number, destinations: SubscriptionDestination[]) => {
+    isError,
+    error: error ?? null,
+    updateDestinations: async (
+      id: number,
+      destinations: SubscriptionDestination[]
+    ) => {
       await updateMutation.mutateAsync({ id, destinations })
     },
     unsubscribe: async (id: number) => {
@@ -117,6 +142,8 @@ export function useSubscriptions(): UseSubscriptionsResult {
     },
     isUpdating: updateMutation.isPending,
     isDeleting: deleteMutation.isPending,
-    refetch: () => refetch(),
+    refetch: () => {
+      void refetch()
+    },
   }
 }

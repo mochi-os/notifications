@@ -45,7 +45,11 @@ interface RssDialogProps {
   initialView?: DialogView
 }
 
-export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialogProps) {
+export function RssDialog({
+  open,
+  onOpenChange,
+  initialView = 'list',
+}: RssDialogProps) {
   const [view, setView] = useState<DialogView>(initialView)
   const [copied, setCopied] = useState(false)
   const [copiedId, setCopiedId] = useState<string | null>(null)
@@ -61,7 +65,13 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
     return `${window.location.origin}${getAppPath()}/-/rss?token=${token}`
   }
 
-  const { data: feedsData, isLoading, isError, error } = useQuery({
+  const {
+    data: feedsData,
+    isLoading,
+    isError,
+    error,
+    refetch,
+  } = useQuery({
     queryKey: ['rss-feeds'],
     queryFn: async () => {
       return await requestHelpers.get<RssFeed[]>('-/rss/list')
@@ -71,15 +81,26 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
   const feeds = Array.isArray(feedsData) ? feedsData : []
 
   const createMutation = useMutation({
-    mutationFn: async ({ name, addToExisting }: { name: string; addToExisting: boolean }) => {
-      return await requestHelpers.post<RssFeed>('-/rss/create', { name, add_to_existing: addToExisting ? '1' : '0' })
+    mutationFn: async ({
+      name,
+      addToExisting,
+    }: {
+      name: string
+      addToExisting: boolean
+    }) => {
+      return await requestHelpers.post<RssFeed>('-/rss/create', {
+        name,
+        add_to_existing: addToExisting ? '1' : '0',
+      })
     },
     onSuccess: (feed) => {
       setCreatedFeed(feed)
       setNewFeedName('')
       setView('created')
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
-      queryClient.invalidateQueries({ queryKey: ['destinations', getAppPath()] })
+      queryClient.invalidateQueries({
+        queryKey: ['destinations', getAppPath()],
+      })
     },
     onError: (error) => {
       toast.error(getErrorMessage(error, 'Failed to create feed'))
@@ -93,7 +114,9 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
     onSuccess: () => {
       toast.success('Feed deleted')
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
-      queryClient.invalidateQueries({ queryKey: ['destinations', getAppPath()] })
+      queryClient.invalidateQueries({
+        queryKey: ['destinations', getAppPath()],
+      })
       setDeleteId(null)
     },
     onError: (error) => {
@@ -118,7 +141,10 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
 
   const toggleEnabledMutation = useMutation({
     mutationFn: async ({ id, enabled }: { id: string; enabled: boolean }) => {
-      await requestHelpers.post('-/rss/update', { id, enabled: enabled ? '1' : '0' })
+      await requestHelpers.post('-/rss/update', {
+        id,
+        enabled: enabled ? '1' : '0',
+      })
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
@@ -201,29 +227,30 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
           </DialogHeader>
 
           {view === 'list' && (
-            <div className="space-y-4">
+            <div className='space-y-4'>
               {isLoading ? (
-                <ListSkeleton variant="simple" height="h-12" count={2} />
+                <ListSkeleton variant='simple' height='h-12' count={2} />
               ) : isError ? (
                 <GeneralError
                   error={error}
                   minimal
-                  mode="inline"
-                  className="py-4"
+                  mode='inline'
+                  reset={() => void refetch()}
+                  className='py-4'
                 />
               ) : feeds.length === 0 ? (
                 <EmptyState
                   icon={Rss}
-                  title="No RSS feeds yet"
-                  description="Create one to get started."
-                  className="py-4"
+                  title='No RSS feeds yet'
+                  description='Create one to get started.'
+                  className='py-4'
                 />
               ) : (
-                <div className="space-y-3 max-h-72 overflow-y-auto">
+                <div className='max-h-72 space-y-3 overflow-y-auto'>
                   {feeds.map((feed) => (
-                    <div key={feed.id} className="rounded-md border p-3">
+                    <div key={feed.id} className='rounded-md border p-3'>
                       {editingId === feed.id ? (
-                        <div className="flex items-center gap-2">
+                        <div className='flex items-center gap-2'>
                           <Input
                             value={editingName}
                             onChange={(e) => setEditingName(e.target.value)}
@@ -231,65 +258,68 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
                               if (e.key === 'Enter') handleSaveEdit()
                               if (e.key === 'Escape') handleCancelEdit()
                             }}
-                            className="flex-1"
+                            className='flex-1'
                             autoFocus
                           />
                           <Button
-                            variant="ghost"
-                            size="sm"
+                            variant='ghost'
+                            size='sm'
                             onClick={handleSaveEdit}
                             disabled={renameMutation.isPending}
                           >
                             {renameMutation.isPending ? (
-                              <Loader2 className="h-4 w-4 animate-spin" />
+                              <Loader2 className='h-4 w-4 animate-spin' />
                             ) : (
-                              <Check className="h-4 w-4" />
+                              <Check className='h-4 w-4' />
                             )}
                           </Button>
                         </div>
                       ) : (
-                        <div className="space-y-2">
-                          <div className="flex items-center gap-2">
-                            <p className="min-w-0 flex-1 font-medium truncate">
+                        <div className='space-y-2'>
+                          <div className='flex items-center gap-2'>
+                            <p className='min-w-0 flex-1 truncate font-medium'>
                               {feed.name}
                             </p>
                             <Button
-                              variant="ghost"
-                              size="sm"
+                              variant='ghost'
+                              size='sm'
                               onClick={() => handleCopyFeed(feed)}
                             >
                               {copiedId === feed.id ? (
-                                <Check className="h-4 w-4" />
+                                <Check className='h-4 w-4' />
                               ) : (
-                                <Copy className="h-4 w-4" />
+                                <Copy className='h-4 w-4' />
                               )}
                             </Button>
                             <Button
-                              variant="ghost"
-                              size="sm"
+                              variant='ghost'
+                              size='sm'
                               onClick={() => handleStartEdit(feed)}
                             >
-                              <Pencil className="h-4 w-4" />
+                              <Pencil className='h-4 w-4' />
                             </Button>
                             <Button
-                              variant="ghost"
-                              size="sm"
+                              variant='ghost'
+                              size='sm'
                               onClick={() => setDeleteId(feed.id)}
                               disabled={deleteMutation.isPending}
                             >
-                              <Trash2 className="h-4 w-4" />
+                              <Trash2 className='h-4 w-4' />
                             </Button>
                           </div>
-                          <div className="flex items-center justify-end gap-2">
-                            <span className="text-sm text-muted-foreground">
+                          <div className='flex items-center justify-end gap-2'>
+                            <span className='text-muted-foreground text-sm'>
                               Notify by default
                             </span>
                             <Switch
                               checked={feed.enabled === 1}
                               onCheckedChange={(checked) =>
-                                toggleEnabledMutation.mutate({ id: feed.id, enabled: checked })
+                                toggleEnabledMutation.mutate({
+                                  id: feed.id,
+                                  enabled: checked,
+                                })
                               }
-                              aria-label="Notify by default"
+                              aria-label='Notify by default'
                             />
                           </div>
                         </div>
@@ -300,7 +330,7 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
               )}
               <DialogFooter>
                 <Button onClick={() => setView('create')}>
-                  <Plus className="h-4 w-4" />
+                  <Plus className='h-4 w-4' />
                   Create feed
                 </Button>
               </DialogFooter>
@@ -308,12 +338,12 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
           )}
 
           {view === 'create' && (
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="feed-name">Feed name</Label>
+            <div className='space-y-4'>
+              <div className='space-y-2'>
+                <Label htmlFor='feed-name'>Feed name</Label>
                 <Input
-                  id="feed-name"
-                  placeholder="e.g., Feedly, NewsBlur"
+                  id='feed-name'
+                  placeholder='e.g., Feedly, NewsBlur'
                   value={newFeedName}
                   onChange={(e) => setNewFeedName(e.target.value)}
                   onKeyDown={(e) => {
@@ -321,10 +351,12 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
                   }}
                 />
               </div>
-              <div className="flex items-center justify-between rounded-lg border p-4">
+              <div className='flex items-center justify-between rounded-lg border p-4'>
                 <div>
-                  <div className="font-medium">Add to existing subscriptions</div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className='font-medium'>
+                    Add to existing subscriptions
+                  </div>
+                  <div className='text-muted-foreground text-sm'>
                     Use this feed for your current notification subscriptions
                   </div>
                 </div>
@@ -334,14 +366,17 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
                 />
               </div>
               <DialogFooter>
-                <Button variant="outline" onClick={handleClose}>
+                <Button variant='outline' onClick={handleClose}>
                   Cancel
                 </Button>
-                <Button onClick={handleCreate} disabled={createMutation.isPending}>
+                <Button
+                  onClick={handleCreate}
+                  disabled={createMutation.isPending}
+                >
                   {createMutation.isPending ? (
-                    <Loader2 className="h-4 w-4 animate-spin" />
+                    <Loader2 className='h-4 w-4 animate-spin' />
                   ) : (
-                    <Plus className="h-4 w-4" />
+                    <Plus className='h-4 w-4' />
                   )}
                   Create feed
                 </Button>
@@ -350,22 +385,28 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
           )}
 
           {view === 'created' && createdFeed && (
-            <div className="space-y-4">
-              <div className="bg-muted flex items-center gap-2 rounded-md p-3 font-mono text-sm">
-                <code className="flex-1 break-all select-all">
+            <div className='space-y-4'>
+              <div className='bg-muted flex items-center gap-2 rounded-md p-3 font-mono text-sm'>
+                <code className='flex-1 break-all select-all'>
                   {buildRssUrl(createdFeed.token)}
                 </code>
                 <Button
-                  variant="ghost"
-                  size="sm"
+                  variant='ghost'
+                  size='sm'
                   onClick={() => handleCopy(createdFeed.token)}
-                  className="shrink-0"
+                  className='shrink-0'
                 >
-                  {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                  {copied ? (
+                    <Check className='h-4 w-4' />
+                  ) : (
+                    <Copy className='h-4 w-4' />
+                  )}
                 </Button>
               </div>
               <DialogFooter>
-                <Button variant='outline' onClick={() => setView('list')}>Done</Button>
+                <Button variant='outline' onClick={() => setView('list')}>
+                  Done
+                </Button>
               </DialogFooter>
             </div>
           )}
@@ -377,8 +418,8 @@ export function RssDialog({ open, onOpenChange, initialView = 'list' }: RssDialo
           <AlertDialogHeader>
             <AlertDialogTitle>Delete feed?</AlertDialogTitle>
             <AlertDialogDescription>
-              This will permanently delete this feed. Any RSS readers using it will
-              no longer be able to access your notifications.
+              This will permanently delete this feed. Any RSS readers using it
+              will no longer be able to access your notifications.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
