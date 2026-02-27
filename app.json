@@ -53,9 +53,9 @@
 	},
 
 	"functions": {
-		"clear.all": {"function": "function_clear_all"},
-		"clear.app": {"function": "function_clear_app"},
-		"clear.object": {"function": "function_clear_object"},
+		"clear/all": {"function": "function_clear_all"},
+		"clear/app": {"function": "function_clear_app"},
+		"clear/object": {"function": "function_clear_object"},
 		"list": {"function": "function_list"},
 		"read": {"function": "function_read"},
 		"read/all": {"function": "function_read_all"},

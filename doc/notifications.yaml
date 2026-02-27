@@ -147,24 +147,24 @@ components:
       description: |
         **Service Functions** (called internally by other apps via `mochi.service.call()`):
         
-        ### clear.all()
+        ### clear/all()
         Clear all notifications for the current user.
         ```starlark
-        mochi.service.call("notifications", "clear.all")
+        mochi.service.call("notifications", "clear/all")
         ```
-        
-        ### clear.app(app: string)
+
+        ### clear/app(app: string)
         Clear all notifications from a specific app.
         ```starlark
-        mochi.service.call("notifications", "clear.app", "chat")
+        mochi.service.call("notifications", "clear/app", "chat")
         ```
         **Parameters:**
         - `app` (string): App identifier (e.g., "chat", "feeds", "forums")
-        
-        ### clear.object(app: string, object: string)
+
+        ### clear/object(app: string, object: string)
         Clear notifications for a specific object within an app.
         ```starlark
-        mochi.service.call("notifications", "clear.object", "chat", "abc123xyz")
+        mochi.service.call("notifications", "clear/object", "chat", "abc123xyz")
         ```
         **Parameters:**
         - `app` (string): App identifier
@@ -202,22 +202,22 @@ components:
         )
 
         # Clear notifications when user views the chat
-        mochi.service.call("notifications", "clear.object", "chat", chat_id)
+        mochi.service.call("notifications", "clear/object", "chat", chat_id)
 
         # List all user notifications
         all_notifications = mochi.service.call("notifications", "list")
         ```
 
 x-service-functions:
-  clear.all:
+  clear/all:
     summary: Clear all notifications
     description: Removes all notifications for the current user
     returns:
       type: void
     example: |
-      mochi.service.call("notifications", "clear.all")
+      mochi.service.call("notifications", "clear/all")
 
-  clear.app:
+  clear/app:
     summary: Clear app notifications
     description: Removes all notifications from a specific app
     parameters:
@@ -229,9 +229,9 @@ x-service-functions:
     returns:
       type: void
     example: |
-      mochi.service.call("notifications", "clear.app", "chat")
+      mochi.service.call("notifications", "clear/app", "chat")
 
-  clear.object:
+  clear/object:
     summary: Clear object notifications
     description: Removes notifications for a specific object
     parameters:
@@ -246,7 +246,7 @@ x-service-functions:
     returns:
       type: void
     example: |
-      mochi.service.call("notifications", "clear.object", "chat", "abc123")
+      mochi.service.call("notifications", "clear/object", "chat", "abc123")
 
   list:
     summary: List all notifications
