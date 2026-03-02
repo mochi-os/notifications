@@ -2,7 +2,7 @@
 // Copyright Alistair Cunningham 2025
 
 {
-	"version": "2.6",
+	"version": "2.8",
 	"label": "app_name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -47,9 +47,7 @@
 		"-/subscriptions/update": {"function": "action_subscriptions_update"},
 		"-/subscriptions/delete": {"function": "action_subscriptions_delete"},
 		"-/subscriptions/check": {"function": "action_subscriptions_check"},
-		"-/destinations/list": {"function": "action_destinations_list"},
-		"-/notifications/destinations": {"function": "action_destinations_list"},
-		"-/test/subscriptions": {"function": "action_test_subscriptions"}
+		"-/notifications/destinations": {"function": "action_destinations_list"}
 	},
 
 	"functions": {

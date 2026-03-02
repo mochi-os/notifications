@@ -19,6 +19,7 @@ import {
   toast,
   getErrorMessage,
   getAppPath,
+  requestHelpers,
   type Destination,
 } from '@mochi/common'
 import { Bell, Globe, Mail, Rss, Trash2, Webhook } from 'lucide-react'
@@ -146,19 +147,13 @@ export function SubscriptionsManager() {
       await push.subscribe()
 
       // Fetch accounts to get the (possibly new) browser account ID
-      const res = await fetch(`${appBase}/-/accounts/list?capability=notify`, {
-        credentials: 'include',
-      })
-      if (res.ok) {
-        const data = await res.json()
-        const accounts = data?.data || []
-        const browserAccount = accounts.find(
-          (a: { type: string; id: number }) => a.type === 'browser'
-        )
-        if (browserAccount) {
-          queryClient.invalidateQueries({ queryKey: ['destinations'] })
-          return String(browserAccount.id)
-        }
+      const accounts = await requestHelpers.get<Array<{ type: string; id: number }>>(`${appBase}/-/accounts/list?capability=notify`)
+      const browserAccount = (accounts || []).find(
+        (a) => a.type === 'browser'
+      )
+      if (browserAccount) {
+        queryClient.invalidateQueries({ queryKey: ['destinations'] })
+        return String(browserAccount.id)
       }
     } catch (error) {
       toast.error(
@@ -245,20 +240,9 @@ export function SubscriptionsManager() {
         await push.subscribe()
 
         // Fetch accounts to get the new browser account ID
-        const res = await fetch(
-          `${appBase}/-/accounts/list?capability=notify`,
-          {
-            credentials: 'include',
-          }
-        )
-        if (!res.ok) {
-          toast.error('Failed to get browser account')
-          return
-        }
-        const data = await res.json()
-        const accounts = data?.data || []
-        const browserAccount = accounts.find(
-          (a: { type: string; id: number }) => a.type === 'browser'
+        const accounts = await requestHelpers.get<Array<{ type: string; id: number }>>(`${appBase}/-/accounts/list?capability=notify`)
+        const browserAccount = (accounts || []).find(
+          (a) => a.type === 'browser'
         )
         if (!browserAccount) {
           toast.error('Browser account not found')

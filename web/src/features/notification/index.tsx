@@ -6,6 +6,7 @@ import {
   EmptyState,
   ListSkeleton,
   GeneralError,
+  formatTimestamp,
 } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
 import { Card, CardContent } from '@mochi/common/components/ui/card'
@@ -36,19 +37,6 @@ import {
 } from '@/hooks/useNotifications'
 
 const STORAGE_KEY = 'notifications-show-all'
-
-function formatTimestamp(timestamp: number): string {
-  const now = Date.now() / 1000
-  const diff = now - timestamp
-
-  if (diff < 60) return 'Just now'
-  if (diff < 3600) return `${Math.floor(diff / 60)}m ago`
-  if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`
-  if (diff < 604800) return `${Math.floor(diff / 86400)}d ago`
-
-  const date = new Date(timestamp * 1000)
-  return date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
-}
 
 function NotificationItem({
   notification,

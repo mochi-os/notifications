@@ -287,44 +287,6 @@ def action_rss(a):
 	a.print('</channel>\n')
 	a.print('</rss>')
 
-# Token management endpoints
-
-def action_token_get(a):
-	"""Get existing token or create first one for RSS access"""
-	tokens = mochi.token.list()
-	if tokens and len(tokens) > 0:
-		return {"data": {"exists": True, "count": len(tokens)}}
-	name = (a.input("name") or "RSS feed").strip()
-	if len(name) > 100:
-		return a.error(400, "Token name is too long")
-	token = mochi.token.create(name, [], 0)
-	if not token:
-		return a.error(500, "Failed to create token")
-	return {"data": {"exists": False, "token": token}}
-
-def action_token_create(a):
-	"""Create a new token for RSS access"""
-	name = (a.input("name") or "RSS feed").strip()
-	if len(name) > 100:
-		return a.error(400, "Token name is too long")
-	token = mochi.token.create(name, [], 0)
-	if not token:
-		return a.error(500, "Failed to create token")
-	return {"data": {"token": token}}
-
-def action_token_list(a):
-	"""List all tokens for RSS access"""
-	tokens = mochi.token.list()
-	return {"data": {"tokens": tokens or []}}
-
-def action_token_delete(a):
-	"""Delete a token"""
-	hash = a.input("hash", "").strip()
-	if not hash or len(hash) > 128:
-		return a.error(400, "Invalid hash")
-	mochi.token.delete(hash)
-	return {"data": {}}
-
 # Connected accounts endpoints (thin wrappers around mochi.account.* API)
 
 def action_accounts_providers(a):
@@ -358,6 +320,9 @@ def action_accounts_add(a):
 	for key in ["label", "address", "token", "api_key", "url", "endpoint", "auth", "p256dh", "secret", "topic", "server"]:
 		val = a.input(key)
 		if val:
+			if len(val) > 4096:
+				a.error(400, key + " is too long")
+				return
 			fields[key] = val
 
 	add_to_existing = a.input("add_to_existing", "1")
@@ -407,7 +372,10 @@ def action_accounts_verify(a):
 		a.error(400, "Invalid id")
 		return
 
-	code = a.input("code")
+	code = a.input("code", "").strip()
+	if not code or len(code) > 256:
+		a.error(400, "Invalid code")
+		return
 	result = mochi.account.verify(int(id), code)
 	return {"data": result}
 
@@ -504,64 +472,6 @@ def action_rss_update(a):
 		mochi.db.execute("update rss set enabled = ? where id = ?", enabled_val, id)
 
 	return {"data": {}}
-
-# Test action for subscription services (temporary)
-def action_test_subscriptions(a):
-	"""Test the subscription services"""
-	results = []
-
-	# Simulate context from a calling app
-	context = {"app": "test-app"}
-
-	# Test 1: Subscribe
-	sub_id = function_subscribe(context, "Test subscription", "post", "123", [
-		{"type": "account", "target": "1"}
-	])
-	results.append({"test": "subscribe", "result": sub_id, "pass": sub_id != None})
-
-	# Test 2: List subscriptions
-	subs = function_subscriptions(context)
-	results.append({"test": "subscriptions", "count": len(subs), "pass": len(subs) == 1})
-
-	# Test 3: Subscribe again (should update, not duplicate)
-	sub_id2 = function_subscribe(context, "Updated label", "post", "123")
-	results.append({"test": "subscribe_update", "same_id": sub_id == sub_id2, "pass": sub_id == sub_id2})
-
-	# Test 4: List with filter
-	subs_filtered = function_subscriptions(context, type="post")
-	results.append({"test": "subscriptions_filtered", "count": len(subs_filtered), "pass": len(subs_filtered) == 1})
-
-	# Test 5: Send (should find the subscription)
-	count = function_send(context, "post", "Test Title", "Test body", "123", "/test")
-	results.append({"test": "send", "count": count, "pass": count >= 0})
-
-	# Test 6: Unsubscribe
-	ok = function_unsubscribe(context, sub_id)
-	results.append({"test": "unsubscribe", "result": ok, "pass": ok == True})
-
-	# Test 7: Verify unsubscribed
-	subs_after = function_subscriptions(context)
-	results.append({"test": "verify_unsubscribed", "count": len(subs_after), "pass": len(subs_after) == 0})
-
-	# Test 8: Unsubscribe non-existent (should fail)
-	ok2 = function_unsubscribe(context, 99999)
-	results.append({"test": "unsubscribe_nonexistent", "result": ok2, "pass": ok2 == False})
-
-	# Test 9: Different app can't unsubscribe
-	sub_id3 = function_subscribe(context, "Another sub", "feed", "456")
-	other_context = {"app": "other-app"}
-	ok3 = function_unsubscribe(other_context, sub_id3)
-	results.append({"test": "unsubscribe_wrong_app", "result": ok3, "pass": ok3 == False})
-
-	# Cleanup
-	function_unsubscribe(context, sub_id3)
-
-	all_passed = True
-	for r in results:
-		if not r["pass"]:
-			all_passed = False
-			break
-	return {"data": {"results": results, "all_passed": all_passed}}
 
 # Subscription services for permission-based notifications
 
