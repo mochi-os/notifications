@@ -7,6 +7,7 @@ import {
   ListSkeleton,
   GeneralError,
   formatTimestamp,
+  getSafeNavigationTarget,
 } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
 import { Card, CardContent } from '@mochi/common/components/ui/card'
@@ -37,6 +38,12 @@ import {
 } from '@/hooks/useNotifications'
 
 const STORAGE_KEY = 'notifications-show-all'
+const TRUSTED_EXTERNAL_REDIRECT_HOSTS = (
+  import.meta.env.VITE_TRUSTED_REDIRECT_HOSTS ?? ''
+)
+  .split(',')
+  .map((host: string) => host.trim().toLowerCase())
+  .filter(Boolean)
 
 function NotificationItem({
   notification,
@@ -51,8 +58,16 @@ function NotificationItem({
     if (isUnread) {
       onMarkAsRead(notification.id)
     }
-    if (notification.link) {
-      window.location.href = notification.link
+
+    const safeTarget = getSafeNavigationTarget(
+      notification.link,
+      window.location.origin,
+      {
+        trustedExternalHosts: TRUSTED_EXTERNAL_REDIRECT_HOSTS,
+      }
+    )
+    if (safeTarget) {
+      window.location.assign(safeTarget)
     }
   }
 
