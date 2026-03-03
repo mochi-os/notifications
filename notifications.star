@@ -1,5 +1,5 @@
 # Mochi notifications app
-# Copyright Alistair Cunningham 2024-2025
+# Copyright Alistair Cunningham 2024-2026
 
 def database_create():
 	mochi.db.execute("""create table if not exists notifications (
