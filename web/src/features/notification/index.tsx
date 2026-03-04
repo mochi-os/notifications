@@ -59,15 +59,19 @@ function NotificationItem({
       onMarkAsRead(notification.id)
     }
 
-    const safeTarget = getSafeNavigationTarget(
-      notification.link,
-      window.location.origin,
-      {
-        trustedExternalHosts: TRUSTED_EXTERNAL_REDIRECT_HOSTS,
+    if (notification.link) {
+      const safeTarget = getSafeNavigationTarget(
+        notification.link,
+        window.location.origin,
+        {
+          trustedExternalHosts: TRUSTED_EXTERNAL_REDIRECT_HOSTS,
+        }
+      )
+      if (safeTarget) {
+        window.location.assign(safeTarget)
+      } else {
+        console.warn('Blocked navigation to untrusted link:', notification.link)
       }
-    )
-    if (safeTarget) {
-      window.location.assign(safeTarget)
     }
   }
 
