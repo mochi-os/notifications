@@ -118,11 +118,11 @@ export function SubscriptionsManager() {
     [subscriptions]
   )
 
-  function getEffectiveDestinations(
-    sub: Subscription
-  ): SubscriptionDestination[] {
-    return optimistic[sub.id] ?? sub.destinations
-  }
+  const getEffectiveDestinations = useCallback(
+    (sub: Subscription): SubscriptionDestination[] =>
+      optimistic[sub.id] ?? sub.destinations,
+    [optimistic]
+  )
 
   function isChecked(sub: Subscription, type: string, target: string): boolean {
     return getEffectiveDestinations(sub).some(
@@ -132,36 +132,39 @@ export function SubscriptionsManager() {
 
   // Verify a browser push endpoint isn't stale. Returns the new account ID
   // target if refreshed, or the original target if the endpoint is fresh.
-  async function refreshBrowserIfStale(dest: Destination): Promise<string> {
-    const target = String(dest.id)
-    try {
-      const registration = await navigator.serviceWorker.ready
-      const currentSub = await registration.pushManager.getSubscription()
+  const refreshBrowserIfStale = useCallback(
+    async (dest: Destination): Promise<string> => {
+      const target = String(dest.id)
+      try {
+        const registration = await navigator.serviceWorker.ready
+        const currentSub = await registration.pushManager.getSubscription()
 
-      if (currentSub && dest.identifier === currentSub.endpoint) {
-        return target // endpoint is fresh
+        if (currentSub && dest.identifier === currentSub.endpoint) {
+          return target // endpoint is fresh
+        }
+
+        // Stale or missing push subscription — refresh
+        await push.unsubscribe()
+        await push.subscribe()
+
+        // Fetch accounts to get the (possibly new) browser account ID
+        const accounts = await requestHelpers.get<Array<{ type: string; id: number }>>(`${appBase}/-/accounts/list?capability=notify`)
+        const browserAccount = (accounts || []).find(
+          (a) => a.type === 'browser'
+        )
+        if (browserAccount) {
+          queryClient.invalidateQueries({ queryKey: ['destinations'] })
+          return String(browserAccount.id)
+        }
+      } catch (error) {
+        toast.error(
+          getErrorMessage(error, 'Failed to verify browser subscription')
+        )
       }
-
-      // Stale or missing push subscription — refresh
-      await push.unsubscribe()
-      await push.subscribe()
-
-      // Fetch accounts to get the (possibly new) browser account ID
-      const accounts = await requestHelpers.get<Array<{ type: string; id: number }>>(`${appBase}/-/accounts/list?capability=notify`)
-      const browserAccount = (accounts || []).find(
-        (a) => a.type === 'browser'
-      )
-      if (browserAccount) {
-        queryClient.invalidateQueries({ queryKey: ['destinations'] })
-        return String(browserAccount.id)
-      }
-    } catch (error) {
-      toast.error(
-        getErrorMessage(error, 'Failed to verify browser subscription')
-      )
-    }
-    return target
-  }
+      return target
+    },
+    [appBase, push, queryClient]
+  )
 
   const handleToggle = useCallback(
     async (
@@ -210,13 +213,10 @@ export function SubscriptionsManager() {
     },
     [
       savingRows,
-      optimistic,
-      subscriptions,
       updateDestinations,
       destinations,
-      push,
-      appBase,
-      queryClient,
+      getEffectiveDestinations,
+      refreshBrowserIfStale,
     ]
   )
 
@@ -279,9 +279,8 @@ export function SubscriptionsManager() {
     },
     [
       savingRows,
-      optimistic,
-      subscriptions,
       updateDestinations,
+      getEffectiveDestinations,
       push,
       appBase,
       queryClient,

@@ -8,6 +8,7 @@ import {
   GeneralError,
   formatTimestamp,
   getSafeNavigationTarget,
+  toast,
 } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
 import { Card, CardContent } from '@mochi/common/components/ui/card'
@@ -70,7 +71,7 @@ function NotificationItem({
       if (safeTarget) {
         window.location.assign(safeTarget)
       } else {
-        console.warn('Blocked navigation to untrusted link:', notification.link)
+        toast.error('Blocked navigation to untrusted link')
       }
     }
   }
