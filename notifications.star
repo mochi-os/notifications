@@ -604,11 +604,13 @@ def function_send(context, type, title, body, object="", url="", data=None):
 				)
 
 				if existing and existing["read"] == 0:
-					# Update existing unread notification
+					# Update existing unread notification — aggregate with count
 					new_count = existing["count"] + 1
+					plural = type + "s" if new_count != 1 else type
+					agg_content = title + ": " + str(new_count) + " new " + plural
 					mochi.db.execute(
 						"update notifications set content = ?, count = ?, created = ? where id = ?",
-						content, new_count, now, existing["id"]
+						agg_content, new_count, now, existing["id"]
 					)
 					notif_id = existing["id"]
 				else:
@@ -621,15 +623,17 @@ def function_send(context, type, title, body, object="", url="", data=None):
 					)
 
 				# Notify connected WebSocket clients
+				ws_content = agg_content if existing and existing["read"] == 0 else content
+				ws_count = new_count if existing and existing["read"] == 0 else 1
 				mochi.websocket.write("notifications", {
 					"type": "new",
 					"id": notif_id,
 					"app": app,
 					"category": type,
 					"object": object,
-					"content": content,
+					"content": ws_content,
 					"link": url,
-					"count": 1,
+					"count": ws_count,
 					"created": now,
 					"read": 0,
 				})
