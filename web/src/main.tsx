@@ -29,8 +29,6 @@ declare module '@tanstack/react-router' {
   }
 }
 
-// Initialize auth state from cookie on app start
-
 // Render the app
 const rootElement = document.getElementById('root')!
 if (!rootElement.innerHTML) {
@@ -39,11 +37,7 @@ if (!rootElement.innerHTML) {
     <StrictMode>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
-          {/* <FontProvider> */}
-          {/* <DirectionProvider> */}
           <RouterProvider router={router} />
-          {/* </DirectionProvider> */}
-          {/* </FontProvider> */}
         </ThemeProvider>
       </QueryClientProvider>
     </StrictMode>

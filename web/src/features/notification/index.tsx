@@ -184,7 +184,12 @@ export function Notifications() {
             )}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant='ghost' size='icon'>
+                <Button
+                  variant='ghost'
+                  size='icon'
+                  aria-label='Notification actions'
+                  title='Notification actions'
+                >
                   <MoreHorizontal className='size-5' />
                 </Button>
               </DropdownMenuTrigger>
