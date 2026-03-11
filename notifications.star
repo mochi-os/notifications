@@ -475,11 +475,12 @@ def action_rss_update(a):
 
 # Subscription services for permission-based notifications
 
-def function_subscribe(context, label, type="", object="", destinations=None):
+def function_subscribe(context, app="", label="", type="", object="", destinations=None):
 	"""Create a subscription for the current user.
 
 	Args:
 		context: Contains 'app' key with calling app ID
+		app: Explicit app ID (overrides context if non-empty)
 		label: Human-readable description shown to user
 		type: App-defined type (e.g., "post", "feed")
 		object: Object identifier within that type
@@ -488,7 +489,8 @@ def function_subscribe(context, label, type="", object="", destinations=None):
 	Returns:
 		Subscription ID if created, None if invalid
 	"""
-	app = context.get("app", "")
+	if not app:
+		app = context.get("app", "")
 	if not app:
 		return None
 
@@ -938,3 +940,31 @@ def action_subscriptions_check(a):
 
 	exists = mochi.db.exists("select 1 from subscriptions where app = ?", app)
 	return {"data": {"exists": exists}}
+
+# Service functions for account management (permission-gated)
+
+def function_accounts_vapid(context):
+	"""Return VAPID public key for browser push subscription."""
+	key = mochi.webpush.key()
+	return {"key": key or ""}
+
+def function_accounts_list(context, capability=""):
+	"""List user's connected accounts."""
+	return mochi.account.list(capability) or []
+
+def function_accounts_add(context, type="", **fields):
+	"""Add a new connected account."""
+	if not type:
+		return None
+	result = mochi.account.add(type, **fields)
+	if result and result.get("id"):
+		account_id = result["id"]
+		mochi.account.update(account_id, enabled=True)
+		function_add_destination_to_all({}, "account", account_id)
+	return result
+
+def function_accounts_remove(context, id=0):
+	"""Remove a connected account."""
+	if not id:
+		return None
+	return mochi.account.remove(id)
