@@ -2,7 +2,7 @@
 // Copyright Alistair Cunningham 2025-2026
 
 {
-	"version": "2.11",
+	"version": "2.13",
 	"label": "app_name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -58,11 +58,15 @@
 		"read": {"function": "function_read"},
 		"read/all": {"function": "function_read_all"},
 		"expire": {"function": "function_expire"},
-		"subscribe": {"function": "function_subscribe"},
+		"subscribe": {"function": "function_subscribe", "permission": "notifications/send"},
 		"send": {"function": "function_send"},
 		"subscriptions": {"function": "function_subscriptions"},
 		"unsubscribe": {"function": "function_unsubscribe"},
 		"add_destination_to_all": {"function": "function_add_destination_to_all"},
-		"destinations": {"function": "function_destinations"}
+		"destinations": {"function": "function_destinations", "permission": "notifications/send"},
+		"accounts/vapid": {"function": "function_accounts_vapid", "permission": "notifications/send"},
+		"accounts/list": {"function": "function_accounts_list", "permission": "notifications/send"},
+		"accounts/add": {"function": "function_accounts_add", "permission": "notifications/send"},
+		"accounts/remove": {"function": "function_accounts_remove", "permission": "notifications/send"}
 	}
 }
