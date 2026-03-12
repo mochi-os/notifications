@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useMemo } from 'react'
 import { Link } from '@tanstack/react-router'
 import {
   PageHeader,
@@ -9,6 +9,7 @@ import {
   formatTimestamp,
   getSafeNavigationTarget,
   toast,
+  useShellStorage,
 } from '@mochi/common'
 import { Button } from '@mochi/common/components/ui/button'
 import { Card, CardContent } from '@mochi/common/components/ui/card'
@@ -107,18 +108,9 @@ function NotificationItem({
 }
 
 export function Notifications() {
-  const [showAll, setShowAll] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem(STORAGE_KEY) === 'true'
-    }
-    return false
-  })
+  const [showAll, setShowAll] = useShellStorage(STORAGE_KEY, false)
 
   const { data, isLoading, error, refetch } = useNotificationsQuery()
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, String(showAll))
-  }, [showAll])
 
   useNotificationWebSocket()
   const markAsReadMutation = useMarkAsReadMutation()
