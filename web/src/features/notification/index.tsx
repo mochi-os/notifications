@@ -10,18 +10,18 @@ import {
   getSafeNavigationTarget,
   toast,
   useShellStorage,
-} from '@mochi/common'
-import { Button } from '@mochi/common/components/ui/button'
-import { Card, CardContent } from '@mochi/common/components/ui/card'
+} from '@mochi/web'
+import { Button } from '@mochi/web/components/ui/button'
+import { Card, CardContent } from '@mochi/web/components/ui/card'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@mochi/common/components/ui/dropdown-menu'
-import { Label } from '@mochi/common/components/ui/label'
-import { Switch } from '@mochi/common/components/ui/switch'
-import { cn } from '@mochi/common/lib/utils'
+} from '@mochi/web/components/ui/dropdown-menu'
+import { Label } from '@mochi/web/components/ui/label'
+import { Switch } from '@mochi/web/components/ui/switch'
+import { cn } from '@mochi/web/lib/utils'
 import {
   Bell,
   Check,

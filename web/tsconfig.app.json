@@ -20,7 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@mochi/common/*": ["../../../lib/common/src/*"]
+      "@mochi/web/*": ["../../../lib/web/src/*"]
     },
 
     /* Linting */

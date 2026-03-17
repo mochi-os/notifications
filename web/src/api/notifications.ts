@@ -1,5 +1,5 @@
 import endpoints from '@/api/endpoints'
-import { requestHelpers } from '@mochi/common'
+import { requestHelpers } from '@mochi/web'
 
 export interface Notification {
   id: string
