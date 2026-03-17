@@ -554,13 +554,10 @@ def function_send(context, type, title, body, object="", url="", data=None):
 		Number of subscriptions notified
 	"""
 	app = context.get("app", "")
-	mochi.log.debug("function_send: app=%s type=%s object=%s title=%s", app, type, object, title)
 	if not app:
-		mochi.log.debug("function_send: no app, returning 0")
 		return 0
 
 	if not title or not body:
-		mochi.log.debug("function_send: no title or body, returning 0")
 		return 0
 
 	# Find matching subscriptions
@@ -578,7 +575,6 @@ def function_send(context, type, title, body, object="", url="", data=None):
 			app, type
 		)
 
-	mochi.log.debug("function_send: found %d subscriptions", len(subs))
 	if not subs:
 		return 0
 
@@ -593,7 +589,6 @@ def function_send(context, type, title, body, object="", url="", data=None):
 			"select type, target from destinations where subscription = ?",
 			sub_id
 		)
-		mochi.log.debug("function_send: subscription %d has %d destinations", sub_id, len(dests))
 
 		# Deliver to each destination
 		for dest in dests:
@@ -643,7 +638,6 @@ def function_send(context, type, title, body, object="", url="", data=None):
 
 			elif dest["type"] == "account":
 				# Deliver via connected account (email, browser push, etc.)
-				mochi.log.debug("function_send: delivering to account %s", dest["target"])
 				mochi.account.deliver(
 					account=int(dest["target"]),
 					app=app,

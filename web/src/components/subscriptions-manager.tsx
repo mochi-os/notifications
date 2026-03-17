@@ -21,7 +21,7 @@ import {
   getAppPath,
   requestHelpers,
   type Destination,
-} from '@mochi/common'
+} from '@mochi/web'
 import { Bell, Globe, Mail, Rss, Trash2, Webhook } from 'lucide-react'
 import {
   useSubscriptions,

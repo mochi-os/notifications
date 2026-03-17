@@ -26,7 +26,7 @@ import {
   AlertDialogTitle,
   requestHelpers,
   getAppPath,
-} from '@mochi/common'
+} from '@mochi/web'
 import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil } from 'lucide-react'
 
 interface RssFeed {

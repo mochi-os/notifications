@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { requestHelpers, toast, getErrorMessage } from '@mochi/common'
+import { requestHelpers, toast, getErrorMessage } from '@mochi/web'
 
 export interface SubscriptionDestination {
   type: 'web' | 'account' | 'rss'

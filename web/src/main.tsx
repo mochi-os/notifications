@@ -6,7 +6,7 @@ import {
   ThemeProvider,
   createQueryClient,
   getRouterBasepath,
-} from '@mochi/common'
+} from '@mochi/web'
 // Generated Routes
 import { routeTree } from './routeTree.gen'
 // Styles

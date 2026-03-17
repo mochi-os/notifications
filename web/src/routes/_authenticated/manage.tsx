@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { ListChecks, Rss } from 'lucide-react'
-import { Button, usePageTitle, PageHeader, Main } from '@mochi/common'
+import { Button, usePageTitle, PageHeader, Main } from '@mochi/web'
 import { SubscriptionsManager } from '@/components/subscriptions-manager'
 import { RssDialog } from '@/components/rss-dialog'
 
