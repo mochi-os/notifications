@@ -44,7 +44,35 @@ def database_create():
 	)""")
 
 def database_upgrade(to_version):
-	pass
+	if to_version == 9:
+		tables = [r["name"] for r in mochi.db.rows("select name from sqlite_master where type='table'")]
+		if "rss" not in tables:
+			mochi.db.execute("""create table if not exists rss (
+				id text primary key,
+				name text not null,
+				token text not null unique,
+				created integer not null,
+				enabled integer not null default 1
+			)""")
+		if "subscriptions" not in tables:
+			mochi.db.execute("""create table if not exists subscriptions (
+				id integer primary key,
+				app text not null,
+				type text not null default '',
+				object text not null default '',
+				label text not null,
+				created integer not null
+			)""")
+			mochi.db.execute("create index if not exists subscriptions_app on subscriptions(app)")
+			mochi.db.execute("create index if not exists subscriptions_app_type_object on subscriptions(app, type, object)")
+		if "destinations" not in tables:
+			mochi.db.execute("""create table if not exists destinations (
+				subscription integer not null,
+				type text not null,
+				target text not null,
+				primary key (subscription, type, target),
+				foreign key (subscription) references subscriptions(id) on delete cascade
+			)""")
 
 # Expiry: 30 days unread, 7 days read
 def function_expire(context):
