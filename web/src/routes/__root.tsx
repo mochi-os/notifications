@@ -3,7 +3,6 @@ import { createRootRouteWithContext, Outlet } from '@tanstack/react-router'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { Toaster } from '@mochi/web/components/ui/sonner'
-import { NavigationProgress } from '@mochi/web/components/navigation-progress'
 import { NotificationTitle } from '@mochi/web/components/notification-title'
 import { GeneralError } from '@mochi/web/features/errors/general-error'
 import { NotFoundError } from '@mochi/web/features/errors/not-found-error'
@@ -15,7 +14,6 @@ export const Route = createRootRouteWithContext<{
     return (
       <>
         <NotificationTitle />
-        <NavigationProgress />
         <Outlet />
         <Toaster duration={5000} />
         {import.meta.env.MODE === 'development' && (
