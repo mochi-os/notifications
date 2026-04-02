@@ -91,7 +91,7 @@ def function_clear_object(context, app, object):
 	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object})
 
 def function_list(context):
-	return mochi.db.rows("select * from notifications order by created desc")
+	return mochi.db.rows("select * from notifications order by created")
 
 def function_read(context, id):
 	now = mochi.time.now()
