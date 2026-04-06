@@ -145,7 +145,7 @@ export function Notifications() {
         title='Notifications'
         icon={<Bell className='size-4 md:size-5' />}
         actions={
-          <div className='flex items-center gap-2'>
+          <>
             <div className='mr-2 flex items-center gap-2'>
               <Switch
                 id='show-all'
@@ -174,36 +174,38 @@ export function Notifications() {
                 <span className='hidden md:inline'>Mark all read</span>
               </Button>
             )}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant='ghost'
-                  size='icon'
-                  aria-label='Notification actions'
-                  title='Notification actions'
+          </>
+        }
+        menuAction={
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant='ghost'
+                size='icon'
+                aria-label='Notification actions'
+                title='Notification actions'
+              >
+                <MoreHorizontal className='size-5' />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align='end'>
+              {allNotifications.length > 0 && (
+                <DropdownMenuItem
+                  onClick={handleClearAll}
+                  disabled={clearAllMutation.isPending}
                 >
-                  <MoreHorizontal className='size-5' />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align='end'>
-                {allNotifications.length > 0 && (
-                  <DropdownMenuItem
-                    onClick={handleClearAll}
-                    disabled={clearAllMutation.isPending}
-                  >
-                    <Trash2 className='mr-2 size-4' />
-                    Clear all
-                  </DropdownMenuItem>
-                )}
-                <DropdownMenuItem asChild>
-                  <Link to='/manage'>
-                    <ListChecks className='mr-2 size-4' />
-                    Manage notifications
-                  </Link>
+                  <Trash2 className='mr-2 size-4' />
+                  Clear all
                 </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
+              )}
+              <DropdownMenuItem asChild>
+                <Link to='/manage'>
+                  <ListChecks className='mr-2 size-4' />
+                  Manage notifications
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         }
       />
       <Main>
