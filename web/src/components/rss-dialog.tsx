@@ -2,12 +2,13 @@ import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import {
   Button,
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
+  ConfirmDialog,
+  ResponsiveDialog,
+  ResponsiveDialogContent,
+  ResponsiveDialogDescription,
+  ResponsiveDialogFooter,
+  ResponsiveDialogHeader,
+  ResponsiveDialogTitle,
   Input,
   Label,
   Switch,
@@ -16,14 +17,6 @@ import {
   ListSkeleton,
   getErrorMessage,
   toast,
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
   requestHelpers,
   getAppPath,
 } from '@mochi/web'
@@ -211,20 +204,20 @@ export function RssDialog({
 
   return (
     <>
-      <Dialog open={open} onOpenChange={handleClose}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>
+      <ResponsiveDialog open={open} onOpenChange={handleClose}>
+        <ResponsiveDialogContent>
+          <ResponsiveDialogHeader>
+            <ResponsiveDialogTitle>
               {view === 'create' && 'Create RSS feed'}
               {view === 'created' && 'Feed created'}
               {view === 'list' && 'RSS feeds'}
-            </DialogTitle>
+            </ResponsiveDialogTitle>
             {view === 'created' && (
-              <DialogDescription>
+              <ResponsiveDialogDescription>
                 Save this URL now. You won't be able to see the token again.
-              </DialogDescription>
+              </ResponsiveDialogDescription>
             )}
-          </DialogHeader>
+          </ResponsiveDialogHeader>
 
           {view === 'list' && (
             <div className='space-y-4'>
@@ -328,12 +321,12 @@ export function RssDialog({
                   ))}
                 </div>
               )}
-              <DialogFooter>
+              <ResponsiveDialogFooter>
                 <Button onClick={() => setView('create')}>
                   <Plus className='h-4 w-4' />
                   Create feed
                 </Button>
-              </DialogFooter>
+              </ResponsiveDialogFooter>
             </div>
           )}
 
@@ -365,7 +358,7 @@ export function RssDialog({
                   onCheckedChange={setAddToExisting}
                 />
               </div>
-              <DialogFooter>
+              <ResponsiveDialogFooter>
                 <Button variant='outline' onClick={handleClose}>
                   Cancel
                 </Button>
@@ -380,7 +373,7 @@ export function RssDialog({
                   )}
                   Create feed
                 </Button>
-              </DialogFooter>
+              </ResponsiveDialogFooter>
             </div>
           )}
 
@@ -403,36 +396,30 @@ export function RssDialog({
                   )}
                 </Button>
               </div>
-              <DialogFooter>
+              <ResponsiveDialogFooter>
                 <Button variant='outline' onClick={() => setView('list')}>
                   Done
                 </Button>
-              </DialogFooter>
+              </ResponsiveDialogFooter>
             </div>
           )}
-        </DialogContent>
-      </Dialog>
+        </ResponsiveDialogContent>
+      </ResponsiveDialog>
 
-      <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Delete feed?</AlertDialogTitle>
-            <AlertDialogDescription>
-              This will permanently delete this feed. Any RSS readers using it
-              will no longer be able to access your notifications.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction
-              variant='destructive'
-              onClick={() => deleteId && deleteMutation.mutate(deleteId)}
-            >
-              Delete
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+      <ConfirmDialog
+        open={!!deleteId}
+        onOpenChange={(isOpen) => {
+          if (!isOpen) setDeleteId(null)
+        }}
+        title='Delete Feed?'
+        desc='This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications.'
+        confirmText='Delete'
+        destructive
+        handleConfirm={() => {
+          if (deleteId) deleteMutation.mutate(deleteId)
+        }}
+        isLoading={deleteMutation.isPending}
+      />
     </>
   )
 }
