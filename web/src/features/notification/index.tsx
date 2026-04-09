@@ -8,6 +8,7 @@ import {
   GeneralError,
   formatTimestamp,
   getSafeNavigationTarget,
+  shellNavigateExternal,
   toast,
   useShellStorage,
 } from '@mochi/web'
@@ -70,7 +71,7 @@ function NotificationItem({
         }
       )
       if (safeTarget) {
-        window.location.assign(safeTarget)
+        shellNavigateExternal(safeTarget)
       } else {
         toast.error('Blocked navigation to untrusted link')
       }
