@@ -6,7 +6,7 @@ import {
   EmptyState,
   ListSkeleton,
   GeneralError,
-  formatTimestamp,
+  useFormat,
   getSafeNavigationTarget,
   shellNavigateExternal,
   toast,
@@ -55,6 +55,7 @@ function NotificationItem({
   notification: ApiNotification
   onMarkAsRead: (id: string) => void
 }) {
+  const { formatTimestamp } = useFormat()
   const isUnread = notification.read === 0
 
   const handleClick = () => {
