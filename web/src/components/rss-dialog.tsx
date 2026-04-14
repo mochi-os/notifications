@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { useState, useEffect, useRef } from 'react'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import {
   Button,
   ConfirmDialog,
@@ -19,6 +19,7 @@ import {
   toast,
   requestHelpers,
   getAppPath,
+  useQueryWithError,
 } from '@mochi/web'
 import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil } from 'lucide-react'
 
@@ -54,6 +55,34 @@ export function RssDialog({
   const [editingName, setEditingName] = useState('')
   const queryClient = useQueryClient()
 
+  const copiedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const copiedIdTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Clean up copy timers on unmount
+  useEffect(() => {
+    return () => {
+      if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current)
+      if (copiedIdTimerRef.current) clearTimeout(copiedIdTimerRef.current)
+    }
+  }, [])
+
+  // Reset dialog state after close animation completes
+  useEffect(() => {
+    if (!open) {
+      const timer = setTimeout(() => {
+        setView(initialView)
+        setNewFeedName('')
+        setAddToExisting(true)
+        setCreatedFeed(null)
+        setCopied(false)
+        setCopiedId(null)
+        setEditingId(null)
+        setEditingName('')
+      }, 200)
+      return () => clearTimeout(timer)
+    }
+  }, [open, initialView])
+
   const buildRssUrl = (token: string) => {
     return `${window.location.origin}${getAppPath()}/-/rss?token=${token}`
   }
@@ -64,7 +93,7 @@ export function RssDialog({
     isError,
     error,
     refetch,
-  } = useQuery({
+  } = useQueryWithError({
     queryKey: ['rss-feeds'],
     queryFn: async () => {
       return await requestHelpers.get<RssFeed[]>('-/rss/list')
@@ -148,17 +177,19 @@ export function RssDialog({
   })
 
   const handleCopy = (token: string) => {
-    navigator.clipboard.writeText(buildRssUrl(token))
+    void navigator.clipboard.writeText(buildRssUrl(token))
     setCopied(true)
     toast.success('Copied to clipboard')
-    setTimeout(() => setCopied(false), 2000)
+    if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current)
+    copiedTimerRef.current = setTimeout(() => setCopied(false), 2000)
   }
 
   const handleCopyFeed = (feed: RssFeed) => {
-    navigator.clipboard.writeText(buildRssUrl(feed.token))
+    void navigator.clipboard.writeText(buildRssUrl(feed.token))
     setCopiedId(feed.id)
     toast.success('Copied to clipboard')
-    setTimeout(() => setCopiedId(null), 2000)
+    if (copiedIdTimerRef.current) clearTimeout(copiedIdTimerRef.current)
+    copiedIdTimerRef.current = setTimeout(() => setCopiedId(null), 2000)
   }
 
   const handleCreate = () => {
@@ -189,17 +220,7 @@ export function RssDialog({
 
   const handleClose = () => {
     onOpenChange(false)
-    // Reset state after close animation
-    setTimeout(() => {
-      setView(initialView)
-      setNewFeedName('')
-      setAddToExisting(true)
-      setCreatedFeed(null)
-      setCopied(false)
-      setCopiedId(null)
-      setEditingId(null)
-      setEditingName('')
-    }, 200)
+    // State reset is handled by the useEffect watching `open`
   }
 
   return (
