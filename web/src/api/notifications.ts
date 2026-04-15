@@ -4,7 +4,7 @@ import { requestHelpers } from '@mochi/web'
 export interface Notification {
   id: string
   app: string
-  category: string
+  topic: string
   object: string
   content: string
   link: string

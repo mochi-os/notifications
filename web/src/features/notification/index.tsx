@@ -1,5 +1,4 @@
 import { useMemo } from 'react'
-import { Link } from '@tanstack/react-router'
 import {
   PageHeader,
   Main,
@@ -11,14 +10,10 @@ import {
   shellNavigateExternal,
   toast,
   useShellStorage,
+  usePageTitle,
 } from '@mochi/web'
 import { Button } from '@mochi/web/components/ui/button'
-import { Card, CardContent } from '@mochi/web/components/ui/card'
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
 } from '@mochi/web/components/ui/dropdown-menu'
 import { Label } from '@mochi/web/components/ui/label'
 import { Switch } from '@mochi/web/components/ui/switch'
@@ -26,9 +21,7 @@ import { cn } from '@mochi/web/lib/utils'
 import {
   Bell,
   Check,
-  ListChecks,
   Loader2,
-  MoreHorizontal,
   Trash2,
 } from 'lucide-react'
 import type { Notification as ApiNotification } from '@/api/notifications'
@@ -110,6 +103,7 @@ function NotificationItem({
 }
 
 export function Notifications() {
+  usePageTitle('Notifications')
   const [showAll, setShowAll] = useShellStorage(STORAGE_KEY, false)
 
   const { data, isLoading, error, refetch } = useNotificationsQuery()
@@ -176,54 +170,34 @@ export function Notifications() {
                 <span className='hidden md:inline'>Mark all read</span>
               </Button>
             )}
-          </>
-        }
-        menuAction={
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            {allNotifications.length > 0 && (
               <Button
                 variant='ghost'
-                size='icon'
-                aria-label='Notification actions'
-                title='Notification actions'
+                size='sm'
+                onClick={handleClearAll}
+                disabled={clearAllMutation.isPending}
               >
-                <MoreHorizontal className='size-5' />
+                {clearAllMutation.isPending ? (
+                  <Loader2 className='mr-1.5 size-4 animate-spin' />
+                ) : (
+                  <Trash2 className='mr-1.5 size-4' />
+                )}
+                <span className='hidden md:inline'>Clear all</span>
               </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align='end'>
-              {allNotifications.length > 0 && (
-                <DropdownMenuItem
-                  onClick={handleClearAll}
-                  disabled={clearAllMutation.isPending}
-                >
-                  <Trash2 className='mr-2 size-4' />
-                  Clear all
-                </DropdownMenuItem>
-              )}
-              <DropdownMenuItem asChild>
-                <Link to='/manage'>
-                  <ListChecks className='mr-2 size-4' />
-                  Manage notifications
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+            )}
+          </>
         }
       />
       <Main>
-        <div className='mx-auto max-w-2xl'>
+        <div>
           {/* Loading */}
           {isLoading && (
-            <Card>
-              <CardContent className='p-0'>
-                <ListSkeleton
-                  count={5}
-                  variant='simple'
-                  avatar
-                  className='divide-y px-2'
-                />
-              </CardContent>
-            </Card>
+            <ListSkeleton
+              count={5}
+              variant='simple'
+              avatar
+              className='divide-y px-2'
+            />
           )}
 
           {/* Error */}
@@ -248,23 +222,18 @@ export function Notifications() {
                     title={
                       showAll ? 'No notifications' : 'No unread notifications'
                     }
-                    description={!showAll ? "You're all caught up!" : undefined}
                   />
                 </div>
               ) : (
-                <Card>
-                  <CardContent className='p-0'>
-                    <div className='divide-y'>
-                      {displayedNotifications.map((notification) => (
-                        <NotificationItem
-                          key={notification.id}
-                          notification={notification}
-                          onMarkAsRead={handleMarkAsRead}
-                        />
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className='divide-y'>
+                  {displayedNotifications.map((notification) => (
+                    <NotificationItem
+                      key={notification.id}
+                      notification={notification}
+                      onMarkAsRead={handleMarkAsRead}
+                    />
+                  ))}
+                </div>
               )}
             </>
           )}

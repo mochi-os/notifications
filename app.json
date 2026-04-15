@@ -2,7 +2,7 @@
 // Copyright Alistair Cunningham 2025-2026
 
 {
-	"version": "2.25",
+	"version": "2.26",
 	"label": "app_name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -11,7 +11,7 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 9,
+		"schema": 10,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"},
@@ -20,7 +20,6 @@
 
 	"actions": {
 		"": {"file": "web/dist/index.html"},
-		"manage": {"file": "web/dist/index.html"},
 		"assets": {"files": "web/dist/assets"},
 		"images": {"files": "web/dist/images"},
 		"-/list": {"function": "action_list"},
@@ -42,12 +41,18 @@
 		"-/accounts/remove": {"function": "action_accounts_remove"},
 		"-/accounts/verify": {"function": "action_accounts_verify"},
 		"-/accounts/vapid": {"function": "action_accounts_vapid"},
+		"-/categories/list": {"function": "action_categories_list"},
+		"-/categories/create": {"function": "action_categories_create"},
+		"-/categories/update": {"function": "action_categories_update"},
+		"-/categories/delete": {"function": "action_categories_delete"},
+		"-/categories/test": {"function": "action_categories_test"},
 		"-/subscriptions/list": {"function": "action_subscriptions_list"},
-		"-/subscriptions/create": {"function": "action_subscriptions_create"},
-		"-/subscriptions/update": {"function": "action_subscriptions_update"},
+		"-/subscriptions/set_category": {"function": "action_subscriptions_set_category"},
+		"-/subscriptions/reset": {"function": "action_subscriptions_reset"},
 		"-/subscriptions/delete": {"function": "action_subscriptions_delete"},
 		"-/subscriptions/check": {"function": "action_subscriptions_check"},
-		"-/notifications/destinations": {"function": "action_destinations_list"}
+		"-/destinations/list": {"function": "action_destinations_list"},
+		"-/pending/list": {"function": "action_pending_list"}
 	},
 
 	"functions": {
@@ -62,8 +67,18 @@
 		"send": {"function": "function_send"},
 		"subscriptions": {"function": "function_subscriptions"},
 		"unsubscribe": {"function": "function_unsubscribe"},
-		"add_destination_to_all": {"function": "function_add_destination_to_all"},
-		"destinations": {"function": "function_destinations", "permission": "notifications/send"},
+		"categories": {"function": "function_categories", "permission": "notifications/send"},
+		"category/list": {"function": "function_category_list"},
+		"category/create": {"function": "function_category_create"},
+		"category/update": {"function": "function_category_update"},
+		"category/delete": {"function": "function_category_delete"},
+		"category/test": {"function": "function_category_test"},
+		"subscription/list": {"function": "function_subscription_list"},
+		"subscription/set_category": {"function": "function_subscription_set_category"},
+		"subscription/reset": {"function": "function_subscription_reset"},
+		"subscription/delete": {"function": "function_subscription_delete"},
+		"pending/list": {"function": "function_pending_list"},
+		"destinations/available": {"function": "function_destinations_available"},
 		"accounts/vapid": {"function": "function_accounts_vapid", "permission": "notifications/send"},
 		"accounts/list": {"function": "function_accounts_list", "permission": "notifications/send"},
 		"accounts/add": {"function": "function_accounts_add", "permission": "notifications/send"},
