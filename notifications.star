@@ -27,7 +27,6 @@ def database_create():
 	mochi.db.execute("""create table if not exists categories (
 		id integer primary key,
 		label text not null,
-		badge integer not null default 1,
 		"default" integer not null default 0,
 		created integer not null
 	)""")
@@ -56,9 +55,8 @@ def database_create():
 def _seed_categories():
 	now = mochi.time.now()
 	if not mochi.db.exists("select 1 from categories where id = 0"):
-		mochi.db.execute("insert into categories (id, label, badge, created) values (0, 'No notifications', 0, ?)", now)
-	normal_id = _ensure_category("Normal", 1, now)
-	low_id = _ensure_category("Low", 0, now)
+		mochi.db.execute("insert into categories (id, label, created) values (0, 'No notifications', ?)", now)
+	normal_id = _ensure_category("Normal", now)
 	# Ensure exactly one default exists (Normal by default)
 	if not mochi.db.exists('select 1 from categories where "default" = 1'):
 		mochi.db.execute('update categories set "default" = 1 where id = ?', normal_id)
@@ -70,15 +68,12 @@ def _seed_categories():
 				mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'account', ?)", normal_id, str(acc["id"]))
 		for feed in mochi.db.rows("select id from rss where enabled = 1") or []:
 			mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'rss', ?)", normal_id, feed["id"])
-	# Low: web only
-	if not mochi.db.exists("select 1 from destinations where category = ?", low_id):
-		mochi.db.execute("insert into destinations (category, type, target) values (?, 'web', '')", low_id)
 
-def _ensure_category(label, badge, now):
+def _ensure_category(label, now):
 	existing = mochi.db.row("select id from categories where label = ?", label)
 	if existing:
 		return existing["id"]
-	mochi.db.execute("insert into categories (label, badge, created) values (?, ?, ?)", label, badge, now)
+	mochi.db.execute("insert into categories (label, created) values (?, ?)", label, now)
 	return mochi.db.row("select last_insert_rowid() as id")["id"]
 
 def database_upgrade(to_version):
@@ -128,13 +123,11 @@ def database_upgrade(to_version):
 		mochi.db.execute("""create table categories (
 			id integer primary key,
 			label text not null,
-			badge integer not null default 1,
 			"default" integer not null default 0,
 			created integer not null
 		)""")
-		mochi.db.execute("insert into categories (id, label, badge, created) values (0, 'No notifications', 0, ?)", now)
-		normal_id = _ensure_category("Normal", 1, now)
-		low_id = _ensure_category("Low", 0, now)
+		mochi.db.execute("insert into categories (id, label, created) values (0, 'No notifications', ?)", now)
+		normal_id = _ensure_category("Normal", now)
 		mochi.db.execute('update categories set "default" = 1 where id = ?', normal_id)
 
 		# Destinations (fresh start)
@@ -152,7 +145,6 @@ def database_upgrade(to_version):
 				mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'account', ?)", normal_id, str(acc["id"]))
 		for feed in mochi.db.rows("select id from rss where enabled = 1") or []:
 			mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'rss', ?)", normal_id, feed["id"])
-		mochi.db.execute("insert into destinations (category, type, target) values (?, 'web', '')", low_id)
 
 		# Subscriptions (fresh start — apps re-prompt on next visit)
 		mochi.db.execute("drop table subscriptions")
@@ -211,14 +203,7 @@ def version_gte(version, minimum):
 	return True
 
 def _badge_count():
-	# Bell badge: only notifications whose routing subscription's category has badge=1
-	row = mochi.db.row("""
-		select count(*) as count, coalesce(sum(n.count), 0) as total
-		from notifications n
-		left join subscriptions s on s.app = n.app and (s.object = n.object or s.object = '')
-		left join categories c on c.id = s.category
-		where n.read = 0 and coalesce(c.badge, 1) = 1
-	""")
+	row = mochi.db.row("select count(*) as count, coalesce(sum(count), 0) as total from notifications where read = 0")
 	return {"count": row["count"] if row else 0, "total": row["total"] if row else 0}
 
 def action_list(a):
@@ -684,12 +669,12 @@ def function_unsubscribe(context, id):
 # Permission-gated function for apps to list categories (for pickers shown in app UI).
 # Kept narrow — only labels and ids, no destinations.
 def function_categories(context):
-	return mochi.db.rows('select id, label, badge, "default" from categories order by id') or []
+	return mochi.db.rows('select id, label, "default" from categories order by id') or []
 
 # Category CRUD — used by the settings page (no permission gate; user-owned data)
 
 def function_category_list(context):
-	cats = mochi.db.rows('select id, label, badge, "default", created from categories order by id') or []
+	cats = mochi.db.rows('select id, label, "default", created from categories order by id') or []
 	result = []
 	for c in cats:
 		dests = mochi.db.rows("select type, target from destinations where category = ?", c["id"]) or []
@@ -697,14 +682,11 @@ def function_category_list(context):
 		result.append(c)
 	return result
 
-def function_category_create(context, label="", badge=1, destinations=None, default=None):
+def function_category_create(context, label="", destinations=None, default=None):
 	if not label or not mochi.valid(label, "text"):
 		return None
 	now = mochi.time.now()
-	mochi.db.execute(
-		"insert into categories (label, badge, created) values (?, ?, ?)",
-		label, 1 if badge else 0, now
-	)
+	mochi.db.execute("insert into categories (label, created) values (?, ?)", label, now)
 	cid = mochi.db.row("select last_insert_rowid() as id")["id"]
 	_apply_destinations(cid, destinations)
 	if default:
@@ -718,7 +700,7 @@ def _set_default(id):
 	mochi.db.execute('update categories set "default" = 0')
 	mochi.db.execute('update categories set "default" = 1 where id = ?', id)
 
-def function_category_update(context, id=0, label=None, badge=None, destinations=None, default=None):
+def function_category_update(context, id=0, label=None, destinations=None, default=None):
 	if not id:
 		return False
 	if not mochi.db.exists("select 1 from categories where id = ?", id):
@@ -727,8 +709,6 @@ def function_category_update(context, id=0, label=None, badge=None, destinations
 		if not mochi.valid(label, "text"):
 			return False
 		mochi.db.execute("update categories set label = ? where id = ?", label, id)
-	if badge != None and id != 0:
-		mochi.db.execute("update categories set badge = ? where id = ?", 1 if badge else 0, id)
 	if default != None and id != 0:
 		# Only allow setting default on (can't unset without picking another).
 		if default:
@@ -885,13 +865,11 @@ def action_categories_create(a):
 	label = a.input("label", "").strip()
 	if not label:
 		return a.error(400, "label is required")
-	badge_str = a.input("badge", "1")
-	badge = 1 if badge_str == "1" or badge_str == "true" else 0
 	default_raw = a.input("default", "")
 	default = 1 if default_raw == "1" or default_raw == "true" else None
 	destinations_json = a.input("destinations", "").strip()
 	destinations = json.decode(destinations_json) if destinations_json else None
-	cid = function_category_create({}, label, badge, destinations, default)
+	cid = function_category_create({}, label, destinations, default)
 	if not cid:
 		return a.error(400, "Invalid category")
 	return {"data": {"id": cid}}
@@ -901,17 +879,13 @@ def action_categories_update(a):
 	if not id or not id.isdigit():
 		return a.error(400, "Invalid id")
 	label = a.input("label")
-	badge_raw = a.input("badge")
 	default_raw = a.input("default")
 	destinations_json = a.input("destinations", "").strip()
-	badge = None
-	if badge_raw != None and badge_raw != "":
-		badge = 1 if badge_raw == "1" or badge_raw == "true" else 0
 	default = None
 	if default_raw != None and default_raw != "":
 		default = 1 if default_raw == "1" or default_raw == "true" else 0
 	destinations = json.decode(destinations_json) if destinations_json else None
-	ok = function_category_update({}, int(id), label, badge, destinations, default)
+	ok = function_category_update({}, int(id), label, destinations, default)
 	if not ok:
 		return a.error(404, "Not found")
 	return {"data": {}}
