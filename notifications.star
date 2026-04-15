@@ -853,7 +853,8 @@ def function_destinations_available(context):
 	"""Return the full set of available destinations plus their 'notify by default' flags.
 	Used by the settings UI to build the category editor grid."""
 	accounts = mochi.account.list("notify") or []
-	feeds = mochi.db.rows("select id, name, enabled from rss order by name") or []
+	accounts = sorted(accounts, key=lambda a: (a.get("label") or a.get("identifier") or a.get("type") or "").lower())
+	feeds = mochi.db.rows("select id, name, enabled from rss order by name collate nocase") or []
 	return {"accounts": accounts, "feeds": feeds}
 
 # HTTP action endpoints (settings page calls these via service proxy; kept for direct use too)

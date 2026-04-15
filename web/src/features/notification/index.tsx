@@ -143,17 +143,17 @@ export function Notifications() {
         actions={
           <>
             <div className='mr-2 flex items-center gap-2'>
-              <Switch
-                id='show-all'
-                checked={showAll}
-                onCheckedChange={setShowAll}
-              />
               <Label
                 htmlFor='show-all'
                 className='text-muted-foreground hidden text-sm md:block'
               >
                 Show all
               </Label>
+              <Switch
+                id='show-all'
+                checked={showAll}
+                onCheckedChange={setShowAll}
+              />
             </div>
             {unreadCount > 0 && (
               <Button
