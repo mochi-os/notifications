@@ -64,6 +64,7 @@
 		"read/all": {"function": "function_read_all"},
 		"expire": {"function": "function_expire"},
 		"subscribe": {"function": "function_subscribe", "permission": "notifications/send"},
+		"subscriptions/reconcile": {"function": "function_subscriptions_reconcile", "permission": "notifications/send"},
 		"send": {"function": "function_send"},
 		"subscriptions": {"function": "function_subscriptions"},
 		"unsubscribe": {"function": "function_unsubscribe"},

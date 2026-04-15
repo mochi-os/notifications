@@ -838,6 +838,58 @@ def function_subscription_delete(context, id=0):
 	mochi.db.execute("delete from subscriptions where id = ?", id)
 	return True
 
+def function_subscriptions_reconcile(context, app="", desired=None):
+	"""Align the app's subscriptions with its declared set of (topic, object) items.
+
+	Deletes subscriptions for this app whose (topic, object) is not in `desired`
+	(orphans — e.g. after the app renames a topic). Returns the items from
+	`desired` that still need user input (no subscription yet, or category is
+	NULL meaning the user hasn't chosen a category yet).
+
+	Args:
+		app: app id (falls back to context app)
+		desired: list of dicts with keys "topic", "object", "label"
+
+	Returns:
+		list of items (same shape as input) that should be prompted for
+	"""
+	if not app:
+		app = context.get("app", "")
+	if not app:
+		return []
+	if not desired:
+		desired = []
+
+	wanted = {}
+	for item in desired:
+		topic = item.get("topic", "") or ""
+		object = item.get("object", "") or ""
+		wanted[topic + "\x00" + object] = item
+
+	existing = mochi.db.rows(
+		"select id, topic, object, category from subscriptions where app = ?",
+		app
+	) or []
+
+	# Delete orphans
+	for sub in existing:
+		key = (sub["topic"] or "") + "\x00" + (sub["object"] or "")
+		if key not in wanted:
+			mochi.db.execute("delete from subscriptions where id = ?", sub["id"])
+
+	# Work out which desired items still need prompting
+	assigned = {}
+	for sub in existing:
+		key = (sub["topic"] or "") + "\x00" + (sub["object"] or "")
+		if key in wanted:
+			assigned[key] = sub["category"]
+
+	missing = []
+	for key, item in wanted.items():
+		if key not in assigned or assigned[key] == None:
+			missing.append(item)
+	return missing
+
 def function_pending_list(context, app=""):
 	"""Return subscriptions with unassigned category. If `app` is given, only for that app."""
 	if app:
