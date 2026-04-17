@@ -20,6 +20,7 @@ import {
   requestHelpers,
   getAppPath,
   useQueryWithError,
+  shellClipboardWrite,
 } from '@mochi/web'
 import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil } from 'lucide-react'
 
@@ -176,16 +177,18 @@ export function RssDialog({
     },
   })
 
-  const handleCopy = (token: string) => {
-    void navigator.clipboard.writeText(buildRssUrl(token))
+  const handleCopy = async (token: string) => {
+    const ok = await shellClipboardWrite(buildRssUrl(token))
+    if (!ok) return
     setCopied(true)
     toast.success('Copied to clipboard')
     if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current)
     copiedTimerRef.current = setTimeout(() => setCopied(false), 2000)
   }
 
-  const handleCopyFeed = (feed: RssFeed) => {
-    void navigator.clipboard.writeText(buildRssUrl(feed.token))
+  const handleCopyFeed = async (feed: RssFeed) => {
+    const ok = await shellClipboardWrite(buildRssUrl(feed.token))
+    if (!ok) return
     setCopiedId(feed.id)
     toast.success('Copied to clipboard')
     if (copiedIdTimerRef.current) clearTimeout(copiedIdTimerRef.current)
