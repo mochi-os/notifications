@@ -6,11 +6,22 @@ import {
   ThemeProvider,
   createQueryClient,
   getRouterBasepath,
+  I18nProvider,
+  type Catalogs,
 } from '@mochi/web'
 // Generated Routes
 import { routeTree } from './routeTree.gen'
 // Styles
 import './styles/index.css'
+
+// Lingui catalogs bundled by @lingui/vite-plugin (compiled from
+// src/locales/<lang>/messages.po on the fly).
+const catalogs: Catalogs = {
+  en: () => import('./locales/en/messages.po'),
+  'en-us': () => import('./locales/en-US/messages.po'),
+  fr: () => import('./locales/fr/messages.po'),
+  ja: () => import('./locales/ja/messages.po'),
+}
 
 const queryClient = createQueryClient()
 
@@ -36,9 +47,12 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider>
-          <RouterProvider router={router} />
-        </ThemeProvider>
+        <I18nProvider catalogs={catalogs}>
+          <ThemeProvider>
+            <RouterProvider router={router} />
+          </ThemeProvider>
+
+        </I18nProvider>
       </QueryClientProvider>
     </StrictMode>
   )
