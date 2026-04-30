@@ -262,7 +262,7 @@ def action_count(a):
 def action_read(a):
 	id = a.input("id", "").strip()
 	if not id or len(id) > 64:
-		a.error(400, "Invalid id")
+		a.error_label(400, "errors.invalid_id")
 		return
 	function_read({}, id)
 	return {"data": {}}
@@ -287,7 +287,7 @@ def escape_xml(s):
 
 def action_rss(a):
 	if not a.user:
-		a.error(401, "Authentication required")
+		a.error_label(401, "errors.authentication_required")
 		return
 
 	feed_name = "Notifications"
@@ -355,7 +355,7 @@ def action_accounts_list(a):
 def action_accounts_get(a):
 	id = a.input("id", "").strip()
 	if not id or not id.isdigit():
-		a.error(400, "Invalid id")
+		a.error_label(400, "errors.invalid_id")
 		return
 	result = mochi.account.get(int(id))
 	return {"data": result}
@@ -363,7 +363,7 @@ def action_accounts_get(a):
 def action_accounts_add(a):
 	type = a.input("type")
 	if not type:
-		a.error(400, "type is required")
+		a.error_label(400, "errors.type_is_required")
 		return
 
 	fields = {}
@@ -392,7 +392,7 @@ def action_accounts_add(a):
 def action_accounts_update(a):
 	id = a.input("id", "").strip()
 	if not id or not id.isdigit():
-		a.error(400, "Invalid id")
+		a.error_label(400, "errors.invalid_id")
 		return
 
 	fields = {}
@@ -406,7 +406,7 @@ def action_accounts_update(a):
 def action_accounts_remove(a):
 	id = a.input("id", "").strip()
 	if not id or not id.isdigit():
-		a.error(400, "Invalid id")
+		a.error_label(400, "errors.invalid_id")
 		return
 
 	# Also remove from all categories' destinations
@@ -417,12 +417,12 @@ def action_accounts_remove(a):
 def action_accounts_verify(a):
 	id = a.input("id", "").strip()
 	if not id or not id.isdigit():
-		a.error(400, "Invalid id")
+		a.error_label(400, "errors.invalid_id")
 		return
 
 	code = a.input("code", "").strip()
 	if not code or len(code) > 256:
-		a.error(400, "Invalid code")
+		a.error_label(400, "errors.invalid_code")
 		return
 	result = mochi.account.verify(int(id), code)
 	return {"data": result}
@@ -430,7 +430,7 @@ def action_accounts_verify(a):
 def action_accounts_vapid(a):
 	key = mochi.webpush.key()
 	if not key:
-		return a.error(503, "Push notifications not available")
+		return a.error_label(503, "errors.push_notifications_not_available")
 	return {"data": {"key": key}}
 
 def _add_destination_to_categories(type, target):
@@ -451,9 +451,9 @@ def action_rss_list(a):
 def action_rss_create(a):
 	name = (a.input("name") or "RSS feed").strip()
 	if len(name) > 100:
-		return a.error(400, "Feed name is too long")
+		return a.error_label(400, "errors.feed_name_is_too_long")
 	if not name:
-		return a.error(400, "Feed name is required")
+		return a.error_label(400, "errors.feed_name_is_required")
 
 	notify_default = a.input("notify_default", "1")
 	notify_default = notify_default == "1" or notify_default == "true"
@@ -461,7 +461,7 @@ def action_rss_create(a):
 	id = mochi.uid()
 	token = mochi.token.create("rss:" + id, ["rss"])
 	if not token:
-		return a.error(500, "Failed to create token")
+		return a.error_label(500, "errors.failed_to_create_token")
 	now = mochi.time.now()
 
 	enabled = 1 if notify_default else 0
@@ -475,11 +475,11 @@ def action_rss_create(a):
 def action_rss_delete(a):
 	id = a.input("id", "").strip()
 	if not id or len(id) > 64:
-		return a.error(400, "Invalid id")
+		return a.error_label(400, "errors.invalid_id")
 
 	exists = mochi.db.exists("select 1 from rss where id = ?", id)
 	if not exists:
-		return a.error(404, "Feed not found")
+		return a.error_label(404, "errors.feed_not_found")
 
 	token_name = "rss:" + id
 	for token in mochi.token.list():
@@ -497,16 +497,16 @@ def action_rss_rename(a):
 def action_rss_update(a):
 	id = a.input("id", "").strip()
 	if not id or len(id) > 64:
-		return a.error(400, "Invalid id")
+		return a.error_label(400, "errors.invalid_id")
 
 	exists = mochi.db.exists("select 1 from rss where id = ?", id)
 	if not exists:
-		return a.error(404, "Feed not found")
+		return a.error_label(404, "errors.feed_not_found")
 
 	name = a.input("name", "").strip()
 	if name:
 		if len(name) > 100:
-			return a.error(400, "Feed name is too long")
+			return a.error_label(400, "errors.feed_name_is_too_long")
 		mochi.db.execute("update rss set name = ? where id = ?", name, id)
 
 	enabled = a.input("enabled", "").strip()
@@ -858,20 +858,20 @@ def action_categories_list(a):
 def action_categories_create(a):
 	label = a.input("label", "").strip()
 	if not label:
-		return a.error(400, "label is required")
+		return a.error_label(400, "errors.label_is_required")
 	default_raw = a.input("default", "")
 	default = 1 if default_raw == "1" or default_raw == "true" else None
 	destinations_json = a.input("destinations", "").strip()
 	destinations = json.decode(destinations_json) if destinations_json else None
 	cid = function_category_create({}, label, destinations, default)
 	if not cid:
-		return a.error(400, "Invalid category")
+		return a.error_label(400, "errors.invalid_category")
 	return {"data": {"id": cid}}
 
 def action_categories_update(a):
 	id = a.input("id", "").strip()
 	if not id or not id.isdigit():
-		return a.error(400, "Invalid id")
+		return a.error_label(400, "errors.invalid_id")
 	label = a.input("label")
 	default_raw = a.input("default")
 	destinations_json = a.input("destinations", "").strip()
@@ -881,25 +881,25 @@ def action_categories_update(a):
 	destinations = json.decode(destinations_json) if destinations_json else None
 	ok = function_category_update({}, int(id), label, destinations, default)
 	if not ok:
-		return a.error(404, "Not found")
+		return a.error_label(404, "errors.not_found")
 	return {"data": {}}
 
 def action_categories_delete(a):
 	id = a.input("id", "").strip()
 	reassign = a.input("reassign_to", "").strip()
 	if not id or not id.isdigit():
-		return a.error(400, "Invalid id")
+		return a.error_label(400, "errors.invalid_id")
 	if not reassign or not reassign.lstrip("-").isdigit():
-		return a.error(400, "reassign_to is required")
+		return a.error_label(400, "errors.reassign_to_is_required")
 	ok = function_category_delete({}, int(id), int(reassign))
 	if not ok:
-		return a.error(400, "Could not delete")
+		return a.error_label(400, "errors.could_not_delete")
 	return {"data": {}}
 
 def action_categories_test(a):
 	id = a.input("id", "").strip()
 	if not id or not id.isdigit():
-		return a.error(400, "Invalid id")
+		return a.error_label(400, "errors.invalid_id")
 	return {"data": function_category_test({}, int(id))}
 
 def action_topics_list(a):
@@ -908,14 +908,14 @@ def action_topics_list(a):
 def action_topics_set_category(a):
 	id = a.input("id", "").strip()
 	if not id or not id.isdigit():
-		return a.error(400, "Invalid id")
+		return a.error_label(400, "errors.invalid_id")
 	cat_raw = a.input("category", "")
 	category = None
 	if cat_raw != "" and cat_raw.lstrip("-").isdigit():
 		category = int(cat_raw)
 	ok = function_topic_set_category({}, int(id), category)
 	if not ok:
-		return a.error(404, "Not found")
+		return a.error_label(404, "errors.not_found")
 	return {"data": {}}
 
 def action_topics_lookup(a):
@@ -924,16 +924,16 @@ def action_topics_lookup(a):
 	topic = a.input("topic", "").strip()
 	object = a.input("object", "").strip()
 	if not app:
-		return a.error(400, "app is required")
+		return a.error_label(400, "errors.app_is_required")
 	row = function_topic_lookup({}, app, topic, object)
 	return {"data": row}
 
 def action_topics_delete(a):
 	id = a.input("id", "").strip()
 	if not id or not id.isdigit():
-		return a.error(400, "Invalid id")
+		return a.error_label(400, "errors.invalid_id")
 	if not mochi.db.exists("select 1 from topics where id = ?", int(id)):
-		return a.error(404, "Topic not found")
+		return a.error_label(404, "errors.topic_not_found")
 	mochi.db.execute("delete from topics where id = ?", int(id))
 	return {"data": {}}
 
