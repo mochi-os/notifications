@@ -13,3 +13,31 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/features/notification/index.tsx:74
+msgid "Blocked navigation to untrusted link"
+msgstr "Blocked navigation to untrusted link"
+
+#: src/features/notification/index.tsx:208
+msgid "Clear all"
+msgstr "Clear all"
+
+#: src/features/notification/index.tsx:193
+msgid "Mark all read"
+msgstr "Mark all read"
+
+#: src/features/notification/index.tsx:246
+msgid "No notifications"
+msgstr "No notifications"
+
+#: src/features/notification/index.tsx:246
+msgid "No unread notifications"
+msgstr "No unread notifications"
+
+#: src/features/notification/index.tsx:129
+#: src/features/notification/index.tsx:164
+msgid "Notifications"
+msgstr "Notifications"
+
+#: src/features/notification/index.tsx:173
+msgid "Show all"
+msgstr "Show all"

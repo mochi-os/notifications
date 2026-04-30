@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { Trans, useLingui } from '@lingui/react/macro'
 import {
   PageHeader,
   Main,
@@ -50,6 +51,7 @@ function NotificationItem({
   notification: ApiNotification
   onMarkAsRead: (id: string) => void
 }) {
+  const { t } = useLingui()
   const { formatTimestamp } = useFormat()
   const isUnread = notification.read === 0
 
@@ -69,7 +71,7 @@ function NotificationItem({
       if (safeTarget) {
         shellNavigateExternal(safeTarget)
       } else {
-        toast.error('Blocked navigation to untrusted link')
+        toast.error(t`Blocked navigation to untrusted link`)
       }
     }
   }
@@ -123,7 +125,8 @@ function NotificationItem({
 }
 
 export function Notifications() {
-  usePageTitle('Notifications')
+  const { t } = useLingui()
+  usePageTitle(t`Notifications`)
   const [showAll, setShowAll] = useShellStorage(STORAGE_KEY, false)
 
   const { data, isLoading, error, refetch } = useNotificationsQuery()
@@ -158,7 +161,7 @@ export function Notifications() {
   return (
     <>
       <PageHeader
-        title='Notifications'
+        title={t`Notifications`}
         icon={<Bell className='size-4 md:size-5' />}
         actions={
           <>
@@ -167,7 +170,7 @@ export function Notifications() {
                 htmlFor='show-all'
                 className='text-muted-foreground hidden text-sm md:block'
               >
-                Show all
+                <Trans>Show all</Trans>
               </Label>
               <Switch
                 id='show-all'
@@ -187,7 +190,7 @@ export function Notifications() {
                 ) : (
                   <Check className='mr-1.5 size-4' />
                 )}
-                <span className='hidden md:inline'>Mark all read</span>
+                <span className='hidden md:inline'><Trans>Mark all read</Trans></span>
               </Button>
             )}
             {allNotifications.length > 0 && (
@@ -202,7 +205,7 @@ export function Notifications() {
                 ) : (
                   <Trash2 className='mr-1.5 size-4' />
                 )}
-                <span className='hidden md:inline'>Clear all</span>
+                <span className='hidden md:inline'><Trans>Clear all</Trans></span>
               </Button>
             )}
           </>
@@ -240,7 +243,7 @@ export function Notifications() {
                   <EmptyState
                     icon={Bell}
                     title={
-                      showAll ? 'No notifications' : 'No unread notifications'
+                      showAll ? t`No notifications` : t`No unread notifications`
                     }
                   />
                 </div>

@@ -11,5 +11,33 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: src/features/notification/index.tsx:74
+msgid "Blocked navigation to untrusted link"
+msgstr "Navigation vers un lien non fiable bloquée"
+
+#: src/features/notification/index.tsx:208
+msgid "Clear all"
+msgstr "Tout effacer"
+
+#: src/features/notification/index.tsx:193
+msgid "Mark all read"
+msgstr "Tout marquer comme lu"
+
+#: src/features/notification/index.tsx:246
+msgid "No notifications"
+msgstr "Aucune notification"
+
+#: src/features/notification/index.tsx:246
+msgid "No unread notifications"
+msgstr "Aucune notification non lue"
+
+#: src/features/notification/index.tsx:129
+#: src/features/notification/index.tsx:164
+msgid "Notifications"
+msgstr "Notifications"
+
+#: src/features/notification/index.tsx:173
+msgid "Show all"
+msgstr "Tout afficher"
