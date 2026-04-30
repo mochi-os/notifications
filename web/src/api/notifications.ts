@@ -8,6 +8,7 @@ export interface Notification {
   object: string
   content: string
   link: string
+  sender?: string
   count: number
   created: number
   read: number

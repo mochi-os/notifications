@@ -3,8 +3,10 @@ import {
   PageHeader,
   Main,
   EmptyState,
+  EntityAvatar,
   ListSkeleton,
   GeneralError,
+  NotificationCategoryButton,
   useFormat,
   getSafeNavigationTarget,
   shellNavigateExternal,
@@ -73,32 +75,50 @@ function NotificationItem({
   }
 
   return (
-    <button
-      type='button'
-      onClick={handleClick}
+    <div
       className={cn(
-        'hover:bg-accent flex w-full items-start gap-3 px-4 py-3 text-left transition-colors first:rounded-t-[10px] last:rounded-b-[10px]',
+        'hover:bg-accent flex w-full items-start gap-3 px-4 py-3 transition-colors first:rounded-t-[10px] last:rounded-b-[10px]',
         isUnread && 'bg-accent/50'
       )}
     >
-      {isUnread && (
-        <span className='bg-primary mt-1.5 size-2 shrink-0 rounded-full' />
-      )}
-      <div className={cn('min-w-0 flex-1', !isUnread && 'ml-5')}>
-        <p className='text-sm leading-snug'>
-          {notification.content}
-          {notification.count > 1 && (
-            <span className='text-muted-foreground'>
-              {' '}
-              ({notification.count})
-            </span>
-          )}
-        </p>
-        <p className='text-muted-foreground mt-0.5 text-xs'>
-          {formatTimestamp(notification.created)}
-        </p>
-      </div>
-    </button>
+      <button
+        type='button'
+        onClick={handleClick}
+        className='flex flex-1 items-start gap-3 text-left'
+      >
+        {isUnread && (
+          <span className='bg-primary mt-1.5 size-2 shrink-0 rounded-full' />
+        )}
+        {notification.sender && (
+          <EntityAvatar
+            src={`/people/${notification.sender}/-/avatar`}
+            styleUrl={`/people/${notification.sender}/-/style`}
+            size="sm"
+            className='mt-0.5 shrink-0'
+          />
+        )}
+        <div className={cn('min-w-0 flex-1', !isUnread && 'ml-5')}>
+          <p className='text-sm leading-snug'>
+            {notification.content}
+            {notification.count > 1 && (
+              <span className='text-muted-foreground'>
+                {' '}
+                ({notification.count})
+              </span>
+            )}
+          </p>
+          <p className='text-muted-foreground mt-0.5 text-xs'>
+            {formatTimestamp(notification.created)}
+          </p>
+        </div>
+      </button>
+      <NotificationCategoryButton
+        app={notification.app}
+        topic={notification.topic}
+        object={notification.object}
+        className='mt-0.5 shrink-0'
+      />
+    </div>
   )
 }
 
