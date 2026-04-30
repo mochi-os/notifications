@@ -184,6 +184,14 @@ def database_upgrade(to_version):
 		if "sender" not in cols:
 			mochi.db.execute("alter table notifications add column sender text not null default ''")
 
+	if to_version == 13:
+		# Re-apply v12: pragma table_info via mochi.db.rows is restricted on some
+		# entities, so the v12 cols list came back empty and the alter never ran.
+		# Use mochi.db.table() (the supported wrapper) instead.
+		cols = [r["name"] for r in mochi.db.table("notifications")]
+		if "sender" not in cols:
+			mochi.db.execute("alter table notifications add column sender text not null default ''")
+
 # Expiry: 30 days unread, 7 days read
 def function_expire(context):
 	now = mochi.time.now()
