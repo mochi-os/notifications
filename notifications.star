@@ -180,14 +180,16 @@ def database_upgrade(to_version):
 	if to_version == 12:
 		# Add `sender` column so notifications can show the originating user's
 		# avatar (entity ID of the inviter / commenter / message author).
-		cols = [r["name"] for r in mochi.db.rows("pragma table_info(notifications)")]
+		# Originally used mochi.db.rows("pragma table_info(...)") which is blocked
+		# by api_db_query — that errored out (and emailed the admin) every time
+		# this migration ran. mochi.db.table() is the supported wrapper.
+		cols = [r["name"] for r in mochi.db.table("notifications")]
 		if "sender" not in cols:
 			mochi.db.execute("alter table notifications add column sender text not null default ''")
 
 	if to_version == 13:
-		# Re-apply v12: pragma table_info via mochi.db.rows is restricted on some
-		# entities, so the v12 cols list came back empty and the alter never ran.
-		# Use mochi.db.table() (the supported wrapper) instead.
+		# Re-apply v12 for DBs whose schema bumped past 12 with the column
+		# never actually being added (the version bumps even on error).
 		cols = [r["name"] for r in mochi.db.table("notifications")]
 		if "sender" not in cols:
 			mochi.db.execute("alter table notifications add column sender text not null default ''")
