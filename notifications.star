@@ -676,7 +676,7 @@ def function_category_list(context):
 	return result
 
 def function_category_create(context, label="", destinations=None, default=None):
-	if not label or not mochi.valid(label, "text"):
+	if not label or not mochi.text.valid(label, "text"):
 		return None
 	now = mochi.time.now()
 	mochi.db.execute("insert into categories (label, created) values (?, ?)", label, now)
@@ -699,7 +699,7 @@ def function_category_update(context, id=0, label=None, destinations=None, defau
 	if not mochi.db.exists("select 1 from categories where id = ?", id):
 		return False
 	if label != None:
-		if not mochi.valid(label, "text"):
+		if not mochi.text.valid(label, "text"):
 			return False
 		mochi.db.execute("update categories set label = ? where id = ?", label, id)
 	if default != None and id != 0:
@@ -803,7 +803,7 @@ def function_topic_list(context):
 	result = []
 	for row in rows:
 		row["app_name"] = app_names.get(row["app"], row["app"].capitalize())
-		if row["object"] and mochi.valid(row["object"], "entity"):
+		if row["object"] and mochi.text.valid(row["object"], "entity"):
 			row["object_name"] = mochi.entity.name(row["object"]) or ""
 		else:
 			row["object_name"] = ""
@@ -846,8 +846,7 @@ def function_destinations_available(context):
 	"""Return the full set of available destinations plus their 'notify by default' flags.
 	Used by the settings UI to build the category editor grid."""
 	accounts = mochi.account.list("notify") or []
-	accounts = sorted(accounts, key=lambda a: (a.get("label") or a.get("identifier") or a.get("type") or "").lower())
-	feeds = mochi.db.rows("select id, name, enabled from rss order by name collate nocase") or []
+	feeds = mochi.db.rows("select id, name, enabled from rss") or []
 	return {"accounts": accounts, "feeds": feeds}
 
 # HTTP action endpoints (settings page calls these via service proxy; kept for direct use too)
