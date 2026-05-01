@@ -582,7 +582,7 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 			_deliver_web(app, topic, object, title, body, url, content, sender)
 			count += 1
 		elif dest["type"] == "account":
-			mochi.account.deliver(
+			mochi.account.notify(
 				account=int(dest["target"]),
 				app=app,
 				category=topic,
@@ -739,7 +739,7 @@ def function_category_delete(context, id=0, reassign_to=None):
 def function_category_test(context, id=0):
 	"""Send a test notification through the category's destinations.
 
-	External destinations (accounts) are invoked via mochi.account.deliver. Web
+	External destinations (accounts) are invoked via mochi.account.notify. Web
 	destinations are written to the notifications table + WebSocket so the user
 	sees them in the bell.
 	"""
@@ -759,7 +759,7 @@ def function_category_test(context, id=0):
 			web = True
 			sent += 1
 		elif dest["type"] == "account":
-			mochi.account.deliver(
+			mochi.account.notify(
 				account=int(dest["target"]),
 				app="notifications",
 				category="test",
