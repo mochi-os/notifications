@@ -62,6 +62,10 @@ msgstr ""
 msgid "Adjust the appearance and layout to suit your preferences."
 msgstr ""
 
+#: ../../../lib/web/src/components/ui/sort-selector.tsx:38
+msgid "AI"
+msgstr ""
+
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:158
 msgid "All"
 msgstr ""
@@ -135,6 +139,10 @@ msgstr ""
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:317
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
+msgstr ""
+
+#: ../../../lib/web/src/components/layout/app-sidebar.tsx:97
+msgid "Close navigation"
 msgstr ""
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
@@ -297,8 +305,20 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
+#: ../../../lib/web/src/components/layout/app-sidebar.tsx:82
+msgid "Home"
+msgstr ""
+
+#: ../../../lib/web/src/components/ui/sort-selector.tsx:41
+msgid "Hot"
+msgstr ""
+
 #: ../../../lib/web/src/components/config-drawer.tsx:239
 msgid "Inset"
+msgstr ""
+
+#: ../../../lib/web/src/components/ui/sort-selector.tsx:39
+msgid "Interests"
 msgstr ""
 
 #: ../../../lib/web/src/components/config-drawer.tsx:273
@@ -315,6 +335,14 @@ msgstr ""
 
 #: ../../../lib/web/src/components/config-drawer.tsx:200
 msgid "Light"
+msgstr ""
+
+#: ../../../lib/web/src/components/ui/load-more.tsx:32
+msgid "Load more"
+msgstr ""
+
+#: ../../../lib/web/src/components/ui/load-more.tsx:32
+msgid "Loading…"
 msgstr ""
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:98
@@ -345,6 +373,10 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+#: ../../../lib/web/src/components/ui/sort-selector.tsx:40
+msgid "New"
+msgstr ""
+
 #: ../../../lib/web/src/features/access/access-list.tsx:155
 msgid "No access rules configured. Add rules to control who can access this resource."
 msgstr ""
@@ -357,7 +389,7 @@ msgstr ""
 msgid "No groups available"
 msgstr ""
 
-#: ../../../lib/web/src/components/language-picker.tsx:99
+#: ../../../lib/web/src/components/language-picker.tsx:96
 msgid "No matches."
 msgstr ""
 
@@ -529,6 +561,10 @@ msgstr ""
 msgid "Show all"
 msgstr ""
 
+#: ../../../lib/web/src/components/ui/load-more.tsx:36
+msgid "Showing {totalShown} of {total}"
+msgstr ""
+
 #: ../../../lib/web/src/components/config-drawer.tsx:225
 #: ../../../lib/web/src/components/config-drawer.tsx:249
 #: ../../../lib/web/src/components/ui/sidebar.tsx:233
@@ -587,9 +623,13 @@ msgstr ""
 msgid "Toggle theme"
 msgstr ""
 
+#: ../../../lib/web/src/components/ui/sort-selector.tsx:42
+msgid "Top"
+msgstr ""
+
 #: ../../../lib/web/src/components/travelling-picker.tsx:140
 msgid "Travelling"
-msgstr ""
+msgstr "Traveling"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:190
 #: ../../../lib/web/src/components/search-entity-page.tsx:165
