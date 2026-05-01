@@ -70,6 +70,10 @@ msgstr "Add team/app"
 msgid "Add to existing notifications"
 msgstr "Add to existing notifications"
 
+#: src/components/rss-dialog.tsx:376
+msgid "Add to existing subscriptions"
+msgstr "Add to existing subscriptions"
+
 #: ../../../lib/web/src/components/view-tabs.tsx:58
 #~ msgid "Add view"
 #~ msgstr "Add view"
@@ -97,8 +101,8 @@ msgid "Back to Home"
 msgstr "Back to Home"
 
 #: src/features/notification/index.tsx:74
-#~ msgid "Blocked navigation to untrusted link"
-#~ msgstr "Blocked navigation to untrusted link"
+msgid "Blocked navigation to untrusted link"
+msgstr "Blocked navigation to untrusted link"
 
 #: ../../../lib/web/src/components/post-tags.tsx:162
 #~ msgid "Boost interest"
@@ -110,6 +114,7 @@ msgstr "Back to Home"
 #: ../../../lib/web/src/features/access/access-list.tsx:254
 #: ../../../lib/web/src/features/accounts/account-add.tsx:184
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
+#: src/components/rss-dialog.tsx:389
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -146,7 +151,7 @@ msgid "Clear"
 msgstr "Clear"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:64
-#: src/features/notification/index.tsx:207
+#: src/features/notification/index.tsx:208
 msgid "Clear all"
 msgstr "Clear all"
 
@@ -197,9 +202,22 @@ msgstr "Confirm"
 msgid "Contextual information and details."
 msgstr "Contextual information and details."
 
+#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:195
+msgid "Copied to clipboard"
+msgstr "Copied to clipboard"
+
 #: ../../../lib/web/src/components/ui/copy-button.tsx:60
 msgid "Copy"
 msgstr "Copy"
+
+#: src/components/rss-dialog.tsx:353
+msgid "Create feed"
+msgstr "Create feed"
+
+#: src/components/rss-dialog.tsx:264
+msgid "Create one to get started."
+msgstr "Create one to get started."
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 msgid "Dark"
@@ -221,6 +239,10 @@ msgstr "Default"
 msgid "Default AI account"
 msgstr "Default AI account"
 
+#: src/components/rss-dialog.tsx:440
+msgid "Delete Feed?"
+msgstr "Delete Feed?"
+
 #: ../../../lib/web/src/components/data-table/column-header.tsx:60
 msgid "Desc"
 msgstr "Desc"
@@ -237,6 +259,10 @@ msgstr "Direction"
 msgid "Displays the mobile sidebar."
 msgstr "Displays the mobile sidebar."
 
+#: src/components/rss-dialog.tsx:427
+msgid "Done"
+msgstr "Done"
+
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
 #~ msgid "Download"
 #~ msgstr "Download"
@@ -249,9 +275,21 @@ msgstr "Expand sidebar"
 #~ msgid "Failed to add account"
 #~ msgstr "Failed to add account"
 
+#: src/components/rss-dialog.tsx:131
+msgid "Failed to create feed"
+msgstr "Failed to create feed"
+
+#: src/components/rss-dialog.tsx:148
+msgid "Failed to delete feed"
+msgstr "Failed to delete feed"
+
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:226
 #~ msgid "Failed to remove account"
 #~ msgstr "Failed to remove account"
+
+#: src/components/rss-dialog.tsx:163
+msgid "Failed to rename feed"
+msgstr "Failed to rename feed"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:249
 #~ msgid "Failed to send verification code"
@@ -260,6 +298,22 @@ msgstr "Expand sidebar"
 #: ../../../lib/web/src/components/notification-category-button.tsx:103
 #~ msgid "Failed to update category"
 #~ msgstr "Failed to update category"
+
+#: src/components/rss-dialog.tsx:178
+msgid "Failed to update feed"
+msgstr "Failed to update feed"
+
+#: src/components/rss-dialog.tsx:140
+msgid "Feed deleted"
+msgstr "Feed deleted"
+
+#: src/components/rss-dialog.tsx:362
+msgid "Feed name"
+msgstr "Feed name"
+
+#: src/components/rss-dialog.tsx:157
+msgid "Feed renamed"
+msgstr "Feed renamed"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:244
 msgid "Floating"
@@ -354,7 +408,7 @@ msgstr "Logged out successfully"
 msgid "Mark all as read"
 msgstr "Mark all as read"
 
-#: src/features/notification/index.tsx:192
+#: src/features/notification/index.tsx:193
 msgid "Mark all read"
 msgstr "Mark all read"
 
@@ -382,7 +436,7 @@ msgstr "No groups available"
 msgid "No matches."
 msgstr "No matches."
 
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:246
 msgid "No notifications"
 msgstr "No notifications"
 
@@ -399,6 +453,10 @@ msgstr "No profile"
 msgid "No results found."
 msgstr "No results found."
 
+#: src/components/rss-dialog.tsx:263
+msgid "No RSS feeds yet"
+msgstr "No RSS feeds yet"
+
 #: ../../../lib/web/src/components/timezone-select.tsx:62
 msgid "No time zone found."
 msgstr "No time zone found."
@@ -407,7 +465,7 @@ msgstr "No time zone found."
 msgid "No topic record yet — try again after the next notification."
 msgstr "No topic record yet — try again after the next notification."
 
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:246
 msgid "No unread notifications"
 msgstr "No unread notifications"
 
@@ -421,10 +479,15 @@ msgstr "None"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:145
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:246
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:163
+#: src/features/notification/index.tsx:129
+#: src/features/notification/index.tsx:164
 msgid "Notifications"
 msgstr "Notifications"
+
+#: src/components/rss-dialog.tsx:331
+#: src/components/rss-dialog.tsx:341
+msgid "Notify by default"
+msgstr "Notify by default"
 
 #: ../../../lib/web/src/features/errors/not-found-error.tsx:12
 msgid "Oops! Page Not Found!"
@@ -512,6 +575,10 @@ msgstr "Right to Left"
 msgid "Rows per page"
 msgstr "Rows per page"
 
+#: src/components/rss-dialog.tsx:243
+msgid "Save this URL now. You won't be able to see the token again."
+msgstr "Save this URL now. You won't be able to see the token again."
+
 #: ../../../lib/web/src/components/place-picker.tsx:82
 msgid "Search for a place"
 msgstr "Search for a place"
@@ -588,7 +655,7 @@ msgstr "Set origin and destination"
 msgid "Settings"
 msgstr "Settings"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:173
 msgid "Show all"
 msgstr "Show all"
 
@@ -688,6 +755,10 @@ msgstr "Unauthorized Access"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:129
 msgid "Unverified"
 msgstr "Unverified"
+
+#: src/components/rss-dialog.tsx:379
+msgid "Use this feed for your current notification subscriptions"
+msgstr "Use this feed for your current notification subscriptions"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:154
 msgid "User"

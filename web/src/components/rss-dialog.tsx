@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Trans, useLingui } from '@lingui/react/macro'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import {
   Button,
@@ -45,6 +46,7 @@ export function RssDialog({
   onOpenChange,
   initialView = 'list',
 }: RssDialogProps) {
+  const { t } = useLingui()
   const [view, setView] = useState<DialogView>(initialView)
   const [copied, setCopied] = useState(false)
   const [copiedId, setCopiedId] = useState<string | null>(null)
@@ -126,7 +128,7 @@ export function RssDialog({
       })
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error, 'Failed to create feed'))
+      toast.error(getErrorMessage(error, t`Failed to create feed`))
     },
   })
 
@@ -135,7 +137,7 @@ export function RssDialog({
       await requestHelpers.post('-/rss/delete', { id })
     },
     onSuccess: () => {
-      toast.success('Feed deleted')
+      toast.success(t`Feed deleted`)
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
       queryClient.invalidateQueries({
         queryKey: ['destinations', getAppPath()],
@@ -143,7 +145,7 @@ export function RssDialog({
       setDeleteId(null)
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error, 'Failed to delete feed'))
+      toast.error(getErrorMessage(error, t`Failed to delete feed`))
     },
   })
 
@@ -152,13 +154,13 @@ export function RssDialog({
       await requestHelpers.post('-/rss/rename', { id, name })
     },
     onSuccess: () => {
-      toast.success('Feed renamed')
+      toast.success(t`Feed renamed`)
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
       setEditingId(null)
       setEditingName('')
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error, 'Failed to rename feed'))
+      toast.error(getErrorMessage(error, t`Failed to rename feed`))
     },
   })
 
@@ -173,7 +175,7 @@ export function RssDialog({
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error, 'Failed to update feed'))
+      toast.error(getErrorMessage(error, t`Failed to update feed`))
     },
   })
 
@@ -181,7 +183,7 @@ export function RssDialog({
     const ok = await shellClipboardWrite(buildRssUrl(token))
     if (!ok) return
     setCopied(true)
-    toast.success('Copied to clipboard')
+    toast.success(t`Copied to clipboard`)
     if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current)
     copiedTimerRef.current = setTimeout(() => setCopied(false), 2000)
   }
@@ -190,7 +192,7 @@ export function RssDialog({
     const ok = await shellClipboardWrite(buildRssUrl(feed.token))
     if (!ok) return
     setCopiedId(feed.id)
-    toast.success('Copied to clipboard')
+    toast.success(t`Copied to clipboard`)
     if (copiedIdTimerRef.current) clearTimeout(copiedIdTimerRef.current)
     copiedIdTimerRef.current = setTimeout(() => setCopiedId(null), 2000)
   }
@@ -238,7 +240,7 @@ export function RssDialog({
             </ResponsiveDialogTitle>
             {view === 'created' && (
               <ResponsiveDialogDescription>
-                Save this URL now. You won't be able to see the token again.
+                <Trans>Save this URL now. You won't be able to see the token again.</Trans>
               </ResponsiveDialogDescription>
             )}
           </ResponsiveDialogHeader>
@@ -258,8 +260,8 @@ export function RssDialog({
               ) : feeds.length === 0 ? (
                 <EmptyState
                   icon={Rss}
-                  title='No RSS feeds yet'
-                  description='Create one to get started.'
+                  title={t`No RSS feeds yet`}
+                  description={t`Create one to get started.`}
                   className='py-4'
                 />
               ) : (
@@ -326,7 +328,7 @@ export function RssDialog({
                           </div>
                           <div className='flex items-center justify-end gap-2'>
                             <span className='text-muted-foreground text-sm'>
-                              Notify by default
+                              <Trans>Notify by default</Trans>
                             </span>
                             <Switch
                               checked={feed.enabled === 1}
@@ -336,7 +338,7 @@ export function RssDialog({
                                   enabled: checked,
                                 })
                               }
-                              aria-label='Notify by default'
+                              aria-label={t`Notify by default`}
                             />
                           </div>
                         </div>
@@ -348,7 +350,7 @@ export function RssDialog({
               <ResponsiveDialogFooter>
                 <Button onClick={() => setView('create')}>
                   <Plus className='h-4 w-4' />
-                  Create feed
+                  <Trans>Create feed</Trans>
                 </Button>
               </ResponsiveDialogFooter>
             </div>
@@ -357,7 +359,7 @@ export function RssDialog({
           {view === 'create' && (
             <div className='space-y-4'>
               <div className='space-y-2'>
-                <Label htmlFor='feed-name'>Feed name</Label>
+                <Label htmlFor='feed-name'><Trans>Feed name</Trans></Label>
                 <Input
                   id='feed-name'
                   placeholder='e.g., Feedly, NewsBlur'
@@ -371,10 +373,10 @@ export function RssDialog({
               <div className='flex items-center justify-between rounded-lg border p-4'>
                 <div>
                   <div className='font-medium'>
-                    Add to existing subscriptions
+                    <Trans>Add to existing subscriptions</Trans>
                   </div>
                   <div className='text-muted-foreground text-sm'>
-                    Use this feed for your current notification subscriptions
+                    <Trans>Use this feed for your current notification subscriptions</Trans>
                   </div>
                 </div>
                 <Switch
@@ -384,7 +386,7 @@ export function RssDialog({
               </div>
               <ResponsiveDialogFooter>
                 <Button variant='outline' onClick={handleClose}>
-                  Cancel
+                  <Trans>Cancel</Trans>
                 </Button>
                 <Button
                   onClick={handleCreate}
@@ -422,7 +424,7 @@ export function RssDialog({
               </div>
               <ResponsiveDialogFooter>
                 <Button variant='outline' onClick={() => setView('list')}>
-                  Done
+                  <Trans>Done</Trans>
                 </Button>
               </ResponsiveDialogFooter>
             </div>
@@ -435,7 +437,7 @@ export function RssDialog({
         onOpenChange={(isOpen) => {
           if (!isOpen) setDeleteId(null)
         }}
-        title='Delete Feed?'
+        title={t`Delete Feed?`}
         desc='This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications.'
         confirmText='Delete'
         destructive
