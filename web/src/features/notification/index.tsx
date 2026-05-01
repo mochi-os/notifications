@@ -86,7 +86,7 @@ function NotificationItem({
       <button
         type='button'
         onClick={handleClick}
-        className='flex flex-1 items-start gap-3 text-left'
+        className='flex flex-1 items-start gap-3 text-start'
       >
         {isUnread && (
           <span className='bg-primary mt-1.5 size-2 shrink-0 rounded-full' />
@@ -99,7 +99,7 @@ function NotificationItem({
             className='mt-0.5 shrink-0'
           />
         )}
-        <div className={cn('min-w-0 flex-1', !isUnread && 'ml-5')}>
+        <div className={cn('min-w-0 flex-1', !isUnread && 'ms-5')}>
           <p className='text-sm leading-snug'>
             {notification.content}
             {notification.count > 1 && (
@@ -165,7 +165,7 @@ export function Notifications() {
         icon={<Bell className='size-4 md:size-5' />}
         actions={
           <>
-            <div className='mr-2 flex items-center gap-2'>
+            <div className='me-2 flex items-center gap-2'>
               <Label
                 htmlFor='show-all'
                 className='text-muted-foreground hidden text-sm md:block'
@@ -186,9 +186,9 @@ export function Notifications() {
                 disabled={markAllAsReadMutation.isPending}
               >
                 {markAllAsReadMutation.isPending ? (
-                  <Loader2 className='mr-1.5 size-4 animate-spin' />
+                  <Loader2 className='me-1.5 size-4 animate-spin' />
                 ) : (
-                  <Check className='mr-1.5 size-4' />
+                  <Check className='me-1.5 size-4' />
                 )}
                 <span className='hidden md:inline'><Trans>Mark all read</Trans></span>
               </Button>
@@ -201,9 +201,9 @@ export function Notifications() {
                 disabled={clearAllMutation.isPending}
               >
                 {clearAllMutation.isPending ? (
-                  <Loader2 className='mr-1.5 size-4 animate-spin' />
+                  <Loader2 className='me-1.5 size-4 animate-spin' />
                 ) : (
-                  <Trash2 className='mr-1.5 size-4' />
+                  <Trash2 className='me-1.5 size-4' />
                 )}
                 <span className='hidden md:inline'><Trans>Clear all</Trans></span>
               </Button>
