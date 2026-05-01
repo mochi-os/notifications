@@ -21,21 +21,9 @@ msgstr "Access Forbidden"
 msgid "Access level"
 msgstr "Access level"
 
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:208
-#~ msgid "Account added"
-#~ msgstr "Account added"
-
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:224
-#~ msgid "Account removed"
-#~ msgstr "Account removed"
-
 #: ../../../lib/web/src/features/accounts/account-add.tsx:122
 msgid "Account type"
 msgstr "Account type"
-
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:234
-#~ msgid "Account verified"
-#~ msgstr "Account verified"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:116
 msgid "Add a new account"
@@ -58,10 +46,6 @@ msgstr "Add an account to receive notifications and use services."
 msgid "Add new account"
 msgstr "Add new account"
 
-#: ../../../lib/web/src/components/post-tags.tsx:120
-#~ msgid "Add tag..."
-#~ msgstr "Add tag..."
-
 #: ../../../lib/web/src/components/layout/team-switcher.tsx:80
 msgid "Add team/app"
 msgstr "Add team/app"
@@ -73,10 +57,6 @@ msgstr "Add to existing notifications"
 #: src/components/rss-dialog.tsx:376
 msgid "Add to existing subscriptions"
 msgstr "Add to existing subscriptions"
-
-#: ../../../lib/web/src/components/view-tabs.tsx:58
-#~ msgid "Add view"
-#~ msgstr "Add view"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:62
 msgid "Adjust the appearance and layout to suit your preferences."
@@ -104,10 +84,6 @@ msgstr "Back to Home"
 msgid "Blocked navigation to untrusted link"
 msgstr "Blocked navigation to untrusted link"
 
-#: ../../../lib/web/src/components/post-tags.tsx:162
-#~ msgid "Boost interest"
-#~ msgstr "Boost interest"
-
 #: ../../../lib/web/src/components/travelling-picker.tsx:291
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:245
 #: ../../../lib/web/src/features/access/access-dialog.tsx:324
@@ -121,10 +97,6 @@ msgstr "Cancel"
 #: ../../../lib/web/src/components/notification-category-button.tsx:129
 msgid "Category for this notification"
 msgstr "Category for this notification"
-
-#: ../../../lib/web/src/components/notification-category-button.tsx:114
-#~ msgid "Change notification category"
-#~ msgstr "Change notification category"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:315
 msgid "Choose between default expanded, compact icon-only, or full layout mode"
@@ -141,10 +113,6 @@ msgstr "Choose between left-to-right or right-to-left site direction"
 #: ../../../lib/web/src/components/config-drawer.tsx:213
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Choose between system preference, light mode, or dark mode"
-
-#: ../../../lib/web/src/components/language-picker.tsx:90
-#~ msgid "Choose language"
-#~ msgstr "Choose language"
 
 #: ../../../lib/web/src/components/colour-picker.tsx:304
 msgid "Clear"
@@ -169,17 +137,9 @@ msgstr "Clear selection"
 msgid "Close"
 msgstr "Close"
 
-#: ../../../lib/web/src/components/layout/app-sidebar.tsx:96
-#~ msgid "Close navigation"
-#~ msgstr "Close navigation"
-
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
 msgid "Close Panel"
 msgstr "Close Panel"
-
-#: ../../../lib/web/src/components/header-search.tsx:52
-#~ msgid "Close search"
-#~ msgstr "Close search"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Collapse sidebar"
@@ -263,17 +223,9 @@ msgstr "Displays the mobile sidebar."
 msgid "Done"
 msgstr "Done"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
-#~ msgid "Download"
-#~ msgstr "Download"
-
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Expand sidebar"
-
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:217
-#~ msgid "Failed to add account"
-#~ msgstr "Failed to add account"
 
 #: src/components/rss-dialog.tsx:131
 msgid "Failed to create feed"
@@ -283,21 +235,9 @@ msgstr "Failed to create feed"
 msgid "Failed to delete feed"
 msgstr "Failed to delete feed"
 
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:226
-#~ msgid "Failed to remove account"
-#~ msgstr "Failed to remove account"
-
 #: src/components/rss-dialog.tsx:163
 msgid "Failed to rename feed"
 msgstr "Failed to rename feed"
-
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:249
-#~ msgid "Failed to send verification code"
-#~ msgstr "Failed to send verification code"
-
-#: ../../../lib/web/src/components/notification-category-button.tsx:103
-#~ msgid "Failed to update category"
-#~ msgstr "Failed to update category"
 
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
@@ -357,20 +297,9 @@ msgstr "Group"
 msgid "Hide"
 msgstr "Hide"
 
-#: ../../../lib/web/src/components/layout/app-sidebar.tsx:81
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:142
-#: ../../../lib/web/src/components/layout/top-bar.tsx:63
-#: ../../../lib/web/src/components/layout/top-bar.tsx:92
-#~ msgid "Home"
-#~ msgstr "Home"
-
 #: ../../../lib/web/src/components/config-drawer.tsx:239
 msgid "Inset"
 msgstr "Inset"
-
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:237
-#~ msgid "Invalid verification code"
-#~ msgstr "Invalid verification code"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:273
 msgid "Layout"
@@ -415,10 +344,6 @@ msgstr "Mark all read"
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:151
 msgid "Menu"
 msgstr "Menu"
-
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
-#~ msgid "Next image"
-#~ msgstr "Next image"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:155
 msgid "No access rules configured. Add rules to control who can access this resource."
@@ -493,20 +418,6 @@ msgstr "Notify by default"
 msgid "Oops! Page Not Found!"
 msgstr "Oops! Page Not Found!"
 
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:149
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:150
-#~ msgid "Open account actions"
-#~ msgstr "Open account actions"
-
-#: ../../../lib/web/src/components/layout/top-bar.tsx:58
-#~ msgid "Open navigation"
-#~ msgstr "Open navigation"
-
-#: ../../../lib/web/src/components/layout/top-nav.tsx:33
-#: ../../../lib/web/src/components/layout/top-nav.tsx:34
-#~ msgid "Open navigation menu"
-#~ msgstr "Open navigation menu"
-
 #: ../../../lib/web/src/components/config-drawer.tsx:51
 msgid "Open theme settings"
 msgstr "Open theme settings"
@@ -518,10 +429,6 @@ msgstr "Other"
 #: ../../../lib/web/src/features/access/access-list.tsx:212
 msgid "Owner"
 msgstr "Owner"
-
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
-#~ msgid "Previous image"
-#~ msgstr "Previous image"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:134
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
@@ -537,27 +444,14 @@ msgstr "Recommended"
 msgid "Redirecting to login."
 msgstr "Redirecting to login."
 
-#: ../../../lib/web/src/components/post-tags.tsx:177
-#~ msgid "Reduce interest"
-#~ msgstr "Reduce interest"
-
 #: ../../../lib/web/src/features/access/access-list.tsx:256
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:170
 msgid "Remove"
 msgstr "Remove"
 
-#: ../../../lib/web/src/features/access/access-list.tsx:241
-#: ../../../lib/web/src/features/access/access-list.tsx:242
-#~ msgid "Remove access rule"
-#~ msgstr "Remove access rule"
-
 #: ../../../lib/web/src/features/access/access-list.tsx:248
 msgid "Remove access?"
 msgstr "Remove access?"
-
-#: ../../../lib/web/src/components/post-tags.tsx:192
-#~ msgid "Remove interest"
-#~ msgstr "Remove interest"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
 msgid "Reset"
@@ -583,29 +477,9 @@ msgstr "Save this URL now. You won't be able to see the token again."
 msgid "Search for a place"
 msgstr "Search for a place"
 
-#: ../../../lib/web/src/components/travelling-picker.tsx:234
-#~ msgid "Search for destination..."
-#~ msgstr "Search for destination..."
-
-#: ../../../lib/web/src/components/travelling-picker.tsx:173
-#~ msgid "Search for origin..."
-#~ msgstr "Search for origin..."
-
-#: ../../../lib/web/src/components/timezone-select.tsx:61
-#~ msgid "Search time zone..."
-#~ msgstr "Search time zone..."
-
 #: ../../../lib/web/src/features/access/access-dialog.tsx:169
 msgid "Search users"
 msgstr "Search users"
-
-#: ../../../lib/web/src/components/person-picker.tsx:312
-#~ msgid "Search..."
-#~ msgstr "Search..."
-
-#: ../../../lib/web/src/components/language-picker.tsx:98
-#~ msgid "Search…"
-#~ msgstr "Search…"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
 #: ../../../lib/web/src/components/search-entity-page.tsx:149
@@ -620,10 +494,6 @@ msgstr "Select a user, group, or other rule to grant access."
 #: ../../../lib/web/src/features/access/access-dialog.tsx:269
 msgid "Select access rule"
 msgstr "Select access rule"
-
-#: ../../../lib/web/src/features/accounts/account-add.tsx:126
-#~ msgid "Select account type"
-#~ msgstr "Select account type"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:227
 msgid "Select group"
@@ -732,21 +602,9 @@ msgstr "Try adjusting your search terms"
 msgid "Try again"
 msgstr "Try again"
 
-#: ../../../lib/web/src/components/command-menu.tsx:49
-#~ msgid "Type a command or search..."
-#~ msgstr "Type a command or search..."
-
 #: ../../../lib/web/src/features/access/access-dialog.tsx:187
 msgid "Type to search users"
 msgstr "Type to search users"
-
-#: ../../../lib/web/src/features/access/access-dialog.tsx:180
-#~ msgid "Type to search..."
-#~ msgstr "Type to search..."
-
-#: ../../../lib/web/src/components/notification-category-button.tsx:142
-#~ msgid "Unassigned"
-#~ msgstr "Unassigned"
 
 #: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
 msgid "Unauthorized Access"
@@ -768,14 +626,6 @@ msgstr "User"
 msgid "Verification code"
 msgstr "Verification code"
 
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:247
-#~ msgid "Verification code sent"
-#~ msgstr "Verification code sent"
-
-#: ../../../lib/web/src/features/accounts/account-manager.tsx:240
-#~ msgid "Verification failed"
-#~ msgstr "Verification failed"
-
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:162
 msgid "Verify"
 msgstr "Verify"
@@ -787,14 +637,6 @@ msgstr "Verify email address"
 #: ../../../lib/web/src/components/data-table/view-options.tsx:30
 msgid "View"
 msgstr "View"
-
-#: ../../../lib/web/src/components/notifications-dropdown.tsx:173
-#~ msgid "View all"
-#~ msgstr "View all"
-
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:95
-#~ msgid "View all notifications"
-#~ msgstr "View all notifications"
 
 #: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
 msgid "We'll be back online shortly."
