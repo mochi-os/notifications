@@ -51,7 +51,6 @@ function NotificationItem({
   notification: ApiNotification
   onMarkAsRead: (id: string) => void
 }) {
-  const { t } = useLingui()
   const { formatTimestamp } = useFormat()
   const isUnread = notification.read === 0
 
@@ -71,7 +70,7 @@ function NotificationItem({
       if (safeTarget) {
         shellNavigateExternal(safeTarget)
       } else {
-        toast.error(t`Blocked navigation to untrusted link`)
+        toast.error("Blocked navigation to untrusted link")
       }
     }
   }
