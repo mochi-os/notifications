@@ -1,98 +1,92 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2026-05-02 15:03+0200\n"
+"POT-Creation-Date: 2026-05-02 15:23+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: zh-hans\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Plural-Forms: \n"
+"Language: he\n"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:52
 msgid "12 hours"
-msgstr "12 小时"
+msgstr "12 שעות"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:51
 msgid "24 hours"
-msgstr "24 小时"
+msgstr "24 שעות"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Absolute (date and time)"
-msgstr "绝对(日期和时间)"
+msgstr "מוחלט (תאריך ושעה)"
 
 #: ../../../lib/web/src/features/errors/forbidden.tsx:12
 msgid "Access Forbidden"
-msgstr "禁止访问"
+msgstr "הגישה אסורה"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:188
 msgid "Access level"
-msgstr "访问级别"
+msgstr "רמת גישה"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:208
 msgid "Account added"
-msgstr "账户已添加"
+msgstr "החשבון נוסף"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:224
 msgid "Account removed"
-msgstr "账户已移除"
+msgstr "החשבון הוסר"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:123
 msgid "Account type"
-msgstr "账户类型"
+msgstr "סוג חשבון"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Account verified"
-msgstr "账户已验证"
+msgstr "החשבון אומת"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:117
 msgid "Add a new account"
-msgstr "添加新账户"
+msgstr "הוסף חשבון חדש"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:145
 msgid "Add access"
-msgstr "添加访问权限"
+msgstr "הוסף גישה"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:116
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:280
 msgid "Add account"
-msgstr "添加账户"
+msgstr "הוסף חשבון"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:289
 msgid "Add an account to receive notifications and use services."
-msgstr "添加账户以接收通知并使用服务。"
+msgstr "הוסף חשבון כדי לקבל התראות ולהשתמש בשירותים."
 
 #: ../../../lib/web/src/features/accounts/account-picker.tsx:98
 msgid "Add new account"
-msgstr "添加新账户"
+msgstr "הוסף חשבון חדש"
 
 #: ../../../lib/web/src/components/post-tags.tsx:119
 msgid "Add tag..."
-msgstr "添加标签..."
+msgstr "הוסף תגית..."
 
 #: ../../../lib/web/src/components/layout/team-switcher.tsx:80
 msgid "Add team/app"
-msgstr "添加团队/应用"
+msgstr "הוסף צוות/אפליקציה"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:159
 msgid "Add to existing notifications"
-msgstr "添加到现有通知"
+msgstr "הוסף להתראות קיימות"
 
 #: src/components/rss-dialog.tsx:376
 msgid "Add to existing subscriptions"
-msgstr "添加到现有订阅"
+msgstr "הוסף למינויים קיימים"
 
 #: ../../../lib/web/src/components/view-tabs.tsx:57
 msgid "Add view"
-msgstr "添加视图"
+msgstr "הוסף תצוגה"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:62
 msgid "Adjust the appearance and layout to suit your preferences."
-msgstr "调整外观和布局以符合你的偏好。"
+msgstr "התאם את המראה והפריסה להעדפותיך."
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:38
 msgid "AI"
@@ -100,33 +94,33 @@ msgstr "AI"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:159
 msgid "All"
-msgstr "全部"
+msgstr "הכול"
 
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:24
 msgid "Are you sure you want to log out? You will need to log in again to access your account."
-msgstr "确定要退出登录吗?你需要重新登录才能访问账户。"
+msgstr "האם אתה בטוח שברצונך להתנתק? יהיה עליך להתחבר שוב כדי לגשת לחשבונך."
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:56
 msgid "Asc"
-msgstr "升序"
+msgstr "עולה"
 
 #: ../../../lib/web/src/components/place-picker.tsx:152
 msgid "Back"
-msgstr "返回"
+msgstr "חזור"
 
 #: ../../../lib/web/src/features/errors/forbidden.tsx:21
 #: ../../../lib/web/src/features/errors/not-found-error.tsx:21
 #: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
 msgid "Back to Home"
-msgstr "返回首页"
+msgstr "חזור לדף הבית"
 
 #: src/features/notification/index.tsx:74
 msgid "Blocked navigation to untrusted link"
-msgstr "已阻止跳转到不可信链接"
+msgstr "ניווט לקישור לא מהימן נחסם"
 
 #: ../../../lib/web/src/components/post-tags.tsx:160
 msgid "Boost interest"
-msgstr "提升兴趣"
+msgstr "הגבר עניין"
 
 #: ../../../lib/web/src/components/responsive-confirm-dialog.tsx:64
 #: ../../../lib/web/src/components/travelling-picker.tsx:292
@@ -137,126 +131,126 @@ msgstr "提升兴趣"
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
 #: src/components/rss-dialog.tsx:389
 msgid "Cancel"
-msgstr "取消"
+msgstr "ביטול"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:131
 msgid "Category for this notification"
-msgstr "该通知的分类"
+msgstr "קטגוריה עבור התראה זו"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:115
 msgid "Change notification category"
-msgstr "更改通知分类"
+msgstr "שנה קטגוריית התראה"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:315
 msgid "Choose between default expanded, compact icon-only, or full layout mode"
-msgstr "在默认展开、紧凑仅图标或完整布局模式之间选择"
+msgstr "בחר בין מצב פריסה מורחב כברירת מחדל, מצומצם עם אייקונים בלבד, או מלא"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:257
 msgid "Choose between inset, floating, or standard sidebar layout"
-msgstr "在内嵌、浮动或标准侧边栏布局之间选择"
+msgstr "בחר בין פריסת סרגל צדדי משובץ, צף, או רגיל"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:358
 msgid "Choose between left-to-right or right-to-left site direction"
-msgstr "在从左到右或从右到左的站点方向之间选择"
+msgstr "בחר בין כיוון אתר משמאל לימין או מימין לשמאל"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:213
 msgid "Choose between system preference, light mode, or dark mode"
-msgstr "在跟随系统、浅色模式或深色模式之间选择"
+msgstr "בחר בין העדפת מערכת, מצב בהיר, או מצב כהה"
 
 #: ../../../lib/web/src/components/language-picker.tsx:146
 msgid "Choose language"
-msgstr "选择语言"
+msgstr "בחר שפה"
 
 #: ../../../lib/web/src/components/colour-picker.tsx:304
 msgid "Clear"
-msgstr "清除"
+msgstr "נקה"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:64
 #: src/features/notification/index.tsx:208
 msgid "Clear all"
-msgstr "全部清除"
+msgstr "נקה הכול"
 
 #: ../../../lib/web/src/components/data-table/faceted-filter.tsx:137
 msgid "Clear filters"
-msgstr "清除筛选"
+msgstr "נקה מסננים"
 
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:164
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:168
 msgid "Clear selection"
-msgstr "清除选择"
+msgstr "נקה בחירה"
 
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:165
 msgid "Clear selection (Escape)"
-msgstr "清除选择(Esc)"
+msgstr "נקה בחירה (Escape)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
-msgstr "关闭"
+msgstr "סגור"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:97
 msgid "Close navigation"
-msgstr "关闭导航"
+msgstr "סגור ניווט"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
 msgid "Close Panel"
-msgstr "关闭面板"
+msgstr "סגור פאנל"
 
 #: ../../../lib/web/src/components/header-search.tsx:51
 msgid "Close search"
-msgstr "关闭搜索"
+msgstr "סגור חיפוש"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Collapse sidebar"
-msgstr "折叠侧边栏"
+msgstr "צמצם סרגל צדדי"
 
 #: ../../../lib/web/src/components/coming-soon.tsx:9
 msgid "Coming Soon!"
-msgstr "即将推出!"
+msgstr "בקרוב!"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:302
 msgid "Compact"
-msgstr "紧凑"
+msgstr "מצומצם"
 
 #: ../../../lib/web/src/components/place-picker.tsx:155
 #: ../../../lib/web/src/components/travelling-picker.tsx:299
 msgid "Confirm"
-msgstr "确认"
+msgstr "אישור"
 
 #: ../../../lib/web/src/lib/query-client.ts:78
 msgid "Content not modified"
-msgstr "内容未修改"
+msgstr "התוכן לא שונה"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:145
 msgid "Contextual information and details."
-msgstr "上下文信息和详情。"
+msgstr "מידע קונטקסטואלי ופרטים."
 
 #: ../../../lib/web/src/components/responsive-confirm-dialog.tsx:72
 msgid "Continue"
-msgstr "继续"
+msgstr "המשך"
 
 #: src/components/rss-dialog.tsx:186
 #: src/components/rss-dialog.tsx:195
 msgid "Copied to clipboard"
-msgstr "已复制到剪贴板"
+msgstr "הועתק ללוח"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:60
 msgid "Copy"
-msgstr "复制"
+msgstr "העתק"
 
 #: src/components/rss-dialog.tsx:353
 msgid "Create feed"
-msgstr "创建订阅源"
+msgstr "צור פיד"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
-msgstr "创建一个以开始使用。"
+msgstr "צור אחד כדי להתחיל."
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
 msgid "Dark"
-msgstr "深色"
+msgstr "כהה"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:88
 #: ../../../lib/web/src/components/layout/nav-user.tsx:151
@@ -264,27 +258,27 @@ msgstr "深色"
 #: ../../../lib/web/src/components/profile-dropdown.tsx:84
 #: ../../../lib/web/src/components/profile-dropdown.tsx:120
 msgid "Dark mode"
-msgstr "深色模式"
+msgstr "מצב כהה"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:297
 msgid "Default"
-msgstr "默认"
+msgstr "ברירת מחדל"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
-msgstr "默认 AI 账户"
+msgstr "חשבון AI ברירת מחדל"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
-msgstr "删除订阅源吗?"
+msgstr "למחוק פיד?"
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:60
 msgid "Desc"
-msgstr "降序"
+msgstr "יורד"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:144
 msgid "Details Panel"
-msgstr "详情面板"
+msgstr "פאנל פרטים"
 
 #: ../../../lib/web/src/components/language-picker.tsx:124
 #: ../../../lib/web/src/components/timezone-select.tsx:43
@@ -295,169 +289,169 @@ msgstr "详情面板"
 #: ../../../lib/web/src/lib/preference-utils.ts:82
 #: ../../../lib/web/src/lib/preference-utils.ts:94
 msgid "Detect from web browser"
-msgstr "从浏览器检测"
+msgstr "זיהוי מהדפדפן"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:327
 msgid "Direction"
-msgstr "方向"
+msgstr "כיוון"
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:235
 msgid "Displays the mobile sidebar."
-msgstr "显示移动端侧边栏。"
+msgstr "מציג את סרגל הצד למובייל."
 
 #: src/components/rss-dialog.tsx:427
 msgid "Done"
-msgstr "完成"
+msgstr "בוצע"
 
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
 msgid "Download"
-msgstr "下载"
+msgstr "הורדה"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
-msgstr "展开侧边栏"
+msgstr "הרחב סרגל צד"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:217
 msgid "Failed to add account"
-msgstr "添加账户失败"
+msgstr "הוספת החשבון נכשלה"
 
 #: src/components/rss-dialog.tsx:131
 msgid "Failed to create feed"
-msgstr "创建信息流失败"
+msgstr "יצירת הפיד נכשלה"
 
 #: src/components/rss-dialog.tsx:148
 msgid "Failed to delete feed"
-msgstr "删除信息流失败"
+msgstr "מחיקת הפיד נכשלה"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:226
 msgid "Failed to remove account"
-msgstr "移除账户失败"
+msgstr "הסרת החשבון נכשלה"
 
 #: src/components/rss-dialog.tsx:163
 msgid "Failed to rename feed"
-msgstr "重命名信息流失败"
+msgstr "שינוי שם הפיד נכשל"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:249
 msgid "Failed to send verification code"
-msgstr "发送验证码失败"
+msgstr "שליחת קוד האימות נכשלה"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:104
 msgid "Failed to update category"
-msgstr "更新分类失败"
+msgstr "עדכון הקטגוריה נכשל"
 
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
-msgstr "更新信息流失败"
+msgstr "עדכון הפיד נכשל"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
-msgstr "已删除信息流"
+msgstr "הפיד נמחק"
 
 #: src/components/rss-dialog.tsx:362
 msgid "Feed name"
-msgstr "信息流名称"
+msgstr "שם הפיד"
 
 #: src/components/rss-dialog.tsx:157
 msgid "Feed renamed"
-msgstr "已重命名信息流"
+msgstr "שם הפיד שונה"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:244
 msgid "Floating"
-msgstr "浮动"
+msgstr "צף"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:73
 msgid "Friday"
-msgstr "星期五"
+msgstr "שישי"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:149
 msgid "From"
-msgstr "来自"
+msgstr "מאת"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:307
 msgid "Full layout"
-msgstr "完整布局"
+msgstr "פריסה מלאה"
 
 #: ../../../lib/web/src/features/errors/forbidden.tsx:19
 #: ../../../lib/web/src/features/errors/not-found-error.tsx:19
 #: ../../../lib/web/src/features/errors/unauthorized-error.tsx:19
 msgid "Go Back"
-msgstr "返回"
+msgstr "חזור"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:75
 msgid "Go to first page"
-msgstr "跳转到第一页"
+msgstr "עבור לדף הראשון"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:121
 msgid "Go to last page"
-msgstr "跳转到最后一页"
+msgstr "עבור לדף האחרון"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:112
 msgid "Go to next page"
-msgstr "跳转到下一页"
+msgstr "עבור לדף הבא"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:84
 msgid "Go to previous page"
-msgstr "跳转到上一页"
+msgstr "עבור לדף הקודם"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:159
 msgid "Group"
-msgstr "群组"
+msgstr "קבוצה"
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:67
 msgid "Hide"
-msgstr "隐藏"
+msgstr "הסתר"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:82
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:142
 #: ../../../lib/web/src/components/layout/top-bar.tsx:62
 #: ../../../lib/web/src/components/layout/top-bar.tsx:91
 msgid "Home"
-msgstr "首页"
+msgstr "בית"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:41
 msgid "Hot"
-msgstr "热门"
+msgstr "חם"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:96
 msgid "Imperial"
-msgstr "英制"
+msgstr "אימפריאלי"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:239
 msgid "Inset"
-msgstr "嵌入"
+msgstr "פנימי"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:39
 msgid "Interests"
-msgstr "兴趣"
+msgstr "תחומי עניין"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:237
 msgid "Invalid verification code"
-msgstr "验证码无效"
+msgstr "קוד אימות לא תקין"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:273
 msgid "Layout"
-msgstr "布局"
+msgstr "פריסה"
 
 #: ../../../lib/web/src/components/learn-more.tsx:27
 msgid "Learn more"
-msgstr "了解更多"
+msgstr "מידע נוסף"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:341
 msgid "Left to Right"
-msgstr "从左到右"
+msgstr "משמאל לימין"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:200
 #: ../../../lib/web/src/lib/preference-utils.ts:16
 msgid "Light"
-msgstr "浅色"
+msgstr "בהיר"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:32
 msgid "Load more"
-msgstr "加载更多"
+msgstr "טען עוד"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:32
 msgid "Loading…"
-msgstr "加载中…"
+msgstr "טוען…"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:98
 #: ../../../lib/web/src/components/layout/nav-user.tsx:164
@@ -467,109 +461,109 @@ msgstr "加载中…"
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:23
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:25
 msgid "Log out"
-msgstr "退出登录"
+msgstr "התנתק"
 
 #: ../../../lib/web/src/hooks/use-logout.ts:16
 msgid "Logged out (with errors)"
-msgstr "已退出登录(存在错误)"
+msgstr "התנתקת (עם שגיאות)"
 
 #: ../../../lib/web/src/hooks/use-logout.ts:14
 msgid "Logged out successfully"
-msgstr "已成功退出登录"
+msgstr "ההתנתקות בוצעה בהצלחה"
 
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:25
 msgid "Logging out…"
-msgstr "正在退出登录…"
+msgstr "מתנתק…"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:25
 msgid "Luma (Default)"
-msgstr "Luma(默认)"
+msgstr "Luma (ברירת מחדל)"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:86
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:220
 msgid "Mark all as read"
-msgstr "全部标为已读"
+msgstr "סמן הכול כנקרא"
 
 #: src/features/notification/index.tsx:193
 msgid "Mark all read"
-msgstr "全部标为已读"
+msgstr "סמן הכול כנקרא"
 
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:152
 msgid "Menu"
-msgstr "菜单"
+msgstr "תפריט"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:95
 msgid "Metric"
-msgstr "公制"
+msgstr "מטרי"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:69
 msgid "Monday"
-msgstr "星期一"
+msgstr "יום שני"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:40
 msgid "New"
-msgstr "新建"
+msgstr "חדש"
 
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
 msgid "Next image"
-msgstr "下一张图片"
+msgstr "התמונה הבאה"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:156
 msgid "No access rules configured. Add rules to control who can access this resource."
-msgstr "尚未配置访问规则。添加规则以控制谁可以访问此资源。"
+msgstr "לא הוגדרו כללי גישה. הוסף כללים כדי לשלוט במי יכול לגשת למשאב זה."
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:287
 msgid "No connected accounts"
-msgstr "无已连接的账户"
+msgstr "אין חשבונות מקושרים"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:238
 msgid "No groups available"
-msgstr "无可用群组"
+msgstr "אין קבוצות זמינות"
 
 #: ../../../lib/web/src/components/language-picker.tsx:156
 msgid "No matches."
-msgstr "无匹配项。"
+msgstr "אין התאמות."
 
 #: src/features/notification/index.tsx:246
 msgid "No notifications"
-msgstr "无通知"
+msgstr "אין התראות"
 
 #: ../../../lib/web/src/components/place-picker.tsx:129
 msgid "No places found"
-msgstr "未找到地点"
+msgstr "לא נמצאו מקומות"
 
 #: ../../../lib/web/src/components/profile-dropdown.tsx:55
 msgid "No profile"
-msgstr "无资料"
+msgstr "אין פרופיל"
 
 #: ../../../lib/web/src/components/command-menu.tsx:52
 #: ../../../lib/web/src/components/data-table/faceted-filter.tsx:87
 msgid "No results found."
-msgstr "未找到结果。"
+msgstr "לא נמצאו תוצאות."
 
 #: src/components/rss-dialog.tsx:263
 msgid "No RSS feeds yet"
-msgstr "暂无 RSS 订阅源"
+msgstr "עדיין אין פידי RSS"
 
 #: ../../../lib/web/src/components/timezone-select.tsx:64
 msgid "No time zone found."
-msgstr "未找到时区。"
+msgstr "לא נמצא אזור זמן."
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:135
 msgid "No topic record yet — try again after the next notification."
-msgstr "暂无主题记录,请在下次通知后重试。"
+msgstr "עדיין אין רשומת נושא — נסה שוב לאחר ההתראה הבאה."
 
 #: src/features/notification/index.tsx:246
 msgid "No unread notifications"
-msgstr "无未读通知"
+msgstr "אין התראות שלא נקראו"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:203
 msgid "No users found"
-msgstr "未找到用户"
+msgstr "לא נמצאו משתמשים"
 
 #: ../../../lib/web/src/components/person-picker.tsx:333
 msgid "None"
-msgstr "无"
+msgstr "ללא"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
@@ -577,376 +571,376 @@ msgstr "无"
 #: src/features/notification/index.tsx:129
 #: src/features/notification/index.tsx:164
 msgid "Notifications"
-msgstr "通知"
+msgstr "התראות"
 
 #: src/components/rss-dialog.tsx:331
 #: src/components/rss-dialog.tsx:341
 msgid "Notify by default"
-msgstr "默认通知"
+msgstr "התרע כברירת מחדל"
 
 #: ../../../lib/web/src/features/errors/not-found-error.tsx:12
 msgid "Oops! Page Not Found!"
-msgstr "抱歉!页面未找到!"
+msgstr "אופס! הדף לא נמצא!"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:150
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
-msgstr "打开账户操作"
+msgstr "פתח פעולות חשבון"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"
-msgstr "打开导航"
+msgstr "פתח ניווט"
 
 #: ../../../lib/web/src/components/layout/top-nav.tsx:32
 #: ../../../lib/web/src/components/layout/top-nav.tsx:33
 msgid "Open navigation menu"
-msgstr "打开导航菜单"
+msgstr "פתח תפריט ניווט"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:51
 msgid "Open theme settings"
-msgstr "打开主题设置"
+msgstr "פתח הגדרות ערכת נושא"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:163
 msgid "Other"
-msgstr "其他"
+msgstr "אחר"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:213
 msgid "Owner"
-msgstr "所有者"
+msgstr "בעלים"
 
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
-msgstr "上一张图片"
+msgstr "התמונה הקודמת"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:134
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
 msgid "Profile"
-msgstr "个人资料"
+msgstr "פרופיל"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:216
 #: ../../../lib/web/src/components/search-entity-page.tsx:191
 msgid "Recommended"
-msgstr "推荐"
+msgstr "מומלץ"
 
 #: ../../../lib/web/src/components/layout/authenticated-layout.tsx:130
 msgid "Redirecting to login."
-msgstr "正在重定向到登录。"
+msgstr "מפנה לדף ההתחברות."
 
 #: ../../../lib/web/src/components/post-tags.tsx:175
 msgid "Reduce interest"
-msgstr "降低兴趣"
+msgstr "הפחת עניין"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:60
 msgid "Relative (5m, 3h, 2d)"
-msgstr "相对时间(5分钟、3小时、2天)"
+msgstr "יחסי (5 דקות, 3 שעות, 2 ימים)"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:59
 msgid "Relative within 24 hours, else absolute"
-msgstr "24 小时内显示相对时间,否则显示绝对时间"
+msgstr "יחסי בתוך 24 שעות, אחרת מוחלט"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:257
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:172
 msgid "Remove"
-msgstr "移除"
+msgstr "הסר"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:241
 #: ../../../lib/web/src/features/access/access-list.tsx:242
 msgid "Remove access rule"
-msgstr "移除访问规则"
+msgstr "הסר כלל גישה"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:249
 msgid "Remove access?"
-msgstr "移除访问权限?"
+msgstr "להסיר גישה?"
 
 #: ../../../lib/web/src/components/post-tags.tsx:190
 msgid "Remove interest"
-msgstr "移除兴趣"
+msgstr "הסר עניין"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
 msgid "Reset"
-msgstr "重置"
+msgstr "אפס"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:75
 msgid "Reset all settings to default values"
-msgstr "将所有设置重置为默认值"
+msgstr "אפס את כל ההגדרות לערכי ברירת המחדל"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:348
 msgid "Right to Left"
-msgstr "从右到左"
+msgstr "מימין לשמאל"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:60
 msgid "Rows per page"
-msgstr "每页行数"
+msgstr "שורות לעמוד"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
-msgstr "星期六"
+msgstr "שבת"
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."
-msgstr "请立即保存此 URL。您将无法再次查看该令牌。"
+msgstr "שמור כתובת URL זו עכשיו. לא תוכל לראות שוב את האסימון."
 
 #: ../../../lib/web/src/components/place-picker.tsx:82
 msgid "Search for a place"
-msgstr "搜索地点"
+msgstr "חפש מקום"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:234
 msgid "Search for destination..."
-msgstr "搜索目的地..."
+msgstr "חפש יעד..."
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:173
 msgid "Search for origin..."
-msgstr "搜索起点..."
+msgstr "חפש מקור..."
 
 #: ../../../lib/web/src/components/timezone-select.tsx:62
 msgid "Search time zone..."
-msgstr "搜索时区..."
+msgstr "חפש אזור זמן..."
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:170
 msgid "Search users"
-msgstr "搜索用户"
+msgstr "חפש משתמשים"
 
 #: ../../../lib/web/src/components/person-picker.tsx:312
 msgid "Search..."
-msgstr "搜索..."
+msgstr "חיפוש..."
 
 #: ../../../lib/web/src/components/language-picker.tsx:154
 msgid "Search…"
-msgstr "搜索…"
+msgstr "חיפוש…"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
 #: ../../../lib/web/src/components/search-entity-page.tsx:149
 #: ../../../lib/web/src/features/access/access-dialog.tsx:199
 msgid "Searching..."
-msgstr "正在搜索..."
+msgstr "מחפש..."
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:147
 msgid "Select a user, group, or other rule to grant access."
-msgstr "选择用户、群组或其他规则以授予访问权限。"
+msgstr "בחר משתמש, קבוצה או כלל אחר כדי לתת גישה."
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:270
 msgid "Select access rule"
-msgstr "选择访问规则"
+msgstr "בחר כלל גישה"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:126
 msgid "Select account type"
-msgstr "选择账户类型"
+msgstr "בחר סוג חשבון"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:228
 msgid "Select group"
-msgstr "选择群组"
+msgstr "בחר קבוצה"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:291
 msgid "Select layout style"
-msgstr "选择布局样式"
+msgstr "בחר סגנון פריסה"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:233
 msgid "Select sidebar style"
-msgstr "选择侧边栏样式"
+msgstr "בחר סגנון סרגל צד"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:335
 msgid "Select site direction"
-msgstr "选择站点方向"
+msgstr "בחר כיוון אתר"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:189
 msgid "Select theme preference"
-msgstr "选择主题偏好"
+msgstr "בחר העדפת ערכת נושא"
 
 #: ../../../lib/web/src/lib/api-client.ts:224
 msgid "Session expired"
-msgstr "会话已过期"
+msgstr "ההפעלה פגה"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:143
 msgid "Set origin and destination"
-msgstr "设置起点和终点"
+msgstr "קבע מקור ויעד"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:81
 #: ../../../lib/web/src/components/layout/nav-user.tsx:145
 #: ../../../lib/web/src/components/layout/nav-user.tsx:195
 msgid "Settings"
-msgstr "设置"
+msgstr "הגדרות"
 
 #: src/features/notification/index.tsx:173
 msgid "Show all"
-msgstr "显示全部"
+msgstr "הצג הכל"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:36
 msgid "Showing {totalShown} of {total}"
-msgstr "显示 {total} 中的 {totalShown} 条"
+msgstr "מציג {totalShown} מתוך {total}"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:225
 #: ../../../lib/web/src/components/config-drawer.tsx:249
 #: ../../../lib/web/src/components/ui/sidebar.tsx:234
 msgid "Sidebar"
-msgstr "侧边栏"
+msgstr "סרגל צד"
 
 #: ../../../lib/web/src/components/layout/authenticated-layout.tsx:128
 msgid "Signing out..."
-msgstr "正在退出..."
+msgstr "מתנתק..."
 
 #: ../../../lib/web/src/components/skip-to-main.tsx:8
 msgid "Skip to Main"
-msgstr "跳至主内容"
+msgstr "דלג לראשי"
 
 #: ../../../lib/web/src/components/coming-soon.tsx:12
 msgid "Stay tuned though!"
-msgstr "敬请期待!"
+msgstr "הישאר מעודכן!"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:187
 msgid "Subject"
-msgstr "主题"
+msgstr "נושא"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:75
 msgid "Sunday"
-msgstr "星期日"
+msgstr "יום ראשון"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:195
 #: ../../../lib/web/src/lib/preference-utils.ts:18
 msgid "System"
-msgstr "系统"
+msgstr "מערכת"
 
 #: ../../../lib/web/src/components/tag-input.tsx:91
 msgid "Tag"
-msgstr "标签"
+msgstr "תגית"
 
 #: ../../../lib/web/src/components/layout/team-switcher.tsx:60
 msgid "Teams/Apps"
-msgstr "团队/应用"
+msgstr "צוותים/אפליקציות"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"
-msgstr "主题"
+msgstr "ערכת נושא"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
-msgstr "主题设置"
+msgstr "הגדרות ערכת נושא"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"
-msgstr "星期四"
+msgstr "יום חמישי"
 
 #: ../../../lib/web/src/components/data-table/view-options.tsx:34
 msgid "Toggle columns"
-msgstr "切换列"
+msgstr "החלף עמודות"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:227
 msgid "Toggle Right Panel"
-msgstr "切换右侧面板"
+msgstr "החלף פאנל ימין"
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:312
 #: ../../../lib/web/src/components/ui/sidebar.tsx:324
 #: ../../../lib/web/src/components/ui/sidebar.tsx:327
 msgid "Toggle Sidebar"
-msgstr "切换侧边栏"
+msgstr "החלף סרגל צד"
 
 #: ../../../lib/web/src/components/theme-switch.tsx:31
 msgid "Toggle theme"
-msgstr "切换主题"
+msgstr "החלף ערכת נושא"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:42
 msgid "Top"
-msgstr "顶部"
+msgstr "ראש"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:141
 msgid "Travelling"
-msgstr "行进中"
+msgstr "בנסיעה"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:190
 #: ../../../lib/web/src/components/search-entity-page.tsx:165
 msgid "Try adjusting your search terms"
-msgstr "尝试调整您的搜索词"
+msgstr "נסה להתאים את מונחי החיפוש שלך"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:125
 #: ../../../lib/web/src/features/errors/general-error.tsx:165
 #: ../../../lib/web/src/features/errors/maintenance-error.tsx:15
 msgid "Try again"
-msgstr "重试"
+msgstr "נסה שוב"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:70
 msgid "Tuesday"
-msgstr "星期二"
+msgstr "יום שלישי"
 
 #: ../../../lib/web/src/components/command-menu.tsx:49
 msgid "Type a command or search..."
-msgstr "输入命令或搜索..."
+msgstr "הקלד פקודה או חיפוש..."
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:188
 msgid "Type to search users"
-msgstr "输入以搜索用户"
+msgstr "הקלד לחיפוש משתמשים"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:180
 msgid "Type to search..."
-msgstr "输入以搜索..."
+msgstr "הקלד לחיפוש..."
 
 #: ../../../lib/web/src/lib/auth-manager.ts:82
 #: ../../../lib/web/src/lib/auth-manager.ts:94
 msgid "Unable to redirect to login. Please try again."
-msgstr "无法重定向到登录页面。请重试。"
+msgstr "לא ניתן להפנות להתחברות. נסה שוב."
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:143
 msgid "Unassigned"
-msgstr "未分配"
+msgstr "לא משויך"
 
 #: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
 msgid "Unauthorized Access"
-msgstr "未授权访问"
+msgstr "גישה לא מורשית"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:97
 msgid "United States"
-msgstr "美国"
+msgstr "ארצות הברית"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:131
 msgid "Unverified"
-msgstr "未验证"
+msgstr "לא מאומת"
 
 #: src/components/rss-dialog.tsx:379
 msgid "Use this feed for your current notification subscriptions"
-msgstr "将此源用于您当前的通知订阅"
+msgstr "השתמש בפיד זה עבור מנויי ההתראות הנוכחיים שלך"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:155
 msgid "User"
-msgstr "用户"
+msgstr "משתמש"
 
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:68
 msgid "Verification code"
-msgstr "验证码"
+msgstr "קוד אימות"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:247
 msgid "Verification code sent"
-msgstr "验证码已发送"
+msgstr "קוד האימות נשלח"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:240
 msgid "Verification failed"
-msgstr "验证失败"
+msgstr "האימות נכשל"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
 msgid "Verify"
-msgstr "验证"
+msgstr "אמת"
 
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:58
 msgid "Verify email address"
-msgstr "验证邮箱地址"
+msgstr "אמת כתובת אימייל"
 
 #: ../../../lib/web/src/components/data-table/view-options.tsx:30
 msgid "View"
-msgstr "查看"
+msgstr "הצג"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:173
 msgid "View all"
-msgstr "查看全部"
+msgstr "הצג הכל"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:94
 msgid "View all notifications"
-msgstr "查看所有通知"
+msgstr "הצג את כל ההתראות"
 
 #: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
 msgid "We'll be back online shortly."
-msgstr "我们将很快恢复在线。"
+msgstr "נחזור להיות מקוונים בקרוב."
 
 #: ../../../lib/web/src/features/errors/maintenance-error.tsx:9
 msgid "Website is under maintenance!"
-msgstr "网站正在维护中!"
+msgstr "האתר בתחזוקה!"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:71
 msgid "Wednesday"
-msgstr "星期三"
+msgstr "יום רביעי"
