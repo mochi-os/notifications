@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "कॉपी करें"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "फ़ीड बनाएँ"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "शुरू करने के लिए एक बनाएँ।"
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "RSS फ़ीड बनाएं"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "डिफ़ॉल्ट"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "डिफ़ॉल्ट AI अकाउंट"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "हटाएँ"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "पूर्ण"
 msgid "Download"
 msgstr "डाउनलोड"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "उदा. Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "साइडबार विस्तृत करें"
@@ -348,6 +361,10 @@ msgstr "श्रेणी अपडेट करने में विफल"
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "फीड अपडेट करने में विफल"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "फीड बनाया गया"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "दाएँ से बाएँ"
 msgid "Rows per page"
 msgstr "प्रति पेज पंक्तियाँ"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "RSS फ़ीड"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "RSS फ़ीड"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "शनिवार"
@@ -820,6 +845,10 @@ msgstr "थीम"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "थीम सेटिंग्स"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "इससे यह फ़ीड स्थायी रूप से हट जाएगा। इसका उपयोग करने वाले कोई भी RSS रीडर अब आपकी सूचनाओं तक नहीं पहुंच पाएंगे।"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

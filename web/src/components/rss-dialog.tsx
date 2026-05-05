@@ -198,7 +198,7 @@ export function RssDialog({
   }
 
   const handleCreate = () => {
-    const name = newFeedName.trim() || 'RSS feed'
+    const name = newFeedName.trim() || t`RSS feed`
     createMutation.mutate({ name, addToExisting })
   }
 
@@ -234,9 +234,9 @@ export function RssDialog({
         <ResponsiveDialogContent>
           <ResponsiveDialogHeader>
             <ResponsiveDialogTitle>
-              {view === 'create' && 'Create RSS feed'}
-              {view === 'created' && 'Feed created'}
-              {view === 'list' && 'RSS feeds'}
+              {view === 'create' && <Trans>Create RSS feed</Trans>}
+              {view === 'created' && <Trans>Feed created</Trans>}
+              {view === 'list' && <Trans>RSS feeds</Trans>}
             </ResponsiveDialogTitle>
             {view === 'created' && (
               <ResponsiveDialogDescription>
@@ -362,7 +362,7 @@ export function RssDialog({
                 <Label htmlFor='feed-name'><Trans>Feed name</Trans></Label>
                 <Input
                   id='feed-name'
-                  placeholder='e.g., Feedly, NewsBlur'
+                  placeholder={t`e.g., Feedly, NewsBlur`}
                   value={newFeedName}
                   onChange={(e) => setNewFeedName(e.target.value)}
                   onKeyDown={(e) => {
@@ -397,7 +397,7 @@ export function RssDialog({
                   ) : (
                     <Plus className='h-4 w-4' />
                   )}
-                  Create feed
+                  <Trans>Create feed</Trans>
                 </Button>
               </ResponsiveDialogFooter>
             </div>
@@ -438,8 +438,8 @@ export function RssDialog({
           if (!isOpen) setDeleteId(null)
         }}
         title={t`Delete Feed?`}
-        desc='This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications.'
-        confirmText='Delete'
+        desc={t`This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications.`}
+        confirmText={t`Delete`}
         destructive
         handleConfirm={() => {
           if (deleteId) deleteMutation.mutate(deleteId)

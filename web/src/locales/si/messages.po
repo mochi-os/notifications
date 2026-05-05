@@ -6,6 +6,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: si\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:52
 msgid "12 hours"
@@ -240,12 +246,17 @@ msgid "Copy"
 msgstr "පිටපත් කරන්න"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "පෝෂණයක් නිර්මාණය කරන්න"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "ආරම්භ කිරීමට එකක් නිර්මාණය කරන්න."
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "RSS පෝෂණයක් සාදන්න"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -267,6 +278,10 @@ msgstr "පෙරනිමි"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "පෙරනිමි AI ගිණුම"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "මකන්න"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -307,6 +322,10 @@ msgstr "නිමයි"
 msgid "Download"
 msgstr "බාගත කරන්න"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "උදා. Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "පැති තීරුව ප්‍රසාරණය කරන්න"
@@ -342,6 +361,10 @@ msgstr "කාණ්ඩය යාවත්කාලීන කිරීමට අ
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "පෝෂණය යාවත්කාලීන කිරීමට අසමත් විය"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "පෝෂණය සාදන ලදී"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -672,6 +695,14 @@ msgstr "දකුණේ සිට වමට"
 msgid "Rows per page"
 msgstr "පිටුවකට පේළි"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "RSS පෝෂණය"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "RSS පෝෂණ"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "සෙනසුරාදා"
@@ -814,6 +845,10 @@ msgstr "theme"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "theme සැකසුම්"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "මෙය මෙම පෝෂණය ස්ථිරවම මකා දමයි. එය භාවිතා කරන කිසිදු RSS කියවනයකට ඔබේ දැනුම්දීම් වෙත තවදුරටත් ප්‍රවේශ විය නොහැක."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

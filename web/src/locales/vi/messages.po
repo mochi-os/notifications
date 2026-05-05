@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "Sao chép"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "Tạo feed"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "Tạo một cái để bắt đầu."
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "Tạo nguồn cấp RSS"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "Mặc định"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "Tài khoản AI mặc định"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "Xóa"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "Xong"
 msgid "Download"
 msgstr "Tải xuống"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "vd. Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Mở rộng thanh bên"
@@ -348,6 +361,10 @@ msgstr "Không cập nhật danh mục được"
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "Không cập nhật nguồn cấp được"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "Đã tạo nguồn cấp"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "Phải sang trái"
 msgid "Rows per page"
 msgstr "Số hàng mỗi trang"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "Feed RSS"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "Nguồn cấp RSS"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "Thứ bảy"
@@ -820,6 +845,10 @@ msgstr "Giao diện"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "Cài đặt giao diện"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "Thao tác này sẽ xóa vĩnh viễn nguồn cấp này. Mọi trình đọc RSS đang sử dụng nó sẽ không còn truy cập được các thông báo của bạn."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

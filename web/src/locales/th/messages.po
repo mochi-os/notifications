@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "คัดลอก"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "สร้างฟีด"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "สร้างหนึ่งรายการเพื่อเริ่มต้น"
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "สร้างฟีด RSS"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "ค่าเริ่มต้น"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "บัญชี AI เริ่มต้น"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "ลบ"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "เสร็จสิ้น"
 msgid "Download"
 msgstr "ดาวน์โหลด"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "เช่น Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "ขยายแถบด้านข้าง"
@@ -348,6 +361,10 @@ msgstr "ไม่สามารถอัปเดตหมวดหมู่ไ
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "ไม่สามารถอัปเดตฟีดได้"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "สร้างฟีดแล้ว"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "ขวาไปซ้าย"
 msgid "Rows per page"
 msgstr "แถวต่อหน้า"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "ฟีด RSS"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "ฟีด RSS"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "วันเสาร์"
@@ -820,6 +845,10 @@ msgstr "ธีม"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "การตั้งค่าธีม"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "การดำเนินการนี้จะลบฟีดนี้อย่างถาวร โปรแกรมอ่าน RSS ที่ใช้ฟีดนี้จะไม่สามารถเข้าถึงการแจ้งเตือนของคุณได้อีกต่อไป"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

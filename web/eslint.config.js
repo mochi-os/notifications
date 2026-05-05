@@ -87,5 +87,14 @@ export default defineConfig(
   {
     files: ['**/*.{ts,tsx}'],
     ...i18nConfig,
+    // notifications has zero unwrapped strings — promote the rule from
+    // warn to error so any new untranslated literal fails CI immediately.
+    rules: {
+      ...i18nConfig.rules,
+      'lingui/no-unlocalized-strings': [
+        'error',
+        i18nConfig.rules['lingui/no-unlocalized-strings'][1],
+      ],
+    },
   }
 )

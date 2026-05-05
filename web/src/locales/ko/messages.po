@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "복사"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "피드 생성"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "시작하려면 하나를 생성하세요."
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "RSS 피드 만들기"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "기본값"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "기본 AI 계정"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "삭제"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "완료"
 msgid "Download"
 msgstr "다운로드"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "예: Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "사이드바 펼치기"
@@ -348,6 +361,10 @@ msgstr "카테고리 업데이트에 실패했어요"
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "피드 업데이트에 실패했어요"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "피드가 생성되었어요"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "오른쪽에서 왼쪽"
 msgid "Rows per page"
 msgstr "페이지당 행"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "RSS 피드"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "RSS 피드"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "토요일"
@@ -820,6 +845,10 @@ msgstr "테마"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "테마 설정"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "이 피드가 영구적으로 삭제됩니다. 이 피드를 사용하는 RSS 리더는 더 이상 알림에 접근할 수 없습니다."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

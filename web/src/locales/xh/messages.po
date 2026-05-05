@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "Kotshela"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "Yenza ifidi"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "Yenza enye ukuze uqalise."
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "Yenza i-feed ye-RSS"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "Eyoqobo"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "I-akhawunti yoqobo ye-AI"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "Cima"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "Kwenziwe"
 msgid "Download"
 msgstr "Khuphela"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "umz. Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Yandisa ibara lecala"
@@ -348,6 +361,10 @@ msgstr "Ayiphumelelanga ukuhlaziya udidi"
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "Ayiphumelelanga ukuhlaziya ifidi"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "Ifidi idaliwe"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "Ekunene ukuya Ekhohlo"
 msgid "Rows per page"
 msgstr "Imiqolo ngephepha"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "Ifidi ye-RSS"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "Ii-feed ze-RSS"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "Umgqibelo"
@@ -820,6 +845,10 @@ msgstr "Itimu"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "Iisetingi zetimu"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "Oku kuza kuyicima ngokusisigxina le feed. Naziphi na izifundi ze-RSS ezisebenzisa yona azisayi kukwazi ukufikelela kwizaziso zakho."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "Nakili"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "Unda mlisho"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "Unda moja ili kuanza."
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "Tengeneza mlisho wa RSS"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "Chaguo-msingi"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "Akaunti chaguo-msingi ya AI"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "Futa"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "Imekamilika"
 msgid "Download"
 msgstr "Pakua"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "k.m. Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Panua utepe"
@@ -348,6 +361,10 @@ msgstr "Imeshindwa kusasisha kategoria"
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "Imeshindwa kusasisha mlisho"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "Mlisho umeundwa"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "Kulia kwenda Kushoto"
 msgid "Rows per page"
 msgstr "Safu kwa kila ukurasa"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "Mlisho wa RSS"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "Milisho ya RSS"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "Jumamosi"
@@ -820,6 +845,10 @@ msgstr "Mandhari"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "Mipangilio ya Mandhari"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "Hii itafuta mlisho huu kabisa. Visomaji vya RSS vinavyoutumia havitaweza tena kufikia arifa zako."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

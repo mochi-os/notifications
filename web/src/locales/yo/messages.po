@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "Ṣe àdàkọ"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "Dá feed"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "Dá ọ̀kan láti bẹ̀rẹ̀."
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "Ṣẹda ìfàn RSS"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "Àìpé"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "Àkáǹtì AI àìpé"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "Pa rẹ́"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "Ti parí"
 msgid "Download"
 msgstr "Gbà sílẹ̀"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "f.a. Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Fẹ̀ sidebar"
@@ -348,6 +361,10 @@ msgstr "Kò lè mú ẹ̀ka dòde"
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "Kò lè mú feed dòde"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "A ti dá feed"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "Ọ̀tún sí Òsì"
 msgid "Rows per page"
 msgstr "Àwọn ila fún ojú-ìwé kọ̀ọ̀kan"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "Feed RSS"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "Àwọn ìfàn RSS"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "Ọjọ́ Àbámẹ́ta"
@@ -820,6 +845,10 @@ msgstr "Theme"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "Àwọn ìṣètò Theme"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "Èyí yóò pa ìfàn yìí rẹ́ pátápátá. Èyíkéyìí òǹkàwé RSS tó ń lò ó kò ní lè rí àwọn ìfitónilétí rẹ mọ́."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

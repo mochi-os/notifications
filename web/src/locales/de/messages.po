@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "Kopieren"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "Feed erstellen"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "Erstellen Sie eines, um zu beginnen."
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "RSS-Feed erstellen"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "Standard"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "Standard-KI-Konto"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "Löschen"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "Fertig"
 msgid "Download"
 msgstr "Herunterladen"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "z. B. Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Seitenleiste erweitern"
@@ -348,6 +361,10 @@ msgstr "Kategorie konnte nicht aktualisiert werden"
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "Feed konnte nicht aktualisiert werden"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "Feed erstellt"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "Rechts nach links"
 msgid "Rows per page"
 msgstr "Zeilen pro Seite"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "RSS-Feed"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "RSS-Feeds"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "Samstag"
@@ -820,6 +845,10 @@ msgstr "Theme"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "Theme-Einstellungen"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "Dadurch wird dieser Feed dauerhaft gelöscht. RSS-Reader, die ihn verwenden, können dann nicht mehr auf deine Benachrichtigungen zugreifen."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

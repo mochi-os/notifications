@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "Kopírovat"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "Vytvořit kanál"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "Začněte vytvořením nového."
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "Vytvořit RSS kanál"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "Výchozí"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "Výchozí AI účet"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "Smazat"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "Hotovo"
 msgid "Download"
 msgstr "Stáhnout"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "např. Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Rozbalit postranní panel"
@@ -348,6 +361,10 @@ msgstr "Nepodařilo se aktualizovat kategorii"
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "Nepodařilo se aktualizovat kanál"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "Kanál vytvořen"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "Zprava doleva"
 msgid "Rows per page"
 msgstr "Řádků na stránku"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "RSS kanál"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "RSS kanály"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "Sobota"
@@ -820,6 +845,10 @@ msgstr "Motiv"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "Nastavení motivu"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "Tímto se tento kanál trvale smaže. Žádné RSS čtečky, které jej používají, již nebudou mít přístup k vašim oznámením."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"

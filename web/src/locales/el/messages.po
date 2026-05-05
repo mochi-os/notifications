@@ -246,12 +246,17 @@ msgid "Copy"
 msgstr "Αντιγραφή"
 
 #: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:400
 msgid "Create feed"
 msgstr "Δημιουργία ροής"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
 msgstr "Δημιουργήστε ένα για να ξεκινήσετε."
+
+#: src/components/rss-dialog.tsx:237
+msgid "Create RSS feed"
+msgstr "Δημιουργία ροής RSS"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -273,6 +278,10 @@ msgstr "Προεπιλογή"
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
 msgstr "Προεπιλεγμένος λογαριασμός AI"
+
+#: src/components/rss-dialog.tsx:442
+msgid "Delete"
+msgstr "Διαγραφή"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
@@ -313,6 +322,10 @@ msgstr "Ολοκληρώθηκε"
 msgid "Download"
 msgstr "Λήψη"
 
+#: src/components/rss-dialog.tsx:365
+msgid "e.g., Feedly, NewsBlur"
+msgstr "π.χ. Feedly, NewsBlur"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Επέκταση πλευρικής μπάρας"
@@ -348,6 +361,10 @@ msgstr "Αποτυχία ενημέρωσης κατηγορίας"
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
 msgstr "Αποτυχία ενημέρωσης ροής"
+
+#: src/components/rss-dialog.tsx:238
+msgid "Feed created"
+msgstr "Η ροή δημιουργήθηκε"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
@@ -678,6 +695,14 @@ msgstr "Από δεξιά προς αριστερά"
 msgid "Rows per page"
 msgstr "Γραμμές ανά σελίδα"
 
+#: src/components/rss-dialog.tsx:201
+msgid "RSS feed"
+msgstr "Ροή RSS"
+
+#: src/components/rss-dialog.tsx:239
+msgid "RSS feeds"
+msgstr "Ροές RSS"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:74
 msgid "Saturday"
 msgstr "Σάββατο"
@@ -820,6 +845,10 @@ msgstr "Θέμα"
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
 msgstr "Ρυθμίσεις θέματος"
+
+#: src/components/rss-dialog.tsx:441
+msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
+msgstr "Αυτό θα διαγράψει οριστικά αυτή τη ροή. Τα προγράμματα ανάγνωσης RSS που τη χρησιμοποιούν δεν θα μπορούν πλέον να έχουν πρόσβαση στις ειδοποιήσεις σας."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:72
 msgid "Thursday"
