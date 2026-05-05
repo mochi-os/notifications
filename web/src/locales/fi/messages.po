@@ -567,7 +567,7 @@ msgstr "Ei lukemattomia ilmoituksia"
 msgid "No users found"
 msgstr "Käyttäjiä ei löytynyt"
 
-#: ../../../lib/web/src/components/person-picker.tsx:333
+#: ../../../lib/web/src/components/person-picker.tsx:349
 msgid "None"
 msgstr "Ei mitään"
 
@@ -706,7 +706,7 @@ msgstr "Hae aikavyöhykettä..."
 msgid "Search users"
 msgstr "Hae käyttäjiä"
 
-#: ../../../lib/web/src/components/person-picker.tsx:312
+#: ../../../lib/web/src/components/person-picker.tsx:323
 msgid "Search..."
 msgstr "Hae..."
 
