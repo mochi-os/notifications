@@ -697,7 +697,7 @@ msgstr "عدد الصفوف في الصفحة"
 
 #: src/components/rss-dialog.tsx:201
 msgid "RSS feed"
-msgstr "موجز RSS"
+msgstr "RSS feed"
 
 #: src/components/rss-dialog.tsx:239
 msgid "RSS feeds"
