@@ -751,7 +751,7 @@ def function_category_test(context, id=0):
 	dests = mochi.db.rows("select type, target from destinations where category = ?", id) or []
 	sent = 0
 	web = False
-	title = "Test notification"
+	title = mochi.app.label("notifications.body.test")
 	body = cat["label"]
 	for dest in dests:
 		if dest["type"] == "web":
