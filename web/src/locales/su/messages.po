@@ -1,132 +1,126 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2026-05-08 17:10+0200\n"
+"POT-Creation-Date: 2026-05-08 17:31+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: nn\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Plural-Forms: \n"
+"Language: su\n"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:39
 msgid "12 hours"
-msgstr "12 timar"
+msgstr "12 jam"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:38
 msgid "24 hours"
-msgstr "24 timar"
+msgstr "24 jam"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:48
 msgid "Absolute (date and time)"
-msgstr "Absolutt (dato og tid)"
+msgstr "Mutlak (tanggal jeung waktu)"
 
 #: ../../../lib/web/src/features/errors/forbidden.tsx:12
 msgid "Access Forbidden"
-msgstr "Tilgang nekta"
+msgstr "Aksés Dilarang"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:188
 msgid "Access level"
-msgstr "Tilgangsnivå"
+msgstr "Tingkat aksés"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:208
 msgid "Account added"
-msgstr "Konto lagt til"
+msgstr "Akun ditambahkeun"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:224
 msgid "Account removed"
-msgstr "Konto fjerna"
+msgstr "Akun dipiceun"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:123
 msgid "Account type"
-msgstr "Kontotype"
+msgstr "Tipe akun"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Account verified"
-msgstr "Konto stadfesta"
+msgstr "Akun diverifikasi"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:117
 msgid "Add a new account"
-msgstr "Legg til ein ny konto"
+msgstr "Tambah akun anyar"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:145
 msgid "Add access"
-msgstr "Legg til tilgang"
+msgstr "Tambah aksés"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:116
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:280
 msgid "Add account"
-msgstr "Legg til konto"
+msgstr "Tambah akun"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:289
 msgid "Add an account to receive notifications and use services."
-msgstr "Legg til ein konto for å motta varsel og bruke tenester."
+msgstr "Tambah akun pikeun narima béwara jeung maké layanan."
 
 #: ../../../lib/web/src/features/accounts/account-picker.tsx:98
 msgid "Add new account"
-msgstr "Legg til ny konto"
+msgstr "Tambah akun anyar"
 
 #: ../../../lib/web/src/components/post-tags.tsx:119
 msgid "Add tag..."
-msgstr "Legg til etikett..."
+msgstr "Tambah tag..."
 
 #: ../../../lib/web/src/components/layout/team-switcher.tsx:80
 msgid "Add team/app"
-msgstr "Legg til team/app"
+msgstr "Tambah tim/aplikasi"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:159
 msgid "Add to existing notifications"
-msgstr "Legg til i eksisterande varsel"
+msgstr "Tambah ka béwara nu aya"
 
 #: src/components/rss-dialog.tsx:376
 msgid "Add to existing subscriptions"
-msgstr "Legg til i eksisterande abonnement"
+msgstr "Tambah ka langganan nu aya"
 
 #: ../../../lib/web/src/components/view-tabs.tsx:57
 msgid "Add view"
-msgstr "Legg til visning"
+msgstr "Tambah view"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:62
 msgid "Adjust the appearance and layout to suit your preferences."
-msgstr "Juster utsjånaden og oppsettet etter ynska dine."
+msgstr "Atur tampilan jeung tata letak luyu jeung karep anjeun."
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:38
 msgid "AI"
-msgstr "KI"
+msgstr "AI"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:159
 msgid "All"
-msgstr "Alle"
+msgstr "Sadaya"
 
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:24
 msgid "Are you sure you want to log out? You will need to log in again to access your account."
-msgstr "Er du sikker på at du vil logge ut? Du må logge inn att for å få tilgang til kontoen din."
+msgstr "Anjeun yakin hayang log out? Anjeun kudu log in deui pikeun ngaksés akun anjeun."
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:56
 msgid "Asc"
-msgstr "Stig"
+msgstr "Asc"
 
 #: ../../../lib/web/src/components/place-picker.tsx:152
 msgid "Back"
-msgstr "Tilbake"
+msgstr "Tukang"
 
 #: ../../../lib/web/src/features/errors/forbidden.tsx:21
 #: ../../../lib/web/src/features/errors/not-found-error.tsx:21
 #: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
 msgid "Back to Home"
-msgstr "Tilbake til heim"
+msgstr "Balik ka Imah"
 
 #: src/features/notification/index.tsx:74
 msgid "Blocked navigation to untrusted link"
-msgstr "Blokkerte navigering til ei ikkje-tiltrudd lenkje"
+msgstr "Navigasi ka link nu teu dipercaya diblokir"
 
 #: ../../../lib/web/src/components/post-tags.tsx:160
 msgid "Boost interest"
-msgstr "Auk interesse"
+msgstr "Tingkatkeun minat"
 
 #: ../../../lib/web/src/components/responsive-confirm-dialog.tsx:64
 #: ../../../lib/web/src/components/travelling-picker.tsx:292
@@ -137,131 +131,131 @@ msgstr "Auk interesse"
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
 #: src/components/rss-dialog.tsx:389
 msgid "Cancel"
-msgstr "Avbryt"
+msgstr "Batalkeun"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:131
 msgid "Category for this notification"
-msgstr "Kategori for dette varselet"
+msgstr "Katégori pikeun béwara ieu"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:115
 msgid "Change notification category"
-msgstr "Endre varselkategori"
+msgstr "Robah katégori béwara"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:315
 msgid "Choose between default expanded, compact icon-only, or full layout mode"
-msgstr "Vel mellom standard utvida, kompakt med berre ikon eller fullt oppsett"
+msgstr "Pilih antara dibuka standar, kompak ngan ikon, atawa modeu tata letak pinuh"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:257
 msgid "Choose between inset, floating, or standard sidebar layout"
-msgstr "Vel mellom innfelt, flytande eller standard sidestolpeoppsett"
+msgstr "Pilih antara sidebar inset, ngambang, atawa standar"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:358
 msgid "Choose between left-to-right or right-to-left site direction"
-msgstr "Vel mellom venstre-til-høgre eller høgre-til-venstre sideretning"
+msgstr "Pilih antara arah situs kénca-ka-katuhu atawa katuhu-ka-kénca"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:213
 msgid "Choose between system preference, light mode, or dark mode"
-msgstr "Vel mellom systeminnstilling, lys modus eller mørk modus"
+msgstr "Pilih antara préferénsi sistem, modeu caang, atawa modeu poék"
 
 #: ../../../lib/web/src/components/language-picker.tsx:167
 msgid "Choose language"
-msgstr "Vel språk"
+msgstr "Pilih basa"
 
 #: ../../../lib/web/src/components/colour-picker.tsx:304
 msgid "Clear"
-msgstr "Tøm"
+msgstr "Bersihkeun"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:64
 #: src/features/notification/index.tsx:208
 msgid "Clear all"
-msgstr "Tøm alle"
+msgstr "Bersihkeun sadaya"
 
 #: ../../../lib/web/src/components/data-table/faceted-filter.tsx:137
 msgid "Clear filters"
-msgstr "Tøm filter"
+msgstr "Bersihkeun saringan"
 
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:164
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:168
 msgid "Clear selection"
-msgstr "Tøm utval"
+msgstr "Bersihkeun pilihan"
 
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:165
 msgid "Clear selection (Escape)"
-msgstr "Tøm utval (Escape)"
+msgstr "Bersihkeun pilihan (Escape)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
-msgstr "Lat att"
+msgstr "Tutup"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:97
 msgid "Close navigation"
-msgstr "Lat att navigeringa"
+msgstr "Tutup navigasi"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
 msgid "Close Panel"
-msgstr "Lat att panelet"
+msgstr "Tutup Panel"
 
 #: ../../../lib/web/src/components/header-search.tsx:51
 msgid "Close search"
-msgstr "Lat att søket"
+msgstr "Tutup panéangan"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Collapse sidebar"
-msgstr "Klapp saman sidestolpen"
+msgstr "Kuncupkeun sidebar"
 
 #: ../../../lib/web/src/components/coming-soon.tsx:9
 msgid "Coming Soon!"
-msgstr "Kjem snart!"
+msgstr "Geura Datang!"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:302
 msgid "Compact"
-msgstr "Kompakt"
+msgstr "Kompak"
 
 #: ../../../lib/web/src/components/place-picker.tsx:155
 #: ../../../lib/web/src/components/travelling-picker.tsx:299
 msgid "Confirm"
-msgstr "Stadfest"
+msgstr "Konfirmasi"
 
 #: ../../../lib/web/src/lib/query-client.ts:78
 msgid "Content not modified"
-msgstr "Innhald ikkje endra"
+msgstr "Eusi teu dirobah"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:145
 msgid "Contextual information and details."
-msgstr "Kontekstinformasjon og detaljar."
+msgstr "Inpormasi konteks jeung détil."
 
 #: ../../../lib/web/src/components/responsive-confirm-dialog.tsx:72
 msgid "Continue"
-msgstr "Hald fram"
+msgstr "Teruskeun"
 
 #: src/components/rss-dialog.tsx:186
 #: src/components/rss-dialog.tsx:195
 msgid "Copied to clipboard"
-msgstr "Kopiert til utklippstavla"
+msgstr "Disalin ka clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:60
 msgid "Copy"
-msgstr "Kopier"
+msgstr "Salin"
 
 #: src/components/rss-dialog.tsx:353
 #: src/components/rss-dialog.tsx:400
 msgid "Create feed"
-msgstr "Opprett straum"
+msgstr "Jieun feed"
 
 #: src/components/rss-dialog.tsx:264
 msgid "Create one to get started."
-msgstr "Opprett éin for å kome i gang."
+msgstr "Jieun hiji pikeun mimitian."
 
 #: src/components/rss-dialog.tsx:237
 msgid "Create RSS feed"
-msgstr "Opprett RSS-straum"
+msgstr "Jieun feed RSS"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
 msgid "Dark"
-msgstr "Mørk"
+msgstr "Poék"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:88
 #: ../../../lib/web/src/components/layout/nav-user.tsx:151
@@ -269,31 +263,31 @@ msgstr "Mørk"
 #: ../../../lib/web/src/components/profile-dropdown.tsx:84
 #: ../../../lib/web/src/components/profile-dropdown.tsx:120
 msgid "Dark mode"
-msgstr "Mørk modus"
+msgstr "Modeu poék"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:297
 msgid "Default"
-msgstr "Standard"
+msgstr "Standar"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:169
 msgid "Default AI account"
-msgstr "Standard KI-konto"
+msgstr "Akun AI standar"
 
 #: src/components/rss-dialog.tsx:442
 msgid "Delete"
-msgstr "Slett"
+msgstr "Hapus"
 
 #: src/components/rss-dialog.tsx:440
 msgid "Delete Feed?"
-msgstr "Slette straum?"
+msgstr "Hapus Feed?"
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:60
 msgid "Desc"
-msgstr "Sink"
+msgstr "Desc"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:144
 msgid "Details Panel"
-msgstr "Detaljpanel"
+msgstr "Panel Détil"
 
 #: ../../../lib/web/src/components/language-picker.tsx:145
 #: ../../../lib/web/src/components/timezone-select.tsx:43
@@ -304,136 +298,136 @@ msgstr "Detaljpanel"
 #: ../../../lib/web/src/lib/preference-utils.ts:69
 #: ../../../lib/web/src/lib/preference-utils.ts:81
 msgid "Detect from web browser"
-msgstr "Oppdag frå nettlesaren"
+msgstr "Deteksi ti browser web"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:327
 msgid "Direction"
-msgstr "Retning"
+msgstr "Arah"
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:235
 msgid "Displays the mobile sidebar."
-msgstr "Viser mobil sidestolpe."
+msgstr "Mintonkeun sidebar mobile."
 
 #: src/components/rss-dialog.tsx:427
 msgid "Done"
-msgstr "Ferdig"
+msgstr "Beres"
 
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
 msgid "Download"
-msgstr "Last ned"
+msgstr "Unduh"
 
 #: src/components/rss-dialog.tsx:365
 msgid "e.g., Feedly, NewsBlur"
-msgstr "t.d. Feedly, NewsBlur"
+msgstr "cth., Feedly, NewsBlur"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
-msgstr "Utvid sidestolpe"
+msgstr "Lugar sidebar"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:217
 msgid "Failed to add account"
-msgstr "Klarte ikkje leggja til konto"
+msgstr "Gagal nambahkeun akun"
 
 #: src/components/rss-dialog.tsx:131
 msgid "Failed to create feed"
-msgstr "Klarte ikkje oppretta straum"
+msgstr "Gagal nyieun feed"
 
 #: src/components/rss-dialog.tsx:148
 msgid "Failed to delete feed"
-msgstr "Klarte ikkje sletta straum"
+msgstr "Gagal mupus feed"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:226
 msgid "Failed to remove account"
-msgstr "Klarte ikkje fjerna konto"
+msgstr "Gagal mupus akun"
 
 #: src/components/rss-dialog.tsx:163
 msgid "Failed to rename feed"
-msgstr "Klarte ikkje gje nytt namn til straum"
+msgstr "Gagal ngaganti ngaran feed"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:249
 msgid "Failed to send verification code"
-msgstr "Klarte ikkje senda stadfestingskode"
+msgstr "Gagal ngirim kode vérifikasi"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:104
 msgid "Failed to update category"
-msgstr "Klarte ikkje oppdatera kategori"
+msgstr "Gagal ngamutahirkeun katégori"
 
 #: src/components/rss-dialog.tsx:178
 msgid "Failed to update feed"
-msgstr "Klarte ikkje oppdatera straum"
+msgstr "Gagal ngamutahirkeun feed"
 
 #: src/components/rss-dialog.tsx:238
 msgid "Feed created"
-msgstr "Straum oppretta"
+msgstr "Feed dijieun"
 
 #: src/components/rss-dialog.tsx:140
 msgid "Feed deleted"
-msgstr "Straum sletta"
+msgstr "Feed dihapus"
 
 #: src/components/rss-dialog.tsx:362
 msgid "Feed name"
-msgstr "Straumnamn"
+msgstr "Ngaran feed"
 
 #: src/components/rss-dialog.tsx:157
 msgid "Feed renamed"
-msgstr "Straumen fekk nytt namn"
+msgstr "Ngaran feed diganti"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:244
 msgid "Floating"
-msgstr "Flytande"
+msgstr "Ngambang"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:60
 msgid "Friday"
-msgstr "Fredag"
+msgstr "Jumaah"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:149
 msgid "From"
-msgstr "Frå"
+msgstr "Ti"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:307
 msgid "Full layout"
-msgstr "Full layout"
+msgstr "Tata letak lengkep"
 
 #: ../../../lib/web/src/features/errors/forbidden.tsx:19
 #: ../../../lib/web/src/features/errors/not-found-error.tsx:19
 #: ../../../lib/web/src/features/errors/unauthorized-error.tsx:19
 msgid "Go Back"
-msgstr "Gå tilbake"
+msgstr "Balik"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:75
 msgid "Go to first page"
-msgstr "Gå til første side"
+msgstr "Ka kaca kahiji"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:121
 msgid "Go to last page"
-msgstr "Gå til siste side"
+msgstr "Ka kaca panungtung"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:112
 msgid "Go to next page"
-msgstr "Gå til neste side"
+msgstr "Ka kaca saterusna"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:84
 msgid "Go to previous page"
-msgstr "Gå til førre side"
+msgstr "Ka kaca saméméhna"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:159
 msgid "Group"
-msgstr "Gruppe"
+msgstr "Grup"
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:67
 msgid "Hide"
-msgstr "Skjul"
+msgstr "Sumputkeun"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:82
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:142
 #: ../../../lib/web/src/components/layout/top-bar.tsx:62
 #: ../../../lib/web/src/components/layout/top-bar.tsx:91
 msgid "Home"
-msgstr "Heim"
+msgstr "Imah"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:41
 msgid "Hot"
-msgstr "Het"
+msgstr "Panas"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:83
 msgid "Imperial"
@@ -441,40 +435,40 @@ msgstr "Imperial"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:239
 msgid "Inset"
-msgstr "Innfelt"
+msgstr "Sisipan"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:39
 msgid "Interests"
-msgstr "Interesser"
+msgstr "Minat"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:237
 msgid "Invalid verification code"
-msgstr "Ugyldig stadfestingskode"
+msgstr "Kode vérifikasi teu sah"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:273
 msgid "Layout"
-msgstr "Layout"
+msgstr "Tata letak"
 
 #: ../../../lib/web/src/components/learn-more.tsx:27
 msgid "Learn more"
-msgstr "Lær meir"
+msgstr "Diajar deui"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:341
 msgid "Left to Right"
-msgstr "Venstre til høgre"
+msgstr "Kénca ka Katuhu"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:200
 #: ../../../lib/web/src/lib/preference-utils.ts:16
 msgid "Light"
-msgstr "Lyst"
+msgstr "Caang"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:32
 msgid "Load more"
-msgstr "Last fleire"
+msgstr "Muat leuwih loba"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:32
 msgid "Loading…"
-msgstr "Lastar…"
+msgstr "Muat…"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:98
 #: ../../../lib/web/src/components/layout/nav-user.tsx:164
@@ -484,105 +478,105 @@ msgstr "Lastar…"
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:23
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:25
 msgid "Log out"
-msgstr "Logg ut"
+msgstr "Kaluar"
 
 #: ../../../lib/web/src/hooks/use-logout.ts:16
 msgid "Logged out (with errors)"
-msgstr "Logga ut (med feil)"
+msgstr "Geus kaluar (aya kasalahan)"
 
 #: ../../../lib/web/src/hooks/use-logout.ts:14
 msgid "Logged out successfully"
-msgstr "Logga ut"
+msgstr "Hasil kaluar"
 
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:25
 msgid "Logging out…"
-msgstr "Loggar ut…"
+msgstr "Keur kaluar…"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:86
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:220
 msgid "Mark all as read"
-msgstr "Merk alle som lesne"
+msgstr "Tandaan sadayana sakumaha dibaca"
 
 #: src/features/notification/index.tsx:193
 msgid "Mark all read"
-msgstr "Merk alle som lesne"
+msgstr "Tandaan sadayana dibaca"
 
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:152
 msgid "Menu"
-msgstr "Meny"
+msgstr "Menu"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:82
 msgid "Metric"
-msgstr "Metrisk"
+msgstr "Métrik"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:56
 msgid "Monday"
-msgstr "Måndag"
+msgstr "Senén"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:40
 msgid "New"
-msgstr "Ny"
+msgstr "Anyar"
 
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
 msgid "Next image"
-msgstr "Neste bilete"
+msgstr "Gambar salajengna"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:156
 msgid "No access rules configured. Add rules to control who can access this resource."
-msgstr "Ingen tilgangsreglar er sette opp. Legg til reglar for å styra kven som har tilgang til denne ressursen."
+msgstr "Euweuh aturan aksés. Tambahan aturan pikeun ngatur saha nu bisa ngakses sumber ieu."
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:287
 msgid "No connected accounts"
-msgstr "Ingen tilkopla kontoar"
+msgstr "Teu aya akun nu kasambung"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:238
 msgid "No groups available"
-msgstr "Ingen grupper tilgjengelege"
+msgstr "Teu aya grup"
 
 #: ../../../lib/web/src/components/language-picker.tsx:177
 msgid "No matches."
-msgstr "Ingen treff."
+msgstr "Teu aya nu cocog."
 
 #: src/features/notification/index.tsx:246
 msgid "No notifications"
-msgstr "Ingen varsel"
+msgstr "Teu aya bewara"
 
 #: ../../../lib/web/src/components/place-picker.tsx:129
 msgid "No places found"
-msgstr "Ingen stader funne"
+msgstr "Teu manggih tempat"
 
 #: ../../../lib/web/src/components/profile-dropdown.tsx:55
 msgid "No profile"
-msgstr "Inga profil"
+msgstr "Euweuh profil"
 
 #: ../../../lib/web/src/components/command-menu.tsx:52
 #: ../../../lib/web/src/components/data-table/faceted-filter.tsx:87
 msgid "No results found."
-msgstr "Ingen treff funne."
+msgstr "Teu manggih hasil."
 
 #: src/components/rss-dialog.tsx:263
 msgid "No RSS feeds yet"
-msgstr "Ingen RSS-straumar enno"
+msgstr "Tacan aya feed RSS"
 
 #: ../../../lib/web/src/components/timezone-select.tsx:64
 msgid "No time zone found."
-msgstr "Inga tidssone funne."
+msgstr "Teu manggih zona waktu."
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:135
 msgid "No topic record yet — try again after the next notification."
-msgstr "Inga emneoppføring enno — prøv igjen etter neste varsel."
+msgstr "Tacan aya catetan topik — coba deui sanggeus bewara salajengna."
 
 #: src/features/notification/index.tsx:246
 msgid "No unread notifications"
-msgstr "Ingen ulesne varsel"
+msgstr "Teu aya bewara nu can dibaca"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:203
 msgid "No users found"
-msgstr "Ingen brukarar funne"
+msgstr "Teu manggih pamaké"
 
 #: ../../../lib/web/src/components/person-picker.tsx:349
 msgid "None"
-msgstr "Ingen"
+msgstr "Euweuh"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
@@ -590,46 +584,46 @@ msgstr "Ingen"
 #: src/features/notification/index.tsx:129
 #: src/features/notification/index.tsx:164
 msgid "Notifications"
-msgstr "Varsel"
+msgstr "Bewara"
 
 #: src/components/rss-dialog.tsx:331
 #: src/components/rss-dialog.tsx:341
 msgid "Notify by default"
-msgstr "Varsla som standard"
+msgstr "Bewara sacara baku"
 
 #: ../../../lib/web/src/features/errors/not-found-error.tsx:12
 msgid "Oops! Page Not Found!"
-msgstr "Ups! Side ikkje funne!"
+msgstr "Aduh! Kaca Teu Kapanggih!"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:150
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
-msgstr "Opna kontohandlingar"
+msgstr "Buka aksi akun"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"
-msgstr "Opna navigasjon"
+msgstr "Buka navigasi"
 
 #: ../../../lib/web/src/components/layout/top-nav.tsx:32
 #: ../../../lib/web/src/components/layout/top-nav.tsx:33
 msgid "Open navigation menu"
-msgstr "Opna navigasjonsmeny"
+msgstr "Buka menu navigasi"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:51
 msgid "Open theme settings"
-msgstr "Opna temainnstillingar"
+msgstr "Buka setélan tema"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:163
 msgid "Other"
-msgstr "Anna"
+msgstr "Séjén"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:213
 msgid "Owner"
-msgstr "Eigar"
+msgstr "Nu boga"
 
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
-msgstr "Førre bilete"
+msgstr "Gambar saméméhna"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:134
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
@@ -639,339 +633,339 @@ msgstr "Profil"
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:216
 #: ../../../lib/web/src/components/search-entity-page.tsx:191
 msgid "Recommended"
-msgstr "Tilrådd"
+msgstr "Direkomendasikeun"
 
 #: ../../../lib/web/src/components/layout/authenticated-layout.tsx:130
 msgid "Redirecting to login."
-msgstr "Omdirigerer til innlogging."
+msgstr "Ngalihkeun ka login."
 
 #: ../../../lib/web/src/components/post-tags.tsx:175
 msgid "Reduce interest"
-msgstr "Reduser interesse"
+msgstr "Kurangan minat"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:47
 msgid "Relative (5m, 3h, 2d)"
-msgstr "Relativ (5m, 3t, 2d)"
+msgstr "Rélatif (5m, 3j, 2p)"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:46
 msgid "Relative within 24 hours, else absolute"
-msgstr "Relativ innan 24 timar, elles absolutt"
+msgstr "Rélatif dina 24 jam, salian éta absolut"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:257
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:172
 msgid "Remove"
-msgstr "Fjern"
+msgstr "Pupus"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:241
 #: ../../../lib/web/src/features/access/access-list.tsx:242
 msgid "Remove access rule"
-msgstr "Fjern tilgangsregel"
+msgstr "Cabut aturan aksés"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:249
 msgid "Remove access?"
-msgstr "Fjern tilgang?"
+msgstr "Cabut aksés?"
 
 #: ../../../lib/web/src/components/post-tags.tsx:190
 msgid "Remove interest"
-msgstr "Fjern interesse"
+msgstr "Cabut minat"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
 msgid "Reset"
-msgstr "Tilbakestill"
+msgstr "Reset"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:75
 msgid "Reset all settings to default values"
-msgstr "Tilbakestill alle innstillingar til standardverdiar"
+msgstr "Setel ulang sakabéh setélan ka nilai baku"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:348
 msgid "Right to Left"
-msgstr "Høgre til venstre"
+msgstr "Katuhu ka Kénca"
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:60
 msgid "Rows per page"
-msgstr "Rader per side"
+msgstr "Baris per kaca"
 
 #: src/components/rss-dialog.tsx:201
 msgid "RSS feed"
-msgstr "RSS-straum"
+msgstr "Feed RSS"
 
 #: src/components/rss-dialog.tsx:239
 msgid "RSS feeds"
-msgstr "RSS-straumar"
+msgstr "Feed RSS"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
-msgstr "Laurdag"
+msgstr "Saptu"
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."
-msgstr "Lagre denne URL-en no. Du vil ikkje kunna sjå nykelen igjen."
+msgstr "Simpen URL ieu ayeuna. Anjeun moal bisa nempo token deui."
 
 #: ../../../lib/web/src/components/place-picker.tsx:82
 msgid "Search for a place"
-msgstr "Søk etter ein stad"
+msgstr "Paluruh tempat"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:234
 msgid "Search for destination..."
-msgstr "Søk etter destinasjon..."
+msgstr "Paluruh tujuan..."
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:173
 msgid "Search for origin..."
-msgstr "Søk etter opphav..."
+msgstr "Paluruh asal..."
 
 #: ../../../lib/web/src/components/timezone-select.tsx:62
 msgid "Search time zone..."
-msgstr "Søk i tidssone..."
+msgstr "Paluruh zona waktu..."
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:170
 msgid "Search users"
-msgstr "Søk i brukarar"
+msgstr "Paluruh pamaké"
 
 #: ../../../lib/web/src/components/person-picker.tsx:323
 msgid "Search..."
-msgstr "Søk..."
+msgstr "Paluruh..."
 
 #: ../../../lib/web/src/components/language-picker.tsx:175
 msgid "Search…"
-msgstr "Søk…"
+msgstr "Paluruh…"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
 #: ../../../lib/web/src/components/search-entity-page.tsx:149
 #: ../../../lib/web/src/features/access/access-dialog.tsx:199
 msgid "Searching..."
-msgstr "Søkjer..."
+msgstr "Maluruh..."
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:147
 msgid "Select a user, group, or other rule to grant access."
-msgstr "Vel ein brukar, gruppe eller annan regel for å gje tilgang."
+msgstr "Pilih pamaké, grup, atawa aturan séjén pikeun ngabikeun aksés."
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:270
 msgid "Select access rule"
-msgstr "Vel tilgangsregel"
+msgstr "Pilih aturan aksés"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:126
 msgid "Select account type"
-msgstr "Vel kontotype"
+msgstr "Pilih jenis akun"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:228
 msgid "Select group"
-msgstr "Vel gruppe"
+msgstr "Pilih grup"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:291
 msgid "Select layout style"
-msgstr "Vel oppsettstil"
+msgstr "Pilih gaya tata letak"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:233
 msgid "Select sidebar style"
-msgstr "Vel sidestolpestil"
+msgstr "Pilih gaya sidebar"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:335
 msgid "Select site direction"
-msgstr "Vel sideretning"
+msgstr "Pilih arah situs"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:189
 msgid "Select theme preference"
-msgstr "Vel temapreferanse"
+msgstr "Pilih préferénsi téma"
 
 #: ../../../lib/web/src/lib/api-client.ts:224
 msgid "Session expired"
-msgstr "Økta er utgått"
+msgstr "Sési kadaluwarsa"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:143
 msgid "Set origin and destination"
-msgstr "Set opphav og mål"
+msgstr "Atur asal jeung tujuan"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:81
 #: ../../../lib/web/src/components/layout/nav-user.tsx:145
 #: ../../../lib/web/src/components/layout/nav-user.tsx:195
 msgid "Settings"
-msgstr "Innstillingar"
+msgstr "Setélan"
 
 #: src/features/notification/index.tsx:173
 msgid "Show all"
-msgstr "Vis alle"
+msgstr "Tembongkeun sadayana"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:36
 msgid "Showing {totalShown} of {total}"
-msgstr "Viser {totalShown} av {total}"
+msgstr "Némbongkeun {totalShown} ti {total}"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:225
 #: ../../../lib/web/src/components/config-drawer.tsx:249
 #: ../../../lib/web/src/components/ui/sidebar.tsx:234
 msgid "Sidebar"
-msgstr "Sidestolpe"
+msgstr "Sidebar"
 
 #: ../../../lib/web/src/components/layout/authenticated-layout.tsx:128
 msgid "Signing out..."
-msgstr "Loggar ut..."
+msgstr "Kaluar..."
 
 #: ../../../lib/web/src/components/skip-to-main.tsx:8
 msgid "Skip to Main"
-msgstr "Hopp til hovudinnhald"
+msgstr "Liwat ka Utama"
 
 #: ../../../lib/web/src/components/coming-soon.tsx:12
 msgid "Stay tuned though!"
-msgstr "Følg med likevel!"
+msgstr "Tapi tetep nyimak!"
 
 #: ../../../lib/web/src/features/access/access-list.tsx:187
 msgid "Subject"
-msgstr "Emne"
+msgstr "Subjek"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:62
 msgid "Sunday"
-msgstr "Sundag"
+msgstr "Minggu"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:195
 #: ../../../lib/web/src/lib/preference-utils.ts:18
 msgid "System"
-msgstr "System"
+msgstr "Sistem"
 
 #: ../../../lib/web/src/components/tag-input.tsx:91
 msgid "Tag"
-msgstr "Etikett"
+msgstr "Tag"
 
 #: ../../../lib/web/src/components/layout/team-switcher.tsx:60
 msgid "Teams/Apps"
-msgstr "Lag/Appar"
+msgstr "Tim/App"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"
-msgstr "Tema"
+msgstr "Téma"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:60
 msgid "Theme Settings"
-msgstr "Temainnstillingar"
+msgstr "Setélan Téma"
 
 #: src/components/rss-dialog.tsx:441
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
-msgstr "Dette vil sletta denne strauminga for godt. RSS-lesarar som brukar ho, kan ikkje lenger få tilgang til varsla dine."
+msgstr "Ieu bakal ngahapus permanén feed ieu. Sagala pamaca RSS nu makéna moal tiasa ngakses bewara anjeun deui."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:59
 msgid "Thursday"
-msgstr "Torsdag"
+msgstr "Kemis"
 
 #: ../../../lib/web/src/components/data-table/view-options.tsx:34
 msgid "Toggle columns"
-msgstr "Slå kolonner av/på"
+msgstr "Toggle kolom"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:227
 msgid "Toggle Right Panel"
-msgstr "Slå høgrepanel av/på"
+msgstr "Toggle Panel Katuhu"
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:312
 #: ../../../lib/web/src/components/ui/sidebar.tsx:324
 #: ../../../lib/web/src/components/ui/sidebar.tsx:327
 msgid "Toggle Sidebar"
-msgstr "Slå sidestolpe av/på"
+msgstr "Toggle Sidebar"
 
 #: ../../../lib/web/src/components/theme-switch.tsx:31
 msgid "Toggle theme"
-msgstr "Slå tema av/på"
+msgstr "Toggle téma"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:42
 msgid "Top"
-msgstr "Topp"
+msgstr "Luhur"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx:141
 msgid "Travelling"
-msgstr "Reiser"
+msgstr "Lalampahan"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:190
 #: ../../../lib/web/src/components/search-entity-page.tsx:165
 msgid "Try adjusting your search terms"
-msgstr "Prøv å justere søkjeorda"
+msgstr "Cobian luyukeun istilah pamilarian anjeun"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:125
 #: ../../../lib/web/src/features/errors/general-error.tsx:165
 #: ../../../lib/web/src/features/errors/maintenance-error.tsx:15
 msgid "Try again"
-msgstr "Prøv igjen"
+msgstr "Cobian deui"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:57
 msgid "Tuesday"
-msgstr "Tysdag"
+msgstr "Salasa"
 
 #: ../../../lib/web/src/components/command-menu.tsx:49
 msgid "Type a command or search..."
-msgstr "Skriv ein kommando eller søk..."
+msgstr "Ketik paréntah atawa pamilarian..."
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:188
 msgid "Type to search users"
-msgstr "Skriv for å søkje etter brukarar"
+msgstr "Ketik pikeun néangan pamaké"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:180
 msgid "Type to search..."
-msgstr "Skriv for å søkje..."
+msgstr "Ketik pikeun néangan..."
 
 #: ../../../lib/web/src/lib/auth-manager.ts:82
 #: ../../../lib/web/src/lib/auth-manager.ts:94
 msgid "Unable to redirect to login. Please try again."
-msgstr "Kunne ikkje omdirigere til innlogging. Prøv igjen."
+msgstr "Teu tiasa dialihkeun ka login. Mangga cobian deui."
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:143
 msgid "Unassigned"
-msgstr "Ikkje tildelt"
+msgstr "Teu ditugaskeun"
 
 #: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
 msgid "Unauthorized Access"
-msgstr "Ikkje autorisert tilgang"
+msgstr "Aksés Teu Diidinan"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:84
 msgid "United States"
-msgstr "USA"
+msgstr "Amérika Serikat"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:131
 msgid "Unverified"
-msgstr "Ikkje stadfesta"
+msgstr "Tacan diverifikasi"
 
 #: src/components/rss-dialog.tsx:379
 msgid "Use this feed for your current notification subscriptions"
-msgstr "Bruk denne strauminga for dine gjeldande varselabonnement"
+msgstr "Paké feed ieu pikeun langganan bewara ayeuna anjeun"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:155
 msgid "User"
-msgstr "Brukar"
+msgstr "Pamaké"
 
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:68
 msgid "Verification code"
-msgstr "Stadfestingskode"
+msgstr "Kode verifikasi"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:247
 msgid "Verification code sent"
-msgstr "Stadfestingskode sendt"
+msgstr "Kode verifikasi dikirim"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:240
 msgid "Verification failed"
-msgstr "Stadfesting mislukkast"
+msgstr "Verifikasi gagal"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
 msgid "Verify"
-msgstr "Stadfest"
+msgstr "Verifikasi"
 
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:58
 msgid "Verify email address"
-msgstr "Stadfest e-postadresse"
+msgstr "Verifikasi alamat email"
 
 #: ../../../lib/web/src/components/data-table/view-options.tsx:30
 msgid "View"
-msgstr "Vis"
+msgstr "Tingali"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:173
 msgid "View all"
-msgstr "Vis alle"
+msgstr "Tingali sadayana"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:94
 msgid "View all notifications"
-msgstr "Vis alle varsel"
+msgstr "Tingali sagala bewara"
 
 #: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
 msgid "We'll be back online shortly."
-msgstr "Me er snart tilbake."
+msgstr "Kami bakal balik online sakedap deui."
 
 #: ../../../lib/web/src/features/errors/maintenance-error.tsx:9
 msgid "Website is under maintenance!"
-msgstr "Nettstaden er under vedlikehald!"
+msgstr "Situs keur dipigawé!"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:58
 msgid "Wednesday"
-msgstr "Onsdag"
+msgstr "Rebo"
