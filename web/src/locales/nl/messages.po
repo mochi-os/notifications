@@ -13,15 +13,15 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:52
+#: ../../../lib/web/src/lib/preference-utils.ts:39
 msgid "12 hours"
 msgstr "12 uur"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:51
+#: ../../../lib/web/src/lib/preference-utils.ts:38
 msgid "24 hours"
 msgstr "24 uur"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:61
+#: ../../../lib/web/src/lib/preference-utils.ts:48
 msgid "Absolute (date and time)"
 msgstr "Absoluut (datum en tijd)"
 
@@ -298,11 +298,11 @@ msgstr "Detailspaneel"
 #: ../../../lib/web/src/components/language-picker.tsx:145
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
-#: ../../../lib/web/src/lib/preference-utils.ts:38
-#: ../../../lib/web/src/lib/preference-utils.ts:50
-#: ../../../lib/web/src/lib/preference-utils.ts:68
-#: ../../../lib/web/src/lib/preference-utils.ts:82
-#: ../../../lib/web/src/lib/preference-utils.ts:94
+#: ../../../lib/web/src/lib/preference-utils.ts:25
+#: ../../../lib/web/src/lib/preference-utils.ts:37
+#: ../../../lib/web/src/lib/preference-utils.ts:55
+#: ../../../lib/web/src/lib/preference-utils.ts:69
+#: ../../../lib/web/src/lib/preference-utils.ts:81
 msgid "Detect from web browser"
 msgstr "Detecteren via webbrowser"
 
@@ -382,7 +382,7 @@ msgstr "Feed hernoemd"
 msgid "Floating"
 msgstr "Zwevend"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:73
+#: ../../../lib/web/src/lib/preference-utils.ts:60
 msgid "Friday"
 msgstr "Vrijdag"
 
@@ -435,7 +435,7 @@ msgstr "Home"
 msgid "Hot"
 msgstr "Populair"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:96
+#: ../../../lib/web/src/lib/preference-utils.ts:83
 msgid "Imperial"
 msgstr "Imperiaal"
 
@@ -498,10 +498,6 @@ msgstr "Succesvol uitgelogd"
 msgid "Logging out…"
 msgstr "Bezig met uitloggen…"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:25
-msgid "Luma (Default)"
-msgstr "Luma (standaard)"
-
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:86
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:220
 msgid "Mark all as read"
@@ -515,11 +511,11 @@ msgstr "Alles als gelezen markeren"
 msgid "Menu"
 msgstr "Menu"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:95
+#: ../../../lib/web/src/lib/preference-utils.ts:82
 msgid "Metric"
 msgstr "Metriek"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:69
+#: ../../../lib/web/src/lib/preference-utils.ts:56
 msgid "Monday"
 msgstr "Maandag"
 
@@ -653,11 +649,11 @@ msgstr "Doorverwijzen naar inloggen."
 msgid "Reduce interest"
 msgstr "Interesse verminderen"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:60
+#: ../../../lib/web/src/lib/preference-utils.ts:47
 msgid "Relative (5m, 3h, 2d)"
 msgstr "Relatief (5m, 3u, 2d)"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:59
+#: ../../../lib/web/src/lib/preference-utils.ts:46
 msgid "Relative within 24 hours, else absolute"
 msgstr "Relatief binnen 24 uur, anders absoluut"
 
@@ -703,7 +699,7 @@ msgstr "RSS-feed"
 msgid "RSS feeds"
 msgstr "RSS-feeds"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:74
+#: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "Zaterdag"
 
@@ -821,7 +817,7 @@ msgstr "Houd het in de gaten!"
 msgid "Subject"
 msgstr "Onderwerp"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:75
+#: ../../../lib/web/src/lib/preference-utils.ts:62
 msgid "Sunday"
 msgstr "Zondag"
 
@@ -850,7 +846,7 @@ msgstr "Thema-instellingen"
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Hiermee wordt deze feed permanent verwijderd. RSS-lezers die hem gebruiken, hebben geen toegang meer tot je meldingen."
 
-#: ../../../lib/web/src/lib/preference-utils.ts:72
+#: ../../../lib/web/src/lib/preference-utils.ts:59
 msgid "Thursday"
 msgstr "Donderdag"
 
@@ -891,7 +887,7 @@ msgstr "Probeer je zoektermen aan te passen"
 msgid "Try again"
 msgstr "Probeer opnieuw"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:70
+#: ../../../lib/web/src/lib/preference-utils.ts:57
 msgid "Tuesday"
 msgstr "Dinsdag"
 
@@ -920,7 +916,7 @@ msgstr "Niet toegewezen"
 msgid "Unauthorized Access"
 msgstr "Onbevoegde toegang"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:97
+#: ../../../lib/web/src/lib/preference-utils.ts:84
 msgid "United States"
 msgstr "Verenigde Staten"
 
@@ -976,6 +972,6 @@ msgstr "We zijn zo weer online."
 msgid "Website is under maintenance!"
 msgstr "Website is in onderhoud!"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:71
+#: ../../../lib/web/src/lib/preference-utils.ts:58
 msgid "Wednesday"
 msgstr "Woensdag"

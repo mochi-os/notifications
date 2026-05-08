@@ -13,15 +13,15 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:52
+#: ../../../lib/web/src/lib/preference-utils.ts:39
 msgid "12 hours"
 msgstr "১২ ঘণ্টা"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:51
+#: ../../../lib/web/src/lib/preference-utils.ts:38
 msgid "24 hours"
 msgstr "২৪ ঘণ্টা"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:61
+#: ../../../lib/web/src/lib/preference-utils.ts:48
 msgid "Absolute (date and time)"
 msgstr "নিরঙ্কুশ (তারিখ এবং সময়)"
 
@@ -298,11 +298,11 @@ msgstr "বিবরণ প্যানেল"
 #: ../../../lib/web/src/components/language-picker.tsx:145
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
-#: ../../../lib/web/src/lib/preference-utils.ts:38
-#: ../../../lib/web/src/lib/preference-utils.ts:50
-#: ../../../lib/web/src/lib/preference-utils.ts:68
-#: ../../../lib/web/src/lib/preference-utils.ts:82
-#: ../../../lib/web/src/lib/preference-utils.ts:94
+#: ../../../lib/web/src/lib/preference-utils.ts:25
+#: ../../../lib/web/src/lib/preference-utils.ts:37
+#: ../../../lib/web/src/lib/preference-utils.ts:55
+#: ../../../lib/web/src/lib/preference-utils.ts:69
+#: ../../../lib/web/src/lib/preference-utils.ts:81
 msgid "Detect from web browser"
 msgstr "ওয়েব ব্রাউজার থেকে শনাক্ত করুন"
 
@@ -382,7 +382,7 @@ msgstr "ফিডের নাম পরিবর্তন করা হয়�
 msgid "Floating"
 msgstr "ফ্লোটিং"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:73
+#: ../../../lib/web/src/lib/preference-utils.ts:60
 msgid "Friday"
 msgstr "শুক্রবার"
 
@@ -435,7 +435,7 @@ msgstr "হোম"
 msgid "Hot"
 msgstr "জনপ্রিয়"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:96
+#: ../../../lib/web/src/lib/preference-utils.ts:83
 msgid "Imperial"
 msgstr "ইম্পেরিয়াল"
 
@@ -498,10 +498,6 @@ msgstr "সফলভাবে লগ আউট"
 msgid "Logging out…"
 msgstr "লগ আউট হচ্ছে…"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:25
-msgid "Luma (Default)"
-msgstr "লুমা (ডিফল্ট)"
-
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:86
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:220
 msgid "Mark all as read"
@@ -515,11 +511,11 @@ msgstr "সব পঠিত হিসেবে চিহ্নিত করু�
 msgid "Menu"
 msgstr "মেনু"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:95
+#: ../../../lib/web/src/lib/preference-utils.ts:82
 msgid "Metric"
 msgstr "মেট্রিক"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:69
+#: ../../../lib/web/src/lib/preference-utils.ts:56
 msgid "Monday"
 msgstr "সোমবার"
 
@@ -653,11 +649,11 @@ msgstr "লগইনে রিডাইরেক্ট করা হচ্ছে
 msgid "Reduce interest"
 msgstr "আগ্রহ কমান"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:60
+#: ../../../lib/web/src/lib/preference-utils.ts:47
 msgid "Relative (5m, 3h, 2d)"
 msgstr "আপেক্ষিক (5m, 3h, 2d)"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:59
+#: ../../../lib/web/src/lib/preference-utils.ts:46
 msgid "Relative within 24 hours, else absolute"
 msgstr "২৪ ঘণ্টার মধ্যে আপেক্ষিক, অন্যথায় পরম"
 
@@ -703,7 +699,7 @@ msgstr "RSS ফিড"
 msgid "RSS feeds"
 msgstr "RSS ফিড"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:74
+#: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "শনিবার"
 
@@ -821,7 +817,7 @@ msgstr "তবে সাথে থাকুন!"
 msgid "Subject"
 msgstr "বিষয়"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:75
+#: ../../../lib/web/src/lib/preference-utils.ts:62
 msgid "Sunday"
 msgstr "রবিবার"
 
@@ -850,7 +846,7 @@ msgstr "থিম সেটিংস"
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "এটি এই ফিডটি স্থায়ীভাবে মুছে ফেলবে। এটি ব্যবহারকারী যেকোনো RSS রিডার আর আপনার বিজ্ঞপ্তিগুলিতে অ্যাক্সেস করতে পারবে না।"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:72
+#: ../../../lib/web/src/lib/preference-utils.ts:59
 msgid "Thursday"
 msgstr "বৃহস্পতিবার"
 
@@ -891,7 +887,7 @@ msgstr "আপনার অনুসন্ধান শর্তাবলী স
 msgid "Try again"
 msgstr "আবার চেষ্টা করুন"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:70
+#: ../../../lib/web/src/lib/preference-utils.ts:57
 msgid "Tuesday"
 msgstr "মঙ্গলবার"
 
@@ -920,7 +916,7 @@ msgstr "অ্যাসাইন করা হয়নি"
 msgid "Unauthorized Access"
 msgstr "অননুমোদিত অ্যাক্সেস"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:97
+#: ../../../lib/web/src/lib/preference-utils.ts:84
 msgid "United States"
 msgstr "যুক্তরাষ্ট্র"
 
@@ -976,6 +972,6 @@ msgstr "আমরা শীঘ্রই আবার অনলাইনে ফ�
 msgid "Website is under maintenance!"
 msgstr "ওয়েবসাইট রক্ষণাবেক্ষণাধীন!"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:71
+#: ../../../lib/web/src/lib/preference-utils.ts:58
 msgid "Wednesday"
 msgstr "বুধবার"

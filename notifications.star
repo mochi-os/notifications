@@ -310,6 +310,7 @@ def action_rss(a):
 		app_names[app["id"]] = app["name"]
 		for path in app.get("paths", []):
 			app_names[path] = app["name"]
+	server_name = mochi.app.label("notifications.app.server")
 
 	a.header("Content-Type", "application/rss+xml; charset=utf-8")
 
@@ -324,7 +325,10 @@ def action_rss(a):
 		a.print('<lastBuildDate>' + mochi.time.local(rows[0]["created"], "rfc822") + '</lastBuildDate>\n')
 
 	for row in rows:
-		app_name = app_names.get(row["app"], row["app"])
+		if row["app"] == "":
+			app_name = server_name
+		else:
+			app_name = app_names.get(row["app"], row["app"])
 		title = app_name + ": " + row["topic"]
 		if row["count"] > 1:
 			title = title + " (" + str(row["count"]) + ")"
@@ -518,7 +522,7 @@ def action_rss_update(a):
 
 # Topic service functions
 
-def function_send(context, topic, object="", title="", body="", url="", label="", sender=""):
+def function_send(context, topic, object="", title="", body="", url="", label="", sender="", count=None):
 	"""Send a notification from the calling app.
 
 	Topics are keyed by (app, topic, object) and created lazily. On first send
@@ -532,9 +536,23 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	  1. Topic row's category = 0 ("No notifications") → drop entirely.
 	  2. Topic row's category is NULL (no default category exists) → web-only.
 	  3. Otherwise → fan out to the category's destinations.
+
+	count: optional override on the badge counter:
+	  None (default) — increment by 1 when rolling up an unread row, set to 1
+	                   on insert. Existing behaviour. Suits chat / feeds /
+	                   posts where count = unread items.
+	  <integer>      — force count to this value on both rollup and insert.
+	                   Pass count=1 for state-style notifications (e.g. server
+	                   upgrade alerts) where the latest version is a state,
+	                   not an item count.
+
+	The reserved app id "" is only accepted when the call originates from the
+	Mochi server itself (the core-only service_call_as_server helper sets
+	context["_server"]=True). Apps calling through mochi.service.call always
+	have their own app id in context, so this can't be spoofed.
 	"""
 	app = context.get("app", "")
-	if not app:
+	if not app and not context.get("_server", False):
 		return 0
 	if not title or not body:
 		return 0
@@ -569,18 +587,18 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 
 	# No default category configured: web-only fallback.
 	if category == None:
-		_deliver_web(app, topic, object, title, body, url, content, sender)
+		_deliver_web(app, topic, object, title, body, url, content, sender, count)
 		return 1
 
 	dests = mochi.db.rows(
 		"select type, target from destinations where category = ?",
 		int(category)
 	)
-	count = 0
+	delivered = 0
 	for dest in dests or []:
 		if dest["type"] == "web":
-			_deliver_web(app, topic, object, title, body, url, content, sender)
-			count += 1
+			_deliver_web(app, topic, object, title, body, url, content, sender, count)
+			delivered += 1
 		elif dest["type"] == "account":
 			mochi.account.notify(
 				account=int(dest["target"]),
@@ -591,11 +609,11 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 				body=body,
 				link=url
 			)
-			count += 1
+			delivered += 1
 		# rss destinations are queried on demand, no active delivery
-	return count
+	return delivered
 
-def _deliver_web(app, topic, object, title, body, url, content, sender=""):
+def _deliver_web(app, topic, object, title, body, url, content, sender="", count=None):
 	now = mochi.time.now()
 	existing = mochi.db.row(
 		"select * from notifications where app = ? and topic = ? and object = ?",
@@ -603,7 +621,7 @@ def _deliver_web(app, topic, object, title, body, url, content, sender=""):
 	)
 
 	if existing and existing["read"] == 0:
-		new_count = existing["count"] + 1
+		new_count = count if count != None else existing["count"] + 1
 		mochi.db.execute(
 			"update notifications set content = ?, count = ?, created = ?, sender = ? where id = ?",
 			content, new_count, now, sender, existing["id"]
@@ -613,13 +631,14 @@ def _deliver_web(app, topic, object, title, body, url, content, sender=""):
 		ws_count = new_count
 	else:
 		notif_id = mochi.uid()
+		new_count = count if count != None else 1
 		mochi.db.execute(
 			"""replace into notifications (id, app, topic, object, content, link, sender, count, created, read)
-			values (?, ?, ?, ?, ?, ?, ?, 1, ?, 0)""",
-			notif_id, app, topic, object, content, url, sender, now
+			values (?, ?, ?, ?, ?, ?, ?, ?, ?, 0)""",
+			notif_id, app, topic, object, content, url, sender, new_count, now
 		)
 		ws_content = content
-		ws_count = 1
+		ws_count = new_count
 
 	mochi.websocket.write("notifications", {
 		"type": "new",
@@ -800,9 +819,13 @@ def function_topic_list(context):
 		app_names[app["id"]] = app["name"]
 		for path in app.get("paths", []):
 			app_names[path] = app["name"]
+	server_name = mochi.app.label("notifications.app.server")
 	result = []
 	for row in rows:
-		row["app_name"] = app_names.get(row["app"], row["app"].capitalize())
+		if row["app"] == "":
+			row["app_name"] = server_name
+		else:
+			row["app_name"] = app_names.get(row["app"], row["app"].capitalize())
 		if row["object"] and mochi.text.valid(row["object"], "entity"):
 			row["object_name"] = mochi.entity.name(row["object"]) or ""
 		else:

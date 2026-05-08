@@ -13,15 +13,15 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:52
+#: ../../../lib/web/src/lib/preference-utils.ts:39
 msgid "12 hours"
 msgstr "12 小时"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:51
+#: ../../../lib/web/src/lib/preference-utils.ts:38
 msgid "24 hours"
 msgstr "24 小时"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:61
+#: ../../../lib/web/src/lib/preference-utils.ts:48
 msgid "Absolute (date and time)"
 msgstr "绝对(日期和时间)"
 
@@ -298,11 +298,11 @@ msgstr "详情面板"
 #: ../../../lib/web/src/components/language-picker.tsx:145
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
-#: ../../../lib/web/src/lib/preference-utils.ts:38
-#: ../../../lib/web/src/lib/preference-utils.ts:50
-#: ../../../lib/web/src/lib/preference-utils.ts:68
-#: ../../../lib/web/src/lib/preference-utils.ts:82
-#: ../../../lib/web/src/lib/preference-utils.ts:94
+#: ../../../lib/web/src/lib/preference-utils.ts:25
+#: ../../../lib/web/src/lib/preference-utils.ts:37
+#: ../../../lib/web/src/lib/preference-utils.ts:55
+#: ../../../lib/web/src/lib/preference-utils.ts:69
+#: ../../../lib/web/src/lib/preference-utils.ts:81
 msgid "Detect from web browser"
 msgstr "从浏览器检测"
 
@@ -382,7 +382,7 @@ msgstr "已重命名信息流"
 msgid "Floating"
 msgstr "浮动"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:73
+#: ../../../lib/web/src/lib/preference-utils.ts:60
 msgid "Friday"
 msgstr "星期五"
 
@@ -435,7 +435,7 @@ msgstr "首页"
 msgid "Hot"
 msgstr "热门"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:96
+#: ../../../lib/web/src/lib/preference-utils.ts:83
 msgid "Imperial"
 msgstr "英制"
 
@@ -498,10 +498,6 @@ msgstr "已成功退出登录"
 msgid "Logging out…"
 msgstr "正在退出登录…"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:25
-msgid "Luma (Default)"
-msgstr "Luma(默认)"
-
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:86
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:220
 msgid "Mark all as read"
@@ -515,11 +511,11 @@ msgstr "全部标为已读"
 msgid "Menu"
 msgstr "菜单"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:95
+#: ../../../lib/web/src/lib/preference-utils.ts:82
 msgid "Metric"
 msgstr "公制"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:69
+#: ../../../lib/web/src/lib/preference-utils.ts:56
 msgid "Monday"
 msgstr "星期一"
 
@@ -653,11 +649,11 @@ msgstr "正在重定向到登录。"
 msgid "Reduce interest"
 msgstr "降低兴趣"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:60
+#: ../../../lib/web/src/lib/preference-utils.ts:47
 msgid "Relative (5m, 3h, 2d)"
 msgstr "相对时间(5分钟、3小时、2天)"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:59
+#: ../../../lib/web/src/lib/preference-utils.ts:46
 msgid "Relative within 24 hours, else absolute"
 msgstr "24 小时内显示相对时间,否则显示绝对时间"
 
@@ -703,7 +699,7 @@ msgstr "RSS 订阅源"
 msgid "RSS feeds"
 msgstr "RSS 源"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:74
+#: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "星期六"
 
@@ -821,7 +817,7 @@ msgstr "敬请期待!"
 msgid "Subject"
 msgstr "主题"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:75
+#: ../../../lib/web/src/lib/preference-utils.ts:62
 msgid "Sunday"
 msgstr "星期日"
 
@@ -850,7 +846,7 @@ msgstr "主题设置"
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "此操作将永久删除该源。使用该源的任何 RSS 阅读器都将无法再访问你的通知。"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:72
+#: ../../../lib/web/src/lib/preference-utils.ts:59
 msgid "Thursday"
 msgstr "星期四"
 
@@ -891,7 +887,7 @@ msgstr "尝试调整您的搜索词"
 msgid "Try again"
 msgstr "重试"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:70
+#: ../../../lib/web/src/lib/preference-utils.ts:57
 msgid "Tuesday"
 msgstr "星期二"
 
@@ -920,7 +916,7 @@ msgstr "未分配"
 msgid "Unauthorized Access"
 msgstr "未授权访问"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:97
+#: ../../../lib/web/src/lib/preference-utils.ts:84
 msgid "United States"
 msgstr "美国"
 
@@ -976,6 +972,6 @@ msgstr "我们将很快恢复在线。"
 msgid "Website is under maintenance!"
 msgstr "网站正在维护中!"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:71
+#: ../../../lib/web/src/lib/preference-utils.ts:58
 msgid "Wednesday"
 msgstr "星期三"

@@ -13,15 +13,15 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:52
+#: ../../../lib/web/src/lib/preference-utils.ts:39
 msgid "12 hours"
 msgstr "12 तास"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:51
+#: ../../../lib/web/src/lib/preference-utils.ts:38
 msgid "24 hours"
 msgstr "24 तास"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:61
+#: ../../../lib/web/src/lib/preference-utils.ts:48
 msgid "Absolute (date and time)"
 msgstr "निरपेक्ष (तारीख आणि वेळ)"
 
@@ -298,11 +298,11 @@ msgstr "तपशील पॅनेल"
 #: ../../../lib/web/src/components/language-picker.tsx:145
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
-#: ../../../lib/web/src/lib/preference-utils.ts:38
-#: ../../../lib/web/src/lib/preference-utils.ts:50
-#: ../../../lib/web/src/lib/preference-utils.ts:68
-#: ../../../lib/web/src/lib/preference-utils.ts:82
-#: ../../../lib/web/src/lib/preference-utils.ts:94
+#: ../../../lib/web/src/lib/preference-utils.ts:25
+#: ../../../lib/web/src/lib/preference-utils.ts:37
+#: ../../../lib/web/src/lib/preference-utils.ts:55
+#: ../../../lib/web/src/lib/preference-utils.ts:69
+#: ../../../lib/web/src/lib/preference-utils.ts:81
 msgid "Detect from web browser"
 msgstr "वेब ब्राउझरमधून शोधा"
 
@@ -382,7 +382,7 @@ msgstr "फीडचे नाव बदलले"
 msgid "Floating"
 msgstr "फ्लोटिंग"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:73
+#: ../../../lib/web/src/lib/preference-utils.ts:60
 msgid "Friday"
 msgstr "शुक्रवार"
 
@@ -435,7 +435,7 @@ msgstr "मुख्यपृष्ठ"
 msgid "Hot"
 msgstr "हॉट"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:96
+#: ../../../lib/web/src/lib/preference-utils.ts:83
 msgid "Imperial"
 msgstr "इम्पीरियल"
 
@@ -498,10 +498,6 @@ msgstr "यशस्वीरित्या लॉग आउट केले"
 msgid "Logging out…"
 msgstr "लॉग आउट करत आहे…"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:25
-msgid "Luma (Default)"
-msgstr "Luma (डीफॉल्ट)"
-
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:86
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:220
 msgid "Mark all as read"
@@ -515,11 +511,11 @@ msgstr "सर्व वाचलेले चिन्हांकित कर
 msgid "Menu"
 msgstr "मेन्यू"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:95
+#: ../../../lib/web/src/lib/preference-utils.ts:82
 msgid "Metric"
 msgstr "मेट्रिक"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:69
+#: ../../../lib/web/src/lib/preference-utils.ts:56
 msgid "Monday"
 msgstr "सोमवार"
 
@@ -653,11 +649,11 @@ msgstr "लॉगिनवर रीडायरेक्ट करत आहे
 msgid "Reduce interest"
 msgstr "स्वारस्य कमी करा"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:60
+#: ../../../lib/web/src/lib/preference-utils.ts:47
 msgid "Relative (5m, 3h, 2d)"
 msgstr "सापेक्ष (5m, 3h, 2d)"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:59
+#: ../../../lib/web/src/lib/preference-utils.ts:46
 msgid "Relative within 24 hours, else absolute"
 msgstr "24 तासांच्या आत सापेक्ष, अन्यथा निरपेक्ष"
 
@@ -703,7 +699,7 @@ msgstr "RSS फीड"
 msgid "RSS feeds"
 msgstr "RSS फीड्स"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:74
+#: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "शनिवार"
 
@@ -821,7 +817,7 @@ msgstr "मात्र संपर्कात रहा!"
 msgid "Subject"
 msgstr "विषय"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:75
+#: ../../../lib/web/src/lib/preference-utils.ts:62
 msgid "Sunday"
 msgstr "रविवार"
 
@@ -850,7 +846,7 @@ msgstr "थीम सेटिंग्ज"
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "यामुळे हा फीड कायमचा हटवला जाईल. तो वापरणाऱ्या कोणत्याही RSS वाचकांना आता तुमच्या सूचनांमध्ये प्रवेश करता येणार नाही."
 
-#: ../../../lib/web/src/lib/preference-utils.ts:72
+#: ../../../lib/web/src/lib/preference-utils.ts:59
 msgid "Thursday"
 msgstr "गुरुवार"
 
@@ -891,7 +887,7 @@ msgstr "तुमच्या शोध शब्दांना समायो
 msgid "Try again"
 msgstr "पुन्हा प्रयत्न करा"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:70
+#: ../../../lib/web/src/lib/preference-utils.ts:57
 msgid "Tuesday"
 msgstr "मंगळवार"
 
@@ -920,7 +916,7 @@ msgstr "नियुक्त न केलेले"
 msgid "Unauthorized Access"
 msgstr "अनधिकृत अॅक्सेस"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:97
+#: ../../../lib/web/src/lib/preference-utils.ts:84
 msgid "United States"
 msgstr "युनायटेड स्टेट्स"
 
@@ -976,6 +972,6 @@ msgstr "आम्ही लवकरच पुन्हा ऑनलाइन �
 msgid "Website is under maintenance!"
 msgstr "वेबसाइट देखभालीखाली आहे!"
 
-#: ../../../lib/web/src/lib/preference-utils.ts:71
+#: ../../../lib/web/src/lib/preference-utils.ts:58
 msgid "Wednesday"
 msgstr "बुधवार"
