@@ -986,3 +986,56 @@ def function_accounts_remove(context, id=0):
 		return None
 	mochi.db.execute("delete from destinations where type = 'account' and target = ?", str(id))
 	return mochi.account.remove(id)
+
+# UnifiedPush registration. The Mochi Android distributor calls this when a user
+# picks it as their UP distributor. Two cases:
+#   - Local case (endpoint=""): server allocates a path that the distributor will
+#     concatenate with its known server URL to form the absolute endpoint. The
+#     distributor stores the matching private p256dh half on-device.
+#   - Foreign case (endpoint set, e.g. ntfy.sh URL): the user picked a third-
+#     party distributor. We just store the foreign endpoint and POST RFC 8030
+#     to it at delivery time — endpoint is opaque to us.
+def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
+	if not auth or not p256dh:
+		return None
+
+	fields = {"auth": auth, "p256dh": p256dh}
+	if label:
+		fields["label"] = label
+
+	if endpoint:
+		fields["endpoint"] = endpoint
+	else:
+		# Local case: path-only endpoint, distributor prepends server URL.
+		# Account ID is filled in below; we also need an unguessable token so
+		# the inbound endpoint (when implemented) can't be brute-forced.
+		fields["endpoint"] = ""
+
+	result = mochi.account.add("unifiedpush", **fields)
+	if not result or not result.get("id"):
+		return result
+
+	account_id = result["id"]
+
+	# Local case: now that we have the account ID, write the canonical path back.
+	# Inbound endpoint will be /menu/-/push/inbound/<account_id> guarded by
+	# the on-device p256dh keypair (only the matching distributor can decrypt).
+	if not endpoint:
+		path = "/menu/-/push/inbound/%d" % account_id
+		mochi.account.update(account_id, endpoint=path)
+		result["endpoint"] = path
+
+	mochi.account.update(account_id, enabled=True)
+	_add_destination_to_categories("account", str(account_id))
+	return result
+
+# Inbound RFC 8030 push from a third-party Application Server (e.g. Mastodon
+# whose user picked the Mochi distributor). Forwards the opaque encrypted body
+# to the device via the existing WebSocket fast-path. Deferred — the primary
+# use case (Mochi-server-to-its-own-users) doesn't need this.
+def function_push_inbound(context, account_id=0, payload=""):
+	if not account_id:
+		return {"ok": False, "error": "missing account_id"}
+	# TODO: forward via mochi.websocket.write once the Go side exposes a
+	# binary-safe write (current API is JSON text only).
+	return {"ok": False, "error": "inbound endpoint not yet implemented"}

@@ -2,7 +2,7 @@
 // Copyright Alistair Cunningham 2025-2026
 
 {
-	"version": "3.5",
+	"version": "3.6",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -78,6 +78,8 @@
 		"accounts/vapid": {"function": "function_accounts_vapid", "permission": "notifications/send"},
 		"accounts/list": {"function": "function_accounts_list", "permission": "notifications/send"},
 		"accounts/add": {"function": "function_accounts_add", "permission": "notifications/send"},
-		"accounts/remove": {"function": "function_accounts_remove", "permission": "notifications/send"}
+		"accounts/remove": {"function": "function_accounts_remove", "permission": "notifications/send"},
+		"push/register": {"function": "function_push_register", "permission": "notifications/send"},
+		"push/inbound": {"function": "function_push_inbound", "permission": "notifications/send"}
 	}
 }
