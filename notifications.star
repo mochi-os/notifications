@@ -51,6 +51,16 @@ def database_create():
 		foreign key (category) references categories(id) on delete cascade
 	)""")
 
+	mochi.db.execute("""create table if not exists push_pending (
+		account integer not null,
+		event_id text not null,
+		subscription text not null,
+		payload text not null,
+		created integer not null,
+		primary key (account, event_id)
+	)""")
+	mochi.db.execute("create index if not exists push_pending_created on push_pending(account, created)")
+
 	_seed_categories()
 
 def _seed_categories():
@@ -193,6 +203,41 @@ def database_upgrade(to_version):
 		cols = [r["name"] for r in mochi.db.table("notifications")]
 		if "sender" not in cols:
 			mochi.db.execute("alter table notifications add column sender text not null default ''")
+
+	if to_version == 14:
+		# Server-side queue for undelivered unifiedpush events. When the on-device
+		# distributor's WebSocket isn't subscribed (phone killed by OEM, Doze drop,
+		# transient network), websockets_send is a no-op and the event would be
+		# lost. function_send writes a row here before notify; the phone drains it
+		# over HTTP after each WS resubscribe. Bounded by 7-day TTL only, no count
+		# cap.
+		mochi.db.execute("""create table if not exists push_pending (
+			account integer not null,
+			event_id text not null,
+			subscription text not null,
+			payload text not null,
+			created integer not null,
+			primary key (account, event_id)
+		)""")
+		mochi.db.execute("create index if not exists push_pending_created on push_pending(account, created)")
+
+	if to_version == 15:
+		# Re-apply v14 for DBs whose schema bumped past 14 with the table never
+		# actually being created (a string-concat parse error in 3.7's first
+		# build aborted the whole file at load time; the schema version still
+		# bumped per the server's "bump even on error" rule). Idempotent for
+		# DBs where v14 did succeed.
+		tables = [r["name"] for r in mochi.db.rows("select name from sqlite_master where type='table'")]
+		if "push_pending" not in tables:
+			mochi.db.execute("""create table if not exists push_pending (
+				account integer not null,
+				event_id text not null,
+				subscription text not null,
+				payload text not null,
+				created integer not null,
+				primary key (account, event_id)
+			)""")
+			mochi.db.execute("create index if not exists push_pending_created on push_pending(account, created)")
 
 # Expiry: 30 days unread, 7 days read
 def function_expire(context):
@@ -600,8 +645,10 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 			_deliver_web(app, topic, object, title, body, url, content, sender, count)
 			delivered += 1
 		elif dest["type"] == "account":
+			account_id = int(dest["target"])
+			_push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url)
 			mochi.account.notify(
-				account=int(dest["target"]),
+				account=account_id,
 				app=app,
 				category=topic,
 				object=object,
@@ -778,8 +825,10 @@ def function_category_test(context, id=0):
 			web = True
 			sent += 1
 		elif dest["type"] == "account":
+			account_id = int(dest["target"])
+			_push_queue_if_unifiedpush(account_id, "notifications", "test", "", title, body, "")
 			mochi.account.notify(
-				account=int(dest["target"]),
+				account=account_id,
 				app="notifications",
 				category="test",
 				object="",
@@ -1039,3 +1088,94 @@ def function_push_inbound(context, account_id=0, payload=""):
 	# TODO: forward via mochi.websocket.write once the Go side exposes a
 	# binary-safe write (current API is JSON text only).
 	return {"ok": False, "error": "inbound endpoint not yet implemented"}
+
+# _push_queue_if_unifiedpush writes a pending row to push_pending if the account
+# is a local-distributor unifiedpush subscription. Called from function_send
+# alongside the live mochi.account.notify attempt — the WS event is the fast
+# happy-path; this row is the durable backstop for when the on-device WebSocket
+# isn't subscribed (phone killed by OEM, Doze drop, transient network). On
+# subscribe the phone drains rows over /menu/-/push/drain, acks via
+# /menu/-/push/ack, and matching rows here are deleted.
+#
+# Foreign-endpoint unifiedpush accounts (ntfy etc) are excluded — third-party
+# Application Servers handle their own retry. Other account types (email,
+# pushbullet, browser, url) also have their own server-side retry semantics.
+def _push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url):
+	acc = mochi.account.get(account_id)
+	if not acc or acc.get("type") != "unifiedpush":
+		return
+	# identifier holds the endpoint (api_account_add stores endpoint there
+	# for unifiedpush). Absolute URLs are foreign distributors (ntfy etc) —
+	# they have their own retry path, no queuing needed. Path-only endpoints
+	# are our local distributor, the case the queue exists for.
+	identifier = acc.get("identifier", "")
+	if not identifier or identifier.startswith("http"):
+		return
+	subscription = identifier.split("/")[-1]
+
+	# Match the WS payload shape so the phone treats drained events identically
+	# to live ones (same RFC 8030 body fields).
+	payload = json.encode({
+		"title": title,
+		"body": body,
+		"link": url,
+		"tag": app + "-" + topic + "-" + object,
+	})
+	event_id = app + "-" + topic + "-" + object
+
+	# Same logical push hitting the queue twice (multi-replica fan-out, or
+	# repeat updates to the same coalesced thread) becomes one row with the
+	# latest payload — phone gets the latest content on drain. ON CONFLICT
+	# replaces payload + created.
+	mochi.db.execute(
+		"insert into push_pending (account, event_id, subscription, payload, created) values (?, ?, ?, ?, ?) on conflict(account, event_id) do update set payload=excluded.payload, created=excluded.created",
+		account_id, event_id, subscription, payload, mochi.time.now()
+	)
+
+# function_push_drain returns pending unifiedpush events for the caller and
+# opportunistically sweeps rows older than 7 days. The drain is read-only — the
+# phone acks explicitly via function_push_ack after the system notifications
+# have been posted, so a phone that crashes mid-drain can re-drain the same
+# rows on next subscribe.
+def function_push_drain(context):
+	now = mochi.time.now()
+	# Opportunistic TTL sweep: drop rows older than 7 days, regardless of
+	# account or subscriber state. Pattern mirrors the unifiedpush account
+	# TTL sweep in api_account_notify (core/server/accounts.go).
+	mochi.db.execute(
+		"delete from push_pending where created < ?", now - 7 * 86400
+	)
+	rows = mochi.db.rows(
+		"select account, event_id, subscription, payload, created from push_pending order by created"
+	) or []
+	# Re-shape into the same envelope the WebSocket would deliver, so the
+	# phone runs identical code on live and drained events.
+	out = []
+	for r in rows:
+		out.append({
+			"subId": r["subscription"],
+			"payload": r["payload"],
+			"event_id": r["event_id"],
+			"account": r["account"],
+		})
+	return out
+
+# function_push_ack deletes the named rows from the queue. Idempotent — acking
+# a row that no longer exists (TTL'd, manually cleared, never queued because
+# delivered live first) is a no-op. The phone batches acks per drain or per
+# live event.
+def function_push_ack(context, account_event_ids=None):
+	if not account_event_ids:
+		return {"acked": 0}
+	acked = 0
+	for ae in account_event_ids:
+		account = int(ae.get("account", 0))
+		event_id = ae.get("event_id", "")
+		if not account or not event_id:
+			continue
+		mochi.db.execute(
+			"delete from push_pending where account = ? and event_id = ?",
+			account, event_id
+		)
+		acked += 1
+	return {"acked": acked}

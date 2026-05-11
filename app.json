@@ -2,7 +2,7 @@
 // Copyright Alistair Cunningham 2025-2026
 
 {
-	"version": "3.6",
+	"version": "3.11",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -11,7 +11,7 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 13,
+		"schema": 15,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"},
@@ -80,6 +80,8 @@
 		"accounts/add": {"function": "function_accounts_add", "permission": "notifications/send"},
 		"accounts/remove": {"function": "function_accounts_remove", "permission": "notifications/send"},
 		"push/register": {"function": "function_push_register", "permission": "notifications/send"},
-		"push/inbound": {"function": "function_push_inbound", "permission": "notifications/send"}
+		"push/inbound": {"function": "function_push_inbound", "permission": "notifications/send"},
+		"push/drain": {"function": "function_push_drain", "permission": "notifications/send"},
+		"push/ack": {"function": "function_push_ack", "permission": "notifications/send"}
 	}
 }
