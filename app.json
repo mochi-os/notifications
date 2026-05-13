@@ -2,7 +2,7 @@
 // Copyright Alistair Cunningham 2025-2026
 
 {
-	"version": "3.14",
+	"version": "3.19",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -50,7 +50,17 @@
 		"-/topics/lookup": {"function": "action_topics_lookup"},
 		"-/topics/set_category": {"function": "action_topics_set_category"},
 		"-/topics/delete": {"function": "action_topics_delete"},
-		"-/destinations/list": {"function": "action_destinations_list"}
+		"-/destinations/list": {"function": "action_destinations_list"},
+		"-/push/vapid": {"function": "action_push_vapid"},
+		"-/push/accounts/list": {"function": "action_push_accounts_list"},
+		"-/push/accounts/add": {"function": "action_push_accounts_add"},
+		"-/push/accounts/remove": {"function": "action_push_accounts_remove"},
+		"-/push/register": {"function": "action_push_register"},
+		"-/push/register/fcm": {"function": "action_push_register_fcm"},
+		"-/push/setup": {"function": "action_push_setup"},
+		"-/push/inbound/:sub": {"function": "action_push_inbound", "public": true},
+		"-/push/drain": {"function": "action_push_drain"},
+		"-/push/ack": {"function": "action_push_ack"}
 	},
 
 	"functions": {
@@ -80,6 +90,8 @@
 		"accounts/add": {"function": "function_accounts_add", "permission": "notifications/send"},
 		"accounts/remove": {"function": "function_accounts_remove", "permission": "notifications/send"},
 		"push/register": {"function": "function_push_register", "permission": "notifications/send"},
+		"push/register/fcm": {"function": "function_push_register_fcm", "permission": "notifications/send"},
+		"push/setup": {"function": "function_push_setup", "permission": "notifications/send"},
 		"push/inbound": {"function": "function_push_inbound", "permission": "notifications/send"},
 		"push/drain": {"function": "function_push_drain", "permission": "notifications/send"},
 		"push/ack": {"function": "function_push_ack", "permission": "notifications/send"}

@@ -818,14 +818,18 @@ def function_category_test(context, id=0):
 	sent = 0
 	web = False
 	title = mochi.app.label("notifications.body.test")
-	body = cat["label"]
 	for dest in dests:
 		if dest["type"] == "web":
+			body = mochi.app.label("notifications.body.test_via_web")
 			_deliver_web("notifications", "test", str(id), title, body, "/settings/user/notifications", title + ": " + body)
 			web = True
 			sent += 1
 		elif dest["type"] == "account":
 			account_id = int(dest["target"])
+			account_label = _account_display_label(account_id)
+			if not account_label:
+				continue  # stale destination row pointing at a deleted account
+			body = mochi.app.label("notifications.body.test_via_account", account=account_label)
 			_push_queue_if_unifiedpush(account_id, "notifications", "test", "", title, body, "")
 			mochi.account.notify(
 				account=account_id,
@@ -838,6 +842,34 @@ def function_category_test(context, id=0):
 			)
 			sent += 1
 	return {"sent": sent, "web": web}
+
+def _account_display_label(account_id):
+	"""Friendly name for a connected account, for test-notification bodies.
+	Prefers the user-set label, falls back to a provider-typed string.
+	Returns "" when the account row no longer exists (stale destinations
+	pointing at deleted accounts)."""
+	acc = mochi.account.get(account_id)
+	if not acc:
+		return ""
+	label = acc.get("label", "")
+	if label:
+		return label
+	t = acc.get("type", "")
+	if t == "fcm":
+		return mochi.app.label("notifications.account.fcm")
+	if t == "unifiedpush":
+		return mochi.app.label("notifications.account.unifiedpush")
+	if t == "email":
+		return acc.get("identifier", "") or mochi.app.label("notifications.account.email")
+	if t == "browser":
+		return mochi.app.label("notifications.account.browser")
+	if t == "pushbullet":
+		return mochi.app.label("notifications.account.pushbullet")
+	if t == "ntfy":
+		return mochi.app.label("notifications.account.ntfy")
+	if t == "url":
+		return mochi.app.label("notifications.account.url")
+	return t
 
 def _apply_destinations(category_id, destinations):
 	if destinations == None:
@@ -1078,6 +1110,85 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 	_add_destination_to_categories("account", str(account_id))
 	return result
 
+# function_push_register_fcm stores an FCM device token for this user, keyed
+# by the Firebase Installations ID (FID). The server-side `case "fcm"` in
+# api_account_add does the upsert: token refreshes update the existing row
+# in place, and a second phone (different FID) creates a separate row so
+# both devices receive pushes. The row id is stable, so destinations rows
+# pointing at it survive token refreshes.
+def function_push_register_fcm(context, token="", install_id="", device=""):
+	if not token or not install_id:
+		return None
+	kwargs = {"token": token, "install_id": install_id}
+	if device:
+		kwargs["label"] = device
+	result = mochi.account.add("fcm", **kwargs)
+	if not result or not result.get("id"):
+		return result
+	account_id = result["id"]
+	mochi.account.update(account_id, enabled=True)
+	_add_destination_to_categories("account", str(account_id))
+	return result
+
+# function_push_setup tells the client which push transport this server uses.
+# When the admin has pasted Firebase config into system settings, returns
+# {"transport": "fcm", "firebase_config": {project_id, app_id, api_key,
+# messaging_sender_id}} and the client initialises Firebase Messaging
+# against it. Otherwise returns {"transport": "unifiedpush"} and the client
+# falls back to the UnifiedPush distributor.
+#
+# Accepts two paste formats so the admin can drop whichever file Firebase
+# Console gave them:
+#   1. google-services.json verbatim — has project_info.{project_id,
+#      project_number} + client[0].client_info.mobilesdk_app_id +
+#      client[0].api_key[0].current_key
+#   2. A flat {project_id, app_id, api_key, messaging_sender_id} JSON.
+# Both reduce to the same four-field response.
+def function_push_setup(context):
+	config_raw = mochi.setting.get("fcm.firebase_config")
+	if not config_raw:
+		return {"transport": "unifiedpush"}
+	config = json.decode(config_raw)
+	if type(config) != "dict":
+		return {"transport": "unifiedpush"}
+	extracted = _extract_firebase_config(config)
+	if not extracted:
+		return {"transport": "unifiedpush"}
+	return {"transport": "fcm", "firebase_config": extracted}
+
+def _extract_firebase_config(raw):
+	"""Return {project_id, app_id, api_key, messaging_sender_id} from either
+	a google-services.json or a flat config dict, or None if neither
+	yields all four required fields."""
+	project_info = raw.get("project_info")
+	clients = raw.get("client")
+	if type(project_info) == "dict" and type(clients) == "list" and len(clients) > 0:
+		# google-services.json shape.
+		client = clients[0]
+		client_info = client.get("client_info", {}) if type(client) == "dict" else {}
+		api_keys = client.get("api_key", []) if type(client) == "dict" else []
+		api_key = ""
+		if type(api_keys) == "list" and len(api_keys) > 0 and type(api_keys[0]) == "dict":
+			api_key = api_keys[0].get("current_key", "")
+		out = {
+			"project_id": project_info.get("project_id", ""),
+			"messaging_sender_id": project_info.get("project_number", ""),
+			"app_id": client_info.get("mobilesdk_app_id", "") if type(client_info) == "dict" else "",
+			"api_key": api_key,
+		}
+	else:
+		# Flat shape — accept either snake_case or sender_id alias.
+		out = {
+			"project_id": raw.get("project_id", ""),
+			"messaging_sender_id": raw.get("messaging_sender_id", raw.get("sender_id", "")),
+			"app_id": raw.get("app_id", ""),
+			"api_key": raw.get("api_key", ""),
+		}
+	for k in ("project_id", "messaging_sender_id", "app_id", "api_key"):
+		if not out.get(k):
+			return None
+	return out
+
 # Inbound RFC 8030 push from a third-party Application Server (e.g. Mastodon
 # whose user picked the Mochi distributor). Forwards the opaque encrypted body
 # to the device via the existing WebSocket fast-path. Deferred — the primary
@@ -1179,3 +1290,106 @@ def function_push_ack(context, account_event_ids=None):
 		)
 		acked += 1
 	return {"acked": acked}
+
+# Client-facing action wrappers. Used to live in the menu app
+# (/menu/-/push/*); moved here because push is owned by the notifications
+# app, not by the menu UI. The menu app retained only the user-menu /
+# notifications-tray surface; everything push-transport-related lives here.
+
+def action_push_vapid(a):
+	"""Get VAPID key for browser push subscription."""
+	result = function_accounts_vapid(None)
+	if result == None:
+		return a.error.label(503, "errors.push_notifications_not_available")
+	return {"data": result}
+
+def action_push_accounts_list(a):
+	"""List push accounts."""
+	capability = a.input("capability", "")
+	return {"data": function_accounts_list(None, capability=capability) or []}
+
+def action_push_accounts_add(a):
+	"""Register a browser push account."""
+	type = a.input("type", "").strip()
+	if not type:
+		return a.error.label(400, "errors.type_is_required")
+	fields = {}
+	for key in ["label", "endpoint", "auth", "p256dh"]:
+		val = a.input(key, "")
+		if val != "":
+			fields[key] = val
+	result = function_accounts_add(None, type=type, **fields)
+	return {"data": result or {}}
+
+def action_push_accounts_remove(a):
+	"""Remove a push account."""
+	id = a.input("id", "").strip()
+	if not id or not id.isdigit():
+		return a.error.label(400, "errors.invalid_id")
+	result = function_accounts_remove(None, id=int(id))
+	return {"data": result or {}}
+
+def action_push_register(a):
+	"""Register a UnifiedPush subscription. Local distributor leaves
+	endpoint blank and we synthesise a path; foreign distributor (ntfy
+	etc.) passes its own endpoint URL."""
+	label = a.input("label", "").strip()
+	auth = a.input("auth", "").strip()
+	p256dh = a.input("p256dh", "").strip()
+	endpoint = a.input("endpoint", "").strip()
+	if not auth or not p256dh:
+		return a.error.label(400, "errors.invalid_subscription")
+	result = function_push_register(None, label=label, auth=auth, p256dh=p256dh, endpoint=endpoint)
+	if not result:
+		return a.error.label(500, "errors.registration_failed")
+	return {"data": result}
+
+def action_push_register_fcm(a):
+	"""Register the client's FCM device token. Keyed by Firebase Installations
+	ID so token refreshes update the existing row and additional phones
+	(different FID) create their own row. Called by the Android client after
+	FirebaseMessaging.getToken() returns and again from
+	FirebaseMessagingService.onNewToken on refresh."""
+	token = a.input("token", "").strip()
+	install_id = a.input("install_id", "").strip()
+	if not token or not install_id:
+		return a.error.label(400, "errors.invalid_subscription")
+	device = a.input("device", "").strip()
+	result = function_push_register_fcm(None, token=token, install_id=install_id, device=device)
+	if not result:
+		return a.error.label(500, "errors.registration_failed")
+	return {"data": result}
+
+def action_push_setup(a):
+	"""Tell the client which push transport this server prefers. Returns
+	{"transport": "fcm", "firebase_config": {...}} when the admin has
+	pasted Firebase config into system settings, else
+	{"transport": "unifiedpush"}. firebase_config is public-by-design."""
+	return {"data": function_push_setup(None) or {"transport": "unifiedpush"}}
+
+def action_push_inbound(a):
+	"""Receive an RFC 8030 push from an external Application Server.
+	Deferred — forwards via WebSocket fast-path once the Go side exposes
+	a binary-safe write API. Currently returns 501."""
+	return a.error.label(501, "errors.inbound_not_implemented")
+
+def action_push_drain(a):
+	"""Return any unifiedpush events that were queued while the on-device
+	WebSocket wasn't subscribed (phone killed, Doze drop, network blip).
+	Phone calls this immediately after WS subscribe and after each
+	foreground entry. Read-only — phone must POST /notifications/-/push/ack
+	with the (account, event_id) pairs it actually delivered."""
+	return {"data": function_push_drain(None) or []}
+
+def action_push_ack(a):
+	"""Delete acknowledged rows from the pending queue. Body: events=<JSON
+	array of {account, event_id}>. Idempotent — acking a row that no
+	longer exists is a no-op (TTL'd, manually cleared, or never queued
+	because of a live race)."""
+	events_raw = a.input("events", "")
+	if not events_raw:
+		return {"data": {"acked": 0}}
+	events = json.decode(events_raw)
+	if type(events) != "list":
+		return a.error.label(400, "errors.invalid_subscription")
+	return {"data": function_push_ack(None, account_event_ids=events) or {"acked": 0}}
