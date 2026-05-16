@@ -163,7 +163,7 @@ msgstr "Επιλέξτε ανάμεσα σε κατεύθυνση ιστότοπ
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Επιλέξτε ανάμεσα σε προτίμηση συστήματος, ανοιχτή λειτουργία ή σκοτεινή λειτουργία"
 
-#: ../../../lib/web/src/components/language-picker.tsx:167
+#: ../../../lib/web/src/components/language-picker.tsx:174
 msgid "Choose language"
 msgstr "Επιλογή γλώσσας"
 
@@ -211,11 +211,16 @@ msgstr "Κλείσιμο αναζήτησης"
 msgid "Collapse sidebar"
 msgstr "Σύμπτυξη πλαϊνής στήλης"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:93
+msgid "Comfortable"
+msgstr "Άνετο"
+
 #: ../../../lib/web/src/components/coming-soon.tsx:9
 msgid "Coming Soon!"
 msgstr "Έρχεται σύντομα!"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:302
+#: ../../../lib/web/src/lib/preference-utils.ts:92
 msgid "Compact"
 msgstr "Συμπαγές"
 
@@ -244,6 +249,10 @@ msgstr "Αντιγράφηκε στο πρόχειρο"
 #: ../../../lib/web/src/components/ui/copy-button.tsx:60
 msgid "Copy"
 msgstr "Αντιγραφή"
+
+#: ../../../lib/web/src/features/document/document-page.tsx:81
+msgid "Could not load this document. Please try again later."
+msgstr "Δεν ήταν δυνατή η φόρτωση αυτού του εγγράφου. Παρακαλώ δοκιμάστε ξανά αργότερα."
 
 #: src/components/rss-dialog.tsx:353
 #: src/components/rss-dialog.tsx:400
@@ -295,7 +304,7 @@ msgstr "Φθίνουσα"
 msgid "Details Panel"
 msgstr "Πίνακας λεπτομερειών"
 
-#: ../../../lib/web/src/components/language-picker.tsx:145
+#: ../../../lib/web/src/components/language-picker.tsx:152
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -322,6 +331,10 @@ msgstr "Ολοκληρώθηκε"
 msgid "Download"
 msgstr "Λήψη"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:134
+msgid "Dyslexia-friendly"
+msgstr "Φιλικό προς δυσλεξία"
+
 #: src/components/rss-dialog.tsx:365
 msgid "e.g., Feedly, NewsBlur"
 msgstr "π.χ. Feedly, NewsBlur"
@@ -329,6 +342,10 @@ msgstr "π.χ. Feedly, NewsBlur"
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Επέκταση πλευρικής μπάρας"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:124
+msgid "Extra large"
+msgstr "Πολύ μεγάλο"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:217
 msgid "Failed to add account"
@@ -389,6 +406,14 @@ msgstr "Παρασκευή"
 #: ../../../lib/web/src/components/travelling-picker.tsx:149
 msgid "From"
 msgstr "Από"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:91
+#: ../../../lib/web/src/lib/preference-utils.ts:101
+#: ../../../lib/web/src/lib/preference-utils.ts:112
+#: ../../../lib/web/src/lib/preference-utils.ts:120
+#: ../../../lib/web/src/lib/preference-utils.ts:131
+msgid "From theme"
+msgstr "Από το θέμα"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:307
 msgid "Full layout"
@@ -451,6 +476,11 @@ msgstr "Ενδιαφέροντα"
 msgid "Invalid verification code"
 msgstr "Μη έγκυρος κωδικός επαλήθευσης"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:105
+#: ../../../lib/web/src/lib/preference-utils.ts:123
+msgid "Large"
+msgstr "Μεγάλο"
+
 #: ../../../lib/web/src/components/config-drawer.tsx:273
 msgid "Layout"
 msgstr "Διάταξη"
@@ -473,6 +503,7 @@ msgid "Load more"
 msgstr "Φόρτωση περισσότερων"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:32
+#: ../../../lib/web/src/features/document/document-page.tsx:87
 msgid "Loading…"
 msgstr "Φόρτωση…"
 
@@ -507,6 +538,10 @@ msgstr "Σήμανση όλων ως αναγνωσμένα"
 msgid "Mark all read"
 msgstr "Σήμανση όλων ως αναγνωσμένα"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:104
+msgid "Medium"
+msgstr "Μεσαίο"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:152
 msgid "Menu"
 msgstr "Μενού"
@@ -538,10 +573,6 @@ msgstr "Δεν υπάρχουν συνδεδεμένοι λογαριασμοί"
 #: ../../../lib/web/src/features/access/access-dialog.tsx:238
 msgid "No groups available"
 msgstr "Δεν υπάρχουν διαθέσιμες ομάδες"
-
-#: ../../../lib/web/src/components/language-picker.tsx:177
-msgid "No matches."
-msgstr "Καμία αντιστοιχία."
 
 #: src/features/notification/index.tsx:246
 msgid "No notifications"
@@ -581,8 +612,14 @@ msgid "No users found"
 msgstr "Δεν βρέθηκαν χρήστες"
 
 #: ../../../lib/web/src/components/person-picker.tsx:349
+#: ../../../lib/web/src/lib/preference-utils.ts:102
+#: ../../../lib/web/src/lib/preference-utils.ts:113
 msgid "None"
 msgstr "Κανένα"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:122
+msgid "Normal"
+msgstr "Κανονικό"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
@@ -630,6 +667,11 @@ msgstr "Ιδιοκτήτης"
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
 msgstr "Προηγούμενη εικόνα"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:24
+#: ../../../lib/web/src/features/document/document-page.tsx:41
+msgid "Privacy"
+msgstr "Ιδιωτικότητα"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:134
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
@@ -731,10 +773,6 @@ msgstr "Αναζήτηση χρηστών"
 msgid "Search..."
 msgstr "Αναζήτηση..."
 
-#: ../../../lib/web/src/components/language-picker.tsx:175
-msgid "Search…"
-msgstr "Αναζήτηση…"
-
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
 #: ../../../lib/web/src/components/search-entity-page.tsx:149
 #: ../../../lib/web/src/features/access/access-dialog.tsx:199
@@ -773,6 +811,15 @@ msgstr "Επιλέξτε κατεύθυνση ιστότοπου"
 msgid "Select theme preference"
 msgstr "Επιλέξτε προτίμηση θέματος"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:133
+msgid "Serif"
+msgstr "Με ακρέμονες"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:16
+#: ../../../lib/web/src/features/document/document-page.tsx:37
+msgid "Server rules"
+msgstr "Κανόνες του διακομιστή"
+
 #: ../../../lib/web/src/lib/api-client.ts:224
 msgid "Session expired"
 msgstr "Η συνεδρία έληξε"
@@ -809,6 +856,15 @@ msgstr "Αποσύνδεση..."
 msgid "Skip to Main"
 msgstr "Μετάβαση στο κύριο περιεχόμενο"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:103
+#: ../../../lib/web/src/lib/preference-utils.ts:121
+msgid "Small"
+msgstr "Μικρό"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:94
+msgid "Spacious"
+msgstr "Ευρύχωρο"
+
 #: ../../../lib/web/src/components/coming-soon.tsx:12
 msgid "Stay tuned though!"
 msgstr "Μείνετε όμως συντονισμένοι!"
@@ -823,6 +879,7 @@ msgstr "Κυριακή"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:195
 #: ../../../lib/web/src/lib/preference-utils.ts:18
+#: ../../../lib/web/src/lib/preference-utils.ts:132
 msgid "System"
 msgstr "Σύστημα"
 
@@ -833,6 +890,11 @@ msgstr "Ετικέτα"
 #: ../../../lib/web/src/components/layout/team-switcher.tsx:60
 msgid "Teams/Apps"
 msgstr "Ομάδες/Εφαρμογές"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:20
+#: ../../../lib/web/src/features/document/document-page.tsx:39
+msgid "Terms and conditions"
+msgstr "Όροι και προϋποθέσεις"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"

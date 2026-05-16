@@ -805,9 +805,11 @@ def function_category_delete(context, id=0, reassign_to=None):
 def function_category_test(context, id=0):
 	"""Send a test notification through the category's destinations.
 
-	External destinations (accounts) are invoked via mochi.account.notify. Web
-	destinations are written to the notifications table + WebSocket so the user
-	sees them in the bell.
+	External destinations (accounts) are invoked via mochi.account.notify. A
+	bell entry is always written so the user gets immediate visible feedback
+	that the test fired, even when 'web' is not among the configured
+	destinations — otherwise a stale row from a previous test could persist
+	and look like the most recent click landed nothing fresh.
 	"""
 	if not id:
 		return {"sent": 0, "web": False}
@@ -818,10 +820,10 @@ def function_category_test(context, id=0):
 	sent = 0
 	web = False
 	title = mochi.app.label("notifications.body.test")
+	body_web = mochi.app.label("notifications.body.test_via_web")
+	_deliver_web("notifications", "test", str(id), title, body_web, "/settings/user/notifications", title + ": " + body_web)
 	for dest in dests:
 		if dest["type"] == "web":
-			body = mochi.app.label("notifications.body.test_via_web")
-			_deliver_web("notifications", "test", str(id), title, body, "/settings/user/notifications", title + ": " + body)
 			web = True
 			sent += 1
 		elif dest["type"] == "account":

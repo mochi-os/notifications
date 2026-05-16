@@ -163,7 +163,7 @@ msgstr "Ընտրեք համակարգի նախընտրության, լուսավ
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Ընտրել լեզու"
 
-#: ../../../lib/web/src/components/language-picker.tsx:167
+#: ../../../lib/web/src/components/language-picker.tsx:174
 msgid "Choose language"
 msgstr "Ընտրել հակառակորդ"
 
@@ -211,11 +211,16 @@ msgstr "Կոդը պատճենված է"
 msgid "Collapse sidebar"
 msgstr "Գույն"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:93
+msgid "Comfortable"
+msgstr "Շուտով!"
+
 #: ../../../lib/web/src/components/coming-soon.tsx:9
 msgid "Coming Soon!"
 msgstr "Մեկնաբանություն"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:302
+#: ../../../lib/web/src/lib/preference-utils.ts:92
 msgid "Compact"
 msgstr "Ավարտեք Stripe-ի գրանցումը՝ հաստատվելու համար"
 
@@ -244,6 +249,10 @@ msgstr "Պատճենել"
 #: ../../../lib/web/src/components/ui/copy-button.tsx:60
 msgid "Copy"
 msgstr "Պատճենել ամենը"
+
+#: ../../../lib/web/src/features/document/document-page.tsx:81
+msgid "Could not load this document. Please try again later."
+msgstr "Չհաջողվեց մշակել {slot} պատկերը"
 
 #: src/components/rss-dialog.tsx:353
 #: src/components/rss-dialog.tsx:400
@@ -295,7 +304,7 @@ msgstr "Նվազող"
 msgid "Details Panel"
 msgstr "Մանրամասների վահանակ"
 
-#: ../../../lib/web/src/components/language-picker.tsx:145
+#: ../../../lib/web/src/components/language-picker.tsx:152
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -322,6 +331,10 @@ msgstr "Կատարված է"
 msgid "Download"
 msgstr "Ներբեռնել"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:134
+msgid "Dyslexia-friendly"
+msgstr "Դիսլեքսիայի հարմար"
+
 #: src/components/rss-dialog.tsx:365
 msgid "e.g., Feedly, NewsBlur"
 msgstr "օր.՝ Feedly, NewsBlur"
@@ -329,6 +342,10 @@ msgstr "օր.՝ Feedly, NewsBlur"
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Ընդարձակել կողագոտին"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:124
+msgid "Extra large"
+msgstr "Շատ մեծ"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:217
 msgid "Failed to add account"
@@ -389,6 +406,14 @@ msgstr "Ուրբաթ"
 #: ../../../lib/web/src/components/travelling-picker.tsx:149
 msgid "From"
 msgstr "Ումից"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:91
+#: ../../../lib/web/src/lib/preference-utils.ts:101
+#: ../../../lib/web/src/lib/preference-utils.ts:112
+#: ../../../lib/web/src/lib/preference-utils.ts:120
+#: ../../../lib/web/src/lib/preference-utils.ts:131
+msgid "From theme"
+msgstr "Թեմայից"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:307
 msgid "Full layout"
@@ -451,6 +476,11 @@ msgstr "Անվավեր նույնականացման կոդ"
 msgid "Invalid verification code"
 msgstr "Հրավերը չեղարկվեց"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:105
+#: ../../../lib/web/src/lib/preference-utils.ts:123
+msgid "Large"
+msgstr "Մեծ"
+
 #: ../../../lib/web/src/components/config-drawer.tsx:273
 msgid "Layout"
 msgstr "Թողեք մեկնաբանություն..."
@@ -473,6 +503,7 @@ msgid "Load more"
 msgstr "Բեռնվում են վճարների մանրամասները..."
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:32
+#: ../../../lib/web/src/features/document/document-page.tsx:87
 msgid "Loading…"
 msgstr "Կողպված է"
 
@@ -507,6 +538,10 @@ msgstr "Markdown-ը աջակցվում է"
 msgid "Mark all read"
 msgstr "Նշված է որպես առաքված"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:104
+msgid "Medium"
+msgstr "Միջին"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:152
 msgid "Menu"
 msgstr "Միաձուլման հարցումներ"
@@ -538,10 +573,6 @@ msgstr "Կապակցված հաշիվներ չկան"
 #: ../../../lib/web/src/features/access/access-dialog.tsx:238
 msgid "No groups available"
 msgstr "Հասանելի խմբեր չկան"
-
-#: ../../../lib/web/src/components/language-picker.tsx:177
-msgid "No matches."
-msgstr "Համընկնումներ չկան։"
 
 #: src/features/notification/index.tsx:246
 msgid "No notifications"
@@ -581,8 +612,14 @@ msgid "No users found"
 msgstr "Օգտատերեր չեն գտնվել"
 
 #: ../../../lib/web/src/components/person-picker.tsx:349
+#: ../../../lib/web/src/lib/preference-utils.ts:102
+#: ../../../lib/web/src/lib/preference-utils.ts:113
 msgid "None"
 msgstr "Ոչ մեկը"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:122
+msgid "Normal"
+msgstr "Սովորական"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
@@ -630,6 +667,11 @@ msgstr "Սեփականատեր"
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
 msgstr "Նախորդ նկարը"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:24
+#: ../../../lib/web/src/features/document/document-page.tsx:41
+msgid "Privacy"
+msgstr "Գաղտնիություն"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:134
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
@@ -731,10 +773,6 @@ msgstr "Որոնել օգտատերեր"
 msgid "Search..."
 msgstr "Որոնում..."
 
-#: ../../../lib/web/src/components/language-picker.tsx:175
-msgid "Search…"
-msgstr "Որոնել…"
-
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
 #: ../../../lib/web/src/components/search-entity-page.tsx:149
 #: ../../../lib/web/src/features/access/access-dialog.tsx:199
@@ -773,6 +811,15 @@ msgstr "Ընտրել կայքի ուղղությունը"
 msgid "Select theme preference"
 msgstr "Ընտրել թեմայի նախընտրությունը"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:133
+msgid "Serif"
+msgstr "Սերիֆ"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:16
+#: ../../../lib/web/src/features/document/document-page.tsx:37
+msgid "Server rules"
+msgstr "Սերվերի կանոններ"
+
 #: ../../../lib/web/src/lib/api-client.ts:224
 msgid "Session expired"
 msgstr "Սեսիան ավարտվել է"
@@ -809,6 +856,15 @@ msgstr "Դուրս է գալիս..."
 msgid "Skip to Main"
 msgstr "Բաց թողնել դեպի Հիմնական"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:103
+#: ../../../lib/web/src/lib/preference-utils.ts:121
+msgid "Small"
+msgstr "Փոքր"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:94
+msgid "Spacious"
+msgstr "Ընդարձակ"
+
 #: ../../../lib/web/src/components/coming-soon.tsx:12
 msgid "Stay tuned though!"
 msgstr "Մնացեք միացված, սակայն!"
@@ -823,6 +879,7 @@ msgstr "Կիրակի"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:195
 #: ../../../lib/web/src/lib/preference-utils.ts:18
+#: ../../../lib/web/src/lib/preference-utils.ts:132
 msgid "System"
 msgstr "Համակարգ"
 
@@ -833,6 +890,11 @@ msgstr "Թեգ"
 #: ../../../lib/web/src/components/layout/team-switcher.tsx:60
 msgid "Teams/Apps"
 msgstr "Թիմեր/Հավելվածներ"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:20
+#: ../../../lib/web/src/features/document/document-page.tsx:39
+msgid "Terms and conditions"
+msgstr "Պայմաններ և կանոններ"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"

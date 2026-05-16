@@ -163,7 +163,7 @@ msgstr "বাম-থেকে-ডান বা ডান-থেকে-বাম
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "সিস্টেম পছন্দ, লাইট মোড, বা ডার্ক মোডের মধ্যে বেছে নিন"
 
-#: ../../../lib/web/src/components/language-picker.tsx:167
+#: ../../../lib/web/src/components/language-picker.tsx:174
 msgid "Choose language"
 msgstr "ভাষা বেছে নিন"
 
@@ -211,11 +211,16 @@ msgstr "অনুসন্ধান বন্ধ করুন"
 msgid "Collapse sidebar"
 msgstr "সাইডবার সংকুচিত করুন"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:93
+msgid "Comfortable"
+msgstr "আরামদায়ক"
+
 #: ../../../lib/web/src/components/coming-soon.tsx:9
 msgid "Coming Soon!"
 msgstr "শীঘ্রই আসছে!"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:302
+#: ../../../lib/web/src/lib/preference-utils.ts:92
 msgid "Compact"
 msgstr "কম্প্যাক্ট"
 
@@ -244,6 +249,10 @@ msgstr "ক্লিপবোর্ডে কপি করা হয়েছে
 #: ../../../lib/web/src/components/ui/copy-button.tsx:60
 msgid "Copy"
 msgstr "কপি করুন"
+
+#: ../../../lib/web/src/features/document/document-page.tsx:81
+msgid "Could not load this document. Please try again later."
+msgstr "এই ডকুমেন্টটি লোড করা যায়নি। অনুগ্রহ করে পরে আবার চেষ্টা করুন।"
 
 #: src/components/rss-dialog.tsx:353
 #: src/components/rss-dialog.tsx:400
@@ -295,7 +304,7 @@ msgstr "অধঃক্রম"
 msgid "Details Panel"
 msgstr "বিবরণ প্যানেল"
 
-#: ../../../lib/web/src/components/language-picker.tsx:145
+#: ../../../lib/web/src/components/language-picker.tsx:152
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -322,6 +331,10 @@ msgstr "সম্পন্ন"
 msgid "Download"
 msgstr "ডাউনলোড"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:134
+msgid "Dyslexia-friendly"
+msgstr "ডিসলেক্সিয়া-বান্ধব"
+
 #: src/components/rss-dialog.tsx:365
 msgid "e.g., Feedly, NewsBlur"
 msgstr "যেমন Feedly, NewsBlur"
@@ -329,6 +342,10 @@ msgstr "যেমন Feedly, NewsBlur"
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "সাইডবার প্রসারিত করুন"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:124
+msgid "Extra large"
+msgstr "অতিরিক্ত বড়"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:217
 msgid "Failed to add account"
@@ -389,6 +406,14 @@ msgstr "শুক্রবার"
 #: ../../../lib/web/src/components/travelling-picker.tsx:149
 msgid "From"
 msgstr "থেকে"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:91
+#: ../../../lib/web/src/lib/preference-utils.ts:101
+#: ../../../lib/web/src/lib/preference-utils.ts:112
+#: ../../../lib/web/src/lib/preference-utils.ts:120
+#: ../../../lib/web/src/lib/preference-utils.ts:131
+msgid "From theme"
+msgstr "থিম থেকে"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:307
 msgid "Full layout"
@@ -451,6 +476,11 @@ msgstr "আগ্রহসমূহ"
 msgid "Invalid verification code"
 msgstr "অবৈধ যাচাইকরণ কোড"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:105
+#: ../../../lib/web/src/lib/preference-utils.ts:123
+msgid "Large"
+msgstr "বড়"
+
 #: ../../../lib/web/src/components/config-drawer.tsx:273
 msgid "Layout"
 msgstr "লেআউট"
@@ -473,6 +503,7 @@ msgid "Load more"
 msgstr "আরও লোড করুন"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:32
+#: ../../../lib/web/src/features/document/document-page.tsx:87
 msgid "Loading…"
 msgstr "লোড হচ্ছে…"
 
@@ -507,6 +538,10 @@ msgstr "সবগুলি পঠিত হিসেবে চিহ্নিত
 msgid "Mark all read"
 msgstr "সব পঠিত হিসেবে চিহ্নিত করুন"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:104
+msgid "Medium"
+msgstr "মাঝারি"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:152
 msgid "Menu"
 msgstr "মেনু"
@@ -538,10 +573,6 @@ msgstr "কোনো সংযুক্ত অ্যাকাউন্ট নে
 #: ../../../lib/web/src/features/access/access-dialog.tsx:238
 msgid "No groups available"
 msgstr "কোনো গ্রুপ উপলব্ধ নেই"
-
-#: ../../../lib/web/src/components/language-picker.tsx:177
-msgid "No matches."
-msgstr "কোনো মিল নেই।"
 
 #: src/features/notification/index.tsx:246
 msgid "No notifications"
@@ -581,8 +612,14 @@ msgid "No users found"
 msgstr "কোনো ব্যবহারকারী পাওয়া যায়নি"
 
 #: ../../../lib/web/src/components/person-picker.tsx:349
+#: ../../../lib/web/src/lib/preference-utils.ts:102
+#: ../../../lib/web/src/lib/preference-utils.ts:113
 msgid "None"
 msgstr "কোনোটি নয়"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:122
+msgid "Normal"
+msgstr "সাধারণ"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
@@ -630,6 +667,11 @@ msgstr "মালিক"
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
 msgstr "পূর্ববর্তী ছবি"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:24
+#: ../../../lib/web/src/features/document/document-page.tsx:41
+msgid "Privacy"
+msgstr "গোপনীয়তা"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:134
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
@@ -731,10 +773,6 @@ msgstr "ব্যবহারকারী অনুসন্ধান করু�
 msgid "Search..."
 msgstr "অনুসন্ধান করুন..."
 
-#: ../../../lib/web/src/components/language-picker.tsx:175
-msgid "Search…"
-msgstr "অনুসন্ধান করুন…"
-
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
 #: ../../../lib/web/src/components/search-entity-page.tsx:149
 #: ../../../lib/web/src/features/access/access-dialog.tsx:199
@@ -773,6 +811,15 @@ msgstr "সাইটের দিক নির্বাচন করুন"
 msgid "Select theme preference"
 msgstr "থিম পছন্দ নির্বাচন করুন"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:133
+msgid "Serif"
+msgstr "সেরিফ"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:16
+#: ../../../lib/web/src/features/document/document-page.tsx:37
+msgid "Server rules"
+msgstr "সার্ভারের নিয়মাবলী"
+
 #: ../../../lib/web/src/lib/api-client.ts:224
 msgid "Session expired"
 msgstr "সেশনের মেয়াদ শেষ হয়েছে"
@@ -809,6 +856,15 @@ msgstr "সাইন আউট করা হচ্ছে..."
 msgid "Skip to Main"
 msgstr "মূল অংশে এড়িয়ে যান"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:103
+#: ../../../lib/web/src/lib/preference-utils.ts:121
+msgid "Small"
+msgstr "ছোট"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:94
+msgid "Spacious"
+msgstr "প্রশস্ত"
+
 #: ../../../lib/web/src/components/coming-soon.tsx:12
 msgid "Stay tuned though!"
 msgstr "তবে সাথে থাকুন!"
@@ -823,6 +879,7 @@ msgstr "রবিবার"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:195
 #: ../../../lib/web/src/lib/preference-utils.ts:18
+#: ../../../lib/web/src/lib/preference-utils.ts:132
 msgid "System"
 msgstr "সিস্টেম"
 
@@ -833,6 +890,11 @@ msgstr "ট্যাগ"
 #: ../../../lib/web/src/components/layout/team-switcher.tsx:60
 msgid "Teams/Apps"
 msgstr "টিম/অ্যাপ"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:20
+#: ../../../lib/web/src/features/document/document-page.tsx:39
+msgid "Terms and conditions"
+msgstr "শর্তাবলী"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"

@@ -163,7 +163,7 @@ msgstr "Ch'iqat-kupiru jan ukax kupit-ch'iqaru sitio dirección ajllxaña"
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Sistema munawi, qhana modo, jan ukax ch'amaka modo ajllxaña"
 
-#: ../../../lib/web/src/components/language-picker.tsx:167
+#: ../../../lib/web/src/components/language-picker.tsx:174
 msgid "Choose language"
 msgstr "Aru ajllxaña"
 
@@ -211,11 +211,16 @@ msgstr "Thaqaña jist'antaña"
 msgid "Collapse sidebar"
 msgstr "Sidebar jist'antaña"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:93
+msgid "Comfortable"
+msgstr "Suma"
+
 #: ../../../lib/web/src/components/coming-soon.tsx:9
 msgid "Coming Soon!"
 msgstr "Jichhakiwa!"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:302
+#: ../../../lib/web/src/lib/preference-utils.ts:92
 msgid "Compact"
 msgstr "Compacto"
 
@@ -244,6 +249,10 @@ msgstr "Clipboard-ru copiata"
 #: ../../../lib/web/src/components/ui/copy-button.tsx:60
 msgid "Copy"
 msgstr "Copiaña"
+
+#: ../../../lib/web/src/features/document/document-page.tsx:81
+msgid "Could not load this document. Please try again later."
+msgstr "Janiw aka documento apañ atkiti. Mira qhipata wasitat yant'aña."
 
 #: src/components/rss-dialog.tsx:353
 #: src/components/rss-dialog.tsx:400
@@ -295,7 +304,7 @@ msgstr "Desc"
 msgid "Details Panel"
 msgstr "Detalle Panel"
 
-#: ../../../lib/web/src/components/language-picker.tsx:145
+#: ../../../lib/web/src/components/language-picker.tsx:152
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -322,6 +331,10 @@ msgstr "Tukuyata"
 msgid "Download"
 msgstr "Apaqaña"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:134
+msgid "Dyslexia-friendly"
+msgstr "Dislexia jaqinakataki"
+
 #: src/components/rss-dialog.tsx:365
 msgid "e.g., Feedly, NewsBlur"
 msgstr "sañani Trabajan laptop"
@@ -329,6 +342,10 @@ msgstr "sañani Trabajan laptop"
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
 msgstr "Sidebar jach'achaña"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:124
+msgid "Extra large"
+msgstr "Sinti jach'a"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:217
 msgid "Failed to add account"
@@ -389,6 +406,14 @@ msgstr "Viernes"
 #: ../../../lib/web/src/components/travelling-picker.tsx:149
 msgid "From"
 msgstr "Ukatx"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:91
+#: ../../../lib/web/src/lib/preference-utils.ts:101
+#: ../../../lib/web/src/lib/preference-utils.ts:112
+#: ../../../lib/web/src/lib/preference-utils.ts:120
+#: ../../../lib/web/src/lib/preference-utils.ts:131
+msgid "From theme"
+msgstr "Temata"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:307
 msgid "Full layout"
@@ -451,6 +476,11 @@ msgstr "Interesanaka"
 msgid "Invalid verification code"
 msgstr "Jan wakisir verificación código"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:105
+#: ../../../lib/web/src/lib/preference-utils.ts:123
+msgid "Large"
+msgstr "Jach'a"
+
 #: ../../../lib/web/src/components/config-drawer.tsx:273
 msgid "Layout"
 msgstr "Diseño"
@@ -473,6 +503,7 @@ msgid "Load more"
 msgstr "Jukamp apaqaña"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:32
+#: ../../../lib/web/src/features/document/document-page.tsx:87
 msgid "Loading…"
 msgstr "Apaqaskiwa…"
 
@@ -507,6 +538,10 @@ msgstr "Taqpach ullt'ata uñacht'ayaña"
 msgid "Mark all read"
 msgstr "Taqpach ullt'ata uñacht'ayaña"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:104
+msgid "Medium"
+msgstr "Taypi"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:152
 msgid "Menu"
 msgstr "Menú"
@@ -538,10 +573,6 @@ msgstr "Jan cuenta connectatati"
 #: ../../../lib/web/src/features/access/access-dialog.tsx:238
 msgid "No groups available"
 msgstr "Jan tamanak utjki"
-
-#: ../../../lib/web/src/components/language-picker.tsx:177
-msgid "No matches."
-msgstr "Jan jikxatawinaka."
 
 #: src/features/notification/index.tsx:246
 msgid "No notifications"
@@ -581,8 +612,14 @@ msgid "No users found"
 msgstr "Usuarionak jan jikxatasiti"
 
 #: ../../../lib/web/src/components/person-picker.tsx:349
+#: ../../../lib/web/src/lib/preference-utils.ts:102
+#: ../../../lib/web/src/lib/preference-utils.ts:113
 msgid "None"
 msgstr "Janiwa"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:122
+msgid "Normal"
+msgstr "Walja"
 
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
@@ -630,6 +667,11 @@ msgstr "Dueño"
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
 msgstr "Nayrïri imagen"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:24
+#: ../../../lib/web/src/features/document/document-page.tsx:41
+msgid "Privacy"
+msgstr "Imantawi"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:134
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
@@ -731,10 +773,6 @@ msgstr "Usuarionak thaqhama"
 msgid "Search..."
 msgstr "Thaqhama..."
 
-#: ../../../lib/web/src/components/language-picker.tsx:175
-msgid "Search…"
-msgstr "Thaqhama…"
-
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
 #: ../../../lib/web/src/components/search-entity-page.tsx:149
 #: ../../../lib/web/src/features/access/access-dialog.tsx:199
@@ -773,6 +811,15 @@ msgstr "Sitio dirección ajlliña"
 msgid "Select theme preference"
 msgstr "Tema preferencia ajlliña"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:133
+msgid "Serif"
+msgstr "Serif"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:16
+#: ../../../lib/web/src/features/document/document-page.tsx:37
+msgid "Server rules"
+msgstr "Servidor reglas"
+
 #: ../../../lib/web/src/lib/api-client.ts:224
 msgid "Session expired"
 msgstr "Sesión tukusi"
@@ -809,6 +856,15 @@ msgstr "Mistuyasa..."
 msgid "Skip to Main"
 msgstr "Main ukar saraqaña"
 
+#: ../../../lib/web/src/lib/preference-utils.ts:103
+#: ../../../lib/web/src/lib/preference-utils.ts:121
+msgid "Small"
+msgstr "Jisk'a"
+
+#: ../../../lib/web/src/lib/preference-utils.ts:94
+msgid "Spacious"
+msgstr "Jach'a"
+
 #: ../../../lib/web/src/components/coming-soon.tsx:12
 msgid "Stay tuned though!"
 msgstr "Suyt'asipkakim!"
@@ -823,6 +879,7 @@ msgstr "Domingo"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:195
 #: ../../../lib/web/src/lib/preference-utils.ts:18
+#: ../../../lib/web/src/lib/preference-utils.ts:132
 msgid "System"
 msgstr "Sistema"
 
@@ -833,6 +890,11 @@ msgstr "Tag"
 #: ../../../lib/web/src/components/layout/team-switcher.tsx:60
 msgid "Teams/Apps"
 msgstr "Equipos/Apps"
+
+#: ../../../lib/web/src/components/server-documents-footer.tsx:20
+#: ../../../lib/web/src/features/document/document-page.tsx:39
+msgid "Terms and conditions"
+msgstr "Términos ukat condicionanaka"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"

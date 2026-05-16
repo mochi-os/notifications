@@ -2,7 +2,7 @@
 // Copyright Alistair Cunningham 2025-2026
 
 {
-	"version": "3.20",
+	"version": "3.21",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
