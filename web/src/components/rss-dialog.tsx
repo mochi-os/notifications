@@ -314,6 +314,7 @@ export function RssDialog({
                               variant='ghost'
                               size='sm'
                               onClick={() => handleStartEdit(feed)}
+                              aria-label={t`Edit feed`}
                             >
                               <Pencil className='h-4 w-4' />
                             </Button>
@@ -322,6 +323,7 @@ export function RssDialog({
                               size='sm'
                               onClick={() => setDeleteId(feed.id)}
                               disabled={deleteMutation.isPending}
+                              aria-label={t`Delete feed`}
                             >
                               <Trash2 className='h-4 w-4' />
                             </Button>
