@@ -25,7 +25,7 @@ msgstr "24 èdtan"
 msgid "Absolute (date and time)"
 msgstr "Absoli (dat ak lè)"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:12
+#: ../../../lib/web/src/features/errors/forbidden.tsx:13
 msgid "Access Forbidden"
 msgstr "Aksè Entèdi"
 
@@ -48,6 +48,10 @@ msgstr "Tip kont"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Account verified"
 msgstr "Kont verifye"
+
+#: ../../../lib/web/src/features/accounts/account-add.tsx:193
+msgid "Add"
+msgstr "Ajoute"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:117
 msgid "Add a new account"
@@ -82,7 +86,7 @@ msgstr "Ajoute ekip/app"
 msgid "Add to existing notifications"
 msgstr "Ajoute nan notifikasyon ki egziste"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:378
 msgid "Add to existing subscriptions"
 msgstr "Ajoute nan abònman ki egziste"
 
@@ -114,11 +118,11 @@ msgstr "Mont"
 msgid "Back"
 msgstr "Retounen"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:21
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
-msgid "Back to Home"
-msgstr "Retounen nan Akèy"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:23
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:23
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:23
+msgid "Back to home"
+msgstr ""
 
 #: src/features/notification/index.tsx:74
 msgid "Blocked navigation to untrusted link"
@@ -135,7 +139,7 @@ msgstr "Ogmante enterè"
 #: ../../../lib/web/src/features/access/access-list.tsx:255
 #: ../../../lib/web/src/features/accounts/account-add.tsx:185
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:391
 msgid "Cancel"
 msgstr "Anile"
 
@@ -200,8 +204,8 @@ msgid "Close navigation"
 msgstr "Fèmen navigasyon"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
-msgid "Close Panel"
-msgstr "Fèmen Panèl"
+msgid "Close panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/header-search.tsx:51
 msgid "Close search"
@@ -254,8 +258,8 @@ msgstr "Kopye"
 msgid "Could not load this document. Please try again later."
 msgstr "Pa t kapab chaje dokiman sa a. Tanpri eseye ankò pita."
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:355
+#: src/components/rss-dialog.tsx:402
 msgid "Create feed"
 msgstr "Kreye fil"
 
@@ -288,11 +292,15 @@ msgstr "Defo"
 msgid "Default AI account"
 msgstr "Kont AI defo"
 
-#: src/components/rss-dialog.tsx:442
+#: src/components/rss-dialog.tsx:444
 msgid "Delete"
 msgstr "Efase"
 
-#: src/components/rss-dialog.tsx:440
+#: src/components/rss-dialog.tsx:326
+msgid "Delete feed"
+msgstr "Efase fil"
+
+#: src/components/rss-dialog.tsx:442
 msgid "Delete Feed?"
 msgstr "Efase Fil?"
 
@@ -323,7 +331,7 @@ msgstr "Direksyon"
 msgid "Displays the mobile sidebar."
 msgstr "Afiche ba kote mobil la."
 
-#: src/components/rss-dialog.tsx:427
+#: src/components/rss-dialog.tsx:429
 msgid "Done"
 msgstr "Fini"
 
@@ -335,9 +343,13 @@ msgstr "Telechaje"
 msgid "Dyslexia-friendly"
 msgstr "Adapte pou disleksi"
 
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:367
 msgid "e.g., Feedly, NewsBlur"
 msgstr "pa egzanp, Feedly, NewsBlur"
+
+#: src/components/rss-dialog.tsx:317
+msgid "Edit feed"
+msgstr ""
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -387,7 +399,7 @@ msgstr "Feed kreye"
 msgid "Feed deleted"
 msgstr "Feed efase"
 
-#: src/components/rss-dialog.tsx:362
+#: src/components/rss-dialog.tsx:364
 msgid "Feed name"
 msgstr "Non feed"
 
@@ -419,11 +431,11 @@ msgstr "Soti nan tèm"
 msgid "Full layout"
 msgstr "Layout konplè"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:19
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:19
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:19
-msgid "Go Back"
-msgstr "Tounen"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:21
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
+msgid "Go back"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:75
 msgid "Go to first page"
@@ -436,6 +448,10 @@ msgstr "Ale nan dènye paj"
 #: ../../../lib/web/src/components/data-table/pagination.tsx:112
 msgid "Go to next page"
 msgstr "Ale nan paj swivan"
+
+#: ../../../lib/web/src/components/data-table/pagination.tsx:99
+msgid "Go to page {pageNumber}"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:84
 msgid "Go to previous page"
@@ -629,12 +645,12 @@ msgstr "Nòmal"
 msgid "Notifications"
 msgstr "Notifikasyon"
 
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:341
+#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:343
 msgid "Notify by default"
 msgstr "Notifye pa default"
 
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:12
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:13
 msgid "Oops! Page Not Found!"
 msgstr "Oops! Paj Pa Jwenn!"
 
@@ -718,6 +734,7 @@ msgid "Remove interest"
 msgstr "Retire enterè"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
+#: ../../../lib/web/src/components/data-table/toolbar.tsx:78
 msgid "Reset"
 msgstr "Reset"
 
@@ -810,6 +827,10 @@ msgstr "Chwazi direksyon sit la"
 #: ../../../lib/web/src/components/config-drawer.tsx:189
 msgid "Select theme preference"
 msgstr "Chwazi preferans tèm"
+
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:95
+msgid "Send again"
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
@@ -904,7 +925,7 @@ msgstr "Tèm"
 msgid "Theme Settings"
 msgstr "Paramèt Tèm"
 
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:443
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Sa pral efase feed sa pèmanan. Nenpòt lektè RSS k ap itilize l pap kapab aksè notifikasyon w yo ankò."
 
@@ -917,10 +938,13 @@ msgid "Toggle columns"
 msgstr "Aktive kolòn"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:227
-msgid "Toggle Right Panel"
-msgstr "Aktive Panèl Dwat"
+msgid "Toggle right panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:312
+msgid "Toggle sidebar"
+msgstr ""
+
 #: ../../../lib/web/src/components/ui/sidebar.tsx:324
 #: ../../../lib/web/src/components/ui/sidebar.tsx:327
 msgid "Toggle Sidebar"
@@ -945,7 +969,7 @@ msgstr "Eseye ajiste tèm rechèch ou"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:125
 #: ../../../lib/web/src/features/errors/general-error.tsx:165
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:15
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:16
 msgid "Try again"
 msgstr "Eseye ankò"
 
@@ -974,7 +998,7 @@ msgstr "Pa ka redireksyone pou login. Tanpri eseye ankò."
 msgid "Unassigned"
 msgstr "Pa asiyen"
 
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:13
 msgid "Unauthorized Access"
 msgstr "Aksè Pa Otorize"
 
@@ -986,7 +1010,7 @@ msgstr "Etazini"
 msgid "Unverified"
 msgstr "Pa verifye"
 
-#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:381
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Itilize feed sa pou abònman notifikasyon aktyèl ou yo"
 
@@ -1007,6 +1031,7 @@ msgid "Verification failed"
 msgstr "Verifikasyon echwe"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
 msgstr "Verifye"
 
@@ -1026,11 +1051,11 @@ msgstr "Wè tout"
 msgid "View all notifications"
 msgstr "Wè tout notifikasyon"
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:13
 msgid "We'll be back online shortly."
 msgstr "Nou ap retounen online byento."
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:9
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:10
 msgid "Website is under maintenance!"
 msgstr "Sit la nan antretyen!"
 

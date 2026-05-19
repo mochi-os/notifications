@@ -25,7 +25,7 @@ msgstr "২৪ ঘণ্টা"
 msgid "Absolute (date and time)"
 msgstr "নিরঙ্কুশ (তারিখ এবং সময়)"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:12
+#: ../../../lib/web/src/features/errors/forbidden.tsx:13
 msgid "Access Forbidden"
 msgstr "অ্যাক্সেস নিষিদ্ধ"
 
@@ -48,6 +48,10 @@ msgstr "অ্যাকাউন্টের ধরন"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Account verified"
 msgstr "অ্যাকাউন্ট যাচাই করা হয়েছে"
+
+#: ../../../lib/web/src/features/accounts/account-add.tsx:193
+msgid "Add"
+msgstr "যোগ করুন"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:117
 msgid "Add a new account"
@@ -82,7 +86,7 @@ msgstr "টিম/অ্যাপ যোগ করুন"
 msgid "Add to existing notifications"
 msgstr "বিদ্যমান নোটিফিকেশনে যোগ করুন"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:378
 msgid "Add to existing subscriptions"
 msgstr "বিদ্যমান সাবস্ক্রিপশনে যোগ করুন"
 
@@ -114,11 +118,11 @@ msgstr "ঊর্ধ্বক্রম"
 msgid "Back"
 msgstr "ফিরে যান"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:21
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
-msgid "Back to Home"
-msgstr "হোমে ফিরে যান"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:23
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:23
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:23
+msgid "Back to home"
+msgstr ""
 
 #: src/features/notification/index.tsx:74
 msgid "Blocked navigation to untrusted link"
@@ -135,7 +139,7 @@ msgstr "আগ্রহ বৃদ্ধি করুন"
 #: ../../../lib/web/src/features/access/access-list.tsx:255
 #: ../../../lib/web/src/features/accounts/account-add.tsx:185
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:391
 msgid "Cancel"
 msgstr "বাতিল করুন"
 
@@ -200,8 +204,8 @@ msgid "Close navigation"
 msgstr "নেভিগেশন বন্ধ করুন"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
-msgid "Close Panel"
-msgstr "প্যানেল বন্ধ করুন"
+msgid "Close panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/header-search.tsx:51
 msgid "Close search"
@@ -254,8 +258,8 @@ msgstr "কপি করুন"
 msgid "Could not load this document. Please try again later."
 msgstr "এই ডকুমেন্টটি লোড করা যায়নি। অনুগ্রহ করে পরে আবার চেষ্টা করুন।"
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:355
+#: src/components/rss-dialog.tsx:402
 msgid "Create feed"
 msgstr "ফিড তৈরি করুন"
 
@@ -288,11 +292,15 @@ msgstr "ডিফল্ট"
 msgid "Default AI account"
 msgstr "ডিফল্ট AI অ্যাকাউন্ট"
 
-#: src/components/rss-dialog.tsx:442
+#: src/components/rss-dialog.tsx:444
 msgid "Delete"
 msgstr "মুছুন"
 
-#: src/components/rss-dialog.tsx:440
+#: src/components/rss-dialog.tsx:326
+msgid "Delete feed"
+msgstr "ফিড মুছুন"
+
+#: src/components/rss-dialog.tsx:442
 msgid "Delete Feed?"
 msgstr "ফিড মুছবেন?"
 
@@ -323,7 +331,7 @@ msgstr "দিক"
 msgid "Displays the mobile sidebar."
 msgstr "মোবাইল সাইডবার প্রদর্শন করে।"
 
-#: src/components/rss-dialog.tsx:427
+#: src/components/rss-dialog.tsx:429
 msgid "Done"
 msgstr "সম্পন্ন"
 
@@ -335,9 +343,13 @@ msgstr "ডাউনলোড"
 msgid "Dyslexia-friendly"
 msgstr "ডিসলেক্সিয়া-বান্ধব"
 
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:367
 msgid "e.g., Feedly, NewsBlur"
 msgstr "যেমন Feedly, NewsBlur"
+
+#: src/components/rss-dialog.tsx:317
+msgid "Edit feed"
+msgstr ""
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -387,7 +399,7 @@ msgstr "ফিড তৈরি করা হয়েছে"
 msgid "Feed deleted"
 msgstr "ফিড মুছে ফেলা হয়েছে"
 
-#: src/components/rss-dialog.tsx:362
+#: src/components/rss-dialog.tsx:364
 msgid "Feed name"
 msgstr "ফিডের নাম"
 
@@ -419,11 +431,11 @@ msgstr "থিম থেকে"
 msgid "Full layout"
 msgstr "সম্পূর্ণ লেআউট"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:19
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:19
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:19
-msgid "Go Back"
-msgstr "ফিরে যান"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:21
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
+msgid "Go back"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:75
 msgid "Go to first page"
@@ -436,6 +448,10 @@ msgstr "শেষ পেজে যান"
 #: ../../../lib/web/src/components/data-table/pagination.tsx:112
 msgid "Go to next page"
 msgstr "পরবর্তী পেজে যান"
+
+#: ../../../lib/web/src/components/data-table/pagination.tsx:99
+msgid "Go to page {pageNumber}"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:84
 msgid "Go to previous page"
@@ -629,12 +645,12 @@ msgstr "সাধারণ"
 msgid "Notifications"
 msgstr "বিজ্ঞপ্তি"
 
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:341
+#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:343
 msgid "Notify by default"
 msgstr "ডিফল্টভাবে অবহিত করুন"
 
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:12
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:13
 msgid "Oops! Page Not Found!"
 msgstr "ওহ! পৃষ্ঠাটি পাওয়া যায়নি!"
 
@@ -718,6 +734,7 @@ msgid "Remove interest"
 msgstr "আগ্রহ সরান"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
+#: ../../../lib/web/src/components/data-table/toolbar.tsx:78
 msgid "Reset"
 msgstr "রিসেট"
 
@@ -810,6 +827,10 @@ msgstr "সাইটের দিক নির্বাচন করুন"
 #: ../../../lib/web/src/components/config-drawer.tsx:189
 msgid "Select theme preference"
 msgstr "থিম পছন্দ নির্বাচন করুন"
+
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:95
+msgid "Send again"
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
@@ -904,7 +925,7 @@ msgstr "থিম"
 msgid "Theme Settings"
 msgstr "থিম সেটিংস"
 
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:443
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "এটি এই ফিডটি স্থায়ীভাবে মুছে ফেলবে। এটি ব্যবহারকারী যেকোনো RSS রিডার আর আপনার বিজ্ঞপ্তিগুলিতে অ্যাক্সেস করতে পারবে না।"
 
@@ -917,10 +938,13 @@ msgid "Toggle columns"
 msgstr "কলাম টগল করুন"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:227
-msgid "Toggle Right Panel"
-msgstr "ডান প্যানেল টগল করুন"
+msgid "Toggle right panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:312
+msgid "Toggle sidebar"
+msgstr ""
+
 #: ../../../lib/web/src/components/ui/sidebar.tsx:324
 #: ../../../lib/web/src/components/ui/sidebar.tsx:327
 msgid "Toggle Sidebar"
@@ -945,7 +969,7 @@ msgstr "আপনার অনুসন্ধান শর্তাবলী স
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:125
 #: ../../../lib/web/src/features/errors/general-error.tsx:165
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:15
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:16
 msgid "Try again"
 msgstr "আবার চেষ্টা করুন"
 
@@ -974,7 +998,7 @@ msgstr "লগইনে রিডাইরেক্ট করা যাচ্ছ
 msgid "Unassigned"
 msgstr "অ্যাসাইন করা হয়নি"
 
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:13
 msgid "Unauthorized Access"
 msgstr "অননুমোদিত অ্যাক্সেস"
 
@@ -986,7 +1010,7 @@ msgstr "যুক্তরাষ্ট্র"
 msgid "Unverified"
 msgstr "যাচাই করা হয়নি"
 
-#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:381
 msgid "Use this feed for your current notification subscriptions"
 msgstr "আপনার বর্তমান নোটিফিকেশন সাবস্ক্রিপশনের জন্য এই ফিড ব্যবহার করুন"
 
@@ -1007,6 +1031,7 @@ msgid "Verification failed"
 msgstr "যাচাইকরণ ব্যর্থ হয়েছে"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
 msgstr "যাচাই করুন"
 
@@ -1026,11 +1051,11 @@ msgstr "সব দেখুন"
 msgid "View all notifications"
 msgstr "সব নোটিফিকেশন দেখুন"
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:13
 msgid "We'll be back online shortly."
 msgstr "আমরা শীঘ্রই আবার অনলাইনে ফিরে আসব।"
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:9
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:10
 msgid "Website is under maintenance!"
 msgstr "ওয়েবসাইট রক্ষণাবেক্ষণাধীন!"
 

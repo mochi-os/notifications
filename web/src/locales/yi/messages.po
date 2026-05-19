@@ -25,7 +25,7 @@ msgstr "24 שעה"
 msgid "Absolute (date and time)"
 msgstr "אַבסאָלוט (דאַטע און צײַט)"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:12
+#: ../../../lib/web/src/features/errors/forbidden.tsx:13
 msgid "Access Forbidden"
 msgstr "צוטריט פֿאַרבאָטן"
 
@@ -48,6 +48,10 @@ msgstr "קאָנטע סאָרט"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Account verified"
 msgstr "קאָנטע באַשטעטיקט"
+
+#: ../../../lib/web/src/features/accounts/account-add.tsx:193
+msgid "Add"
+msgstr "צולייגן"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:117
 msgid "Add a new account"
@@ -82,7 +86,7 @@ msgstr "צולייגן מאַנשאַפֿט/אַפּ"
 msgid "Add to existing notifications"
 msgstr "צולייגן צו עקזיסטירנדיקע נאָטיפֿיקאַציעס"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:378
 msgid "Add to existing subscriptions"
 msgstr "צולייגן צו עקזיסטירנדיקע אַבאָנעמענטן"
 
@@ -114,11 +118,11 @@ msgstr "אַויסשטײַגן"
 msgid "Back"
 msgstr "צוריק"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:21
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
-msgid "Back to Home"
-msgstr "צוריק צו דער היים"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:23
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:23
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:23
+msgid "Back to home"
+msgstr ""
 
 #: src/features/notification/index.tsx:74
 msgid "Blocked navigation to untrusted link"
@@ -135,7 +139,7 @@ msgstr "פֿאַרשטאַרקן אינטערעס"
 #: ../../../lib/web/src/features/access/access-list.tsx:255
 #: ../../../lib/web/src/features/accounts/account-add.tsx:185
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:391
 msgid "Cancel"
 msgstr "אָפּזאָגן"
 
@@ -200,8 +204,8 @@ msgid "Close navigation"
 msgstr "פֿאַרמאַכן נאַוויגאַציע"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
-msgid "Close Panel"
-msgstr "פֿאַרמאַכן פּאַנעל"
+msgid "Close panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/header-search.tsx:51
 msgid "Close search"
@@ -254,8 +258,8 @@ msgstr "קאָפּירן"
 msgid "Could not load this document. Please try again later."
 msgstr "האָט נישט געקאָנט לאָדן דעם דאָקומענט. פּרובירט שפּעטער ווידער."
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:355
+#: src/components/rss-dialog.tsx:402
 msgid "Create feed"
 msgstr "באַשאַפֿן פֿיד"
 
@@ -288,11 +292,15 @@ msgstr "פֿאַרשטאַנדלעך"
 msgid "Default AI account"
 msgstr "פֿאַרשטאַנדלעך AI קאָנטע"
 
-#: src/components/rss-dialog.tsx:442
+#: src/components/rss-dialog.tsx:444
 msgid "Delete"
 msgstr "אויסמעקן"
 
-#: src/components/rss-dialog.tsx:440
+#: src/components/rss-dialog.tsx:326
+msgid "Delete feed"
+msgstr "אויסמעקן פֿיד"
+
+#: src/components/rss-dialog.tsx:442
 msgid "Delete Feed?"
 msgstr "אויסמעקן פֿיד?"
 
@@ -323,7 +331,7 @@ msgstr "ריכטונג"
 msgid "Displays the mobile sidebar."
 msgstr "ווײַזט די מאָבילע סײַדבאַר."
 
-#: src/components/rss-dialog.tsx:427
+#: src/components/rss-dialog.tsx:429
 msgid "Done"
 msgstr "געטאָן"
 
@@ -335,9 +343,13 @@ msgstr "אַראָפּלאָדן"
 msgid "Dyslexia-friendly"
 msgstr "דיסלעקסיע פֿרײַנדלעך"
 
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:367
 msgid "e.g., Feedly, NewsBlur"
 msgstr "למשל, Feedly, NewsBlur"
+
+#: src/components/rss-dialog.tsx:317
+msgid "Edit feed"
+msgstr ""
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -387,7 +399,7 @@ msgstr "פֿיד געשאַפֿן"
 msgid "Feed deleted"
 msgstr "פֿיד אויסגעמעקט"
 
-#: src/components/rss-dialog.tsx:362
+#: src/components/rss-dialog.tsx:364
 msgid "Feed name"
 msgstr "פֿיד־נאָמען"
 
@@ -419,11 +431,11 @@ msgstr "פֿון טעמע"
 msgid "Full layout"
 msgstr "פֿולער אויסשטעל"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:19
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:19
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:19
-msgid "Go Back"
-msgstr "גיין צוריק"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:21
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
+msgid "Go back"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:75
 msgid "Go to first page"
@@ -436,6 +448,10 @@ msgstr "גיין צום לעצטן בלאַט"
 #: ../../../lib/web/src/components/data-table/pagination.tsx:112
 msgid "Go to next page"
 msgstr "גיין צום ווײַטערדיקן בלאַט"
+
+#: ../../../lib/web/src/components/data-table/pagination.tsx:99
+msgid "Go to page {pageNumber}"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:84
 msgid "Go to previous page"
@@ -629,12 +645,12 @@ msgstr "נארמאל"
 msgid "Notifications"
 msgstr "מעלדונגען"
 
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:341
+#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:343
 msgid "Notify by default"
 msgstr "מעלד דורך פֿאַרשטעלונג"
 
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:12
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:13
 msgid "Oops! Page Not Found!"
 msgstr "אױ! זײַטל ניט געפֿונען!"
 
@@ -718,6 +734,7 @@ msgid "Remove interest"
 msgstr "אַראָפּנעמען אינטערעס"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
+#: ../../../lib/web/src/components/data-table/toolbar.tsx:78
 msgid "Reset"
 msgstr "צוריקזעצן"
 
@@ -810,6 +827,10 @@ msgstr "קלײַב זײַטל־ריכטונג"
 #: ../../../lib/web/src/components/config-drawer.tsx:189
 msgid "Select theme preference"
 msgstr "קלײַב טעמע־פּרעפֿערענץ"
+
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:95
+msgid "Send again"
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
@@ -904,7 +925,7 @@ msgstr "טעמע"
 msgid "Theme Settings"
 msgstr "טעמע־אײַנשטעלונגען"
 
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:443
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "דאָס וועט אויף שטענדיק אויסמעקן דעם פֿיד. אַלע RSS־לייענערס וואָס ניצן עס וועלן מער נישט קאָנען צוקומען צו אײַערע נאָטיפֿיקאַציעס."
 
@@ -917,10 +938,13 @@ msgid "Toggle columns"
 msgstr "ביט זײַלן"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:227
-msgid "Toggle Right Panel"
-msgstr "ביט רעכטע פּאַנעל"
+msgid "Toggle right panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:312
+msgid "Toggle sidebar"
+msgstr ""
+
 #: ../../../lib/web/src/components/ui/sidebar.tsx:324
 #: ../../../lib/web/src/components/ui/sidebar.tsx:327
 msgid "Toggle Sidebar"
@@ -945,7 +969,7 @@ msgstr "פּרוּווט באַאַרבעטן אײַערע זוך־אויסדר�
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:125
 #: ../../../lib/web/src/features/errors/general-error.tsx:165
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:15
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:16
 msgid "Try again"
 msgstr "פּרוּווט נאָך אַ מאָל"
 
@@ -974,7 +998,7 @@ msgstr "קאָן נישט רעדירעקטירן צו אַרײַנמעלדונג
 msgid "Unassigned"
 msgstr "אומצוגעטיילט"
 
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:13
 msgid "Unauthorized Access"
 msgstr "נישט אויטאָריזירטער צוטריט"
 
@@ -986,7 +1010,7 @@ msgstr "פֿאַראייניקטע שטאַטן"
 msgid "Unverified"
 msgstr "אומפֿאַריפֿיצירט"
 
-#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:381
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ניצט דעם פֿיד פֿאַר אײַערע איצטיקע נאָטיפֿיקאַציע־אַבאָנעמענטן"
 
@@ -1007,6 +1031,7 @@ msgid "Verification failed"
 msgstr "פֿאַריפֿיקאַציע דורכגעפֿאַלן"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
 msgstr "פֿאַריפֿיצירן"
 
@@ -1026,11 +1051,11 @@ msgstr "זע אַלץ"
 msgid "View all notifications"
 msgstr "זע אַלע נאָטיפֿיקאַציעס"
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:13
 msgid "We'll be back online shortly."
 msgstr "מיר וועלן זײַן צוריק אָנלײַן באַלד."
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:9
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:10
 msgid "Website is under maintenance!"
 msgstr "וועבזײַטל איז אונטער פֿאַרריכטונג!"
 

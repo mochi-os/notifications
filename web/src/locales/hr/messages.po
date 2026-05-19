@@ -25,7 +25,7 @@ msgstr "24 sata"
 msgid "Absolute (date and time)"
 msgstr "Apsolutno (datum i vrijeme)"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:12
+#: ../../../lib/web/src/features/errors/forbidden.tsx:13
 msgid "Access Forbidden"
 msgstr "Pristup zabranjen"
 
@@ -48,6 +48,10 @@ msgstr "Vrsta računa"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Account verified"
 msgstr "Račun verificiran"
+
+#: ../../../lib/web/src/features/accounts/account-add.tsx:193
+msgid "Add"
+msgstr "Dodaj"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:117
 msgid "Add a new account"
@@ -82,7 +86,7 @@ msgstr "Dodaj tim/aplikaciju"
 msgid "Add to existing notifications"
 msgstr "Dodaj postojećim obavijestima"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:378
 msgid "Add to existing subscriptions"
 msgstr "Dodaj postojećim pretplatama"
 
@@ -114,11 +118,11 @@ msgstr "Uzl."
 msgid "Back"
 msgstr "Natrag"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:21
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
-msgid "Back to Home"
-msgstr "Natrag na početnu"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:23
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:23
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:23
+msgid "Back to home"
+msgstr ""
 
 #: src/features/notification/index.tsx:74
 msgid "Blocked navigation to untrusted link"
@@ -135,7 +139,7 @@ msgstr "Pojačaj interes"
 #: ../../../lib/web/src/features/access/access-list.tsx:255
 #: ../../../lib/web/src/features/accounts/account-add.tsx:185
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:391
 msgid "Cancel"
 msgstr "Odustani"
 
@@ -200,8 +204,8 @@ msgid "Close navigation"
 msgstr "Zatvori navigaciju"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
-msgid "Close Panel"
-msgstr "Zatvori panel"
+msgid "Close panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/header-search.tsx:51
 msgid "Close search"
@@ -254,8 +258,8 @@ msgstr "Kopiraj"
 msgid "Could not load this document. Please try again later."
 msgstr "Nije moguće učitati ovaj dokument. Pokušajte ponovno kasnije."
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:355
+#: src/components/rss-dialog.tsx:402
 msgid "Create feed"
 msgstr "Stvori feed"
 
@@ -288,11 +292,15 @@ msgstr "Zadano"
 msgid "Default AI account"
 msgstr "Zadani AI račun"
 
-#: src/components/rss-dialog.tsx:442
+#: src/components/rss-dialog.tsx:444
 msgid "Delete"
 msgstr "Obriši"
 
-#: src/components/rss-dialog.tsx:440
+#: src/components/rss-dialog.tsx:326
+msgid "Delete feed"
+msgstr "Obriši feed"
+
+#: src/components/rss-dialog.tsx:442
 msgid "Delete Feed?"
 msgstr "Obrisati feed?"
 
@@ -323,7 +331,7 @@ msgstr "Smjer"
 msgid "Displays the mobile sidebar."
 msgstr "Prikazuje mobilnu bočnu traku."
 
-#: src/components/rss-dialog.tsx:427
+#: src/components/rss-dialog.tsx:429
 msgid "Done"
 msgstr "Gotovo"
 
@@ -335,9 +343,13 @@ msgstr "Preuzmi"
 msgid "Dyslexia-friendly"
 msgstr "Prilagođeno disleksiji"
 
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:367
 msgid "e.g., Feedly, NewsBlur"
 msgstr "npr., Feedly, NewsBlur"
+
+#: src/components/rss-dialog.tsx:317
+msgid "Edit feed"
+msgstr ""
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -387,7 +399,7 @@ msgstr "Feed stvoren"
 msgid "Feed deleted"
 msgstr "Feed izbrisan"
 
-#: src/components/rss-dialog.tsx:362
+#: src/components/rss-dialog.tsx:364
 msgid "Feed name"
 msgstr "Naziv feeda"
 
@@ -419,11 +431,11 @@ msgstr "Iz teme"
 msgid "Full layout"
 msgstr "Puni izgled"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:19
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:19
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:19
-msgid "Go Back"
-msgstr "Natrag"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:21
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
+msgid "Go back"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:75
 msgid "Go to first page"
@@ -436,6 +448,10 @@ msgstr "Idi na zadnju stranicu"
 #: ../../../lib/web/src/components/data-table/pagination.tsx:112
 msgid "Go to next page"
 msgstr "Idi na sljedeću stranicu"
+
+#: ../../../lib/web/src/components/data-table/pagination.tsx:99
+msgid "Go to page {pageNumber}"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:84
 msgid "Go to previous page"
@@ -629,12 +645,12 @@ msgstr "Normalno"
 msgid "Notifications"
 msgstr "Obavijesti"
 
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:341
+#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:343
 msgid "Notify by default"
 msgstr "Obavijesti prema zadanim postavkama"
 
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:12
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:13
 msgid "Oops! Page Not Found!"
 msgstr "Ups! Stranica nije pronađena!"
 
@@ -718,6 +734,7 @@ msgid "Remove interest"
 msgstr "Ukloni interes"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
+#: ../../../lib/web/src/components/data-table/toolbar.tsx:78
 msgid "Reset"
 msgstr "Resetiraj"
 
@@ -810,6 +827,10 @@ msgstr "Odaberi smjer stranice"
 #: ../../../lib/web/src/components/config-drawer.tsx:189
 msgid "Select theme preference"
 msgstr "Odaberi preferenciju teme"
+
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:95
+msgid "Send again"
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
@@ -904,7 +925,7 @@ msgstr "Tema"
 msgid "Theme Settings"
 msgstr "Postavke teme"
 
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:443
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Ovo će trajno izbrisati ovaj feed. RSS čitači koji ga koriste više neće moći pristupiti vašim obavijestima."
 
@@ -917,10 +938,13 @@ msgid "Toggle columns"
 msgstr "Prebaci stupce"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:227
-msgid "Toggle Right Panel"
-msgstr "Prebaci desnu ploču"
+msgid "Toggle right panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:312
+msgid "Toggle sidebar"
+msgstr ""
+
 #: ../../../lib/web/src/components/ui/sidebar.tsx:324
 #: ../../../lib/web/src/components/ui/sidebar.tsx:327
 msgid "Toggle Sidebar"
@@ -945,7 +969,7 @@ msgstr "Pokušajte prilagoditi pojmove pretrage"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:125
 #: ../../../lib/web/src/features/errors/general-error.tsx:165
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:15
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:16
 msgid "Try again"
 msgstr "Pokušaj ponovno"
 
@@ -974,7 +998,7 @@ msgstr "Nije moguće preusmjeriti na prijavu. Pokušajte ponovno."
 msgid "Unassigned"
 msgstr "Nedodijeljeno"
 
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:13
 msgid "Unauthorized Access"
 msgstr "Neovlašteni pristup"
 
@@ -986,7 +1010,7 @@ msgstr "Sjedinjene Američke Države"
 msgid "Unverified"
 msgstr "Neprovjereno"
 
-#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:381
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Koristi ovaj feed za svoje trenutne pretplate na obavijesti"
 
@@ -1007,6 +1031,7 @@ msgid "Verification failed"
 msgstr "Provjera nije uspjela"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
 msgstr "Provjeri"
 
@@ -1026,11 +1051,11 @@ msgstr "Prikaži sve"
 msgid "View all notifications"
 msgstr "Prikaži sve obavijesti"
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:13
 msgid "We'll be back online shortly."
 msgstr "Uskoro ćemo biti ponovno dostupni."
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:9
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:10
 msgid "Website is under maintenance!"
 msgstr "Web stranica je u održavanju!"
 

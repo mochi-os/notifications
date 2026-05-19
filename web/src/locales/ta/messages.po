@@ -25,7 +25,7 @@ msgstr "24 மணிநேரம்"
 msgid "Absolute (date and time)"
 msgstr "முழுமையானது (தேதி மற்றும் நேரம்)"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:12
+#: ../../../lib/web/src/features/errors/forbidden.tsx:13
 msgid "Access Forbidden"
 msgstr "அணுகல் தடைசெய்யப்பட்டது"
 
@@ -48,6 +48,10 @@ msgstr "கணக்கு வகை"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Account verified"
 msgstr "கணக்கு சரிபார்க்கப்பட்டது"
+
+#: ../../../lib/web/src/features/accounts/account-add.tsx:193
+msgid "Add"
+msgstr "சேர்"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:117
 msgid "Add a new account"
@@ -82,7 +86,7 @@ msgstr "குழு/பயன்பாடு சேர்"
 msgid "Add to existing notifications"
 msgstr "உள்ள அறிவிப்புகளுக்குச் சேர்"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:378
 msgid "Add to existing subscriptions"
 msgstr "உள்ள சந்தாக்களுக்குச் சேர்"
 
@@ -114,11 +118,11 @@ msgstr "ஏறு"
 msgid "Back"
 msgstr "பின்"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:21
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
-msgid "Back to Home"
-msgstr "முகப்புக்கு திரும்பு"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:23
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:23
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:23
+msgid "Back to home"
+msgstr ""
 
 #: src/features/notification/index.tsx:74
 msgid "Blocked navigation to untrusted link"
@@ -135,7 +139,7 @@ msgstr "ஆர்வத்தை அதிகரி"
 #: ../../../lib/web/src/features/access/access-list.tsx:255
 #: ../../../lib/web/src/features/accounts/account-add.tsx:185
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:391
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
@@ -200,8 +204,8 @@ msgid "Close navigation"
 msgstr "வழிசெலுத்தலை மூடு"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
-msgid "Close Panel"
-msgstr "பலகத்தை மூடு"
+msgid "Close panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/header-search.tsx:51
 msgid "Close search"
@@ -254,8 +258,8 @@ msgstr "நகலெடு"
 msgid "Could not load this document. Please try again later."
 msgstr "இந்த ஆவணத்தை ஏற்ற முடியவில்லை. பிறகு மீண்டும் முயற்சிக்கவும்."
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:355
+#: src/components/rss-dialog.tsx:402
 msgid "Create feed"
 msgstr "ஃபீட் உருவாக்கு"
 
@@ -288,11 +292,15 @@ msgstr "இயல்புநிலை"
 msgid "Default AI account"
 msgstr "இயல்புநிலை AI கணக்கு"
 
-#: src/components/rss-dialog.tsx:442
+#: src/components/rss-dialog.tsx:444
 msgid "Delete"
 msgstr "நீக்கு"
 
-#: src/components/rss-dialog.tsx:440
+#: src/components/rss-dialog.tsx:326
+msgid "Delete feed"
+msgstr "ஃபீட்டை நீக்கு"
+
+#: src/components/rss-dialog.tsx:442
 msgid "Delete Feed?"
 msgstr "ஃபீட்டை நீக்கவா?"
 
@@ -323,7 +331,7 @@ msgstr "திசை"
 msgid "Displays the mobile sidebar."
 msgstr "மொபைல் பக்கப்பட்டியைக் காட்டுகிறது."
 
-#: src/components/rss-dialog.tsx:427
+#: src/components/rss-dialog.tsx:429
 msgid "Done"
 msgstr "முடிந்தது"
 
@@ -335,9 +343,13 @@ msgstr "பதிவிறக்கு"
 msgid "Dyslexia-friendly"
 msgstr "டிஸ்லெக்சியாவுக்கு உகந்தது"
 
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:367
 msgid "e.g., Feedly, NewsBlur"
 msgstr "எ.கா. Feedly, NewsBlur"
+
+#: src/components/rss-dialog.tsx:317
+msgid "Edit feed"
+msgstr ""
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -387,7 +399,7 @@ msgstr "ஃபீட் உருவாக்கப்பட்டது"
 msgid "Feed deleted"
 msgstr "ஃபீட் நீக்கப்பட்டது"
 
-#: src/components/rss-dialog.tsx:362
+#: src/components/rss-dialog.tsx:364
 msgid "Feed name"
 msgstr "ஃபீட் பெயர்"
 
@@ -419,11 +431,11 @@ msgstr "தீமிலிருந்து"
 msgid "Full layout"
 msgstr "முழு தளவமைப்பு"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:19
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:19
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:19
-msgid "Go Back"
-msgstr "திரும்பிச் செல்"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:21
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
+msgid "Go back"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:75
 msgid "Go to first page"
@@ -436,6 +448,10 @@ msgstr "கடைசி பக்கத்திற்குச் செல்"
 #: ../../../lib/web/src/components/data-table/pagination.tsx:112
 msgid "Go to next page"
 msgstr "அடுத்த பக்கத்திற்குச் செல்"
+
+#: ../../../lib/web/src/components/data-table/pagination.tsx:99
+msgid "Go to page {pageNumber}"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:84
 msgid "Go to previous page"
@@ -629,12 +645,12 @@ msgstr "சாதாரணம்"
 msgid "Notifications"
 msgstr "அறிவிப்புகள்"
 
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:341
+#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:343
 msgid "Notify by default"
 msgstr "இயல்பாக அறிவிக்கவும்"
 
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:12
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:13
 msgid "Oops! Page Not Found!"
 msgstr "அய்யோ! பக்கம் கிடைக்கவில்லை!"
 
@@ -718,6 +734,7 @@ msgid "Remove interest"
 msgstr "ஆர்வத்தை அகற்று"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
+#: ../../../lib/web/src/components/data-table/toolbar.tsx:78
 msgid "Reset"
 msgstr "மீட்டமை"
 
@@ -810,6 +827,10 @@ msgstr "தள திசையை தேர்ந்தெடு"
 #: ../../../lib/web/src/components/config-drawer.tsx:189
 msgid "Select theme preference"
 msgstr "தீம் விருப்பத்தை தேர்ந்தெடு"
+
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:95
+msgid "Send again"
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
@@ -904,7 +925,7 @@ msgstr "தீம்"
 msgid "Theme Settings"
 msgstr "தீம் அமைப்புகள்"
 
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:443
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "இது இந்த ஊட்டத்தை நிரந்தரமாக நீக்கிவிடும். அதை பயன்படுத்தும் எந்த RSS படிப்பான்களும் இனி உங்கள் அறிவிப்புகளை அணுக முடியாது."
 
@@ -917,10 +938,13 @@ msgid "Toggle columns"
 msgstr "நிரல்களை மாற்று"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:227
-msgid "Toggle Right Panel"
-msgstr "வலது பேனலை மாற்று"
+msgid "Toggle right panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:312
+msgid "Toggle sidebar"
+msgstr ""
+
 #: ../../../lib/web/src/components/ui/sidebar.tsx:324
 #: ../../../lib/web/src/components/ui/sidebar.tsx:327
 msgid "Toggle Sidebar"
@@ -945,7 +969,7 @@ msgstr "உங்கள் தேடல் சொற்களை சரிசெ
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:125
 #: ../../../lib/web/src/features/errors/general-error.tsx:165
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:15
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:16
 msgid "Try again"
 msgstr "மீண்டும் முயற்சி செய்"
 
@@ -974,7 +998,7 @@ msgstr "உள்நுழைவுக்கு திருப்பி வி�
 msgid "Unassigned"
 msgstr "ஒதுக்கப்படாதது"
 
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:13
 msgid "Unauthorized Access"
 msgstr "அனுமதிக்கப்படாத அணுகல்"
 
@@ -986,7 +1010,7 @@ msgstr "ஐக்கிய அமெரிக்கா"
 msgid "Unverified"
 msgstr "சரிபார்க்கப்படாதது"
 
-#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:381
 msgid "Use this feed for your current notification subscriptions"
 msgstr "உங்கள் தற்போதைய அறிவிப்பு சந்தாக்களுக்கு இந்த ஃபீட்டை பயன்படுத்து"
 
@@ -1007,6 +1031,7 @@ msgid "Verification failed"
 msgstr "சரிபார்ப்பு தோல்வியடைந்தது"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
 msgstr "சரிபார்"
 
@@ -1026,11 +1051,11 @@ msgstr "அனைத்தையும் காட்டு"
 msgid "View all notifications"
 msgstr "அனைத்து அறிவிப்புகளையும் காட்டு"
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:13
 msgid "We'll be back online shortly."
 msgstr "நாங்கள் விரைவில் ஆன்லைனுக்கு திரும்புவோம்."
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:9
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:10
 msgid "Website is under maintenance!"
 msgstr "இணையதளம் பராமரிப்பில் உள்ளது!"
 

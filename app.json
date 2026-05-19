@@ -15,7 +15,12 @@
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"},
-		"downgrade": {"function": "database_downgrade"}
+		"downgrade": {"function": "database_downgrade"},
+		"replicate": {
+			"exclude": {
+				"tables": ["push_pending"]
+			}
+		}
 	},
 
 	"actions": {
@@ -85,6 +90,7 @@
 		"topic/set_category": {"function": "function_topic_set_category"},
 		"topic/delete": {"function": "function_topic_delete"},
 		"destinations/available": {"function": "function_destinations_available"},
+		"destinations/add": {"function": "function_destinations_add", "permission": "notifications/send"},
 		"accounts/vapid": {"function": "function_accounts_vapid", "permission": "notifications/send"},
 		"accounts/list": {"function": "function_accounts_list", "permission": "notifications/send"},
 		"accounts/add": {"function": "function_accounts_add", "permission": "notifications/send"},

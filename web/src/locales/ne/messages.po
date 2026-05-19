@@ -25,7 +25,7 @@ msgstr "२४ घण्टा"
 msgid "Absolute (date and time)"
 msgstr "निरपेक्ष (मिति र समय)"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:12
+#: ../../../lib/web/src/features/errors/forbidden.tsx:13
 msgid "Access Forbidden"
 msgstr "पहुँच निषेधित"
 
@@ -48,6 +48,10 @@ msgstr "खाता प्रकार"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Account verified"
 msgstr "खाता प्रमाणीकरण गरियो"
+
+#: ../../../lib/web/src/features/accounts/account-add.tsx:193
+msgid "Add"
+msgstr "थप्नुहोस्"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:117
 msgid "Add a new account"
@@ -82,7 +86,7 @@ msgstr "टिम/एप थप्नुहोस्"
 msgid "Add to existing notifications"
 msgstr "अवस्थित सूचनाहरूमा थप्नुहोस्"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:378
 msgid "Add to existing subscriptions"
 msgstr "अवस्थित सदस्यतामा थप्नुहोस्"
 
@@ -114,11 +118,11 @@ msgstr "बढ्दो"
 msgid "Back"
 msgstr "पछाडि"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:21
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
-msgid "Back to Home"
-msgstr "गृहपृष्ठमा फर्कनुहोस्"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:23
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:23
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:23
+msgid "Back to home"
+msgstr ""
 
 #: src/features/notification/index.tsx:74
 msgid "Blocked navigation to untrusted link"
@@ -135,7 +139,7 @@ msgstr "रुचि बढाउनुहोस्"
 #: ../../../lib/web/src/features/access/access-list.tsx:255
 #: ../../../lib/web/src/features/accounts/account-add.tsx:185
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:391
 msgid "Cancel"
 msgstr "रद्द गर्नुहोस्"
 
@@ -200,8 +204,8 @@ msgid "Close navigation"
 msgstr "नेभिगेसन बन्द गर्नुहोस्"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
-msgid "Close Panel"
-msgstr "प्यानल बन्द गर्नुहोस्"
+msgid "Close panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/header-search.tsx:51
 msgid "Close search"
@@ -254,8 +258,8 @@ msgstr "प्रतिलिपि"
 msgid "Could not load this document. Please try again later."
 msgstr "यो कागजात लोड गर्न सकिएन। कृपया पछि फेरि प्रयास गर्नुहोस्।"
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:355
+#: src/components/rss-dialog.tsx:402
 msgid "Create feed"
 msgstr "फिड सिर्जना गर्नुहोस्"
 
@@ -288,11 +292,15 @@ msgstr "पूर्वनिर्धारित"
 msgid "Default AI account"
 msgstr "पूर्वनिर्धारित AI खाता"
 
-#: src/components/rss-dialog.tsx:442
+#: src/components/rss-dialog.tsx:444
 msgid "Delete"
 msgstr "मेटाउनुहोस्"
 
-#: src/components/rss-dialog.tsx:440
+#: src/components/rss-dialog.tsx:326
+msgid "Delete feed"
+msgstr "फिड मेटाउनुहोस्"
+
+#: src/components/rss-dialog.tsx:442
 msgid "Delete Feed?"
 msgstr "फिड मेटाउने?"
 
@@ -323,7 +331,7 @@ msgstr "दिशा"
 msgid "Displays the mobile sidebar."
 msgstr "मोबाइल साइडबार देखाउँछ।"
 
-#: src/components/rss-dialog.tsx:427
+#: src/components/rss-dialog.tsx:429
 msgid "Done"
 msgstr "सम्पन्न"
 
@@ -335,9 +343,13 @@ msgstr "डाउनलोड"
 msgid "Dyslexia-friendly"
 msgstr "डिस्लेक्सिया-मैत्रीपूर्ण"
 
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:367
 msgid "e.g., Feedly, NewsBlur"
 msgstr "जस्तै Feedly, NewsBlur"
+
+#: src/components/rss-dialog.tsx:317
+msgid "Edit feed"
+msgstr ""
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -387,7 +399,7 @@ msgstr "फिड सिर्जना भयो"
 msgid "Feed deleted"
 msgstr "फिड मेटाइयो"
 
-#: src/components/rss-dialog.tsx:362
+#: src/components/rss-dialog.tsx:364
 msgid "Feed name"
 msgstr "फिड नाम"
 
@@ -419,11 +431,11 @@ msgstr "थिमबाट"
 msgid "Full layout"
 msgstr "पूर्ण लेआउट"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:19
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:19
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:19
-msgid "Go Back"
-msgstr "फर्कनुहोस्"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:21
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
+msgid "Go back"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:75
 msgid "Go to first page"
@@ -436,6 +448,10 @@ msgstr "अन्तिम पृष्ठमा जानुहोस्"
 #: ../../../lib/web/src/components/data-table/pagination.tsx:112
 msgid "Go to next page"
 msgstr "अर्को पृष्ठमा जानुहोस्"
+
+#: ../../../lib/web/src/components/data-table/pagination.tsx:99
+msgid "Go to page {pageNumber}"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:84
 msgid "Go to previous page"
@@ -629,12 +645,12 @@ msgstr "सामान्य"
 msgid "Notifications"
 msgstr "सूचनाहरू"
 
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:341
+#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:343
 msgid "Notify by default"
 msgstr "पूर्वनिर्धारित रूपमा सूचित गर्नुहोस्"
 
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:12
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:13
 msgid "Oops! Page Not Found!"
 msgstr "ओहो! पृष्ठ भेटिएन!"
 
@@ -718,6 +734,7 @@ msgid "Remove interest"
 msgstr "रुचि हटाउनुहोस्"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
+#: ../../../lib/web/src/components/data-table/toolbar.tsx:78
 msgid "Reset"
 msgstr "रिसेट गर्नुहोस्"
 
@@ -810,6 +827,10 @@ msgstr "साइट दिशा छान्नुहोस्"
 #: ../../../lib/web/src/components/config-drawer.tsx:189
 msgid "Select theme preference"
 msgstr "थिम प्राथमिकता छान्नुहोस्"
+
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:95
+msgid "Send again"
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
@@ -904,7 +925,7 @@ msgstr "थिम"
 msgid "Theme Settings"
 msgstr "थिम सेटिङहरू"
 
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:443
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "यसले यस फिडलाई स्थायी रूपमा मेटाउनेछ। यसलाई प्रयोग गर्ने कुनै पनि RSS रिडरहरूले अब तपाईंको सूचनाहरूमा पहुँच पाउन सक्ने छैनन्।"
 
@@ -917,10 +938,13 @@ msgid "Toggle columns"
 msgstr "स्तम्भहरू टगल गर्नुहोस्"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:227
-msgid "Toggle Right Panel"
-msgstr "दायाँ प्यानल टगल गर्नुहोस्"
+msgid "Toggle right panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:312
+msgid "Toggle sidebar"
+msgstr ""
+
 #: ../../../lib/web/src/components/ui/sidebar.tsx:324
 #: ../../../lib/web/src/components/ui/sidebar.tsx:327
 msgid "Toggle Sidebar"
@@ -945,7 +969,7 @@ msgstr "आफ्ना खोज सर्तहरू समायोजन �
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:125
 #: ../../../lib/web/src/features/errors/general-error.tsx:165
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:15
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:16
 msgid "Try again"
 msgstr "फेरि प्रयास गर्नुहोस्"
 
@@ -974,7 +998,7 @@ msgstr "लगइनमा रिडाइरेक्ट गर्न असम
 msgid "Unassigned"
 msgstr "नतोकिएको"
 
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:13
 msgid "Unauthorized Access"
 msgstr "अनधिकृत पहुँच"
 
@@ -986,7 +1010,7 @@ msgstr "संयुक्त राज्य अमेरिका"
 msgid "Unverified"
 msgstr "अप्रमाणित"
 
-#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:381
 msgid "Use this feed for your current notification subscriptions"
 msgstr "आफ्नो हालको सूचना सदस्यताहरूका लागि यो फिड प्रयोग गर्नुहोस्"
 
@@ -1007,6 +1031,7 @@ msgid "Verification failed"
 msgstr "प्रमाणीकरण असफल भयो"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
 msgstr "प्रमाणित गर्नुहोस्"
 
@@ -1026,11 +1051,11 @@ msgstr "सबै हेर्नुहोस्"
 msgid "View all notifications"
 msgstr "सबै सूचना हेर्नुहोस्"
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:13
 msgid "We'll be back online shortly."
 msgstr "हामी छिट्टै फेरि अनलाइन हुनेछौँ।"
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:9
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:10
 msgid "Website is under maintenance!"
 msgstr "वेबसाइट मर्मतसम्भारमा छ!"
 

@@ -491,6 +491,17 @@ def _add_destination_to_categories(type, target):
 			c["id"], type, target
 		)
 
+# function_destinations_add(context, type, target) -> bool: wire a
+# (type, target) destination into every user category. Called by the
+# settings app after adding an account when "add to existing
+# subscriptions" is on; previously named add_destination_to_all but
+# renamed during the categories redesign.
+def function_destinations_add(context, type="", target=""):
+	if not type or not target:
+		return False
+	_add_destination_to_categories(type, str(target))
+	return True
+
 # RSS feed management endpoints
 
 def action_rss_list(a):

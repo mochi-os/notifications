@@ -25,7 +25,7 @@ msgstr "٢٤ کاتژمێر"
 msgid "Absolute (date and time)"
 msgstr "ڕاستەوخۆ (بەروار و کات)"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:12
+#: ../../../lib/web/src/features/errors/forbidden.tsx:13
 msgid "Access Forbidden"
 msgstr "دەستڕاگەیشتن قەدەغەیە"
 
@@ -48,6 +48,10 @@ msgstr "جۆری هەژمار"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Account verified"
 msgstr "هەژمار پشتڕاست کرایەوە"
+
+#: ../../../lib/web/src/features/accounts/account-add.tsx:193
+msgid "Add"
+msgstr "زیادکردن"
 
 #: ../../../lib/web/src/features/accounts/account-add.tsx:117
 msgid "Add a new account"
@@ -82,7 +86,7 @@ msgstr "زیادکردنی تیم/ئەپ"
 msgid "Add to existing notifications"
 msgstr "زیادکردن بۆ ئاگادارکردنەوە هەبووەکان"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:378
 msgid "Add to existing subscriptions"
 msgstr "زیادکردن بۆ بەشداری هەبووەکان"
 
@@ -114,11 +118,11 @@ msgstr "سەرەوە"
 msgid "Back"
 msgstr "گەڕانەوە"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:21
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
-msgid "Back to Home"
-msgstr "گەڕانەوە بۆ ماڵەوە"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:23
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:23
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:23
+msgid "Back to home"
+msgstr ""
 
 #: src/features/notification/index.tsx:74
 msgid "Blocked navigation to untrusted link"
@@ -135,7 +139,7 @@ msgstr "بەهێزکردنی بایەخ"
 #: ../../../lib/web/src/features/access/access-list.tsx:255
 #: ../../../lib/web/src/features/accounts/account-add.tsx:185
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:86
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:391
 msgid "Cancel"
 msgstr "هەڵوەشاندنەوە"
 
@@ -200,8 +204,8 @@ msgid "Close navigation"
 msgstr "داخستنی ڕێدۆزی"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:254
-msgid "Close Panel"
-msgstr "داخستنی پانێل"
+msgid "Close panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/header-search.tsx:51
 msgid "Close search"
@@ -254,8 +258,8 @@ msgstr "کۆپیکردن"
 msgid "Could not load this document. Please try again later."
 msgstr "ئەم دۆکومێنتە نەخوێنرایەوە. تکایە دواتر هەوڵ بدە."
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:355
+#: src/components/rss-dialog.tsx:402
 msgid "Create feed"
 msgstr "دروستکردنی فید"
 
@@ -288,11 +292,15 @@ msgstr "بنەڕەت"
 msgid "Default AI account"
 msgstr "هەژماری بنەڕەتی AI"
 
-#: src/components/rss-dialog.tsx:442
+#: src/components/rss-dialog.tsx:444
 msgid "Delete"
 msgstr "سڕینەوە"
 
-#: src/components/rss-dialog.tsx:440
+#: src/components/rss-dialog.tsx:326
+msgid "Delete feed"
+msgstr "سڕینەوەی فید"
+
+#: src/components/rss-dialog.tsx:442
 msgid "Delete Feed?"
 msgstr "فید بسڕەوە؟"
 
@@ -323,7 +331,7 @@ msgstr "ئاراستە"
 msgid "Displays the mobile sidebar."
 msgstr "لاتەنیشتی مۆبایل پیشان دەدات."
 
-#: src/components/rss-dialog.tsx:427
+#: src/components/rss-dialog.tsx:429
 msgid "Done"
 msgstr "تەواوبوو"
 
@@ -335,9 +343,13 @@ msgstr "داگرتن"
 msgid "Dyslexia-friendly"
 msgstr "لەگەڵ دیسلێکسیا گونجاو"
 
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:367
 msgid "e.g., Feedly, NewsBlur"
 msgstr "بۆ نموونە، Feedly, NewsBlur"
+
+#: src/components/rss-dialog.tsx:317
+msgid "Edit feed"
+msgstr ""
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -387,7 +399,7 @@ msgstr "Feed دروست کرا"
 msgid "Feed deleted"
 msgstr "Feed سڕایەوە"
 
-#: src/components/rss-dialog.tsx:362
+#: src/components/rss-dialog.tsx:364
 msgid "Feed name"
 msgstr "ناوی Feed"
 
@@ -419,11 +431,11 @@ msgstr "لە ڕووکارەوە"
 msgid "Full layout"
 msgstr "ڕێکخستنی تەواو"
 
-#: ../../../lib/web/src/features/errors/forbidden.tsx:19
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:19
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:19
-msgid "Go Back"
-msgstr "بگەڕێوە"
+#: ../../../lib/web/src/features/errors/forbidden.tsx:21
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:21
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:21
+msgid "Go back"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:75
 msgid "Go to first page"
@@ -436,6 +448,10 @@ msgstr "بڕۆ بۆ کۆتا پەڕە"
 #: ../../../lib/web/src/components/data-table/pagination.tsx:112
 msgid "Go to next page"
 msgstr "بڕۆ بۆ پەڕەی دواتر"
+
+#: ../../../lib/web/src/components/data-table/pagination.tsx:99
+msgid "Go to page {pageNumber}"
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/pagination.tsx:84
 msgid "Go to previous page"
@@ -629,12 +645,12 @@ msgstr "ئاسایی"
 msgid "Notifications"
 msgstr "ئاگادارکردنەوەکان"
 
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:341
+#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:343
 msgid "Notify by default"
 msgstr "ئاگادارکردنەوە بەشێوەی بنەڕەت"
 
-#: ../../../lib/web/src/features/errors/not-found-error.tsx:12
+#: ../../../lib/web/src/features/errors/not-found-error.tsx:13
 msgid "Oops! Page Not Found!"
 msgstr "ئۆه! پەڕە نەدۆزرایەوە!"
 
@@ -718,6 +734,7 @@ msgid "Remove interest"
 msgstr "لابردنی بەرژەوەندی"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
+#: ../../../lib/web/src/components/data-table/toolbar.tsx:78
 msgid "Reset"
 msgstr "ڕێکخستنەوە"
 
@@ -810,6 +827,10 @@ msgstr "ئاراستەی ماڵپەڕ هەڵبژێرە"
 #: ../../../lib/web/src/components/config-drawer.tsx:189
 msgid "Select theme preference"
 msgstr "هەڵبژاردەی ڕووکار هەڵبژێرە"
+
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:95
+msgid "Send again"
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
@@ -904,7 +925,7 @@ msgstr "ڕووکار"
 msgid "Theme Settings"
 msgstr "ڕێکخستنەکانی ڕووکار"
 
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:443
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ئەمە ئەم فیدە بە هەمیشەیی دەسڕێتەوە. هەر خوێنەرێکی RSS کە بەکاری دەهێنێت، چیتر ناتوانێت دەستڕابگاتە ئاگادارکردنەوەکانت."
 
@@ -917,10 +938,13 @@ msgid "Toggle columns"
 msgstr "گۆڕینی ستوونەکان"
 
 #: ../../../lib/web/src/components/layout/right-panel.tsx:227
-msgid "Toggle Right Panel"
-msgstr "گۆڕینی پانێڵی ڕاست"
+msgid "Toggle right panel"
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:312
+msgid "Toggle sidebar"
+msgstr ""
+
 #: ../../../lib/web/src/components/ui/sidebar.tsx:324
 #: ../../../lib/web/src/components/ui/sidebar.tsx:327
 msgid "Toggle Sidebar"
@@ -945,7 +969,7 @@ msgstr "هەوڵبدە وشەکانی گەڕانت ڕێکبخەیت"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:125
 #: ../../../lib/web/src/features/errors/general-error.tsx:165
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:15
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:16
 msgid "Try again"
 msgstr "دیسان هەوڵبدە"
 
@@ -974,7 +998,7 @@ msgstr "ناتوانرێت ڕووبکات بۆ چوونەژوورەوە. تکا�
 msgid "Unassigned"
 msgstr "دیارینەکراو"
 
-#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:12
+#: ../../../lib/web/src/features/errors/unauthorized-error.tsx:13
 msgid "Unauthorized Access"
 msgstr "دەستڕاگەیشتنی ڕێگەپێنەدراو"
 
@@ -986,7 +1010,7 @@ msgstr "ویلایەتە یەکگرتووەکان"
 msgid "Unverified"
 msgstr "پشتڕاستنەکراوەتەوە"
 
-#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:381
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ئەم فیدە بەکاربێنە بۆ بەشدارییەکانی ئاگادارکردنەوەی ئێستات"
 
@@ -1007,6 +1031,7 @@ msgid "Verification failed"
 msgstr "پشتڕاستکردنەوە سەرکەوتوو نەبوو"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
+#: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
 msgstr "پشتڕاستبکە"
 
@@ -1026,11 +1051,11 @@ msgstr "هەمووی ببینە"
 msgid "View all notifications"
 msgstr "هەموو ئاگادارکردنەوەکان ببینە"
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:12
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:13
 msgid "We'll be back online shortly."
 msgstr "بە زووترین کات دەگەڕێینەوە سەرهێڵ."
 
-#: ../../../lib/web/src/features/errors/maintenance-error.tsx:9
+#: ../../../lib/web/src/features/errors/maintenance-error.tsx:10
 msgid "Website is under maintenance!"
 msgstr "ماڵپەڕ لە ژێر چاکسازییە!"
 
