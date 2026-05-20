@@ -2,7 +2,7 @@
 // Copyright Alistair Cunningham 2025-2026
 
 {
-	"version": "3.21",
+	"version": "3.22",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -11,7 +11,7 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 15,
+		"schema": 17,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"},

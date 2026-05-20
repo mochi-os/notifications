@@ -33,15 +33,15 @@ def database_create():
 	)""")
 
 	mochi.db.execute("""create table if not exists topics (
-		id integer primary key,
 		app text not null,
 		topic text not null default '',
 		object text not null default '',
+		name text not null default '',
 		label text not null default '',
 		category integer,
-		created integer not null
+		created integer not null,
+		primary key (app, topic, object)
 	)""")
-	mochi.db.execute("create unique index if not exists topics_app_topic_object on topics(app, topic, object)")
 
 	mochi.db.execute("""create table if not exists destinations (
 		category integer not null,
@@ -238,6 +238,74 @@ def database_upgrade(to_version):
 				primary key (account, event_id)
 			)""")
 			mochi.db.execute("create index if not exists push_pending_created on push_pending(account, created)")
+
+	if to_version == 16:
+		# Per-object preferences carry the object's display name. Calling apps
+		# pass it via mochi.notification.send (e.g. wikis page title, chat thread
+		# name) since the notifications app can't reach into per-app DBs to
+		# resolve them. Existing rows get filled lazily on next send.
+		cols = [r["name"] for r in mochi.db.table("topics")]
+		if "name" not in cols:
+			mochi.db.execute("alter table topics add column name text not null default ''")
+
+		# Collapse leftover per-object preference rows for apps that now send
+		# class-level (object=""). Market formerly forwarded synthetic IDs
+		# (order-N, chargeback-N, …) and staff also had stray per-object rows
+		# from an older revision. For each (app, topic), keep the most-recent
+		# row's category and remove the per-object duplicates.
+		for app in ["market", "staff"]:
+			rows = mochi.db.rows(
+				"select topic, category, created from topics where app = ? and object != '' order by created desc",
+				app
+			) or []
+			seen = {}
+			for r in rows:
+				if r["topic"] not in seen:
+					seen[r["topic"]] = r["category"]
+			mochi.db.execute("delete from topics where app = ? and object != ''", app)
+			now = mochi.time.now()
+			for topic in seen:
+				category = seen[topic]
+				existing = mochi.db.row(
+					"select 1 from topics where app = ? and topic = ? and object = ''",
+					app, topic
+				)
+				if existing:
+					mochi.db.execute(
+						"update topics set category = ? where app = ? and topic = ? and object = ''",
+						category, app, topic
+					)
+				else:
+					mochi.db.execute(
+						"insert into topics (app, topic, object, name, label, category, created) values (?, ?, '', '', '', ?, ?)",
+						app, topic, category, now
+					)
+
+	if to_version == 17:
+		# Drop the per-host autoincrement `id` column on topics. Each host
+		# assigned its own id to the same logical (app, topic, object), so
+		# UPDATE/DELETE statements keyed on id replicated as no-ops on peer
+		# hosts (CLAUDE.md anti-pattern: integer-PK cross-references on
+		# shared state). v16 made the SQL key on (app, topic, object) so the
+		# replicated execs landed correctly; this migration finishes the job
+		# by promoting that tuple to the actual primary key and removing the
+		# redundant id column.
+		cols = [r["name"] for r in mochi.db.table("topics")]
+		if "id" in cols:
+			mochi.db.execute("""create table topics_new (
+				app text not null,
+				topic text not null default '',
+				object text not null default '',
+				name text not null default '',
+				label text not null default '',
+				category integer,
+				created integer not null,
+				primary key (app, topic, object)
+			)""")
+			mochi.db.execute("""insert into topics_new (app, topic, object, name, label, category, created)
+				select app, topic, object, name, label, category, created from topics""")
+			mochi.db.execute("drop table topics")
+			mochi.db.execute("alter table topics_new rename to topics")
 
 # Expiry: 30 days unread, 7 days read
 def function_expire(context):
@@ -578,7 +646,7 @@ def action_rss_update(a):
 
 # Topic service functions
 
-def function_send(context, topic, object="", title="", body="", url="", label="", sender="", count=None):
+def function_send(context, topic, object="", title="", body="", url="", label="", name="", sender="", count=None):
 	"""Send a notification from the calling app.
 
 	Topics are keyed by (app, topic, object) and created lazily. On first send
@@ -587,6 +655,13 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	caller passes a human-readable `label` resolved from its own labels (so the
 	settings UI can group and display topics in the user's language); the
 	stored label is refreshed on every send to track language changes.
+
+	`name` is the object's display name (page title, conversation name, …) for
+	per-object topics whose object isn't a global entity. Optional — feeds /
+	forums / projects key on entity fingerprints and fall back to
+	mochi.entity.name(); apps with their own object IDs (wikis pages, chat
+	threads) must supply it explicitly. Refreshed on every send so renames
+	propagate.
 
 	Routing:
 	  1. Topic row's category = 0 ("No notifications") → drop entirely.
@@ -614,25 +689,30 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 		return 0
 
 	row = mochi.db.row(
-		"select id, label, category from topics where app = ? and topic = ? and object = ?",
+		"select label, name, category from topics where app = ? and topic = ? and object = ?",
 		app, topic, object
 	)
 	if not row:
 		default = mochi.db.row('select id from categories where "default" = 1')
 		cat_val = default["id"] if default else None
 		mochi.db.execute(
-			"insert into topics (app, topic, object, label, category, created) values (?, ?, ?, ?, ?, ?)",
-			app, topic, object, label, cat_val, mochi.time.now()
+			"insert into topics (app, topic, object, label, name, category, created) values (?, ?, ?, ?, ?, ?, ?)",
+			app, topic, object, label, name, cat_val, mochi.time.now()
 		)
 		category = cat_val
 	else:
 		category = row["category"]
-		# Refresh the stored label if the caller passed one and it differs
-		# (handles language switches and per-app label updates).
+		# Refresh stored label/name if the caller passed one and it differs
+		# (handles language switches, page renames, etc.).
 		if label and label != row["label"]:
 			mochi.db.execute(
-				"update topics set label = ? where id = ?",
-				label, row["id"]
+				"update topics set label = ? where app = ? and topic = ? and object = ?",
+				label, app, topic, object
+			)
+		if name and name != row["name"]:
+			mochi.db.execute(
+				"update topics set name = ? where app = ? and topic = ? and object = ?",
+				name, app, topic, object
 			)
 
 	# id 0 = No notifications: drop
@@ -720,20 +800,15 @@ def function_topics(context, object=None):
 		return mochi.db.rows("select * from topics where app = ? and object = ?", app, object) or []
 	return mochi.db.rows("select * from topics where app = ?", app) or []
 
-def function_topic_remove(context, id):
+def function_topic_remove(context, topic="", object=""):
 	"""Remove a topic row belonging to the calling app."""
 	app = context.get("app", "")
-	if not app or not id:
+	if not app:
 		return False
-
-	exists = mochi.db.exists(
-		"select 1 from topics where id = ? and app = ?",
-		id, app
+	mochi.db.execute(
+		"delete from topics where app = ? and topic = ? and object = ?",
+		app, topic, object
 	)
-	if not exists:
-		return False
-
-	mochi.db.execute("delete from topics where id = ?", id)
 	return True
 
 # Permission-gated function for apps to list categories (for pickers shown in app UI).
@@ -903,7 +978,10 @@ def _apply_destinations(category_id, destinations):
 # Topic helpers — used by settings page and notification dropdown
 
 def function_topic_list(context):
-	"""List every topic row with app name and object name resolved."""
+	"""List every topic row with app name resolved. The object's display name
+	is the stored `name` (set by the calling app on send); for objects that
+	are global entities we fall back to mochi.entity.name() so feeds/forums/
+	projects keep working without each app having to supply a name."""
 	rows = mochi.db.rows("select * from topics order by created desc") or []
 	if not rows:
 		return []
@@ -920,24 +998,31 @@ def function_topic_list(context):
 			row["app_name"] = server_name
 		else:
 			row["app_name"] = app_names.get(row["app"], row["app"].capitalize())
-		if row["object"] and mochi.text.valid(row["object"], "entity"):
-			row["object_name"] = mochi.entity.name(row["object"]) or ""
-		else:
-			row["object_name"] = ""
+		if not row.get("name") and row["object"] and mochi.text.valid(row["object"], "entity"):
+			row["name"] = mochi.entity.name(row["object"]) or ""
 		result.append(row)
 	return result
 
-def function_topic_set_category(context, id=0, category=None):
-	if not id:
+def function_topic_set_category(context, app="", topic="", object="", category=None):
+	if not app:
 		return False
-	if not mochi.db.exists("select 1 from topics where id = ?", id):
+	if not mochi.db.exists(
+		"select 1 from topics where app = ? and topic = ? and object = ?",
+		app, topic, object
+	):
 		return False
 	if category == None:
-		mochi.db.execute("update topics set category = null where id = ?", id)
+		mochi.db.execute(
+			"update topics set category = null where app = ? and topic = ? and object = ?",
+			app, topic, object
+		)
 	else:
 		if not mochi.db.exists("select 1 from categories where id = ?", int(category)):
 			return False
-		mochi.db.execute("update topics set category = ? where id = ?", int(category), id)
+		mochi.db.execute(
+			"update topics set category = ? where app = ? and topic = ? and object = ?",
+			int(category), app, topic, object
+		)
 	return True
 
 def function_topic_lookup(context, app="", topic="", object=""):
@@ -946,17 +1031,23 @@ def function_topic_lookup(context, app="", topic="", object=""):
 	if not app:
 		return None
 	return mochi.db.row(
-		"select id, app, topic, object, label, category from topics where app = ? and topic = ? and object = ?",
+		"select app, topic, object, label, name, category from topics where app = ? and topic = ? and object = ?",
 		app, topic, object
 	)
 
-def function_topic_delete(context, id=0):
-	"""Delete any topic row by id. Used by the settings page."""
-	if not id:
+def function_topic_delete(context, app="", topic="", object=""):
+	"""Delete any topic row by (app, topic, object). Used by the settings page."""
+	if not app:
 		return False
-	if not mochi.db.exists("select 1 from topics where id = ?", id):
+	if not mochi.db.exists(
+		"select 1 from topics where app = ? and topic = ? and object = ?",
+		app, topic, object
+	):
 		return False
-	mochi.db.execute("delete from topics where id = ?", id)
+	mochi.db.execute(
+		"delete from topics where app = ? and topic = ? and object = ?",
+		app, topic, object
+	)
 	return True
 
 def function_destinations_available(context):
@@ -1022,14 +1113,16 @@ def action_topics_list(a):
 	return {"data": function_topic_list({})}
 
 def action_topics_set_category(a):
-	id = a.input("id", "").strip()
-	if not id or not id.isdigit():
-		return a.error.label(400, "errors.invalid_id")
+	app = a.input("app", "").strip()
+	topic = a.input("topic", "").strip()
+	object = a.input("object", "")
+	if not app:
+		return a.error.label(400, "errors.app_is_required")
 	cat_raw = a.input("category", "")
 	category = None
 	if cat_raw != "" and cat_raw.lstrip("-").isdigit():
 		category = int(cat_raw)
-	ok = function_topic_set_category({}, int(id), category)
+	ok = function_topic_set_category({}, app, topic, object, category)
 	if not ok:
 		return a.error.label(404, "errors.not_found")
 	return {"data": {}}
@@ -1045,12 +1138,20 @@ def action_topics_lookup(a):
 	return {"data": row}
 
 def action_topics_delete(a):
-	id = a.input("id", "").strip()
-	if not id or not id.isdigit():
-		return a.error.label(400, "errors.invalid_id")
-	if not mochi.db.exists("select 1 from topics where id = ?", int(id)):
+	app = a.input("app", "").strip()
+	topic = a.input("topic", "").strip()
+	object = a.input("object", "")
+	if not app:
+		return a.error.label(400, "errors.app_is_required")
+	if not mochi.db.exists(
+		"select 1 from topics where app = ? and topic = ? and object = ?",
+		app, topic, object
+	):
 		return a.error.label(404, "errors.topic_not_found")
-	mochi.db.execute("delete from topics where id = ?", int(id))
+	mochi.db.execute(
+		"delete from topics where app = ? and topic = ? and object = ?",
+		app, topic, object
+	)
 	return {"data": {}}
 
 def action_destinations_list(a):
