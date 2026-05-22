@@ -761,8 +761,8 @@ def _deliver_web(app, topic, object, title, body, url, content, sender="", count
 	if existing and existing["read"] == 0:
 		new_count = count if count != None else existing["count"] + 1
 		mochi.db.execute(
-			"update notifications set content = ?, count = ?, created = ?, sender = ? where id = ?",
-			content, new_count, now, sender, existing["id"]
+			"update notifications set content = ?, link = ?, count = ?, created = ?, sender = ? where id = ?",
+			content, url, new_count, now, sender, existing["id"]
 		)
 		notif_id = existing["id"]
 		ws_content = content
