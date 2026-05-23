@@ -655,7 +655,7 @@ def action_rss_update(a):
 
 # Topic service functions
 
-def function_send(context, topic, object="", title="", body="", url="", label="", name="", sender="", count=None):
+def function_send(context, topic, object="", title="", body="", url="", label="", name="", sender="", count=None, event_id=""):
 	"""Send a notification from the calling app.
 
 	Topics are keyed by (app, topic, object) and created lazily. On first send
@@ -666,7 +666,7 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	stored label is refreshed on every send to track language changes.
 
 	`name` is the object's display name (page title, conversation name, …) for
-	per-object topics whose object isn't a global entity. Optional — feeds /
+	per-object topics whose object isn't a global entity. Optional - feeds /
 	forums / projects key on entity fingerprints and fall back to
 	mochi.entity.name(); apps with their own object IDs (wikis pages, chat
 	threads) must supply it explicitly. Refreshed on every send so renames
@@ -678,13 +678,22 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	  3. Otherwise → fan out to the category's destinations.
 
 	count: optional override on the badge counter:
-	  None (default) — increment by 1 when rolling up an unread row, set to 1
+	  None (default) - increment by 1 when rolling up an unread row, set to 1
 	                   on insert. Existing behaviour. Suits chat / feeds /
 	                   posts where count = unread items.
-	  <integer>      — force count to this value on both rollup and insert.
+	  <integer>      - force count to this value on both rollup and insert.
 	                   Pass count=1 for state-style notifications (e.g. server
 	                   upgrade alerts) where the latest version is a state,
 	                   not an item count.
+
+	event_id: optional stable identifier for the source event (typically the
+	UID of the row that triggered the notification: a comment id, a post id,
+	a chess move id, etc.). When provided, used as the row primary key so
+	replicas processing the same logical event converge on the same row
+	rather than each minting their own UID. Without it, paired hosts both
+	insert independent rows for the same event and emails / pushbullet /
+	ntfy fire twice. Browser / FCM / unifiedpush absorb the duplication via
+	their tag-based dedup but the in-app badge count still drifts.
 
 	The reserved app id "" is only accepted when the call originates from the
 	Mochi server itself (the core-only service_call_as_server helper sets
@@ -731,14 +740,20 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	content = title + ": " + body
 
 	# Resolve a stable notification id BEFORE delivery so the web row and the
-	# push payload share an id — the phone uses it to call -/read on tap and
+	# push payload share an id - the phone uses it to call -/read on tap and
 	# clear the matching row from the web bell. Reuses the existing unread
-	# row's id when one exists (rollup case); otherwise mints a fresh uid.
+	# row's id when one exists (rollup case). Otherwise uses the caller's
+	# event_id when provided (cross-replica dedup) or mints a fresh uid.
 	existing_notif = mochi.db.row(
 		"select id from notifications where app = ? and topic = ? and object = ? and read = 0",
 		app, topic, object
 	)
-	notif_id = existing_notif["id"] if existing_notif else mochi.uid()
+	if existing_notif:
+		notif_id = existing_notif["id"]
+	elif event_id:
+		notif_id = event_id
+	else:
+		notif_id = mochi.uid()
 
 	# No default category configured: web-only fallback.
 	if category == None:
