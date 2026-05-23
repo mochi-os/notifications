@@ -7,6 +7,8 @@ def database_create():
 		app text not null,
 		topic text not null,
 		object text not null,
+		title text not null default '',
+		body text not null default '',
 		content text not null,
 		link text not null default '',
 		sender text not null default '',
@@ -60,6 +62,21 @@ def database_create():
 		primary key (account, event_id)
 	)""")
 	mochi.db.execute("create index if not exists push_pending_created on push_pending(account, created)")
+
+	# Append-only log of every caller-fired event. The notifications row's
+	# `count` is derived from this table at write time (SET-from-aggregate)
+	# instead of arithmetically incremented, so concurrent rollups on
+	# paired hosts converge naturally. The PK uses the caller's stable
+	# event_id (when supplied) so the same logical event from multiple
+	# replicas dedupes via insert-or-ignore.
+	mochi.db.execute("""create table if not exists sends (
+		id text not null primary key,
+		app text not null,
+		topic text not null,
+		object text not null default '',
+		ts integer not null
+	)""")
+	mochi.db.execute("create index if not exists sends_topic on sends(app, topic, object, ts)")
 
 	_seed_categories()
 
@@ -307,19 +324,65 @@ def database_upgrade(to_version):
 			mochi.db.execute("drop table topics")
 			mochi.db.execute("alter table topics_new rename to topics")
 
-# Expiry: 30 days unread, 7 days read
+	if to_version == 18 or to_version == 19:
+		# Replication-safety: notifications.count is now derived from the
+		# new `sends` log via SET-from-aggregate instead of `count+1`
+		# counter arithmetic, so concurrent rollups on paired hosts
+		# converge. Split content into title and body columns so the
+		# commit-hook delivery path can build push payloads without
+		# re-parsing `<title>: <body>` from content. Create the sends
+		# table and backfill one row per existing unread notification.
+		#
+		# Idempotent and re-entrant: v18 shipped with a non-defensive
+		# mochi.db.rows call that could crash mid-migration and leave
+		# user_version bumped without the tables/columns in place. v19
+		# re-runs the steps with safer existence checks so installs that
+		# half-applied v18 catch up cleanly.
+		tables_rows = mochi.db.rows("select name from sqlite_master where type='table'") or []
+		tables = [r["name"] for r in tables_rows]
+		if "sends" not in tables:
+			mochi.db.execute("create table sends ( id text not null primary key, app text not null, topic text not null, object text not null default '', ts integer not null )")
+			mochi.db.execute("create index sends_topic on sends(app, topic, object, ts)")
+		notif_cols_rows = mochi.db.table("notifications") or []
+		notif_cols = [r["name"] for r in notif_cols_rows]
+		if "title" not in notif_cols:
+			mochi.db.execute("alter table notifications add column title text not null default ''")
+		if "body" not in notif_cols:
+			mochi.db.execute("alter table notifications add column body text not null default ''")
+		# Backfill title/body by splitting content on the first ": ".
+		# Best-effort: rows with no ": " separator land with title=content
+		# and body="". New writes from function_send store them properly.
+		backfill = mochi.db.rows("select id, content from notifications where title = '' and content != ''") or []
+		for r in backfill:
+			c = r["content"] or ""
+			if ": " in c:
+				t = c.split(": ", 1)[0]
+				b = c.split(": ", 1)[1]
+			else:
+				t = c
+				b = ""
+			mochi.db.execute("update notifications set title = ?, body = ? where id = ?", t, b, r["id"])
+		mochi.db.execute("insert or ignore into sends (id, app, topic, object, ts) select id, app, topic, object, created from notifications where read = 0")
+
+# Expiry: 30 days unread, 7 days read. Also expire matching sends rows
+# so the count derivation doesn't reference rows that no longer have a
+# parent notification.
 def function_expire(context):
 	now = mochi.time.now()
+	mochi.db.execute("delete from sends where ts < ?", now - 30 * 86400)
 	mochi.db.execute("delete from notifications where read = 0 and created < ?", now - 30 * 86400)
 	mochi.db.execute("delete from notifications where read != 0 and created < ?", now - 7 * 86400)
 
 def function_clear_all(context):
+	mochi.db.execute("delete from sends")
 	mochi.db.execute("delete from notifications")
 
 def function_clear_app(context, app):
+	mochi.db.execute("delete from sends where app = ?", app)
 	mochi.db.execute("delete from notifications where app = ?", app)
 
 def function_clear_object(context, app, object):
+	mochi.db.execute("delete from sends where app = ? and object = ?", app, object)
 	mochi.db.execute("delete from notifications where app = ? and object = ?", app, object)
 	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object})
 
@@ -330,8 +393,15 @@ def function_read(context, id):
 	now = mochi.time.now()
 	# Look up the row's app/topic/object before the update so subscribers
 	# (notably the Android client) can reconstruct the system-notification
-	# tag — "<app>-<topic>-<object>" — and cancel the matching tray entry.
+	# tag - "<app>-<topic>-<object>" - and cancel the matching tray entry.
+	# Also clear the matching sends rows so a subsequent fresh send for
+	# the same topic starts the count at 1 rather than at "old reads + 1".
 	row = mochi.db.row("select app, topic, object from notifications where id = ?", id)
+	if row:
+		mochi.db.execute(
+			"delete from sends where app = ? and topic = ? and object = ?",
+			row["app"], row["topic"], row["object"]
+		)
 	mochi.db.execute("update notifications set read = ? where id = ?", now, id)
 	event = {"type": "read", "id": id}
 	if row:
@@ -342,6 +412,7 @@ def function_read(context, id):
 
 def function_read_all(context):
 	now = mochi.time.now()
+	mochi.db.execute("delete from sends")
 	mochi.db.execute("update notifications set read = ?", now)
 	mochi.websocket.write("notifications", {"type": "read_all"})
 
@@ -706,6 +777,8 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	if not title or not body:
 		return 0
 
+	_ensure_commit_hook_registered()
+
 	row = mochi.db.row(
 		"select label, name, category from topics where app = ? and topic = ? and object = ?",
 		app, topic, object
@@ -737,95 +810,165 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	if category == 0:
 		return 0
 
+	now = mochi.time.now()
 	content = title + ": " + body
 
-	# Resolve a stable notification id BEFORE delivery so the web row and the
-	# push payload share an id - the phone uses it to call -/read on tap and
-	# clear the matching row from the web bell. Reuses the existing unread
-	# row's id when one exists (rollup case). Otherwise uses the caller's
-	# event_id when provided (cross-replica dedup) or mints a fresh uid.
+	# Append-only log entry. PK = event_id when supplied so replicas
+	# processing the same logical event insert the same row (the
+	# `insert or ignore` makes the second insert a no-op). Without
+	# event_id we mint a fresh uid on each replica - the legacy drift
+	# behaviour - which is the contract for callers that haven't been
+	# updated yet.
+	send_id = event_id if event_id else mochi.uid()
+	mochi.db.execute(
+		"insert or ignore into sends (id, app, topic, object, ts) values (?, ?, ?, ?, ?)",
+		send_id, app, topic, object, now
+	)
+
+	# Resolve the notifications row id. Reuses the existing unread row's
+	# id (rollup case) so the badge stays under one entry per topic;
+	# otherwise uses event_id for cross-replica dedup, or a fresh uid.
 	existing_notif = mochi.db.row(
 		"select id from notifications where app = ? and topic = ? and object = ? and read = 0",
 		app, topic, object
 	)
 	if existing_notif:
 		notif_id = existing_notif["id"]
+		kind = "update"
 	elif event_id:
 		notif_id = event_id
+		kind = "insert"
 	else:
 		notif_id = mochi.uid()
+		kind = "insert"
 
-	# No default category configured: web-only fallback.
-	if category == None:
-		_deliver_web(app, topic, object, title, body, url, content, sender, count, notif_id)
-		return 1
+	# Write the notifications row. Count is derived from the sends log
+	# via the subquery in the SQL, so the UPDATE / REPLACE replicates as
+	# a derive-on-apply statement that re-evaluates against each
+	# replica's local sends table - no counter arithmetic, converges
+	# under concurrent rollups. Caller's explicit `count` overrides the
+	# derive (for state-style notifications).
+	if kind == "update":
+		if count != None:
+			mochi.db.execute(
+				"update notifications set title = ?, body = ?, content = ?, link = ?, count = ?, created = ?, sender = ? where id = ?",
+				title, body, content, url, count, now, sender, notif_id
+			)
+		else:
+			mochi.db.execute(
+				"update notifications set title = ?, body = ?, content = ?, link = ?, count = (select count(*) from sends where app=? and topic=? and object=?), created = ?, sender = ? where id = ?",
+				title, body, content, url, app, topic, object, now, sender, notif_id
+			)
+	else:
+		if count != None:
+			mochi.db.execute(
+				"replace into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)",
+				notif_id, app, topic, object, title, body, content, url, sender, count, now
+			)
+		else:
+			mochi.db.execute(
+				"replace into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read) values (?, ?, ?, ?, ?, ?, ?, ?, ?, (select count(*) from sends where app=? and topic=? and object=?), ?, 0)",
+				notif_id, app, topic, object, title, body, content, url, sender, app, topic, object, now
+			)
+
+	# Fire the commit hook for the local write. Replicated apply paths
+	# auto-fire it on the other host. The hook emits the websocket
+	# (every host - each has its own connected browser tabs) and -
+	# behind a per-user leader gate - fans out external deliveries
+	# (account push, email, pushbullet, ntfy). Exactly one host fires
+	# externals; both hosts emit websockets.
+	mochi.db.commit.fire("notifications", kind, notif_id)
+	return 1
+
+
+# Commit hook for the notifications table. See function_send for the
+# replication-safety rationale.
+def notifications_commit_hook(table, kind, row_uid):
+	if table != "notifications":
+		return
+	if kind not in ("insert", "update"):
+		return
+	if not row_uid:
+		return
+	row = mochi.db.row("select * from notifications where id = ?", row_uid)
+	if not row:
+		return
+
+	# Websocket emission fires on every host. Each host has its own
+	# connected browser tabs subscribed to "notifications".
+	mochi.websocket.write("notifications", {
+		"type": "new",
+		"id": row["id"],
+		"app": row["app"],
+		"topic": row["topic"],
+		"object": row["object"],
+		"content": row["content"],
+		"link": row["link"],
+		"count": row["count"],
+		"created": row["created"],
+		"read": row["read"],
+	})
+
+	# Skip external delivery for read rows (the row was marked read; no
+	# new event fired).
+	if row["read"]:
+		return
+
+	# Leader gate: exactly one host fires external deliveries per user.
+	# Scope "user:<uid>" resolves membership from the user's link hosts
+	# plus whole-server pair, so per-user-link replication is covered.
+	uid = mochi.user.uid()
+	if not uid:
+		return
+	if not mochi.schedule.leader("user:" + uid, "notifications"):
+		return
+
+	topic_row = mochi.db.row(
+		"select category from topics where app = ? and topic = ? and object = ?",
+		row["app"], row["topic"], row["object"]
+	)
+	if not topic_row:
+		return
+	category = topic_row["category"]
+	# id 0 = "No notifications", NULL = no default category (web-only).
+	if category == 0 or category == None:
+		return
 
 	dests = mochi.db.rows(
 		"select type, target from destinations where category = ?",
 		int(category)
 	)
-	delivered = 0
 	for dest in dests or []:
-		if dest["type"] == "web":
-			_deliver_web(app, topic, object, title, body, url, content, sender, count, notif_id)
-			delivered += 1
-		elif dest["type"] == "account":
+		if dest["type"] == "account":
 			account_id = int(dest["target"])
-			_push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, notif_id)
+			_push_queue_if_unifiedpush(account_id, row["app"], row["topic"], row["object"], row["title"], row["body"], row["link"], row["id"])
 			mochi.account.notify(
 				account=account_id,
-				app=app,
-				category=topic,
-				object=object,
-				title=title,
-				body=body,
-				link=url,
-				id=notif_id
+				app=row["app"],
+				category=row["topic"],
+				object=row["object"],
+				title=row["title"],
+				body=row["body"],
+				link=row["link"],
+				id=row["id"]
 			)
-			delivered += 1
-		# rss destinations are queried on demand, no active delivery
-	return delivered
+		# web destinations are handled by the websocket emission above;
+		# rss destinations are queried on demand, no active delivery.
 
-def _deliver_web(app, topic, object, title, body, url, content, sender, count, notif_id):
-	now = mochi.time.now()
-	existing = mochi.db.row(
-		"select * from notifications where app = ? and topic = ? and object = ?",
-		app, topic, object
-	)
 
-	if existing and existing["read"] == 0:
-		new_count = count if count != None else existing["count"] + 1
-		# notif_id == existing["id"] here (callers resolve it from the same
-		# unread row). Keep the update keyed on existing["id"] so the write
-		# is unambiguous even if the row was marked read between lookups.
-		mochi.db.execute(
-			"update notifications set content = ?, link = ?, count = ?, created = ?, sender = ? where id = ?",
-			content, url, new_count, now, sender, existing["id"]
-		)
-		ws_content = content
-		ws_count = new_count
-	else:
-		new_count = count if count != None else 1
-		mochi.db.execute(
-			"""replace into notifications (id, app, topic, object, content, link, sender, count, created, read)
-			values (?, ?, ?, ?, ?, ?, ?, ?, ?, 0)""",
-			notif_id, app, topic, object, content, url, sender, new_count, now
-		)
-		ws_content = content
-		ws_count = new_count
-
-	mochi.websocket.write("notifications", {
-		"type": "new",
-		"id": notif_id,
-		"app": app,
-		"topic": topic,
-		"object": object,
-		"content": ws_content,
-		"link": url,
-		"count": ws_count,
-		"created": now,
-		"read": 0,
-	})
+# Hook registration is per-app-version and idempotent. We register
+# lazily from inside function_send because mochi.db.commit.hook needs
+# the user/app context that's only present during a real request -
+# module-load time has neither, and Starlark globals are frozen so we
+# can't memoise the registration here. Re-registering the same function
+# name on every call is a plain assignment on the AppVersion struct
+# (cheap, no allocation). The framework invokes the hook for local
+# writes (via mochi.db.commit.fire) and replicated apply paths (auto-
+# fired by core). Each invocation is independently safe: the websocket
+# write is idempotent and mochi.account.notify carries the stable row
+# id for receiver-side dedup.
+def _ensure_commit_hook_registered():
+	mochi.db.commit.hook("notifications_commit_hook")
 
 def function_topics(context, object=None):
 	"""List topic rows belonging to the calling app."""
@@ -943,14 +1086,34 @@ def function_category_test(context, id=0):
 	web = False
 	title = mochi.app.label("notifications.body.test")
 	body_web = mochi.app.label("notifications.body.test_via_web")
-	# Stable id shared between the web row and any push payload so the phone
-	# can clear the matching row on tap (same scheme as function_send).
+	# Write a bell entry directly. Test notifications bypass the topic →
+	# category routing in the commit hook (the test is itself the
+	# category-routing check), so we don't go through function_send -
+	# we just need a row, the websocket emission for instant visible
+	# feedback, and the per-account push fan-out below.
+	now = mochi.time.now()
 	existing_notif = mochi.db.row(
 		"select id from notifications where app = 'notifications' and topic = 'test' and object = ? and read = 0",
 		str(id)
 	)
 	notif_id = existing_notif["id"] if existing_notif else mochi.uid()
-	_deliver_web("notifications", "test", str(id), title, body_web, "/settings/user/notifications", title + ": " + body_web, "", None, notif_id)
+	content = title + ": " + body_web
+	mochi.db.execute(
+		"replace into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read) values (?, 'notifications', 'test', ?, ?, ?, ?, '/settings/user/notifications', '', 1, ?, 0)",
+		notif_id, str(id), title, body_web, content, now
+	)
+	mochi.websocket.write("notifications", {
+		"type": "new",
+		"id": notif_id,
+		"app": "notifications",
+		"topic": "test",
+		"object": str(id),
+		"content": content,
+		"link": "/settings/user/notifications",
+		"count": 1,
+		"created": now,
+		"read": 0,
+	})
 	for dest in dests:
 		if dest["type"] == "web":
 			web = True
