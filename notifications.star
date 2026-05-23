@@ -328,8 +328,17 @@ def function_list(context):
 
 def function_read(context, id):
 	now = mochi.time.now()
+	# Look up the row's app/topic/object before the update so subscribers
+	# (notably the Android client) can reconstruct the system-notification
+	# tag — "<app>-<topic>-<object>" — and cancel the matching tray entry.
+	row = mochi.db.row("select app, topic, object from notifications where id = ?", id)
 	mochi.db.execute("update notifications set read = ? where id = ?", now, id)
-	mochi.websocket.write("notifications", {"type": "read", "id": id})
+	event = {"type": "read", "id": id}
+	if row:
+		event["app"] = row["app"]
+		event["topic"] = row["topic"]
+		event["object"] = row["object"]
+	mochi.websocket.write("notifications", event)
 
 def function_read_all(context):
 	now = mochi.time.now()
@@ -721,9 +730,19 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 
 	content = title + ": " + body
 
+	# Resolve a stable notification id BEFORE delivery so the web row and the
+	# push payload share an id — the phone uses it to call -/read on tap and
+	# clear the matching row from the web bell. Reuses the existing unread
+	# row's id when one exists (rollup case); otherwise mints a fresh uid.
+	existing_notif = mochi.db.row(
+		"select id from notifications where app = ? and topic = ? and object = ? and read = 0",
+		app, topic, object
+	)
+	notif_id = existing_notif["id"] if existing_notif else mochi.uid()
+
 	# No default category configured: web-only fallback.
 	if category == None:
-		_deliver_web(app, topic, object, title, body, url, content, sender, count)
+		_deliver_web(app, topic, object, title, body, url, content, sender, count, notif_id)
 		return 1
 
 	dests = mochi.db.rows(
@@ -733,11 +752,11 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	delivered = 0
 	for dest in dests or []:
 		if dest["type"] == "web":
-			_deliver_web(app, topic, object, title, body, url, content, sender, count)
+			_deliver_web(app, topic, object, title, body, url, content, sender, count, notif_id)
 			delivered += 1
 		elif dest["type"] == "account":
 			account_id = int(dest["target"])
-			_push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url)
+			_push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, notif_id)
 			mochi.account.notify(
 				account=account_id,
 				app=app,
@@ -745,13 +764,14 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 				object=object,
 				title=title,
 				body=body,
-				link=url
+				link=url,
+				id=notif_id
 			)
 			delivered += 1
 		# rss destinations are queried on demand, no active delivery
 	return delivered
 
-def _deliver_web(app, topic, object, title, body, url, content, sender="", count=None):
+def _deliver_web(app, topic, object, title, body, url, content, sender, count, notif_id):
 	now = mochi.time.now()
 	existing = mochi.db.row(
 		"select * from notifications where app = ? and topic = ? and object = ?",
@@ -760,15 +780,16 @@ def _deliver_web(app, topic, object, title, body, url, content, sender="", count
 
 	if existing and existing["read"] == 0:
 		new_count = count if count != None else existing["count"] + 1
+		# notif_id == existing["id"] here (callers resolve it from the same
+		# unread row). Keep the update keyed on existing["id"] so the write
+		# is unambiguous even if the row was marked read between lookups.
 		mochi.db.execute(
 			"update notifications set content = ?, link = ?, count = ?, created = ?, sender = ? where id = ?",
 			content, url, new_count, now, sender, existing["id"]
 		)
-		notif_id = existing["id"]
 		ws_content = content
 		ws_count = new_count
 	else:
-		notif_id = mochi.uid()
 		new_count = count if count != None else 1
 		mochi.db.execute(
 			"""replace into notifications (id, app, topic, object, content, link, sender, count, created, read)
@@ -907,7 +928,14 @@ def function_category_test(context, id=0):
 	web = False
 	title = mochi.app.label("notifications.body.test")
 	body_web = mochi.app.label("notifications.body.test_via_web")
-	_deliver_web("notifications", "test", str(id), title, body_web, "/settings/user/notifications", title + ": " + body_web)
+	# Stable id shared between the web row and any push payload so the phone
+	# can clear the matching row on tap (same scheme as function_send).
+	existing_notif = mochi.db.row(
+		"select id from notifications where app = 'notifications' and topic = 'test' and object = ? and read = 0",
+		str(id)
+	)
+	notif_id = existing_notif["id"] if existing_notif else mochi.uid()
+	_deliver_web("notifications", "test", str(id), title, body_web, "/settings/user/notifications", title + ": " + body_web, "", None, notif_id)
 	for dest in dests:
 		if dest["type"] == "web":
 			web = True
@@ -918,7 +946,7 @@ def function_category_test(context, id=0):
 			if not account_label:
 				continue  # stale destination row pointing at a deleted account
 			body = mochi.app.label("notifications.body.test_via_account", account=account_label)
-			_push_queue_if_unifiedpush(account_id, "notifications", "test", "", title, body, "")
+			_push_queue_if_unifiedpush(account_id, "notifications", "test", "", title, body, "", notif_id)
 			mochi.account.notify(
 				account=account_id,
 				app="notifications",
@@ -926,7 +954,8 @@ def function_category_test(context, id=0):
 				object="",
 				title=title,
 				body=body,
-				link=""
+				link="",
+				id=notif_id
 			)
 			sent += 1
 	return {"sent": sent, "web": web}
@@ -1325,7 +1354,7 @@ def function_push_inbound(context, account_id=0, payload=""):
 # Foreign-endpoint unifiedpush accounts (ntfy etc) are excluded — third-party
 # Application Servers handle their own retry. Other account types (email,
 # pushbullet, browser, url) also have their own server-side retry semantics.
-def _push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url):
+def _push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, notif_id):
 	acc = mochi.account.get(account_id)
 	if not acc or acc.get("type") != "unifiedpush":
 		return
@@ -1339,12 +1368,14 @@ def _push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url)
 	subscription = identifier.split("/")[-1]
 
 	# Match the WS payload shape so the phone treats drained events identically
-	# to live ones (same RFC 8030 body fields).
+	# to live ones (same RFC 8030 body fields). `id` lets the phone call -/read
+	# on tap so the matching web row is cleared.
 	payload = json.encode({
 		"title": title,
 		"body": body,
 		"link": url,
 		"tag": app + "-" + topic + "-" + object,
+		"id": notif_id,
 	})
 	event_id = app + "-" + topic + "-" + object
 
