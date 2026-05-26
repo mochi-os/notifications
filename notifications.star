@@ -1211,8 +1211,8 @@ def function_topic_list(context):
 	return result
 
 def function_topic_set_category(context, app="", topic="", object="", category=None):
-	if not app:
-		return False
+	# app="" identifies server-originated topics (e.g. upgrade notifications),
+	# which the user owns and must be able to recategorise like any other.
 	if not mochi.db.exists(
 		"select 1 from topics where app = ? and topic = ? and object = ?",
 		app, topic, object
@@ -1234,18 +1234,16 @@ def function_topic_set_category(context, app="", topic="", object="", category=N
 
 def function_topic_lookup(context, app="", topic="", object=""):
 	"""Find the topic row matching (app, topic, object) for the per-notification picker.
-	Returns the row with category, or None if no row exists yet."""
-	if not app:
-		return None
+	Returns the row with category, or None if no row exists yet. app="" matches
+	server-originated topics (upgrade alerts etc.)."""
 	return mochi.db.row(
 		"select app, topic, object, label, name, category from topics where app = ? and topic = ? and object = ?",
 		app, topic, object
 	)
 
 def function_topic_delete(context, app="", topic="", object=""):
-	"""Delete any topic row by (app, topic, object). Used by the settings page."""
-	if not app:
-		return False
+	"""Delete any topic row by (app, topic, object). Used by the settings page.
+	app="" matches server-originated topics."""
 	if not mochi.db.exists(
 		"select 1 from topics where app = ? and topic = ? and object = ?",
 		app, topic, object
@@ -1323,8 +1321,6 @@ def action_topics_set_category(a):
 	app = a.input("app", "").strip()
 	topic = a.input("topic", "").strip()
 	object = a.input("object", "")
-	if not app:
-		return a.error.label(400, "errors.app_is_required")
 	cat_raw = a.input("category", "")
 	category = None
 	if cat_raw != "" and cat_raw.lstrip("-").isdigit():
@@ -1339,8 +1335,6 @@ def action_topics_lookup(a):
 	app = a.input("app", "").strip()
 	topic = a.input("topic", "").strip()
 	object = a.input("object", "").strip()
-	if not app:
-		return a.error.label(400, "errors.app_is_required")
 	row = function_topic_lookup({}, app, topic, object)
 	return {"data": row}
 
@@ -1348,8 +1342,6 @@ def action_topics_delete(a):
 	app = a.input("app", "").strip()
 	topic = a.input("topic", "").strip()
 	object = a.input("object", "")
-	if not app:
-		return a.error.label(400, "errors.app_is_required")
 	if not mochi.db.exists(
 		"select 1 from topics where app = ? and topic = ? and object = ?",
 		app, topic, object
