@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Trans, useLingui } from '@lingui/react/macro'
 import {
   PageHeader,
@@ -44,6 +44,49 @@ const TRUSTED_EXTERNAL_REDIRECT_HOSTS = (
   .map((host: string) => host.trim().toLowerCase())
   .filter(Boolean)
 
+function NotificationSourceIcon({
+  app,
+  sender,
+  isUnread,
+}: {
+  app: string
+  sender?: string
+  isUnread: boolean
+}) {
+  const [iconFailed, setIconFailed] = useState(false)
+
+  return (
+    <div className='relative mt-0.5 shrink-0'>
+      <div className='bg-primary/15 dark:bg-accent/70 flex size-7 items-center justify-center rounded-md'>
+        {sender ? (
+          <EntityAvatar
+            src={`/people/${sender}/-/avatar`}
+            styleUrl={`/people/${sender}/-/style`}
+            size="sm"
+            className='shrink-0'
+          />
+        ) : iconFailed ? (
+          <div className='text-accent-foreground flex size-6 items-center justify-center text-[10px] font-semibold uppercase'>
+            {app.slice(0, 1)}
+          </div>
+        ) : (
+          <img
+            src={`/${app}/images/icon.svg`}
+            alt={app}
+            width={18}
+            height={18}
+            onError={() => setIconFailed(true)}
+            className='size-[18px] brightness-0 invert'
+          />
+        )}
+      </div>
+      {isUnread && (
+        <span className='bg-primary absolute -right-1 -top-1 size-2 rounded-full ring-1 ring-background' />
+      )}
+    </div>
+  )
+}
+
 function NotificationItem({
   notification,
   onMarkAsRead,
@@ -88,17 +131,11 @@ function NotificationItem({
         onClick={handleClick}
         className='flex flex-1 items-start gap-3 text-start'
       >
-        {isUnread && (
-          <span className='bg-primary mt-1.5 size-2 shrink-0 rounded-full' />
-        )}
-        {notification.sender && (
-          <EntityAvatar
-            src={`/people/${notification.sender}/-/avatar`}
-            styleUrl={`/people/${notification.sender}/-/style`}
-            size="sm"
-            className='mt-0.5 shrink-0'
-          />
-        )}
+        <NotificationSourceIcon
+          app={notification.app}
+          sender={notification.sender}
+          isUnread={isUnread}
+        />
         <div className={cn('min-w-0 flex-1', !isUnread && 'ms-5')}>
           <p className='text-sm leading-snug'>
             {notification.content}
