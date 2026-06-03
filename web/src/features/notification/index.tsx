@@ -1,13 +1,13 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { Trans, useLingui } from '@lingui/react/macro'
 import {
   PageHeader,
   Main,
   EmptyState,
-  EntityAvatar,
   ListSkeleton,
   GeneralError,
   NotificationCategoryButton,
+  NotificationSourceIcon,
   useFormat,
   getSafeNavigationTarget,
   shellNavigateExternal,
@@ -43,49 +43,6 @@ const TRUSTED_EXTERNAL_REDIRECT_HOSTS = (
   .split(',')
   .map((host: string) => host.trim().toLowerCase())
   .filter(Boolean)
-
-function NotificationSourceIcon({
-  app,
-  sender,
-  isUnread,
-}: {
-  app: string
-  sender?: string
-  isUnread: boolean
-}) {
-  const [iconFailed, setIconFailed] = useState(false)
-
-  return (
-    <div className='relative mt-0.5 shrink-0'>
-      <div className='bg-primary/15 dark:bg-accent/70 flex size-7 items-center justify-center rounded-md'>
-        {sender ? (
-          <EntityAvatar
-            src={`/people/${sender}/-/avatar`}
-            styleUrl={`/people/${sender}/-/style`}
-            size="sm"
-            className='shrink-0'
-          />
-        ) : iconFailed ? (
-          <div className='text-accent-foreground flex size-6 items-center justify-center text-[10px] font-semibold uppercase'>
-            {app.slice(0, 1)}
-          </div>
-        ) : (
-          <img
-            src={`/${app}/images/icon.svg`}
-            alt={app}
-            width={18}
-            height={18}
-            onError={() => setIconFailed(true)}
-            className='size-[18px] brightness-0 invert'
-          />
-        )}
-      </div>
-      {isUnread && (
-        <span className='bg-primary absolute -right-1 -top-1 size-2 rounded-full ring-1 ring-background' />
-      )}
-    </div>
-  )
-}
 
 function NotificationItem({
   notification,
