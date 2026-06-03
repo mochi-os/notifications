@@ -93,7 +93,7 @@ function NotificationItem({
           sender={notification.sender}
           isUnread={isUnread}
         />
-        <div className={cn('min-w-0 flex-1', !isUnread && 'ms-5')}>
+        <div className='min-w-0 flex-1'>
           <p className='text-sm leading-snug'>
             {notification.content}
             {notification.count > 1 && (
