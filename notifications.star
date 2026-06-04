@@ -28,7 +28,7 @@ def database_create():
 	)""")
 
 	mochi.db.execute("""create table if not exists categories (
-		id integer primary key,
+		id text not null primary key,
 		label text not null,
 		"default" integer not null default 0,
 		created integer not null
@@ -40,13 +40,13 @@ def database_create():
 		object text not null default '',
 		name text not null default '',
 		label text not null default '',
-		category integer,
+		category text,
 		created integer not null,
 		primary key (app, topic, object)
 	)""")
 
 	mochi.db.execute("""create table if not exists destinations (
-		category integer not null,
+		category text not null,
 		type text not null,
 		target text not null default '',
 		primary key (category, type, target),
@@ -82,8 +82,8 @@ def database_create():
 
 def _seed_categories():
 	now = mochi.time.now()
-	if not mochi.db.exists("select 1 from categories where id = 0"):
-		mochi.db.execute("insert into categories (id, label, created) values (0, 'No notifications', ?)", now)
+	if not mochi.db.exists("select 1 from categories where id = '0'"):
+		mochi.db.execute("insert into categories (id, label, created) values ('0', 'No notifications', ?)", now)
 	normal_id = _ensure_category("Normal", now)
 	# Ensure exactly one default exists (Normal by default)
 	if not mochi.db.exists('select 1 from categories where "default" = 1'):
@@ -101,8 +101,9 @@ def _ensure_category(label, now):
 	existing = mochi.db.row("select id from categories where label = ?", label)
 	if existing:
 		return existing["id"]
-	mochi.db.execute("insert into categories (label, created) values (?, ?)", label, now)
-	return mochi.db.row("select last_insert_rowid() as id")["id"]
+	id = mochi.uid()
+	mochi.db.execute("insert into categories (id, label, created) values (?, ?, ?)", id, label, now)
+	return id
 
 def database_upgrade(to_version):
 	if to_version == 9:
@@ -155,7 +156,11 @@ def database_upgrade(to_version):
 			created integer not null
 		)""")
 		mochi.db.execute("insert into categories (id, label, created) values (0, 'No notifications', ?)", now)
-		normal_id = _ensure_category("Normal", now)
+		# Frozen: this historical migration builds the original integer-id schema
+		# (converted to text by the v20 migration). Inlined so it doesn't depend
+		# on _ensure_category, which now mints text uids.
+		mochi.db.execute("insert into categories (label, created) values ('Normal', ?)", now)
+		normal_id = mochi.db.row("select last_insert_rowid() as id")["id"]
 		mochi.db.execute('update categories set "default" = 1 where id = ?', normal_id)
 
 		# Destinations (fresh start)
@@ -364,6 +369,49 @@ def database_upgrade(to_version):
 			mochi.db.execute("update notifications set title = ?, body = ? where id = ?", t, b, r["id"])
 		mochi.db.execute("insert or ignore into sends (id, app, topic, object, ts) select id, app, topic, object, created from notifications where read = 0")
 
+	if to_version == 20:
+		# Replication-safety: categories.id was an autoincrement integer PK
+		# cross-referenced by destinations.category and topics.category, so two
+		# paired hosts creating a category concurrently assigned the same id to
+		# different categories and the references diverged on merge. Convert id
+		# (and the two referencing columns) to text — new categories get
+		# mochi.uid(); existing ids are cast to their decimal-string form so
+		# references stay aligned; the "No notifications" sentinel becomes "0".
+		#
+		# Foreign keys are ON and PRAGMA is blocked from apps, so a parent
+		# (categories) DROP would fire destinations' ON DELETE CASCADE. Rebuild
+		# the FK child (destinations) first without its FK, then topics, then
+		# the parent, then recreate destinations with the FK — so nothing
+		# references categories at the moment it is dropped.
+		#
+		# Guarded on the current id column type so a re-run after the version
+		# was bumped is a no-op.
+		id_is_text = False
+		for c in mochi.db.table("categories") or []:
+			if c["name"] == "id" and c["type"].lower() == "text":
+				id_is_text = True
+		if not id_is_text:
+			mochi.db.execute("drop table if exists destinations_tmp")
+			mochi.db.execute("create table destinations_tmp ( category text not null, type text not null, target text not null default '', primary key (category, type, target) )")
+			mochi.db.execute("insert into destinations_tmp select cast(category as text), type, target from destinations")
+			mochi.db.execute("drop table destinations")
+
+			mochi.db.execute("drop table if exists topics_new")
+			mochi.db.execute("create table topics_new ( app text not null, topic text not null default '', object text not null default '', name text not null default '', label text not null default '', category text, created integer not null, primary key (app, topic, object) )")
+			mochi.db.execute("insert into topics_new select app, topic, object, name, label, cast(category as text), created from topics")
+			mochi.db.execute("drop table topics")
+			mochi.db.execute("alter table topics_new rename to topics")
+
+			mochi.db.execute('drop table if exists categories_new')
+			mochi.db.execute('create table categories_new ( id text not null primary key, label text not null, "default" integer not null default 0, created integer not null )')
+			mochi.db.execute('insert into categories_new select cast(id as text), label, "default", created from categories')
+			mochi.db.execute("drop table categories")
+			mochi.db.execute("alter table categories_new rename to categories")
+
+			mochi.db.execute("create table destinations ( category text not null, type text not null, target text not null default '', primary key (category, type, target), foreign key (category) references categories(id) on delete cascade )")
+			mochi.db.execute("insert into destinations select category, type, target from destinations_tmp")
+			mochi.db.execute("drop table destinations_tmp")
+
 # Expiry: 30 days unread, 7 days read. Also expire matching sends rows
 # so the count derivation doesn't reference rows that no longer have a
 # parent notification.
@@ -521,7 +569,7 @@ def action_rss(a):
 		if row["app"] == "":
 			app_name = server_name
 		else:
-			app_name = app_names.get(row["app"], row["app"])
+			app_name = app_names.get(row["app"], row["app"].capitalize())
 		title = app_name + ": " + row["topic"]
 		if row["count"] > 1:
 			title = title + " (" + str(row["count"]) + ")"
@@ -568,20 +616,20 @@ def action_accounts_add(a):
 		val = a.input(key)
 		if val:
 			if len(val) > 4096:
-				a.error(400, key + " is too long")
+				a.error.label(400, "errors.value_too_long", maximum=4096)
 				return
 			fields[key] = val
 
-	notify_default = a.input("notify_default", "1")
-	notify_default = notify_default == "1" or notify_default == "true"
+	add_to_existing = a.input("add_to_existing", "1")
+	add_to_existing = add_to_existing == "1" or add_to_existing == "true"
 
 	result = mochi.account.add(type, **fields)
 
 	if result and result.get("id"):
 		account_id = result["id"]
-		mochi.account.update(account_id, enabled=notify_default)
-		# If flagged notify-by-default, add as destination to every existing category (except id 0)
-		if notify_default:
+		mochi.account.update(account_id, enabled=add_to_existing)
+		# If flagged, add as destination to every existing category (except "0")
+		if add_to_existing:
 			_add_destination_to_categories("account", str(account_id))
 
 	return {"data": result}
@@ -631,8 +679,8 @@ def action_accounts_vapid(a):
 	return {"data": {"key": key}}
 
 def _add_destination_to_categories(type, target):
-	# Add this destination to every category except id 0 (No notifications)
-	cats = mochi.db.rows("select id from categories where id != 0")
+	# Add this destination to every category except "0" (No notifications)
+	cats = mochi.db.rows("select id from categories where id != '0'")
 	for c in cats or []:
 		mochi.db.execute(
 			"insert or ignore into destinations (category, type, target) values (?, ?, ?)",
@@ -663,8 +711,8 @@ def action_rss_create(a):
 	if not name:
 		return a.error.label(400, "errors.feed_name_is_required")
 
-	notify_default = a.input("notify_default", "1")
-	notify_default = notify_default == "1" or notify_default == "true"
+	add_to_existing = a.input("add_to_existing", "1")
+	add_to_existing = add_to_existing == "1" or add_to_existing == "true"
 
 	id = mochi.uid()
 	token = mochi.token.create("rss:" + id, ["rss"])
@@ -672,10 +720,10 @@ def action_rss_create(a):
 		return a.error.label(500, "errors.failed_to_create_token")
 	now = mochi.time.now()
 
-	enabled = 1 if notify_default else 0
+	enabled = 1 if add_to_existing else 0
 	mochi.db.execute("insert into rss (id, name, token, created, enabled) values (?, ?, ?, ?, ?)", id, name, token, now, enabled)
 
-	if notify_default:
+	if add_to_existing:
 		_add_destination_to_categories("rss", id)
 
 	return {"data": {"id": id, "name": name, "token": token, "created": now, "enabled": enabled}}
@@ -744,7 +792,7 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	propagate.
 
 	Routing:
-	  1. Topic row's category = 0 ("No notifications") → drop entirely.
+	  1. Topic row's category = "0" ("No notifications") → drop entirely.
 	  2. Topic row's category is NULL (no default category exists) → web-only.
 	  3. Otherwise → fan out to the category's destinations.
 
@@ -806,8 +854,8 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 				name, app, topic, object
 			)
 
-	# id 0 = No notifications: drop
-	if category == 0:
+	# "0" = No notifications: drop
+	if category == "0":
 		return 0
 
 	now = mochi.time.now()
@@ -930,13 +978,13 @@ def notifications_commit_hook(table, kind, row_uid):
 	if not topic_row:
 		return
 	category = topic_row["category"]
-	# id 0 = "No notifications", NULL = no default category (web-only).
-	if category == 0 or category == None:
+	# "0" = "No notifications", NULL = no default category (web-only).
+	if category == "0" or category == None:
 		return
 
 	dests = mochi.db.rows(
 		"select type, target from destinations where category = ?",
-		int(category)
+		category
 	)
 	for dest in dests or []:
 		if dest["type"] == "account":
@@ -1010,21 +1058,22 @@ def function_category_create(context, label="", destinations=None, default=None)
 	if not label or not mochi.text.valid(label, "text"):
 		return None
 	now = mochi.time.now()
-	mochi.db.execute("insert into categories (label, created) values (?, ?)", label, now)
-	cid = mochi.db.row("select last_insert_rowid() as id")["id"]
+	cid = mochi.uid()
+	mochi.db.execute("insert into categories (id, label, created) values (?, ?, ?)", cid, label, now)
 	_apply_destinations(cid, destinations)
 	if default:
 		_set_default(cid)
 	return cid
 
 def _set_default(id):
-	# Enforce exactly-one-default invariant. id=0 (No notifications) can't be default.
-	if not id or id == 0:
+	# Enforce exactly-one-default invariant. The "0" (No notifications)
+	# sentinel category can't be the default.
+	if not id or id == "0":
 		return
 	mochi.db.execute('update categories set "default" = 0')
 	mochi.db.execute('update categories set "default" = 1 where id = ?', id)
 
-def function_category_update(context, id=0, label=None, destinations=None, default=None):
+def function_category_update(context, id=None, label=None, destinations=None, default=None):
 	if not id:
 		return False
 	if not mochi.db.exists("select 1 from categories where id = ?", id):
@@ -1033,41 +1082,41 @@ def function_category_update(context, id=0, label=None, destinations=None, defau
 		if not mochi.text.valid(label, "text"):
 			return False
 		mochi.db.execute("update categories set label = ? where id = ?", label, id)
-	if default != None and id != 0:
+	if default != None and id != "0":
 		# Only allow setting default on (can't unset without picking another).
 		if default:
 			_set_default(id)
-	if destinations != None and id != 0:
+	if destinations != None and id != "0":
 		_apply_destinations(id, destinations)
 	return True
 
-def function_category_delete(context, id=0, reassign_to=None):
+def function_category_delete(context, id=None, reassign_to=None):
 	"""Delete a category, reassigning any topic rows to `reassign_to`.
 
-	reassign_to must be the id of another existing category. Use 0 for No notifications.
-	Category 0 itself cannot be deleted.
+	reassign_to must be the id of another existing category. Use "0" for No
+	notifications. The "0" sentinel category itself cannot be deleted.
 	"""
-	if not id or id == 0:
+	if not id or id == "0":
 		return False
 	if not mochi.db.exists("select 1 from categories where id = ?", id):
 		return False
 	if reassign_to == None:
 		return False
-	if not mochi.db.exists("select 1 from categories where id = ?", int(reassign_to)):
+	if not mochi.db.exists("select 1 from categories where id = ?", reassign_to):
 		return False
-	if int(reassign_to) == int(id):
+	if reassign_to == id:
 		return False
 	# If we're deleting the default, promote the reassign target to be the new
 	# default (can't leave the system without a default).
 	was_default = mochi.db.exists('select 1 from categories where id = ? and "default" = 1', id)
-	mochi.db.execute("update topics set category = ? where category = ?", int(reassign_to), id)
+	mochi.db.execute("update topics set category = ? where category = ?", reassign_to, id)
 	mochi.db.execute("delete from destinations where category = ?", id)
 	mochi.db.execute("delete from categories where id = ?", id)
 	if was_default:
-		_set_default(int(reassign_to))
+		_set_default(reassign_to)
 	return True
 
-def function_category_test(context, id=0):
+def function_category_test(context, id=None):
 	"""Send a test notification through the category's destinations.
 
 	External destinations (accounts) are invoked via mochi.account.notify. A
@@ -1169,7 +1218,7 @@ def _account_display_label(account_id):
 def _apply_destinations(category_id, destinations):
 	if destinations == None:
 		return
-	if category_id == 0:
+	if category_id == "0":
 		return
 	mochi.db.execute("delete from destinations where category = ?", category_id)
 	for dest in destinations:
@@ -1224,11 +1273,11 @@ def function_topic_set_category(context, app="", topic="", object="", category=N
 			app, topic, object
 		)
 	else:
-		if not mochi.db.exists("select 1 from categories where id = ?", int(category)):
+		if not mochi.db.exists("select 1 from categories where id = ?", category):
 			return False
 		mochi.db.execute(
 			"update topics set category = ? where app = ? and topic = ? and object = ?",
-			int(category), app, topic, object
+			category, app, topic, object
 		)
 	return True
 
@@ -1282,7 +1331,7 @@ def action_categories_create(a):
 
 def action_categories_update(a):
 	id = a.input("id", "").strip()
-	if not id or not id.isdigit():
+	if not id or len(id) > 64:
 		return a.error.label(400, "errors.invalid_id")
 	label = a.input("label")
 	default_raw = a.input("default")
@@ -1291,7 +1340,7 @@ def action_categories_update(a):
 	if default_raw != None and default_raw != "":
 		default = 1 if default_raw == "1" or default_raw == "true" else 0
 	destinations = json.decode(destinations_json) if destinations_json else None
-	ok = function_category_update({}, int(id), label, destinations, default)
+	ok = function_category_update({}, id, label, destinations, default)
 	if not ok:
 		return a.error.label(404, "errors.not_found")
 	return {"data": {}}
@@ -1299,20 +1348,20 @@ def action_categories_update(a):
 def action_categories_delete(a):
 	id = a.input("id", "").strip()
 	reassign = a.input("reassign_to", "").strip()
-	if not id or not id.isdigit():
+	if not id or len(id) > 64:
 		return a.error.label(400, "errors.invalid_id")
-	if not reassign or not reassign.lstrip("-").isdigit():
+	if not reassign or len(reassign) > 64:
 		return a.error.label(400, "errors.reassign_to_is_required")
-	ok = function_category_delete({}, int(id), int(reassign))
+	ok = function_category_delete({}, id, reassign)
 	if not ok:
 		return a.error.label(400, "errors.could_not_delete")
 	return {"data": {}}
 
 def action_categories_test(a):
 	id = a.input("id", "").strip()
-	if not id or not id.isdigit():
+	if not id or len(id) > 64:
 		return a.error.label(400, "errors.invalid_id")
-	return {"data": function_category_test({}, int(id))}
+	return {"data": function_category_test({}, id)}
 
 def action_topics_list(a):
 	return {"data": function_topic_list({})}
@@ -1321,10 +1370,10 @@ def action_topics_set_category(a):
 	app = a.input("app", "").strip()
 	topic = a.input("topic", "").strip()
 	object = a.input("object", "")
-	cat_raw = a.input("category", "")
+	cat_raw = a.input("category", "").strip()
 	category = None
-	if cat_raw != "" and cat_raw.lstrip("-").isdigit():
-		category = int(cat_raw)
+	if cat_raw != "" and len(cat_raw) <= 64:
+		category = cat_raw
 	ok = function_topic_set_category({}, app, topic, object, category)
 	if not ok:
 		return a.error.label(404, "errors.not_found")
