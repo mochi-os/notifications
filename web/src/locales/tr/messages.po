@@ -106,6 +106,14 @@ msgstr "AI"
 msgid "All"
 msgstr "Tümü"
 
+#: ../../../lib/web/src/lib/api-client.ts:189
+msgid "An error occurred"
+msgstr "Bir hata oluştu"
+
+#: ../../../lib/web/src/lib/api-client.ts:252
+msgid "An unexpected error occurred"
+msgstr "Beklenmeyen bir hata oluştu"
+
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:24
 msgid "Are you sure you want to log out? You will need to log in again to access your account."
 msgstr "Çıkış yapmak istediğinizden emin misiniz? Hesabınıza erişmek için tekrar giriş yapmanız gerekecek."
@@ -113,6 +121,10 @@ msgstr "Çıkış yapmak istediğinizden emin misiniz? Hesabınıza erişmek iç
 #: ../../../lib/web/src/components/data-table/column-header.tsx:56
 msgid "Asc"
 msgstr "Artan"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:312
+msgid "Authenticator code"
+msgstr "Authenticator kodu"
 
 #: ../../../lib/web/src/components/place-picker.tsx:152
 msgid "Back"
@@ -124,7 +136,7 @@ msgstr "Geri"
 msgid "Back to home"
 msgstr "Ana sayfaya dön"
 
-#: src/features/notification/index.tsx:74
+#: src/features/notification/index.tsx:72
 msgid "Blocked navigation to untrusted link"
 msgstr "Güvenilmeyen bağlantıya gezinme engellendi"
 
@@ -133,6 +145,7 @@ msgid "Boost interest"
 msgstr "İlgiyi artır"
 
 #: ../../../lib/web/src/components/responsive-confirm-dialog.tsx:64
+#: ../../../lib/web/src/components/step-up-dialog.tsx:360
 #: ../../../lib/web/src/components/travelling-picker.tsx:292
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:245
 #: ../../../lib/web/src/features/access/access-dialog.tsx:325
@@ -143,11 +156,11 @@ msgstr "İlgiyi artır"
 msgid "Cancel"
 msgstr "İptal"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:131
+#: ../../../lib/web/src/components/notification-category-button.tsx:135
 msgid "Category for this notification"
 msgstr "Bu bildirim için kategori"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:115
+#: ../../../lib/web/src/components/notification-category-button.tsx:119
 msgid "Change notification category"
 msgstr "Bildirim kategorisini değiştir"
 
@@ -176,7 +189,7 @@ msgid "Clear"
 msgstr "Temizle"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:64
-#: src/features/notification/index.tsx:208
+#: src/features/notification/index.tsx:200
 msgid "Clear all"
 msgstr "Tümünü temizle"
 
@@ -245,6 +258,10 @@ msgstr "Bağlamsal bilgi ve ayrıntılar."
 msgid "Continue"
 msgstr "Devam et"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:349
+msgid "Continue with {label}"
+msgstr "{label} ile devam et"
+
 #: src/components/rss-dialog.tsx:186
 #: src/components/rss-dialog.tsx:195
 msgid "Copied to clipboard"
@@ -257,6 +274,18 @@ msgstr "Kopyala"
 #: ../../../lib/web/src/features/document/document-page.tsx:81
 msgid "Could not load this document. Please try again later."
 msgstr "Bu belge yüklenemedi. Lütfen daha sonra tekrar deneyin."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:181
+msgid "Couldn't send the code. Please try again."
+msgstr "Kod gönderilemedi. Lütfen tekrar deneyin."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:133
+msgid "Couldn't start re-authentication. Please try again."
+msgstr "Yeniden kimlik doğrulama başlatılamadı. Lütfen tekrar deneyin."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:218
+msgid "Couldn't verify with that account. Please try again."
+msgstr "Bu hesapla doğrulama yapılamadı. Lütfen tekrar deneyin."
 
 #: src/components/rss-dialog.tsx:355
 #: src/components/rss-dialog.tsx:402
@@ -304,6 +333,10 @@ msgstr "Feed'i sil"
 msgid "Delete Feed?"
 msgstr "Feed silinsin mi?"
 
+#: ../../../lib/web/src/components/restore-banner.tsx:90
+msgid "Delete your account on the old server"
+msgstr "Eski sunucudaki hesabınızı silin"
+
 #: ../../../lib/web/src/components/data-table/column-header.tsx:60
 msgid "Desc"
 msgstr "Azalan"
@@ -326,6 +359,10 @@ msgstr "Web tarayıcıdan algıla"
 #: ../../../lib/web/src/components/config-drawer.tsx:327
 msgid "Direction"
 msgstr "Yön"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:73
+msgid "Dismiss"
+msgstr "Kapat"
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:235
 msgid "Displays the mobile sidebar."
@@ -350,6 +387,18 @@ msgstr "örn. Feedly, NewsBlur"
 #: src/components/rss-dialog.tsx:317
 msgid "Edit feed"
 msgstr "Akışı düzenle"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:286
+msgid "Email code"
+msgstr "E-posta kodu"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:296
+msgid "Enter the code from your email"
+msgstr "E-postanızdaki kodu girin"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:321
+msgid "Enter your authenticator code"
+msgstr "Kimlik doğrulayıcı kodunuzu girin"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -383,7 +432,7 @@ msgstr "Akış yeniden adlandırılamadı"
 msgid "Failed to send verification code"
 msgstr "Doğrulama kodu gönderilemedi"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:104
+#: ../../../lib/web/src/components/notification-category-button.tsx:108
 msgid "Failed to update category"
 msgstr "Kategori güncellenemedi"
 
@@ -406,6 +455,10 @@ msgstr "Akış adı"
 #: src/components/rss-dialog.tsx:157
 msgid "Feed renamed"
 msgstr "Akış yeniden adlandırıldı"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:79
+msgid "Finish moving your account"
+msgstr "Hesap taşımayı tamamlayın"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:244
 msgid "Floating"
@@ -550,7 +603,7 @@ msgstr "Oturum kapatılıyor…"
 msgid "Mark all as read"
 msgstr "Tümünü okundu olarak işaretle"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:185
 msgid "Mark all read"
 msgstr "Tümünü okundu olarak işaretle"
 
@@ -569,6 +622,10 @@ msgstr "Metrik"
 #: ../../../lib/web/src/lib/preference-utils.ts:56
 msgid "Monday"
 msgstr "Pazartesi"
+
+#: ../../../lib/web/src/lib/api-client.ts:297
+msgid "Network error"
+msgstr "Ağ hatası"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:40
 msgid "New"
@@ -590,7 +647,7 @@ msgstr "Bağlı hesap yok"
 msgid "No groups available"
 msgstr "Grup yok"
 
-#: src/features/notification/index.tsx:246
+#: src/features/notification/index.tsx:238
 msgid "No notifications"
 msgstr "Bildirim yok"
 
@@ -615,11 +672,11 @@ msgstr "Henüz RSS akışı yok"
 msgid "No time zone found."
 msgstr "Saat dilimi bulunamadı."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:139
 msgid "No topic record yet — try again after the next notification."
 msgstr "Henüz konu kaydı yok — bir sonraki bildirimden sonra tekrar deneyin."
 
-#: src/features/notification/index.tsx:246
+#: src/features/notification/index.tsx:238
 msgid "No unread notifications"
 msgstr "Okunmamış bildirim yok"
 
@@ -640,8 +697,8 @@ msgstr "Normal"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:247
-#: src/features/notification/index.tsx:129
-#: src/features/notification/index.tsx:164
+#: src/features/notification/index.tsx:121
+#: src/features/notification/index.tsx:156
 msgid "Notifications"
 msgstr "Bildirimler"
 
@@ -680,6 +737,22 @@ msgstr "Diğer"
 msgid "Owner"
 msgstr "Sahip"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:331
+msgid "Passkey"
+msgstr "Geçiş anahtarı"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:206
+msgid "Passkey verification failed. Please try again."
+msgstr "Geçiş anahtarı doğrulaması başarısız oldu. Lütfen tekrar deneyin."
+
+#: ../../../lib/web/src/components/restore-banner.tsx:126
+msgid "Passkeys"
+msgstr "Passkey'ler"
+
+#: ../../../lib/web/src/lib/api-client.ts:298
+msgid "Please check your internet connection and try again."
+msgstr "Lütfen internet bağlantınızı kontrol edip tekrar deneyin."
+
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
 msgstr "Önceki görsel"
@@ -693,6 +766,14 @@ msgstr "Gizlilik"
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
 msgid "Profile"
 msgstr "Profil"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:98
+msgid "Re-link your accounts on this server"
+msgstr "Hesaplarınızı bu sunucuda yeniden bağlayın"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:120
+msgid "Re-register your passkeys on this server"
+msgstr "Bu sunucuda parola anahtarlarınızı yeniden kaydedin"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:216
 #: ../../../lib/web/src/components/search-entity-page.tsx:191
@@ -732,6 +813,10 @@ msgstr "Erişim kaldırılsın mı?"
 #: ../../../lib/web/src/components/post-tags.tsx:190
 msgid "Remove interest"
 msgstr "İlgiyi kaldır"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:364
+msgid "Resend email"
+msgstr "E-postayı yeniden gönder"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
 #: ../../../lib/web/src/components/data-table/toolbar.tsx:78
@@ -832,9 +917,18 @@ msgstr "Tema tercihi seç"
 msgid "Send again"
 msgstr "Tekrar gönder"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:304
+msgid "Send email"
+msgstr "E-posta gönder"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
 msgstr "Tırnaklı"
+
+#: ../../../lib/web/src/lib/api-client.ts:256
+#: ../../../lib/web/src/lib/api-client.ts:281
+msgid "Server error"
+msgstr "Sunucu hatası"
 
 #: ../../../lib/web/src/components/server-documents-footer.tsx:16
 #: ../../../lib/web/src/features/document/document-page.tsx:37
@@ -855,7 +949,7 @@ msgstr "Başlangıç ve hedef belirle"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:165
 msgid "Show all"
 msgstr "Tümünü göster"
 
@@ -916,6 +1010,10 @@ msgstr "Takımlar/Uygulamalar"
 #: ../../../lib/web/src/features/document/document-page.tsx:39
 msgid "Terms and conditions"
 msgstr "Şartlar ve koşullar"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:192
+msgid "That code is incorrect or has expired."
+msgstr "Bu kod yanlış veya süresi dolmuş."
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"
@@ -989,12 +1087,16 @@ msgstr "Kullanıcı aramak için yaz"
 msgid "Type to search..."
 msgstr "Aramak için yaz..."
 
+#: ../../../lib/web/src/lib/api-client.ts:277
+msgid "Unable to connect to remote server"
+msgstr "Uzak sunucuya bağlanılamadı"
+
 #: ../../../lib/web/src/lib/auth-manager.ts:82
 #: ../../../lib/web/src/lib/auth-manager.ts:94
 msgid "Unable to redirect to login. Please try again."
 msgstr "Giriş sayfasına yönlendirilemedi. Lütfen tekrar dene."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:147
 msgid "Unassigned"
 msgstr "Atanmamış"
 
@@ -1014,6 +1116,10 @@ msgstr "Doğrulanmamış"
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Mevcut bildirim abonelikleri için bu akışı kullan"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:335
+msgid "Use your passkey"
+msgstr "Geçiş anahtarınızı kullanın"
+
 #: ../../../lib/web/src/features/access/access-dialog.tsx:155
 msgid "User"
 msgstr "Kullanıcı"
@@ -1030,6 +1136,7 @@ msgstr "Doğrulama kodu gönderildi"
 msgid "Verification failed"
 msgstr "Doğrulama başarısız"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:385
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
@@ -1038,6 +1145,10 @@ msgstr "Doğrula"
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:58
 msgid "Verify email address"
 msgstr "E-posta adresini doğrula"
+
+#: ../../../lib/web/src/components/attachment-gallery.tsx:63
+msgid "Video thumbnail"
+msgstr "Video küçük resmi"
 
 #: ../../../lib/web/src/components/data-table/view-options.tsx:30
 msgid "View"
@@ -1062,3 +1173,7 @@ msgstr "Web sitesi bakımda!"
 #: ../../../lib/web/src/lib/preference-utils.ts:58
 msgid "Wednesday"
 msgstr "Çarşamba"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:82
+msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
+msgstr "Hesabınız {source} adresinden buraya taşındı. Orada silene kadar mesajlar ve bildirimler her iki sunucuya da ulaşabilir, bazı içerikleriniz eski sunucudan sunulmaya devam eder ve takipçileriniz sizi burada bulmak için birkaç dakika bekleyebilir."

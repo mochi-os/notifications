@@ -106,6 +106,14 @@ msgstr "AI"
 msgid "All"
 msgstr "Kõik"
 
+#: ../../../lib/web/src/lib/api-client.ts:189
+msgid "An error occurred"
+msgstr "Tekkis viga"
+
+#: ../../../lib/web/src/lib/api-client.ts:252
+msgid "An unexpected error occurred"
+msgstr "Tekkis ootamatu viga"
+
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:24
 msgid "Are you sure you want to log out? You will need to log in again to access your account."
 msgstr "Kas oled kindel, et soovid välja logida? Konto kasutamiseks pead uuesti sisse logima."
@@ -113,6 +121,10 @@ msgstr "Kas oled kindel, et soovid välja logida? Konto kasutamiseks pead uuesti
 #: ../../../lib/web/src/components/data-table/column-header.tsx:56
 msgid "Asc"
 msgstr "Tõusev"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:312
+msgid "Authenticator code"
+msgstr "Autentija kood"
 
 #: ../../../lib/web/src/components/place-picker.tsx:152
 msgid "Back"
@@ -124,7 +136,7 @@ msgstr "Tagasi"
 msgid "Back to home"
 msgstr "Tagasi avalehele"
 
-#: src/features/notification/index.tsx:74
+#: src/features/notification/index.tsx:72
 msgid "Blocked navigation to untrusted link"
 msgstr "Liikumine usaldamata lingile blokeeritud"
 
@@ -133,6 +145,7 @@ msgid "Boost interest"
 msgstr "Tõsta huvi"
 
 #: ../../../lib/web/src/components/responsive-confirm-dialog.tsx:64
+#: ../../../lib/web/src/components/step-up-dialog.tsx:360
 #: ../../../lib/web/src/components/travelling-picker.tsx:292
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:245
 #: ../../../lib/web/src/features/access/access-dialog.tsx:325
@@ -143,11 +156,11 @@ msgstr "Tõsta huvi"
 msgid "Cancel"
 msgstr "Tühista"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:131
+#: ../../../lib/web/src/components/notification-category-button.tsx:135
 msgid "Category for this notification"
 msgstr "Selle teavituse kategooria"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:115
+#: ../../../lib/web/src/components/notification-category-button.tsx:119
 msgid "Change notification category"
 msgstr "Muuda teavituse kategooriat"
 
@@ -176,7 +189,7 @@ msgid "Clear"
 msgstr "Tühjenda"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:64
-#: src/features/notification/index.tsx:208
+#: src/features/notification/index.tsx:200
 msgid "Clear all"
 msgstr "Tühjenda kõik"
 
@@ -245,6 +258,10 @@ msgstr "Kontekstuaalne teave ja üksikasjad."
 msgid "Continue"
 msgstr "Jätka"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:349
+msgid "Continue with {label}"
+msgstr "Jätka teenusega {label}"
+
 #: src/components/rss-dialog.tsx:186
 #: src/components/rss-dialog.tsx:195
 msgid "Copied to clipboard"
@@ -257,6 +274,18 @@ msgstr "Kopeeri"
 #: ../../../lib/web/src/features/document/document-page.tsx:81
 msgid "Could not load this document. Please try again later."
 msgstr "Selle dokumendi laadimine ebaõnnestus. Palun proovi hiljem uuesti."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:181
+msgid "Couldn't send the code. Please try again."
+msgstr "Koodi ei õnnestunud saata. Proovige uuesti."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:133
+msgid "Couldn't start re-authentication. Please try again."
+msgstr "Taasautentimist ei õnnestunud alustada. Proovige uuesti."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:218
+msgid "Couldn't verify with that account. Please try again."
+msgstr "Selle kontoga ei õnnestunud kinnitada. Palun proovi uuesti."
 
 #: src/components/rss-dialog.tsx:355
 #: src/components/rss-dialog.tsx:402
@@ -304,6 +333,10 @@ msgstr "Kustuta voog"
 msgid "Delete Feed?"
 msgstr "Kustutada voog?"
 
+#: ../../../lib/web/src/components/restore-banner.tsx:90
+msgid "Delete your account on the old server"
+msgstr "Kustuta konto vanalt serverilt"
+
 #: ../../../lib/web/src/components/data-table/column-header.tsx:60
 msgid "Desc"
 msgstr "Kahanev"
@@ -326,6 +359,10 @@ msgstr "Tuvasta veebibrauserist"
 #: ../../../lib/web/src/components/config-drawer.tsx:327
 msgid "Direction"
 msgstr "Suund"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:73
+msgid "Dismiss"
+msgstr "Sulge"
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:235
 msgid "Displays the mobile sidebar."
@@ -350,6 +387,18 @@ msgstr "nt Feedly, NewsBlur"
 #: src/components/rss-dialog.tsx:317
 msgid "Edit feed"
 msgstr "Muuda voogu"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:286
+msgid "Email code"
+msgstr "E-posti kood"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:296
+msgid "Enter the code from your email"
+msgstr "Sisesta e-kirjas saadud kood"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:321
+msgid "Enter your authenticator code"
+msgstr "Sisestage oma autentimisrakenduse kood"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -383,7 +432,7 @@ msgstr "Voo ümbernimetamine ebaõnnestus"
 msgid "Failed to send verification code"
 msgstr "Kinnituskoodi saatmine ebaõnnestus"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:104
+#: ../../../lib/web/src/components/notification-category-button.tsx:108
 msgid "Failed to update category"
 msgstr "Kategooria värskendamine ebaõnnestus"
 
@@ -406,6 +455,10 @@ msgstr "Voo nimi"
 #: src/components/rss-dialog.tsx:157
 msgid "Feed renamed"
 msgstr "Voog ümber nimetatud"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:79
+msgid "Finish moving your account"
+msgstr "Lõpeta konto koliminen"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:244
 msgid "Floating"
@@ -550,7 +603,7 @@ msgstr "Välja logimine…"
 msgid "Mark all as read"
 msgstr "Märgi kõik loetuks"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:185
 msgid "Mark all read"
 msgstr "Märgi kõik loetuks"
 
@@ -569,6 +622,10 @@ msgstr "Meetermõõdustik"
 #: ../../../lib/web/src/lib/preference-utils.ts:56
 msgid "Monday"
 msgstr "Esmaspäev"
+
+#: ../../../lib/web/src/lib/api-client.ts:297
+msgid "Network error"
+msgstr "Võrguviga"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:40
 msgid "New"
@@ -590,7 +647,7 @@ msgstr "Seotud kontosid pole"
 msgid "No groups available"
 msgstr "Saadaolevaid gruppe pole"
 
-#: src/features/notification/index.tsx:246
+#: src/features/notification/index.tsx:238
 msgid "No notifications"
 msgstr "Teavitusi pole"
 
@@ -615,11 +672,11 @@ msgstr "RSS-vooge veel pole"
 msgid "No time zone found."
 msgstr "Ajavööndit ei leitud."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:139
 msgid "No topic record yet — try again after the next notification."
 msgstr "Teemakirjet veel pole — proovi uuesti pärast järgmist teavitust."
 
-#: src/features/notification/index.tsx:246
+#: src/features/notification/index.tsx:238
 msgid "No unread notifications"
 msgstr "Lugemata teavitusi pole"
 
@@ -640,8 +697,8 @@ msgstr "Tavaline"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:247
-#: src/features/notification/index.tsx:129
-#: src/features/notification/index.tsx:164
+#: src/features/notification/index.tsx:121
+#: src/features/notification/index.tsx:156
 msgid "Notifications"
 msgstr "Teavitused"
 
@@ -680,6 +737,22 @@ msgstr "Muu"
 msgid "Owner"
 msgstr "Omanik"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:331
+msgid "Passkey"
+msgstr "Pääsuvõti"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:206
+msgid "Passkey verification failed. Please try again."
+msgstr "Pääsuvõtmega kinnitamine ebaõnnestus. Proovige uuesti."
+
+#: ../../../lib/web/src/components/restore-banner.tsx:126
+msgid "Passkeys"
+msgstr "Pääsuvõtmed"
+
+#: ../../../lib/web/src/lib/api-client.ts:298
+msgid "Please check your internet connection and try again."
+msgstr "Kontrolli internetiühendust ja proovi uuesti."
+
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
 msgstr "Eelmine pilt"
@@ -693,6 +766,14 @@ msgstr "Privaatsus"
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
 msgid "Profile"
 msgstr "Profiil"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:98
+msgid "Re-link your accounts on this server"
+msgstr "Ühenda kontod uuesti selle serveriga"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:120
+msgid "Re-register your passkeys on this server"
+msgstr "Registreerige oma pääsuvõtmed selles serveris uuesti"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:216
 #: ../../../lib/web/src/components/search-entity-page.tsx:191
@@ -732,6 +813,10 @@ msgstr "Kas eemaldada juurdepääs?"
 #: ../../../lib/web/src/components/post-tags.tsx:190
 msgid "Remove interest"
 msgstr "Eemalda huvi"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:364
+msgid "Resend email"
+msgstr "Saada e-kiri uuesti"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
 #: ../../../lib/web/src/components/data-table/toolbar.tsx:78
@@ -832,9 +917,18 @@ msgstr "Vali teema eelistus"
 msgid "Send again"
 msgstr "Saada uuesti"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:304
+msgid "Send email"
+msgstr "Saada e-kiri"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
 msgstr "Seriif"
+
+#: ../../../lib/web/src/lib/api-client.ts:256
+#: ../../../lib/web/src/lib/api-client.ts:281
+msgid "Server error"
+msgstr "Serveri viga"
 
 #: ../../../lib/web/src/components/server-documents-footer.tsx:16
 #: ../../../lib/web/src/features/document/document-page.tsx:37
@@ -855,7 +949,7 @@ msgstr "Määra lähtekoht ja sihtkoht"
 msgid "Settings"
 msgstr "Seaded"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:165
 msgid "Show all"
 msgstr "Näita kõiki"
 
@@ -916,6 +1010,10 @@ msgstr "Tiimid/Rakendused"
 #: ../../../lib/web/src/features/document/document-page.tsx:39
 msgid "Terms and conditions"
 msgstr "Tingimused"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:192
+msgid "That code is incorrect or has expired."
+msgstr "See kood on vale või aegunud."
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"
@@ -989,12 +1087,16 @@ msgstr "Kirjuta kasutajate otsimiseks"
 msgid "Type to search..."
 msgstr "Kirjuta otsimiseks..."
 
+#: ../../../lib/web/src/lib/api-client.ts:277
+msgid "Unable to connect to remote server"
+msgstr "Kaugserveriga ei õnnestu ühendust luua"
+
 #: ../../../lib/web/src/lib/auth-manager.ts:82
 #: ../../../lib/web/src/lib/auth-manager.ts:94
 msgid "Unable to redirect to login. Please try again."
 msgstr "Sisselogimisele ei õnnestu ümber suunata. Palun proovi uuesti."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:147
 msgid "Unassigned"
 msgstr "Määramata"
 
@@ -1014,6 +1116,10 @@ msgstr "Kontrollimata"
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Kasuta seda voogu oma praeguste teateid puudutavate tellimuste jaoks"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:335
+msgid "Use your passkey"
+msgstr "Kasutage oma pääsuvõtit"
+
 #: ../../../lib/web/src/features/access/access-dialog.tsx:155
 msgid "User"
 msgstr "Kasutaja"
@@ -1030,6 +1136,7 @@ msgstr "Kontrollkood saadetud"
 msgid "Verification failed"
 msgstr "Kontrollimine ebaõnnestus"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:385
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
@@ -1038,6 +1145,10 @@ msgstr "Kontrolli"
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:58
 msgid "Verify email address"
 msgstr "Kontrolli e-posti aadressi"
+
+#: ../../../lib/web/src/components/attachment-gallery.tsx:63
+msgid "Video thumbnail"
+msgstr "Video pisipilt"
 
 #: ../../../lib/web/src/components/data-table/view-options.tsx:30
 msgid "View"
@@ -1062,3 +1173,7 @@ msgstr "Veebileht on hooldustöödel!"
 #: ../../../lib/web/src/lib/preference-utils.ts:58
 msgid "Wednesday"
 msgstr "Kolmapäev"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:82
+msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
+msgstr "Sinu konto liideti siia asukohast {source}. Kuni sa selle sealt ei kustuta, võivad sõnumid ja teavitused jõuda mõlemale serverile, osa sinu sisust tarbitakse jätkuvalt vanalt serverilt ning jälgijatel võib kuluda mõni minut, et sind siit leida."

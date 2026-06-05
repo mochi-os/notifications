@@ -106,6 +106,14 @@ msgstr "AI"
 msgid "All"
 msgstr "Kabèh"
 
+#: ../../../lib/web/src/lib/api-client.ts:189
+msgid "An error occurred"
+msgstr "Ana kaluputan"
+
+#: ../../../lib/web/src/lib/api-client.ts:252
+msgid "An unexpected error occurred"
+msgstr "Ana kaluputan sing ora dikarepake"
+
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:24
 msgid "Are you sure you want to log out? You will need to log in again to access your account."
 msgstr "Sampéyan yakin arep metu? Sampéyan kudu mlebu manèh kanggo ngakses akun sampéyan."
@@ -113,6 +121,10 @@ msgstr "Sampéyan yakin arep metu? Sampéyan kudu mlebu manèh kanggo ngakses ak
 #: ../../../lib/web/src/components/data-table/column-header.tsx:56
 msgid "Asc"
 msgstr "Munggah"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:312
+msgid "Authenticator code"
+msgstr "Kode authenticator"
 
 #: ../../../lib/web/src/components/place-picker.tsx:152
 msgid "Back"
@@ -124,7 +136,7 @@ msgstr "Bali"
 msgid "Back to home"
 msgstr "Mulih menyang ngarep"
 
-#: src/features/notification/index.tsx:74
+#: src/features/notification/index.tsx:72
 msgid "Blocked navigation to untrusted link"
 msgstr "Navigasi diblokir menyang link sing ora dipercaya"
 
@@ -133,6 +145,7 @@ msgid "Boost interest"
 msgstr "Tambah minat"
 
 #: ../../../lib/web/src/components/responsive-confirm-dialog.tsx:64
+#: ../../../lib/web/src/components/step-up-dialog.tsx:360
 #: ../../../lib/web/src/components/travelling-picker.tsx:292
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:245
 #: ../../../lib/web/src/features/access/access-dialog.tsx:325
@@ -143,11 +156,11 @@ msgstr "Tambah minat"
 msgid "Cancel"
 msgstr "Batal"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:131
+#: ../../../lib/web/src/components/notification-category-button.tsx:135
 msgid "Category for this notification"
 msgstr "Kategori kanggo pemberitahuan iki"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:115
+#: ../../../lib/web/src/components/notification-category-button.tsx:119
 msgid "Change notification category"
 msgstr "Ganti kategori pemberitahuan"
 
@@ -176,7 +189,7 @@ msgid "Clear"
 msgstr "Resiki"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:64
-#: src/features/notification/index.tsx:208
+#: src/features/notification/index.tsx:200
 msgid "Clear all"
 msgstr "Resiki kabèh"
 
@@ -245,6 +258,10 @@ msgstr "Informasi kontekstual lan rincian."
 msgid "Continue"
 msgstr "Terus"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:349
+msgid "Continue with {label}"
+msgstr "Terusake nganggo {label}"
+
 #: src/components/rss-dialog.tsx:186
 #: src/components/rss-dialog.tsx:195
 msgid "Copied to clipboard"
@@ -257,6 +274,18 @@ msgstr "Salin"
 #: ../../../lib/web/src/features/document/document-page.tsx:81
 msgid "Could not load this document. Please try again later."
 msgstr "Ora bisa muat dokumen iki. Coba manèh mengko."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:181
+msgid "Couldn't send the code. Please try again."
+msgstr "Ora bisa ngirim kode. Coba maneh."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:133
+msgid "Couldn't start re-authentication. Please try again."
+msgstr "Ora bisa miwiti otentikasi ulang. Coba maneh."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:218
+msgid "Couldn't verify with that account. Please try again."
+msgstr "Ora bisa verifikasi nganggo akun kasebut. Mangga coba maneh."
 
 #: src/components/rss-dialog.tsx:355
 #: src/components/rss-dialog.tsx:402
@@ -304,6 +333,10 @@ msgstr "Busak feed"
 msgid "Delete Feed?"
 msgstr "Busak Feed?"
 
+#: ../../../lib/web/src/components/restore-banner.tsx:90
+msgid "Delete your account on the old server"
+msgstr "Busak akun sampeyan ing server lawas"
+
 #: ../../../lib/web/src/components/data-table/column-header.tsx:60
 msgid "Desc"
 msgstr "Mudhun"
@@ -326,6 +359,10 @@ msgstr "Deteksi saka browser web"
 #: ../../../lib/web/src/components/config-drawer.tsx:327
 msgid "Direction"
 msgstr "Arah"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:73
+msgid "Dismiss"
+msgstr "Singkiraké"
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:235
 msgid "Displays the mobile sidebar."
@@ -350,6 +387,18 @@ msgstr "cth., Feedly, NewsBlur"
 #: src/components/rss-dialog.tsx:317
 msgid "Edit feed"
 msgstr "Sunting umpan"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:286
+msgid "Email code"
+msgstr "Kode email"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:296
+msgid "Enter the code from your email"
+msgstr "Ketik kode saka email panjenengan"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:321
+msgid "Enter your authenticator code"
+msgstr "Lebokna kode authenticator sampeyan"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -383,7 +432,7 @@ msgstr "Gagal ngganti jeneng feed"
 msgid "Failed to send verification code"
 msgstr "Gagal ngirim kode verifikasi"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:104
+#: ../../../lib/web/src/components/notification-category-button.tsx:108
 msgid "Failed to update category"
 msgstr "Gagal nganyari kategori"
 
@@ -406,6 +455,10 @@ msgstr "Jeneng feed"
 #: src/components/rss-dialog.tsx:157
 msgid "Feed renamed"
 msgstr "Jeneng feed wis diganti"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:79
+msgid "Finish moving your account"
+msgstr "Rampungna mindah akun sampeyan"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:244
 msgid "Floating"
@@ -550,7 +603,7 @@ msgstr "Lagi metu…"
 msgid "Mark all as read"
 msgstr "Tandhani kabèh wis diwaca"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:185
 msgid "Mark all read"
 msgstr "Tandhani kabèh wis diwaca"
 
@@ -569,6 +622,10 @@ msgstr "Metrik"
 #: ../../../lib/web/src/lib/preference-utils.ts:56
 msgid "Monday"
 msgstr "Senin"
+
+#: ../../../lib/web/src/lib/api-client.ts:297
+msgid "Network error"
+msgstr "Kaluputan jaringan"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:40
 msgid "New"
@@ -590,7 +647,7 @@ msgstr "Ora ana akun disambungaké"
 msgid "No groups available"
 msgstr "Ora ana grup kasedhiya"
 
-#: src/features/notification/index.tsx:246
+#: src/features/notification/index.tsx:238
 msgid "No notifications"
 msgstr "Ora ana notifikasi"
 
@@ -615,11 +672,11 @@ msgstr "Durung ana feed RSS"
 msgid "No time zone found."
 msgstr "Ora ana zona wektu ditemokaké."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:139
 msgid "No topic record yet — try again after the next notification."
 msgstr "Durung ana cathetan topik — coba manèh sawisé notifikasi sabanjure."
 
-#: src/features/notification/index.tsx:246
+#: src/features/notification/index.tsx:238
 msgid "No unread notifications"
 msgstr "Ora ana notifikasi durung diwaca"
 
@@ -640,8 +697,8 @@ msgstr "Biasa"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:247
-#: src/features/notification/index.tsx:129
-#: src/features/notification/index.tsx:164
+#: src/features/notification/index.tsx:121
+#: src/features/notification/index.tsx:156
 msgid "Notifications"
 msgstr "Notifikasi"
 
@@ -680,6 +737,22 @@ msgstr "Liyané"
 msgid "Owner"
 msgstr "Sing duwé"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:331
+msgid "Passkey"
+msgstr "Passkey"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:206
+msgid "Passkey verification failed. Please try again."
+msgstr "Verifikasi passkey gagal. Coba maneh."
+
+#: ../../../lib/web/src/components/restore-banner.tsx:126
+msgid "Passkeys"
+msgstr "Passkey"
+
+#: ../../../lib/web/src/lib/api-client.ts:298
+msgid "Please check your internet connection and try again."
+msgstr "Mangga priksa sambungan internet sampeyan lan coba maneh."
+
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
 msgstr "Gambar sadurungé"
@@ -693,6 +766,14 @@ msgstr "Privasi"
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
 msgid "Profile"
 msgstr "Profil"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:98
+msgid "Re-link your accounts on this server"
+msgstr "Sambungke maneh akun sampeyan ing server iki"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:120
+msgid "Re-register your passkeys on this server"
+msgstr "Daftarake maneh passkey sampeyan ing server iki"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:216
 #: ../../../lib/web/src/components/search-entity-page.tsx:191
@@ -732,6 +813,10 @@ msgstr "Cabut akses?"
 #: ../../../lib/web/src/components/post-tags.tsx:190
 msgid "Remove interest"
 msgstr "Cabut minat"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:364
+msgid "Resend email"
+msgstr "Kirim ulang email"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
 #: ../../../lib/web/src/components/data-table/toolbar.tsx:78
@@ -832,9 +917,18 @@ msgstr "Pilih preferensi tema"
 msgid "Send again"
 msgstr "Kirim maneh"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:304
+msgid "Send email"
+msgstr "Kirim email"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
 msgstr "Serif"
+
+#: ../../../lib/web/src/lib/api-client.ts:256
+#: ../../../lib/web/src/lib/api-client.ts:281
+msgid "Server error"
+msgstr "Kaluputan server"
 
 #: ../../../lib/web/src/components/server-documents-footer.tsx:16
 #: ../../../lib/web/src/features/document/document-page.tsx:37
@@ -855,7 +949,7 @@ msgstr "Atur asal lan tujuan"
 msgid "Settings"
 msgstr "Setelan"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:165
 msgid "Show all"
 msgstr "Tampilake kabeh"
 
@@ -916,6 +1010,10 @@ msgstr "Tim/App"
 #: ../../../lib/web/src/features/document/document-page.tsx:39
 msgid "Terms and conditions"
 msgstr "Syarat lan ketentuan"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:192
+msgid "That code is incorrect or has expired."
+msgstr "Kode kasebut salah utawa wis kadaluwarsa."
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"
@@ -989,12 +1087,16 @@ msgstr "Ketik kanggo nggolèki panganggo"
 msgid "Type to search..."
 msgstr "Ketik kanggo nggolèki..."
 
+#: ../../../lib/web/src/lib/api-client.ts:277
+msgid "Unable to connect to remote server"
+msgstr "Ora bisa nyambung menyang server adoh"
+
 #: ../../../lib/web/src/lib/auth-manager.ts:82
 #: ../../../lib/web/src/lib/auth-manager.ts:94
 msgid "Unable to redirect to login. Please try again."
 msgstr "Ora bisa ngarahaké menyang login. Mangga coba manèh."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:147
 msgid "Unassigned"
 msgstr "Ora ditugasaké"
 
@@ -1014,6 +1116,10 @@ msgstr "Durung diverifikasi"
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Gunakaké feed iki kanggo langganan notifikasimu saiki"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:335
+msgid "Use your passkey"
+msgstr "Gunakake passkey sampeyan"
+
 #: ../../../lib/web/src/features/access/access-dialog.tsx:155
 msgid "User"
 msgstr "Panganggo"
@@ -1030,6 +1136,7 @@ msgstr "Kode verifikasi dikirim"
 msgid "Verification failed"
 msgstr "Verifikasi gagal"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:385
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
@@ -1038,6 +1145,10 @@ msgstr "Verifikasi"
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:58
 msgid "Verify email address"
 msgstr "Verifikasi alamat email"
+
+#: ../../../lib/web/src/components/attachment-gallery.tsx:63
+msgid "Video thumbnail"
+msgstr "Thumbnail video"
 
 #: ../../../lib/web/src/components/data-table/view-options.tsx:30
 msgid "View"
@@ -1062,3 +1173,7 @@ msgstr "Situs lagi pemeliharaan!"
 #: ../../../lib/web/src/lib/preference-utils.ts:58
 msgid "Wednesday"
 msgstr "Rebo"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:82
+msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
+msgstr "Akun sampeyan dipindah mrene saka {source}. Nganti sampeyan mbusak ana, pesen lan notifikasi bisa tekan loro-lorone server, sawetara konten sampeyan tetep dilayani saka server lawas, lan pengikut bisa butuh sawetara menit kanggo nemokake sampeyan ing kene."

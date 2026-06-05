@@ -106,6 +106,14 @@ msgstr "AI"
 msgid "All"
 msgstr "Alle"
 
+#: ../../../lib/web/src/lib/api-client.ts:189
+msgid "An error occurred"
+msgstr "Der opstod en fejl"
+
+#: ../../../lib/web/src/lib/api-client.ts:252
+msgid "An unexpected error occurred"
+msgstr "Der opstod en uventet fejl"
+
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:24
 msgid "Are you sure you want to log out? You will need to log in again to access your account."
 msgstr "Er du sikker på, at du vil logge ud? Du skal logge ind igen for at få adgang til din konto."
@@ -113,6 +121,10 @@ msgstr "Er du sikker på, at du vil logge ud? Du skal logge ind igen for at få 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:56
 msgid "Asc"
 msgstr "Stigende"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:312
+msgid "Authenticator code"
+msgstr "Authenticator-kode"
 
 #: ../../../lib/web/src/components/place-picker.tsx:152
 msgid "Back"
@@ -124,7 +136,7 @@ msgstr "Tilbage"
 msgid "Back to home"
 msgstr "Tilbage til start"
 
-#: src/features/notification/index.tsx:74
+#: src/features/notification/index.tsx:72
 msgid "Blocked navigation to untrusted link"
 msgstr "Blokerede navigation til upålideligt link"
 
@@ -133,6 +145,7 @@ msgid "Boost interest"
 msgstr "Fremhæv interesse"
 
 #: ../../../lib/web/src/components/responsive-confirm-dialog.tsx:64
+#: ../../../lib/web/src/components/step-up-dialog.tsx:360
 #: ../../../lib/web/src/components/travelling-picker.tsx:292
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:245
 #: ../../../lib/web/src/features/access/access-dialog.tsx:325
@@ -143,11 +156,11 @@ msgstr "Fremhæv interesse"
 msgid "Cancel"
 msgstr "Annuller"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:131
+#: ../../../lib/web/src/components/notification-category-button.tsx:135
 msgid "Category for this notification"
 msgstr "Kategori for denne notifikation"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:115
+#: ../../../lib/web/src/components/notification-category-button.tsx:119
 msgid "Change notification category"
 msgstr "Skift notifikationskategori"
 
@@ -176,7 +189,7 @@ msgid "Clear"
 msgstr "Ryd"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:64
-#: src/features/notification/index.tsx:208
+#: src/features/notification/index.tsx:200
 msgid "Clear all"
 msgstr "Ryd alle"
 
@@ -245,6 +258,10 @@ msgstr "Kontekstuelle oplysninger og detaljer."
 msgid "Continue"
 msgstr "Fortsæt"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:349
+msgid "Continue with {label}"
+msgstr "Fortsæt med {label}"
+
 #: src/components/rss-dialog.tsx:186
 #: src/components/rss-dialog.tsx:195
 msgid "Copied to clipboard"
@@ -257,6 +274,18 @@ msgstr "Kopier"
 #: ../../../lib/web/src/features/document/document-page.tsx:81
 msgid "Could not load this document. Please try again later."
 msgstr "Kunne ikke indlæse dette dokument. Prøv igen senere."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:181
+msgid "Couldn't send the code. Please try again."
+msgstr "Koden kunne ikke sendes. Prøv igen."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:133
+msgid "Couldn't start re-authentication. Please try again."
+msgstr "Kunne ikke starte gentaget godkendelse. Prøv igen."
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:218
+msgid "Couldn't verify with that account. Please try again."
+msgstr "Kunne ikke verificere med den konto. Prøv venligst igen."
 
 #: src/components/rss-dialog.tsx:355
 #: src/components/rss-dialog.tsx:402
@@ -304,6 +333,10 @@ msgstr "Slet feed"
 msgid "Delete Feed?"
 msgstr "Slet feed?"
 
+#: ../../../lib/web/src/components/restore-banner.tsx:90
+msgid "Delete your account on the old server"
+msgstr "Slet din konto på den gamle server"
+
 #: ../../../lib/web/src/components/data-table/column-header.tsx:60
 msgid "Desc"
 msgstr "Faldende"
@@ -326,6 +359,10 @@ msgstr "Registrer fra webbrowser"
 #: ../../../lib/web/src/components/config-drawer.tsx:327
 msgid "Direction"
 msgstr "Retning"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:73
+msgid "Dismiss"
+msgstr "Afvis"
 
 #: ../../../lib/web/src/components/ui/sidebar.tsx:235
 msgid "Displays the mobile sidebar."
@@ -350,6 +387,18 @@ msgstr "f.eks. Feedly, NewsBlur"
 #: src/components/rss-dialog.tsx:317
 msgid "Edit feed"
 msgstr "Rediger feed"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:286
+msgid "Email code"
+msgstr "E-mailkode"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:296
+msgid "Enter the code from your email"
+msgstr "Indtast koden fra din e-mail"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:321
+msgid "Enter your authenticator code"
+msgstr "Indtast din autentificeringskode"
 
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:35
 msgid "Expand sidebar"
@@ -383,7 +432,7 @@ msgstr "Kunne ikke omdøbe feed"
 msgid "Failed to send verification code"
 msgstr "Kunne ikke sende verifikationskode"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:104
+#: ../../../lib/web/src/components/notification-category-button.tsx:108
 msgid "Failed to update category"
 msgstr "Kunne ikke opdatere kategori"
 
@@ -406,6 +455,10 @@ msgstr "Feednavn"
 #: src/components/rss-dialog.tsx:157
 msgid "Feed renamed"
 msgstr "Feed omdøbt"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:79
+msgid "Finish moving your account"
+msgstr "Afslut flytning af din konto"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:244
 msgid "Floating"
@@ -550,7 +603,7 @@ msgstr "Logger ud…"
 msgid "Mark all as read"
 msgstr "Markér alle som læst"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:185
 msgid "Mark all read"
 msgstr "Markér alle læst"
 
@@ -569,6 +622,10 @@ msgstr "Metrisk"
 #: ../../../lib/web/src/lib/preference-utils.ts:56
 msgid "Monday"
 msgstr "Mandag"
+
+#: ../../../lib/web/src/lib/api-client.ts:297
+msgid "Network error"
+msgstr "Netværksfejl"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:40
 msgid "New"
@@ -590,7 +647,7 @@ msgstr "Ingen tilknyttede konti"
 msgid "No groups available"
 msgstr "Ingen grupper tilgængelige"
 
-#: src/features/notification/index.tsx:246
+#: src/features/notification/index.tsx:238
 msgid "No notifications"
 msgstr "Ingen notifikationer"
 
@@ -615,11 +672,11 @@ msgstr "Ingen RSS-feeds endnu"
 msgid "No time zone found."
 msgstr "Ingen tidszone fundet."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:139
 msgid "No topic record yet — try again after the next notification."
 msgstr "Ingen emnepost endnu — prøv igen efter næste notifikation."
 
-#: src/features/notification/index.tsx:246
+#: src/features/notification/index.tsx:238
 msgid "No unread notifications"
 msgstr "Ingen ulæste notifikationer"
 
@@ -640,8 +697,8 @@ msgstr "Normal"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:247
-#: src/features/notification/index.tsx:129
-#: src/features/notification/index.tsx:164
+#: src/features/notification/index.tsx:121
+#: src/features/notification/index.tsx:156
 msgid "Notifications"
 msgstr "Notifikationer"
 
@@ -680,6 +737,22 @@ msgstr "Andet"
 msgid "Owner"
 msgstr "Ejer"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:331
+msgid "Passkey"
+msgstr "Adgangsnøgle"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:206
+msgid "Passkey verification failed. Please try again."
+msgstr "Verificering med adgangsnøgle mislykkedes. Prøv igen."
+
+#: ../../../lib/web/src/components/restore-banner.tsx:126
+msgid "Passkeys"
+msgstr "Adgangsnøgler"
+
+#: ../../../lib/web/src/lib/api-client.ts:298
+msgid "Please check your internet connection and try again."
+msgstr "Tjek din internetforbindelse, og prøv igen."
+
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
 msgid "Previous image"
 msgstr "Forrige billede"
@@ -693,6 +766,14 @@ msgstr "Privatliv"
 #: ../../../lib/web/src/components/profile-dropdown.tsx:111
 msgid "Profile"
 msgstr "Profil"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:98
+msgid "Re-link your accounts on this server"
+msgstr "Gentilknyt dine konti på denne server"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:120
+msgid "Re-register your passkeys on this server"
+msgstr "Registrer dine adgangsnøgler på denne server igen"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:216
 #: ../../../lib/web/src/components/search-entity-page.tsx:191
@@ -732,6 +813,10 @@ msgstr "Fjern adgang?"
 #: ../../../lib/web/src/components/post-tags.tsx:190
 msgid "Remove interest"
 msgstr "Fjern interesse"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:364
+msgid "Resend email"
+msgstr "Send e-mail igen"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:77
 #: ../../../lib/web/src/components/data-table/toolbar.tsx:78
@@ -832,9 +917,18 @@ msgstr "Vælg temapræference"
 msgid "Send again"
 msgstr "Send igen"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:304
+msgid "Send email"
+msgstr "Send e-mail"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Serif"
 msgstr "Serif"
+
+#: ../../../lib/web/src/lib/api-client.ts:256
+#: ../../../lib/web/src/lib/api-client.ts:281
+msgid "Server error"
+msgstr "Serverfejl"
 
 #: ../../../lib/web/src/components/server-documents-footer.tsx:16
 #: ../../../lib/web/src/features/document/document-page.tsx:37
@@ -855,7 +949,7 @@ msgstr "Angiv oprindelse og destination"
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:165
 msgid "Show all"
 msgstr "Vis alle"
 
@@ -916,6 +1010,10 @@ msgstr "Teams/Apps"
 #: ../../../lib/web/src/features/document/document-page.tsx:39
 msgid "Terms and conditions"
 msgstr "Vilkår og betingelser"
+
+#: ../../../lib/web/src/components/step-up-dialog.tsx:192
+msgid "That code is incorrect or has expired."
+msgstr "Koden er forkert eller udløbet."
 
 #: ../../../lib/web/src/components/config-drawer.tsx:181
 msgid "Theme"
@@ -989,12 +1087,16 @@ msgstr "Skriv for at søge efter brugere"
 msgid "Type to search..."
 msgstr "Skriv for at søge..."
 
+#: ../../../lib/web/src/lib/api-client.ts:277
+msgid "Unable to connect to remote server"
+msgstr "Kunne ikke oprette forbindelse til fjernserveren"
+
 #: ../../../lib/web/src/lib/auth-manager.ts:82
 #: ../../../lib/web/src/lib/auth-manager.ts:94
 msgid "Unable to redirect to login. Please try again."
 msgstr "Kan ikke omdirigere til login. Prøv igen."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:147
 msgid "Unassigned"
 msgstr "Ikke tildelt"
 
@@ -1014,6 +1116,10 @@ msgstr "Uverificeret"
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Brug dette feed til dine nuværende notifikationsabonnementer"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:335
+msgid "Use your passkey"
+msgstr "Brug din adgangsnøgle"
+
 #: ../../../lib/web/src/features/access/access-dialog.tsx:155
 msgid "User"
 msgstr "Bruger"
@@ -1030,6 +1136,7 @@ msgstr "Verifikationskode sendt"
 msgid "Verification failed"
 msgstr "Verifikation mislykkedes"
 
+#: ../../../lib/web/src/components/step-up-dialog.tsx:385
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:164
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:106
 msgid "Verify"
@@ -1038,6 +1145,10 @@ msgstr "Verificer"
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:58
 msgid "Verify email address"
 msgstr "Verificer e-mailadresse"
+
+#: ../../../lib/web/src/components/attachment-gallery.tsx:63
+msgid "Video thumbnail"
+msgstr "Videominiature"
 
 #: ../../../lib/web/src/components/data-table/view-options.tsx:30
 msgid "View"
@@ -1062,3 +1173,7 @@ msgstr "Webstedet er under vedligeholdelse!"
 #: ../../../lib/web/src/lib/preference-utils.ts:58
 msgid "Wednesday"
 msgstr "Onsdag"
+
+#: ../../../lib/web/src/components/restore-banner.tsx:82
+msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
+msgstr "Din konto blev flyttet hertil fra {source}. Indtil du sletter den dér, kan beskeder og notifikationer nå begge servere, noget af dit indhold serveres stadig fra den gamle server, og følgere kan have brug for et par minutter på at finde dig her."
