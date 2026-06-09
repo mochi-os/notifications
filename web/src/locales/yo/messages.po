@@ -180,7 +180,7 @@ msgstr "Yan láàrin ìṣíkiri ojú-òpó láti òsì sí ọ̀tún tàbí lá
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Yan láàrin ìfẹ́ system, ọ̀nà ìmọ́lẹ̀, tàbí ọ̀nà òkùnkùn"
 
-#: ../../../lib/web/src/components/language-picker.tsx:174
+#: ../../../lib/web/src/components/language-picker.tsx:294
 msgid "Choose language"
 msgstr "Yan èdè"
 
@@ -207,7 +207,7 @@ msgid "Clear selection (Escape)"
 msgstr "Pa ìyàn rẹ́ (Escape)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:321
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
 msgstr "Tì"
@@ -345,7 +345,7 @@ msgstr "Desc"
 msgid "Details Panel"
 msgstr "Pánẹ́ẹ̀lì Àwọn Ẹ̀kúnrẹ́rẹ́"
 
-#: ../../../lib/web/src/components/language-picker.tsx:152
+#: ../../../lib/web/src/components/language-picker.tsx:272
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -372,7 +372,7 @@ msgstr "Ó ń fi sidebar fóònù hàn."
 msgid "Done"
 msgstr "Ti parí"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:315
 msgid "Download"
 msgstr "Gbà sílẹ̀"
 
@@ -631,7 +631,7 @@ msgstr "Àṣìṣe nẹ́tíwọ́kì"
 msgid "New"
 msgstr "Tuntun"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:345
 msgid "Next image"
 msgstr "Àwòrán tó kàn"
 
@@ -753,7 +753,7 @@ msgstr "Àwọn passkey"
 msgid "Please check your internet connection and try again."
 msgstr "Jọ̀wọ́ ṣàyẹ̀wò ìsopọ̀ íntánẹ́ẹ̀tì rẹ kí o sì gbìyànjú lẹ́ẹ̀kan sí i."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
 msgid "Previous image"
 msgstr "Àwòrán tó kọjá"
 
@@ -846,6 +846,10 @@ msgstr "Àwọn ìfàn RSS"
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "Ọjọ́ Àbámẹ́ta"
+
+#: ../../../lib/web/src/components/ui/secret-field.tsx:74
+msgid "Save"
+msgstr "Fi pamọ́"
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."

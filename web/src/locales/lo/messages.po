@@ -180,7 +180,7 @@ msgstr "ເລືອກລະຫວ່າງທິດທາງເວັບໄຊ
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "ເລືອກລະຫວ່າງຄ່າເລີ່ມຕົ້ນຂອງລະບົບ, ໂໝດສະຫວ່າງ, ຫຼື ໂໝດມືດ"
 
-#: ../../../lib/web/src/components/language-picker.tsx:174
+#: ../../../lib/web/src/components/language-picker.tsx:294
 msgid "Choose language"
 msgstr "ເລືອກພາສາ"
 
@@ -207,7 +207,7 @@ msgid "Clear selection (Escape)"
 msgstr "ລ້າງການເລືອກ (Escape)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:321
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
 msgstr "ປິດ"
@@ -345,7 +345,7 @@ msgstr "ຫຼາຍຫາໜ້ອຍ"
 msgid "Details Panel"
 msgstr "ແຜງລາຍລະອຽດ"
 
-#: ../../../lib/web/src/components/language-picker.tsx:152
+#: ../../../lib/web/src/components/language-picker.tsx:272
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -372,7 +372,7 @@ msgstr "ສະແດງແຖບຂ້າງມືຖື."
 msgid "Done"
 msgstr "ສຳເລັດແລ້ວ"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:315
 msgid "Download"
 msgstr "ດາວໂຫຼດ"
 
@@ -631,7 +631,7 @@ msgstr "ຂໍ້ຜິດພາດເຄືອຂ່າຍ"
 msgid "New"
 msgstr "ໃໝ່"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:345
 msgid "Next image"
 msgstr "ຮູບຕໍ່ໄປ"
 
@@ -753,7 +753,7 @@ msgstr "ກະແຈຜ່ານ"
 msgid "Please check your internet connection and try again."
 msgstr "ກະລຸນາກວດສອບການເຊື່ອມຕໍ່ອິນເຕີເນັດຂອງທ່ານ ແລະ ລອງໃໝ່ອີກຄັ້ງ."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
 msgid "Previous image"
 msgstr "ຮູບກ່ອນໜ້າ"
 
@@ -846,6 +846,10 @@ msgstr "RSS feeds"
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "ວັນເສົາ"
+
+#: ../../../lib/web/src/components/ui/secret-field.tsx:74
+msgid "Save"
+msgstr "ບັນທຶກ"
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."

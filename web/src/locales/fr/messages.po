@@ -180,7 +180,7 @@ msgstr "Choisissez entre l'écriture de gauche à droite ou de droite à gauche"
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Choisissez entre la préférence système, le mode clair ou le mode sombre"
 
-#: ../../../lib/web/src/components/language-picker.tsx:174
+#: ../../../lib/web/src/components/language-picker.tsx:294
 msgid "Choose language"
 msgstr "Choisir la langue"
 
@@ -207,7 +207,7 @@ msgid "Clear selection (Escape)"
 msgstr "Effacer la sélection (Échap)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:321
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
 msgstr "Fermer"
@@ -345,7 +345,7 @@ msgstr "Décroissant"
 msgid "Details Panel"
 msgstr "Panneau des détails"
 
-#: ../../../lib/web/src/components/language-picker.tsx:152
+#: ../../../lib/web/src/components/language-picker.tsx:272
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -372,7 +372,7 @@ msgstr "Affiche la barre latérale mobile."
 msgid "Done"
 msgstr "Terminé"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:315
 msgid "Download"
 msgstr "Télécharger"
 
@@ -631,7 +631,7 @@ msgstr "Erreur réseau"
 msgid "New"
 msgstr "Nouveau"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:345
 msgid "Next image"
 msgstr "Image suivante"
 
@@ -753,7 +753,7 @@ msgstr "Clés d'accès"
 msgid "Please check your internet connection and try again."
 msgstr "Veuillez vérifier votre connexion Internet et réessayer."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
 msgid "Previous image"
 msgstr "Image précédente"
 
@@ -846,6 +846,10 @@ msgstr "Flux RSS"
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "Samedi"
+
+#: ../../../lib/web/src/components/ui/secret-field.tsx:74
+msgid "Save"
+msgstr "Enregistrer"
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."

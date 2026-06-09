@@ -180,7 +180,7 @@ msgstr "Vel mellom venstre-til-høgre eller høgre-til-venstre sideretning"
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Vel mellom systeminnstilling, lys modus eller mørk modus"
 
-#: ../../../lib/web/src/components/language-picker.tsx:174
+#: ../../../lib/web/src/components/language-picker.tsx:294
 msgid "Choose language"
 msgstr "Vel språk"
 
@@ -207,7 +207,7 @@ msgid "Clear selection (Escape)"
 msgstr "Tøm utval (Escape)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:321
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
 msgstr "Lat att"
@@ -345,7 +345,7 @@ msgstr "Sink"
 msgid "Details Panel"
 msgstr "Detaljpanel"
 
-#: ../../../lib/web/src/components/language-picker.tsx:152
+#: ../../../lib/web/src/components/language-picker.tsx:272
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -372,7 +372,7 @@ msgstr "Viser mobil sidestolpe."
 msgid "Done"
 msgstr "Ferdig"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:315
 msgid "Download"
 msgstr "Last ned"
 
@@ -631,7 +631,7 @@ msgstr ""
 msgid "New"
 msgstr "Ny"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:345
 msgid "Next image"
 msgstr "Neste bilete"
 
@@ -753,7 +753,7 @@ msgstr ""
 msgid "Please check your internet connection and try again."
 msgstr ""
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
 msgid "Previous image"
 msgstr "Førre bilete"
 
@@ -846,6 +846,10 @@ msgstr "RSS-straumar"
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "Laurdag"
+
+#: ../../../lib/web/src/components/ui/secret-field.tsx:74
+msgid "Save"
+msgstr ""
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."

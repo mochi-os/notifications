@@ -180,7 +180,7 @@ msgstr "ਖੱਬੇ-ਤੋਂ-ਸੱਜੇ ਜਾਂ ਸੱਜੇ-ਤੋਂ-ਖ
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "ਸਿਸਟਮ ਤਰਜੀਹ, ਲਾਈਟ ਮੋਡ, ਜਾਂ ਡਾਰਕ ਮੋਡ ਵਿਚਕਾਰ ਚੁਣੋ"
 
-#: ../../../lib/web/src/components/language-picker.tsx:174
+#: ../../../lib/web/src/components/language-picker.tsx:294
 msgid "Choose language"
 msgstr "ਭਾਸ਼ਾ ਚੁਣੋ"
 
@@ -207,7 +207,7 @@ msgid "Clear selection (Escape)"
 msgstr "ਚੋਣ ਸਾਫ਼ ਕਰੋ (Escape)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:321
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
 msgstr "ਬੰਦ ਕਰੋ"
@@ -345,7 +345,7 @@ msgstr "ਘਟਦਾ"
 msgid "Details Panel"
 msgstr "ਵੇਰਵੇ ਪੈਨਲ"
 
-#: ../../../lib/web/src/components/language-picker.tsx:152
+#: ../../../lib/web/src/components/language-picker.tsx:272
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -372,7 +372,7 @@ msgstr "ਮੋਬਾਈਲ ਸਾਈਡਬਾਰ ਡਿਸਪਲੇ ਕਰਦਾ
 msgid "Done"
 msgstr "ਹੋ ਗਿਆ"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:315
 msgid "Download"
 msgstr "ਡਾਊਨਲੋਡ"
 
@@ -631,7 +631,7 @@ msgstr "ਨੈੱਟਵਰਕ ਗੜਬੜ"
 msgid "New"
 msgstr "ਨਵਾਂ"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:345
 msgid "Next image"
 msgstr "ਅਗਲੀ ਤਸਵੀਰ"
 
@@ -753,7 +753,7 @@ msgstr "ਪਾਸਕੀਆਂ"
 msgid "Please check your internet connection and try again."
 msgstr "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਜਾਂਚੋ ਅਤੇ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
 msgid "Previous image"
 msgstr "ਪਿਛਲੀ ਤਸਵੀਰ"
 
@@ -846,6 +846,10 @@ msgstr "RSS ਫੀਡਾਂ"
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "ਸ਼ਨੀਵਾਰ"
+
+#: ../../../lib/web/src/components/ui/secret-field.tsx:74
+msgid "Save"
+msgstr "ਸੰਭਾਲੋ"
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."

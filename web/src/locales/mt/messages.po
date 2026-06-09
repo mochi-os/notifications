@@ -180,7 +180,7 @@ msgstr "Agħżel bejn direzzjoni tas-sit minn xellug-għal-lemin jew minn lemin-
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Agħżel bejn preferenza tas-sistema, modalità ċara, jew modalità skura"
 
-#: ../../../lib/web/src/components/language-picker.tsx:174
+#: ../../../lib/web/src/components/language-picker.tsx:294
 msgid "Choose language"
 msgstr "Agħżel lingwa"
 
@@ -207,7 +207,7 @@ msgid "Clear selection (Escape)"
 msgstr "Naddaf l-għażla (Escape)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:321
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
 msgstr "Agħlaq"
@@ -345,7 +345,7 @@ msgstr "Niżla"
 msgid "Details Panel"
 msgstr "Pannell tad-Dettalji"
 
-#: ../../../lib/web/src/components/language-picker.tsx:152
+#: ../../../lib/web/src/components/language-picker.tsx:272
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -372,7 +372,7 @@ msgstr "Juri l-barra tal-ġenb tal-mobile."
 msgid "Done"
 msgstr "Lest"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:315
 msgid "Download"
 msgstr "Niżżel"
 
@@ -631,7 +631,7 @@ msgstr "Żball tan-network"
 msgid "New"
 msgstr "Ġdid"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:345
 msgid "Next image"
 msgstr "Stampa li jmiss"
 
@@ -753,7 +753,7 @@ msgstr "Ċwievet tal-aċċess"
 msgid "Please check your internet connection and try again."
 msgstr "Jekk jogħġbok iċċekkja l-konnessjoni tal-internet tiegħek u erġa' pprova."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
 msgid "Previous image"
 msgstr "Stampa preċedenti"
 
@@ -846,6 +846,10 @@ msgstr "Feeds RSS"
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "Is-Sibt"
+
+#: ../../../lib/web/src/components/ui/secret-field.tsx:74
+msgid "Save"
+msgstr "Issejvja"
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."

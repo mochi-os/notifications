@@ -180,7 +180,7 @@ msgstr "Выберыце напрамак сайта: злева направа 
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Выберыце сістэмныя налады, светлы або цёмны рэжым"
 
-#: ../../../lib/web/src/components/language-picker.tsx:174
+#: ../../../lib/web/src/components/language-picker.tsx:294
 msgid "Choose language"
 msgstr "Выберыце мову"
 
@@ -207,7 +207,7 @@ msgid "Clear selection (Escape)"
 msgstr "Ачысціць выбар (Escape)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:321
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
 msgstr "Закрыць"
@@ -345,7 +345,7 @@ msgstr "Спаданне"
 msgid "Details Panel"
 msgstr "Панэль дэталяў"
 
-#: ../../../lib/web/src/components/language-picker.tsx:152
+#: ../../../lib/web/src/components/language-picker.tsx:272
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -372,7 +372,7 @@ msgstr "Адлюстроўвае мабільную бакавую панэль.
 msgid "Done"
 msgstr "Гатова"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:315
 msgid "Download"
 msgstr "Спампаваць"
 
@@ -631,7 +631,7 @@ msgstr "Памылка сеткі"
 msgid "New"
 msgstr "Новы"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:345
 msgid "Next image"
 msgstr "Наступная выява"
 
@@ -753,7 +753,7 @@ msgstr "Ключы доступу"
 msgid "Please check your internet connection and try again."
 msgstr "Праверце падключэнне да інтэрнэту і паспрабуйце зноў."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
 msgid "Previous image"
 msgstr "Папярэдняя выява"
 
@@ -846,6 +846,10 @@ msgstr "RSS-стужкі"
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "Субота"
+
+#: ../../../lib/web/src/components/ui/secret-field.tsx:74
+msgid "Save"
+msgstr "Захаваць"
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."

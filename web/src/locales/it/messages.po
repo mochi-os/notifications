@@ -180,7 +180,7 @@ msgstr "Scegli tra direzione del sito da sinistra a destra o da destra a sinistr
 msgid "Choose between system preference, light mode, or dark mode"
 msgstr "Scegli tra preferenza di sistema, modalità chiara o modalità scura"
 
-#: ../../../lib/web/src/components/language-picker.tsx:174
+#: ../../../lib/web/src/components/language-picker.tsx:294
 msgid "Choose language"
 msgstr "Scegli la lingua"
 
@@ -207,7 +207,7 @@ msgid "Clear selection (Escape)"
 msgstr "Cancella selezione (Esc)"
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:75
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:318
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:321
 #: ../../../lib/web/src/components/ui/sheet.tsx:76
 msgid "Close"
 msgstr "Chiudi"
@@ -345,7 +345,7 @@ msgstr "Decr."
 msgid "Details Panel"
 msgstr "Pannello dei dettagli"
 
-#: ../../../lib/web/src/components/language-picker.tsx:152
+#: ../../../lib/web/src/components/language-picker.tsx:272
 #: ../../../lib/web/src/components/timezone-select.tsx:43
 #: ../../../lib/web/src/components/timezone-select.tsx:80
 #: ../../../lib/web/src/lib/preference-utils.ts:25
@@ -372,7 +372,7 @@ msgstr "Mostra la barra laterale mobile."
 msgid "Done"
 msgstr "Fatto"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:312
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:315
 msgid "Download"
 msgstr "Scarica"
 
@@ -631,7 +631,7 @@ msgstr "Errore di rete"
 msgid "New"
 msgstr "Nuovo"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:342
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:345
 msgid "Next image"
 msgstr "Immagine successiva"
 
@@ -753,7 +753,7 @@ msgstr "Passkey"
 msgid "Please check your internet connection and try again."
 msgstr "Controlla la connessione a internet e riprova."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
 msgid "Previous image"
 msgstr "Immagine precedente"
 
@@ -846,6 +846,10 @@ msgstr "Feed RSS"
 #: ../../../lib/web/src/lib/preference-utils.ts:61
 msgid "Saturday"
 msgstr "Sabato"
+
+#: ../../../lib/web/src/components/ui/secret-field.tsx:74
+msgid "Save"
+msgstr "Salva"
 
 #: src/components/rss-dialog.tsx:243
 msgid "Save this URL now. You won't be able to see the token again."
