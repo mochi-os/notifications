@@ -184,7 +184,8 @@ msgstr "පද්ධති අභිරුචිය, ආලෝකමත් ආ�
 msgid "Choose language"
 msgstr "භාෂාව තෝරන්න"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:304
+#: ../../../lib/web/src/components/colour-picker.tsx:268
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 msgid "Clear"
 msgstr "හිස් කරන්න"
 
@@ -299,6 +300,10 @@ msgstr "ආරම්භ කිරීමට එකක් නිර්මාණය
 #: src/components/rss-dialog.tsx:237
 msgid "Create RSS feed"
 msgstr "RSS පෝෂණයක් සාදන්න"
+
+#: ../../../lib/web/src/components/colour-picker.tsx:259
+msgid "Custom"
+msgstr "අභිරුචි"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -715,6 +720,10 @@ msgstr "අහෝ! පිටුව හමු නොවීය!"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
 msgstr "ගිණුම් ක්‍රියා විවෘත කරන්න"
+
+#: ../../../lib/web/src/components/layout/nav-group.tsx:134
+msgid "Open actions"
+msgstr "ක්‍රියා විවෘත කරන්න"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"

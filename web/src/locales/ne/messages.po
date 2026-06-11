@@ -184,7 +184,8 @@ msgstr "सिस्टम प्राथमिकता, उज्यालो
 msgid "Choose language"
 msgstr "भाषा छनोट गर्नुहोस्"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:304
+#: ../../../lib/web/src/components/colour-picker.tsx:268
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 msgid "Clear"
 msgstr "खाली गर्नुहोस्"
 
@@ -299,6 +300,10 @@ msgstr "सुरु गर्न एउटा सिर्जना गर्�
 #: src/components/rss-dialog.tsx:237
 msgid "Create RSS feed"
 msgstr "RSS फिड बनाउनुहोस्"
+
+#: ../../../lib/web/src/components/colour-picker.tsx:259
+msgid "Custom"
+msgstr "अनुकूलन"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -715,6 +720,10 @@ msgstr "ओहो! पृष्ठ भेटिएन!"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
 msgstr "खाता कार्यहरू खोल्नुहोस्"
+
+#: ../../../lib/web/src/components/layout/nav-group.tsx:134
+msgid "Open actions"
+msgstr "कार्यहरू खोल्नुहोस्"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"

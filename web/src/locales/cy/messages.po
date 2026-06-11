@@ -184,7 +184,8 @@ msgstr "Dewiswch rhwng dewis system, modd golau, neu modd tywyll"
 msgid "Choose language"
 msgstr "Dewiswch iaith"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:304
+#: ../../../lib/web/src/components/colour-picker.tsx:268
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 msgid "Clear"
 msgstr "Clirio"
 
@@ -299,6 +300,10 @@ msgstr "Crëwch un i ddechrau."
 #: src/components/rss-dialog.tsx:237
 msgid "Create RSS feed"
 msgstr "Creu porthiant RSS"
+
+#: ../../../lib/web/src/components/colour-picker.tsx:259
+msgid "Custom"
+msgstr "Wedi'i addasu"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -715,6 +720,10 @@ msgstr "Wps! Heb Ddod o Hyd i'r Dudalen!"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
 msgstr "Agor camau gweithredu cyfrif"
+
+#: ../../../lib/web/src/components/layout/nav-group.tsx:134
+msgid "Open actions"
+msgstr "Agor gweithredoedd"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"

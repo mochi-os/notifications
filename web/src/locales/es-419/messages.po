@@ -184,7 +184,8 @@ msgstr "Elige entre preferencia del sistema, modo claro o modo oscuro"
 msgid "Choose language"
 msgstr "Elige idioma"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:304
+#: ../../../lib/web/src/components/colour-picker.tsx:268
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 msgid "Clear"
 msgstr "Borrar"
 
@@ -299,6 +300,10 @@ msgstr "Crea uno para empezar."
 #: src/components/rss-dialog.tsx:237
 msgid "Create RSS feed"
 msgstr "Crear feed RSS"
+
+#: ../../../lib/web/src/components/colour-picker.tsx:259
+msgid "Custom"
+msgstr "Personalizado"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -715,6 +720,10 @@ msgstr "¡Vaya! Página no encontrada!"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
 msgstr "Abrir acciones de cuenta"
+
+#: ../../../lib/web/src/components/layout/nav-group.tsx:134
+msgid "Open actions"
+msgstr "Abrir acciones"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"

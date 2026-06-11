@@ -184,7 +184,8 @@ msgstr "在跟随系统、浅色模式或深色模式之间选择"
 msgid "Choose language"
 msgstr "选择语言"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:304
+#: ../../../lib/web/src/components/colour-picker.tsx:268
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 msgid "Clear"
 msgstr "清除"
 
@@ -299,6 +300,10 @@ msgstr "创建一个以开始使用。"
 #: src/components/rss-dialog.tsx:237
 msgid "Create RSS feed"
 msgstr "创建 RSS 源"
+
+#: ../../../lib/web/src/components/colour-picker.tsx:259
+msgid "Custom"
+msgstr "自定义"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -715,6 +720,10 @@ msgstr "抱歉!页面未找到!"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
 msgstr "打开账户操作"
+
+#: ../../../lib/web/src/components/layout/nav-group.tsx:134
+msgid "Open actions"
+msgstr "打开操作"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"

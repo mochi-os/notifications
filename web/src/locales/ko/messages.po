@@ -184,7 +184,8 @@ msgstr "시스템 설정, 라이트 모드, 다크 모드 중에서 선택하세
 msgid "Choose language"
 msgstr "언어 선택"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:304
+#: ../../../lib/web/src/components/colour-picker.tsx:268
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 msgid "Clear"
 msgstr "지우기"
 
@@ -299,6 +300,10 @@ msgstr "시작하려면 하나를 생성하세요."
 #: src/components/rss-dialog.tsx:237
 msgid "Create RSS feed"
 msgstr "RSS 피드 만들기"
+
+#: ../../../lib/web/src/components/colour-picker.tsx:259
+msgid "Custom"
+msgstr "사용자 지정"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -715,6 +720,10 @@ msgstr "이런! 페이지를 찾을 수 없어요!"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
 msgstr "계정 작업 열기"
+
+#: ../../../lib/web/src/components/layout/nav-group.tsx:134
+msgid "Open actions"
+msgstr "작업 열기"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"

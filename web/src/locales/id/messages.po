@@ -184,7 +184,8 @@ msgstr "Pilih antara preferensi sistem, mode terang, atau mode gelap"
 msgid "Choose language"
 msgstr "Pilih bahasa"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:304
+#: ../../../lib/web/src/components/colour-picker.tsx:268
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 msgid "Clear"
 msgstr "Bersihkan"
 
@@ -299,6 +300,10 @@ msgstr "Buat satu untuk memulai."
 #: src/components/rss-dialog.tsx:237
 msgid "Create RSS feed"
 msgstr "Buat umpan RSS"
+
+#: ../../../lib/web/src/components/colour-picker.tsx:259
+msgid "Custom"
+msgstr "Kustom"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -715,6 +720,10 @@ msgstr "Ups! Halaman Tidak Ditemukan!"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
 msgstr "Buka tindakan akun"
+
+#: ../../../lib/web/src/components/layout/nav-group.tsx:134
+msgid "Open actions"
+msgstr "Buka tindakan"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"

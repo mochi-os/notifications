@@ -184,7 +184,8 @@ msgstr "Kies tussen stelselvoorkeur, ligte modus, of donker modus"
 msgid "Choose language"
 msgstr "Kies taal"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:304
+#: ../../../lib/web/src/components/colour-picker.tsx:268
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 msgid "Clear"
 msgstr "Maak skoon"
 
@@ -299,6 +300,10 @@ msgstr "Skep een om te begin."
 #: src/components/rss-dialog.tsx:237
 msgid "Create RSS feed"
 msgstr "Skep RSS-stroom"
+
+#: ../../../lib/web/src/components/colour-picker.tsx:259
+msgid "Custom"
+msgstr "Pasgemaak"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:205
 #: ../../../lib/web/src/lib/preference-utils.ts:17
@@ -715,6 +720,10 @@ msgstr "Oeps! Bladsy nie gevind nie!"
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:151
 msgid "Open account actions"
 msgstr "Maak rekeningaksies oop"
+
+#: ../../../lib/web/src/components/layout/nav-group.tsx:134
+msgid "Open actions"
+msgstr "Maak aksies oop"
 
 #: ../../../lib/web/src/components/layout/top-bar.tsx:57
 msgid "Open navigation"
