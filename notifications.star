@@ -111,6 +111,34 @@ def _seed_categories():
 		for feed in mochi.db.rows("select id from rss where enabled = 1") or []:
 			mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'rss', ?)", normal_id, feed["id"])
 
+def _converge_normal_categories():
+	# Converge legacy per-host-uid "Normal" categories to the deterministic id
+	# "1" (see _seed_categories for why seeds must be deterministic). A pre-fix
+	# _seed_categories minted "Normal" with mochi.uid() on each host, so paired
+	# hosts created different ids for the same category and replicated them as
+	# duplicates - some hosts ended up with two "Normal" rows and two defaults.
+	# Idempotent and deterministic: every host converges to the same "1", and
+	# re-running on already-converged data is a no-op. References are re-pointed
+	# BEFORE the old rows are deleted - destinations.category is ON DELETE
+	# CASCADE, so deleting a Normal first would wipe its destinations.
+	now = mochi.time.now()
+	mochi.db.execute('insert or ignore into categories (id, label, "default", created) values (?, ?, 0, ?)', "1", "Normal", now)
+	for c in mochi.db.rows('select id from categories where label = ? and id != ?', "Normal", "1"):
+		old = c["id"]
+		mochi.db.execute("update or ignore destinations set category = ? where category = ?", "1", old)
+		mochi.db.execute("delete from destinations where category = ?", old)
+		mochi.db.execute("update topics set category = ? where category = ?", "1", old)
+		mochi.db.execute("delete from categories where id = ?", old)
+	# Restore the single-default invariant: the deleted duplicates carried
+	# default=1, so "1" may now have none. Re-assert Normal-as-default when
+	# nothing else claims it; collapse to "1" if somehow several remain.
+	defaults = mochi.db.rows('select id from categories where "default" = 1')
+	if len(defaults) == 0:
+		mochi.db.execute('update categories set "default" = 1 where id = ?', "1")
+	elif len(defaults) > 1:
+		mochi.db.execute('update categories set "default" = 0 where id != ?', "1")
+		mochi.db.execute('update categories set "default" = 1 where id = ?', "1")
+
 def database_upgrade(to_version):
 	if to_version == 9:
 		tables = [r["name"] for r in mochi.db.rows("select name from sqlite_master where type='table'")]
@@ -417,6 +445,16 @@ def database_upgrade(to_version):
 			mochi.db.execute("create table destinations ( category text not null, type text not null, target text not null default '', primary key (category, type, target), foreign key (category) references categories(id) on delete cascade )")
 			mochi.db.execute("insert into destinations select category, type, target from destinations_tmp")
 			mochi.db.execute("drop table destinations_tmp")
+
+	if to_version == 21:
+		_converge_normal_categories()
+
+	# The original v21 used an invalid mochi.db.integer() and failed; a failed
+	# migration still bumps the schema, so hosts that hit it skipped past 21
+	# without converging. Re-run the (idempotent) convergence at 22 to catch
+	# them; hosts that converged cleanly at 21 see a no-op here.
+	if to_version == 22:
+		_converge_normal_categories()
 
 # Expiry: 30 days unread, 7 days read. Also expire matching sends rows
 # so the count derivation doesn't reference rows that no longer have a
