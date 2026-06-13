@@ -82,28 +82,34 @@ def database_create():
 
 def _seed_categories():
 	now = mochi.time.now()
-	if not mochi.db.exists("select 1 from categories where id = '0'"):
-		mochi.db.execute("insert into categories (id, label, created) values ('0', 'No notifications', ?)", now)
-	normal_id = _ensure_category("Normal", now)
+	# Seed categories are created independently on every host (DB setup runs
+	# per-host), so their ids must be DETERMINISTIC and identical everywhere -
+	# a per-host mochi.uid() diverges and replicates as duplicate rows. The
+	# fixed '0'/'1' ids let every host agree; `insert or ignore` makes the
+	# replicated copy a no-op on a host that has already seeded the same id.
+	# (User-created categories are single-origin and correctly keep
+	# mochi.uid() via function_category_create.)
+	mochi.db.execute("insert or ignore into categories (id, label, created) values ('0', 'No notifications', ?)", now)
+	# "Normal" lives at the deterministic id '1'. Guard against a legacy
+	# uid-keyed "Normal" seeded before this change: keep it rather than add a
+	# second row (the divergent legacy rows are converged by db migration).
+	existing_normal = mochi.db.row("select id from categories where label = 'Normal'")
+	if existing_normal:
+		normal_id = existing_normal["id"]
+	else:
+		normal_id = '1'
+		mochi.db.execute("insert or ignore into categories (id, label, created) values ('1', 'Normal', ?)", now)
 	# Ensure exactly one default exists (Normal by default)
 	if not mochi.db.exists('select 1 from categories where "default" = 1'):
 		mochi.db.execute('update categories set "default" = 1 where id = ?', normal_id)
 	# Normal: web + every notify-by-default account + every notify-by-default RSS feed
 	if not mochi.db.exists("select 1 from destinations where category = ?", normal_id):
-		mochi.db.execute("insert into destinations (category, type, target) values (?, 'web', '')", normal_id)
+		mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'web', '')", normal_id)
 		for acc in mochi.account.list("notify") or []:
 			if acc.get("enabled"):
 				mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'account', ?)", normal_id, str(acc["id"]))
 		for feed in mochi.db.rows("select id from rss where enabled = 1") or []:
 			mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'rss', ?)", normal_id, feed["id"])
-
-def _ensure_category(label, now):
-	existing = mochi.db.row("select id from categories where label = ?", label)
-	if existing:
-		return existing["id"]
-	id = mochi.uid()
-	mochi.db.execute("insert into categories (id, label, created) values (?, ?, ?)", id, label, now)
-	return id
 
 def database_upgrade(to_version):
 	if to_version == 9:
