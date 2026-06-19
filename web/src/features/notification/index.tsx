@@ -77,8 +77,8 @@ function NotificationItem({
   return (
     <div
       className={cn(
-        'hover:bg-accent flex w-full items-start gap-3 px-4 py-3 transition-colors first:rounded-t-[10px] last:rounded-b-[10px]',
-        isUnread && 'bg-accent/50'
+        'hover:bg-hover flex w-full items-start gap-3 px-4 py-3 transition-colors first:rounded-t-[10px] last:rounded-b-[10px]',
+        isUnread && 'bg-selected/50'
       )}
     >
       <button
