@@ -90,7 +90,8 @@ msgstr "अवस्थित सूचनाहरूमा थप्नुह�
 msgid "Add to existing subscriptions"
 msgstr "अवस्थित सदस्यतामा थप्नुहोस्"
 
-#: ../../../lib/web/src/components/view-tabs.tsx:57
+#: ../../../lib/web/src/components/view-tabs.tsx:81
+#: ../../../lib/web/src/components/view-tabs.tsx:82
 msgid "Add view"
 msgstr "दृश्य थप्नुहोस्"
 
@@ -148,6 +149,7 @@ msgstr "रुचि बढाउनुहोस्"
 #: ../../../lib/web/src/components/step-up-dialog.tsx:360
 #: ../../../lib/web/src/components/travelling-picker.tsx:292
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:245
+#: ../../../lib/web/src/components/ui/editable-field-row.tsx:129
 #: ../../../lib/web/src/features/access/access-dialog.tsx:325
 #: ../../../lib/web/src/features/access/access-list.tsx:255
 #: ../../../lib/web/src/features/accounts/account-add.tsx:185
@@ -242,8 +244,8 @@ msgstr "चाँडै आउँदै!"
 msgid "Compact"
 msgstr "कम्प्याक्ट"
 
-#: ../../../lib/web/src/components/place-picker.tsx:155
-#: ../../../lib/web/src/components/travelling-picker.tsx:299
+#: ../../../lib/web/src/components/place-picker.tsx:156
+#: ../../../lib/web/src/components/travelling-picker.tsx:300
 msgid "Confirm"
 msgstr "पुष्टि गर्नुहोस्"
 
@@ -388,6 +390,10 @@ msgstr "डिस्लेक्सिया-मैत्रीपूर्ण"
 #: src/components/rss-dialog.tsx:367
 msgid "e.g., Feedly, NewsBlur"
 msgstr "जस्तै Feedly, NewsBlur"
+
+#: ../../../lib/web/src/components/ui/editable-field-row.tsx:151
+msgid "Edit {label}"
+msgstr "{label} सम्पादन गर्नुहोस्"
 
 #: src/components/rss-dialog.tsx:317
 msgid "Edit feed"
@@ -699,6 +705,10 @@ msgstr "कुनै पनि होइन"
 msgid "Normal"
 msgstr "सामान्य"
 
+#: ../../../lib/web/src/components/ui/editable-field-row.tsx:143
+msgid "Not set"
+msgstr "सेट गरिएको छैन"
+
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:132
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:146
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:247
@@ -856,6 +866,7 @@ msgstr "RSS फिडहरू"
 msgid "Saturday"
 msgstr "शनिबार"
 
+#: ../../../lib/web/src/components/ui/editable-field-row.tsx:119
 #: ../../../lib/web/src/components/ui/secret-field.tsx:74
 msgid "Save"
 msgstr "सुरक्षित गर्नुहोस्"
