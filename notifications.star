@@ -882,7 +882,7 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 		default = mochi.db.row('select id from categories where "default" = 1')
 		cat_val = default["id"] if default else None
 		mochi.db.execute(
-			"insert into topics (app, topic, object, label, name, category, created) values (?, ?, ?, ?, ?, ?, ?)",
+			"insert or ignore into topics (app, topic, object, label, name, category, created) values (?, ?, ?, ?, ?, ?, ?)",
 			app, topic, object, label, name, cat_val, mochi.time.now()
 		)
 		category = cat_val
