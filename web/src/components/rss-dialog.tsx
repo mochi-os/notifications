@@ -27,6 +27,9 @@ import {
   getAppPath,
   useQueryWithError,
   shellClipboardWrite,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
 } from '@mochi/web'
 import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil } from 'lucide-react'
 
@@ -285,18 +288,24 @@ export function RssDialog({
                             className='flex-1'
                             autoFocus
                           />
-                          <Button
-                            variant='ghost'
-                            size='sm'
-                            onClick={handleSaveEdit}
-                            disabled={renameMutation.isPending}
-                          >
-                            {renameMutation.isPending ? (
-                              <Loader2 className='h-4 w-4 animate-spin' />
-                            ) : (
-                              <Check className='h-4 w-4' />
-                            )}
-                          </Button>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Button
+                                variant='ghost'
+                                size='sm'
+                                onClick={handleSaveEdit}
+                                disabled={renameMutation.isPending}
+                                aria-label={t`Save`}
+                              >
+                                {renameMutation.isPending ? (
+                                  <Loader2 className='h-4 w-4 animate-spin' />
+                                ) : (
+                                  <Check className='h-4 w-4' />
+                                )}
+                              </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>{t`Save`}</TooltipContent>
+                          </Tooltip>
                         </div>
                       ) : (
                         <div className='space-y-2'>
@@ -304,34 +313,50 @@ export function RssDialog({
                             <p className='min-w-0 flex-1 truncate font-medium'>
                               {feed.name}
                             </p>
-                            <Button
-                              variant='ghost'
-                              size='sm'
-                              onClick={() => handleCopyFeed(feed)}
-                            >
-                              {copiedId === feed.id ? (
-                                <Check className='h-4 w-4' />
-                              ) : (
-                                <Copy className='h-4 w-4' />
-                              )}
-                            </Button>
-                            <Button
-                              variant='ghost'
-                              size='sm'
-                              onClick={() => handleStartEdit(feed)}
-                              aria-label={t`Edit feed`}
-                            >
-                              <Pencil className='h-4 w-4' />
-                            </Button>
-                            <Button
-                              variant='ghost'
-                              size='sm'
-                              onClick={() => setDeleteId(feed.id)}
-                              disabled={deleteMutation.isPending}
-                              aria-label={t`Delete feed`}
-                            >
-                              <Trash2 className='h-4 w-4' />
-                            </Button>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant='ghost'
+                                  size='sm'
+                                  onClick={() => handleCopyFeed(feed)}
+                                  aria-label={t`Copy`}
+                                >
+                                  {copiedId === feed.id ? (
+                                    <Check className='h-4 w-4' />
+                                  ) : (
+                                    <Copy className='h-4 w-4' />
+                                  )}
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>{t`Copy`}</TooltipContent>
+                            </Tooltip>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant='ghost'
+                                  size='sm'
+                                  onClick={() => handleStartEdit(feed)}
+                                  aria-label={t`Edit feed`}
+                                >
+                                  <Pencil className='h-4 w-4' />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>{t`Edit feed`}</TooltipContent>
+                            </Tooltip>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant='ghost'
+                                  size='sm'
+                                  onClick={() => setDeleteId(feed.id)}
+                                  disabled={deleteMutation.isPending}
+                                  aria-label={t`Delete feed`}
+                                >
+                                  <Trash2 className='h-4 w-4' />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>{t`Delete feed`}</TooltipContent>
+                            </Tooltip>
                           </div>
                           <div className='flex items-center justify-end gap-2'>
                             <span className='text-muted-foreground text-sm'>
@@ -416,18 +441,24 @@ export function RssDialog({
                 <code className='flex-1 break-all select-all'>
                   {buildRssUrl(createdFeed.token)}
                 </code>
-                <Button
-                  variant='ghost'
-                  size='sm'
-                  onClick={() => handleCopy(createdFeed.token)}
-                  className='shrink-0'
-                >
-                  {copied ? (
-                    <Check className='h-4 w-4' />
-                  ) : (
-                    <Copy className='h-4 w-4' />
-                  )}
-                </Button>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant='ghost'
+                      size='sm'
+                      onClick={() => handleCopy(createdFeed.token)}
+                      className='shrink-0'
+                      aria-label={t`Copy`}
+                    >
+                      {copied ? (
+                        <Check className='h-4 w-4' />
+                      ) : (
+                        <Copy className='h-4 w-4' />
+                      )}
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>{t`Copy`}</TooltipContent>
+                </Tooltip>
               </div>
               <ResponsiveDialogFooter>
                 <Button variant='outline' onClick={() => setView('list')}>
