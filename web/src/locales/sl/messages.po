@@ -86,7 +86,7 @@ msgstr "Dodaj ekipo/aplikacijo"
 msgid "Add to existing notifications"
 msgstr "Dodaj k obstoječim obvestilom"
 
-#: src/components/rss-dialog.tsx:408
+#: src/components/rss-dialog.tsx:387
 msgid "Add to existing subscriptions"
 msgstr "Dodaj k obstoječim naročninam"
 
@@ -141,7 +141,7 @@ msgstr "Nazaj"
 msgid "Back to home"
 msgstr "Nazaj na začetek"
 
-#: src/features/notification/index.tsx:77
+#: src/features/notification/index.tsx:79
 msgid "Blocked navigation to untrusted link"
 msgstr "Blokirana navigacija do nezaupanja vredne povezave"
 
@@ -159,7 +159,7 @@ msgstr "Povečaj zanimanje"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:421
+#: src/components/rss-dialog.tsx:400
 msgid "Cancel"
 msgstr "Prekliči"
 
@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "Počisti"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:205
+#: src/features/notification/index.tsx:227
 msgid "Clear all"
 msgstr "Počisti vse"
 
@@ -219,6 +219,10 @@ msgstr "Počisti izbor"
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:168
 msgid "Clear selection (Escape)"
 msgstr "Počisti izbor (Escape)"
+
+#: src/features/notification/index.tsx:171
+msgid "Clearing notifications..."
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
@@ -243,8 +247,8 @@ msgstr "Zapri iskanje"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:255
-#: ../../../lib/web/src/components/tree-row.tsx:269
+#: ../../../lib/web/src/components/tree-row.tsx:253
+#: ../../../lib/web/src/components/tree-row.tsx:267
 msgid "Collapse"
 msgstr "Strni"
 
@@ -286,16 +290,16 @@ msgstr "Nadaljuj"
 msgid "Continue with {label}"
 msgstr "Nadaljuj z {label}"
 
-#: src/components/rss-dialog.tsx:194
-#: src/components/rss-dialog.tsx:203
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "Kopirano v odložišče"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:322
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:451
-#: src/components/rss-dialog.tsx:460
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:313
+#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:439
 msgid "Copy"
 msgstr "Kopiraj"
 
@@ -315,18 +319,22 @@ msgstr "Ponovnega preverjanja ni bilo mogoče začeti. Poskusite znova."
 msgid "Couldn't verify with that account. Please try again."
 msgstr "S tem računom ni bilo mogoče preveriti. Poskusite znova."
 
-#: src/components/rss-dialog.tsx:385
-#: src/components/rss-dialog.tsx:432
+#: src/components/rss-dialog.tsx:364
+#: src/components/rss-dialog.tsx:411
 msgid "Create feed"
 msgstr "Ustvari vir"
 
-#: src/components/rss-dialog.tsx:272
+#: src/components/rss-dialog.tsx:254
 msgid "Create one to get started."
 msgstr "Ustvarite enega za začetek."
 
-#: src/components/rss-dialog.tsx:245
+#: src/components/rss-dialog.tsx:227
 msgid "Create RSS feed"
 msgstr "Ustvari RSS vir"
+
+#: src/components/rss-dialog.tsx:143
+msgid "Creating RSS feed..."
+msgstr ""
 
 #: ../../../lib/web/src/components/colour-picker.tsx:260
 msgid "Custom"
@@ -353,22 +361,26 @@ msgstr "Privzeto"
 msgid "Default AI account"
 msgstr "Privzeti AI račun"
 
-#: src/components/rss-dialog.tsx:480
+#: src/components/rss-dialog.tsx:459
 msgid "Delete"
 msgstr "Izbriši"
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:335
+#: src/components/rss-dialog.tsx:340
 msgid "Delete feed"
 msgstr "Izbriši vir"
 
-#: src/components/rss-dialog.tsx:478
+#: src/components/rss-dialog.tsx:457
 msgid "Delete Feed?"
 msgstr "Izbriši vir?"
 
 #: ../../../lib/web/src/components/restore-banner.tsx:99
 msgid "Delete your account on the old server"
 msgstr "Izbrišite račun na starem strežniku"
+
+#: src/components/rss-dialog.tsx:191
+msgid "Deleting feed..."
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:63
 msgid "Desc"
@@ -406,7 +418,7 @@ msgstr "Opusti"
 msgid "Displays the mobile sidebar."
 msgstr "Prikaže mobilno stransko vrstico."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:444
 msgid "Done"
 msgstr "Končano"
 
@@ -419,7 +431,7 @@ msgstr "Prenesi"
 msgid "Dyslexia-friendly"
 msgstr "Prilagojeno disleksiji"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:376
 msgid "e.g., Feedly, NewsBlur"
 msgstr "npr. Feedly, NewsBlur"
 
@@ -427,8 +439,8 @@ msgstr "npr. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Uredi {label}"
 
-#: src/components/rss-dialog.tsx:339
-#: src/components/rss-dialog.tsx:344
+#: src/components/rss-dialog.tsx:321
+#: src/components/rss-dialog.tsx:326
 msgid "Edit feed"
 msgstr "Uredi vir"
 
@@ -446,8 +458,8 @@ msgstr "Vnesite kodo iz aplikacije za preverjanje"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:255
-#: ../../../lib/web/src/components/tree-row.tsx:269
+#: ../../../lib/web/src/components/tree-row.tsx:253
+#: ../../../lib/web/src/components/tree-row.tsx:267
 msgid "Expand"
 msgstr "Razširi"
 
@@ -463,19 +475,35 @@ msgstr "Zelo veliko"
 msgid "Failed to add account"
 msgstr "Neuspešno dodajanje računa"
 
-#: src/components/rss-dialog.tsx:139
-msgid "Failed to create feed"
-msgstr "Neuspešno ustvarjanje vira"
+#: src/features/notification/index.tsx:173
+msgid "Failed to clear notifications"
+msgstr ""
 
-#: src/components/rss-dialog.tsx:156
+#: src/components/rss-dialog.tsx:139
+#~ msgid "Failed to create feed"
+#~ msgstr "Neuspešno ustvarjanje vira"
+
+#: src/components/rss-dialog.tsx:145
+msgid "Failed to create RSS feed"
+msgstr ""
+
+#: src/components/rss-dialog.tsx:193
 msgid "Failed to delete feed"
 msgstr "Neuspešno brisanje vira"
+
+#: src/features/notification/index.tsx:161
+msgid "Failed to mark all as read"
+msgstr ""
+
+#: src/features/notification/index.tsx:151
+msgid "Failed to mark as read"
+msgstr ""
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Failed to remove account"
 msgstr "Neuspešna odstranitev računa"
 
-#: src/components/rss-dialog.tsx:171
+#: src/components/rss-dialog.tsx:173
 msgid "Failed to rename feed"
 msgstr "Neuspešno preimenovanje vira"
 
@@ -487,23 +515,23 @@ msgstr "Neuspešno pošiljanje potrditvene kode"
 msgid "Failed to update category"
 msgstr "Neuspešna posodobitev kategorije"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:208
 msgid "Failed to update feed"
 msgstr "Neuspešna posodobitev vira"
 
-#: src/components/rss-dialog.tsx:246
+#: src/components/rss-dialog.tsx:228
 msgid "Feed created"
 msgstr "Vir ustvarjen"
 
-#: src/components/rss-dialog.tsx:148
+#: src/components/rss-dialog.tsx:192
 msgid "Feed deleted"
 msgstr "Vir izbrisan"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:373
 msgid "Feed name"
 msgstr "Ime vira"
 
-#: src/components/rss-dialog.tsx:165
+#: src/components/rss-dialog.tsx:172
 msgid "Feed renamed"
 msgstr "Vir preimenovan"
 
@@ -665,9 +693,13 @@ msgstr "Odjavljanje…"
 msgid "Mark all as read"
 msgstr "Označi vse kot prebrano"
 
-#: src/features/notification/index.tsx:190
+#: src/features/notification/index.tsx:212
 msgid "Mark all read"
 msgstr "Označi vse prebrano"
+
+#: src/features/notification/index.tsx:158
+msgid "Marking all as read..."
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:107
 msgid "Medium"
@@ -710,7 +742,7 @@ msgstr "Ni povezanih računov"
 msgid "No groups available"
 msgstr "Ni razpoložljivih skupin"
 
-#: src/features/notification/index.tsx:243
+#: src/features/notification/index.tsx:265
 msgid "No notifications"
 msgstr "Brez obvestil"
 
@@ -727,7 +759,7 @@ msgstr "Brez profila"
 msgid "No results found."
 msgstr "Ni najdenih rezultatov."
 
-#: src/components/rss-dialog.tsx:271
+#: src/components/rss-dialog.tsx:253
 msgid "No RSS feeds yet"
 msgstr "Še ni RSS virov"
 
@@ -739,7 +771,7 @@ msgstr "Časovnega pasu ni mogoče najti."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Še ni zapisa o temi — poskusite znova po naslednjem obvestilu."
 
-#: src/features/notification/index.tsx:243
+#: src/features/notification/index.tsx:265
 msgid "No unread notifications"
 msgstr "Brez neprebranih obvestil"
 
@@ -766,13 +798,13 @@ msgstr "Ni nastavljeno"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:126
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:128
+#: src/features/notification/index.tsx:183
 msgid "Notifications"
 msgstr "Obvestila"
 
-#: src/components/rss-dialog.tsx:363
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:345
+#: src/components/rss-dialog.tsx:352
 msgid "Notify by default"
 msgstr "Privzeto obvešča"
 
@@ -785,8 +817,8 @@ msgstr "Ups! Strani ni bilo mogoče najti!"
 msgid "Open account actions"
 msgstr "Odpri dejanja računa"
 
-#: ../../../lib/web/src/components/layout/nav-group.tsx:152
-#: ../../../lib/web/src/components/layout/nav-group.tsx:157
+#: ../../../lib/web/src/components/layout/nav-group.tsx:182
+#: ../../../lib/web/src/components/layout/nav-group.tsx:187
 msgid "Open actions"
 msgstr "Odpri dejanja"
 
@@ -918,11 +950,11 @@ msgstr "Z desne v levo"
 msgid "Rows per page"
 msgstr "Vrstic na stran"
 
-#: src/components/rss-dialog.tsx:209
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "RSS vir"
 
-#: src/components/rss-dialog.tsx:247
+#: src/components/rss-dialog.tsx:229
 msgid "RSS feeds"
 msgstr "RSS viri"
 
@@ -932,14 +964,19 @@ msgstr "Sobota"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:298
-#: src/components/rss-dialog.tsx:307
+#: src/components/rss-dialog.tsx:280
+#: src/components/rss-dialog.tsx:289
 msgid "Save"
 msgstr "Shrani"
 
-#: src/components/rss-dialog.tsx:251
+#: src/components/rss-dialog.tsx:233
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Shranite ta URL zdaj. Žetona ne boste mogli več videti."
+
+#: src/components/rss-dialog.tsx:171
+#: src/components/rss-dialog.tsx:206
+msgid "Saving..."
+msgstr ""
 
 #: ../../../lib/web/src/components/place-picker.tsx:85
 msgid "Search for a place"
@@ -1041,7 +1078,7 @@ msgstr "Nastavi izvor in cilj"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/features/notification/index.tsx:170
+#: src/features/notification/index.tsx:192
 msgid "Show all"
 msgstr "Prikaži vse"
 
@@ -1129,7 +1166,7 @@ msgstr "Tema"
 msgid "Theme Settings"
 msgstr "Nastavitve teme"
 
-#: src/components/rss-dialog.tsx:479
+#: src/components/rss-dialog.tsx:458
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "S tem boste trajno izbrisali ta vir. Vsi bralniki RSS, ki ga uporabljajo, ne bodo več mogli dostopati do vaših obvestil."
 
@@ -1146,10 +1183,10 @@ msgstr "Preklopi stolpce"
 msgid "Toggle right panel"
 msgstr "Preklopi desni panel"
 
-#: ../../../lib/web/src/components/layout/nav-group.tsx:321
-#: ../../../lib/web/src/components/layout/nav-group.tsx:328
-#: ../../../lib/web/src/components/layout/nav-group.tsx:451
-#: ../../../lib/web/src/components/layout/nav-group.tsx:458
+#: ../../../lib/web/src/components/layout/nav-group.tsx:351
+#: ../../../lib/web/src/components/layout/nav-group.tsx:358
+#: ../../../lib/web/src/components/layout/nav-group.tsx:481
+#: ../../../lib/web/src/components/layout/nav-group.tsx:488
 msgid "Toggle section"
 msgstr "Preklopi razdelek"
 
@@ -1228,7 +1265,7 @@ msgstr "Združene države"
 msgid "Unverified"
 msgstr "Nepreverjeno"
 
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:390
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Uporabi ta vir za svoje trenutne naročnine na obvestila"
 

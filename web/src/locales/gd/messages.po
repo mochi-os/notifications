@@ -86,7 +86,7 @@ msgstr "Cuir sgioba/aplacaid ris"
 msgid "Add to existing notifications"
 msgstr "Cuir ri brathan a tha ann"
 
-#: src/components/rss-dialog.tsx:408
+#: src/components/rss-dialog.tsx:387
 msgid "Add to existing subscriptions"
 msgstr "Cuir ri fo-sgrìobhaidhean a tha ann"
 
@@ -141,7 +141,7 @@ msgstr "Air ais"
 msgid "Back to home"
 msgstr "Air ais dhan dachaigh"
 
-#: src/features/notification/index.tsx:77
+#: src/features/notification/index.tsx:79
 msgid "Blocked navigation to untrusted link"
 msgstr "Chaidh seòladaireachd gu ceangal neo-earbsach a bhacadh"
 
@@ -159,7 +159,7 @@ msgstr "Brosnaich ùidh"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:421
+#: src/components/rss-dialog.tsx:400
 msgid "Cancel"
 msgstr "Sguir dheth"
 
@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "Falamhaich"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:205
+#: src/features/notification/index.tsx:227
 msgid "Clear all"
 msgstr "Falamhaich a h-uile"
 
@@ -219,6 +219,10 @@ msgstr "Falamhaich an taghadh"
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:168
 msgid "Clear selection (Escape)"
 msgstr "Falamhaich an taghadh (Escape)"
+
+#: src/features/notification/index.tsx:171
+msgid "Clearing notifications..."
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
@@ -243,8 +247,8 @@ msgstr "Dùin an lorg"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:255
-#: ../../../lib/web/src/components/tree-row.tsx:269
+#: ../../../lib/web/src/components/tree-row.tsx:253
+#: ../../../lib/web/src/components/tree-row.tsx:267
 msgid "Collapse"
 msgstr "Lùb a-steach"
 
@@ -286,16 +290,16 @@ msgstr "Lean air adhart"
 msgid "Continue with {label}"
 msgstr "Lean air adhart le {label}"
 
-#: src/components/rss-dialog.tsx:194
-#: src/components/rss-dialog.tsx:203
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "Air a chopaigeadh chun a' chliopaboird"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:322
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:451
-#: src/components/rss-dialog.tsx:460
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:313
+#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:439
 msgid "Copy"
 msgstr "Dèan lethbhreac"
 
@@ -315,18 +319,22 @@ msgstr "Cha b' urrainn ath-dhearbhadh a thòiseachadh. Feuch ris a-rithist."
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Cha b' urrainn dearbhadh leis a' chunntas sin. Feuch ris a-rithist."
 
-#: src/components/rss-dialog.tsx:385
-#: src/components/rss-dialog.tsx:432
+#: src/components/rss-dialog.tsx:364
+#: src/components/rss-dialog.tsx:411
 msgid "Create feed"
 msgstr "Cruthaich inbhir"
 
-#: src/components/rss-dialog.tsx:272
+#: src/components/rss-dialog.tsx:254
 msgid "Create one to get started."
 msgstr "Cruthaich fear gus tòiseachadh."
 
-#: src/components/rss-dialog.tsx:245
+#: src/components/rss-dialog.tsx:227
 msgid "Create RSS feed"
 msgstr "Cruthaich inbhir RSS"
+
+#: src/components/rss-dialog.tsx:143
+msgid "Creating RSS feed..."
+msgstr ""
 
 #: ../../../lib/web/src/components/colour-picker.tsx:260
 msgid "Custom"
@@ -353,22 +361,26 @@ msgstr "Bunaiteach"
 msgid "Default AI account"
 msgstr "Cunntas AI bunaiteach"
 
-#: src/components/rss-dialog.tsx:480
+#: src/components/rss-dialog.tsx:459
 msgid "Delete"
 msgstr "Sguab às"
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:335
+#: src/components/rss-dialog.tsx:340
 msgid "Delete feed"
 msgstr "Sguab às inbhir"
 
-#: src/components/rss-dialog.tsx:478
+#: src/components/rss-dialog.tsx:457
 msgid "Delete Feed?"
 msgstr "Sguab às inbhir?"
 
 #: ../../../lib/web/src/components/restore-banner.tsx:99
 msgid "Delete your account on the old server"
 msgstr "Sguab às do chunntas air an t-seann fhrithealaiche"
+
+#: src/components/rss-dialog.tsx:191
+msgid "Deleting feed..."
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:63
 msgid "Desc"
@@ -406,7 +418,7 @@ msgstr "Leig seachad"
 msgid "Displays the mobile sidebar."
 msgstr "Seallaidh am bàr-thaobh fòn-làimhe."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:444
 msgid "Done"
 msgstr "Deiseil"
 
@@ -419,7 +431,7 @@ msgstr "Luchdaich a-nuas"
 msgid "Dyslexia-friendly"
 msgstr "Freagarrach do dhisléicse"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:376
 msgid "e.g., Feedly, NewsBlur"
 msgstr "m.e., Feedly, NewsBlur"
 
@@ -427,8 +439,8 @@ msgstr "m.e., Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Deasaich {label}"
 
-#: src/components/rss-dialog.tsx:339
-#: src/components/rss-dialog.tsx:344
+#: src/components/rss-dialog.tsx:321
+#: src/components/rss-dialog.tsx:326
 msgid "Edit feed"
 msgstr "Deasaich an inbhir"
 
@@ -446,8 +458,8 @@ msgstr "Cuir a-steach còd na h-aplacaid dearbhaidh agad"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:255
-#: ../../../lib/web/src/components/tree-row.tsx:269
+#: ../../../lib/web/src/components/tree-row.tsx:253
+#: ../../../lib/web/src/components/tree-row.tsx:267
 msgid "Expand"
 msgstr "Leudaich"
 
@@ -463,19 +475,35 @@ msgstr "A bharrachd mòr"
 msgid "Failed to add account"
 msgstr "Cha b' urrainn an cunntas a chur ris"
 
-#: src/components/rss-dialog.tsx:139
-msgid "Failed to create feed"
-msgstr "Cha b' urrainn inbhir a chruthachadh"
+#: src/features/notification/index.tsx:173
+msgid "Failed to clear notifications"
+msgstr ""
 
-#: src/components/rss-dialog.tsx:156
+#: src/components/rss-dialog.tsx:139
+#~ msgid "Failed to create feed"
+#~ msgstr "Cha b' urrainn inbhir a chruthachadh"
+
+#: src/components/rss-dialog.tsx:145
+msgid "Failed to create RSS feed"
+msgstr ""
+
+#: src/components/rss-dialog.tsx:193
 msgid "Failed to delete feed"
 msgstr "Cha b' urrainn inbhir a sguabadh às"
+
+#: src/features/notification/index.tsx:161
+msgid "Failed to mark all as read"
+msgstr ""
+
+#: src/features/notification/index.tsx:151
+msgid "Failed to mark as read"
+msgstr ""
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Failed to remove account"
 msgstr "Cha b' urrainn an cunntas a thoirt air falbh"
 
-#: src/components/rss-dialog.tsx:171
+#: src/components/rss-dialog.tsx:173
 msgid "Failed to rename feed"
 msgstr "Cha b' urrainn inbhir ath-ainmeachadh"
 
@@ -487,23 +515,23 @@ msgstr "Cha b' urrainn còd dearbhaidh a chur"
 msgid "Failed to update category"
 msgstr "Cha b' urrainn an roinn-seòrsa ùrachadh"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:208
 msgid "Failed to update feed"
 msgstr "Cha b' urrainn an inbhir ùrachadh"
 
-#: src/components/rss-dialog.tsx:246
+#: src/components/rss-dialog.tsx:228
 msgid "Feed created"
 msgstr "Chaidh an inbhir a chruthachadh"
 
-#: src/components/rss-dialog.tsx:148
+#: src/components/rss-dialog.tsx:192
 msgid "Feed deleted"
 msgstr "Chaidh an inbhir a sguabadh às"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:373
 msgid "Feed name"
 msgstr "Ainm an inbhir"
 
-#: src/components/rss-dialog.tsx:165
+#: src/components/rss-dialog.tsx:172
 msgid "Feed renamed"
 msgstr "Chaidh an inbhir ath-ainmeachadh"
 
@@ -665,9 +693,13 @@ msgstr "A' clàradh a-mach…"
 msgid "Mark all as read"
 msgstr "Comharraich gach nì mar leughte"
 
-#: src/features/notification/index.tsx:190
+#: src/features/notification/index.tsx:212
 msgid "Mark all read"
 msgstr "Comharraich gach nì mar leughte"
+
+#: src/features/notification/index.tsx:158
+msgid "Marking all as read..."
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:107
 msgid "Medium"
@@ -710,7 +742,7 @@ msgstr "Chan eil cunntasan ceangailte"
 msgid "No groups available"
 msgstr "Chan eil buidhnean rim faotainn"
 
-#: src/features/notification/index.tsx:243
+#: src/features/notification/index.tsx:265
 msgid "No notifications"
 msgstr "Gun bhrathan"
 
@@ -727,7 +759,7 @@ msgstr "Gun phròifil"
 msgid "No results found."
 msgstr "Cha deach toraidhean a lorg."
 
-#: src/components/rss-dialog.tsx:271
+#: src/components/rss-dialog.tsx:253
 msgid "No RSS feeds yet"
 msgstr "Chan eil sruth RSS ann fhathast"
 
@@ -739,7 +771,7 @@ msgstr "Cha deach roinn-tìde a lorg."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Chan eil clàradh cuspair ann fhathast — feuch a-rithist às dèidh an ath bhrath."
 
-#: src/features/notification/index.tsx:243
+#: src/features/notification/index.tsx:265
 msgid "No unread notifications"
 msgstr "Chan eil brathan gun leughadh"
 
@@ -766,13 +798,13 @@ msgstr "Cha deach a shuidheachadh"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:126
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:128
+#: src/features/notification/index.tsx:183
 msgid "Notifications"
 msgstr "Brathan"
 
-#: src/components/rss-dialog.tsx:363
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:345
+#: src/components/rss-dialog.tsx:352
 msgid "Notify by default"
 msgstr "Cuir brath gu bunaiteach"
 
@@ -785,8 +817,8 @@ msgstr "Och! Cha deach an duilleag a lorg!"
 msgid "Open account actions"
 msgstr "Fosgail gnìomhan a' chunntais"
 
-#: ../../../lib/web/src/components/layout/nav-group.tsx:152
-#: ../../../lib/web/src/components/layout/nav-group.tsx:157
+#: ../../../lib/web/src/components/layout/nav-group.tsx:182
+#: ../../../lib/web/src/components/layout/nav-group.tsx:187
 msgid "Open actions"
 msgstr "Fosgail na gnìomhan"
 
@@ -918,11 +950,11 @@ msgstr "Deas gu Clì"
 msgid "Rows per page"
 msgstr "Sreathan gach duilleag"
 
-#: src/components/rss-dialog.tsx:209
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "Sruth RSS"
 
-#: src/components/rss-dialog.tsx:247
+#: src/components/rss-dialog.tsx:229
 msgid "RSS feeds"
 msgstr "Sruthan RSS"
 
@@ -932,14 +964,19 @@ msgstr "Disathairne"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:298
-#: src/components/rss-dialog.tsx:307
+#: src/components/rss-dialog.tsx:280
+#: src/components/rss-dialog.tsx:289
 msgid "Save"
 msgstr "Sàbhail"
 
-#: src/components/rss-dialog.tsx:251
+#: src/components/rss-dialog.tsx:233
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Sàbhail an URL seo a-nis. Chan fhaic thu an token a-rithist."
+
+#: src/components/rss-dialog.tsx:171
+#: src/components/rss-dialog.tsx:206
+msgid "Saving..."
+msgstr ""
 
 #: ../../../lib/web/src/components/place-picker.tsx:85
 msgid "Search for a place"
@@ -1041,7 +1078,7 @@ msgstr "Suidhich tùs is ceann-uidhe"
 msgid "Settings"
 msgstr "Roghainnean"
 
-#: src/features/notification/index.tsx:170
+#: src/features/notification/index.tsx:192
 msgid "Show all"
 msgstr "Seall a h-uile"
 
@@ -1129,7 +1166,7 @@ msgstr "Ùrlar"
 msgid "Theme Settings"
 msgstr "Roghainnean an ùrlair"
 
-#: src/components/rss-dialog.tsx:479
+#: src/components/rss-dialog.tsx:458
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Sguabaidh seo às an inbhir seo gu buan. Cha bhi e comasach do leughadair RSS sam bith a tha ga chleachdadh inntrigeadh dha na brathan agad tuilleadh."
 
@@ -1146,10 +1183,10 @@ msgstr "Toglaich colbhan"
 msgid "Toggle right panel"
 msgstr "Toglaich am panail deas"
 
-#: ../../../lib/web/src/components/layout/nav-group.tsx:321
-#: ../../../lib/web/src/components/layout/nav-group.tsx:328
-#: ../../../lib/web/src/components/layout/nav-group.tsx:451
-#: ../../../lib/web/src/components/layout/nav-group.tsx:458
+#: ../../../lib/web/src/components/layout/nav-group.tsx:351
+#: ../../../lib/web/src/components/layout/nav-group.tsx:358
+#: ../../../lib/web/src/components/layout/nav-group.tsx:481
+#: ../../../lib/web/src/components/layout/nav-group.tsx:488
 msgid "Toggle section"
 msgstr "Toglaich an earrann"
 
@@ -1228,7 +1265,7 @@ msgstr "Stàitean Aonaichte"
 msgid "Unverified"
 msgstr "Gun dearbhadh"
 
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:390
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Cleachd an inbhir seo airson na fo-sgrìobhaidhean brathaidh làithreach agad"
 

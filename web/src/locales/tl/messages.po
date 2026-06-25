@@ -86,7 +86,7 @@ msgstr "Magdagdag ng team/app"
 msgid "Add to existing notifications"
 msgstr "Idagdag sa mga umiiral na notification"
 
-#: src/components/rss-dialog.tsx:408
+#: src/components/rss-dialog.tsx:387
 msgid "Add to existing subscriptions"
 msgstr "Idagdag sa mga umiiral na subscription"
 
@@ -141,7 +141,7 @@ msgstr "Bumalik"
 msgid "Back to home"
 msgstr "Bumalik sa home"
 
-#: src/features/notification/index.tsx:77
+#: src/features/notification/index.tsx:79
 msgid "Blocked navigation to untrusted link"
 msgstr "Hinarang ang pag-navigate sa di-pinagkakatiwalaang link"
 
@@ -159,7 +159,7 @@ msgstr "Palakasin ang interes"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:421
+#: src/components/rss-dialog.tsx:400
 msgid "Cancel"
 msgstr "Kanselahin"
 
@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "Burahin"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:205
+#: src/features/notification/index.tsx:227
 msgid "Clear all"
 msgstr "Burahin lahat"
 
@@ -219,6 +219,10 @@ msgstr "Burahin ang piniling"
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:168
 msgid "Clear selection (Escape)"
 msgstr "Burahin ang piniling (Escape)"
+
+#: src/features/notification/index.tsx:171
+msgid "Clearing notifications..."
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
@@ -243,8 +247,8 @@ msgstr "Isara ang paghahanap"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:255
-#: ../../../lib/web/src/components/tree-row.tsx:269
+#: ../../../lib/web/src/components/tree-row.tsx:253
+#: ../../../lib/web/src/components/tree-row.tsx:267
 msgid "Collapse"
 msgstr "I-collapse"
 
@@ -286,16 +290,16 @@ msgstr "Magpatuloy"
 msgid "Continue with {label}"
 msgstr "Magpatuloy gamit ang {label}"
 
-#: src/components/rss-dialog.tsx:194
-#: src/components/rss-dialog.tsx:203
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "Nakopya sa clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:322
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:451
-#: src/components/rss-dialog.tsx:460
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:313
+#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:439
 msgid "Copy"
 msgstr "Kopyahin"
 
@@ -315,18 +319,22 @@ msgstr "Hindi masimulan ang muling pagpapatunay. Pakisubukang muli."
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Hindi ma-verify gamit ang account na iyon. Pakisubukang muli."
 
-#: src/components/rss-dialog.tsx:385
-#: src/components/rss-dialog.tsx:432
+#: src/components/rss-dialog.tsx:364
+#: src/components/rss-dialog.tsx:411
 msgid "Create feed"
 msgstr "Gumawa ng feed"
 
-#: src/components/rss-dialog.tsx:272
+#: src/components/rss-dialog.tsx:254
 msgid "Create one to get started."
 msgstr "Gumawa ng isa para magsimula."
 
-#: src/components/rss-dialog.tsx:245
+#: src/components/rss-dialog.tsx:227
 msgid "Create RSS feed"
 msgstr "Gumawa ng RSS feed"
+
+#: src/components/rss-dialog.tsx:143
+msgid "Creating RSS feed..."
+msgstr ""
 
 #: ../../../lib/web/src/components/colour-picker.tsx:260
 msgid "Custom"
@@ -353,22 +361,26 @@ msgstr "Default"
 msgid "Default AI account"
 msgstr "Default na AI account"
 
-#: src/components/rss-dialog.tsx:480
+#: src/components/rss-dialog.tsx:459
 msgid "Delete"
 msgstr "I-delete"
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:335
+#: src/components/rss-dialog.tsx:340
 msgid "Delete feed"
 msgstr "I-delete ang feed"
 
-#: src/components/rss-dialog.tsx:478
+#: src/components/rss-dialog.tsx:457
 msgid "Delete Feed?"
 msgstr "I-delete ang feed?"
 
 #: ../../../lib/web/src/components/restore-banner.tsx:99
 msgid "Delete your account on the old server"
 msgstr "Burahin ang iyong account sa lumang server"
+
+#: src/components/rss-dialog.tsx:191
+msgid "Deleting feed..."
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:63
 msgid "Desc"
@@ -406,7 +418,7 @@ msgstr "I-dismiss"
 msgid "Displays the mobile sidebar."
 msgstr "Ipinapakita ang mobile sidebar."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:444
 msgid "Done"
 msgstr "Tapos na"
 
@@ -419,7 +431,7 @@ msgstr "I-download"
 msgid "Dyslexia-friendly"
 msgstr "Angkop sa dyslexia"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:376
 msgid "e.g., Feedly, NewsBlur"
 msgstr "hal. Feedly, NewsBlur"
 
@@ -427,8 +439,8 @@ msgstr "hal. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "I-edit ang {label}"
 
-#: src/components/rss-dialog.tsx:339
-#: src/components/rss-dialog.tsx:344
+#: src/components/rss-dialog.tsx:321
+#: src/components/rss-dialog.tsx:326
 msgid "Edit feed"
 msgstr "I-edit ang feed"
 
@@ -446,8 +458,8 @@ msgstr "Ilagay ang iyong authenticator code"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:255
-#: ../../../lib/web/src/components/tree-row.tsx:269
+#: ../../../lib/web/src/components/tree-row.tsx:253
+#: ../../../lib/web/src/components/tree-row.tsx:267
 msgid "Expand"
 msgstr "Palawakin"
 
@@ -463,19 +475,35 @@ msgstr "Sobrang laki"
 msgid "Failed to add account"
 msgstr "Nabigong magdagdag ng account"
 
-#: src/components/rss-dialog.tsx:139
-msgid "Failed to create feed"
-msgstr "Nabigong gumawa ng feed"
+#: src/features/notification/index.tsx:173
+msgid "Failed to clear notifications"
+msgstr ""
 
-#: src/components/rss-dialog.tsx:156
+#: src/components/rss-dialog.tsx:139
+#~ msgid "Failed to create feed"
+#~ msgstr "Nabigong gumawa ng feed"
+
+#: src/components/rss-dialog.tsx:145
+msgid "Failed to create RSS feed"
+msgstr ""
+
+#: src/components/rss-dialog.tsx:193
 msgid "Failed to delete feed"
 msgstr "Nabigong magdelete ng feed"
+
+#: src/features/notification/index.tsx:161
+msgid "Failed to mark all as read"
+msgstr ""
+
+#: src/features/notification/index.tsx:151
+msgid "Failed to mark as read"
+msgstr ""
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Failed to remove account"
 msgstr "Nabigong tanggalin ang account"
 
-#: src/components/rss-dialog.tsx:171
+#: src/components/rss-dialog.tsx:173
 msgid "Failed to rename feed"
 msgstr "Nabigong i-rename ang feed"
 
@@ -487,23 +515,23 @@ msgstr "Nabigong magpadala ng verification code"
 msgid "Failed to update category"
 msgstr "Nabigong i-update ang category"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:208
 msgid "Failed to update feed"
 msgstr "Nabigong i-update ang feed"
 
-#: src/components/rss-dialog.tsx:246
+#: src/components/rss-dialog.tsx:228
 msgid "Feed created"
 msgstr "Nagawa ang feed"
 
-#: src/components/rss-dialog.tsx:148
+#: src/components/rss-dialog.tsx:192
 msgid "Feed deleted"
 msgstr "Nadelete ang feed"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:373
 msgid "Feed name"
 msgstr "Pangalan ng feed"
 
-#: src/components/rss-dialog.tsx:165
+#: src/components/rss-dialog.tsx:172
 msgid "Feed renamed"
 msgstr "Na-rename ang feed"
 
@@ -665,9 +693,13 @@ msgstr "Nagla-log out…"
 msgid "Mark all as read"
 msgstr "Markahan lahat bilang nabasa"
 
-#: src/features/notification/index.tsx:190
+#: src/features/notification/index.tsx:212
 msgid "Mark all read"
 msgstr "Markahang nabasa lahat"
+
+#: src/features/notification/index.tsx:158
+msgid "Marking all as read..."
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:107
 msgid "Medium"
@@ -710,7 +742,7 @@ msgstr "Walang nakakonektang account"
 msgid "No groups available"
 msgstr "Walang available na grupo"
 
-#: src/features/notification/index.tsx:243
+#: src/features/notification/index.tsx:265
 msgid "No notifications"
 msgstr "Walang notification"
 
@@ -727,7 +759,7 @@ msgstr "Walang profile"
 msgid "No results found."
 msgstr "Walang nakitang resulta."
 
-#: src/components/rss-dialog.tsx:271
+#: src/components/rss-dialog.tsx:253
 msgid "No RSS feeds yet"
 msgstr "Wala pang RSS feed"
 
@@ -739,7 +771,7 @@ msgstr "Walang nakitang time zone."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Wala pang topic record — subukan muli pagkatapos ng susunod na notification."
 
-#: src/features/notification/index.tsx:243
+#: src/features/notification/index.tsx:265
 msgid "No unread notifications"
 msgstr "Walang hindi pa nababasang notification"
 
@@ -766,13 +798,13 @@ msgstr "Hindi naka-set"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:126
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:128
+#: src/features/notification/index.tsx:183
 msgid "Notifications"
 msgstr "Mga Notification"
 
-#: src/components/rss-dialog.tsx:363
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:345
+#: src/components/rss-dialog.tsx:352
 msgid "Notify by default"
 msgstr "Mag-notify bilang default"
 
@@ -785,8 +817,8 @@ msgstr "Ay! Hindi Nahanap ang Pahina!"
 msgid "Open account actions"
 msgstr "Buksan ang mga aksyon ng account"
 
-#: ../../../lib/web/src/components/layout/nav-group.tsx:152
-#: ../../../lib/web/src/components/layout/nav-group.tsx:157
+#: ../../../lib/web/src/components/layout/nav-group.tsx:182
+#: ../../../lib/web/src/components/layout/nav-group.tsx:187
 msgid "Open actions"
 msgstr "Buksan ang mga aksyon"
 
@@ -918,11 +950,11 @@ msgstr "Kanan papuntang Kaliwa"
 msgid "Rows per page"
 msgstr "Mga row bawat page"
 
-#: src/components/rss-dialog.tsx:209
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:247
+#: src/components/rss-dialog.tsx:229
 msgid "RSS feeds"
 msgstr "Mga RSS feed"
 
@@ -932,14 +964,19 @@ msgstr "Sabado"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:298
-#: src/components/rss-dialog.tsx:307
+#: src/components/rss-dialog.tsx:280
+#: src/components/rss-dialog.tsx:289
 msgid "Save"
 msgstr "I-save"
 
-#: src/components/rss-dialog.tsx:251
+#: src/components/rss-dialog.tsx:233
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "I-save na ang URL na ito. Hindi mo na muling makikita ang token."
+
+#: src/components/rss-dialog.tsx:171
+#: src/components/rss-dialog.tsx:206
+msgid "Saving..."
+msgstr ""
 
 #: ../../../lib/web/src/components/place-picker.tsx:85
 msgid "Search for a place"
@@ -1041,7 +1078,7 @@ msgstr "Itakda ang origin at destination"
 msgid "Settings"
 msgstr "Mga setting"
 
-#: src/features/notification/index.tsx:170
+#: src/features/notification/index.tsx:192
 msgid "Show all"
 msgstr "Ipakita lahat"
 
@@ -1129,7 +1166,7 @@ msgstr "Theme"
 msgid "Theme Settings"
 msgstr "Mga Setting ng Theme"
 
-#: src/components/rss-dialog.tsx:479
+#: src/components/rss-dialog.tsx:458
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Permanenteng buburahin nito ang feed na ito. Ang anumang RSS reader na gumagamit nito ay hindi na makaka-access sa iyong mga notification."
 
@@ -1146,10 +1183,10 @@ msgstr "I-toggle ang mga column"
 msgid "Toggle right panel"
 msgstr "I-toggle ang kanang panel"
 
-#: ../../../lib/web/src/components/layout/nav-group.tsx:321
-#: ../../../lib/web/src/components/layout/nav-group.tsx:328
-#: ../../../lib/web/src/components/layout/nav-group.tsx:451
-#: ../../../lib/web/src/components/layout/nav-group.tsx:458
+#: ../../../lib/web/src/components/layout/nav-group.tsx:351
+#: ../../../lib/web/src/components/layout/nav-group.tsx:358
+#: ../../../lib/web/src/components/layout/nav-group.tsx:481
+#: ../../../lib/web/src/components/layout/nav-group.tsx:488
 msgid "Toggle section"
 msgstr "I-toggle ang seksyon"
 
@@ -1228,7 +1265,7 @@ msgstr "United States"
 msgid "Unverified"
 msgstr "Hindi naberipika"
 
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:390
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Gamitin ang feed na ito para sa iyong kasalukuyang mga notification subscription"
 

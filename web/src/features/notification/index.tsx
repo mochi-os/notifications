@@ -17,6 +17,8 @@ import {
   getSafeNavigationTarget,
   shellNavigateExternal,
   toast,
+  toastAction,
+  getErrorMessage,
   useShellStorage,
   usePageTitle,
 } from '@mochi/web'
@@ -144,15 +146,35 @@ export function Notifications() {
     : allNotifications.filter((n) => n.read === 0)
 
   const handleMarkAsRead = (id: string) => {
-    markAsReadMutation.mutate(id)
+    markAsReadMutation.mutate(id, {
+      onError: (error) =>
+        toast.error(getErrorMessage(error, t`Failed to mark as read`)),
+    })
   }
 
-  const handleMarkAllAsRead = () => {
-    markAllAsReadMutation.mutate()
+  const handleMarkAllAsRead = async () => {
+    try {
+      await toastAction(markAllAsReadMutation.mutateAsync(), {
+        loading: t`Marking all as read...`,
+        success: false,
+        error: (err) =>
+          getErrorMessage(err, t`Failed to mark all as read`),
+      })
+    } catch {
+      // toastAction already showed error
+    }
   }
 
-  const handleClearAll = () => {
-    clearAllMutation.mutate()
+  const handleClearAll = async () => {
+    try {
+      await toastAction(clearAllMutation.mutateAsync(), {
+        loading: t`Clearing notifications...`,
+        success: false,
+        error: (err) => getErrorMessage(err, t`Failed to clear notifications`),
+      })
+    } catch {
+      // toastAction already showed error
+    }
   }
 
   return (

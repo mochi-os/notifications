@@ -86,7 +86,7 @@ msgstr "ٹیم/ایپ شامل کریں"
 msgid "Add to existing notifications"
 msgstr "موجودہ نوٹیفکیشنز میں شامل کریں"
 
-#: src/components/rss-dialog.tsx:408
+#: src/components/rss-dialog.tsx:387
 msgid "Add to existing subscriptions"
 msgstr "موجودہ سبسکرپشنز میں شامل کریں"
 
@@ -141,7 +141,7 @@ msgstr "واپس"
 msgid "Back to home"
 msgstr "گھر واپس جائیں"
 
-#: src/features/notification/index.tsx:77
+#: src/features/notification/index.tsx:79
 msgid "Blocked navigation to untrusted link"
 msgstr "غیر بھروسہ مند لنک پر نیویگیشن مسدود"
 
@@ -159,7 +159,7 @@ msgstr "دلچسپی بڑھائیں"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:421
+#: src/components/rss-dialog.tsx:400
 msgid "Cancel"
 msgstr "منسوخ کریں"
 
@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "صاف کریں"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:205
+#: src/features/notification/index.tsx:227
 msgid "Clear all"
 msgstr "سب صاف کریں"
 
@@ -219,6 +219,10 @@ msgstr "انتخاب صاف کریں"
 #: ../../../lib/web/src/components/data-table/bulk-actions.tsx:168
 msgid "Clear selection (Escape)"
 msgstr "انتخاب صاف کریں (Escape)"
+
+#: src/features/notification/index.tsx:171
+msgid "Clearing notifications..."
+msgstr ""
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
@@ -243,8 +247,8 @@ msgstr "تلاش بند کریں"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:255
-#: ../../../lib/web/src/components/tree-row.tsx:269
+#: ../../../lib/web/src/components/tree-row.tsx:253
+#: ../../../lib/web/src/components/tree-row.tsx:267
 msgid "Collapse"
 msgstr "سمیٹیں"
 
@@ -286,16 +290,16 @@ msgstr "جاری رکھیں"
 msgid "Continue with {label}"
 msgstr "{label} کے ساتھ جاری رکھیں"
 
-#: src/components/rss-dialog.tsx:194
-#: src/components/rss-dialog.tsx:203
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "Clipboard پر کاپی ہو گیا"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:322
-#: src/components/rss-dialog.tsx:331
-#: src/components/rss-dialog.tsx:451
-#: src/components/rss-dialog.tsx:460
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:313
+#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:439
 msgid "Copy"
 msgstr "کاپی کریں"
 
@@ -315,18 +319,22 @@ msgstr "دوبارہ تصدیق شروع نہیں کی جا سکی۔ براہ ک
 msgid "Couldn't verify with that account. Please try again."
 msgstr "اس اکاؤنٹ سے تصدیق نہیں ہو سکی۔ براہ کرم دوبارہ کوشش کریں۔"
 
-#: src/components/rss-dialog.tsx:385
-#: src/components/rss-dialog.tsx:432
+#: src/components/rss-dialog.tsx:364
+#: src/components/rss-dialog.tsx:411
 msgid "Create feed"
 msgstr "فیڈ بنائیں"
 
-#: src/components/rss-dialog.tsx:272
+#: src/components/rss-dialog.tsx:254
 msgid "Create one to get started."
 msgstr "شروع کرنے کے لیے ایک بنائیں۔"
 
-#: src/components/rss-dialog.tsx:245
+#: src/components/rss-dialog.tsx:227
 msgid "Create RSS feed"
 msgstr "RSS فیڈ بنائیں"
+
+#: src/components/rss-dialog.tsx:143
+msgid "Creating RSS feed..."
+msgstr ""
 
 #: ../../../lib/web/src/components/colour-picker.tsx:260
 msgid "Custom"
@@ -353,22 +361,26 @@ msgstr "ڈیفالٹ"
 msgid "Default AI account"
 msgstr "ڈیفالٹ AI اکاؤنٹ"
 
-#: src/components/rss-dialog.tsx:480
+#: src/components/rss-dialog.tsx:459
 msgid "Delete"
 msgstr "حذف کریں"
 
-#: src/components/rss-dialog.tsx:353
-#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:335
+#: src/components/rss-dialog.tsx:340
 msgid "Delete feed"
 msgstr "فیڈ حذف کریں"
 
-#: src/components/rss-dialog.tsx:478
+#: src/components/rss-dialog.tsx:457
 msgid "Delete Feed?"
 msgstr "فیڈ حذف کریں؟"
 
 #: ../../../lib/web/src/components/restore-banner.tsx:99
 msgid "Delete your account on the old server"
 msgstr "پرانے سرور پر اپنا اکاؤنٹ حذف کریں"
+
+#: src/components/rss-dialog.tsx:191
+msgid "Deleting feed..."
+msgstr ""
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:63
 msgid "Desc"
@@ -406,7 +418,7 @@ msgstr "برخاست کریں"
 msgid "Displays the mobile sidebar."
 msgstr "موبائل سائڈبار دکھاتا ہے۔"
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:444
 msgid "Done"
 msgstr "مکمل"
 
@@ -419,7 +431,7 @@ msgstr "ڈاؤن لوڈ"
 msgid "Dyslexia-friendly"
 msgstr "ڈسلیکسیا کے لیے موزوں"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:376
 msgid "e.g., Feedly, NewsBlur"
 msgstr "مثلاً Feedly، NewsBlur"
 
@@ -427,8 +439,8 @@ msgstr "مثلاً Feedly، NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} میں ترمیم کریں"
 
-#: src/components/rss-dialog.tsx:339
-#: src/components/rss-dialog.tsx:344
+#: src/components/rss-dialog.tsx:321
+#: src/components/rss-dialog.tsx:326
 msgid "Edit feed"
 msgstr "فیڈ میں ترمیم کریں"
 
@@ -446,8 +458,8 @@ msgstr "اپنا اتھینٹیکیٹر کوڈ درج کریں"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:255
-#: ../../../lib/web/src/components/tree-row.tsx:269
+#: ../../../lib/web/src/components/tree-row.tsx:253
+#: ../../../lib/web/src/components/tree-row.tsx:267
 msgid "Expand"
 msgstr "پھیلائیں"
 
@@ -463,19 +475,35 @@ msgstr "بہت بڑا"
 msgid "Failed to add account"
 msgstr "اکاؤنٹ شامل کرنے میں ناکامی"
 
-#: src/components/rss-dialog.tsx:139
-msgid "Failed to create feed"
-msgstr "فیڈ بنانے میں ناکامی"
+#: src/features/notification/index.tsx:173
+msgid "Failed to clear notifications"
+msgstr ""
 
-#: src/components/rss-dialog.tsx:156
+#: src/components/rss-dialog.tsx:139
+#~ msgid "Failed to create feed"
+#~ msgstr "فیڈ بنانے میں ناکامی"
+
+#: src/components/rss-dialog.tsx:145
+msgid "Failed to create RSS feed"
+msgstr ""
+
+#: src/components/rss-dialog.tsx:193
 msgid "Failed to delete feed"
 msgstr "فیڈ حذف کرنے میں ناکامی"
+
+#: src/features/notification/index.tsx:161
+msgid "Failed to mark all as read"
+msgstr ""
+
+#: src/features/notification/index.tsx:151
+msgid "Failed to mark as read"
+msgstr ""
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Failed to remove account"
 msgstr "اکاؤنٹ ہٹانے میں ناکامی"
 
-#: src/components/rss-dialog.tsx:171
+#: src/components/rss-dialog.tsx:173
 msgid "Failed to rename feed"
 msgstr "فیڈ کا نام تبدیل کرنے میں ناکامی"
 
@@ -487,23 +515,23 @@ msgstr "تصدیقی کوڈ بھیجنے میں ناکامی"
 msgid "Failed to update category"
 msgstr "زمرہ اپڈیٹ کرنے میں ناکامی"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:208
 msgid "Failed to update feed"
 msgstr "فیڈ اپڈیٹ کرنے میں ناکامی"
 
-#: src/components/rss-dialog.tsx:246
+#: src/components/rss-dialog.tsx:228
 msgid "Feed created"
 msgstr "فیڈ بنا دی گئی"
 
-#: src/components/rss-dialog.tsx:148
+#: src/components/rss-dialog.tsx:192
 msgid "Feed deleted"
 msgstr "فیڈ حذف کر دی گئی"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:373
 msgid "Feed name"
 msgstr "فیڈ کا نام"
 
-#: src/components/rss-dialog.tsx:165
+#: src/components/rss-dialog.tsx:172
 msgid "Feed renamed"
 msgstr "فیڈ کا نام تبدیل ہو گیا"
 
@@ -665,9 +693,13 @@ msgstr "لاگ آؤٹ ہو رہا ہے…"
 msgid "Mark all as read"
 msgstr "سب کو پڑھا ہوا نشان زد کریں"
 
-#: src/features/notification/index.tsx:190
+#: src/features/notification/index.tsx:212
 msgid "Mark all read"
 msgstr "سب کو پڑھا ہوا نشان زد کریں"
+
+#: src/features/notification/index.tsx:158
+msgid "Marking all as read..."
+msgstr ""
 
 #: ../../../lib/web/src/lib/preference-utils.ts:107
 msgid "Medium"
@@ -710,7 +742,7 @@ msgstr "کوئی منسلک اکاؤنٹس نہیں"
 msgid "No groups available"
 msgstr "کوئی گروپ دستیاب نہیں"
 
-#: src/features/notification/index.tsx:243
+#: src/features/notification/index.tsx:265
 msgid "No notifications"
 msgstr "کوئی notifications نہیں"
 
@@ -727,7 +759,7 @@ msgstr "کوئی پروفائل نہیں"
 msgid "No results found."
 msgstr "کوئی نتائج نہیں ملے۔"
 
-#: src/components/rss-dialog.tsx:271
+#: src/components/rss-dialog.tsx:253
 msgid "No RSS feeds yet"
 msgstr "ابھی تک کوئی RSS feeds نہیں"
 
@@ -739,7 +771,7 @@ msgstr "کوئی time zone نہیں ملا۔"
 msgid "No topic record yet — try again after the next notification."
 msgstr "ابھی تک کوئی topic record نہیں — اگلی notification کے بعد دوبارہ کوشش کریں۔"
 
-#: src/features/notification/index.tsx:243
+#: src/features/notification/index.tsx:265
 msgid "No unread notifications"
 msgstr "کوئی غیر پڑھی notifications نہیں"
 
@@ -766,13 +798,13 @@ msgstr "سیٹ نہیں ہے"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:126
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:128
+#: src/features/notification/index.tsx:183
 msgid "Notifications"
 msgstr "notifications"
 
-#: src/components/rss-dialog.tsx:363
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:345
+#: src/components/rss-dialog.tsx:352
 msgid "Notify by default"
 msgstr "ڈیفالٹ طور پر مطلع کریں"
 
@@ -785,8 +817,8 @@ msgstr "اوہ! صفحہ نہیں ملا!"
 msgid "Open account actions"
 msgstr "اکاؤنٹ کی actions کھولیں"
 
-#: ../../../lib/web/src/components/layout/nav-group.tsx:152
-#: ../../../lib/web/src/components/layout/nav-group.tsx:157
+#: ../../../lib/web/src/components/layout/nav-group.tsx:182
+#: ../../../lib/web/src/components/layout/nav-group.tsx:187
 msgid "Open actions"
 msgstr "کارروائیاں کھولیں"
 
@@ -918,11 +950,11 @@ msgstr "دائیں سے بائیں"
 msgid "Rows per page"
 msgstr "ہر صفحے پر قطاریں"
 
-#: src/components/rss-dialog.tsx:209
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:247
+#: src/components/rss-dialog.tsx:229
 msgid "RSS feeds"
 msgstr "RSS فیڈز"
 
@@ -932,14 +964,19 @@ msgstr "ہفتہ"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:298
-#: src/components/rss-dialog.tsx:307
+#: src/components/rss-dialog.tsx:280
+#: src/components/rss-dialog.tsx:289
 msgid "Save"
 msgstr "محفوظ کریں"
 
-#: src/components/rss-dialog.tsx:251
+#: src/components/rss-dialog.tsx:233
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "یہ URL ابھی محفوظ کریں۔ آپ ٹوکن دوبارہ نہیں دیکھ سکیں گے۔"
+
+#: src/components/rss-dialog.tsx:171
+#: src/components/rss-dialog.tsx:206
+msgid "Saving..."
+msgstr ""
 
 #: ../../../lib/web/src/components/place-picker.tsx:85
 msgid "Search for a place"
@@ -1041,7 +1078,7 @@ msgstr "ابتدائی مقام اور منزل مقرر کریں"
 msgid "Settings"
 msgstr "سیٹنگز"
 
-#: src/features/notification/index.tsx:170
+#: src/features/notification/index.tsx:192
 msgid "Show all"
 msgstr "سب دکھائیں"
 
@@ -1129,7 +1166,7 @@ msgstr "تھیم"
 msgid "Theme Settings"
 msgstr "تھیم سیٹنگز"
 
-#: src/components/rss-dialog.tsx:479
+#: src/components/rss-dialog.tsx:458
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "اس سے یہ فیڈ مستقل طور پر حذف ہو جائے گا۔ اسے استعمال کرنے والے کسی بھی RSS ریڈر کو اب آپ کی اطلاعات تک رسائی حاصل نہیں ہوگی۔"
 
@@ -1146,10 +1183,10 @@ msgstr "کالم ٹوگل کریں"
 msgid "Toggle right panel"
 msgstr "دائیں پینل کو ٹوگل کریں"
 
-#: ../../../lib/web/src/components/layout/nav-group.tsx:321
-#: ../../../lib/web/src/components/layout/nav-group.tsx:328
-#: ../../../lib/web/src/components/layout/nav-group.tsx:451
-#: ../../../lib/web/src/components/layout/nav-group.tsx:458
+#: ../../../lib/web/src/components/layout/nav-group.tsx:351
+#: ../../../lib/web/src/components/layout/nav-group.tsx:358
+#: ../../../lib/web/src/components/layout/nav-group.tsx:481
+#: ../../../lib/web/src/components/layout/nav-group.tsx:488
 msgid "Toggle section"
 msgstr "سیکشن کھولیں/بند کریں"
 
@@ -1228,7 +1265,7 @@ msgstr "ریاستہائے متحدہ"
 msgid "Unverified"
 msgstr "غیر تصدیق شدہ"
 
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:390
 msgid "Use this feed for your current notification subscriptions"
 msgstr "اپنی موجودہ نوٹیفکیشن سبسکرپشنز کے لیے یہ فیڈ استعمال کریں"
 

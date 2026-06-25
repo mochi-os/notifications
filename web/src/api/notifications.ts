@@ -6,6 +6,8 @@
 import endpoints from '@/api/endpoints'
 import { requestHelpers } from '@mochi/web'
 
+const NO_TOAST = { mochi: { showGlobalErrorToast: false } } as const
+
 export interface Notification {
   id: string
   app: string
@@ -46,6 +48,7 @@ const markAsRead = async (id: string): Promise<void> => {
     endpoints.notifications.read,
     formData.toString(),
     {
+      ...NO_TOAST,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
@@ -54,11 +57,11 @@ const markAsRead = async (id: string): Promise<void> => {
 }
 
 const markAllAsRead = async (): Promise<void> => {
-  await requestHelpers.post(endpoints.notifications.readAll, {})
+  await requestHelpers.post(endpoints.notifications.readAll, {}, NO_TOAST)
 }
 
 const clearAll = async (): Promise<void> => {
-  await requestHelpers.post(endpoints.notifications.clearAll, {})
+  await requestHelpers.post(endpoints.notifications.clearAll, {}, NO_TOAST)
 }
 
 export const notificationsApi = {

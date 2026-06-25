@@ -5,7 +5,6 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { Trans, useLingui } from '@lingui/react/macro'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 import {
   Button,
   ConfirmDialog,
@@ -23,8 +22,9 @@ import {
   ListSkeleton,
   getErrorMessage,
   toast,
-  requestHelpers,
+  toastAction,
   getAppPath,
+  requestHelpers,
   useQueryWithError,
   shellClipboardWrite,
   Tooltip,
@@ -32,14 +32,13 @@ import {
   TooltipContent,
 } from '@mochi/web'
 import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil } from 'lucide-react'
-
-interface RssFeed {
-  id: string
-  name: string
-  token: string
-  created: number
-  enabled: number
-}
+import {
+  type RssFeed,
+  useCreateRssFeedMutation,
+  useDeleteRssFeedMutation,
+  useRenameRssFeedMutation,
+  useToggleRssFeedEnabledMutation,
+} from '@/hooks/useRssFeeds'
 
 type DialogView = 'list' | 'create' | 'created'
 
@@ -64,7 +63,11 @@ export function RssDialog({
   const [deleteId, setDeleteId] = useState<string | null>(null)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editingName, setEditingName] = useState('')
-  const queryClient = useQueryClient()
+
+  const createMutation = useCreateRssFeedMutation()
+  const deleteMutation = useDeleteRssFeedMutation()
+  const renameMutation = useRenameRssFeedMutation()
+  const toggleEnabledMutation = useToggleRssFeedEnabledMutation()
 
   const copiedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const copiedIdTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -113,80 +116,6 @@ export function RssDialog({
   })
   const feeds = Array.isArray(feedsData) ? feedsData : []
 
-  const createMutation = useMutation({
-    mutationFn: async ({
-      name,
-      addToExisting,
-    }: {
-      name: string
-      addToExisting: boolean
-    }) => {
-      return await requestHelpers.post<RssFeed>('-/rss/create', {
-        name,
-        add_to_existing: addToExisting ? '1' : '0',
-      })
-    },
-    onSuccess: (feed) => {
-      setCreatedFeed(feed)
-      setNewFeedName('')
-      setView('created')
-      queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
-      queryClient.invalidateQueries({
-        queryKey: ['destinations', getAppPath()],
-      })
-    },
-    onError: (error) => {
-      toast.error(getErrorMessage(error, t`Failed to create feed`))
-    },
-  })
-
-  const deleteMutation = useMutation({
-    mutationFn: async (id: string) => {
-      await requestHelpers.post('-/rss/delete', { id })
-    },
-    onSuccess: () => {
-      toast.success(t`Feed deleted`)
-      queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
-      queryClient.invalidateQueries({
-        queryKey: ['destinations', getAppPath()],
-      })
-      setDeleteId(null)
-    },
-    onError: (error) => {
-      toast.error(getErrorMessage(error, t`Failed to delete feed`))
-    },
-  })
-
-  const renameMutation = useMutation({
-    mutationFn: async ({ id, name }: { id: string; name: string }) => {
-      await requestHelpers.post('-/rss/rename', { id, name })
-    },
-    onSuccess: () => {
-      toast.success(t`Feed renamed`)
-      queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
-      setEditingId(null)
-      setEditingName('')
-    },
-    onError: (error) => {
-      toast.error(getErrorMessage(error, t`Failed to rename feed`))
-    },
-  })
-
-  const toggleEnabledMutation = useMutation({
-    mutationFn: async ({ id, enabled }: { id: string; enabled: boolean }) => {
-      await requestHelpers.post('-/rss/update', {
-        id,
-        enabled: enabled ? '1' : '0',
-      })
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
-    },
-    onError: (error) => {
-      toast.error(getErrorMessage(error, t`Failed to update feed`))
-    },
-  })
-
   const handleCopy = async (token: string) => {
     const ok = await shellClipboardWrite(buildRssUrl(token))
     if (!ok) return
@@ -205,9 +134,23 @@ export function RssDialog({
     copiedIdTimerRef.current = setTimeout(() => setCopiedId(null), 2000)
   }
 
-  const handleCreate = () => {
+  const handleCreate = async () => {
     const name = newFeedName.trim() || t`RSS feed`
-    createMutation.mutate({ name, addToExisting })
+    try {
+      const feed = await toastAction(
+        createMutation.mutateAsync({ name, addToExisting }),
+        {
+          loading: t`Creating RSS feed...`,
+          success: false,
+          error: (err) => getErrorMessage(err, t`Failed to create RSS feed`),
+        }
+      )
+      setCreatedFeed(feed)
+      setNewFeedName('')
+      setView('created')
+    } catch {
+      // toastAction already showed error
+    }
   }
 
   const handleStartEdit = (feed: RssFeed) => {
@@ -215,7 +158,7 @@ export function RssDialog({
     setEditingName(feed.name)
   }
 
-  const handleSaveEdit = () => {
+  const handleSaveEdit = async () => {
     if (!editingId) return
     const name = editingName.trim()
     if (!name) {
@@ -223,12 +166,51 @@ export function RssDialog({
       setEditingName('')
       return
     }
-    renameMutation.mutate({ id: editingId, name })
+    try {
+      await toastAction(renameMutation.mutateAsync({ id: editingId, name }), {
+        loading: t`Saving...`,
+        success: t`Feed renamed`,
+        error: (err) => getErrorMessage(err, t`Failed to rename feed`),
+      })
+      setEditingId(null)
+      setEditingName('')
+    } catch {
+      // toastAction already showed error
+    }
   }
 
   const handleCancelEdit = () => {
     setEditingId(null)
     setEditingName('')
+  }
+
+  const handleDelete = async () => {
+    if (!deleteId) return
+    try {
+      await toastAction(deleteMutation.mutateAsync(deleteId), {
+        loading: t`Deleting feed...`,
+        success: t`Feed deleted`,
+        error: (err) => getErrorMessage(err, t`Failed to delete feed`),
+      })
+      setDeleteId(null)
+    } catch {
+      // toastAction already showed error
+    }
+  }
+
+  const handleToggleEnabled = async (id: string, enabled: boolean) => {
+    try {
+      await toastAction(
+        toggleEnabledMutation.mutateAsync({ id, enabled }),
+        {
+          loading: t`Saving...`,
+          success: false,
+          error: (err) => getErrorMessage(err, t`Failed to update feed`),
+        }
+      )
+    } catch {
+      // toastAction already showed error
+    }
   }
 
   const handleClose = () => {
@@ -365,10 +347,7 @@ export function RssDialog({
                             <Switch
                               checked={feed.enabled === 1}
                               onCheckedChange={(checked) =>
-                                toggleEnabledMutation.mutate({
-                                  id: feed.id,
-                                  enabled: checked,
-                                })
+                                void handleToggleEnabled(feed.id, checked)
                               }
                               aria-label={t`Notify by default`}
                             />
@@ -480,7 +459,7 @@ export function RssDialog({
         confirmText={t`Delete`}
         destructive
         handleConfirm={() => {
-          if (deleteId) deleteMutation.mutate(deleteId)
+          void handleDelete()
         }}
         isLoading={deleteMutation.isPending}
       />
