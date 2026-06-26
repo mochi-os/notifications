@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "صاف ڪريو"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:227
+#: src/features/notification/index.tsx:228
 msgid "Clear all"
 msgstr "سڀ صاف ڪريو"
 
@@ -220,7 +220,7 @@ msgstr "انتخاب صاف ڪريو"
 msgid "Clear selection (Escape)"
 msgstr "انتخاب صاف ڪريو (Escape)"
 
-#: src/features/notification/index.tsx:171
+#: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
 msgstr ""
 
@@ -247,8 +247,8 @@ msgstr "ڳولا بند ڪريو"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Collapse"
 msgstr "سُيڪيڙيو"
 
@@ -458,8 +458,8 @@ msgstr "پنهنجو تصديق ڪندڙ ڪوڊ داخل ڪريو"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Expand"
 msgstr "پکيڙيو"
 
@@ -475,7 +475,7 @@ msgstr "تمام وڏو"
 msgid "Failed to add account"
 msgstr "اڪائونٽ شامل ڪرڻ ۾ ناڪام"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
 msgstr ""
 
@@ -491,11 +491,11 @@ msgstr ""
 msgid "Failed to delete feed"
 msgstr "فيڊ ختم ڪرڻ ۾ ناڪام"
 
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
 msgstr ""
 
-#: src/features/notification/index.tsx:151
+#: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
 msgstr ""
 
@@ -693,11 +693,11 @@ msgstr "لاگ آئوٽ ٿي رهيو آهي…"
 msgid "Mark all as read"
 msgstr "سڀ پڙهيل طور نشانبر ڪريو"
 
-#: src/features/notification/index.tsx:212
+#: src/features/notification/index.tsx:213
 msgid "Mark all read"
 msgstr "سڀ پڙهيل نشانبر ڪريو"
 
-#: src/features/notification/index.tsx:158
+#: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
 msgstr ""
 
@@ -742,7 +742,7 @@ msgstr "ڪو ڳنڍيل اڪائونٽ نه آهي"
 msgid "No groups available"
 msgstr "ڪو گروپ دستياب ناهي"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No notifications"
 msgstr "ڪا اطلاع نه آهي"
 
@@ -771,7 +771,7 @@ msgstr "ڪو ٽائيم زون نه مليو."
 msgid "No topic record yet — try again after the next notification."
 msgstr "اڃا ڪو ٽاپڪ رڪارڊ نه آهي — اڳيون اطلاع کان پوءِ ٻيهر ڪوشش ڪريو."
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No unread notifications"
 msgstr "ڪا اڻ پڙهيل اطلاع نه آهي"
 
@@ -799,7 +799,7 @@ msgstr "سيٽ نه ٿيل"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
 #: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:183
+#: src/features/notification/index.tsx:184
 msgid "Notifications"
 msgstr "اطلاعون"
 
@@ -1078,7 +1078,7 @@ msgstr "اصل ۽ منزل مقرر ڪريو"
 msgid "Settings"
 msgstr "سيٽنگون"
 
-#: src/features/notification/index.tsx:192
+#: src/features/notification/index.tsx:193
 msgid "Show all"
 msgstr "سڀ ڏيکاريو"
 

@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "Bersihkeun"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:227
+#: src/features/notification/index.tsx:228
 msgid "Clear all"
 msgstr "Bersihkeun sadaya"
 
@@ -220,7 +220,7 @@ msgstr "Bersihkeun pilihan"
 msgid "Clear selection (Escape)"
 msgstr "Bersihkeun pilihan (Escape)"
 
-#: src/features/notification/index.tsx:171
+#: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
 msgstr ""
 
@@ -247,8 +247,8 @@ msgstr "Tutup panéangan"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Collapse"
 msgstr "Lipet"
 
@@ -458,8 +458,8 @@ msgstr "Lebetkeun kode aplikasi pamariksa"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Expand"
 msgstr "Buka"
 
@@ -475,7 +475,7 @@ msgstr "Gedé pisan"
 msgid "Failed to add account"
 msgstr "Gagal nambahkeun akun"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
 msgstr ""
 
@@ -491,11 +491,11 @@ msgstr ""
 msgid "Failed to delete feed"
 msgstr "Gagal mupus feed"
 
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
 msgstr ""
 
-#: src/features/notification/index.tsx:151
+#: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
 msgstr ""
 
@@ -693,11 +693,11 @@ msgstr "Keur kaluar…"
 msgid "Mark all as read"
 msgstr "Tandaan sadayana sakumaha dibaca"
 
-#: src/features/notification/index.tsx:212
+#: src/features/notification/index.tsx:213
 msgid "Mark all read"
 msgstr "Tandaan sadayana dibaca"
 
-#: src/features/notification/index.tsx:158
+#: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
 msgstr ""
 
@@ -742,7 +742,7 @@ msgstr "Teu aya akun nu kasambung"
 msgid "No groups available"
 msgstr "Teu aya grup"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No notifications"
 msgstr "Teu aya bewara"
 
@@ -771,7 +771,7 @@ msgstr "Teu manggih zona waktu."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Tacan aya catetan topik — coba deui sanggeus bewara salajengna."
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No unread notifications"
 msgstr "Teu aya bewara nu can dibaca"
 
@@ -799,7 +799,7 @@ msgstr "Teu disetel"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
 #: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:183
+#: src/features/notification/index.tsx:184
 msgid "Notifications"
 msgstr "Bewara"
 
@@ -1078,7 +1078,7 @@ msgstr "Atur asal jeung tujuan"
 msgid "Settings"
 msgstr "Setélan"
 
-#: src/features/notification/index.tsx:192
+#: src/features/notification/index.tsx:193
 msgid "Show all"
 msgstr "Tembongkeun sadayana"
 

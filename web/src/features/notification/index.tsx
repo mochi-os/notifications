@@ -145,11 +145,12 @@ export function Notifications() {
     ? allNotifications
     : allNotifications.filter((n) => n.read === 0)
 
-  const handleMarkAsRead = (id: string) => {
-    markAsReadMutation.mutate(id, {
-      onError: (error) =>
-        toast.error(getErrorMessage(error, t`Failed to mark as read`)),
-    })
+  const handleMarkAsRead = async (id: string) => {
+    try {
+      await markAsReadMutation.mutateAsync(id)
+    } catch (error) {
+      toast.error(getErrorMessage(error, t`Failed to mark as read`))
+    }
   }
 
   const handleMarkAllAsRead = async () => {

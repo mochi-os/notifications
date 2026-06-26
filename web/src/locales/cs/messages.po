@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "Vymazat"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:227
+#: src/features/notification/index.tsx:228
 msgid "Clear all"
 msgstr "Vymazat vše"
 
@@ -220,7 +220,7 @@ msgstr "Zrušit výběr"
 msgid "Clear selection (Escape)"
 msgstr "Zrušit výběr (Escape)"
 
-#: src/features/notification/index.tsx:171
+#: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
 msgstr ""
 
@@ -247,8 +247,8 @@ msgstr "Zavřít hledání"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Collapse"
 msgstr "Sbalit"
 
@@ -458,8 +458,8 @@ msgstr "Zadejte kód z autentizační aplikace"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Expand"
 msgstr "Rozbalit"
 
@@ -475,7 +475,7 @@ msgstr "Velmi velké"
 msgid "Failed to add account"
 msgstr "Nepodařilo se přidat účet"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
 msgstr ""
 
@@ -491,11 +491,11 @@ msgstr ""
 msgid "Failed to delete feed"
 msgstr "Nepodařilo se smazat kanál"
 
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
 msgstr ""
 
-#: src/features/notification/index.tsx:151
+#: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
 msgstr ""
 
@@ -693,11 +693,11 @@ msgstr "Odhlašování…"
 msgid "Mark all as read"
 msgstr "Označit vše jako přečtené"
 
-#: src/features/notification/index.tsx:212
+#: src/features/notification/index.tsx:213
 msgid "Mark all read"
 msgstr "Označit vše jako přečtené"
 
-#: src/features/notification/index.tsx:158
+#: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
 msgstr ""
 
@@ -742,7 +742,7 @@ msgstr "Žádné připojené účty"
 msgid "No groups available"
 msgstr "Žádné skupiny k dispozici"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No notifications"
 msgstr "Žádná oznámení"
 
@@ -771,7 +771,7 @@ msgstr "Žádné časové pásmo nenalezeno."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Zatím žádný záznam o tématu — zkuste to znovu po dalším oznámení."
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No unread notifications"
 msgstr "Žádná nepřečtená oznámení"
 
@@ -799,7 +799,7 @@ msgstr "Nenastaveno"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
 #: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:183
+#: src/features/notification/index.tsx:184
 msgid "Notifications"
 msgstr "Oznámení"
 
@@ -1078,7 +1078,7 @@ msgstr "Nastavit výchozí bod a cíl"
 msgid "Settings"
 msgstr "Nastavení"
 
-#: src/features/notification/index.tsx:192
+#: src/features/notification/index.tsx:193
 msgid "Show all"
 msgstr "Zobrazit vše"
 

@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "સાફ કરો"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:227
+#: src/features/notification/index.tsx:228
 msgid "Clear all"
 msgstr "બધું સાફ કરો"
 
@@ -220,7 +220,7 @@ msgstr "પસંદગી સાફ કરો"
 msgid "Clear selection (Escape)"
 msgstr "પસંદગી સાફ કરો (Escape)"
 
-#: src/features/notification/index.tsx:171
+#: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
 msgstr ""
 
@@ -247,8 +247,8 @@ msgstr "શોધ બંધ કરો"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Collapse"
 msgstr "સંકોચો"
 
@@ -458,8 +458,8 @@ msgstr "તમારો ઑથેન્ટિકેટર કોડ દાખલ
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Expand"
 msgstr "વિસ્તારો"
 
@@ -475,7 +475,7 @@ msgstr "વધારાનું મોટું"
 msgid "Failed to add account"
 msgstr "એકાઉન્ટ ઉમેરવામાં નિષ્ફળ"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
 msgstr ""
 
@@ -491,11 +491,11 @@ msgstr ""
 msgid "Failed to delete feed"
 msgstr "ફીડ કાઢી નાખવામાં નિષ્ફળ"
 
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
 msgstr ""
 
-#: src/features/notification/index.tsx:151
+#: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
 msgstr ""
 
@@ -693,11 +693,11 @@ msgstr "લૉગ આઉટ થઈ રહ્યું છે…"
 msgid "Mark all as read"
 msgstr "બધાને વાંચેલા તરીકે માર્ક કરો"
 
-#: src/features/notification/index.tsx:212
+#: src/features/notification/index.tsx:213
 msgid "Mark all read"
 msgstr "બધાને વાંચ્યા તરીકે માર્ક કરો"
 
-#: src/features/notification/index.tsx:158
+#: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
 msgstr ""
 
@@ -742,7 +742,7 @@ msgstr "કોઈ કનેક્ટેડ ખાતા નથી"
 msgid "No groups available"
 msgstr "કોઈ ગ્રૂપ્સ ઉપલબ્ધ નથી"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No notifications"
 msgstr "કોઈ સૂચનાઓ નથી"
 
@@ -771,7 +771,7 @@ msgstr "કોઈ ટાઇમ ઝોન મળ્યો નથી."
 msgid "No topic record yet — try again after the next notification."
 msgstr "હજુ સુધી કોઈ ટોપિક રેકોર્ડ નથી — પછીની સૂચના પછી ફરી પ્રયાસ કરો."
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No unread notifications"
 msgstr "કોઈ વાંચ્યા વગરની સૂચનાઓ નથી"
 
@@ -799,7 +799,7 @@ msgstr "સેટ કર્યું નથી"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
 #: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:183
+#: src/features/notification/index.tsx:184
 msgid "Notifications"
 msgstr "સૂચનાઓ"
 
@@ -1078,7 +1078,7 @@ msgstr "મૂળ અને ગંતવ્ય સેટ કરો"
 msgid "Settings"
 msgstr "સેટિંગ્સ"
 
-#: src/features/notification/index.tsx:192
+#: src/features/notification/index.tsx:193
 msgid "Show all"
 msgstr "બધું બતાવો"
 

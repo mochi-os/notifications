@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "ล้าง"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:227
+#: src/features/notification/index.tsx:228
 msgid "Clear all"
 msgstr "ล้างทั้งหมด"
 
@@ -220,7 +220,7 @@ msgstr "ล้างการเลือก"
 msgid "Clear selection (Escape)"
 msgstr "ล้างการเลือก (Escape)"
 
-#: src/features/notification/index.tsx:171
+#: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
 msgstr ""
 
@@ -247,8 +247,8 @@ msgstr "ปิดการค้นหา"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Collapse"
 msgstr "ยุบ"
 
@@ -458,8 +458,8 @@ msgstr "ป้อนรหัสจากแอปยืนยันตัวต
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Expand"
 msgstr "ขยาย"
 
@@ -475,7 +475,7 @@ msgstr "ใหญ่พิเศษ"
 msgid "Failed to add account"
 msgstr "ไม่สามารถเพิ่มบัญชีได้"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
 msgstr ""
 
@@ -491,11 +491,11 @@ msgstr ""
 msgid "Failed to delete feed"
 msgstr "ไม่สามารถลบฟีดได้"
 
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
 msgstr ""
 
-#: src/features/notification/index.tsx:151
+#: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
 msgstr ""
 
@@ -693,11 +693,11 @@ msgstr "กำลังออกจากระบบ…"
 msgid "Mark all as read"
 msgstr "ทำเครื่องหมายว่าอ่านแล้วทั้งหมด"
 
-#: src/features/notification/index.tsx:212
+#: src/features/notification/index.tsx:213
 msgid "Mark all read"
 msgstr "ทำเครื่องหมายว่าอ่านแล้วทั้งหมด"
 
-#: src/features/notification/index.tsx:158
+#: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
 msgstr ""
 
@@ -742,7 +742,7 @@ msgstr "ไม่มีบัญชีที่เชื่อมต่อ"
 msgid "No groups available"
 msgstr "ไม่มีกลุ่มที่ใช้งานได้"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No notifications"
 msgstr "ไม่มีการแจ้งเตือน"
 
@@ -771,7 +771,7 @@ msgstr "ไม่พบเขตเวลา"
 msgid "No topic record yet — try again after the next notification."
 msgstr "ยังไม่มีบันทึกหัวข้อ — ลองอีกครั้งหลังการแจ้งเตือนครั้งถัดไป"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No unread notifications"
 msgstr "ไม่มีการแจ้งเตือนที่ยังไม่ได้อ่าน"
 
@@ -799,7 +799,7 @@ msgstr "ยังไม่ได้ตั้งค่า"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
 #: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:183
+#: src/features/notification/index.tsx:184
 msgid "Notifications"
 msgstr "การแจ้งเตือน"
 
@@ -1078,7 +1078,7 @@ msgstr "ตั้งค่าต้นทางและปลายทาง"
 msgid "Settings"
 msgstr "การตั้งค่า"
 
-#: src/features/notification/index.tsx:192
+#: src/features/notification/index.tsx:193
 msgid "Show all"
 msgstr "แสดงทั้งหมด"
 

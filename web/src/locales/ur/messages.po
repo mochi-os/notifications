@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "صاف کریں"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:227
+#: src/features/notification/index.tsx:228
 msgid "Clear all"
 msgstr "سب صاف کریں"
 
@@ -220,7 +220,7 @@ msgstr "انتخاب صاف کریں"
 msgid "Clear selection (Escape)"
 msgstr "انتخاب صاف کریں (Escape)"
 
-#: src/features/notification/index.tsx:171
+#: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
 msgstr ""
 
@@ -247,8 +247,8 @@ msgstr "تلاش بند کریں"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Collapse"
 msgstr "سمیٹیں"
 
@@ -458,8 +458,8 @@ msgstr "اپنا اتھینٹیکیٹر کوڈ درج کریں"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Expand"
 msgstr "پھیلائیں"
 
@@ -475,7 +475,7 @@ msgstr "بہت بڑا"
 msgid "Failed to add account"
 msgstr "اکاؤنٹ شامل کرنے میں ناکامی"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
 msgstr ""
 
@@ -491,11 +491,11 @@ msgstr ""
 msgid "Failed to delete feed"
 msgstr "فیڈ حذف کرنے میں ناکامی"
 
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
 msgstr ""
 
-#: src/features/notification/index.tsx:151
+#: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
 msgstr ""
 
@@ -693,11 +693,11 @@ msgstr "لاگ آؤٹ ہو رہا ہے…"
 msgid "Mark all as read"
 msgstr "سب کو پڑھا ہوا نشان زد کریں"
 
-#: src/features/notification/index.tsx:212
+#: src/features/notification/index.tsx:213
 msgid "Mark all read"
 msgstr "سب کو پڑھا ہوا نشان زد کریں"
 
-#: src/features/notification/index.tsx:158
+#: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
 msgstr ""
 
@@ -742,7 +742,7 @@ msgstr "کوئی منسلک اکاؤنٹس نہیں"
 msgid "No groups available"
 msgstr "کوئی گروپ دستیاب نہیں"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No notifications"
 msgstr "کوئی notifications نہیں"
 
@@ -771,7 +771,7 @@ msgstr "کوئی time zone نہیں ملا۔"
 msgid "No topic record yet — try again after the next notification."
 msgstr "ابھی تک کوئی topic record نہیں — اگلی notification کے بعد دوبارہ کوشش کریں۔"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No unread notifications"
 msgstr "کوئی غیر پڑھی notifications نہیں"
 
@@ -799,7 +799,7 @@ msgstr "سیٹ نہیں ہے"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
 #: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:183
+#: src/features/notification/index.tsx:184
 msgid "Notifications"
 msgstr "notifications"
 
@@ -1078,7 +1078,7 @@ msgstr "ابتدائی مقام اور منزل مقرر کریں"
 msgid "Settings"
 msgstr "سیٹنگز"
 
-#: src/features/notification/index.tsx:192
+#: src/features/notification/index.tsx:193
 msgid "Show all"
 msgstr "سب دکھائیں"
 

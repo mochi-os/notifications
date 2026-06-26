@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "Pa rẹ́"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:227
+#: src/features/notification/index.tsx:228
 msgid "Clear all"
 msgstr "Pa gbogbo rẹ̀ rẹ́"
 
@@ -220,7 +220,7 @@ msgstr "Pa ìyàn rẹ́"
 msgid "Clear selection (Escape)"
 msgstr "Pa ìyàn rẹ́ (Escape)"
 
-#: src/features/notification/index.tsx:171
+#: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
 msgstr ""
 
@@ -247,8 +247,8 @@ msgstr "Ti àwárí"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Collapse"
 msgstr "Ká jọ"
 
@@ -458,8 +458,8 @@ msgstr "Tẹ kóòdù authenticator rẹ"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Expand"
 msgstr "Ṣílẹ̀kùn"
 
@@ -475,7 +475,7 @@ msgstr "Tóbi gan"
 msgid "Failed to add account"
 msgstr "Kò lè fi àkántì kún"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
 msgstr ""
 
@@ -491,11 +491,11 @@ msgstr ""
 msgid "Failed to delete feed"
 msgstr "Kò lè pa feed rẹ́"
 
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
 msgstr ""
 
-#: src/features/notification/index.tsx:151
+#: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
 msgstr ""
 
@@ -693,11 +693,11 @@ msgstr "Ń jáde…"
 msgid "Mark all as read"
 msgstr "Sàmì sí gbogbo gẹ́gẹ́ bí kíkà"
 
-#: src/features/notification/index.tsx:212
+#: src/features/notification/index.tsx:213
 msgid "Mark all read"
 msgstr "Sàmì sí gbogbo gẹ́gẹ́ bí kíkà"
 
-#: src/features/notification/index.tsx:158
+#: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
 msgstr ""
 
@@ -742,7 +742,7 @@ msgstr "Kò sí ìròyìn tó sopọ̀"
 msgid "No groups available"
 msgstr "Kò sí ẹgbẹ́ tó wà"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No notifications"
 msgstr "Kò sí ìfìtọ́nisí"
 
@@ -771,7 +771,7 @@ msgstr "A kò rí àgbègbè àkókò kankan."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Kò sí àkọsílẹ̀ kókó síbẹ̀ — gbìyànjú lẹ́ẹ̀kan síi lẹ́yìn ìfìtọ́nisí tó kàn."
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No unread notifications"
 msgstr "Kò sí ìfìtọ́nisí tí a kò kà"
 
@@ -799,7 +799,7 @@ msgstr "A kò ṣètò"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
 #: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:183
+#: src/features/notification/index.tsx:184
 msgid "Notifications"
 msgstr "Àwọn ìfìtọ́nisí"
 
@@ -1078,7 +1078,7 @@ msgstr "Ṣètò ibi tí o ti wá àti ibi tí o ń lọ"
 msgid "Settings"
 msgstr "Àwọn ìṣètò"
 
-#: src/features/notification/index.tsx:192
+#: src/features/notification/index.tsx:193
 msgid "Show all"
 msgstr "Fi gbogbo rẹ̀ hàn"
 

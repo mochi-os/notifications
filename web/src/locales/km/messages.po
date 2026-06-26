@@ -203,7 +203,7 @@ msgid "Clear"
 msgstr "សម្អាត"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:73
-#: src/features/notification/index.tsx:227
+#: src/features/notification/index.tsx:228
 msgid "Clear all"
 msgstr "សម្អាតទាំងអស់"
 
@@ -220,7 +220,7 @@ msgstr "សម្អាតការជ្រើសរើស"
 msgid "Clear selection (Escape)"
 msgstr "សម្អាតការជ្រើសរើស (Escape)"
 
-#: src/features/notification/index.tsx:171
+#: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
 msgstr ""
 
@@ -247,8 +247,8 @@ msgstr "បិទការស្វែងរក"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Collapse"
 msgstr "បង្រួម"
 
@@ -458,8 +458,8 @@ msgstr "បញ្ចូលកូដ authenticator របស់អ្នក"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
-#: ../../../lib/web/src/components/tree-row.tsx:253
-#: ../../../lib/web/src/components/tree-row.tsx:267
+#: ../../../lib/web/src/components/tree-row.tsx:338
+#: ../../../lib/web/src/components/tree-row.tsx:352
 msgid "Expand"
 msgstr "ពង្រីក"
 
@@ -475,7 +475,7 @@ msgstr "ធំពិសេស"
 msgid "Failed to add account"
 msgstr "បរាជ័យក្នុងការបន្ថែមគណនី"
 
-#: src/features/notification/index.tsx:173
+#: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
 msgstr ""
 
@@ -491,11 +491,11 @@ msgstr ""
 msgid "Failed to delete feed"
 msgstr "បរាជ័យក្នុងការលុបព័ត៌មានបង្ហាញ"
 
-#: src/features/notification/index.tsx:161
+#: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
 msgstr ""
 
-#: src/features/notification/index.tsx:151
+#: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
 msgstr ""
 
@@ -693,11 +693,11 @@ msgstr "កំពុងចាកចេញ…"
 msgid "Mark all as read"
 msgstr "សម្គាល់ទាំងអស់ថាបានអាន"
 
-#: src/features/notification/index.tsx:212
+#: src/features/notification/index.tsx:213
 msgid "Mark all read"
 msgstr "សម្គាល់ទាំងអស់បានអាន"
 
-#: src/features/notification/index.tsx:158
+#: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
 msgstr ""
 
@@ -742,7 +742,7 @@ msgstr "មិនមានគណនីភ្ជាប់"
 msgid "No groups available"
 msgstr "មិនមានក្រុម"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No notifications"
 msgstr "មិនមានការជូនដំណឹង"
 
@@ -771,7 +771,7 @@ msgstr "រកមិនឃើញតំបន់ពេលវេលា។"
 msgid "No topic record yet — try again after the next notification."
 msgstr "មិនទាន់មានកំណត់ត្រាប្រធានបទ — សាកល្បងម្តងទៀតបន្ទាប់ពីការជូនដំណឹងលើកក្រោយ។"
 
-#: src/features/notification/index.tsx:265
+#: src/features/notification/index.tsx:266
 msgid "No unread notifications"
 msgstr "មិនមានការជូនដំណឹងដែលមិនទាន់អាន"
 
@@ -799,7 +799,7 @@ msgstr "មិនបានកំណត់"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
 #: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:183
+#: src/features/notification/index.tsx:184
 msgid "Notifications"
 msgstr "ការជូនដំណឹង"
 
@@ -1078,7 +1078,7 @@ msgstr "កំណត់ចំណុចចេញដំណើរ និងគោ�
 msgid "Settings"
 msgstr "ការកំណត់"
 
-#: src/features/notification/index.tsx:192
+#: src/features/notification/index.tsx:193
 msgid "Show all"
 msgstr "បង្ហាញទាំងអស់"
 
