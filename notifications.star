@@ -105,14 +105,14 @@ def _seed_categories():
 	# Ensure exactly one default exists (Normal by default)
 	if not mochi.db.exists('select 1 from categories where "default" = 1'):
 		mochi.db.execute('update categories set "default" = 1 where id = ?', normal_id)
-	# Normal: web + every notify-by-default account + every notify-by-default RSS feed
+	# Normal seeds only the web destination. Accounts and RSS feeds wire
+	# themselves into every category when they are added (see
+	# _add_destination_to_categories), so there is nothing to enumerate here at
+	# create time - and database_create can run in a permission-less context
+	# (e.g. a P2P-triggered create where app_user_setup has not granted
+	# accounts/read), so calling mochi.account.list() here would fail.
 	if not mochi.db.exists("select 1 from destinations where category = ?", normal_id):
 		mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'web', '')", normal_id)
-		for acc in mochi.account.list("notify") or []:
-			if acc.get("enabled"):
-				mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'account', ?)", normal_id, str(acc["id"]))
-		for feed in mochi.db.rows("select id from rss where enabled = 1") or []:
-			mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'rss', ?)", normal_id, feed["id"])
 
 def _converge_normal_categories():
 	# Converge legacy per-host-uid "Normal" categories to the deterministic id
