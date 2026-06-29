@@ -74,7 +74,7 @@ msgstr "Engeza i-akhawunti ukuthola izaziso futhi usebenzise izinsizakalo."
 msgid "Add new account"
 msgstr "Engeza i-akhawunti entsha"
 
-#: ../../../lib/web/src/components/post-tags.tsx:129
+#: ../../../lib/web/src/components/post-tags.tsx:133
 msgid "Add tag..."
 msgstr "Engeza ithegi..."
 
@@ -145,8 +145,8 @@ msgstr "Buyela ekhaya"
 msgid "Blocked navigation to untrusted link"
 msgstr "Kuvinjelwe ukuya esixhumanisini esingathembekile"
 
-#: ../../../lib/web/src/components/post-tags.tsx:172
-#: ../../../lib/web/src/components/post-tags.tsx:184
+#: ../../../lib/web/src/components/post-tags.tsx:176
+#: ../../../lib/web/src/components/post-tags.tsx:188
 msgid "Boost interest"
 msgstr "Khulisa intshisekelo"
 
@@ -222,11 +222,11 @@ msgstr "Sula ukukhetha (i-Escape)"
 
 #: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
-msgstr ""
+msgstr "Isula izaziso..."
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:354
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:357
 #: ../../../lib/web/src/components/ui/sheet.tsx:79
 msgid "Close"
 msgstr "Vala"
@@ -334,7 +334,7 @@ msgstr "Dala ifidi ye-RSS"
 
 #: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
-msgstr ""
+msgstr "Idala ifidi ye-RSS..."
 
 #: ../../../lib/web/src/components/colour-picker.tsx:260
 msgid "Custom"
@@ -380,7 +380,7 @@ msgstr "Susa i-akhawunti yakho eservereni endala"
 
 #: src/components/rss-dialog.tsx:191
 msgid "Deleting feed..."
-msgstr ""
+msgstr "Kususwa ifidi..."
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:63
 msgid "Desc"
@@ -422,10 +422,14 @@ msgstr "Ibonisa ibha eseceleni yefoni."
 msgid "Done"
 msgstr "Kwenziwe"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:320
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:326
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:338
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:348
 msgid "Download"
 msgstr "Landa"
+
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:68
+msgid "Download failed"
+msgstr "Ukulanda kuhlulekile"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:146
 msgid "Dyslexia-friendly"
@@ -477,15 +481,11 @@ msgstr "Kuhlulekile ukungeza i-akhawunti"
 
 #: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
-msgstr ""
-
-#: src/components/rss-dialog.tsx:139
-#~ msgid "Failed to create feed"
-#~ msgstr "Kuhlulekile ukudala ifidi"
+msgstr "Yehlulekile ukususa izaziso"
 
 #: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
-msgstr ""
+msgstr "Yehlulekile ukudala ifidi ye-RSS"
 
 #: src/components/rss-dialog.tsx:193
 msgid "Failed to delete feed"
@@ -493,11 +493,11 @@ msgstr "Kuhlulekile ukususa ifidi"
 
 #: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
-msgstr ""
+msgstr "Kuhlulekile ukumaka konke njengokufundiwe"
 
 #: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
-msgstr ""
+msgstr "Yehlulekile ukuphawula njengokufundiwe"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Failed to remove account"
@@ -660,6 +660,10 @@ msgstr "Okukhanyayo"
 msgid "Load more"
 msgstr "Layisha okuningi"
 
+#: ../../../lib/web/src/components/ui/loading-content.tsx:29
+msgid "Loading content…"
+msgstr "Ilayisha okuqukethwe…"
+
 #: ../../../lib/web/src/components/ui/load-more.tsx:35
 #: ../../../lib/web/src/features/document/document-page.tsx:90
 msgid "Loading…"
@@ -699,7 +703,7 @@ msgstr "Maka konke njengokufundiwe"
 
 #: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
-msgstr ""
+msgstr "Iphawula konke njengokufundiwe..."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:107
 msgid "Medium"
@@ -725,8 +729,8 @@ msgstr "Iphutha lenethiwekhi"
 msgid "New"
 msgstr "Okusha"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:366
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:371
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:388
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:393
 msgid "Next image"
 msgstr "Isithombe esilandelayo"
 
@@ -861,8 +865,8 @@ msgstr "Ama-passkey"
 msgid "Please check your internet connection and try again."
 msgstr "Sicela uhlole uxhumano lwakho lwe-inthanethi bese uzama futhi."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:351
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:356
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:373
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:378
 msgid "Previous image"
 msgstr "Isithombe esedlule"
 
@@ -897,8 +901,8 @@ msgstr "Kunconywayo"
 msgid "Redirecting to login."
 msgstr "Iqondisa kabusha ekungeneni."
 
-#: ../../../lib/web/src/components/post-tags.tsx:192
-#: ../../../lib/web/src/components/post-tags.tsx:204
+#: ../../../lib/web/src/components/post-tags.tsx:196
+#: ../../../lib/web/src/components/post-tags.tsx:208
 msgid "Reduce interest"
 msgstr "Yehlisa intshisekelo"
 
@@ -924,8 +928,8 @@ msgstr "Khipha umthetho wokufinyelela"
 msgid "Remove access?"
 msgstr "Khipha ukufinyelela?"
 
-#: ../../../lib/web/src/components/post-tags.tsx:212
-#: ../../../lib/web/src/components/post-tags.tsx:224
+#: ../../../lib/web/src/components/post-tags.tsx:216
+#: ../../../lib/web/src/components/post-tags.tsx:228
 msgid "Remove interest"
 msgstr "Khipha intshisekelo"
 
@@ -976,7 +980,7 @@ msgstr "Londoloza le URL manje. Ngeke ukwazi ukubona ithokheni futhi."
 #: src/components/rss-dialog.tsx:171
 #: src/components/rss-dialog.tsx:206
 msgid "Saving..."
-msgstr ""
+msgstr "Kuyalondolozwa..."
 
 #: ../../../lib/web/src/components/place-picker.tsx:85
 msgid "Search for a place"
@@ -1140,8 +1144,8 @@ msgstr "Isistimu"
 msgid "Tag"
 msgstr "Ithegi"
 
-#: ../../../lib/web/src/components/post-tags.tsx:96
-#: ../../../lib/web/src/components/post-tags.tsx:107
+#: ../../../lib/web/src/components/post-tags.tsx:100
+#: ../../../lib/web/src/components/post-tags.tsx:111
 msgid "Tags"
 msgstr "Amathegi"
 

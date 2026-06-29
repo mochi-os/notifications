@@ -74,7 +74,7 @@ msgstr "Adicione uma conta para receber notificações e utilizar serviços."
 msgid "Add new account"
 msgstr "Adicionar nova conta"
 
-#: ../../../lib/web/src/components/post-tags.tsx:129
+#: ../../../lib/web/src/components/post-tags.tsx:133
 msgid "Add tag..."
 msgstr "Adicionar etiqueta..."
 
@@ -145,8 +145,8 @@ msgstr "Voltar ao início"
 msgid "Blocked navigation to untrusted link"
 msgstr "Navegação bloqueada para ligação não fidedigna"
 
-#: ../../../lib/web/src/components/post-tags.tsx:172
-#: ../../../lib/web/src/components/post-tags.tsx:184
+#: ../../../lib/web/src/components/post-tags.tsx:176
+#: ../../../lib/web/src/components/post-tags.tsx:188
 msgid "Boost interest"
 msgstr "Reforçar interesse"
 
@@ -222,11 +222,11 @@ msgstr "Limpar seleção (Escape)"
 
 #: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
-msgstr ""
+msgstr "Limpando notificações..."
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:354
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:357
 #: ../../../lib/web/src/components/ui/sheet.tsx:79
 msgid "Close"
 msgstr "Fechar"
@@ -334,7 +334,7 @@ msgstr "Criar feed RSS"
 
 #: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
-msgstr ""
+msgstr "Criando feed RSS..."
 
 #: ../../../lib/web/src/components/colour-picker.tsx:260
 msgid "Custom"
@@ -380,7 +380,7 @@ msgstr "Elimine a sua conta no servidor antigo"
 
 #: src/components/rss-dialog.tsx:191
 msgid "Deleting feed..."
-msgstr ""
+msgstr "A eliminar o feed..."
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:63
 msgid "Desc"
@@ -422,10 +422,14 @@ msgstr "Apresenta a barra lateral móvel."
 msgid "Done"
 msgstr "Concluído"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:320
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:326
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:338
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:348
 msgid "Download"
 msgstr "Transferir"
+
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:68
+msgid "Download failed"
+msgstr "Falha no download"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:146
 msgid "Dyslexia-friendly"
@@ -477,15 +481,11 @@ msgstr "Falha ao adicionar conta"
 
 #: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
-msgstr ""
-
-#: src/components/rss-dialog.tsx:139
-#~ msgid "Failed to create feed"
-#~ msgstr "Falha ao criar feed"
+msgstr "Falha ao limpar notificações"
 
 #: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
-msgstr ""
+msgstr "Falha ao criar feed RSS"
 
 #: src/components/rss-dialog.tsx:193
 msgid "Failed to delete feed"
@@ -493,11 +493,11 @@ msgstr "Falha ao eliminar feed"
 
 #: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
-msgstr ""
+msgstr "Falha ao marcar tudo como lido"
 
 #: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
-msgstr ""
+msgstr "Falha ao marcar como lido"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Failed to remove account"
@@ -660,6 +660,10 @@ msgstr "Claro"
 msgid "Load more"
 msgstr "Carregar mais"
 
+#: ../../../lib/web/src/components/ui/loading-content.tsx:29
+msgid "Loading content…"
+msgstr "A carregar o conteúdo…"
+
 #: ../../../lib/web/src/components/ui/load-more.tsx:35
 #: ../../../lib/web/src/features/document/document-page.tsx:90
 msgid "Loading…"
@@ -699,7 +703,7 @@ msgstr "Marcar tudo como lido"
 
 #: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
-msgstr ""
+msgstr "Marcando tudo como lido..."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:107
 msgid "Medium"
@@ -725,8 +729,8 @@ msgstr "Erro de rede"
 msgid "New"
 msgstr "Novo"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:366
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:371
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:388
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:393
 msgid "Next image"
 msgstr "Imagem seguinte"
 
@@ -861,8 +865,8 @@ msgstr "Chaves de acesso"
 msgid "Please check your internet connection and try again."
 msgstr "Verifique a sua ligação à Internet e tente novamente."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:351
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:356
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:373
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:378
 msgid "Previous image"
 msgstr "Imagem anterior"
 
@@ -897,8 +901,8 @@ msgstr "Recomendado"
 msgid "Redirecting to login."
 msgstr "A redirecionar para o início de sessão."
 
-#: ../../../lib/web/src/components/post-tags.tsx:192
-#: ../../../lib/web/src/components/post-tags.tsx:204
+#: ../../../lib/web/src/components/post-tags.tsx:196
+#: ../../../lib/web/src/components/post-tags.tsx:208
 msgid "Reduce interest"
 msgstr "Reduzir interesse"
 
@@ -924,8 +928,8 @@ msgstr "Remover regra de acesso"
 msgid "Remove access?"
 msgstr "Remover acesso?"
 
-#: ../../../lib/web/src/components/post-tags.tsx:212
-#: ../../../lib/web/src/components/post-tags.tsx:224
+#: ../../../lib/web/src/components/post-tags.tsx:216
+#: ../../../lib/web/src/components/post-tags.tsx:228
 msgid "Remove interest"
 msgstr "Remover interesse"
 
@@ -976,7 +980,7 @@ msgstr "Guarde este URL agora. Não poderá voltar a ver o token."
 #: src/components/rss-dialog.tsx:171
 #: src/components/rss-dialog.tsx:206
 msgid "Saving..."
-msgstr ""
+msgstr "A guardar..."
 
 #: ../../../lib/web/src/components/place-picker.tsx:85
 msgid "Search for a place"
@@ -1140,8 +1144,8 @@ msgstr "Sistema"
 msgid "Tag"
 msgstr "Etiqueta"
 
-#: ../../../lib/web/src/components/post-tags.tsx:96
-#: ../../../lib/web/src/components/post-tags.tsx:107
+#: ../../../lib/web/src/components/post-tags.tsx:100
+#: ../../../lib/web/src/components/post-tags.tsx:111
 msgid "Tags"
 msgstr "Etiquetas"
 

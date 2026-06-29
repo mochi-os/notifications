@@ -74,7 +74,7 @@ msgstr "Ychwanegu cyfrif i dderbyn hysbysiadau a defnyddio gwasanaethau."
 msgid "Add new account"
 msgstr "Ychwanegu cyfrif newydd"
 
-#: ../../../lib/web/src/components/post-tags.tsx:129
+#: ../../../lib/web/src/components/post-tags.tsx:133
 msgid "Add tag..."
 msgstr "Ychwanegu tag..."
 
@@ -145,8 +145,8 @@ msgstr "Yn ôl i’r cartref"
 msgid "Blocked navigation to untrusted link"
 msgstr "Llywio at ddolen heb ymddiriedaeth wedi'i blocio"
 
-#: ../../../lib/web/src/components/post-tags.tsx:172
-#: ../../../lib/web/src/components/post-tags.tsx:184
+#: ../../../lib/web/src/components/post-tags.tsx:176
+#: ../../../lib/web/src/components/post-tags.tsx:188
 msgid "Boost interest"
 msgstr "Hybu diddordeb"
 
@@ -222,11 +222,11 @@ msgstr "Clirio dewis (Escape)"
 
 #: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
-msgstr ""
+msgstr "Yn clirio hysbysiadau..."
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:354
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:357
 #: ../../../lib/web/src/components/ui/sheet.tsx:79
 msgid "Close"
 msgstr "Cau"
@@ -334,7 +334,7 @@ msgstr "Creu porthiant RSS"
 
 #: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
-msgstr ""
+msgstr "Yn creu ffrwd RSS..."
 
 #: ../../../lib/web/src/components/colour-picker.tsx:260
 msgid "Custom"
@@ -380,7 +380,7 @@ msgstr "Dilëwch eich cyfrif ar yr hen weinydd"
 
 #: src/components/rss-dialog.tsx:191
 msgid "Deleting feed..."
-msgstr ""
+msgstr "Yn dileu ffrwd..."
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:63
 msgid "Desc"
@@ -422,10 +422,14 @@ msgstr "Yn dangos y bar ochr symudol."
 msgid "Done"
 msgstr "Wedi gorffen"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:320
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:326
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:338
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:348
 msgid "Download"
 msgstr "Lawrlwytho"
+
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:68
+msgid "Download failed"
+msgstr "Methwyd â lawrlwytho"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:146
 msgid "Dyslexia-friendly"
@@ -477,15 +481,11 @@ msgstr "Methwyd ychwanegu cyfrif"
 
 #: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
-msgstr ""
-
-#: src/components/rss-dialog.tsx:139
-#~ msgid "Failed to create feed"
-#~ msgstr "Methwyd creu ffrwd"
+msgstr "Methwyd â chlirio hysbysiadau"
 
 #: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
-msgstr ""
+msgstr "Methwyd â chreu ffrwd RSS"
 
 #: src/components/rss-dialog.tsx:193
 msgid "Failed to delete feed"
@@ -493,11 +493,11 @@ msgstr "Methwyd dileu'r ffrwd"
 
 #: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
-msgstr ""
+msgstr "Methwyd marcio'r cyfan fel wedi'u darllen"
 
 #: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
-msgstr ""
+msgstr "Methwyd â nodi fel wedi'i ddarllen"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Failed to remove account"
@@ -660,6 +660,10 @@ msgstr "Golau"
 msgid "Load more"
 msgstr "Llwytho mwy"
 
+#: ../../../lib/web/src/components/ui/loading-content.tsx:29
+msgid "Loading content…"
+msgstr "Yn llwytho cynnwys…"
+
 #: ../../../lib/web/src/components/ui/load-more.tsx:35
 #: ../../../lib/web/src/features/document/document-page.tsx:90
 msgid "Loading…"
@@ -699,7 +703,7 @@ msgstr "Marcio'r cyfan wedi'u darllen"
 
 #: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
-msgstr ""
+msgstr "Yn nodi popeth fel wedi'i ddarllen..."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:107
 msgid "Medium"
@@ -725,8 +729,8 @@ msgstr "Gwall rhwydwaith"
 msgid "New"
 msgstr "Newydd"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:366
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:371
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:388
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:393
 msgid "Next image"
 msgstr "Delwedd nesaf"
 
@@ -861,8 +865,8 @@ msgstr "Pasallweddi"
 msgid "Please check your internet connection and try again."
 msgstr "Gwiriwch eich cysylltiad rhyngrwyd a rhowch gynnig arall arni."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:351
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:356
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:373
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:378
 msgid "Previous image"
 msgstr "Delwedd flaenorol"
 
@@ -897,8 +901,8 @@ msgstr "Argymhellir"
 msgid "Redirecting to login."
 msgstr "Yn ailgyfeirio i'r mewngofnodi."
 
-#: ../../../lib/web/src/components/post-tags.tsx:192
-#: ../../../lib/web/src/components/post-tags.tsx:204
+#: ../../../lib/web/src/components/post-tags.tsx:196
+#: ../../../lib/web/src/components/post-tags.tsx:208
 msgid "Reduce interest"
 msgstr "Lleihau diddordeb"
 
@@ -924,8 +928,8 @@ msgstr "Tynnu rheol mynediad"
 msgid "Remove access?"
 msgstr "Tynnu mynediad?"
 
-#: ../../../lib/web/src/components/post-tags.tsx:212
-#: ../../../lib/web/src/components/post-tags.tsx:224
+#: ../../../lib/web/src/components/post-tags.tsx:216
+#: ../../../lib/web/src/components/post-tags.tsx:228
 msgid "Remove interest"
 msgstr "Tynnu diddordeb"
 
@@ -976,7 +980,7 @@ msgstr "Cadwch yr URL hwn nawr. Ni fyddwch yn gallu gweld y tocyn eto."
 #: src/components/rss-dialog.tsx:171
 #: src/components/rss-dialog.tsx:206
 msgid "Saving..."
-msgstr ""
+msgstr "Yn cadw..."
 
 #: ../../../lib/web/src/components/place-picker.tsx:85
 msgid "Search for a place"
@@ -1140,8 +1144,8 @@ msgstr "System"
 msgid "Tag"
 msgstr "Tag"
 
-#: ../../../lib/web/src/components/post-tags.tsx:96
-#: ../../../lib/web/src/components/post-tags.tsx:107
+#: ../../../lib/web/src/components/post-tags.tsx:100
+#: ../../../lib/web/src/components/post-tags.tsx:111
 msgid "Tags"
 msgstr "Tagiau"
 

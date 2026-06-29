@@ -74,7 +74,7 @@ msgstr "Thêm tài khoản để nhận thông báo và dùng dịch vụ."
 msgid "Add new account"
 msgstr "Thêm tài khoản mới"
 
-#: ../../../lib/web/src/components/post-tags.tsx:129
+#: ../../../lib/web/src/components/post-tags.tsx:133
 msgid "Add tag..."
 msgstr "Thêm thẻ..."
 
@@ -145,8 +145,8 @@ msgstr "Về trang chủ"
 msgid "Blocked navigation to untrusted link"
 msgstr "Đã chặn điều hướng tới liên kết không tin cậy"
 
-#: ../../../lib/web/src/components/post-tags.tsx:172
-#: ../../../lib/web/src/components/post-tags.tsx:184
+#: ../../../lib/web/src/components/post-tags.tsx:176
+#: ../../../lib/web/src/components/post-tags.tsx:188
 msgid "Boost interest"
 msgstr "Đẩy mạnh sở thích"
 
@@ -222,11 +222,11 @@ msgstr "Bỏ chọn (Escape)"
 
 #: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
-msgstr ""
+msgstr "Đang xóa thông báo..."
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:354
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:357
 #: ../../../lib/web/src/components/ui/sheet.tsx:79
 msgid "Close"
 msgstr "Đóng"
@@ -334,7 +334,7 @@ msgstr "Tạo nguồn cấp RSS"
 
 #: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
-msgstr ""
+msgstr "Đang tạo nguồn cấp RSS..."
 
 #: ../../../lib/web/src/components/colour-picker.tsx:260
 msgid "Custom"
@@ -380,7 +380,7 @@ msgstr "Xóa tài khoản của bạn trên máy chủ cũ"
 
 #: src/components/rss-dialog.tsx:191
 msgid "Deleting feed..."
-msgstr ""
+msgstr "Đang xóa nguồn cấp..."
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:63
 msgid "Desc"
@@ -422,10 +422,14 @@ msgstr "Hiển thị thanh bên di động."
 msgid "Done"
 msgstr "Xong"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:320
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:326
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:338
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:348
 msgid "Download"
 msgstr "Tải xuống"
+
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:68
+msgid "Download failed"
+msgstr "Tải xuống thất bại"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:146
 msgid "Dyslexia-friendly"
@@ -477,15 +481,11 @@ msgstr "Không thêm tài khoản được"
 
 #: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
-msgstr ""
-
-#: src/components/rss-dialog.tsx:139
-#~ msgid "Failed to create feed"
-#~ msgstr "Không tạo nguồn cấp được"
+msgstr "Không thể xóa thông báo"
 
 #: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
-msgstr ""
+msgstr "Không thể tạo nguồn cấp RSS"
 
 #: src/components/rss-dialog.tsx:193
 msgid "Failed to delete feed"
@@ -493,11 +493,11 @@ msgstr "Không xoá nguồn cấp được"
 
 #: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
-msgstr ""
+msgstr "Không đánh dấu tất cả là đã đọc được"
 
 #: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
-msgstr ""
+msgstr "Không thể đánh dấu là đã đọc"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Failed to remove account"
@@ -660,6 +660,10 @@ msgstr "Sáng"
 msgid "Load more"
 msgstr "Tải thêm"
 
+#: ../../../lib/web/src/components/ui/loading-content.tsx:29
+msgid "Loading content…"
+msgstr "Đang tải nội dung…"
+
 #: ../../../lib/web/src/components/ui/load-more.tsx:35
 #: ../../../lib/web/src/features/document/document-page.tsx:90
 msgid "Loading…"
@@ -699,7 +703,7 @@ msgstr "Đánh dấu tất cả đã đọc"
 
 #: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
-msgstr ""
+msgstr "Đang đánh dấu tất cả là đã đọc..."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:107
 msgid "Medium"
@@ -725,8 +729,8 @@ msgstr "Lỗi mạng"
 msgid "New"
 msgstr "Mới"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:366
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:371
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:388
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:393
 msgid "Next image"
 msgstr "Hình tiếp theo"
 
@@ -861,8 +865,8 @@ msgstr "Passkey"
 msgid "Please check your internet connection and try again."
 msgstr "Vui lòng kiểm tra kết nối internet và thử lại."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:351
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:356
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:373
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:378
 msgid "Previous image"
 msgstr "Hình trước"
 
@@ -897,8 +901,8 @@ msgstr "Được đề xuất"
 msgid "Redirecting to login."
 msgstr "Đang chuyển hướng đến đăng nhập."
 
-#: ../../../lib/web/src/components/post-tags.tsx:192
-#: ../../../lib/web/src/components/post-tags.tsx:204
+#: ../../../lib/web/src/components/post-tags.tsx:196
+#: ../../../lib/web/src/components/post-tags.tsx:208
 msgid "Reduce interest"
 msgstr "Giảm sự quan tâm"
 
@@ -924,8 +928,8 @@ msgstr "Xoá quy tắc truy cập"
 msgid "Remove access?"
 msgstr "Xoá quyền truy cập?"
 
-#: ../../../lib/web/src/components/post-tags.tsx:212
-#: ../../../lib/web/src/components/post-tags.tsx:224
+#: ../../../lib/web/src/components/post-tags.tsx:216
+#: ../../../lib/web/src/components/post-tags.tsx:228
 msgid "Remove interest"
 msgstr "Xoá sở thích"
 
@@ -976,7 +980,7 @@ msgstr "Lưu URL này ngay bây giờ. Bạn sẽ không thể xem lại token n
 #: src/components/rss-dialog.tsx:171
 #: src/components/rss-dialog.tsx:206
 msgid "Saving..."
-msgstr ""
+msgstr "Đang lưu..."
 
 #: ../../../lib/web/src/components/place-picker.tsx:85
 msgid "Search for a place"
@@ -1140,8 +1144,8 @@ msgstr "Hệ thống"
 msgid "Tag"
 msgstr "Thẻ"
 
-#: ../../../lib/web/src/components/post-tags.tsx:96
-#: ../../../lib/web/src/components/post-tags.tsx:107
+#: ../../../lib/web/src/components/post-tags.tsx:100
+#: ../../../lib/web/src/components/post-tags.tsx:111
 msgid "Tags"
 msgstr "Các thẻ"
 

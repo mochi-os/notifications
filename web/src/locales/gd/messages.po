@@ -74,7 +74,7 @@ msgstr "Cuir cunntas ris gus brathan fhaighinn agus seirbheisean a chleachdadh."
 msgid "Add new account"
 msgstr "Cuir cunntas ùr ris"
 
-#: ../../../lib/web/src/components/post-tags.tsx:129
+#: ../../../lib/web/src/components/post-tags.tsx:133
 msgid "Add tag..."
 msgstr "Cuir taga ris..."
 
@@ -145,8 +145,8 @@ msgstr "Air ais dhan dachaigh"
 msgid "Blocked navigation to untrusted link"
 msgstr "Chaidh seòladaireachd gu ceangal neo-earbsach a bhacadh"
 
-#: ../../../lib/web/src/components/post-tags.tsx:172
-#: ../../../lib/web/src/components/post-tags.tsx:184
+#: ../../../lib/web/src/components/post-tags.tsx:176
+#: ../../../lib/web/src/components/post-tags.tsx:188
 msgid "Boost interest"
 msgstr "Brosnaich ùidh"
 
@@ -222,11 +222,11 @@ msgstr "Falamhaich an taghadh (Escape)"
 
 #: src/features/notification/index.tsx:172
 msgid "Clearing notifications..."
-msgstr ""
+msgstr "A’ glanadh nam brathan..."
 
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:332
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:335
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:354
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:357
 #: ../../../lib/web/src/components/ui/sheet.tsx:79
 msgid "Close"
 msgstr "Dùin"
@@ -334,7 +334,7 @@ msgstr "Cruthaich inbhir RSS"
 
 #: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
-msgstr ""
+msgstr "A’ cruthachadh inbhir RSS..."
 
 #: ../../../lib/web/src/components/colour-picker.tsx:260
 msgid "Custom"
@@ -380,7 +380,7 @@ msgstr "Sguab às do chunntas air an t-seann fhrithealaiche"
 
 #: src/components/rss-dialog.tsx:191
 msgid "Deleting feed..."
-msgstr ""
+msgstr "A' sguabadh às inbhir..."
 
 #: ../../../lib/web/src/components/data-table/column-header.tsx:63
 msgid "Desc"
@@ -422,10 +422,14 @@ msgstr "Seallaidh am bàr-thaobh fòn-làimhe."
 msgid "Done"
 msgstr "Deiseil"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:320
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:326
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:338
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:348
 msgid "Download"
 msgstr "Luchdaich a-nuas"
+
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:68
+msgid "Download failed"
+msgstr "Dh’fhàillig an luchdadh a-nuas"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:146
 msgid "Dyslexia-friendly"
@@ -477,15 +481,11 @@ msgstr "Cha b' urrainn an cunntas a chur ris"
 
 #: src/features/notification/index.tsx:174
 msgid "Failed to clear notifications"
-msgstr ""
-
-#: src/components/rss-dialog.tsx:139
-#~ msgid "Failed to create feed"
-#~ msgstr "Cha b' urrainn inbhir a chruthachadh"
+msgstr "Cha b’ urrainn na brathan a ghlanadh"
 
 #: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
-msgstr ""
+msgstr "Cha b’ urrainn inbhir RSS a chruthachadh"
 
 #: src/components/rss-dialog.tsx:193
 msgid "Failed to delete feed"
@@ -493,11 +493,11 @@ msgstr "Cha b' urrainn inbhir a sguabadh às"
 
 #: src/features/notification/index.tsx:162
 msgid "Failed to mark all as read"
-msgstr ""
+msgstr "Cha b' urrainn comharrachadh mar leughte uile"
 
 #: src/features/notification/index.tsx:152
 msgid "Failed to mark as read"
-msgstr ""
+msgstr "Cha b’ urrainn comharrachadh mar leughte"
 
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:234
 msgid "Failed to remove account"
@@ -660,6 +660,10 @@ msgstr "Soilleir"
 msgid "Load more"
 msgstr "Luchdaich barrachd"
 
+#: ../../../lib/web/src/components/ui/loading-content.tsx:29
+msgid "Loading content…"
+msgstr "A’ luchdadh susbaint…"
+
 #: ../../../lib/web/src/components/ui/load-more.tsx:35
 #: ../../../lib/web/src/features/document/document-page.tsx:90
 msgid "Loading…"
@@ -699,7 +703,7 @@ msgstr "Comharraich gach nì mar leughte"
 
 #: src/features/notification/index.tsx:159
 msgid "Marking all as read..."
-msgstr ""
+msgstr "A’ comharrachadh a h-uile mar leughte..."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:107
 msgid "Medium"
@@ -725,8 +729,8 @@ msgstr "Mearachd lìonraidh"
 msgid "New"
 msgstr "Ùr"
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:366
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:371
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:388
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:393
 msgid "Next image"
 msgstr "An ath dhealbh"
 
@@ -861,8 +865,8 @@ msgstr "Pasgairean"
 msgid "Please check your internet connection and try again."
 msgstr "Thoir sùil air a' cheangal eadar-lìn agad agus feuch ris a-rithist."
 
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:351
-#: ../../../lib/web/src/components/ui/image-lightbox.tsx:356
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:373
+#: ../../../lib/web/src/components/ui/image-lightbox.tsx:378
 msgid "Previous image"
 msgstr "An dealbh roimhe"
 
@@ -897,8 +901,8 @@ msgstr "Air a mholadh"
 msgid "Redirecting to login."
 msgstr "Ag ath-stiùireadh dhan log a-steach."
 
-#: ../../../lib/web/src/components/post-tags.tsx:192
-#: ../../../lib/web/src/components/post-tags.tsx:204
+#: ../../../lib/web/src/components/post-tags.tsx:196
+#: ../../../lib/web/src/components/post-tags.tsx:208
 msgid "Reduce interest"
 msgstr "Lùghdaich an ùidh"
 
@@ -924,8 +928,8 @@ msgstr "Thoir an riaghailt cothraim air falbh"
 msgid "Remove access?"
 msgstr "Thoir an cothrom air falbh?"
 
-#: ../../../lib/web/src/components/post-tags.tsx:212
-#: ../../../lib/web/src/components/post-tags.tsx:224
+#: ../../../lib/web/src/components/post-tags.tsx:216
+#: ../../../lib/web/src/components/post-tags.tsx:228
 msgid "Remove interest"
 msgstr "Thoir an ùidh air falbh"
 
@@ -976,7 +980,7 @@ msgstr "Sàbhail an URL seo a-nis. Chan fhaic thu an token a-rithist."
 #: src/components/rss-dialog.tsx:171
 #: src/components/rss-dialog.tsx:206
 msgid "Saving..."
-msgstr ""
+msgstr "A' sàbhaladh..."
 
 #: ../../../lib/web/src/components/place-picker.tsx:85
 msgid "Search for a place"
@@ -1140,8 +1144,8 @@ msgstr "Siostam"
 msgid "Tag"
 msgstr "Taga"
 
-#: ../../../lib/web/src/components/post-tags.tsx:96
-#: ../../../lib/web/src/components/post-tags.tsx:107
+#: ../../../lib/web/src/components/post-tags.tsx:100
+#: ../../../lib/web/src/components/post-tags.tsx:111
 msgid "Tags"
 msgstr "Tagaichean"
 
