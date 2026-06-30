@@ -2,7 +2,7 @@
 // Copyright © 2026 Mochi OÜ
 
 {
-	"version": "3.40",
+	"version": "3.41",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
