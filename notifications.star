@@ -649,7 +649,7 @@ def action_accounts_get(a):
 	if not id or not id.isdigit():
 		a.error.label(400, "errors.invalid_id")
 		return
-	result = mochi.account.get(int(id))
+	result = mochi.account.get(id)
 	return {"data": result}
 
 def action_accounts_add(a):
@@ -692,7 +692,7 @@ def action_accounts_update(a):
 	if label != None:
 		fields["label"] = label
 
-	result = mochi.account.update(int(id), **fields)
+	result = mochi.account.update(id, **fields)
 	return {"data": result}
 
 def action_accounts_remove(a):
@@ -703,7 +703,7 @@ def action_accounts_remove(a):
 
 	# Also remove from all categories' destinations
 	mochi.db.execute("delete from destinations where type = 'account' and target = ?", id)
-	result = mochi.account.remove(int(id))
+	result = mochi.account.remove(id)
 	return {"data": result}
 
 def action_accounts_verify(a):
@@ -716,7 +716,7 @@ def action_accounts_verify(a):
 	if not code or len(code) > 256:
 		a.error.label(400, "errors.invalid_code")
 		return
-	result = mochi.account.verify(int(id), code)
+	result = mochi.account.verify(id, code)
 	return {"data": result}
 
 def action_accounts_vapid(a):
@@ -1035,7 +1035,7 @@ def notifications_commit_hook(table, kind, row_uid):
 	)
 	for dest in dests or []:
 		if dest["type"] == "account":
-			account_id = int(dest["target"])
+			account_id = dest["target"]
 			_push_queue_if_unifiedpush(account_id, row["app"], row["topic"], row["object"], row["title"], row["body"], row["link"], row["id"])
 			mochi.account.notify(
 				account=account_id,
@@ -1215,7 +1215,7 @@ def function_category_test(context, id=None):
 			web = True
 			sent += 1
 		elif dest["type"] == "account":
-			account_id = int(dest["target"])
+			account_id = dest["target"]
 			account_label = _account_display_label(account_id)
 			if not account_label:
 				continue  # stale destination row pointing at a deleted account
@@ -1511,7 +1511,7 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 	# Inbound endpoint will be /menu/-/push/inbound/<account_id> guarded by
 	# the on-device p256dh keypair (only the matching distributor can decrypt).
 	if not endpoint:
-		path = "/menu/-/push/inbound/%d" % account_id
+		path = "/menu/-/push/inbound/%s" % account_id
 		mochi.account.update(account_id, endpoint=path)
 		result["endpoint"] = path
 
@@ -1602,7 +1602,7 @@ def _extract_firebase_config(raw):
 # whose user picked the Mochi distributor). Forwards the opaque encrypted body
 # to the device via the existing WebSocket fast-path. Deferred — the primary
 # use case (Mochi-server-to-its-own-users) doesn't need this.
-def function_push_inbound(context, account_id=0, payload=""):
+def function_push_inbound(context, account_id="", payload=""):
 	if not account_id:
 		return {"ok": False, "error": "missing account_id"}
 	# TODO: forward via mochi.websocket.write once the Go side exposes a
@@ -1691,7 +1691,7 @@ def function_push_ack(context, account_event_ids=None):
 		return {"acked": 0}
 	acked = 0
 	for ae in account_event_ids:
-		account = int(ae.get("account", 0))
+		account = ae.get("account", "")
 		event_id = ae.get("event_id", "")
 		if not account or not event_id:
 			continue
@@ -1737,7 +1737,7 @@ def action_push_accounts_remove(a):
 	id = a.input("id", "").strip()
 	if not id or not id.isdigit():
 		return a.error.label(400, "errors.invalid_id")
-	result = function_accounts_remove(None, id=int(id))
+	result = function_accounts_remove(None, id=id)
 	return {"data": result or {}}
 
 def action_push_register(a):
