@@ -1,4 +1,4 @@
-// Copyright © 2026 Mochi OÜ
+                                                    // Copyright © 2026 Mochi OÜ
 // SPDX-License-Identifier: AGPL-3.0-only
 // This file is part of Mochi, licensed under the GNU AGPL v3 with the
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
@@ -30,6 +30,7 @@ import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
+  textUnchanged,
 } from '@mochi/web'
 import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil } from 'lucide-react'
 import {
@@ -166,6 +167,12 @@ export function RssDialog({
       setEditingName('')
       return
     }
+    const originalName = feeds.find((f) => f.id === editingId)?.name
+    if (originalName !== undefined && textUnchanged(name, originalName)) {
+      setEditingId(null)
+      setEditingName('')
+      return
+    }
     try {
       await toastAction(renameMutation.mutateAsync({ id: editingId, name }), {
         loading: t`Saving...`,
@@ -276,7 +283,13 @@ export function RssDialog({
                                 variant='ghost'
                                 size='sm'
                                 onClick={handleSaveEdit}
-                                disabled={renameMutation.isPending}
+                                disabled={
+                                  renameMutation.isPending ||
+                                  textUnchanged(
+                                    editingName.trim(),
+                                    feeds.find((f) => f.id === editingId)?.name ?? '',
+                                  )
+                                }
                                 aria-label={t`Save`}
                               >
                                 {renameMutation.isPending ? (
