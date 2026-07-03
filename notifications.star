@@ -109,7 +109,7 @@ def reg_set(table, where, args, updates):
 
 def reg_remove(table, where, args):
 	for row in mochi.db.rows("select " + REG_COLS[table] + ' from "' + table + '_all" where (' + where + ") and removed=0", *args):
-		mochi.db.tombstone(table + "_all", REG_KEYS[table], row)
+		mochi.db.remove(table + "_all", REG_KEYS[table], row)
 
 # notifications_gc_tombstones physically reclaims register tombstones older than
 # the replication forget horizon. Safe because a replica stalled past the horizon
