@@ -14,7 +14,7 @@
 # forget horizon (notifications_gc_tombstones) so config churn can't accumulate
 # dead rows forever. `read`/`clear` of the notifications table itself is a
 # separate (log-derived) conversion.
-_REG_COLS = {
+REG_COLS = {
 	"categories": 'id, label, "default", created',
 	"topics": "app, topic, object, name, label, category, created",
 	"destinations": "category, type, target",
@@ -22,11 +22,11 @@ _REG_COLS = {
 	# notification row so a re-fire's content update can't clobber it.
 	"reads": "app, topic, object, ts",
 	# notifications: raw _all columns (for reg_set/reg_remove); the exposed view
-	# is CUSTOM (see _register_notifications) and derives read + count instead.
+	# is CUSTOM (see register_notifications) and derives read + count instead.
 	"notifications": "id, app, topic, object, title, body, content, link, sender, count, created, read, fixed",
 }
 
-_REG_KEYS = {
+REG_KEYS = {
 	"categories": ["id"],
 	"topics": ["app", "topic", "object"],
 	"destinations": ["category", "type", "target"],
@@ -34,13 +34,13 @@ _REG_KEYS = {
 	"notifications": ["app", "topic", "object"],
 }
 
-def _has_column(table, col):
+def has_column(table, col):
 	for c in mochi.db.table(table):
 		if c["name"] == col:
 			return True
 	return False
 
-def _register_table(name):
+def register_table(name):
 	# Idempotent, per-table: rename to <name>_all, add the register columns, and
 	# expose a removed=0 view under the old name. Quoted identifiers so a reserved
 	# word (e.g. "default") in the column list survives.
@@ -50,17 +50,17 @@ def _register_table(name):
 	mochi.db.execute('alter table "' + name + '_all" add column writer text not null default \'\'')
 	mochi.db.execute('alter table "' + name + '_all" add column version integer not null default 0')
 	mochi.db.execute('alter table "' + name + '_all" add column removed integer not null default 0')
-	mochi.db.execute('create view "' + name + '" as select ' + _REG_COLS[name] + ' from "' + name + '_all" where removed=0')
+	mochi.db.execute('create view "' + name + '" as select ' + REG_COLS[name] + ' from "' + name + '_all" where removed=0')
 
-def _register_notifications():
-	# Like _register_table but with a CUSTOM view: `read` is derived from the
+def register_notifications():
+	# Like register_table but with a CUSTOM view: `read` is derived from the
 	# reads register (max-merged, so a re-fire can't un-read a notification), and
 	# `count` is the number of sends since that read (fixed=1 rows keep their
 	# caller-supplied state count instead). Keyed on (app,topic,object) so paired
 	# hosts converge to one row per logical notification (no per-host-uid split).
 	if mochi.db.table("notifications_all"):
 		return
-	if not _has_column("notifications", "fixed"):
+	if not has_column("notifications", "fixed"):
 		mochi.db.execute("alter table notifications add column fixed integer not null default 0")
 	mochi.db.execute('alter table "notifications" rename to "notifications_all"')
 	mochi.db.execute('alter table "notifications_all" add column writer text not null default \'\'')
@@ -82,36 +82,44 @@ def _register_notifications():
 		end as count
 		from notifications_all n where n.removed=0""")
 
-def _register_all():
-	for name in ["categories", "topics", "destinations", "reads"]:
-		_register_table(name)
-	_register_notifications()
+def register_config():
+	# Config tables only. The v23 migration calls THIS (not register_all): at v23
+	# the reads table doesn't exist yet (v24 creates it), so registering reads here
+	# would fail "no such table: reads" and roll back the whole migration (#187).
+	for name in ["categories", "topics", "destinations"]:
+		register_table(name)
+
+def register_all():
+	# Full set — for database_create, where every base table already exists.
+	register_config()
+	register_table("reads")
+	register_notifications()
 
 def reg_merge(table, row):
-	mochi.db.merge(table + "_all", _REG_KEYS[table], row)
+	mochi.db.merge(table + "_all", REG_KEYS[table], row)
 
 # reg_set / reg_remove take a raw WHERE clause (without the "where" keyword) + args.
 # Both read the FULL matching rows (merge/tombstone need every column so NOT NULL
 # stays valid) and apply per row. reg_set is for NON-key column changes only.
 def reg_set(table, where, args, updates):
-	for row in mochi.db.rows("select " + _REG_COLS[table] + ' from "' + table + '_all" where (' + where + ") and removed=0", *args):
+	for row in mochi.db.rows("select " + REG_COLS[table] + ' from "' + table + '_all" where (' + where + ") and removed=0", *args):
 		for k in updates:
 			row[k] = updates[k]
-		mochi.db.merge(table + "_all", _REG_KEYS[table], row)
+		mochi.db.merge(table + "_all", REG_KEYS[table], row)
 
 def reg_remove(table, where, args):
-	for row in mochi.db.rows("select " + _REG_COLS[table] + ' from "' + table + '_all" where (' + where + ") and removed=0", *args):
-		mochi.db.tombstone(table + "_all", _REG_KEYS[table], row)
+	for row in mochi.db.rows("select " + REG_COLS[table] + ' from "' + table + '_all" where (' + where + ") and removed=0", *args):
+		mochi.db.tombstone(table + "_all", REG_KEYS[table], row)
 
 # notifications_gc_tombstones physically reclaims register tombstones older than
 # the replication forget horizon. Safe because a replica stalled past the horizon
 # gets a full reseed (not op-replay) on rejoin, so it can't resurrect a purged
 # tombstone. Bounds config-register growth (and, once #129 stage 2 lands, the
 # high-volume notifications table) instead of keeping every removed row forever.
-_forget_horizon_seconds = 30 * 86400
+forget_horizon_seconds = 30 * 86400
 
 def notifications_gc_tombstones():
-	cutoff = mochi.time.now() - _forget_horizon_seconds
+	cutoff = mochi.time.now() - forget_horizon_seconds
 	# Config registers: only categories/topics carry a `created` timestamp to age
 	# tombstones on. destinations has none (and is low-volume); its tombstones are
 	# reclaimed by the FK cascade when their parent category is GC-deleted.
@@ -211,14 +219,14 @@ def database_create():
 		primary key (app, topic, object)
 	)""")
 
-	_seed_categories()
+	seed_categories()
 	# Convert the config + notification tables to registers AFTER seeding: the
-	# seed's raw inserts run against the still-plain base tables, then _register_all
+	# seed's raw inserts run against the still-plain base tables, then register_all
 	# renames them to <t>_all + view. A fresh host lands directly at the register
 	# schema (#129).
-	_register_all()
+	register_all()
 
-def _seed_categories():
+def seed_categories():
 	now = mochi.time.now()
 	# Seed categories are created independently on every host (DB setup runs
 	# per-host), so their ids must be DETERMINISTIC and identical everywhere -
@@ -242,17 +250,17 @@ def _seed_categories():
 		mochi.db.execute('update categories set "default" = 1 where id = ?', normal_id)
 	# Normal seeds only the web destination. Accounts and RSS feeds wire
 	# themselves into every category when they are added (see
-	# _add_destination_to_categories), so there is nothing to enumerate here at
+	# add_destination_to_categories), so there is nothing to enumerate here at
 	# create time - and database_create can run in a permission-less context
 	# (e.g. a P2P-triggered create where app_user_setup has not granted
 	# accounts/read), so calling mochi.account.list() here would fail.
 	if not mochi.db.exists("select 1 from destinations where category = ?", normal_id):
 		mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'web', '')", normal_id)
 
-def _converge_normal_categories():
+def converge_normal_categories():
 	# Converge legacy per-host-uid "Normal" categories to the deterministic id
-	# "1" (see _seed_categories for why seeds must be deterministic). A pre-fix
-	# _seed_categories minted "Normal" with mochi.uid() on each host, so paired
+	# "1" (see seed_categories for why seeds must be deterministic). A pre-fix
+	# seed_categories minted "Normal" with mochi.uid() on each host, so paired
 	# hosts created different ids for the same category and replicated them as
 	# duplicates - some hosts ended up with two "Normal" rows and two defaults.
 	# Idempotent and deterministic: every host converges to the same "1", and
@@ -330,7 +338,7 @@ def database_upgrade(to_version):
 		mochi.db.execute("insert into categories (id, label, created) values (0, 'No notifications', ?)", now)
 		# Frozen: this historical migration builds the original integer-id schema
 		# (converted to text by the v20 migration). Inlined so it doesn't depend
-		# on _ensure_category, which now mints text uids.
+		# on ensure_category, which now mints text uids.
 		mochi.db.execute("insert into categories (label, created) values ('Normal', ?)", now)
 		normal_id = mochi.db.row("select last_insert_rowid() as id")["id"]
 		mochi.db.execute('update categories set "default" = 1 where id = ?', normal_id)
@@ -585,21 +593,21 @@ def database_upgrade(to_version):
 			mochi.db.execute("drop table destinations_tmp")
 
 	if to_version == 21:
-		_converge_normal_categories()
+		converge_normal_categories()
 
 	# The original v21 used an invalid mochi.db.integer() and failed; a failed
 	# migration still bumps the schema, so hosts that hit it skipped past 21
 	# without converging. Re-run the (idempotent) convergence at 22 to catch
 	# them; hosts that converged cleanly at 21 see a no-op here.
 	if to_version == 22:
-		_converge_normal_categories()
+		converge_normal_categories()
 
 	# Register-convert the config tables (#129): categories / topics / destinations
 	# become versioned <t>_all registers + removed=0 views so a user's notification
-	# config converges across their host set. The _converge above ran on the plain
+	# config converges across their host set. The converge above ran on the plain
 	# base tables at v21/v22, so it never re-fires here. Idempotent per table.
 	if to_version == 23:
-		_register_all()
+		register_config()
 
 	# Stage 2 (#129): register-convert the notifications table itself + split read
 	# state into a reads register. sends stops being deleted on read/clear (it's
@@ -615,8 +623,8 @@ def database_upgrade(to_version):
 			primary key (app, topic, object)
 		)""")
 		mochi.db.execute("insert or ignore into reads (app, topic, object, ts) select app, topic, object, read from notifications where read != 0")
-		_register_table("reads")
-		_register_notifications()
+		register_table("reads")
+		register_notifications()
 
 # Expiry: 30 days unread, 7 days read (by the derived read state), then reclaim
 # tombstones + the append-only sends/reads logs past the forget horizon.
@@ -629,20 +637,20 @@ def function_expire(context):
 # Clearing tombstones the notification(s) and advances the read mark to now, so a
 # later re-fire (which un-tombstones the same row) counts only NEW sends. sends
 # itself is append-only — never deleted here — and horizon-GC'd.
-def _clear_where(where, args):
+def clear_where(where, args):
 	now = mochi.time.now()
 	for n in mochi.db.rows("select app, topic, object from notifications where " + where, *args):
 		reg_merge("reads", {"app": n["app"], "topic": n["topic"], "object": n["object"], "ts": now})
 	reg_remove("notifications", where, args)
 
 def function_clear_all(context):
-	_clear_where("1=1", [])
+	clear_where("1=1", [])
 
 def function_clear_app(context, app):
-	_clear_where("app = ?", [app])
+	clear_where("app = ?", [app])
 
 def function_clear_object(context, app, object):
-	_clear_where("app = ? and object = ?", [app, object])
+	clear_where("app = ? and object = ?", [app, object])
 	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object})
 
 def function_list(context):
@@ -684,14 +692,14 @@ def version_gte(version, minimum):
 			return False
 	return True
 
-def _badge_count():
+def badge_count():
 	row = mochi.db.row("select count(*) as count, coalesce(sum(count), 0) as total from notifications where read = 0")
 	return {"count": row["count"] if row else 0, "total": row["total"] if row else 0}
 
 def action_list(a):
 	function_expire({})
 	rows = function_list({})
-	counts = _badge_count()
+	counts = badge_count()
 
 	version = mochi.server.version()
 	rss_supported = version_gte(version, "0.3")
@@ -704,7 +712,7 @@ def action_list(a):
 	}
 
 def action_count(a):
-	return {"data": _badge_count()}
+	return {"data": badge_count()}
 
 def action_read(a):
 	id = a.input("id", "").strip()
@@ -836,7 +844,7 @@ def action_accounts_add(a):
 		mochi.account.update(account_id, enabled=add_to_existing)
 		# If flagged, add as destination to every existing category (except "0")
 		if add_to_existing:
-			_add_destination_to_categories("account", str(account_id))
+			add_destination_to_categories("account", str(account_id))
 
 	return {"data": result}
 
@@ -884,7 +892,7 @@ def action_accounts_vapid(a):
 		return a.error.label(503, "errors.push_notifications_not_available")
 	return {"data": {"key": key}}
 
-def _add_destination_to_categories(type, target):
+def add_destination_to_categories(type, target):
 	# Add this destination to every category except "0" (No notifications)
 	cats = mochi.db.rows("select id from categories where id != '0'")
 	for c in cats or []:
@@ -898,7 +906,7 @@ def _add_destination_to_categories(type, target):
 def function_destinations_add(context, type="", target=""):
 	if not type or not target:
 		return False
-	_add_destination_to_categories(type, str(target))
+	add_destination_to_categories(type, str(target))
 	return True
 
 # RSS feed management endpoints
@@ -927,7 +935,7 @@ def action_rss_create(a):
 	mochi.db.execute("insert into rss (id, name, token, created, enabled) values (?, ?, ?, ?, ?)", id, name, token, now, enabled)
 
 	if add_to_existing:
-		_add_destination_to_categories("rss", id)
+		add_destination_to_categories("rss", id)
 
 	return {"data": {"id": id, "name": name, "token": token, "created": now, "enabled": enabled}}
 
@@ -1028,7 +1036,7 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	if not title or not body:
 		return 0
 
-	_ensure_commit_hook_registered()
+	ensure_commit_hook_registered()
 
 	row = mochi.db.row(
 		"select label, name, category from topics where app = ? and topic = ? and object = ?",
@@ -1169,7 +1177,7 @@ def notifications_commit_hook(table, kind, row_uid):
 	for dest in dests or []:
 		if dest["type"] == "account":
 			account_id = dest["target"]
-			_push_queue_if_unifiedpush(account_id, row["app"], row["topic"], row["object"], row["title"], row["body"], row["link"], row["id"])
+			push_queue_if_unifiedpush(account_id, row["app"], row["topic"], row["object"], row["title"], row["body"], row["link"], row["id"])
 			mochi.account.notify(
 				account=account_id,
 				app=row["app"],
@@ -1195,7 +1203,7 @@ def notifications_commit_hook(table, kind, row_uid):
 # fired by core). Each invocation is independently safe: the websocket
 # write is idempotent and mochi.account.notify carries the stable row
 # id for receiver-side dedup.
-def _ensure_commit_hook_registered():
+def ensure_commit_hook_registered():
 	mochi.db.commit.hook("notifications_commit_hook")
 
 def function_topics(context, object=None):
@@ -1237,12 +1245,12 @@ def function_category_create(context, label="", destinations=None, default=None)
 	now = mochi.time.now()
 	cid = mochi.uid()
 	reg_merge("categories", {"id": cid, "label": label, "default": 0, "created": now})
-	_apply_destinations(cid, destinations)
+	apply_destinations(cid, destinations)
 	if default:
-		_set_default(cid)
+		set_default(cid)
 	return cid
 
-def _set_default(id):
+def set_default(id):
 	# Enforce exactly-one-default invariant. The "0" (No notifications)
 	# sentinel category can't be the default.
 	if not id or id == "0":
@@ -1262,9 +1270,9 @@ def function_category_update(context, id=None, label=None, destinations=None, de
 	if default != None and id != "0":
 		# Only allow setting default on (can't unset without picking another).
 		if default:
-			_set_default(id)
+			set_default(id)
 	if destinations != None and id != "0":
-		_apply_destinations(id, destinations)
+		apply_destinations(id, destinations)
 	return True
 
 def function_category_delete(context, id=None, reassign_to=None):
@@ -1290,7 +1298,7 @@ def function_category_delete(context, id=None, reassign_to=None):
 	reg_remove("destinations", "category = ?", [id])
 	reg_remove("categories", "id = ?", [id])
 	if was_default:
-		_set_default(reassign_to)
+		set_default(reassign_to)
 	return True
 
 def function_category_test(context, id=None):
@@ -1349,11 +1357,11 @@ def function_category_test(context, id=None):
 			sent += 1
 		elif dest["type"] == "account":
 			account_id = dest["target"]
-			account_label = _account_display_label(account_id)
+			account_label = account_display_label(account_id)
 			if not account_label:
 				continue  # stale destination row pointing at a deleted account
 			body = mochi.app.label("notifications.body.test_via_account", account=account_label)
-			_push_queue_if_unifiedpush(account_id, "notifications", "test", "", title, body, "", notif_id)
+			push_queue_if_unifiedpush(account_id, "notifications", "test", "", title, body, "", notif_id)
 			mochi.account.notify(
 				account=account_id,
 				app="notifications",
@@ -1367,7 +1375,7 @@ def function_category_test(context, id=None):
 			sent += 1
 	return {"sent": sent, "web": web}
 
-def _account_display_label(account_id):
+def account_display_label(account_id):
 	"""Friendly name for a connected account, for test-notification bodies.
 	Prefers the user-set label, falls back to a provider-typed string.
 	Returns "" when the account row no longer exists (stale destinations
@@ -1395,7 +1403,7 @@ def _account_display_label(account_id):
 		return mochi.app.label("notifications.account.url")
 	return t
 
-def _apply_destinations(category_id, destinations):
+def apply_destinations(category_id, destinations):
 	if destinations == None:
 		return
 	if category_id == "0":
@@ -1586,7 +1594,7 @@ def function_accounts_add(context, type="", **fields):
 	if result and result.get("id"):
 		account_id = result["id"]
 		mochi.account.update(account_id, enabled=True)
-		_add_destination_to_categories("account", str(account_id))
+		add_destination_to_categories("account", str(account_id))
 	return result
 
 def function_accounts_remove(context, id=0):
@@ -1634,7 +1642,7 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 		result["endpoint"] = path
 
 	mochi.account.update(account_id, enabled=True)
-	_add_destination_to_categories("account", str(account_id))
+	add_destination_to_categories("account", str(account_id))
 	return result
 
 # function_push_register_fcm stores an FCM device token for this user, keyed
@@ -1654,7 +1662,7 @@ def function_push_register_fcm(context, token="", install_id="", device=""):
 		return result
 	account_id = result["id"]
 	mochi.account.update(account_id, enabled=True)
-	_add_destination_to_categories("account", str(account_id))
+	add_destination_to_categories("account", str(account_id))
 	return result
 
 # function_push_setup tells the client which push transport this server uses.
@@ -1678,12 +1686,12 @@ def function_push_setup(context):
 	config = json.decode(config_raw)
 	if type(config) != "dict":
 		return {"transport": "unifiedpush"}
-	extracted = _extract_firebase_config(config)
+	extracted = extract_firebase_config(config)
 	if not extracted:
 		return {"transport": "unifiedpush"}
 	return {"transport": "fcm", "firebase_config": extracted}
 
-def _extract_firebase_config(raw):
+def extract_firebase_config(raw):
 	"""Return {project_id, app_id, api_key, messaging_sender_id} from either
 	a google-services.json or a flat config dict, or None if neither
 	yields all four required fields."""
@@ -1727,7 +1735,7 @@ def function_push_inbound(context, account_id="", payload=""):
 	# binary-safe write (current API is JSON text only).
 	return {"ok": False, "error": "inbound endpoint not yet implemented"}
 
-# _push_queue_if_unifiedpush writes a pending row to push_pending if the account
+# push_queue_if_unifiedpush writes a pending row to push_pending if the account
 # is a local-distributor unifiedpush subscription. Called from function_send
 # alongside the live mochi.account.notify attempt — the WS event is the fast
 # happy-path; this row is the durable backstop for when the on-device WebSocket
@@ -1738,7 +1746,7 @@ def function_push_inbound(context, account_id="", payload=""):
 # Foreign-endpoint unifiedpush accounts (ntfy etc) are excluded — third-party
 # Application Servers handle their own retry. Other account types (email,
 # pushbullet, browser, url) also have their own server-side retry semantics.
-def _push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, notif_id):
+def push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, notif_id):
 	acc = mochi.account.get(account_id)
 	if not acc or acc.get("type") != "unifiedpush":
 		return
