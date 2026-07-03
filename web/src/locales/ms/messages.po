@@ -86,7 +86,7 @@ msgstr "Tambah pasukan/apl"
 msgid "Add to existing notifications"
 msgstr "Tambah ke pemberitahuan sedia ada"
 
-#: src/components/rss-dialog.tsx:387
+#: src/components/rss-dialog.tsx:400
 msgid "Add to existing subscriptions"
 msgstr "Tambah ke langganan sedia ada"
 
@@ -107,11 +107,11 @@ msgstr "AI"
 msgid "All"
 msgstr "Semua"
 
-#: ../../../lib/web/src/lib/api-client.ts:192
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:159
 msgid "An error occurred"
 msgstr "Ralat berlaku"
 
-#: ../../../lib/web/src/lib/api-client.ts:255
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:241
 msgid "An unexpected error occurred"
 msgstr "Ralat yang tidak dijangka berlaku"
 
@@ -159,7 +159,7 @@ msgstr "Tingkatkan minat"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:413
 msgid "Cancel"
 msgstr "Batal"
 
@@ -290,16 +290,16 @@ msgstr "Teruskan"
 msgid "Continue with {label}"
 msgstr "Teruskan dengan {label}"
 
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:132
+#: src/components/rss-dialog.tsx:124
+#: src/components/rss-dialog.tsx:133
 msgid "Copied to clipboard"
 msgstr "Disalin ke papan keratan"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:304
-#: src/components/rss-dialog.tsx:313
-#: src/components/rss-dialog.tsx:430
-#: src/components/rss-dialog.tsx:439
+#: src/components/rss-dialog.tsx:317
+#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:443
+#: src/components/rss-dialog.tsx:452
 msgid "Copy"
 msgstr "Salin"
 
@@ -319,20 +319,20 @@ msgstr "Tidak dapat memulakan pengesahan semula. Sila cuba lagi."
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Tidak dapat mengesahkan dengan akaun itu. Sila cuba lagi."
 
-#: src/components/rss-dialog.tsx:364
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:377
+#: src/components/rss-dialog.tsx:424
 msgid "Create feed"
 msgstr "Cipta suapan"
 
-#: src/components/rss-dialog.tsx:254
+#: src/components/rss-dialog.tsx:261
 msgid "Create one to get started."
 msgstr "Cipta satu untuk bermula."
 
-#: src/components/rss-dialog.tsx:227
+#: src/components/rss-dialog.tsx:234
 msgid "Create RSS feed"
 msgstr "Cipta suapan RSS"
 
-#: src/components/rss-dialog.tsx:143
+#: src/components/rss-dialog.tsx:144
 msgid "Creating RSS feed..."
 msgstr "Mencipta suapan RSS..."
 
@@ -361,16 +361,16 @@ msgstr "Lalai"
 msgid "Default AI account"
 msgstr "Akaun AI lalai"
 
-#: src/components/rss-dialog.tsx:459
+#: src/components/rss-dialog.tsx:472
 msgid "Delete"
 msgstr "Padam"
 
-#: src/components/rss-dialog.tsx:335
-#: src/components/rss-dialog.tsx:340
+#: src/components/rss-dialog.tsx:348
+#: src/components/rss-dialog.tsx:353
 msgid "Delete feed"
 msgstr "Padam suapan"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:470
 msgid "Delete Feed?"
 msgstr "Padam Suapan?"
 
@@ -378,7 +378,7 @@ msgstr "Padam Suapan?"
 msgid "Delete your account on the old server"
 msgstr "Padamkan akaun anda di pelayan lama"
 
-#: src/components/rss-dialog.tsx:191
+#: src/components/rss-dialog.tsx:198
 msgid "Deleting feed..."
 msgstr "Memadam suapan..."
 
@@ -418,7 +418,7 @@ msgstr "Tutup"
 msgid "Displays the mobile sidebar."
 msgstr "Memaparkan bar sisi mudah alih."
 
-#: src/components/rss-dialog.tsx:444
+#: src/components/rss-dialog.tsx:457
 msgid "Done"
 msgstr "Selesai"
 
@@ -435,7 +435,7 @@ msgstr "Muat turun gagal"
 msgid "Dyslexia-friendly"
 msgstr "Mesra disleksia"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:389
 msgid "e.g., Feedly, NewsBlur"
 msgstr "cth. Feedly, NewsBlur"
 
@@ -443,8 +443,8 @@ msgstr "cth. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Edit {label}"
 
-#: src/components/rss-dialog.tsx:321
-#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:334
+#: src/components/rss-dialog.tsx:339
 msgid "Edit feed"
 msgstr "Sunting suapan"
 
@@ -483,11 +483,11 @@ msgstr "Gagal menambah akaun"
 msgid "Failed to clear notifications"
 msgstr "Gagal mengosongkan pemberitahuan"
 
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:146
 msgid "Failed to create RSS feed"
 msgstr "Gagal mencipta suapan RSS"
 
-#: src/components/rss-dialog.tsx:193
+#: src/components/rss-dialog.tsx:200
 msgid "Failed to delete feed"
 msgstr "Gagal memadam suapan"
 
@@ -503,7 +503,7 @@ msgstr "Gagal menanda sebagai dibaca"
 msgid "Failed to remove account"
 msgstr "Gagal mengalih keluar akaun"
 
-#: src/components/rss-dialog.tsx:173
+#: src/components/rss-dialog.tsx:180
 msgid "Failed to rename feed"
 msgstr "Gagal menamakan semula suapan"
 
@@ -515,23 +515,23 @@ msgstr "Gagal menghantar kod pengesahan"
 msgid "Failed to update category"
 msgstr "Gagal mengemas kini kategori"
 
-#: src/components/rss-dialog.tsx:208
+#: src/components/rss-dialog.tsx:215
 msgid "Failed to update feed"
 msgstr "Gagal mengemas kini suapan"
 
-#: src/components/rss-dialog.tsx:228
+#: src/components/rss-dialog.tsx:235
 msgid "Feed created"
 msgstr "Suapan dicipta"
 
-#: src/components/rss-dialog.tsx:192
+#: src/components/rss-dialog.tsx:199
 msgid "Feed deleted"
 msgstr "Suapan dipadam"
 
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:386
 msgid "Feed name"
 msgstr "Nama suapan"
 
-#: src/components/rss-dialog.tsx:172
+#: src/components/rss-dialog.tsx:179
 msgid "Feed renamed"
 msgstr "Suapan dinamakan semula"
 
@@ -721,7 +721,7 @@ msgstr "Metrik"
 msgid "Monday"
 msgstr "Isnin"
 
-#: ../../../lib/web/src/lib/api-client.ts:300
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:288
 msgid "Network error"
 msgstr "Ralat rangkaian"
 
@@ -763,7 +763,7 @@ msgstr "Tiada profil"
 msgid "No results found."
 msgstr "Tiada keputusan dijumpai."
 
-#: src/components/rss-dialog.tsx:253
+#: src/components/rss-dialog.tsx:260
 msgid "No RSS feeds yet"
 msgstr "Tiada suapan RSS lagi"
 
@@ -807,8 +807,8 @@ msgstr "Tidak ditetapkan"
 msgid "Notifications"
 msgstr "Pemberitahuan"
 
-#: src/components/rss-dialog.tsx:345
-#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:365
 msgid "Notify by default"
 msgstr "Beritahu secara lalai"
 
@@ -861,7 +861,7 @@ msgstr "Pengesahan kunci laluan gagal. Sila cuba lagi."
 msgid "Passkeys"
 msgstr "Passkey"
 
-#: ../../../lib/web/src/lib/api-client.ts:301
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:289
 msgid "Please check your internet connection and try again."
 msgstr "Sila semak sambungan internet anda dan cuba lagi."
 
@@ -954,11 +954,11 @@ msgstr "Kanan ke Kiri"
 msgid "Rows per page"
 msgstr "Baris setiap halaman"
 
-#: src/components/rss-dialog.tsx:138
+#: src/components/rss-dialog.tsx:139
 msgid "RSS feed"
 msgstr "Suapan RSS"
 
-#: src/components/rss-dialog.tsx:229
+#: src/components/rss-dialog.tsx:236
 msgid "RSS feeds"
 msgstr "Suapan RSS"
 
@@ -968,17 +968,17 @@ msgstr "Sabtu"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:280
-#: src/components/rss-dialog.tsx:289
+#: src/components/rss-dialog.tsx:293
+#: src/components/rss-dialog.tsx:302
 msgid "Save"
 msgstr "Simpan"
 
-#: src/components/rss-dialog.tsx:233
+#: src/components/rss-dialog.tsx:240
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Simpan URL ini sekarang. Anda tidak akan dapat melihat token ini lagi."
 
-#: src/components/rss-dialog.tsx:171
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:178
+#: src/components/rss-dialog.tsx:213
 msgid "Saving..."
 msgstr "Sedang menyimpan..."
 
@@ -1056,8 +1056,8 @@ msgstr "Hantar e-mel"
 msgid "Serif"
 msgstr "Serif"
 
-#: ../../../lib/web/src/lib/api-client.ts:259
-#: ../../../lib/web/src/lib/api-client.ts:284
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:245
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:271
 msgid "Server error"
 msgstr "Ralat pelayan"
 
@@ -1066,7 +1066,7 @@ msgstr "Ralat pelayan"
 msgid "Server rules"
 msgstr "Peraturan pelayan"
 
-#: ../../../lib/web/src/lib/api-client.ts:227
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:209
 msgid "Session expired"
 msgstr "Sesi tamat tempoh"
 
@@ -1170,7 +1170,7 @@ msgstr "Tema"
 msgid "Theme Settings"
 msgstr "Tetapan Tema"
 
-#: src/components/rss-dialog.tsx:458
+#: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Tindakan ini akan memadamkan suapan ini secara kekal. Mana-mana pembaca RSS yang menggunakannya tidak lagi boleh mengakses pemberitahuan anda."
 
@@ -1244,7 +1244,7 @@ msgstr "Taip untuk mencari pengguna"
 msgid "Type to search..."
 msgstr "Taip untuk mencari..."
 
-#: ../../../lib/web/src/lib/api-client.ts:280
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:267
 msgid "Unable to connect to remote server"
 msgstr "Tidak dapat menyambung ke pelayan jauh"
 
@@ -1269,7 +1269,7 @@ msgstr "Amerika Syarikat"
 msgid "Unverified"
 msgstr "Belum disahkan"
 
-#: src/components/rss-dialog.tsx:390
+#: src/components/rss-dialog.tsx:403
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Gunakan suapan ini untuk langganan pemberitahuan semasa anda"
 

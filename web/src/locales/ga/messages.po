@@ -86,7 +86,7 @@ msgstr "Cuir foireann/aip leis"
 msgid "Add to existing notifications"
 msgstr "Cuir le fógraí atá ann cheana"
 
-#: src/components/rss-dialog.tsx:387
+#: src/components/rss-dialog.tsx:400
 msgid "Add to existing subscriptions"
 msgstr "Cuir le síntiúis atá ann cheana"
 
@@ -107,11 +107,11 @@ msgstr "AI"
 msgid "All"
 msgstr "Iomlán"
 
-#: ../../../lib/web/src/lib/api-client.ts:192
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:159
 msgid "An error occurred"
 msgstr "Tharla earráid"
 
-#: ../../../lib/web/src/lib/api-client.ts:255
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:241
 msgid "An unexpected error occurred"
 msgstr "Tharla earráid gan choinne"
 
@@ -159,7 +159,7 @@ msgstr "Spreag spéis"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:413
 msgid "Cancel"
 msgstr "Cealaigh"
 
@@ -290,16 +290,16 @@ msgstr "Lean ar aghaidh"
 msgid "Continue with {label}"
 msgstr "Lean ar aghaidh le {label}"
 
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:132
+#: src/components/rss-dialog.tsx:124
+#: src/components/rss-dialog.tsx:133
 msgid "Copied to clipboard"
 msgstr "Cóipeáilte chuig an ngearrthaisce"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:304
-#: src/components/rss-dialog.tsx:313
-#: src/components/rss-dialog.tsx:430
-#: src/components/rss-dialog.tsx:439
+#: src/components/rss-dialog.tsx:317
+#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:443
+#: src/components/rss-dialog.tsx:452
 msgid "Copy"
 msgstr "Cóipeáil"
 
@@ -319,20 +319,20 @@ msgstr "Níorbh fhéidir an t-athfhíordheimhniú a thosú. Bain triail eile as.
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Níorbh fhéidir fíorú leis an gcuntas sin. Bain triail eile as le do thoil."
 
-#: src/components/rss-dialog.tsx:364
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:377
+#: src/components/rss-dialog.tsx:424
 msgid "Create feed"
 msgstr "Cruthaigh fotha"
 
-#: src/components/rss-dialog.tsx:254
+#: src/components/rss-dialog.tsx:261
 msgid "Create one to get started."
 msgstr "Cruthaigh ceann chun tosú."
 
-#: src/components/rss-dialog.tsx:227
+#: src/components/rss-dialog.tsx:234
 msgid "Create RSS feed"
 msgstr "Cruthaigh fotha RSS"
 
-#: src/components/rss-dialog.tsx:143
+#: src/components/rss-dialog.tsx:144
 msgid "Creating RSS feed..."
 msgstr "Fotha RSS á chruthú..."
 
@@ -361,16 +361,16 @@ msgstr "Réamhshocrú"
 msgid "Default AI account"
 msgstr "Cuntas AI réamhshocraithe"
 
-#: src/components/rss-dialog.tsx:459
+#: src/components/rss-dialog.tsx:472
 msgid "Delete"
 msgstr "Scrios"
 
-#: src/components/rss-dialog.tsx:335
-#: src/components/rss-dialog.tsx:340
+#: src/components/rss-dialog.tsx:348
+#: src/components/rss-dialog.tsx:353
 msgid "Delete feed"
 msgstr "Scrios fotha"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:470
 msgid "Delete Feed?"
 msgstr "Scrios Fotha?"
 
@@ -378,7 +378,7 @@ msgstr "Scrios Fotha?"
 msgid "Delete your account on the old server"
 msgstr "Scrios do chuntas ar an sean-fhreastalaí"
 
-#: src/components/rss-dialog.tsx:191
+#: src/components/rss-dialog.tsx:198
 msgid "Deleting feed..."
 msgstr "Fotha á scriosadh..."
 
@@ -418,7 +418,7 @@ msgstr "Dífhostaigh"
 msgid "Displays the mobile sidebar."
 msgstr "Taispeánann an barra taoibh móibíleach."
 
-#: src/components/rss-dialog.tsx:444
+#: src/components/rss-dialog.tsx:457
 msgid "Done"
 msgstr "Críochnaithe"
 
@@ -435,7 +435,7 @@ msgstr "Theip ar an íoslódáil"
 msgid "Dyslexia-friendly"
 msgstr "Oiriúnach do disléicse"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:389
 msgid "e.g., Feedly, NewsBlur"
 msgstr "m.sh., Feedly, NewsBlur"
 
@@ -443,8 +443,8 @@ msgstr "m.sh., Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Cuir {label} in eagar"
 
-#: src/components/rss-dialog.tsx:321
-#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:334
+#: src/components/rss-dialog.tsx:339
 msgid "Edit feed"
 msgstr "Cuir an fothú in eagar"
 
@@ -483,11 +483,11 @@ msgstr "Theip ar chuntas a chur leis"
 msgid "Failed to clear notifications"
 msgstr "Theip ar fhógraí a ghlanadh"
 
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:146
 msgid "Failed to create RSS feed"
 msgstr "Theip ar fhotha RSS a chruthú"
 
-#: src/components/rss-dialog.tsx:193
+#: src/components/rss-dialog.tsx:200
 msgid "Failed to delete feed"
 msgstr "Theip ar fhotha a scriosadh"
 
@@ -503,7 +503,7 @@ msgstr "Theip ar mharcáil mar léite"
 msgid "Failed to remove account"
 msgstr "Theip ar bhaint chuntais"
 
-#: src/components/rss-dialog.tsx:173
+#: src/components/rss-dialog.tsx:180
 msgid "Failed to rename feed"
 msgstr "Theip ar athainmniú fotha"
 
@@ -515,23 +515,23 @@ msgstr "Theip ar sheoladh cód fíoraithe"
 msgid "Failed to update category"
 msgstr "Theip ar nuashonrú catagóire"
 
-#: src/components/rss-dialog.tsx:208
+#: src/components/rss-dialog.tsx:215
 msgid "Failed to update feed"
 msgstr "Theip ar nuashonrú fotha"
 
-#: src/components/rss-dialog.tsx:228
+#: src/components/rss-dialog.tsx:235
 msgid "Feed created"
 msgstr "Fotha cruthaithe"
 
-#: src/components/rss-dialog.tsx:192
+#: src/components/rss-dialog.tsx:199
 msgid "Feed deleted"
 msgstr "Fotha scriosta"
 
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:386
 msgid "Feed name"
 msgstr "Ainm an fhotha"
 
-#: src/components/rss-dialog.tsx:172
+#: src/components/rss-dialog.tsx:179
 msgid "Feed renamed"
 msgstr "Fotha athainmnithe"
 
@@ -721,7 +721,7 @@ msgstr "Méadrach"
 msgid "Monday"
 msgstr "Dé Luain"
 
-#: ../../../lib/web/src/lib/api-client.ts:300
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:288
 msgid "Network error"
 msgstr "Earráid líonra"
 
@@ -763,7 +763,7 @@ msgstr "Gan próifíl"
 msgid "No results found."
 msgstr "Níor aimsíodh aon toradh."
 
-#: src/components/rss-dialog.tsx:253
+#: src/components/rss-dialog.tsx:260
 msgid "No RSS feeds yet"
 msgstr "Níl aon fhotha RSS fós"
 
@@ -807,8 +807,8 @@ msgstr "Gan socrú"
 msgid "Notifications"
 msgstr "Fógraí"
 
-#: src/components/rss-dialog.tsx:345
-#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:365
 msgid "Notify by default"
 msgstr "Cuir fógra mar réamhshocrú"
 
@@ -861,7 +861,7 @@ msgstr "Theip ar fhíorú na heochrach rochtana. Bain triail eile as."
 msgid "Passkeys"
 msgstr "Pasluichí"
 
-#: ../../../lib/web/src/lib/api-client.ts:301
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:289
 msgid "Please check your internet connection and try again."
 msgstr "Seiceáil do nasc idirlín agus bain triail eile as."
 
@@ -954,11 +954,11 @@ msgstr "Deas go Clé"
 msgid "Rows per page"
 msgstr "Sraitheanna in aghaidh an leathanaigh"
 
-#: src/components/rss-dialog.tsx:138
+#: src/components/rss-dialog.tsx:139
 msgid "RSS feed"
 msgstr "Fotha RSS"
 
-#: src/components/rss-dialog.tsx:229
+#: src/components/rss-dialog.tsx:236
 msgid "RSS feeds"
 msgstr "Fothaí RSS"
 
@@ -968,17 +968,17 @@ msgstr "Dé Sathairn"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:280
-#: src/components/rss-dialog.tsx:289
+#: src/components/rss-dialog.tsx:293
+#: src/components/rss-dialog.tsx:302
 msgid "Save"
 msgstr "Sábháil"
 
-#: src/components/rss-dialog.tsx:233
+#: src/components/rss-dialog.tsx:240
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Sábháil an URL seo anois. Ní bheidh tú in ann an comhartha a fheiceáil arís."
 
-#: src/components/rss-dialog.tsx:171
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:178
+#: src/components/rss-dialog.tsx:213
 msgid "Saving..."
 msgstr "Á shábháil..."
 
@@ -1056,8 +1056,8 @@ msgstr "Seol ríomhphost"
 msgid "Serif"
 msgstr "Le serif"
 
-#: ../../../lib/web/src/lib/api-client.ts:259
-#: ../../../lib/web/src/lib/api-client.ts:284
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:245
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:271
 msgid "Server error"
 msgstr "Earráid freastalaí"
 
@@ -1066,7 +1066,7 @@ msgstr "Earráid freastalaí"
 msgid "Server rules"
 msgstr "Rialacha an fhreastalaí"
 
-#: ../../../lib/web/src/lib/api-client.ts:227
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:209
 msgid "Session expired"
 msgstr "Seisiún imithe in éag"
 
@@ -1170,7 +1170,7 @@ msgstr "Téama"
 msgid "Theme Settings"
 msgstr "Socruithe Téama"
 
-#: src/components/rss-dialog.tsx:458
+#: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Scriosfaidh sé seo an fotha seo go buan. Ní bheidh aon léitheoirí RSS a úsáideann é in ann rochtain a fháil ar do chuid fógraí a thuilleadh."
 
@@ -1244,7 +1244,7 @@ msgstr "Clóscríobh chun cuardach a dhéanamh ar úsáideoirí"
 msgid "Type to search..."
 msgstr "Clóscríobh chun cuardach a dhéanamh..."
 
-#: ../../../lib/web/src/lib/api-client.ts:280
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:267
 msgid "Unable to connect to remote server"
 msgstr "Ní féidir nascadh leis an bhfreastalaí cianda"
 
@@ -1269,7 +1269,7 @@ msgstr "Stáit Aontaithe"
 msgid "Unverified"
 msgstr "Neamhfhíoraithe"
 
-#: src/components/rss-dialog.tsx:390
+#: src/components/rss-dialog.tsx:403
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Úsáid an fotha seo do shíntiúis fhógraí reatha"
 

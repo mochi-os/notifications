@@ -86,7 +86,7 @@ msgstr "Lisää tiimi/sovellus"
 msgid "Add to existing notifications"
 msgstr "Lisää olemassa oleviin ilmoituksiin"
 
-#: src/components/rss-dialog.tsx:387
+#: src/components/rss-dialog.tsx:400
 msgid "Add to existing subscriptions"
 msgstr "Lisää olemassa oleviin tilauksiin"
 
@@ -107,11 +107,11 @@ msgstr "Tekoäly"
 msgid "All"
 msgstr "Kaikki"
 
-#: ../../../lib/web/src/lib/api-client.ts:192
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:159
 msgid "An error occurred"
 msgstr "Tapahtui virhe"
 
-#: ../../../lib/web/src/lib/api-client.ts:255
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:241
 msgid "An unexpected error occurred"
 msgstr "Tapahtui odottamaton virhe"
 
@@ -159,7 +159,7 @@ msgstr "Korosta kiinnostusta"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:413
 msgid "Cancel"
 msgstr "Peruuta"
 
@@ -290,16 +290,16 @@ msgstr "Jatka"
 msgid "Continue with {label}"
 msgstr "Jatka käyttäen palvelua {label}"
 
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:132
+#: src/components/rss-dialog.tsx:124
+#: src/components/rss-dialog.tsx:133
 msgid "Copied to clipboard"
 msgstr "Kopioitu leikepöydälle"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:304
-#: src/components/rss-dialog.tsx:313
-#: src/components/rss-dialog.tsx:430
-#: src/components/rss-dialog.tsx:439
+#: src/components/rss-dialog.tsx:317
+#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:443
+#: src/components/rss-dialog.tsx:452
 msgid "Copy"
 msgstr "Kopioi"
 
@@ -319,20 +319,20 @@ msgstr "Uudelleentodennuksen aloittaminen ei onnistunut. Yritä uudelleen."
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Vahvistaminen tällä tilillä ei onnistunut. Yritä uudelleen."
 
-#: src/components/rss-dialog.tsx:364
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:377
+#: src/components/rss-dialog.tsx:424
 msgid "Create feed"
 msgstr "Luo syöte"
 
-#: src/components/rss-dialog.tsx:254
+#: src/components/rss-dialog.tsx:261
 msgid "Create one to get started."
 msgstr "Luo yksi aloittaaksesi."
 
-#: src/components/rss-dialog.tsx:227
+#: src/components/rss-dialog.tsx:234
 msgid "Create RSS feed"
 msgstr "Luo RSS-syöte"
 
-#: src/components/rss-dialog.tsx:143
+#: src/components/rss-dialog.tsx:144
 msgid "Creating RSS feed..."
 msgstr "Luodaan RSS-syötettä..."
 
@@ -361,16 +361,16 @@ msgstr "Oletus"
 msgid "Default AI account"
 msgstr "Oletustekoälytili"
 
-#: src/components/rss-dialog.tsx:459
+#: src/components/rss-dialog.tsx:472
 msgid "Delete"
 msgstr "Poista"
 
-#: src/components/rss-dialog.tsx:335
-#: src/components/rss-dialog.tsx:340
+#: src/components/rss-dialog.tsx:348
+#: src/components/rss-dialog.tsx:353
 msgid "Delete feed"
 msgstr "Poista syöte"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:470
 msgid "Delete Feed?"
 msgstr "Poistetaanko syöte?"
 
@@ -378,7 +378,7 @@ msgstr "Poistetaanko syöte?"
 msgid "Delete your account on the old server"
 msgstr "Poista tilisi vanhalta palvelimelta"
 
-#: src/components/rss-dialog.tsx:191
+#: src/components/rss-dialog.tsx:198
 msgid "Deleting feed..."
 msgstr "Poistetaan syötettä..."
 
@@ -418,7 +418,7 @@ msgstr "Hylkää"
 msgid "Displays the mobile sidebar."
 msgstr "Näyttää mobiilisivupalkin."
 
-#: src/components/rss-dialog.tsx:444
+#: src/components/rss-dialog.tsx:457
 msgid "Done"
 msgstr "Valmis"
 
@@ -435,7 +435,7 @@ msgstr "Lataus epäonnistui"
 msgid "Dyslexia-friendly"
 msgstr "Lukihäiriöystävällinen"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:389
 msgid "e.g., Feedly, NewsBlur"
 msgstr "esim. Feedly, NewsBlur"
 
@@ -443,8 +443,8 @@ msgstr "esim. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Muokkaa {label}"
 
-#: src/components/rss-dialog.tsx:321
-#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:334
+#: src/components/rss-dialog.tsx:339
 msgid "Edit feed"
 msgstr "Muokkaa syötettä"
 
@@ -483,11 +483,11 @@ msgstr "Tilin lisääminen epäonnistui"
 msgid "Failed to clear notifications"
 msgstr "Ilmoitusten tyhjennys epäonnistui"
 
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:146
 msgid "Failed to create RSS feed"
 msgstr "RSS-syötteen luominen epäonnistui"
 
-#: src/components/rss-dialog.tsx:193
+#: src/components/rss-dialog.tsx:200
 msgid "Failed to delete feed"
 msgstr "Syötteen poistaminen epäonnistui"
 
@@ -503,7 +503,7 @@ msgstr "Merkitseminen luetuksi epäonnistui"
 msgid "Failed to remove account"
 msgstr "Tilin poisto epäonnistui"
 
-#: src/components/rss-dialog.tsx:173
+#: src/components/rss-dialog.tsx:180
 msgid "Failed to rename feed"
 msgstr "Syötteen uudelleennimeäminen epäonnistui"
 
@@ -515,23 +515,23 @@ msgstr "Vahvistuskoodin lähetys epäonnistui"
 msgid "Failed to update category"
 msgstr "Kategorian päivitys epäonnistui"
 
-#: src/components/rss-dialog.tsx:208
+#: src/components/rss-dialog.tsx:215
 msgid "Failed to update feed"
 msgstr "Syötteen päivitys epäonnistui"
 
-#: src/components/rss-dialog.tsx:228
+#: src/components/rss-dialog.tsx:235
 msgid "Feed created"
 msgstr "Syöte luotu"
 
-#: src/components/rss-dialog.tsx:192
+#: src/components/rss-dialog.tsx:199
 msgid "Feed deleted"
 msgstr "Syöte poistettu"
 
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:386
 msgid "Feed name"
 msgstr "Syötteen nimi"
 
-#: src/components/rss-dialog.tsx:172
+#: src/components/rss-dialog.tsx:179
 msgid "Feed renamed"
 msgstr "Syöte nimetty uudelleen"
 
@@ -721,7 +721,7 @@ msgstr "Metrinen"
 msgid "Monday"
 msgstr "Maanantai"
 
-#: ../../../lib/web/src/lib/api-client.ts:300
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:288
 msgid "Network error"
 msgstr "Verkkovirhe"
 
@@ -763,7 +763,7 @@ msgstr "Ei profiilia"
 msgid "No results found."
 msgstr "Tuloksia ei löytynyt."
 
-#: src/components/rss-dialog.tsx:253
+#: src/components/rss-dialog.tsx:260
 msgid "No RSS feeds yet"
 msgstr "Ei vielä RSS-syötteitä"
 
@@ -807,8 +807,8 @@ msgstr "Ei asetettu"
 msgid "Notifications"
 msgstr "Ilmoitukset"
 
-#: src/components/rss-dialog.tsx:345
-#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:365
 msgid "Notify by default"
 msgstr "Ilmoita oletuksena"
 
@@ -861,7 +861,7 @@ msgstr "Avainkoodin vahvistus epäonnistui. Yritä uudelleen."
 msgid "Passkeys"
 msgstr "Avainkoodit"
 
-#: ../../../lib/web/src/lib/api-client.ts:301
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:289
 msgid "Please check your internet connection and try again."
 msgstr "Tarkista internetyhteytesi ja yritä uudelleen."
 
@@ -954,11 +954,11 @@ msgstr "Oikealta vasemmalle"
 msgid "Rows per page"
 msgstr "Rivejä sivulla"
 
-#: src/components/rss-dialog.tsx:138
+#: src/components/rss-dialog.tsx:139
 msgid "RSS feed"
 msgstr "RSS-syöte"
 
-#: src/components/rss-dialog.tsx:229
+#: src/components/rss-dialog.tsx:236
 msgid "RSS feeds"
 msgstr "RSS-syötteet"
 
@@ -968,17 +968,17 @@ msgstr "Lauantai"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:280
-#: src/components/rss-dialog.tsx:289
+#: src/components/rss-dialog.tsx:293
+#: src/components/rss-dialog.tsx:302
 msgid "Save"
 msgstr "Tallenna"
 
-#: src/components/rss-dialog.tsx:233
+#: src/components/rss-dialog.tsx:240
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Tallenna tämä URL-osoite nyt. Et voi enää nähdä tunnistetta."
 
-#: src/components/rss-dialog.tsx:171
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:178
+#: src/components/rss-dialog.tsx:213
 msgid "Saving..."
 msgstr "Tallennetaan..."
 
@@ -1056,8 +1056,8 @@ msgstr "Lähetä sähköposti"
 msgid "Serif"
 msgstr "Pääteviivallinen"
 
-#: ../../../lib/web/src/lib/api-client.ts:259
-#: ../../../lib/web/src/lib/api-client.ts:284
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:245
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:271
 msgid "Server error"
 msgstr "Palvelinvirhe"
 
@@ -1066,7 +1066,7 @@ msgstr "Palvelinvirhe"
 msgid "Server rules"
 msgstr "Palvelimen säännöt"
 
-#: ../../../lib/web/src/lib/api-client.ts:227
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:209
 msgid "Session expired"
 msgstr "Istunto vanhentui"
 
@@ -1170,7 +1170,7 @@ msgstr "Teema"
 msgid "Theme Settings"
 msgstr "Teema-asetukset"
 
-#: src/components/rss-dialog.tsx:458
+#: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Tämä poistaa syötteen pysyvästi. Sitä käyttävät RSS-lukijat eivät enää pääse käsiksi ilmoituksiisi."
 
@@ -1244,7 +1244,7 @@ msgstr "Kirjoita hakeaksesi käyttäjiä"
 msgid "Type to search..."
 msgstr "Kirjoita hakeaksesi..."
 
-#: ../../../lib/web/src/lib/api-client.ts:280
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:267
 msgid "Unable to connect to remote server"
 msgstr "Etäpalvelimeen ei saatu yhteyttä"
 
@@ -1269,7 +1269,7 @@ msgstr "Yhdysvallat"
 msgid "Unverified"
 msgstr "Vahvistamaton"
 
-#: src/components/rss-dialog.tsx:390
+#: src/components/rss-dialog.tsx:403
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Käytä tätä syötettä nykyisille ilmoitustilauksillesi"
 

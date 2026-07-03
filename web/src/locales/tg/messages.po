@@ -86,7 +86,7 @@ msgstr "Иловаи даста/барнома"
 msgid "Add to existing notifications"
 msgstr "Илова ба огоҳиномаҳои мавҷуда"
 
-#: src/components/rss-dialog.tsx:387
+#: src/components/rss-dialog.tsx:400
 msgid "Add to existing subscriptions"
 msgstr "Илова ба обуначиҳои мавҷуда"
 
@@ -107,11 +107,11 @@ msgstr "AI"
 msgid "All"
 msgstr "Ҳама"
 
-#: ../../../lib/web/src/lib/api-client.ts:192
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:159
 msgid "An error occurred"
 msgstr "Хатогӣ рух дод"
 
-#: ../../../lib/web/src/lib/api-client.ts:255
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:241
 msgid "An unexpected error occurred"
 msgstr "Хатогии ғайричашмдошт рух дод"
 
@@ -159,7 +159,7 @@ msgstr "Афзоиши таваҷҷуҳ"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:413
 msgid "Cancel"
 msgstr "Бекор кардан"
 
@@ -290,16 +290,16 @@ msgstr "Идома"
 msgid "Continue with {label}"
 msgstr "Бо {label} идома диҳед"
 
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:132
+#: src/components/rss-dialog.tsx:124
+#: src/components/rss-dialog.tsx:133
 msgid "Copied to clipboard"
 msgstr "Ба буфер нусхабардорӣ шуд"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:304
-#: src/components/rss-dialog.tsx:313
-#: src/components/rss-dialog.tsx:430
-#: src/components/rss-dialog.tsx:439
+#: src/components/rss-dialog.tsx:317
+#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:443
+#: src/components/rss-dialog.tsx:452
 msgid "Copy"
 msgstr "Нусхабардорӣ"
 
@@ -319,20 +319,20 @@ msgstr "Аз нав аутентификатсияро оғоз кардан и�
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Бо он ҳисоб тасдиқ кардан имконнопазир буд. Лутфан, бори дигар кӯшиш кунед."
 
-#: src/components/rss-dialog.tsx:364
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:377
+#: src/components/rss-dialog.tsx:424
 msgid "Create feed"
 msgstr "Эҷоди навор"
 
-#: src/components/rss-dialog.tsx:254
+#: src/components/rss-dialog.tsx:261
 msgid "Create one to get started."
 msgstr "Барои оғоз яктоашро эҷод кунед."
 
-#: src/components/rss-dialog.tsx:227
+#: src/components/rss-dialog.tsx:234
 msgid "Create RSS feed"
 msgstr "Эҷоди навори RSS"
 
-#: src/components/rss-dialog.tsx:143
+#: src/components/rss-dialog.tsx:144
 msgid "Creating RSS feed..."
 msgstr "Навори RSS сохта мешавад..."
 
@@ -361,16 +361,16 @@ msgstr "Пешфарз"
 msgid "Default AI account"
 msgstr "Ҳисоби пешфарз AI"
 
-#: src/components/rss-dialog.tsx:459
+#: src/components/rss-dialog.tsx:472
 msgid "Delete"
 msgstr "Нест кардан"
 
-#: src/components/rss-dialog.tsx:335
-#: src/components/rss-dialog.tsx:340
+#: src/components/rss-dialog.tsx:348
+#: src/components/rss-dialog.tsx:353
 msgid "Delete feed"
 msgstr "Нест кардани навор"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:470
 msgid "Delete Feed?"
 msgstr "Наворро нест кунем?"
 
@@ -378,7 +378,7 @@ msgstr "Наворро нест кунем?"
 msgid "Delete your account on the old server"
 msgstr "Ҳисоби худро дар сервери кӯҳна нест кунед"
 
-#: src/components/rss-dialog.tsx:191
+#: src/components/rss-dialog.tsx:198
 msgid "Deleting feed..."
 msgstr "Нест кардани ҷараён..."
 
@@ -418,7 +418,7 @@ msgstr "Рад кардан"
 msgid "Displays the mobile sidebar."
 msgstr "Панели канории мобилиро намоиш медиҳад."
 
-#: src/components/rss-dialog.tsx:444
+#: src/components/rss-dialog.tsx:457
 msgid "Done"
 msgstr "Иҷро шуд"
 
@@ -435,7 +435,7 @@ msgstr "Боргирӣ ноком шуд"
 msgid "Dyslexia-friendly"
 msgstr "Барои дислексия мувофиқ"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:389
 msgid "e.g., Feedly, NewsBlur"
 msgstr "масалан, Feedly, NewsBlur"
 
@@ -443,8 +443,8 @@ msgstr "масалан, Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label}-ро таҳрир кунед"
 
-#: src/components/rss-dialog.tsx:321
-#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:334
+#: src/components/rss-dialog.tsx:339
 msgid "Edit feed"
 msgstr "Лентаро таҳрир кардан"
 
@@ -483,11 +483,11 @@ msgstr "Илова кардани ҳисоб ба анҷом нарасид"
 msgid "Failed to clear notifications"
 msgstr "Тоза кардани огоҳиҳо ноком шуд"
 
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:146
 msgid "Failed to create RSS feed"
 msgstr "Сохтани навори RSS ноком шуд"
 
-#: src/components/rss-dialog.tsx:193
+#: src/components/rss-dialog.tsx:200
 msgid "Failed to delete feed"
 msgstr "Ҳазфи фид ба анҷом нарасид"
 
@@ -503,7 +503,7 @@ msgstr "Ҳамчун хондашуда қайд кардан ноком шуд"
 msgid "Failed to remove account"
 msgstr "Бартараф кардани ҳисоб ба анҷом нарасид"
 
-#: src/components/rss-dialog.tsx:173
+#: src/components/rss-dialog.tsx:180
 msgid "Failed to rename feed"
 msgstr "Тағйири номи фид ба анҷом нарасид"
 
@@ -515,23 +515,23 @@ msgstr "Ирсоли рамзи тасдиқ ба анҷом нарасид"
 msgid "Failed to update category"
 msgstr "Навсозии категория ба анҷом нарасид"
 
-#: src/components/rss-dialog.tsx:208
+#: src/components/rss-dialog.tsx:215
 msgid "Failed to update feed"
 msgstr "Навсозии фид ба анҷом нарасид"
 
-#: src/components/rss-dialog.tsx:228
+#: src/components/rss-dialog.tsx:235
 msgid "Feed created"
 msgstr "Фид сохта шуд"
 
-#: src/components/rss-dialog.tsx:192
+#: src/components/rss-dialog.tsx:199
 msgid "Feed deleted"
 msgstr "Фид ҳазф шуд"
 
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:386
 msgid "Feed name"
 msgstr "Номи фид"
 
-#: src/components/rss-dialog.tsx:172
+#: src/components/rss-dialog.tsx:179
 msgid "Feed renamed"
 msgstr "Номи фид иваз шуд"
 
@@ -721,7 +721,7 @@ msgstr "Метрӣ"
 msgid "Monday"
 msgstr "Душанбе"
 
-#: ../../../lib/web/src/lib/api-client.ts:300
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:288
 msgid "Network error"
 msgstr "Хатогии шабака"
 
@@ -763,7 +763,7 @@ msgstr "Профил нест"
 msgid "No results found."
 msgstr "Ягон натиҷа ёфт нашуд."
 
-#: src/components/rss-dialog.tsx:253
+#: src/components/rss-dialog.tsx:260
 msgid "No RSS feeds yet"
 msgstr "То ҳол ягон фиди RSS нест"
 
@@ -807,8 +807,8 @@ msgstr "Танзим нашудааст"
 msgid "Notifications"
 msgstr "Огоҳиномаҳо"
 
-#: src/components/rss-dialog.tsx:345
-#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:365
 msgid "Notify by default"
 msgstr "Бо нобаёнӣ огоҳ кунед"
 
@@ -861,7 +861,7 @@ msgstr "Тасдиқи калиди дастрасӣ ноком шуд. Лутф
 msgid "Passkeys"
 msgstr "Калидҳои дастрасӣ"
 
-#: ../../../lib/web/src/lib/api-client.ts:301
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:289
 msgid "Please check your internet connection and try again."
 msgstr "Лутфан пайвасти интернети худро санҷед ва аз нав кӯшиш кунед."
 
@@ -954,11 +954,11 @@ msgstr "Аз рост ба чап"
 msgid "Rows per page"
 msgstr "Сатрҳо дар як саҳифа"
 
-#: src/components/rss-dialog.tsx:138
+#: src/components/rss-dialog.tsx:139
 msgid "RSS feed"
 msgstr "Фиди RSS"
 
-#: src/components/rss-dialog.tsx:229
+#: src/components/rss-dialog.tsx:236
 msgid "RSS feeds"
 msgstr "Фидҳои RSS"
 
@@ -968,17 +968,17 @@ msgstr "Шанбе"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:280
-#: src/components/rss-dialog.tsx:289
+#: src/components/rss-dialog.tsx:293
+#: src/components/rss-dialog.tsx:302
 msgid "Save"
 msgstr "Захира"
 
-#: src/components/rss-dialog.tsx:233
+#: src/components/rss-dialog.tsx:240
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Ин URL-ро ҳозир захира кунед. Шумо токенро дигар намебинед."
 
-#: src/components/rss-dialog.tsx:171
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:178
+#: src/components/rss-dialog.tsx:213
 msgid "Saving..."
 msgstr "Захира кардан..."
 
@@ -1056,8 +1056,8 @@ msgstr "Имейл фиристодан"
 msgid "Serif"
 msgstr "Сериф"
 
-#: ../../../lib/web/src/lib/api-client.ts:259
-#: ../../../lib/web/src/lib/api-client.ts:284
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:245
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:271
 msgid "Server error"
 msgstr "Хатогии сервер"
 
@@ -1066,7 +1066,7 @@ msgstr "Хатогии сервер"
 msgid "Server rules"
 msgstr "Қоидаҳои сервер"
 
-#: ../../../lib/web/src/lib/api-client.ts:227
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:209
 msgid "Session expired"
 msgstr "Сессия ба охир расид"
 
@@ -1170,7 +1170,7 @@ msgstr "Мавзӯъ"
 msgid "Theme Settings"
 msgstr "Танзимоти мавзӯъ"
 
-#: src/components/rss-dialog.tsx:458
+#: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Ин навори навро ба таври доимӣ нест мекунад. Ҳар хонандаи RSS, ки онро истифода мебарад, дигар наметавонад ба огоҳиҳои шумо дастрасӣ дошта бошад."
 
@@ -1244,7 +1244,7 @@ msgstr "Барои ҷустуҷӯи корбарон чоп кунед"
 msgid "Type to search..."
 msgstr "Барои ҷустуҷӯ чоп кунед..."
 
-#: ../../../lib/web/src/lib/api-client.ts:280
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:267
 msgid "Unable to connect to remote server"
 msgstr "Пайвастшавӣ ба сервери дурдаст имконнопазир аст"
 
@@ -1269,7 +1269,7 @@ msgstr "Иёлоти Муттаҳида"
 msgid "Unverified"
 msgstr "Тасдиқ нашудааст"
 
-#: src/components/rss-dialog.tsx:390
+#: src/components/rss-dialog.tsx:403
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Ин навори навро барои обунаҳои огоҳии ҷории худ истифода баред"
 

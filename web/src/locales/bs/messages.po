@@ -86,7 +86,7 @@ msgstr "Dodaj tim/aplikaciju"
 msgid "Add to existing notifications"
 msgstr "Dodaj postojećim obavještenjima"
 
-#: src/components/rss-dialog.tsx:387
+#: src/components/rss-dialog.tsx:400
 msgid "Add to existing subscriptions"
 msgstr "Dodaj postojećim pretplatama"
 
@@ -107,11 +107,11 @@ msgstr "AI"
 msgid "All"
 msgstr "Sve"
 
-#: ../../../lib/web/src/lib/api-client.ts:192
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:159
 msgid "An error occurred"
 msgstr "Došlo je do greške"
 
-#: ../../../lib/web/src/lib/api-client.ts:255
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:241
 msgid "An unexpected error occurred"
 msgstr "Došlo je do neočekivane greške"
 
@@ -159,7 +159,7 @@ msgstr "Pojačaj interes"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:413
 msgid "Cancel"
 msgstr "Otkaži"
 
@@ -290,16 +290,16 @@ msgstr "Nastavi"
 msgid "Continue with {label}"
 msgstr "Nastavi s {label}"
 
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:132
+#: src/components/rss-dialog.tsx:124
+#: src/components/rss-dialog.tsx:133
 msgid "Copied to clipboard"
 msgstr "Kopirano u međuspremnik"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:304
-#: src/components/rss-dialog.tsx:313
-#: src/components/rss-dialog.tsx:430
-#: src/components/rss-dialog.tsx:439
+#: src/components/rss-dialog.tsx:317
+#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:443
+#: src/components/rss-dialog.tsx:452
 msgid "Copy"
 msgstr "Kopiraj"
 
@@ -319,20 +319,20 @@ msgstr "Pokretanje ponovne autentifikacije nije uspjelo. Molimo pokušajte ponov
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Provjera s tim računom nije uspjela. Molimo pokušajte ponovo."
 
-#: src/components/rss-dialog.tsx:364
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:377
+#: src/components/rss-dialog.tsx:424
 msgid "Create feed"
 msgstr "Kreiraj feed"
 
-#: src/components/rss-dialog.tsx:254
+#: src/components/rss-dialog.tsx:261
 msgid "Create one to get started."
 msgstr "Kreirajte jedan da započnete."
 
-#: src/components/rss-dialog.tsx:227
+#: src/components/rss-dialog.tsx:234
 msgid "Create RSS feed"
 msgstr "Kreiraj RSS feed"
 
-#: src/components/rss-dialog.tsx:143
+#: src/components/rss-dialog.tsx:144
 msgid "Creating RSS feed..."
 msgstr "Kreiranje RSS izvora..."
 
@@ -361,16 +361,16 @@ msgstr "Podrazumijevano"
 msgid "Default AI account"
 msgstr "Podrazumijevani AI račun"
 
-#: src/components/rss-dialog.tsx:459
+#: src/components/rss-dialog.tsx:472
 msgid "Delete"
 msgstr "Obriši"
 
-#: src/components/rss-dialog.tsx:335
-#: src/components/rss-dialog.tsx:340
+#: src/components/rss-dialog.tsx:348
+#: src/components/rss-dialog.tsx:353
 msgid "Delete feed"
 msgstr "Obriši feed"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:470
 msgid "Delete Feed?"
 msgstr "Obrisati feed?"
 
@@ -378,7 +378,7 @@ msgstr "Obrisati feed?"
 msgid "Delete your account on the old server"
 msgstr "Obrišite račun na starom serveru"
 
-#: src/components/rss-dialog.tsx:191
+#: src/components/rss-dialog.tsx:198
 msgid "Deleting feed..."
 msgstr "Brisanje feeda..."
 
@@ -418,7 +418,7 @@ msgstr "Odbaci"
 msgid "Displays the mobile sidebar."
 msgstr "Prikazuje mobilnu bočnu traku."
 
-#: src/components/rss-dialog.tsx:444
+#: src/components/rss-dialog.tsx:457
 msgid "Done"
 msgstr "Gotovo"
 
@@ -435,7 +435,7 @@ msgstr "Preuzimanje nije uspjelo"
 msgid "Dyslexia-friendly"
 msgstr "Prilagođeno disleksiji"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:389
 msgid "e.g., Feedly, NewsBlur"
 msgstr "npr. Feedly, NewsBlur"
 
@@ -443,8 +443,8 @@ msgstr "npr. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Uredi {label}"
 
-#: src/components/rss-dialog.tsx:321
-#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:334
+#: src/components/rss-dialog.tsx:339
 msgid "Edit feed"
 msgstr "Uredi kanal"
 
@@ -483,11 +483,11 @@ msgstr "Dodavanje računa nije uspjelo"
 msgid "Failed to clear notifications"
 msgstr "Brisanje obavještenja nije uspjelo"
 
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:146
 msgid "Failed to create RSS feed"
 msgstr "Kreiranje RSS izvora nije uspjelo"
 
-#: src/components/rss-dialog.tsx:193
+#: src/components/rss-dialog.tsx:200
 msgid "Failed to delete feed"
 msgstr "Brisanje feeda nije uspjelo"
 
@@ -503,7 +503,7 @@ msgstr "Označavanje kao pročitano nije uspjelo"
 msgid "Failed to remove account"
 msgstr "Uklanjanje računa nije uspjelo"
 
-#: src/components/rss-dialog.tsx:173
+#: src/components/rss-dialog.tsx:180
 msgid "Failed to rename feed"
 msgstr "Preimenovanje feeda nije uspjelo"
 
@@ -515,23 +515,23 @@ msgstr "Slanje verifikacionog koda nije uspjelo"
 msgid "Failed to update category"
 msgstr "Ažuriranje kategorije nije uspjelo"
 
-#: src/components/rss-dialog.tsx:208
+#: src/components/rss-dialog.tsx:215
 msgid "Failed to update feed"
 msgstr "Ažuriranje feeda nije uspjelo"
 
-#: src/components/rss-dialog.tsx:228
+#: src/components/rss-dialog.tsx:235
 msgid "Feed created"
 msgstr "Feed kreiran"
 
-#: src/components/rss-dialog.tsx:192
+#: src/components/rss-dialog.tsx:199
 msgid "Feed deleted"
 msgstr "Feed obrisan"
 
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:386
 msgid "Feed name"
 msgstr "Naziv feeda"
 
-#: src/components/rss-dialog.tsx:172
+#: src/components/rss-dialog.tsx:179
 msgid "Feed renamed"
 msgstr "Feed preimenovan"
 
@@ -721,7 +721,7 @@ msgstr "Metrička"
 msgid "Monday"
 msgstr "Ponedjeljak"
 
-#: ../../../lib/web/src/lib/api-client.ts:300
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:288
 msgid "Network error"
 msgstr "Greška mreže"
 
@@ -763,7 +763,7 @@ msgstr "Nema profila"
 msgid "No results found."
 msgstr "Nisu pronađeni rezultati."
 
-#: src/components/rss-dialog.tsx:253
+#: src/components/rss-dialog.tsx:260
 msgid "No RSS feeds yet"
 msgstr "Još nema RSS feedova"
 
@@ -807,8 +807,8 @@ msgstr "Nije postavljeno"
 msgid "Notifications"
 msgstr "Obavještenja"
 
-#: src/components/rss-dialog.tsx:345
-#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:365
 msgid "Notify by default"
 msgstr "Obavještavaj prema zadanom"
 
@@ -861,7 +861,7 @@ msgstr "Provjera pristupnog ključa nije uspjela. Molimo pokušajte ponovo."
 msgid "Passkeys"
 msgstr "Pristupni ključevi"
 
-#: ../../../lib/web/src/lib/api-client.ts:301
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:289
 msgid "Please check your internet connection and try again."
 msgstr "Provjerite svoju internetsku vezu i pokušajte ponovo."
 
@@ -954,11 +954,11 @@ msgstr "S desna na lijevo"
 msgid "Rows per page"
 msgstr "Redova po stranici"
 
-#: src/components/rss-dialog.tsx:138
+#: src/components/rss-dialog.tsx:139
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:229
+#: src/components/rss-dialog.tsx:236
 msgid "RSS feeds"
 msgstr "RSS feedovi"
 
@@ -968,17 +968,17 @@ msgstr "Subota"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:280
-#: src/components/rss-dialog.tsx:289
+#: src/components/rss-dialog.tsx:293
+#: src/components/rss-dialog.tsx:302
 msgid "Save"
 msgstr "Sačuvaj"
 
-#: src/components/rss-dialog.tsx:233
+#: src/components/rss-dialog.tsx:240
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Sačuvajte ovaj URL sada. Nećete moći ponovo vidjeti token."
 
-#: src/components/rss-dialog.tsx:171
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:178
+#: src/components/rss-dialog.tsx:213
 msgid "Saving..."
 msgstr "Čuvanje..."
 
@@ -1056,8 +1056,8 @@ msgstr "Pošalji email"
 msgid "Serif"
 msgstr "Serifno"
 
-#: ../../../lib/web/src/lib/api-client.ts:259
-#: ../../../lib/web/src/lib/api-client.ts:284
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:245
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:271
 msgid "Server error"
 msgstr "Greška servera"
 
@@ -1066,7 +1066,7 @@ msgstr "Greška servera"
 msgid "Server rules"
 msgstr "Pravila servera"
 
-#: ../../../lib/web/src/lib/api-client.ts:227
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:209
 msgid "Session expired"
 msgstr "Sesija je istekla"
 
@@ -1170,7 +1170,7 @@ msgstr "Tema"
 msgid "Theme Settings"
 msgstr "Postavke teme"
 
-#: src/components/rss-dialog.tsx:458
+#: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Ovo će trajno obrisati ovaj feed. Svi RSS čitači koji ga koriste više neće moći pristupati vašim obavijestima."
 
@@ -1244,7 +1244,7 @@ msgstr "Otkucaj za pretragu korisnika"
 msgid "Type to search..."
 msgstr "Otkucaj za pretragu..."
 
-#: ../../../lib/web/src/lib/api-client.ts:280
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:267
 msgid "Unable to connect to remote server"
 msgstr "Nije moguće povezati se s udaljenim serverom"
 
@@ -1269,7 +1269,7 @@ msgstr "Sjedinjene Države"
 msgid "Unverified"
 msgstr "Neverifikovano"
 
-#: src/components/rss-dialog.tsx:390
+#: src/components/rss-dialog.tsx:403
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Koristi ovaj feed za svoje trenutne pretplate na obavijesti"
 

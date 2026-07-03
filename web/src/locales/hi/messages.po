@@ -86,7 +86,7 @@ msgstr "टीम/ऐप जोड़ें"
 msgid "Add to existing notifications"
 msgstr "मौजूदा नोटिफ़िकेशन में जोड़ें"
 
-#: src/components/rss-dialog.tsx:387
+#: src/components/rss-dialog.tsx:400
 msgid "Add to existing subscriptions"
 msgstr "मौजूदा सब्सक्रिप्शन में जोड़ें"
 
@@ -107,11 +107,11 @@ msgstr "AI"
 msgid "All"
 msgstr "सभी"
 
-#: ../../../lib/web/src/lib/api-client.ts:192
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:159
 msgid "An error occurred"
 msgstr "एक त्रुटि हुई"
 
-#: ../../../lib/web/src/lib/api-client.ts:255
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:241
 msgid "An unexpected error occurred"
 msgstr "एक अप्रत्याशित त्रुटि हुई"
 
@@ -159,7 +159,7 @@ msgstr "रुचि बढ़ाएँ"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:413
 msgid "Cancel"
 msgstr "रद्द करें"
 
@@ -290,16 +290,16 @@ msgstr "जारी रखें"
 msgid "Continue with {label}"
 msgstr "{label} के साथ जारी रखें"
 
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:132
+#: src/components/rss-dialog.tsx:124
+#: src/components/rss-dialog.tsx:133
 msgid "Copied to clipboard"
 msgstr "क्लिपबोर्ड पर कॉपी किया गया"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:304
-#: src/components/rss-dialog.tsx:313
-#: src/components/rss-dialog.tsx:430
-#: src/components/rss-dialog.tsx:439
+#: src/components/rss-dialog.tsx:317
+#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:443
+#: src/components/rss-dialog.tsx:452
 msgid "Copy"
 msgstr "कॉपी करें"
 
@@ -319,20 +319,20 @@ msgstr "पुनः प्रमाणीकरण शुरू नहीं �
 msgid "Couldn't verify with that account. Please try again."
 msgstr "उस खाते से सत्यापन नहीं हो सका। कृपया पुनः प्रयास करें।"
 
-#: src/components/rss-dialog.tsx:364
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:377
+#: src/components/rss-dialog.tsx:424
 msgid "Create feed"
 msgstr "फ़ीड बनाएँ"
 
-#: src/components/rss-dialog.tsx:254
+#: src/components/rss-dialog.tsx:261
 msgid "Create one to get started."
 msgstr "शुरू करने के लिए एक बनाएँ।"
 
-#: src/components/rss-dialog.tsx:227
+#: src/components/rss-dialog.tsx:234
 msgid "Create RSS feed"
 msgstr "RSS फ़ीड बनाएं"
 
-#: src/components/rss-dialog.tsx:143
+#: src/components/rss-dialog.tsx:144
 msgid "Creating RSS feed..."
 msgstr "RSS फ़ीड बनाई जा रही है..."
 
@@ -361,16 +361,16 @@ msgstr "डिफ़ॉल्ट"
 msgid "Default AI account"
 msgstr "डिफ़ॉल्ट AI अकाउंट"
 
-#: src/components/rss-dialog.tsx:459
+#: src/components/rss-dialog.tsx:472
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: src/components/rss-dialog.tsx:335
-#: src/components/rss-dialog.tsx:340
+#: src/components/rss-dialog.tsx:348
+#: src/components/rss-dialog.tsx:353
 msgid "Delete feed"
 msgstr "फ़ीड हटाएँ"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:470
 msgid "Delete Feed?"
 msgstr "फ़ीड हटाएँ?"
 
@@ -378,7 +378,7 @@ msgstr "फ़ीड हटाएँ?"
 msgid "Delete your account on the old server"
 msgstr "पुराने सर्वर पर अपना खाता हटाएं"
 
-#: src/components/rss-dialog.tsx:191
+#: src/components/rss-dialog.tsx:198
 msgid "Deleting feed..."
 msgstr "फ़ीड हटाई जा रही है..."
 
@@ -418,7 +418,7 @@ msgstr "खारिज करें"
 msgid "Displays the mobile sidebar."
 msgstr "मोबाइल साइडबार प्रदर्शित करता है।"
 
-#: src/components/rss-dialog.tsx:444
+#: src/components/rss-dialog.tsx:457
 msgid "Done"
 msgstr "पूर्ण"
 
@@ -435,7 +435,7 @@ msgstr "डाउनलोड विफल"
 msgid "Dyslexia-friendly"
 msgstr "डिस्लेक्सिया-अनुकूल"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:389
 msgid "e.g., Feedly, NewsBlur"
 msgstr "उदा. Feedly, NewsBlur"
 
@@ -443,8 +443,8 @@ msgstr "उदा. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} संपादित करें"
 
-#: src/components/rss-dialog.tsx:321
-#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:334
+#: src/components/rss-dialog.tsx:339
 msgid "Edit feed"
 msgstr "फ़ीड संपादित करें"
 
@@ -483,11 +483,11 @@ msgstr "खाता जोड़ने में विफल"
 msgid "Failed to clear notifications"
 msgstr "सूचनाएं साफ़ नहीं हो सकीं"
 
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:146
 msgid "Failed to create RSS feed"
 msgstr "RSS फ़ीड नहीं बन सकी"
 
-#: src/components/rss-dialog.tsx:193
+#: src/components/rss-dialog.tsx:200
 msgid "Failed to delete feed"
 msgstr "फीड हटाने में विफल"
 
@@ -503,7 +503,7 @@ msgstr "पढ़ा हुआ चिह्नित नहीं हो सक�
 msgid "Failed to remove account"
 msgstr "खाता हटाने में विफल"
 
-#: src/components/rss-dialog.tsx:173
+#: src/components/rss-dialog.tsx:180
 msgid "Failed to rename feed"
 msgstr "फीड का नाम बदलने में विफल"
 
@@ -515,23 +515,23 @@ msgstr "सत्यापन कोड भेजने में विफल"
 msgid "Failed to update category"
 msgstr "श्रेणी अपडेट करने में विफल"
 
-#: src/components/rss-dialog.tsx:208
+#: src/components/rss-dialog.tsx:215
 msgid "Failed to update feed"
 msgstr "फीड अपडेट करने में विफल"
 
-#: src/components/rss-dialog.tsx:228
+#: src/components/rss-dialog.tsx:235
 msgid "Feed created"
 msgstr "फीड बनाया गया"
 
-#: src/components/rss-dialog.tsx:192
+#: src/components/rss-dialog.tsx:199
 msgid "Feed deleted"
 msgstr "फीड हटाया गया"
 
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:386
 msgid "Feed name"
 msgstr "फीड नाम"
 
-#: src/components/rss-dialog.tsx:172
+#: src/components/rss-dialog.tsx:179
 msgid "Feed renamed"
 msgstr "फीड का नाम बदला गया"
 
@@ -721,7 +721,7 @@ msgstr "मीट्रिक"
 msgid "Monday"
 msgstr "सोमवार"
 
-#: ../../../lib/web/src/lib/api-client.ts:300
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:288
 msgid "Network error"
 msgstr "नेटवर्क त्रुटि"
 
@@ -763,7 +763,7 @@ msgstr "कोई प्रोफ़ाइल नहीं"
 msgid "No results found."
 msgstr "कोई परिणाम नहीं मिले।"
 
-#: src/components/rss-dialog.tsx:253
+#: src/components/rss-dialog.tsx:260
 msgid "No RSS feeds yet"
 msgstr "अभी तक कोई RSS फ़ीड नहीं"
 
@@ -807,8 +807,8 @@ msgstr "सेट नहीं"
 msgid "Notifications"
 msgstr "नोटिफ़िकेशन"
 
-#: src/components/rss-dialog.tsx:345
-#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:365
 msgid "Notify by default"
 msgstr "डिफ़ॉल्ट रूप से सूचित करें"
 
@@ -861,7 +861,7 @@ msgstr "पासकी सत्यापन विफल रहा। कृ�
 msgid "Passkeys"
 msgstr "पासकीज़"
 
-#: ../../../lib/web/src/lib/api-client.ts:301
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:289
 msgid "Please check your internet connection and try again."
 msgstr "कृपया अपना इंटरनेट कनेक्शन जाँचें और फिर से प्रयास करें।"
 
@@ -954,11 +954,11 @@ msgstr "दाएँ से बाएँ"
 msgid "Rows per page"
 msgstr "प्रति पेज पंक्तियाँ"
 
-#: src/components/rss-dialog.tsx:138
+#: src/components/rss-dialog.tsx:139
 msgid "RSS feed"
 msgstr "RSS फ़ीड"
 
-#: src/components/rss-dialog.tsx:229
+#: src/components/rss-dialog.tsx:236
 msgid "RSS feeds"
 msgstr "RSS फ़ीड"
 
@@ -968,17 +968,17 @@ msgstr "शनिवार"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:280
-#: src/components/rss-dialog.tsx:289
+#: src/components/rss-dialog.tsx:293
+#: src/components/rss-dialog.tsx:302
 msgid "Save"
 msgstr "सेव करें"
 
-#: src/components/rss-dialog.tsx:233
+#: src/components/rss-dialog.tsx:240
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "यह URL अभी सेव करें। आप टोकन फिर से नहीं देख पाएँगे।"
 
-#: src/components/rss-dialog.tsx:171
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:178
+#: src/components/rss-dialog.tsx:213
 msgid "Saving..."
 msgstr "सेव हो रहा है..."
 
@@ -1056,8 +1056,8 @@ msgstr "ईमेल भेजें"
 msgid "Serif"
 msgstr "सेरिफ़"
 
-#: ../../../lib/web/src/lib/api-client.ts:259
-#: ../../../lib/web/src/lib/api-client.ts:284
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:245
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:271
 msgid "Server error"
 msgstr "सर्वर त्रुटि"
 
@@ -1066,7 +1066,7 @@ msgstr "सर्वर त्रुटि"
 msgid "Server rules"
 msgstr "सर्वर के नियम"
 
-#: ../../../lib/web/src/lib/api-client.ts:227
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:209
 msgid "Session expired"
 msgstr "सेशन समाप्त हो गया"
 
@@ -1170,7 +1170,7 @@ msgstr "थीम"
 msgid "Theme Settings"
 msgstr "थीम सेटिंग्स"
 
-#: src/components/rss-dialog.tsx:458
+#: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "इससे यह फ़ीड स्थायी रूप से हट जाएगा। इसका उपयोग करने वाले कोई भी RSS रीडर अब आपकी सूचनाओं तक नहीं पहुंच पाएंगे।"
 
@@ -1244,7 +1244,7 @@ msgstr "यूज़र खोजने के लिए टाइप करे�
 msgid "Type to search..."
 msgstr "खोजने के लिए टाइप करें..."
 
-#: ../../../lib/web/src/lib/api-client.ts:280
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:267
 msgid "Unable to connect to remote server"
 msgstr "रिमोट सर्वर से कनेक्ट नहीं हो सका"
 
@@ -1269,7 +1269,7 @@ msgstr "संयुक्त राज्य अमेरिका"
 msgid "Unverified"
 msgstr "अनवेरिफ़ाइड"
 
-#: src/components/rss-dialog.tsx:390
+#: src/components/rss-dialog.tsx:403
 msgid "Use this feed for your current notification subscriptions"
 msgstr "अपने मौजूदा नोटिफ़िकेशन सब्सक्रिप्शन के लिए यह फ़ीड इस्तेमाल करें"
 

@@ -86,7 +86,7 @@ msgstr "Adicionar equipa/aplicação"
 msgid "Add to existing notifications"
 msgstr "Adicionar às notificações existentes"
 
-#: src/components/rss-dialog.tsx:387
+#: src/components/rss-dialog.tsx:400
 msgid "Add to existing subscriptions"
 msgstr "Adicionar às subscrições existentes"
 
@@ -107,11 +107,11 @@ msgstr "IA"
 msgid "All"
 msgstr "Todos"
 
-#: ../../../lib/web/src/lib/api-client.ts:192
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:159
 msgid "An error occurred"
 msgstr "Ocorreu um erro"
 
-#: ../../../lib/web/src/lib/api-client.ts:255
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:241
 msgid "An unexpected error occurred"
 msgstr "Ocorreu um erro inesperado"
 
@@ -159,7 +159,7 @@ msgstr "Reforçar interesse"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:413
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -290,16 +290,16 @@ msgstr "Continuar"
 msgid "Continue with {label}"
 msgstr "Continuar com {label}"
 
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:132
+#: src/components/rss-dialog.tsx:124
+#: src/components/rss-dialog.tsx:133
 msgid "Copied to clipboard"
 msgstr "Copiado para a área de transferência"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:304
-#: src/components/rss-dialog.tsx:313
-#: src/components/rss-dialog.tsx:430
-#: src/components/rss-dialog.tsx:439
+#: src/components/rss-dialog.tsx:317
+#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:443
+#: src/components/rss-dialog.tsx:452
 msgid "Copy"
 msgstr "Copiar"
 
@@ -319,20 +319,20 @@ msgstr "Não foi possível iniciar a reautenticação. Tente novamente."
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Não foi possível verificar com essa conta. Tente novamente."
 
-#: src/components/rss-dialog.tsx:364
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:377
+#: src/components/rss-dialog.tsx:424
 msgid "Create feed"
 msgstr "Criar feed"
 
-#: src/components/rss-dialog.tsx:254
+#: src/components/rss-dialog.tsx:261
 msgid "Create one to get started."
 msgstr "Crie um para começar."
 
-#: src/components/rss-dialog.tsx:227
+#: src/components/rss-dialog.tsx:234
 msgid "Create RSS feed"
 msgstr "Criar feed RSS"
 
-#: src/components/rss-dialog.tsx:143
+#: src/components/rss-dialog.tsx:144
 msgid "Creating RSS feed..."
 msgstr "Criando feed RSS..."
 
@@ -361,16 +361,16 @@ msgstr "Predefinição"
 msgid "Default AI account"
 msgstr "Conta de IA predefinida"
 
-#: src/components/rss-dialog.tsx:459
+#: src/components/rss-dialog.tsx:472
 msgid "Delete"
 msgstr "Eliminar"
 
-#: src/components/rss-dialog.tsx:335
-#: src/components/rss-dialog.tsx:340
+#: src/components/rss-dialog.tsx:348
+#: src/components/rss-dialog.tsx:353
 msgid "Delete feed"
 msgstr "Eliminar feed"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:470
 msgid "Delete Feed?"
 msgstr "Eliminar Feed?"
 
@@ -378,7 +378,7 @@ msgstr "Eliminar Feed?"
 msgid "Delete your account on the old server"
 msgstr "Elimine a sua conta no servidor antigo"
 
-#: src/components/rss-dialog.tsx:191
+#: src/components/rss-dialog.tsx:198
 msgid "Deleting feed..."
 msgstr "A eliminar o feed..."
 
@@ -418,7 +418,7 @@ msgstr "Dispensar"
 msgid "Displays the mobile sidebar."
 msgstr "Apresenta a barra lateral móvel."
 
-#: src/components/rss-dialog.tsx:444
+#: src/components/rss-dialog.tsx:457
 msgid "Done"
 msgstr "Concluído"
 
@@ -435,7 +435,7 @@ msgstr "Falha no download"
 msgid "Dyslexia-friendly"
 msgstr "Adequado a dislexia"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:389
 msgid "e.g., Feedly, NewsBlur"
 msgstr "p. ex., Feedly, NewsBlur"
 
@@ -443,8 +443,8 @@ msgstr "p. ex., Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Editar {label}"
 
-#: src/components/rss-dialog.tsx:321
-#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:334
+#: src/components/rss-dialog.tsx:339
 msgid "Edit feed"
 msgstr "Editar feed"
 
@@ -483,11 +483,11 @@ msgstr "Falha ao adicionar conta"
 msgid "Failed to clear notifications"
 msgstr "Falha ao limpar notificações"
 
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:146
 msgid "Failed to create RSS feed"
 msgstr "Falha ao criar feed RSS"
 
-#: src/components/rss-dialog.tsx:193
+#: src/components/rss-dialog.tsx:200
 msgid "Failed to delete feed"
 msgstr "Falha ao eliminar feed"
 
@@ -503,7 +503,7 @@ msgstr "Falha ao marcar como lido"
 msgid "Failed to remove account"
 msgstr "Falha ao remover conta"
 
-#: src/components/rss-dialog.tsx:173
+#: src/components/rss-dialog.tsx:180
 msgid "Failed to rename feed"
 msgstr "Falha ao mudar o nome do feed"
 
@@ -515,23 +515,23 @@ msgstr "Falha ao enviar código de verificação"
 msgid "Failed to update category"
 msgstr "Falha ao atualizar categoria"
 
-#: src/components/rss-dialog.tsx:208
+#: src/components/rss-dialog.tsx:215
 msgid "Failed to update feed"
 msgstr "Falha ao atualizar feed"
 
-#: src/components/rss-dialog.tsx:228
+#: src/components/rss-dialog.tsx:235
 msgid "Feed created"
 msgstr "Feed criado"
 
-#: src/components/rss-dialog.tsx:192
+#: src/components/rss-dialog.tsx:199
 msgid "Feed deleted"
 msgstr "Feed eliminado"
 
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:386
 msgid "Feed name"
 msgstr "Nome do feed"
 
-#: src/components/rss-dialog.tsx:172
+#: src/components/rss-dialog.tsx:179
 msgid "Feed renamed"
 msgstr "Nome do feed alterado"
 
@@ -721,7 +721,7 @@ msgstr "Métrico"
 msgid "Monday"
 msgstr "Segunda-feira"
 
-#: ../../../lib/web/src/lib/api-client.ts:300
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:288
 msgid "Network error"
 msgstr "Erro de rede"
 
@@ -763,7 +763,7 @@ msgstr "Sem perfil"
 msgid "No results found."
 msgstr "Sem resultados."
 
-#: src/components/rss-dialog.tsx:253
+#: src/components/rss-dialog.tsx:260
 msgid "No RSS feeds yet"
 msgstr "Ainda não há feeds RSS"
 
@@ -807,8 +807,8 @@ msgstr "Não definido"
 msgid "Notifications"
 msgstr "Notificações"
 
-#: src/components/rss-dialog.tsx:345
-#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:365
 msgid "Notify by default"
 msgstr "Notificar por predefinição"
 
@@ -861,7 +861,7 @@ msgstr "A verificação da chave de acesso falhou. Tente novamente."
 msgid "Passkeys"
 msgstr "Chaves de acesso"
 
-#: ../../../lib/web/src/lib/api-client.ts:301
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:289
 msgid "Please check your internet connection and try again."
 msgstr "Verifique a sua ligação à Internet e tente novamente."
 
@@ -954,11 +954,11 @@ msgstr "Direita para a esquerda"
 msgid "Rows per page"
 msgstr "Linhas por página"
 
-#: src/components/rss-dialog.tsx:138
+#: src/components/rss-dialog.tsx:139
 msgid "RSS feed"
 msgstr "Feed RSS"
 
-#: src/components/rss-dialog.tsx:229
+#: src/components/rss-dialog.tsx:236
 msgid "RSS feeds"
 msgstr "Feeds RSS"
 
@@ -968,17 +968,17 @@ msgstr "Sábado"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:280
-#: src/components/rss-dialog.tsx:289
+#: src/components/rss-dialog.tsx:293
+#: src/components/rss-dialog.tsx:302
 msgid "Save"
 msgstr "Guardar"
 
-#: src/components/rss-dialog.tsx:233
+#: src/components/rss-dialog.tsx:240
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Guarde este URL agora. Não poderá voltar a ver o token."
 
-#: src/components/rss-dialog.tsx:171
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:178
+#: src/components/rss-dialog.tsx:213
 msgid "Saving..."
 msgstr "A guardar..."
 
@@ -1056,8 +1056,8 @@ msgstr "Enviar email"
 msgid "Serif"
 msgstr "Com serifa"
 
-#: ../../../lib/web/src/lib/api-client.ts:259
-#: ../../../lib/web/src/lib/api-client.ts:284
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:245
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:271
 msgid "Server error"
 msgstr "Erro do servidor"
 
@@ -1066,7 +1066,7 @@ msgstr "Erro do servidor"
 msgid "Server rules"
 msgstr "Regras do servidor"
 
-#: ../../../lib/web/src/lib/api-client.ts:227
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:209
 msgid "Session expired"
 msgstr "Sessão expirada"
 
@@ -1170,7 +1170,7 @@ msgstr "Tema"
 msgid "Theme Settings"
 msgstr "Definições do tema"
 
-#: src/components/rss-dialog.tsx:458
+#: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Esta ação eliminará permanentemente este feed. Os leitores de RSS que o utilizem deixarão de conseguir aceder às suas notificações."
 
@@ -1244,7 +1244,7 @@ msgstr "Escreva para pesquisar utilizadores"
 msgid "Type to search..."
 msgstr "Escreva para pesquisar..."
 
-#: ../../../lib/web/src/lib/api-client.ts:280
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:267
 msgid "Unable to connect to remote server"
 msgstr "Não foi possível ligar ao servidor remoto"
 
@@ -1269,7 +1269,7 @@ msgstr "Estados Unidos"
 msgid "Unverified"
 msgstr "Não verificado"
 
-#: src/components/rss-dialog.tsx:390
+#: src/components/rss-dialog.tsx:403
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Utilizar este feed para as suas subscrições de notificações atuais"
 

@@ -86,7 +86,7 @@ msgstr "Equipo/app yapxataña"
 msgid "Add to existing notifications"
 msgstr "Yatiyaw utjkirinakar yapxataña"
 
-#: src/components/rss-dialog.tsx:387
+#: src/components/rss-dialog.tsx:400
 msgid "Add to existing subscriptions"
 msgstr "Suscripción utjkirinakar yapxataña"
 
@@ -107,11 +107,11 @@ msgstr "AI"
 msgid "All"
 msgstr "Taqpach"
 
-#: ../../../lib/web/src/lib/api-client.ts:192
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:159
 msgid "An error occurred"
 msgstr "Mä juch'a utjawayi"
 
-#: ../../../lib/web/src/lib/api-client.ts:255
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:241
 msgid "An unexpected error occurred"
 msgstr "Jan suyt'ata juch'a utjawayi"
 
@@ -159,7 +159,7 @@ msgstr "Munawi jiltayaña"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:413
 msgid "Cancel"
 msgstr "Jaytaña"
 
@@ -290,16 +290,16 @@ msgstr "Sarantaña"
 msgid "Continue with {label}"
 msgstr "{label} ukampi sarantañani"
 
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:132
+#: src/components/rss-dialog.tsx:124
+#: src/components/rss-dialog.tsx:133
 msgid "Copied to clipboard"
 msgstr "Clipboard-ru copiata"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:304
-#: src/components/rss-dialog.tsx:313
-#: src/components/rss-dialog.tsx:430
-#: src/components/rss-dialog.tsx:439
+#: src/components/rss-dialog.tsx:317
+#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:443
+#: src/components/rss-dialog.tsx:452
 msgid "Copy"
 msgstr "Copiaña"
 
@@ -319,20 +319,20 @@ msgstr "Janiw wasita yatiyaña qalltañ atkchiti. Mira wasitat yant'asma."
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Uka cuentampi jan chiqañchasiñjamäkiti. Mayampi yant'añamawa."
 
-#: src/components/rss-dialog.tsx:364
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:377
+#: src/components/rss-dialog.tsx:424
 msgid "Create feed"
 msgstr "Feed luraña"
 
-#: src/components/rss-dialog.tsx:254
+#: src/components/rss-dialog.tsx:261
 msgid "Create one to get started."
 msgstr "Mä luraña qalltañataki."
 
-#: src/components/rss-dialog.tsx:227
+#: src/components/rss-dialog.tsx:234
 msgid "Create RSS feed"
 msgstr "RSS feed luraña"
 
-#: src/components/rss-dialog.tsx:143
+#: src/components/rss-dialog.tsx:144
 msgid "Creating RSS feed..."
 msgstr "RSS feed luraskiwa..."
 
@@ -361,16 +361,16 @@ msgstr "Default"
 msgid "Default AI account"
 msgstr "Default AI cuenta"
 
-#: src/components/rss-dialog.tsx:459
+#: src/components/rss-dialog.tsx:472
 msgid "Delete"
 msgstr "Chhaqtayaña"
 
-#: src/components/rss-dialog.tsx:335
-#: src/components/rss-dialog.tsx:340
+#: src/components/rss-dialog.tsx:348
+#: src/components/rss-dialog.tsx:353
 msgid "Delete feed"
 msgstr "Feed chhaqtayaña"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:470
 msgid "Delete Feed?"
 msgstr "Feed chhaqtayaña?"
 
@@ -378,7 +378,7 @@ msgstr "Feed chhaqtayaña?"
 msgid "Delete your account on the old server"
 msgstr "Jilata servidor jach'a ukana cuenta juchut'aña"
 
-#: src/components/rss-dialog.tsx:191
+#: src/components/rss-dialog.tsx:198
 msgid "Deleting feed..."
 msgstr "Yatiyäwi pichsuskani..."
 
@@ -418,7 +418,7 @@ msgstr "Apaqaña"
 msgid "Displays the mobile sidebar."
 msgstr "Móvil sidebar uñacht'ayi."
 
-#: src/components/rss-dialog.tsx:444
+#: src/components/rss-dialog.tsx:457
 msgid "Done"
 msgstr "Tukuyata"
 
@@ -435,7 +435,7 @@ msgstr "Apaqañax janiw walkiti"
 msgid "Dyslexia-friendly"
 msgstr "Dislexia jaqinakataki"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:389
 msgid "e.g., Feedly, NewsBlur"
 msgstr "sañani Trabajan laptop"
 
@@ -443,8 +443,8 @@ msgstr "sañani Trabajan laptop"
 msgid "Edit {label}"
 msgstr "{label} askichaña"
 
-#: src/components/rss-dialog.tsx:321
-#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:334
+#: src/components/rss-dialog.tsx:339
 msgid "Edit feed"
 msgstr "Feed askichaña"
 
@@ -483,11 +483,11 @@ msgstr "Janiw cuenta yapxataña atinkti"
 msgid "Failed to clear notifications"
 msgstr "Yatiyäwinaka pichañax janiw walkiti"
 
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:146
 msgid "Failed to create RSS feed"
 msgstr "RSS feed lurañax janiw walkiti"
 
-#: src/components/rss-dialog.tsx:193
+#: src/components/rss-dialog.tsx:200
 msgid "Failed to delete feed"
 msgstr "Janiw feed chhaqtayaña atinkti"
 
@@ -503,7 +503,7 @@ msgstr "Ullt'atawa sasa uñt'ayañax janiw walkiti"
 msgid "Failed to remove account"
 msgstr "Janiw cuenta apsuña atinkti"
 
-#: src/components/rss-dialog.tsx:173
+#: src/components/rss-dialog.tsx:180
 msgid "Failed to rename feed"
 msgstr "Janiw feed suti turkaña atinkti"
 
@@ -515,23 +515,23 @@ msgstr "Janiw verificación código apayaña atinkti"
 msgid "Failed to update category"
 msgstr "Janiw categoría machaqachaña atinkti"
 
-#: src/components/rss-dialog.tsx:208
+#: src/components/rss-dialog.tsx:215
 msgid "Failed to update feed"
 msgstr "Janiw feed machaqachaña atinkti"
 
-#: src/components/rss-dialog.tsx:228
+#: src/components/rss-dialog.tsx:235
 msgid "Feed created"
 msgstr "Feed luratawa"
 
-#: src/components/rss-dialog.tsx:192
+#: src/components/rss-dialog.tsx:199
 msgid "Feed deleted"
 msgstr "Feed chhaqtayatawa"
 
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:386
 msgid "Feed name"
 msgstr "Feed suti"
 
-#: src/components/rss-dialog.tsx:172
+#: src/components/rss-dialog.tsx:179
 msgid "Feed renamed"
 msgstr "Feed suti turkatawa"
 
@@ -721,7 +721,7 @@ msgstr "Métrico"
 msgid "Monday"
 msgstr "Lunes"
 
-#: ../../../lib/web/src/lib/api-client.ts:300
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:288
 msgid "Network error"
 msgstr "Red juch'a"
 
@@ -763,7 +763,7 @@ msgstr "Jan perfil"
 msgid "No results found."
 msgstr "Jan resultadonak jikxatasiti."
 
-#: src/components/rss-dialog.tsx:253
+#: src/components/rss-dialog.tsx:260
 msgid "No RSS feeds yet"
 msgstr "RSS feedanak janira"
 
@@ -807,8 +807,8 @@ msgstr "Jan wakichata"
 msgid "Notifications"
 msgstr "Yatiyawinaka"
 
-#: src/components/rss-dialog.tsx:345
-#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:365
 msgid "Notify by default"
 msgstr "Default ukamp yatiyaña"
 
@@ -861,7 +861,7 @@ msgstr "Passkey yatiyañax jan walikiti. Mira wasitat yant'asma."
 msgid "Passkeys"
 msgstr "Passkeyanaka"
 
-#: ../../../lib/web/src/lib/api-client.ts:301
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:289
 msgid "Please check your internet connection and try again."
 msgstr "Mira internet conexion ukat wasitat yant'asim."
 
@@ -954,11 +954,11 @@ msgstr "Kupit Ch'iqaru"
 msgid "Rows per page"
 msgstr "Página taypi filanaka"
 
-#: src/components/rss-dialog.tsx:138
+#: src/components/rss-dialog.tsx:139
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:229
+#: src/components/rss-dialog.tsx:236
 msgid "RSS feeds"
 msgstr "RSS feedanaka"
 
@@ -968,17 +968,17 @@ msgstr "Kharminthi"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:280
-#: src/components/rss-dialog.tsx:289
+#: src/components/rss-dialog.tsx:293
+#: src/components/rss-dialog.tsx:302
 msgid "Save"
 msgstr "Imaña"
 
-#: src/components/rss-dialog.tsx:233
+#: src/components/rss-dialog.tsx:240
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Aka URL jichhakiw imaña. Jan token mayamp uñjañ atipxati."
 
-#: src/components/rss-dialog.tsx:171
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:178
+#: src/components/rss-dialog.tsx:213
 msgid "Saving..."
 msgstr "Imaski..."
 
@@ -1056,8 +1056,8 @@ msgstr "Email apayaña"
 msgid "Serif"
 msgstr "Serif"
 
-#: ../../../lib/web/src/lib/api-client.ts:259
-#: ../../../lib/web/src/lib/api-client.ts:284
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:245
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:271
 msgid "Server error"
 msgstr "Servidor juch'a"
 
@@ -1066,7 +1066,7 @@ msgstr "Servidor juch'a"
 msgid "Server rules"
 msgstr "Servidor reglas"
 
-#: ../../../lib/web/src/lib/api-client.ts:227
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:209
 msgid "Session expired"
 msgstr "Sesión tukusi"
 
@@ -1170,7 +1170,7 @@ msgstr "Tema Configuración"
 msgid "Theme Settings"
 msgstr "Tema machaqachata"
 
-#: src/components/rss-dialog.tsx:458
+#: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Akax wiñayatak aka token apaqatani. Kuna git clientesnakax apnaqipkix janiw mayamp autenticatak atxañtati."
 
@@ -1244,7 +1244,7 @@ msgstr "Thaqhañatak qillqam..."
 msgid "Type to search..."
 msgstr "Mensajemam qillqam…"
 
-#: ../../../lib/web/src/lib/api-client.ts:280
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:267
 msgid "Unable to connect to remote server"
 msgstr "Jan jaya servidorar mayachasiñjamäkiti"
 
@@ -1269,7 +1269,7 @@ msgstr "Unidades"
 msgid "Unverified"
 msgstr "Machaqachaña"
 
-#: src/components/rss-dialog.tsx:390
+#: src/components/rss-dialog.tsx:403
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Apnaqata"
 

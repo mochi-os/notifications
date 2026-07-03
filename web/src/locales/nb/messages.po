@@ -86,7 +86,7 @@ msgstr "Legg til team/app"
 msgid "Add to existing notifications"
 msgstr "Legg til i eksisterende varsler"
 
-#: src/components/rss-dialog.tsx:387
+#: src/components/rss-dialog.tsx:400
 msgid "Add to existing subscriptions"
 msgstr "Legg til i eksisterende abonnementer"
 
@@ -107,11 +107,11 @@ msgstr "KI"
 msgid "All"
 msgstr "Alle"
 
-#: ../../../lib/web/src/lib/api-client.ts:192
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:159
 msgid "An error occurred"
 msgstr "Det oppstod en feil"
 
-#: ../../../lib/web/src/lib/api-client.ts:255
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:241
 msgid "An unexpected error occurred"
 msgstr "Det oppstod en uventet feil"
 
@@ -159,7 +159,7 @@ msgstr "Øk interesse"
 #: ../../../lib/web/src/features/access/access-list.tsx:263
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:89
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:413
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -290,16 +290,16 @@ msgstr "Fortsett"
 msgid "Continue with {label}"
 msgstr "Fortsett med {label}"
 
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:132
+#: src/components/rss-dialog.tsx:124
+#: src/components/rss-dialog.tsx:133
 msgid "Copied to clipboard"
 msgstr "Kopiert til utklippstavlen"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:63
-#: src/components/rss-dialog.tsx:304
-#: src/components/rss-dialog.tsx:313
-#: src/components/rss-dialog.tsx:430
-#: src/components/rss-dialog.tsx:439
+#: src/components/rss-dialog.tsx:317
+#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:443
+#: src/components/rss-dialog.tsx:452
 msgid "Copy"
 msgstr "Kopier"
 
@@ -319,20 +319,20 @@ msgstr "Kunne ikke starte ny autentisering. Prøv igjen."
 msgid "Couldn't verify with that account. Please try again."
 msgstr "Kunne ikke verifisere med den kontoen. Prøv igjen."
 
-#: src/components/rss-dialog.tsx:364
-#: src/components/rss-dialog.tsx:411
+#: src/components/rss-dialog.tsx:377
+#: src/components/rss-dialog.tsx:424
 msgid "Create feed"
 msgstr "Opprett strøm"
 
-#: src/components/rss-dialog.tsx:254
+#: src/components/rss-dialog.tsx:261
 msgid "Create one to get started."
 msgstr "Opprett en for å komme i gang."
 
-#: src/components/rss-dialog.tsx:227
+#: src/components/rss-dialog.tsx:234
 msgid "Create RSS feed"
 msgstr "Opprett RSS-strøm"
 
-#: src/components/rss-dialog.tsx:143
+#: src/components/rss-dialog.tsx:144
 msgid "Creating RSS feed..."
 msgstr "Oppretter RSS-strøm..."
 
@@ -361,16 +361,16 @@ msgstr "Standard"
 msgid "Default AI account"
 msgstr "Standard KI-konto"
 
-#: src/components/rss-dialog.tsx:459
+#: src/components/rss-dialog.tsx:472
 msgid "Delete"
 msgstr "Slett"
 
-#: src/components/rss-dialog.tsx:335
-#: src/components/rss-dialog.tsx:340
+#: src/components/rss-dialog.tsx:348
+#: src/components/rss-dialog.tsx:353
 msgid "Delete feed"
 msgstr "Slett strøm"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:470
 msgid "Delete Feed?"
 msgstr "Slette strøm?"
 
@@ -378,7 +378,7 @@ msgstr "Slette strøm?"
 msgid "Delete your account on the old server"
 msgstr "Slett kontoen din på den gamle serveren"
 
-#: src/components/rss-dialog.tsx:191
+#: src/components/rss-dialog.tsx:198
 msgid "Deleting feed..."
 msgstr "Sletter feed..."
 
@@ -418,7 +418,7 @@ msgstr "Lukk"
 msgid "Displays the mobile sidebar."
 msgstr "Viser sidefeltet for mobil."
 
-#: src/components/rss-dialog.tsx:444
+#: src/components/rss-dialog.tsx:457
 msgid "Done"
 msgstr "Ferdig"
 
@@ -435,7 +435,7 @@ msgstr "Nedlastingen mislyktes"
 msgid "Dyslexia-friendly"
 msgstr "Dyslektikervennlig"
 
-#: src/components/rss-dialog.tsx:376
+#: src/components/rss-dialog.tsx:389
 msgid "e.g., Feedly, NewsBlur"
 msgstr "f.eks. Feedly, NewsBlur"
 
@@ -443,8 +443,8 @@ msgstr "f.eks. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Rediger {label}"
 
-#: src/components/rss-dialog.tsx:321
-#: src/components/rss-dialog.tsx:326
+#: src/components/rss-dialog.tsx:334
+#: src/components/rss-dialog.tsx:339
 msgid "Edit feed"
 msgstr "Rediger feed"
 
@@ -483,11 +483,11 @@ msgstr "Kunne ikke legge til konto"
 msgid "Failed to clear notifications"
 msgstr "Kunne ikke tømme varsler"
 
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:146
 msgid "Failed to create RSS feed"
 msgstr "Kunne ikke opprette RSS-strøm"
 
-#: src/components/rss-dialog.tsx:193
+#: src/components/rss-dialog.tsx:200
 msgid "Failed to delete feed"
 msgstr "Kunne ikke slette feed"
 
@@ -503,7 +503,7 @@ msgstr "Kunne ikke merke som lest"
 msgid "Failed to remove account"
 msgstr "Kunne ikke fjerne konto"
 
-#: src/components/rss-dialog.tsx:173
+#: src/components/rss-dialog.tsx:180
 msgid "Failed to rename feed"
 msgstr "Kunne ikke endre navn på feed"
 
@@ -515,23 +515,23 @@ msgstr "Kunne ikke sende bekreftelseskode"
 msgid "Failed to update category"
 msgstr "Kunne ikke oppdatere kategori"
 
-#: src/components/rss-dialog.tsx:208
+#: src/components/rss-dialog.tsx:215
 msgid "Failed to update feed"
 msgstr "Kunne ikke oppdatere feed"
 
-#: src/components/rss-dialog.tsx:228
+#: src/components/rss-dialog.tsx:235
 msgid "Feed created"
 msgstr "Feed opprettet"
 
-#: src/components/rss-dialog.tsx:192
+#: src/components/rss-dialog.tsx:199
 msgid "Feed deleted"
 msgstr "Feed slettet"
 
-#: src/components/rss-dialog.tsx:373
+#: src/components/rss-dialog.tsx:386
 msgid "Feed name"
 msgstr "Feed-navn"
 
-#: src/components/rss-dialog.tsx:172
+#: src/components/rss-dialog.tsx:179
 msgid "Feed renamed"
 msgstr "Feed har fått nytt navn"
 
@@ -721,7 +721,7 @@ msgstr "Metrisk"
 msgid "Monday"
 msgstr "Mandag"
 
-#: ../../../lib/web/src/lib/api-client.ts:300
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:288
 msgid "Network error"
 msgstr "Nettverksfeil"
 
@@ -763,7 +763,7 @@ msgstr "Ingen profil"
 msgid "No results found."
 msgstr "Ingen resultater funnet."
 
-#: src/components/rss-dialog.tsx:253
+#: src/components/rss-dialog.tsx:260
 msgid "No RSS feeds yet"
 msgstr "Ingen RSS-strømmer ennå"
 
@@ -807,8 +807,8 @@ msgstr "Ikke satt"
 msgid "Notifications"
 msgstr "Varsler"
 
-#: src/components/rss-dialog.tsx:345
-#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:358
+#: src/components/rss-dialog.tsx:365
 msgid "Notify by default"
 msgstr "Varsle som standard"
 
@@ -861,7 +861,7 @@ msgstr "Verifisering med passnøkkel mislyktes. Prøv igjen."
 msgid "Passkeys"
 msgstr "Passnøkler"
 
-#: ../../../lib/web/src/lib/api-client.ts:301
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:289
 msgid "Please check your internet connection and try again."
 msgstr "Sjekk internettforbindelsen din og prøv igjen."
 
@@ -954,11 +954,11 @@ msgstr "Høyre mot venstre"
 msgid "Rows per page"
 msgstr "Rader per side"
 
-#: src/components/rss-dialog.tsx:138
+#: src/components/rss-dialog.tsx:139
 msgid "RSS feed"
 msgstr "RSS-strøm"
 
-#: src/components/rss-dialog.tsx:229
+#: src/components/rss-dialog.tsx:236
 msgid "RSS feeds"
 msgstr "RSS-strømmer"
 
@@ -968,17 +968,17 @@ msgstr "Lørdag"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:280
-#: src/components/rss-dialog.tsx:289
+#: src/components/rss-dialog.tsx:293
+#: src/components/rss-dialog.tsx:302
 msgid "Save"
 msgstr "Lagre"
 
-#: src/components/rss-dialog.tsx:233
+#: src/components/rss-dialog.tsx:240
 msgid "Save this URL now. You won't be able to see the token again."
 msgstr "Lagre denne URL-en nå. Du vil ikke kunne se tokenet igjen."
 
-#: src/components/rss-dialog.tsx:171
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:178
+#: src/components/rss-dialog.tsx:213
 msgid "Saving..."
 msgstr "Lagrer ..."
 
@@ -1056,8 +1056,8 @@ msgstr "Send e-post"
 msgid "Serif"
 msgstr "Antikva"
 
-#: ../../../lib/web/src/lib/api-client.ts:259
-#: ../../../lib/web/src/lib/api-client.ts:284
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:245
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:271
 msgid "Server error"
 msgstr "Tjenerfeil"
 
@@ -1066,7 +1066,7 @@ msgstr "Tjenerfeil"
 msgid "Server rules"
 msgstr "Serverregler"
 
-#: ../../../lib/web/src/lib/api-client.ts:227
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:209
 msgid "Session expired"
 msgstr "Økten har utløpt"
 
@@ -1170,7 +1170,7 @@ msgstr "Tema"
 msgid "Theme Settings"
 msgstr "Temainnstillinger"
 
-#: src/components/rss-dialog.tsx:458
+#: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Dette sletter strømmen permanent. RSS-lesere som bruker den, vil ikke lenger ha tilgang til varslene dine."
 
@@ -1244,7 +1244,7 @@ msgstr "Skriv for å søke i brukere"
 msgid "Type to search..."
 msgstr "Skriv for å søke ..."
 
-#: ../../../lib/web/src/lib/api-client.ts:280
+#: ../../../lib/web/src/lib/api-response-interceptors.ts:267
 msgid "Unable to connect to remote server"
 msgstr "Kan ikke koble til den eksterne tjeneren"
 
@@ -1269,7 +1269,7 @@ msgstr "USA"
 msgid "Unverified"
 msgstr "Ikke verifisert"
 
-#: src/components/rss-dialog.tsx:390
+#: src/components/rss-dialog.tsx:403
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Bruk denne feeden for dine nåværende varselabonnementer"
 
