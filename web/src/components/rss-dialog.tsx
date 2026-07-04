@@ -228,7 +228,7 @@ export function RssDialog({
   return (
     <>
       <ResponsiveDialog open={open} onOpenChange={handleClose}>
-        <ResponsiveDialogContent>
+        <ResponsiveDialogContent onOpenAutoFocus={(event) => event.preventDefault()}>
           <ResponsiveDialogHeader>
             <ResponsiveDialogTitle>
               {view === 'create' && <Trans>Create RSS feed</Trans>}

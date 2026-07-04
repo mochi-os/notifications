@@ -4,16 +4,9 @@
 # This file is part of Mochi, licensed under the GNU AGPL v3 with the
 # Mochi Application Interface Exception - see license.txt and license-exception.md.
 
-# --- Register (LWW / tombstone) infrastructure ------------------------------
-# categories / topics / destinations become versioned registers so a user's
-# notification CONFIG converges across their host set under multi-master, the
-# same conversion projects/crm carry. Each table is renamed to <t>_all with
-# writer/version/removed columns; a removed=0 view under the old name keeps every
-# READ unchanged; writes go through reg_merge (upsert) / reg_set (partial update)
-# / reg_remove (tombstone). Tombstones are physically GC'd past the replication
-# forget horizon (notifications_gc_tombstones) so config churn can't accumulate
-# dead rows forever. `read`/`clear` of the notifications table itself is a
-# separate (log-derived) conversion.
+# REG_COLS / REG_KEYS: column and key sets per table. REG_KEYS drives the
+# reg_merge upsert conflict targets; REG_COLS is retained for the historical
+# register migrations (v23/v24).
 REG_COLS = {
 	"categories": 'id, label, "default", created',
 	"topics": "app, topic, object, name, label, category, created",
@@ -96,41 +89,19 @@ def register_all():
 	register_notifications()
 
 def reg_merge(table, row):
-	mochi.db.merge(table + "_all", REG_KEYS[table], row)
+	cols = list(row)
+	keys = REG_KEYS[table]
+	fields = [c for c in cols if c not in keys]
+	conflict = "do update set " + ", ".join(['"' + c + '"=excluded."' + c + '"' for c in fields]) if fields else "do nothing"
+	mochi.db.execute('insert into "' + table + '" (' + ", ".join(['"' + c + '"' for c in cols]) + ") values (" + ", ".join(["?" for c in cols]) + ") on conflict (" + ", ".join(['"' + k + '"' for k in keys]) + ") " + conflict, *[row[c] for c in cols])
 
 # reg_set / reg_remove take a raw WHERE clause (without the "where" keyword) + args.
-# Both read the FULL matching rows (merge/tombstone need every column so NOT NULL
-# stays valid) and apply per row. reg_set is for NON-key column changes only.
 def reg_set(table, where, args, updates):
-	for row in mochi.db.rows("select " + REG_COLS[table] + ' from "' + table + '_all" where (' + where + ") and removed=0", *args):
-		for k in updates:
-			row[k] = updates[k]
-		mochi.db.merge(table + "_all", REG_KEYS[table], row)
+	fields = list(updates)
+	mochi.db.execute('update "' + table + '" set ' + ", ".join(['"' + c + '"=?' for c in fields]) + " where (" + where + ")", *([updates[c] for c in fields] + list(args)))
 
 def reg_remove(table, where, args):
-	for row in mochi.db.rows("select " + REG_COLS[table] + ' from "' + table + '_all" where (' + where + ") and removed=0", *args):
-		mochi.db.remove(table + "_all", REG_KEYS[table], row)
-
-# notifications_gc_tombstones physically reclaims register tombstones older than
-# the replication forget horizon. Safe because a replica stalled past the horizon
-# gets a full reseed (not op-replay) on rejoin, so it can't resurrect a purged
-# tombstone. Bounds config-register growth (and, once #129 stage 2 lands, the
-# high-volume notifications table) instead of keeping every removed row forever.
-forget_horizon_seconds = 30 * 86400
-
-def notifications_gc_tombstones():
-	cutoff = mochi.time.now() - forget_horizon_seconds
-	# Config registers: only categories/topics carry a `created` timestamp to age
-	# tombstones on. destinations has none (and is low-volume); its tombstones are
-	# reclaimed by the FK cascade when their parent category is GC-deleted.
-	for name in ["topics", "categories"]:
-		mochi.db.execute('delete from "' + name + '_all" where removed=1 and created < ?', cutoff)
-	# Notification register: reclaim tombstoned (cleared/expired) notifications
-	# past the horizon, plus the append-only sends log and reads tombstones. Live
-	# reads rows are NOT aged out — they anchor the "sends since read" count.
-	mochi.db.execute("delete from notifications_all where removed=1 and created < ?", cutoff)
-	mochi.db.execute("delete from sends where ts < ?", cutoff)
-	mochi.db.execute("delete from reads_all where removed=1 and ts < ?", cutoff)
+	mochi.db.execute('delete from "' + table + '" where (' + where + ")", *args)
 
 def database_create():
 	mochi.db.execute("""create table if not exists notifications (
@@ -146,6 +117,7 @@ def database_create():
 		count integer not null default 1,
 		created integer not null,
 		read integer not null default 0,
+		fixed integer not null default 0,
 		unique ( app, topic, object )
 	)""")
 	mochi.db.execute("create index if not exists notifications_created on notifications(created)")
@@ -194,37 +166,7 @@ def database_create():
 	)""")
 	mochi.db.execute("create index if not exists push_pending_created on push_pending(account, created)")
 
-	# Append-only log of every caller-fired event. The notifications row's
-	# `count` is derived from this table at write time (SET-from-aggregate)
-	# instead of arithmetically incremented, so concurrent rollups on
-	# paired hosts converge naturally. The PK uses the caller's stable
-	# event_id (when supplied) so the same logical event from multiple
-	# replicas dedupes via insert-or-ignore.
-	mochi.db.execute("""create table if not exists sends (
-		id text not null primary key,
-		app text not null,
-		topic text not null,
-		object text not null default '',
-		ts integer not null
-	)""")
-	mochi.db.execute("create index if not exists sends_topic on sends(app, topic, object, ts)")
-
-	# reads: per-(app,topic,object) last-read timestamp (register). Separated off
-	# the notification row so a re-fire's content update can't clobber read (#129).
-	mochi.db.execute("""create table if not exists reads (
-		app text not null,
-		topic text not null default '',
-		object text not null default '',
-		ts integer not null,
-		primary key (app, topic, object)
-	)""")
-
 	seed_categories()
-	# Convert the config + notification tables to registers AFTER seeding: the
-	# seed's raw inserts run against the still-plain base tables, then register_all
-	# renames them to <t>_all + view. A fresh host lands directly at the register
-	# schema (#129).
-	register_all()
 
 def seed_categories():
 	now = mochi.time.now()
@@ -625,23 +567,55 @@ def database_upgrade(to_version):
 		mochi.db.execute("insert or ignore into reads (app, topic, object, ts) select app, topic, object, read from notifications where read != 0")
 		register_table("reads")
 		register_notifications()
+	if to_version == 25:
+		# Replication is removed: fold the derived read/count back into stored
+		# columns on a plain notifications table (computed once through the
+		# derived view), fold the config registers back to plain tables, and
+		# drop the reads register and sends log. Idempotent.
+		if mochi.db.table("notifications_all"):
+			mochi.db.execute("""create table notifications_new (
+				id text not null primary key,
+				app text not null,
+				topic text not null,
+				object text not null default '',
+				title text not null default '',
+				body text not null default '',
+				content text not null,
+				link text not null default '',
+				sender text not null default '',
+				count integer not null default 1,
+				created integer not null,
+				read integer not null default 0,
+				fixed integer not null default 0,
+				unique ( app, topic, object )
+			)""")
+			mochi.db.execute("""insert into notifications_new (id, app, topic, object, title, body, content, link, sender, count, created, read, fixed)
+				select n.id, n.app, n.topic, n.object, n.title, n.body, n.content, n.link, n.sender, v.count, n.created, v.read, n.fixed
+				from notifications_all n join notifications v on v.id = n.id""")
+			mochi.db.execute("drop view notifications")
+			mochi.db.execute("drop table notifications_all")
+			mochi.db.execute("alter table notifications_new rename to notifications")
+			mochi.db.execute("create index if not exists notifications_created on notifications(created)")
+		mochi.db.execute("drop view if exists reads")
+		mochi.db.execute("drop table if exists reads_all")
+		mochi.db.execute("drop table if exists reads")
+		mochi.db.execute("drop table if exists sends")
+		for name in ["categories", "topics", "destinations"]:
+			if not mochi.db.table(name + "_all"):
+				continue
+			mochi.db.execute('drop view if exists "' + name + '"')
+			mochi.db.execute('delete from "' + name + '_all" where removed=1')
+			for c in ["writer", "version", "removed"]:
+				mochi.db.execute('alter table "' + name + '_all" drop column ' + c)
+			mochi.db.execute('alter table "' + name + '_all" rename to "' + name + '"')
 
-# Expiry: 30 days unread, 7 days read (by the derived read state), then reclaim
-# tombstones + the append-only sends/reads logs past the forget horizon.
+# Expiry: 30 days unread, 7 days read.
 def function_expire(context):
 	now = mochi.time.now()
-	for n in mochi.db.rows("select app, topic, object from notifications where (read = 0 and created < ?) or (read != 0 and created < ?)", now - 30 * 86400, now - 7 * 86400):
-		reg_remove("notifications", "app = ? and topic = ? and object = ?", [n["app"], n["topic"], n["object"]])
-	notifications_gc_tombstones()
+	mochi.db.execute("delete from notifications where (read = 0 and created < ?) or (read != 0 and created < ?)", now - 30 * 86400, now - 7 * 86400)
 
-# Clearing tombstones the notification(s) and advances the read mark to now, so a
-# later re-fire (which un-tombstones the same row) counts only NEW sends. sends
-# itself is append-only — never deleted here — and horizon-GC'd.
 def clear_where(where, args):
-	now = mochi.time.now()
-	for n in mochi.db.rows("select app, topic, object from notifications where " + where, *args):
-		reg_merge("reads", {"app": n["app"], "topic": n["topic"], "object": n["object"], "ts": now})
-	reg_remove("notifications", where, args)
+	mochi.db.execute("delete from notifications where " + where, *args)
 
 def function_clear_all(context):
 	clear_where("1=1", [])
@@ -660,11 +634,10 @@ def function_read(context, id):
 	now = mochi.time.now()
 	# Look up the row's app/topic/object so subscribers (notably the Android
 	# client) can reconstruct the system-notification tag "<app>-<topic>-<object>"
-	# and cancel the matching tray entry. Reading advances the reads register to
-	# now; the derived count then falls to 0 until a fresh send arrives.
+	# and cancel the matching tray entry.
 	row = mochi.db.row("select app, topic, object from notifications where id = ?", id)
 	if row:
-		reg_merge("reads", {"app": row["app"], "topic": row["topic"], "object": row["object"], "ts": now})
+		mochi.db.execute("update notifications set read = ? where id = ?", now, id)
 	event = {"type": "read", "id": id}
 	if row:
 		event["app"] = row["app"]
@@ -674,8 +647,7 @@ def function_read(context, id):
 
 def function_read_all(context):
 	now = mochi.time.now()
-	for n in mochi.db.rows("select app, topic, object from notifications"):
-		reg_merge("reads", {"app": n["app"], "topic": n["topic"], "object": n["object"], "ts": now})
+	mochi.db.execute("update notifications set read = ? where read = 0", now)
 	mochi.websocket.write("notifications", {"type": "read_all"})
 
 def version_gte(version, minimum):
@@ -1063,49 +1035,36 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	now = mochi.time.now()
 	content = title + ": " + body
 
-	# Append-only log entry. PK = event_id when supplied so replicas
-	# processing the same logical event insert the same row (the
-	# `insert or ignore` makes the second insert a no-op). Without
-	# event_id we mint a fresh uid on each replica - the legacy drift
-	# behaviour - which is the contract for callers that haven't been
-	# updated yet.
-	send_id = event_id if event_id else mochi.uid()
-	mochi.db.execute(
-		"insert or ignore into sends (id, app, topic, object, ts) values (?, ?, ?, ?, ?)",
-		send_id, app, topic, object, now
-	)
-
-	# Resolve a stable notification id for this (app,topic,object). Reuse the
-	# existing row's id INCLUDING a tombstoned one, so a re-fire after a clear
-	# un-tombstones the same row and the id stays stable for clients; otherwise
-	# event_id (cross-replica dedup) or a fresh uid.
+	# Roll up onto the existing (app,topic,object) row when there is one, so
+	# the id stays stable for clients; otherwise insert (keyed by the caller's
+	# event_id when supplied, else a fresh uid). A caller-supplied count is a
+	# state value (fixed=1), stored verbatim; otherwise count is the unread
+	# item count - reset to 1 when the previous state was read, else +1.
 	existing_notif = mochi.db.row(
-		"select id from notifications_all where app = ? and topic = ? and object = ?",
+		"select id, read from notifications where app = ? and topic = ? and object = ?",
 		app, topic, object
 	)
 	if existing_notif:
 		notif_id = existing_notif["id"]
 		kind = "update"
-	elif event_id:
-		notif_id = event_id
-		kind = "insert"
+		if count != None:
+			mochi.db.execute(
+				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=?, read=0, count=?, fixed=1 where id=?",
+				title, body, content, url, sender, now, count, notif_id
+			)
+		else:
+			mochi.db.execute(
+				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=?, read=0, count=case when read != 0 then 1 else count + 1 end, fixed=0 where id=?",
+				title, body, content, url, sender, now, notif_id
+			)
 	else:
-		notif_id = mochi.uid()
+		notif_id = event_id if event_id else mochi.uid()
 		kind = "insert"
-
-	# Upsert the notification register (keyed on app/topic/object → paired hosts
-	# converge to one row per logical notification). read and count are NOT stored:
-	# read lives in the reads register (so a re-fire's content update can't clobber
-	# it), count is derived as "sends since read" by the view. A caller-supplied
-	# count is a state value (fixed=1), stored verbatim and shown instead of the
-	# derived count.
-	reg_merge("notifications", {
-		"id": notif_id, "app": app, "topic": topic, "object": object,
-		"title": title, "body": body, "content": content, "link": url,
-		"sender": sender, "created": now, "read": 0,
-		"count": count if count != None else 0,
-		"fixed": 1 if count != None else 0,
-	})
+		mochi.db.execute(
+			"insert or ignore into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read, fixed) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)",
+			notif_id, app, topic, object, title, body, content, url, sender,
+			count if count != None else 1, now, 1 if count != None else 0
+		)
 
 	# Fire the commit hook for the local write. Replicated apply paths
 	# auto-fire it on the other host. The hook emits the websocket
@@ -1148,15 +1107,6 @@ def notifications_commit_hook(table, kind, row_uid):
 	# Skip external delivery for read rows (the row was marked read; no
 	# new event fired).
 	if row["read"]:
-		return
-
-	# Leader gate: exactly one host fires external deliveries per user.
-	# Scope "user:<uid>" resolves membership from the user's link hosts
-	# plus whole-server pair, so per-user-link replication is covered.
-	uid = mochi.user.uid()
-	if not uid:
-		return
-	if not mochi.schedule.leader("user:" + uid, "notifications"):
 		return
 
 	topic_row = mochi.db.row(
@@ -1327,12 +1277,12 @@ def function_category_test(context, id=None):
 	# feedback, and the per-account push fan-out below.
 	now = mochi.time.now()
 	existing_notif = mochi.db.row(
-		"select id from notifications_all where app = 'notifications' and topic = 'test' and object = ?",
+		"select id from notifications where app = 'notifications' and topic = 'test' and object = ?",
 		str(id)
 	)
 	notif_id = existing_notif["id"] if existing_notif else mochi.uid()
 	content = title + ": " + body_web
-	# State-style (no sends row): fixed=1 so the derived count shows the stored 1.
+	# State-style: fixed=1 so the stored count of 1 is shown as-is.
 	reg_merge("notifications", {
 		"id": notif_id, "app": "notifications", "topic": "test", "object": str(id),
 		"title": title, "body": body_web, "content": content,

@@ -5,7 +5,7 @@
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
 
 {
-	"version": "3.48",
+	"version": "3.49",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -14,16 +14,11 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 24,
+		"schema": 25,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 		"upgrade": {"function": "database_upgrade"},
-		"downgrade": {"function": "database_downgrade"},
-		"replicate": {
-			"exclude": {
-				"tables": ["push_pending"]
-			}
-		}
+		"downgrade": {"function": "database_downgrade"}
 	},
 
 	"actions": {
