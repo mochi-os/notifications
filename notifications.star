@@ -4,7 +4,7 @@
 # This file is part of Mochi, licensed under the GNU AGPL v3 with the
 # Mochi Application Interface Exception - see license.txt and license-exception.md.
 
-REG_KEYS = {
+ROW_KEYS = {
 	"categories": ["id"],
 	"topics": ["app", "topic", "object"],
 	"destinations": ["category", "type", "target"],
@@ -12,19 +12,19 @@ REG_KEYS = {
 	"notifications": ["app", "topic", "object"],
 }
 
-def reg_merge(table, row):
+def row_merge(table, row):
 	cols = list(row)
-	keys = REG_KEYS[table]
+	keys = ROW_KEYS[table]
 	fields = [c for c in cols if c not in keys]
 	conflict = "do update set " + ", ".join(['"' + c + '"=excluded."' + c + '"' for c in fields]) if fields else "do nothing"
 	mochi.db.execute('insert into "' + table + '" (' + ", ".join(['"' + c + '"' for c in cols]) + ") values (" + ", ".join(["?" for c in cols]) + ") on conflict (" + ", ".join(['"' + k + '"' for k in keys]) + ") " + conflict, *[row[c] for c in cols])
 
 # reg_set / reg_remove take a raw WHERE clause (without the "where" keyword) + args.
-def reg_set(table, where, args, updates):
+def row_set(table, where, args, updates):
 	fields = list(updates)
 	mochi.db.execute('update "' + table + '" set ' + ", ".join(['"' + c + '"=?' for c in fields]) + " where (" + where + ")", *([updates[c] for c in fields] + list(args)))
 
-def reg_remove(table, where, args):
+def row_remove(table, where, args):
 	mochi.db.execute('delete from "' + table + '" where (' + where + ")", *args)
 
 def database_create():
@@ -354,7 +354,7 @@ def action_accounts_remove(a):
 		return
 
 	# Also remove from all categories' destinations
-	reg_remove("destinations", "type = 'account' and target = ?", [id])
+	row_remove("destinations", "type = 'account' and target = ?", [id])
 	result = mochi.account.remove(id)
 	return {"data": result}
 
@@ -381,7 +381,7 @@ def add_destination_to_categories(type, target):
 	# Add this destination to every category except "0" (No notifications)
 	cats = mochi.db.rows("select id from categories where id != '0'")
 	for c in cats or []:
-		reg_merge("destinations", {"category": c["id"], "type": type, "target": target})
+		row_merge("destinations", {"category": c["id"], "type": type, "target": target})
 
 # function_destinations_add(context, type, target) -> bool: wire a
 # (type, target) destination into every user category. Called by the
@@ -439,7 +439,7 @@ def action_rss_delete(a):
 			mochi.token.delete(token["hash"])
 			break
 
-	reg_remove("destinations", "type = 'rss' and target = ?", [id])
+	row_remove("destinations", "type = 'rss' and target = ?", [id])
 	mochi.db.execute("delete from rss where id = ?", id)
 	return {"data": {}}
 
@@ -530,16 +530,16 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	if not row:
 		default = mochi.db.row('select id from categories where "default" = 1')
 		cat_val = default["id"] if default else None
-		reg_merge("topics", {"app": app, "topic": topic, "object": object, "label": label, "name": name, "category": cat_val, "created": mochi.time.now()})
+		row_merge("topics", {"app": app, "topic": topic, "object": object, "label": label, "name": name, "category": cat_val, "created": mochi.time.now()})
 		category = cat_val
 	else:
 		category = row["category"]
 		# Refresh stored label/name if the caller passed one and it differs
 		# (handles language switches, page renames, etc.).
 		if label and label != row["label"]:
-			reg_set("topics", "app = ? and topic = ? and object = ?", [app, topic, object], {"label": label})
+			row_set("topics", "app = ? and topic = ? and object = ?", [app, topic, object], {"label": label})
 		if name and name != row["name"]:
-			reg_set("topics", "app = ? and topic = ? and object = ?", [app, topic, object], {"name": name})
+			row_set("topics", "app = ? and topic = ? and object = ?", [app, topic, object], {"name": name})
 
 	# "0" = No notifications: drop
 	if category == "0":
@@ -681,7 +681,7 @@ def function_topic_remove(context, topic="", object=""):
 	app = context.get("app", "")
 	if not app:
 		return False
-	reg_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
+	row_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
 	return True
 
 # Permission-gated function for apps to list categories (for pickers shown in app UI).
@@ -705,7 +705,7 @@ def function_category_create(context, label="", destinations=None, default=None)
 		return None
 	now = mochi.time.now()
 	cid = mochi.uid()
-	reg_merge("categories", {"id": cid, "label": label, "default": 0, "created": now})
+	row_merge("categories", {"id": cid, "label": label, "default": 0, "created": now})
 	apply_destinations(cid, destinations)
 	if default:
 		set_default(cid)
@@ -716,8 +716,8 @@ def set_default(id):
 	# sentinel category can't be the default.
 	if not id or id == "0":
 		return
-	reg_set("categories", "1=1", [], {"default": 0})
-	reg_set("categories", "id = ?", [id], {"default": 1})
+	row_set("categories", "1=1", [], {"default": 0})
+	row_set("categories", "id = ?", [id], {"default": 1})
 
 def function_category_update(context, id=None, label=None, destinations=None, default=None):
 	if not id:
@@ -727,7 +727,7 @@ def function_category_update(context, id=None, label=None, destinations=None, de
 	if label != None:
 		if not mochi.text.valid(label, "text"):
 			return False
-		reg_set("categories", "id = ?", [id], {"label": label})
+		row_set("categories", "id = ?", [id], {"label": label})
 	if default != None and id != "0":
 		# Only allow setting default on (can't unset without picking another).
 		if default:
@@ -755,9 +755,9 @@ def function_category_delete(context, id=None, reassign_to=None):
 	# If we're deleting the default, promote the reassign target to be the new
 	# default (can't leave the system without a default).
 	was_default = mochi.db.exists('select 1 from categories where id = ? and "default" = 1', id)
-	reg_set("topics", "category = ?", [id], {"category": reassign_to})
-	reg_remove("destinations", "category = ?", [id])
-	reg_remove("categories", "id = ?", [id])
+	row_set("topics", "category = ?", [id], {"category": reassign_to})
+	row_remove("destinations", "category = ?", [id])
+	row_remove("categories", "id = ?", [id])
 	if was_default:
 		set_default(reassign_to)
 	return True
@@ -794,7 +794,7 @@ def function_category_test(context, id=None):
 	notif_id = existing_notif["id"] if existing_notif else mochi.uid()
 	content = title + ": " + body_web
 	# State-style: fixed=1 so the stored count of 1 is shown as-is.
-	reg_merge("notifications", {
+	row_merge("notifications", {
 		"id": notif_id, "app": "notifications", "topic": "test", "object": str(id),
 		"title": title, "body": body_web, "content": content,
 		"link": "/settings/user/notifications", "sender": "",
@@ -869,13 +869,13 @@ def apply_destinations(category_id, destinations):
 		return
 	if category_id == "0":
 		return
-	reg_remove("destinations", "category = ?", [category_id])
+	row_remove("destinations", "category = ?", [category_id])
 	for dest in destinations:
 		dest_type = dest.get("type", "")
 		dest_target = dest.get("target", "")
 		if not dest_type:
 			continue
-		reg_merge("destinations", {"category": category_id, "type": dest_type, "target": str(dest_target)})
+		row_merge("destinations", {"category": category_id, "type": dest_type, "target": str(dest_target)})
 
 # Topic helpers — used by settings page and notification dropdown
 
@@ -914,11 +914,11 @@ def function_topic_set_category(context, app="", topic="", object="", category=N
 	):
 		return False
 	if category == None:
-		reg_set("topics", "app = ? and topic = ? and object = ?", [app, topic, object], {"category": None})
+		row_set("topics", "app = ? and topic = ? and object = ?", [app, topic, object], {"category": None})
 	else:
 		if not mochi.db.exists("select 1 from categories where id = ?", category):
 			return False
-		reg_set("topics", "app = ? and topic = ? and object = ?", [app, topic, object], {"category": category})
+		row_set("topics", "app = ? and topic = ? and object = ?", [app, topic, object], {"category": category})
 	return True
 
 def function_topic_lookup(context, app="", topic="", object=""):
@@ -938,7 +938,7 @@ def function_topic_delete(context, app="", topic="", object=""):
 		app, topic, object
 	):
 		return False
-	reg_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
+	row_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
 	return True
 
 def function_destinations_available(context):
@@ -1033,7 +1033,7 @@ def action_topics_delete(a):
 		app, topic, object
 	):
 		return a.error.label(404, "errors.topic_not_found")
-	reg_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
+	row_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
 	return {"data": {}}
 
 def action_destinations_list(a):
@@ -1061,7 +1061,7 @@ def function_accounts_add(context, type="", **fields):
 def function_accounts_remove(context, id=0):
 	if not id:
 		return None
-	reg_remove("destinations", "type = 'account' and target = ?", [str(id)])
+	row_remove("destinations", "type = 'account' and target = ?", [str(id)])
 	return mochi.account.remove(id)
 
 # UnifiedPush registration. The Mochi Android distributor calls this when a user
