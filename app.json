@@ -14,11 +14,9 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 26,
+		"schema": 1,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
-		"upgrade": {"function": "database_upgrade"},
-		"downgrade": {"function": "database_downgrade"}
 	},
 
 	"actions": {
