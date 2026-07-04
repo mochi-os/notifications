@@ -610,6 +610,20 @@ def database_upgrade(to_version):
 			mochi.db.execute('alter table "' + name + '_all" rename to "' + name + '"')
 
 # Expiry: 30 days unread, 7 days read.
+	if to_version == 26:
+		# Schema alignment for the baseline squash: drop the legacy settings
+		# table, rebuild notifications to the canonical create shape (default
+		# drift on object from the fold rebuild), and heal missing tables.
+		mochi.db.execute("drop table if exists settings")
+		if mochi.db.table("notifications"):
+			mochi.db.execute("drop table if exists notifications_new")
+			mochi.db.execute("create table notifications_new ( id text not null primary key, app text not null, topic text not null, object text not null, title text not null default '', body text not null default '', content text not null, link text not null default '', sender text not null default '', count integer not null default 1, created integer not null, read integer not null default 0, fixed integer not null default 0, unique ( app, topic, object ) )")
+			shared = [c["name"] for c in mochi.db.table("notifications_new") if c["name"] in [o["name"] for o in mochi.db.table("notifications")]]
+			cols = ", ".join(["\"" + c + "\"" for c in shared])
+			mochi.db.execute("insert into notifications_new (" + cols + ") select " + cols + " from notifications")
+			mochi.db.execute("drop table notifications")
+			mochi.db.execute("alter table notifications_new rename to notifications")
+		database_create()
 def function_expire(context):
 	now = mochi.time.now()
 	mochi.db.execute("delete from notifications where (read = 0 and created < ?) or (read != 0 and created < ?)", now - 30 * 86400, now - 7 * 86400)
