@@ -297,8 +297,11 @@ def action_accounts_list(a):
 	return {"data": mochi.account.list(capability)}
 
 def action_accounts_get(a):
+	# Account ids are mochi.uid() text since the integer-id re-keying; only
+	# pre-migration rows kept digit ids, so an isdigit() check here (and in
+	# update/remove/verify below) rejected every account created since.
 	id = a.input("id", "").strip()
-	if not id or not id.isdigit():
+	if not id or len(id) > 64:
 		a.error.label(400, "errors.invalid_id")
 		return
 	result = mochi.account.get(id)
@@ -335,7 +338,7 @@ def action_accounts_add(a):
 
 def action_accounts_update(a):
 	id = a.input("id", "").strip()
-	if not id or not id.isdigit():
+	if not id or len(id) > 64:
 		a.error.label(400, "errors.invalid_id")
 		return
 
@@ -349,7 +352,7 @@ def action_accounts_update(a):
 
 def action_accounts_remove(a):
 	id = a.input("id", "").strip()
-	if not id or not id.isdigit():
+	if not id or len(id) > 64:
 		a.error.label(400, "errors.invalid_id")
 		return
 
@@ -360,7 +363,7 @@ def action_accounts_remove(a):
 
 def action_accounts_verify(a):
 	id = a.input("id", "").strip()
-	if not id or not id.isdigit():
+	if not id or len(id) > 64:
 		a.error.label(400, "errors.invalid_id")
 		return
 
@@ -1322,7 +1325,7 @@ def action_push_accounts_add(a):
 def action_push_accounts_remove(a):
 	"""Remove a push account."""
 	id = a.input("id", "").strip()
-	if not id or not id.isdigit():
+	if not id or len(id) > 64:
 		return a.error.label(400, "errors.invalid_id")
 	result = function_accounts_remove(None, id=id)
 	return {"data": result or {}}
