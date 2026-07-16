@@ -27,6 +27,14 @@ def row_set(table, where, args, updates):
 def row_remove(table, where, args):
 	mochi.db.execute('delete from "' + table + '" where (' + where + ")", *args)
 
+def database_upgrade(version):
+	if version == 2:
+		# Drop the pre-2026-07 broadcast tables left in the app data DB when
+		# broadcast state moved to the per-app system DB - inert, but stale
+		# sequence/log copies mislead diagnosis.
+		for table in ["sequence", "log", "acknowledged", "received"]:
+			mochi.db.execute("drop table if exists " + table)
+
 def database_create():
 	mochi.db.execute("""create table if not exists notifications (
 		id text not null primary key,

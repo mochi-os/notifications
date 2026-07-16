@@ -14,7 +14,7 @@
 	"execute": ["notifications.star"],
 
 	"database": {
-		"schema": 1,
+		"schema": 2,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
 	},
