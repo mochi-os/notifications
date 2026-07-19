@@ -440,15 +440,14 @@ def action_rss_delete(a):
 	if not id or len(id) > 64:
 		return a.error.label(400, "errors.invalid_id")
 
-	exists = mochi.db.exists("select 1 from rss where id = ?", id)
-	if not exists:
+	row = mochi.db.row("select token from rss where id = ?", id)
+	if not row:
 		return a.error.label(404, "errors.feed_not_found")
 
-	token_name = "rss:" + id
-	for token in mochi.token.list():
-		if token.get("name") == token_name:
-			mochi.token.delete(token["hash"])
-			break
+	# Revoke the RSS token by its stored string (exact, no name scan), so the
+	# feed's ?token= URL stops working when the feed is removed.
+	if row["token"]:
+		mochi.token.delete(row["token"])
 
 	row_remove("destinations", "type = 'rss' and target = ?", [id])
 	mochi.db.execute("delete from rss where id = ?", id)
