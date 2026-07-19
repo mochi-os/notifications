@@ -467,7 +467,7 @@ export function RssDialog({
         onOpenChange={(isOpen) => {
           if (!isOpen) setDeleteId(null)
         }}
-        title={t`Delete Feed?`}
+        title={t`Delete feed?`}
         desc={t`This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications.`}
         confirmText={t`Delete`}
         destructive

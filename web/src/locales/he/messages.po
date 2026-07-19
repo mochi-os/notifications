@@ -13,6 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. js-lingui-explicit-id
+#: ../../../lib/web/src/lib/error-normalizer.ts:204
+msgid "Please check your internet connection and try again."
+msgstr "בדקו את חיבור האינטרנט ונסו שוב."
+
 #: ../../../lib/web/src/lib/preference-utils.ts:42
 msgid "12 hours"
 msgstr "12 שעות"
@@ -78,7 +83,7 @@ msgstr "הוסף חשבון כדי לקבל התראות ולהשתמש בשיר
 msgid "Add new account"
 msgstr "הוסף חשבון חדש"
 
-#: ../../../lib/web/src/components/post-tags.tsx:133
+#: ../../../lib/web/src/components/post-tags.tsx:137
 msgid "Add tag..."
 msgstr "הוסף תגית..."
 
@@ -149,8 +154,8 @@ msgstr "חזרה לבית"
 msgid "Blocked navigation to untrusted link"
 msgstr "ניווט לקישור לא מהימן נחסם"
 
-#: ../../../lib/web/src/components/post-tags.tsx:176
-#: ../../../lib/web/src/components/post-tags.tsx:188
+#: ../../../lib/web/src/components/post-tags.tsx:180
+#: ../../../lib/web/src/components/post-tags.tsx:192
 msgid "Boost interest"
 msgstr "הגבר עניין"
 
@@ -379,7 +384,7 @@ msgid "Delete feed"
 msgstr "מחק פיד"
 
 #: src/components/rss-dialog.tsx:470
-msgid "Delete Feed?"
+msgid "Delete feed?"
 msgstr "למחוק פיד?"
 
 #: ../../../lib/web/src/components/restore-banner.tsx:99
@@ -876,7 +881,6 @@ msgstr "מפתחות גישה"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:304
-#: ../../../lib/web/src/lib/error-normalizer.ts:201
 msgid "Please check your internet connection and try again."
 msgstr "בדקו את חיבור האינטרנט ונסו שוב."
 
@@ -916,7 +920,7 @@ msgid "Re-register your passkeys on this server"
 msgstr "רשמו מחדש את מפתחות הגישה שלכם בשרת הזה"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:216
-#: ../../../lib/web/src/components/search-entity-page.tsx:240
+#: ../../../lib/web/src/components/search-entity-page.tsx:242
 msgid "Recommended"
 msgstr "מומלץ"
 
@@ -924,8 +928,8 @@ msgstr "מומלץ"
 msgid "Redirecting to login."
 msgstr "מפנה לדף ההתחברות."
 
-#: ../../../lib/web/src/components/post-tags.tsx:196
-#: ../../../lib/web/src/components/post-tags.tsx:208
+#: ../../../lib/web/src/components/post-tags.tsx:200
+#: ../../../lib/web/src/components/post-tags.tsx:212
 msgid "Reduce interest"
 msgstr "הפחת עניין"
 
@@ -951,8 +955,8 @@ msgstr "הסר כלל גישה"
 msgid "Remove access?"
 msgstr "להסיר גישה?"
 
-#: ../../../lib/web/src/components/post-tags.tsx:216
-#: ../../../lib/web/src/components/post-tags.tsx:228
+#: ../../../lib/web/src/components/post-tags.tsx:220
+#: ../../../lib/web/src/components/post-tags.tsx:232
 msgid "Remove interest"
 msgstr "הסר עניין"
 
@@ -1030,7 +1034,7 @@ msgid "Search..."
 msgstr "חיפוש..."
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
-#: ../../../lib/web/src/components/search-entity-page.tsx:198
+#: ../../../lib/web/src/components/search-entity-page.tsx:200
 #: ../../../lib/web/src/features/access/access-dialog.tsx:202
 msgid "Searching..."
 msgstr "מחפש..."
@@ -1167,8 +1171,8 @@ msgstr "מערכת"
 msgid "Tag"
 msgstr "תגית"
 
-#: ../../../lib/web/src/components/post-tags.tsx:100
-#: ../../../lib/web/src/components/post-tags.tsx:111
+#: ../../../lib/web/src/components/post-tags.tsx:101
+#: ../../../lib/web/src/components/post-tags.tsx:115
 msgid "Tags"
 msgstr "תגיות"
 
@@ -1249,7 +1253,7 @@ msgid "Travelling"
 msgstr "בנסיעה"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:190
-#: ../../../lib/web/src/components/search-entity-page.tsx:214
+#: ../../../lib/web/src/components/search-entity-page.tsx:216
 msgid "Try adjusting your search terms"
 msgstr "נסה להתאים את מונחי החיפוש שלך"
 
@@ -1334,7 +1338,7 @@ msgstr "אמת"
 msgid "Verify email address"
 msgstr "אמת כתובת אימייל"
 
-#: ../../../lib/web/src/components/attachment-gallery.tsx:66
+#: ../../../lib/web/src/components/attachment-gallery.tsx:74
 msgid "Video thumbnail"
 msgstr "תמונה ממוזערת של הסרטון"
 

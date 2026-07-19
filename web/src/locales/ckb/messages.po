@@ -13,6 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. js-lingui-explicit-id
+#: ../../../lib/web/src/lib/error-normalizer.ts:204
+msgid "Please check your internet connection and try again."
+msgstr "تکایە پەیوەندی ئینتەرنێتەکەت بپشکنە و دووبارە هەوڵ بدەرەوە."
+
 #: ../../../lib/web/src/lib/preference-utils.ts:42
 msgid "12 hours"
 msgstr "١٢ کاتژمێر"
@@ -78,7 +83,7 @@ msgstr "هەژمارێک زیاد بکە بۆ وەرگرتنی ئاگادارک�
 msgid "Add new account"
 msgstr "زیادکردنی هەژماری نوێ"
 
-#: ../../../lib/web/src/components/post-tags.tsx:133
+#: ../../../lib/web/src/components/post-tags.tsx:137
 msgid "Add tag..."
 msgstr "زیادکردنی تاگ..."
 
@@ -149,8 +154,8 @@ msgstr "گەڕانەوە بۆ ماڵەوە"
 msgid "Blocked navigation to untrusted link"
 msgstr "ڕێگەنەدرا بە چوون بۆ بەستەری نامتمانە"
 
-#: ../../../lib/web/src/components/post-tags.tsx:176
-#: ../../../lib/web/src/components/post-tags.tsx:188
+#: ../../../lib/web/src/components/post-tags.tsx:180
+#: ../../../lib/web/src/components/post-tags.tsx:192
 msgid "Boost interest"
 msgstr "بەهێزکردنی بایەخ"
 
@@ -379,7 +384,7 @@ msgid "Delete feed"
 msgstr "سڕینەوەی فید"
 
 #: src/components/rss-dialog.tsx:470
-msgid "Delete Feed?"
+msgid "Delete feed?"
 msgstr "فید بسڕەوە؟"
 
 #: ../../../lib/web/src/components/restore-banner.tsx:99
@@ -876,7 +881,6 @@ msgstr "پاسکییەکان"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:304
-#: ../../../lib/web/src/lib/error-normalizer.ts:201
 msgid "Please check your internet connection and try again."
 msgstr "تکایە پەیوەندی ئینتەرنێتەکەت بپشکنە و دووبارە هەوڵ بدەرەوە."
 
@@ -916,7 +920,7 @@ msgid "Re-register your passkeys on this server"
 msgstr "پاسکیەکانت لەسەر ئەم ڕاژەیە دووبارە تۆمار بکە"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:216
-#: ../../../lib/web/src/components/search-entity-page.tsx:240
+#: ../../../lib/web/src/components/search-entity-page.tsx:242
 msgid "Recommended"
 msgstr "پێشنیازکراو"
 
@@ -924,8 +928,8 @@ msgstr "پێشنیازکراو"
 msgid "Redirecting to login."
 msgstr "ڕەوانەکردنەوە بۆ چونەژوورەوە."
 
-#: ../../../lib/web/src/components/post-tags.tsx:196
-#: ../../../lib/web/src/components/post-tags.tsx:208
+#: ../../../lib/web/src/components/post-tags.tsx:200
+#: ../../../lib/web/src/components/post-tags.tsx:212
 msgid "Reduce interest"
 msgstr "کەمکردنەوەی بەرژەوەندی"
 
@@ -951,8 +955,8 @@ msgstr "لابردنی ڕێسای دەستڕاگەیشتن"
 msgid "Remove access?"
 msgstr "دەستڕاگەیشتن لاببەیت؟"
 
-#: ../../../lib/web/src/components/post-tags.tsx:216
-#: ../../../lib/web/src/components/post-tags.tsx:228
+#: ../../../lib/web/src/components/post-tags.tsx:220
+#: ../../../lib/web/src/components/post-tags.tsx:232
 msgid "Remove interest"
 msgstr "لابردنی بەرژەوەندی"
 
@@ -1030,7 +1034,7 @@ msgid "Search..."
 msgstr "گەڕان..."
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
-#: ../../../lib/web/src/components/search-entity-page.tsx:198
+#: ../../../lib/web/src/components/search-entity-page.tsx:200
 #: ../../../lib/web/src/features/access/access-dialog.tsx:202
 msgid "Searching..."
 msgstr "گەڕان..."
@@ -1167,8 +1171,8 @@ msgstr "سیستەم"
 msgid "Tag"
 msgstr "تاگ"
 
-#: ../../../lib/web/src/components/post-tags.tsx:100
-#: ../../../lib/web/src/components/post-tags.tsx:111
+#: ../../../lib/web/src/components/post-tags.tsx:101
+#: ../../../lib/web/src/components/post-tags.tsx:115
 msgid "Tags"
 msgstr "تاگەکان"
 
@@ -1249,7 +1253,7 @@ msgid "Travelling"
 msgstr "گەشتکردن"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:190
-#: ../../../lib/web/src/components/search-entity-page.tsx:214
+#: ../../../lib/web/src/components/search-entity-page.tsx:216
 msgid "Try adjusting your search terms"
 msgstr "هەوڵبدە وشەکانی گەڕانت ڕێکبخەیت"
 
@@ -1334,7 +1338,7 @@ msgstr "پشتڕاستبکە"
 msgid "Verify email address"
 msgstr "ناونیشانی ئیمەیڵ پشتڕاستبکە"
 
-#: ../../../lib/web/src/components/attachment-gallery.tsx:66
+#: ../../../lib/web/src/components/attachment-gallery.tsx:74
 msgid "Video thumbnail"
 msgstr "وێنۆکەی ڤیدیۆ"
 

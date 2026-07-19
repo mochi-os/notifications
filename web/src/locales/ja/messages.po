@@ -13,6 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#. js-lingui-explicit-id
+#: ../../../lib/web/src/lib/error-normalizer.ts:204
+msgid "Please check your internet connection and try again."
+msgstr "インターネット接続を確認して、もう一度お試しください。"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:42
 msgid "12 hours"
 msgstr "12時間"
@@ -78,7 +83,7 @@ msgstr "通知を受け取り、サービスを利用するには、アカウン
 msgid "Add new account"
 msgstr "新しいアカウントを追加"
 
-#: ../../../lib/web/src/components/post-tags.tsx:133
+#: ../../../lib/web/src/components/post-tags.tsx:137
 msgid "Add tag..."
 msgstr "タグを追加…"
 
@@ -149,8 +154,8 @@ msgstr "ホームに戻る"
 msgid "Blocked navigation to untrusted link"
 msgstr "信頼できないリンクへの遷移をブロックしました"
 
-#: ../../../lib/web/src/components/post-tags.tsx:176
-#: ../../../lib/web/src/components/post-tags.tsx:188
+#: ../../../lib/web/src/components/post-tags.tsx:180
+#: ../../../lib/web/src/components/post-tags.tsx:192
 msgid "Boost interest"
 msgstr "関心を高める"
 
@@ -379,7 +384,7 @@ msgid "Delete feed"
 msgstr "フィードを削除"
 
 #: src/components/rss-dialog.tsx:470
-msgid "Delete Feed?"
+msgid "Delete feed?"
 msgstr "フィードを削除しますか?"
 
 #: ../../../lib/web/src/components/restore-banner.tsx:99
@@ -876,7 +881,6 @@ msgstr "パスキー"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:304
-#: ../../../lib/web/src/lib/error-normalizer.ts:201
 msgid "Please check your internet connection and try again."
 msgstr "インターネット接続を確認して、もう一度お試しください。"
 
@@ -916,7 +920,7 @@ msgid "Re-register your passkeys on this server"
 msgstr "このサーバーでパスキーを再登録してください"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:216
-#: ../../../lib/web/src/components/search-entity-page.tsx:240
+#: ../../../lib/web/src/components/search-entity-page.tsx:242
 msgid "Recommended"
 msgstr "おすすめ"
 
@@ -924,8 +928,8 @@ msgstr "おすすめ"
 msgid "Redirecting to login."
 msgstr "ログイン画面にリダイレクトしています。"
 
-#: ../../../lib/web/src/components/post-tags.tsx:196
-#: ../../../lib/web/src/components/post-tags.tsx:208
+#: ../../../lib/web/src/components/post-tags.tsx:200
+#: ../../../lib/web/src/components/post-tags.tsx:212
 msgid "Reduce interest"
 msgstr "関心を下げる"
 
@@ -951,8 +955,8 @@ msgstr "アクセスルールを削除"
 msgid "Remove access?"
 msgstr "アクセスを削除しますか?"
 
-#: ../../../lib/web/src/components/post-tags.tsx:216
-#: ../../../lib/web/src/components/post-tags.tsx:228
+#: ../../../lib/web/src/components/post-tags.tsx:220
+#: ../../../lib/web/src/components/post-tags.tsx:232
 msgid "Remove interest"
 msgstr "関心を削除"
 
@@ -1030,7 +1034,7 @@ msgid "Search..."
 msgstr "検索…"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:174
-#: ../../../lib/web/src/components/search-entity-page.tsx:198
+#: ../../../lib/web/src/components/search-entity-page.tsx:200
 #: ../../../lib/web/src/features/access/access-dialog.tsx:202
 msgid "Searching..."
 msgstr "検索中..."
@@ -1167,8 +1171,8 @@ msgstr "システム"
 msgid "Tag"
 msgstr "タグ"
 
-#: ../../../lib/web/src/components/post-tags.tsx:100
-#: ../../../lib/web/src/components/post-tags.tsx:111
+#: ../../../lib/web/src/components/post-tags.tsx:101
+#: ../../../lib/web/src/components/post-tags.tsx:115
 msgid "Tags"
 msgstr "タグ"
 
@@ -1249,7 +1253,7 @@ msgid "Travelling"
 msgstr "移動中"
 
 #: ../../../lib/web/src/components/search-entity-dialog.tsx:190
-#: ../../../lib/web/src/components/search-entity-page.tsx:214
+#: ../../../lib/web/src/components/search-entity-page.tsx:216
 msgid "Try adjusting your search terms"
 msgstr "検索語を変えてみてください"
 
@@ -1334,7 +1338,7 @@ msgstr "認証"
 msgid "Verify email address"
 msgstr "メールアドレスを認証"
 
-#: ../../../lib/web/src/components/attachment-gallery.tsx:66
+#: ../../../lib/web/src/components/attachment-gallery.tsx:74
 msgid "Video thumbnail"
 msgstr "動画のサムネイル"
 
