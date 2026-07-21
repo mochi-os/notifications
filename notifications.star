@@ -1061,6 +1061,13 @@ def function_accounts_list(context, capability=""):
 def function_accounts_add(context, type="", **fields):
 	if not type:
 		return None
+	# Bound each field like the HTTP action_accounts_add path (4096/field). This
+	# service call is the other entry point to the same account insert (the menu
+	# shell reaches it via mochi.service.call), so it must enforce the same limit
+	# rather than store unbounded values.
+	for value in fields.values():
+		if len(str(value)) > 4096:
+			return None
 	result = mochi.account.add(type, **fields)
 	if result and result.get("id"):
 		account_id = result["id"]
