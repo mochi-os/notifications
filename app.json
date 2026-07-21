@@ -5,7 +5,7 @@
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
 
 {
-	"version": "3.57",
+	"version": "3.58",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
