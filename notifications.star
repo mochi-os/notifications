@@ -915,7 +915,7 @@ def function_topic_list(context):
 		result.append(row)
 	return result
 
-def function_topic_set_category(context, app="", topic="", object="", category=None):
+def function_topic_category_set(context, app="", topic="", object="", category=None):
 	# app="" identifies server-originated topics (e.g. upgrade notifications),
 	# which the user owns and must be able to recategorise like any other.
 	if not mochi.db.exists(
@@ -1014,14 +1014,17 @@ def action_topics_list(a):
 	return {"data": function_topic_list({})}
 
 def action_topics_set_category(a):
+	# An empty category clears the topic's category; anything over-long cannot
+	# name a real category and is rejected rather than treated as a clear.
 	app = a.input("app", "").strip()
 	topic = a.input("topic", "").strip()
-	object = a.input("object", "")
-	cat_raw = a.input("category", "").strip()
-	category = None
-	if cat_raw != "" and len(cat_raw) <= 64:
-		category = cat_raw
-	ok = function_topic_set_category({}, app, topic, object, category)
+	object = a.input("object", "").strip()
+	category = a.input("category", "").strip()
+	if category == "":
+		category = None
+	elif len(category) > 64:
+		return a.error.label(404, "errors.not_found")
+	ok = function_topic_category_set({}, app, topic, object, category)
 	if not ok:
 		return a.error.label(404, "errors.not_found")
 	return {"data": {}}

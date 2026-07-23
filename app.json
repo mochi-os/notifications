@@ -83,7 +83,7 @@
 		"category/test": {"function": "function_category_test"},
 		"topic/list": {"function": "function_topic_list"},
 		"topic/lookup": {"function": "function_topic_lookup"},
-		"topic/set_category": {"function": "function_topic_set_category"},
+		"topic/category/set": {"function": "function_topic_category_set"},
 		"topic/delete": {"function": "function_topic_delete"},
 		"destinations/available": {"function": "function_destinations_available"},
 		"destinations/add": {"function": "function_destinations_add", "permission": "notifications/send"},
