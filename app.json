@@ -17,6 +17,7 @@
 		"schema": 2,
 		"file": "notifications.db",
 		"create": {"function": "database_create"},
+		"upgrade": {"function": "database_upgrade"},
 	},
 
 	"actions": {
