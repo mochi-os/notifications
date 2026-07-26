@@ -422,7 +422,10 @@ def action_rss_create(a):
 	add_to_existing = add_to_existing == "1" or add_to_existing == "true"
 
 	id = mochi.uid()
-	token = mochi.token.create("rss:" + id, ["rss"])
+	# Bound to the feed action. Notifications has no per-entity feed route -
+	# the feed is selected by the token itself - so the binding carries no
+	# entity, but it still stops the URL reaching the app's other actions.
+	token = mochi.token.create("rss:" + id, ["rss"], 0, "-/rss", "")
 	if not token:
 		return a.error.label(500, "errors.failed_to_create_token")
 	now = mochi.time.now()
