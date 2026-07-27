@@ -1285,7 +1285,7 @@ msgstr "Bu səhifə hələ yaradılmayıb."
 
 #: src/components/rss-dialog.tsx:471
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
-msgstr "Bu \"{0}\"-u hesabınızdan siləcək. Onu daxil olmaq üçün artıq istifadə edə bilməyəcəksiniz."
+msgstr "Bu, həmin lenti həmişəlik siləcək. Ondan istifadə edən RSS oxucuları artıq bildirişlərinizə çıxış edə bilməyəcək."
 
 #: ../../../lib/web/src/lib/preference-utils.ts:62
 msgid "Thursday"

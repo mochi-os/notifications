@@ -1400,7 +1400,7 @@ msgstr "გამოიყენეთ თქვენი passkey"
 
 #: ../../../lib/web/src/features/access/access-dialog.tsx:158
 msgid "User"
-msgstr "გამოიყენება წასაკითხი ID-ებისთვის, როგორიცაა {0}-1, {1}-2"
+msgstr "მომხმარებელი"
 
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:73
 msgid "Verification code"
@@ -1426,7 +1426,7 @@ msgstr "შემოწმება და ჩართვა"
 
 #: ../../../lib/web/src/components/attachment-gallery.tsx:79
 msgid "Video thumbnail"
-msgstr "ვერსია {0} შეიქმნა."
+msgstr "ვიდეოს მინიატურა"
 
 #. placeholder {0}: currentMedia.name
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:246
