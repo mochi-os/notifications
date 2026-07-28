@@ -330,6 +330,17 @@ def action_rss(a):
 	a.print('</channel>\n')
 	a.print('</rss>')
 
+# provider_valid reports whether `type` names a real account provider. Core
+# rejects unknown types with a Starlark abort, which surfaces as an internal
+# error, so the boundaries check first and answer a clean 400.
+def provider_valid(type):
+	if not type or len(type) > 64:
+		return False
+	for p in mochi.account.providers() or []:
+		if p.get("type") == type:
+			return True
+	return False
+
 # Connected accounts endpoints (thin wrappers around mochi.account.* API)
 
 def action_accounts_providers(a):
@@ -356,6 +367,8 @@ def action_accounts_add(a):
 	if not type:
 		a.error.label(400, "errors.type_is_required")
 		return
+	if not provider_valid(type):
+		return a.error.label(400, "errors.invalid_type")
 
 	fields = {}
 	for key in ["label", "address", "token", "api_key", "url", "endpoint", "auth", "p256dh", "secret", "topic", "server"]:
@@ -1159,7 +1172,7 @@ def function_accounts_list(context, capability=""):
 	return mochi.account.list(capability) or []
 
 def function_accounts_add(context, type="", **fields):
-	if not type:
+	if not provider_valid(type):
 		return None
 	# Bound each field like the HTTP action_accounts_add path (4096/field). This
 	# service call is the other entry point to the same account insert (the menu
@@ -1460,6 +1473,8 @@ def action_push_accounts_add(a):
 	type = a.input("type", "").strip()
 	if not type:
 		return a.error.label(400, "errors.type_is_required")
+	if not provider_valid(type):
+		return a.error.label(400, "errors.invalid_type")
 	fields = {}
 	for key in ["label", "endpoint", "auth", "p256dh"]:
 		val = a.input(key, "")

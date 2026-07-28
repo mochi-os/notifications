@@ -456,6 +456,20 @@ else
     fail "Settings proxy returns clean 400 for malformed destinations" "$(echo "$RESULT" | head -c 200)"
 fi
 
+# Test: Unknown account type answers a clean 400 on both add surfaces
+RESULT=$(notif_curl POST "/-/accounts/add" -d "type=garbage&label=x")
+if echo "$RESULT" | grep -q "Invalid type"; then
+    pass "Unknown account type returns clean 400 (notifications)"
+else
+    fail "Unknown account type returns clean 400 (notifications)" "$(echo "$RESULT" | head -c 150)"
+fi
+RESULT=$(settings_curl POST "/-/accounts/add" -d "type=garbage&label=x")
+if echo "$RESULT" | grep -q "Invalid type"; then
+    pass "Unknown account type returns clean 400 (settings)"
+else
+    fail "Unknown account type returns clean 400 (settings)" "$(echo "$RESULT" | head -c 150)"
+fi
+
 # Test: Malformed ack events JSON answers a clean 400
 RESULT=$(notif_curl POST "/-/push/ack" -d "events={bad")
 if echo "$RESULT" | grep -q "Invalid push subscription"; then
