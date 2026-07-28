@@ -942,11 +942,30 @@ def apply_destinations(category_id, destinations):
 		return
 	row_remove("destinations", "category = ?", [category_id])
 	for dest in destinations:
+		# Service callers can pass arbitrary shapes; skip non-dict elements
+		# rather than aborting mid-way (the HTTP actions reject them upfront).
+		if type(dest) != "dict":
+			continue
 		dest_type = dest.get("type", "")
 		dest_target = dest.get("target", "")
 		if not dest_type:
 			continue
 		row_merge("destinations", {"category": category_id, "type": dest_type, "target": str(dest_target)})
+
+# destinations_input decodes and shape-checks the client's destinations JSON
+# parameter: a bounded list of dicts, or absent. Returns (valid, destinations);
+# on invalid input the caller answers 400.
+def destinations_input(a):
+	raw = a.input("destinations", "").strip()
+	if not raw:
+		return True, None
+	destinations = json.decode(raw, None)
+	if type(destinations) != "list" or len(destinations) > 100:
+		return False, None
+	for dest in destinations:
+		if type(dest) != "dict":
+			return False, None
+	return True, destinations
 
 # Topic helpers — used by settings page and notification dropdown
 
@@ -1030,8 +1049,9 @@ def action_categories_create(a):
 		return a.error.label(400, "errors.label_is_required")
 	default_raw = a.input("default", "")
 	default = 1 if default_raw == "1" or default_raw == "true" else None
-	destinations_json = a.input("destinations", "").strip()
-	destinations = json.decode(destinations_json) if destinations_json else None
+	valid, destinations = destinations_input(a)
+	if not valid:
+		return a.error.label(400, "errors.invalid_destinations")
 	cid = function_category_create({}, label, destinations, default)
 	if not cid:
 		return a.error.label(400, "errors.invalid_category")
@@ -1043,11 +1063,12 @@ def action_categories_update(a):
 		return a.error.label(400, "errors.invalid_id")
 	label = a.input("label")
 	default_raw = a.input("default")
-	destinations_json = a.input("destinations", "").strip()
 	default = None
 	if default_raw != None and default_raw != "":
 		default = 1 if default_raw == "1" or default_raw == "true" else 0
-	destinations = json.decode(destinations_json) if destinations_json else None
+	valid, destinations = destinations_input(a)
+	if not valid:
+		return a.error.label(400, "errors.invalid_destinations")
 	ok = function_category_update({}, id, label, destinations, default)
 	if not ok:
 		return a.error.label(404, "errors.not_found")
@@ -1375,6 +1396,8 @@ def function_push_ack(context, account_event_ids=None, subscription=""):
 		return {"acked": 0}
 	acked = 0
 	for ae in account_event_ids:
+		if type(ae) != "dict":
+			continue
 		account = ae.get("account", "")
 		event_id = ae.get("event_id", "")
 		if not account or not event_id:
@@ -1492,8 +1515,8 @@ def action_push_ack(a):
 	events_raw = a.input("events", "")
 	if not events_raw:
 		return {"data": {"acked": 0}}
-	events = json.decode(events_raw)
-	if type(events) != "list":
+	events = json.decode(events_raw, None)
+	if type(events) != "list" or len(events) > 1000:
 		return a.error.label(400, "errors.invalid_subscription")
 	subscription = a.input("subscription", "").strip()
 	return {"data": function_push_ack(None, account_event_ids=events, subscription=subscription) or {"acked": 0}}

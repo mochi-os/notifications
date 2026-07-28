@@ -339,6 +339,73 @@ if [ -n "$FEED_TOKEN" ]; then
 fi
 
 # ============================================================================
+# MALFORMED INPUT TESTS
+# ============================================================================
+
+echo ""
+echo "--- Malformed Input Tests ---"
+
+# Test: Malformed destinations JSON answers a clean 400
+RESULT=$(notif_curl POST "/-/categories/create" -d "label=BadDest&destinations={not-json")
+if echo "$RESULT" | grep -q "Invalid destinations"; then
+    pass "Malformed destinations JSON returns clean 400"
+else
+    fail "Malformed destinations JSON returns clean 400" "$(echo "$RESULT" | head -c 200)"
+fi
+
+# Test: Non-dict destination elements answer a clean 400
+RESULT=$(notif_curl POST "/-/categories/create" -d 'label=BadDest&destinations=["x"]')
+if echo "$RESULT" | grep -q "Invalid destinations"; then
+    pass "Non-dict destination elements return clean 400"
+else
+    fail "Non-dict destination elements return clean 400" "$(echo "$RESULT" | head -c 200)"
+fi
+
+# Test: Oversized destinations list answers a clean 400
+BIG_DESTS=$(python3 -c "import json; print(json.dumps([{'type':'web','target':str(i)} for i in range(101)], separators=(',', ':')))")
+RESULT=$(notif_curl POST "/-/categories/create" -d "label=BadDest&destinations=$BIG_DESTS")
+if echo "$RESULT" | grep -q "Invalid destinations"; then
+    pass "Oversized destinations list returns clean 400"
+else
+    fail "Oversized destinations list returns clean 400" "$(echo "$RESULT" | head -c 200)"
+fi
+
+# Test: The settings proxy answers the same clean 400
+RESULT=$(settings_curl POST "/-/notifications/categories/create" -d "label=BadDest&destinations={not-json")
+if echo "$RESULT" | grep -q "Invalid destinations"; then
+    pass "Settings proxy returns clean 400 for malformed destinations"
+else
+    fail "Settings proxy returns clean 400 for malformed destinations" "$(echo "$RESULT" | head -c 200)"
+fi
+
+# Test: Malformed ack events JSON answers a clean 400
+RESULT=$(notif_curl POST "/-/push/ack" -d "events={bad")
+if echo "$RESULT" | grep -q "Invalid push subscription"; then
+    pass "Malformed ack events returns clean 400"
+else
+    fail "Malformed ack events returns clean 400" "$(echo "$RESULT" | head -c 200)"
+fi
+
+# Test: Oversized ack batch answers a clean 400
+BIG_EVENTS=$(python3 -c "import json; print(json.dumps([{'account':'x','event_id':str(i)} for i in range(1001)], separators=(',', ':')))")
+RESULT=$(notif_curl POST "/-/push/ack" -d "events=$BIG_EVENTS")
+if echo "$RESULT" | grep -q "Invalid push subscription"; then
+    pass "Oversized ack batch returns clean 400"
+else
+    fail "Oversized ack batch returns clean 400" "$(echo "$RESULT" | head -c 200)"
+fi
+
+# Cleanup: pre-fix aborts leak a half-created category; remove any BadDest rows
+notif_curl GET "/-/categories/list" | python3 -c "
+import sys, json
+for c in json.load(sys.stdin).get('data', []):
+    if c.get('label') == 'BadDest':
+        print(c['id'])
+" 2>/dev/null | while read -r CID; do
+    notif_curl POST "/-/categories/delete" -d "id=$CID&reassign_to=1" > /dev/null
+done
+
+# ============================================================================
 # EXTERNAL URL PROVIDER TESTS
 # ============================================================================
 
