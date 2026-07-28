@@ -389,6 +389,9 @@ def action_accounts_update(a):
 	fields = {}
 	label = a.input("label")
 	if label != None:
+		if len(label) > 4096:
+			a.error.label(400, "errors.value_too_long", maximum=4096)
+			return
 		fields["label"] = label
 
 	result = mochi.account.update(id, **fields)
@@ -775,7 +778,8 @@ def function_category_list(context):
 	return result
 
 def function_category_create(context, label="", destinations=None, default=None):
-	if not label or not mochi.text.valid(label, "text"):
+	# 100 matches the RSS feed-name cap; mochi.text.valid alone allows 1MB.
+	if not label or len(label) > 100 or not mochi.text.valid(label, "text"):
 		return None
 	now = mochi.time.now()
 	cid = mochi.uid()
@@ -799,7 +803,7 @@ def function_category_update(context, id=None, label=None, destinations=None, de
 	if not mochi.db.exists("select 1 from categories where id = ?", id):
 		return False
 	if label != None:
-		if not mochi.text.valid(label, "text"):
+		if len(label) > 100 or not mochi.text.valid(label, "text"):
 			return False
 		row_set("categories", "id = ?", [id], {"label": label})
 	if default != None and id != "0":

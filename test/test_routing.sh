@@ -424,6 +424,24 @@ else
     fail "Oversized ack batch returns clean 400" "$(echo "$RESULT" | head -c 200)"
 fi
 
+# Test: Over-length category label is rejected
+LONG_LABEL=$(python3 -c "print('L' * 200)")
+RESULT=$(notif_curl POST "/-/categories/create" -d "label=$LONG_LABEL")
+if echo "$RESULT" | grep -q "Invalid category"; then
+    pass "Over-length category label rejected"
+else
+    fail "Over-length category label rejected" "$(echo "$RESULT" | head -c 150)"
+fi
+# Red-phase cleanup: an accepted long label persisted a category; remove it
+notif_curl GET "/-/categories/list" | python3 -c "
+import sys, json
+for c in json.load(sys.stdin).get('data', []):
+    if len(c.get('label', '')) > 100:
+        print(c['id'])
+" 2>/dev/null | while read -r CID; do
+    notif_curl POST "/-/categories/delete" -d "id=$CID&reassign_to=1" > /dev/null
+done
+
 # Cleanup: pre-fix aborts leak a half-created category; remove any BadDest rows
 notif_curl GET "/-/categories/list" | python3 -c "
 import sys, json
@@ -464,6 +482,23 @@ if echo "$RESULT" | python3 -c "import sys, json; d = json.load(sys.stdin); acco
     pass "External URL account immediately verified"
 else
     fail "External URL account immediately verified" "$RESULT"
+fi
+
+# Test: Over-length account label updates are rejected on both surfaces
+LONG_ALABEL=$(python3 -c "print('A' * 5000)")
+if [ -n "$URL_ID" ]; then
+    RESULT=$(notif_curl POST "/-/accounts/update" -d "id=$URL_ID&label=$LONG_ALABEL")
+    if echo "$RESULT" | grep -q "too long"; then
+        pass "Over-length account label rejected (notifications)"
+    else
+        fail "Over-length account label rejected (notifications)" "$(echo "$RESULT" | head -c 150)"
+    fi
+    RESULT=$(settings_curl POST "/-/accounts/update" -d "id=$URL_ID&label=$LONG_ALABEL")
+    if echo "$RESULT" | grep -q "too long"; then
+        pass "Over-length account label rejected (settings)"
+    else
+        fail "Over-length account label rejected (settings)" "$(echo "$RESULT" | head -c 150)"
+    fi
 fi
 
 # ============================================================================
