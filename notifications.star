@@ -949,15 +949,16 @@ def apply_destinations(category_id, destinations):
 		return
 	row_remove("destinations", "category = ?", [category_id])
 	for dest in destinations:
-		# Service callers can pass arbitrary shapes; skip non-dict elements
-		# rather than aborting mid-way (the HTTP actions reject them upfront).
+		# Service callers can pass arbitrary shapes; skip elements that are
+		# not dicts, carry an unknown type, or an over-long target rather
+		# than aborting or persisting junk (the HTTP actions reject upfront).
 		if type(dest) != "dict":
 			continue
 		dest_type = dest.get("type", "")
-		dest_target = dest.get("target", "")
-		if not dest_type:
+		dest_target = str(dest.get("target", ""))
+		if dest_type not in ("web", "account", "rss") or len(dest_target) > 64:
 			continue
-		row_merge("destinations", {"category": category_id, "type": dest_type, "target": str(dest_target)})
+		row_merge("destinations", {"category": category_id, "type": dest_type, "target": dest_target})
 
 # destinations_input decodes and shape-checks the client's destinations JSON
 # parameter: a bounded list of dicts, or absent. Returns (valid, destinations);
@@ -971,6 +972,10 @@ def destinations_input(a):
 		return False, None
 	for dest in destinations:
 		if type(dest) != "dict":
+			return False, None
+		if dest.get("type", "") not in ("web", "account", "rss"):
+			return False, None
+		if len(str(dest.get("target", ""))) > 64:
 			return False, None
 	return True, destinations
 

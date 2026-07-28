@@ -424,6 +424,23 @@ else
     fail "Oversized ack batch returns clean 400" "$(echo "$RESULT" | head -c 200)"
 fi
 
+# Test: Unknown destination type answers a clean 400
+RESULT=$(notif_curl POST "/-/categories/create" -d 'label=BadDest&destinations=[{"type":"evil","target":"x"}]')
+if echo "$RESULT" | grep -q "Invalid destinations"; then
+    pass "Unknown destination type returns clean 400"
+else
+    fail "Unknown destination type returns clean 400" "$(echo "$RESULT" | head -c 150)"
+fi
+
+# Test: Oversized destination target answers a clean 400
+LONG_TARGET=$(python3 -c "print('t' * 100)")
+RESULT=$(notif_curl POST "/-/categories/create" -d "label=BadDest&destinations=[{\"type\":\"web\",\"target\":\"$LONG_TARGET\"}]")
+if echo "$RESULT" | grep -q "Invalid destinations"; then
+    pass "Oversized destination target returns clean 400"
+else
+    fail "Oversized destination target returns clean 400" "$(echo "$RESULT" | head -c 150)"
+fi
+
 # Test: Over-length category label is rejected
 LONG_LABEL=$(python3 -c "print('L' * 200)")
 RESULT=$(notif_curl POST "/-/categories/create" -d "label=$LONG_LABEL")
