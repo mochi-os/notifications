@@ -564,6 +564,25 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	if not title or not body:
 		return 0
 
+	# Size limits. Identity keys are rejected over-length - truncating them
+	# could merge two distinct topics into one row - while display fields
+	# are truncated and delivered: a notification is a courtesy signal, and
+	# dropping it because a remote post title is huge silently loses the
+	# event. Truncation is by byte; only abusive input can lose a trailing
+	# multi-byte character, which downstream encoding replaces harmlessly.
+	if len(topic) > 128 or len(object) > 256 or len(event_id) > 256:
+		return 0
+	title = title[:256]
+	body = body[:2048]
+	label = label[:256]
+	name = name[:256]
+	sender = sender[:256]
+	# A truncated URL is broken anyway; degrade to none.
+	if len(url) > 2048:
+		url = ""
+	if count != None:
+		count = min(max(count, 0), 999999)
+
 	ensure_commit_hook_registered()
 
 	row = mochi.db.row(
@@ -1137,6 +1156,10 @@ def function_accounts_remove(context, id=0):
 def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 	if not auth or not p256dh:
 		return None
+	# Bound like the accounts paths: over-length registration input is a
+	# caller bug, refused outright (real auth is ~22 chars, p256dh ~88).
+	if len(auth) > 512 or len(p256dh) > 512 or len(endpoint) > 2048 or len(label) > 256:
+		return None
 
 	fields = {"auth": auth, "p256dh": p256dh}
 	if label:
@@ -1176,6 +1199,8 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 # pointing at it survive token refreshes.
 def function_push_register_fcm(context, token="", install_id="", device=""):
 	if not token or not install_id:
+		return None
+	if len(token) > 512 or len(install_id) > 256 or len(device) > 256:
 		return None
 	kwargs = {"token": token, "install_id": install_id}
 	if device:

@@ -266,6 +266,50 @@ notif_curl POST "/-/push/accounts/remove" -d "id=$SUB_A" > /dev/null
 notif_curl POST "/-/push/accounts/remove" -d "id=$SUB_B" > /dev/null
 curl -s "http://localhost:8081/test/test_notifications_cleanup?object=drain-probe" > /dev/null
 
+# ============================================================================
+# INPUT SIZE LIMIT TESTS
+# ============================================================================
+
+echo ""
+echo "--- Input Size Limit Tests ---"
+
+# Test: Oversized body is truncated but the notification still arrives
+LONG_BODY=$(python3 -c "print('a' * 5000)")
+curl -s -X POST -d "object=size-probe&body=$LONG_BODY" "http://localhost:8081/test/test_notifications_emit" > /dev/null
+RESULT=$(notif_curl GET "/-/list")
+if echo "$RESULT" | python3 -c "
+import sys, json
+rows = json.load(sys.stdin)['data']
+row = next((r for r in rows if r['object'] == 'size-probe'), None)
+sys.exit(0 if row and 0 < len(row['body']) <= 2048 else 1)
+" 2>/dev/null; then
+    pass "Oversized body truncated but delivered"
+else
+    fail "Oversized body truncated but delivered" "$(echo "$RESULT" | head -c 200)"
+fi
+curl -s "http://localhost:8081/test/test_notifications_cleanup?object=size-probe" > /dev/null
+
+# Test: Oversized topic is rejected (identity keys are never truncated)
+LONG_TOPIC=$(python3 -c "print('t' * 300)")
+RESULT=$(curl -s -X POST -d "topic=$LONG_TOPIC&object=size-probe-2&body=x" "http://localhost:8081/test/test_notifications_emit")
+if echo "$RESULT" | grep -q '"sent":0'; then
+    pass "Oversized topic rejected"
+else
+    fail "Oversized topic rejected" "$RESULT"
+    curl -s -X POST -d "topic=$LONG_TOPIC&object=size-probe-2" "http://localhost:8081/test/test_notifications_cleanup" > /dev/null
+fi
+
+# Test: Oversized push registration endpoint is refused
+LONG_ENDPOINT=$(python3 -c "print('https://example.com/' + 'e' * 3000)")
+RESULT=$(notif_curl POST "/-/push/register" -d "auth=WPF1D0bTRYUiNH98kIfhjA&p256dh=BGc2vQrRsQGN6oKjmkP_3RaMtxAaAevBBe7N0xCv1tIJaEGI3DRD0fA73tk5Mt1JsmvP6Z8tFc8MGD7e2eUKHKM&endpoint=$LONG_ENDPOINT")
+if echo "$RESULT" | grep -qi "registration failed"; then
+    pass "Oversized push registration refused"
+else
+    fail "Oversized push registration refused" "$(echo "$RESULT" | head -c 200)"
+    LEAK_ID=$(echo "$RESULT" | extract_id)
+    [ -n "$LEAK_ID" ] && notif_curl POST "/-/push/accounts/remove" -d "id=$LEAK_ID" > /dev/null
+fi
+
 # Test: Invalid feed token returns 401
 RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/-/rss?token=invalid_token_12345")
 if [ "$RESULT" = "401" ]; then
