@@ -249,19 +249,41 @@ def action_rss(a):
 		a.error.label(401, "errors.authentication_required")
 		return
 
-	feed_name = "Notifications"
+	feed_name = mochi.app.label("app.name")
 	feed_token = a.input("token", "").strip()
+	feed = None
 	if feed_token:
-		feed = mochi.db.row("select name from rss where token = ?", feed_token)
-		if feed:
-			feed_name = feed["name"]
+		# The token identifies the feed and is the gate: an unknown token was
+		# revoked with its feed, and a disabled feed's token stays revoked
+		# until the feed is re-enabled. (A token invalid at the core layer
+		# never reaches here - that's a 401 with no user.)
+		feed = mochi.db.row("select id, name, enabled from rss where token = ?", feed_token)
+		if not feed or not feed["enabled"]:
+			return a.error.label(404, "errors.feed_not_found")
+		feed_name = feed["name"]
 
 	function_expire({})
 
-	rows = mochi.db.rows("""
-		select id, app, topic, content, link, count, created
-		from notifications order by created desc limit 100
-	""")
+	if feed:
+		# A feed carries only its routed content: notifications whose topic's
+		# category lists this feed as an rss destination. Topics with no row,
+		# category NULL (web-only) or "0" (dropped) reach no feed, and a feed
+		# in no category (created with "add to existing subscriptions" off,
+		# or later removed from all categories) carries nothing.
+		rows = mochi.db.rows("""
+			select n.id, n.app, n.topic, n.content, n.link, n.count, n.created
+			from notifications n
+			join topics t on n.app = t.app and n.topic = t.topic and n.object = t.object
+			join destinations d on d.category = t.category
+			where d.type = 'rss' and d.target = ?
+			order by n.created desc limit 100
+		""", feed["id"])
+	else:
+		# Session access without a token is the user's own full bell view.
+		rows = mochi.db.rows("""
+			select id, app, topic, content, link, count, created
+			from notifications order by created desc limit 100
+		""")
 
 	all_apps = mochi.app.list()
 	app_names = {}
@@ -278,7 +300,7 @@ def action_rss(a):
 	a.print('<channel>\n')
 	a.print('<title>' + escape_xml(feed_name) + '</title>\n')
 	a.print('<link>/notifications</link>\n')
-	a.print('<description>Your notifications</description>\n')
+	a.print('<description>' + escape_xml(mochi.app.label("rss.description")) + '</description>\n')
 
 	if rows:
 		a.print('<lastBuildDate>' + mochi.time.local(rows[0]["created"], "rfc822") + '</lastBuildDate>\n')
