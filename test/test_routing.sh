@@ -164,6 +164,17 @@ else
     fail "Re-enabled feed serves content again" "$RESULT"
 fi
 
+# Test: enabled=true means enabled (only "1" was parsed as true, so boolean
+# form silently disabled the feed)
+notif_curl POST "/-/rss/update" -d "id=$RSS_FEED_ID&enabled=true" > /dev/null
+RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/-/rss?token=$FEED_TOKEN")
+if [ "$RESULT" = "200" ]; then
+    pass "enabled=true keeps the feed enabled"
+else
+    fail "enabled=true keeps the feed enabled" "Got HTTP $RESULT"
+    notif_curl POST "/-/rss/update" -d "id=$RSS_FEED_ID&enabled=1" > /dev/null
+fi
+
 # Cleanup: remove the probe notification/topic and the unsubscribed feed
 curl -s "http://localhost:8081/test/test_notifications_cleanup" > /dev/null
 if [ -n "$UNSUB_FEED_ID" ]; then

@@ -135,7 +135,7 @@ msgstr "කණ්ඩායමක්/app එකක් එක් කරන්න"
 msgid "Add to existing notifications"
 msgstr "පවතින දැනුම්දීම් වෙත එක් කරන්න"
 
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:394
 msgid "Add to existing subscriptions"
 msgstr "පවතින දායකත්වයන් වෙත එක් කරන්න"
 
@@ -229,7 +229,7 @@ msgstr "මුල් පිටුවට ආපසු"
 msgid "Banner"
 msgstr "බැනරය"
 
-#: src/features/notification/index.tsx:79
+#: src/features/notification/index.tsx:81
 msgid "Blocked navigation to untrusted link"
 msgstr "විශ්වාස නොකළ සබැඳියකට සංචාලනය අවහිර කරන ලදී"
 
@@ -251,7 +251,7 @@ msgstr "බ්‍රවුසර දැනුම්දීම්"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:413
+#: src/components/rss-dialog.tsx:407
 msgid "Cancel"
 msgstr "අවලංගු කරන්න"
 
@@ -299,7 +299,7 @@ msgid "Clear"
 msgstr "හිස් කරන්න"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:228
+#: src/features/notification/index.tsx:231
 msgid "Clear all"
 msgstr "සියල්ල හිස් කරන්න"
 
@@ -321,7 +321,7 @@ msgstr "තේරීම හිස් කරන්න"
 msgid "Clear selection (Escape)"
 msgstr "තේරීම හිස් කරන්න (Escape)"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:175
 msgid "Clearing notifications..."
 msgstr "දැනුම්දීම් හිස් කරමින්..."
 
@@ -416,16 +416,16 @@ msgid "Copied"
 msgstr "පිටපත් කළා"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:124
-#: src/components/rss-dialog.tsx:133
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "Clipboard එකට පිටපත් කරන ලදී"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:317
-#: src/components/rss-dialog.tsx:326
-#: src/components/rss-dialog.tsx:443
-#: src/components/rss-dialog.tsx:452
+#: src/components/rss-dialog.tsx:311
+#: src/components/rss-dialog.tsx:320
+#: src/components/rss-dialog.tsx:437
+#: src/components/rss-dialog.tsx:446
 msgid "Copy"
 msgstr "පිටපත් කරන්න"
 
@@ -450,20 +450,20 @@ msgstr "එම ගිණුම සමඟ සත්‍යාපනය කළ න�
 msgid "Create {0}"
 msgstr "{0} සාදන්න"
 
-#: src/components/rss-dialog.tsx:377
-#: src/components/rss-dialog.tsx:424
+#: src/components/rss-dialog.tsx:371
+#: src/components/rss-dialog.tsx:418
 msgid "Create feed"
 msgstr "පෝෂණයක් නිර්මාණය කරන්න"
 
-#: src/components/rss-dialog.tsx:261
+#: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "ආරම්භ කිරීමට එකක් නිර්මාණය කරන්න."
 
-#: src/components/rss-dialog.tsx:234
+#: src/components/rss-dialog.tsx:233
 msgid "Create RSS feed"
 msgstr "RSS පෝෂණයක් සාදන්න"
 
-#: src/components/rss-dialog.tsx:144
+#: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
 msgstr "RSS සංග්‍රහය සාදමින්..."
 
@@ -505,16 +505,16 @@ msgstr "පෙරනිමි"
 msgid "Default AI account"
 msgstr "පෙරනිමි AI ගිණුම"
 
-#: src/components/rss-dialog.tsx:472
+#: src/components/rss-dialog.tsx:466
 msgid "Delete"
 msgstr "මකන්න"
 
-#: src/components/rss-dialog.tsx:348
-#: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:342
+#: src/components/rss-dialog.tsx:347
 msgid "Delete feed"
 msgstr "පෝෂණය මකන්න"
 
-#: src/components/rss-dialog.tsx:470
+#: src/components/rss-dialog.tsx:464
 msgid "Delete feed?"
 msgstr "පෝෂණය මකන්නද?"
 
@@ -522,7 +522,7 @@ msgstr "පෝෂණය මකන්නද?"
 msgid "Delete your account on the old server"
 msgstr "පැරණි සේවාදායකයේ ඔබේ ගිණුම මකන්න"
 
-#: src/components/rss-dialog.tsx:198
+#: src/components/rss-dialog.tsx:197
 msgid "Deleting feed..."
 msgstr "පෝෂණය මකමින්..."
 
@@ -575,7 +575,7 @@ msgstr "ඉවත ලන්න"
 msgid "Displays the mobile sidebar."
 msgstr "ජංගම පැති තීරුව සංදර්ශනය කරයි."
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:451
 msgid "Done"
 msgstr "නිමයි"
 
@@ -592,7 +592,7 @@ msgstr "බාගත කිරීම අසාර්ථක විය"
 msgid "Dyslexia-friendly"
 msgstr "ඩිස්ලෙක්සියාවට මිත්‍ර"
 
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:383
 msgid "e.g., Feedly, NewsBlur"
 msgstr "උදා. Feedly, NewsBlur"
 
@@ -600,8 +600,8 @@ msgstr "උදා. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} සංස්කරණය කරන්න"
 
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:339
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:333
 msgid "Edit feed"
 msgstr "පෝෂණය සංස්කරණය කරන්න"
 
@@ -648,7 +648,7 @@ msgstr "ගිණුම එක් කිරීමට අසමත් විය"
 msgid "Failed to add tag"
 msgstr "ටැගය එක් කිරීමට අසමත් විය"
 
-#: src/features/notification/index.tsx:174
+#: src/features/notification/index.tsx:177
 msgid "Failed to clear notifications"
 msgstr "දැනුම්දීම් හිස් කිරීමට අසමත් විය"
 
@@ -657,11 +657,11 @@ msgstr "දැනුම්දීම් හිස් කිරීමට අසම
 msgid "Failed to copy"
 msgstr "පිටපත් කිරීමට අසමත් විය"
 
-#: src/components/rss-dialog.tsx:146
+#: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
 msgstr "RSS සංග්‍රහය සෑදීමට අසමත් විය"
 
-#: src/components/rss-dialog.tsx:200
+#: src/components/rss-dialog.tsx:199
 msgid "Failed to delete feed"
 msgstr "පෝෂණය මැකීමට අසමත් විය"
 
@@ -677,11 +677,11 @@ msgstr "රූපය පූරණය කිරීමට අසමත් වි�
 msgid "Failed to load video"
 msgstr "වීඩියෝව පූරණය කිරීමට අසමත් විය"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:165
 msgid "Failed to mark all as read"
 msgstr "සියල්ල කියවූ ලෙස සලකුණු කිරීමට අසමත් විය"
 
-#: src/features/notification/index.tsx:152
+#: src/features/notification/index.tsx:155
 msgid "Failed to mark as read"
 msgstr "කියවූ ලෙස සලකුණු කිරීමට අසමත් විය"
 
@@ -689,7 +689,7 @@ msgstr "කියවූ ලෙස සලකුණු කිරීමට අස�
 msgid "Failed to remove account"
 msgstr "ගිණුම ඉවත් කිරීමට අසමත් විය"
 
-#: src/components/rss-dialog.tsx:180
+#: src/components/rss-dialog.tsx:179
 msgid "Failed to rename feed"
 msgstr "පෝෂණය නැවත නම් කිරීමට අසමත් විය"
 
@@ -701,23 +701,23 @@ msgstr "සත්‍යාපන කේතය යැවීමට අසමත්
 msgid "Failed to update category"
 msgstr "කාණ්ඩය යාවත්කාලීන කිරීමට අසමත් විය"
 
-#: src/components/rss-dialog.tsx:215
+#: src/components/rss-dialog.tsx:214
 msgid "Failed to update feed"
 msgstr "පෝෂණය යාවත්කාලීන කිරීමට අසමත් විය"
 
-#: src/components/rss-dialog.tsx:235
+#: src/components/rss-dialog.tsx:234
 msgid "Feed created"
 msgstr "පෝෂණය සාදන ලදී"
 
-#: src/components/rss-dialog.tsx:199
+#: src/components/rss-dialog.tsx:198
 msgid "Feed deleted"
 msgstr "පෝෂණය මකන ලදී"
 
-#: src/components/rss-dialog.tsx:386
+#: src/components/rss-dialog.tsx:380
 msgid "Feed name"
 msgstr "පෝෂණ නාමය"
 
-#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:178
 msgid "Feed renamed"
 msgstr "පෝෂණය නැවත නම් කරන ලදී"
 
@@ -934,11 +934,11 @@ msgstr "දැනුම්දීම් සහ සේවා සඳහා ඔබ�
 msgid "Mark all as read"
 msgstr "සියල්ල කියවූ ලෙස සලකුණු කරන්න"
 
-#: src/features/notification/index.tsx:213
+#: src/features/notification/index.tsx:216
 msgid "Mark all read"
 msgstr "සියල්ල කියවූ ලෙස සලකුණු කරන්න"
 
-#: src/features/notification/index.tsx:159
+#: src/features/notification/index.tsx:162
 msgid "Marking all as read..."
 msgstr "සියල්ල කියවූ ලෙස සලකුණු කරමින්..."
 
@@ -1000,7 +1000,7 @@ msgstr "සම්බන්ධිත ගිණුම් නැත"
 msgid "No groups available"
 msgstr "කණ්ඩායම් ලබා ගත නොහැක"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No notifications"
 msgstr "දැනුම්දීම් නැත"
 
@@ -1030,7 +1030,7 @@ msgstr "ප්‍රතිඵල හමු නොවීය"
 msgid "No results found."
 msgstr "ප්‍රතිඵල හමු නොවීය."
 
-#: src/components/rss-dialog.tsx:260
+#: src/components/rss-dialog.tsx:254
 msgid "No RSS feeds yet"
 msgstr "තවම RSS පෝෂණ නොමැත"
 
@@ -1042,7 +1042,7 @@ msgstr "වේලා කලාප හමු නොවීය."
 msgid "No topic record yet — try again after the next notification."
 msgstr "තවම topic වාර්තාවක් නැත — ඊළඟ දැනුම්දීමෙන් පසු නැවත උත්සාහ කරන්න."
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No unread notifications"
 msgstr "නොකියවූ දැනුම්දීම් නැත"
 
@@ -1074,8 +1074,8 @@ msgstr "සකසා නැත"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:184
+#: src/features/notification/index.tsx:130
+#: src/features/notification/index.tsx:187
 msgid "Notifications"
 msgstr "දැනුම්දීම්"
 
@@ -1084,8 +1084,8 @@ msgstr "දැනුම්දීම්"
 msgid "Notifications: {0}"
 msgstr "දැනුම්දීම්: {0}"
 
-#: src/components/rss-dialog.tsx:358
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:359
 msgid "Notify by default"
 msgstr "පෙරනිමියෙන් දැනුම් දෙන්න"
 
@@ -1289,11 +1289,12 @@ msgstr "දකුණේ සිට වමට"
 msgid "Rows per page"
 msgstr "පිටුවකට පේළි"
 
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "RSS පෝෂණය"
 
-#: src/components/rss-dialog.tsx:236
+#: src/components/rss-dialog.tsx:235
+#: src/features/notification/index.tsx:236
 msgid "RSS feeds"
 msgstr "RSS පෝෂණ"
 
@@ -1303,17 +1304,13 @@ msgstr "සෙනසුරාදා"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:293
-#: src/components/rss-dialog.tsx:302
+#: src/components/rss-dialog.tsx:287
+#: src/components/rss-dialog.tsx:296
 msgid "Save"
 msgstr "සුරකින්න"
 
-#: src/components/rss-dialog.tsx:240
-msgid "Save this URL now. You won't be able to see the token again."
-msgstr "මෙම URL දැන් සුරකින්න. ඔබට ටෝකනය නැවත දැකිය නොහැක."
-
-#: src/components/rss-dialog.tsx:178
-#: src/components/rss-dialog.tsx:213
+#: src/components/rss-dialog.tsx:177
+#: src/components/rss-dialog.tsx:212
 msgid "Saving..."
 msgstr "සුරකිමින්..."
 
@@ -1459,7 +1456,7 @@ msgstr "මූලාරම්භය සහ ගමනාන්තය සකසන
 msgid "Settings"
 msgstr "සැකසුම්"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:196
 msgid "Show all"
 msgstr "සියල්ල පෙන්වන්න"
 
@@ -1573,7 +1570,7 @@ msgstr "theme සැකසුම්"
 msgid "This page has not been created yet."
 msgstr "මෙම පිටුව තවම සාදා නැත."
 
-#: src/components/rss-dialog.tsx:471
+#: src/components/rss-dialog.tsx:465
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "මෙය මෙම පෝෂණය ස්ථිරවම මකා දමයි. එය භාවිතා කරන කිසිදු RSS කියවනයකට ඔබේ දැනුම්දීම් වෙත තවදුරටත් ප්‍රවේශ විය නොහැක."
 
@@ -1689,7 +1686,7 @@ msgstr "නොදන්නා"
 msgid "Unverified"
 msgstr "සත්‍යාපනය නොකළ"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:397
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ඔබේ වර්තමාන දැනුම්දීම් දායකත්ව සඳහා මෙම පෝෂණය භාවිතා කරන්න"
 

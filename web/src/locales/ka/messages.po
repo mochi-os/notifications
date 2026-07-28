@@ -135,7 +135,7 @@ msgstr "გუნდის/აპის დამატება"
 msgid "Add to existing notifications"
 msgstr "არსებულ შეტყობინებებში დამატება"
 
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:394
 msgid "Add to existing subscriptions"
 msgstr "არსებულ ხელმოწერებში დამატება"
 
@@ -229,7 +229,7 @@ msgstr "მთავარზე დაბრუნება"
 msgid "Banner"
 msgstr "ბანერი"
 
-#: src/features/notification/index.tsx:79
+#: src/features/notification/index.tsx:81
 msgid "Blocked navigation to untrusted link"
 msgstr "დაბლოკილია უსანდო ბმულზე ნავიგაცია"
 
@@ -251,7 +251,7 @@ msgstr "ბრაუზერის შეტყობინებები"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:413
+#: src/components/rss-dialog.tsx:407
 msgid "Cancel"
 msgstr "გაუქმება"
 
@@ -299,7 +299,7 @@ msgid "Clear"
 msgstr "გასუფთავება"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:228
+#: src/features/notification/index.tsx:231
 msgid "Clear all"
 msgstr "ყველაფრის გასუფთავება"
 
@@ -321,7 +321,7 @@ msgstr "არჩევის გასუფთავება"
 msgid "Clear selection (Escape)"
 msgstr "არჩევის გასუფთავება (Escape)"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:175
 msgid "Clearing notifications..."
 msgstr "შეტყობინებების გასუფთავება..."
 
@@ -416,16 +416,16 @@ msgid "Copied"
 msgstr "დაკოპირდა"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:124
-#: src/components/rss-dialog.tsx:133
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "ბუფერში დაკოპირდა"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:317
-#: src/components/rss-dialog.tsx:326
-#: src/components/rss-dialog.tsx:443
-#: src/components/rss-dialog.tsx:452
+#: src/components/rss-dialog.tsx:311
+#: src/components/rss-dialog.tsx:320
+#: src/components/rss-dialog.tsx:437
+#: src/components/rss-dialog.tsx:446
 msgid "Copy"
 msgstr "კოპირება"
 
@@ -450,20 +450,20 @@ msgstr "ამ ანგარიშით ვერ მოხერხდა �
 msgid "Create {0}"
 msgstr "{0}-ის შექმნა"
 
-#: src/components/rss-dialog.tsx:377
-#: src/components/rss-dialog.tsx:424
+#: src/components/rss-dialog.tsx:371
+#: src/components/rss-dialog.tsx:418
 msgid "Create feed"
 msgstr "feed-ის შექმნა"
 
-#: src/components/rss-dialog.tsx:261
+#: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "შექმენით ერთი დასაწყებად."
 
-#: src/components/rss-dialog.tsx:234
+#: src/components/rss-dialog.tsx:233
 msgid "Create RSS feed"
 msgstr "RSS feed-ის შექმნა"
 
-#: src/components/rss-dialog.tsx:144
+#: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
 msgstr "RSS არხის შექმნა..."
 
@@ -505,16 +505,16 @@ msgstr "ნაგულისხმევი"
 msgid "Default AI account"
 msgstr "ნაგულისხმევი AI ანგარიში"
 
-#: src/components/rss-dialog.tsx:472
+#: src/components/rss-dialog.tsx:466
 msgid "Delete"
 msgstr "წაშლა"
 
-#: src/components/rss-dialog.tsx:348
-#: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:342
+#: src/components/rss-dialog.tsx:347
 msgid "Delete feed"
 msgstr "feed-ის წაშლა"
 
-#: src/components/rss-dialog.tsx:470
+#: src/components/rss-dialog.tsx:464
 msgid "Delete feed?"
 msgstr "feed-ის წაშლა?"
 
@@ -522,7 +522,7 @@ msgstr "feed-ის წაშლა?"
 msgid "Delete your account on the old server"
 msgstr "წაშალეთ თქვენი ანგარიში ძველ სერვერზე"
 
-#: src/components/rss-dialog.tsx:198
+#: src/components/rss-dialog.tsx:197
 msgid "Deleting feed..."
 msgstr "ფიდის წაშლა..."
 
@@ -575,7 +575,7 @@ msgstr "უარყოფა"
 msgid "Displays the mobile sidebar."
 msgstr "აჩვენებს მობილურის გვერდით პანელს."
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:451
 msgid "Done"
 msgstr "მზადაა"
 
@@ -592,7 +592,7 @@ msgstr "ჩამოტვირთვა ვერ მოხერხდა"
 msgid "Dyslexia-friendly"
 msgstr "დისლექსიის თავსებადი"
 
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:383
 msgid "e.g., Feedly, NewsBlur"
 msgstr "მაგ. my-album.zip"
 
@@ -600,8 +600,8 @@ msgstr "მაგ. my-album.zip"
 msgid "Edit {label}"
 msgstr "{label}-ის რედაქტირება"
 
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:339
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:333
 msgid "Edit feed"
 msgstr "არხის რედაქტირება"
 
@@ -648,7 +648,7 @@ msgstr "ანგარიშის დამატება ვერ მოხ
 msgid "Failed to add tag"
 msgstr "ტეგის დამატება ვერ მოხერხდა"
 
-#: src/features/notification/index.tsx:174
+#: src/features/notification/index.tsx:177
 msgid "Failed to clear notifications"
 msgstr "შეტყობინებების გასუფთავება ვერ მოხერხდა"
 
@@ -657,11 +657,11 @@ msgstr "შეტყობინებების გასუფთავე�
 msgid "Failed to copy"
 msgstr "კოპირება ვერ მოხერხდა"
 
-#: src/components/rss-dialog.tsx:146
+#: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
 msgstr "RSS არხის შექმნა ვერ მოხერხდა"
 
-#: src/components/rss-dialog.tsx:200
+#: src/components/rss-dialog.tsx:199
 msgid "Failed to delete feed"
 msgstr "არხის წაშლა ვერ მოხერხდა"
 
@@ -677,11 +677,11 @@ msgstr "სურათის ჩატვირთვა ვერ მოხე
 msgid "Failed to load video"
 msgstr "ვიდეოს ჩატვირთვა ვერ მოხერხდა"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:165
 msgid "Failed to mark all as read"
 msgstr "ყველას წაკითხულად მონიშვნა ვერ მოხერხდა"
 
-#: src/features/notification/index.tsx:152
+#: src/features/notification/index.tsx:155
 msgid "Failed to mark as read"
 msgstr "წაკითხულად მონიშვნა ვერ მოხერხდა"
 
@@ -689,7 +689,7 @@ msgstr "წაკითხულად მონიშვნა ვერ მო
 msgid "Failed to remove account"
 msgstr "ანგარიშის წაშლა ვერ მოხერხდა"
 
-#: src/components/rss-dialog.tsx:180
+#: src/components/rss-dialog.tsx:179
 msgid "Failed to rename feed"
 msgstr "არხის გადარქმევა ვერ მოხერხდა"
 
@@ -701,23 +701,23 @@ msgstr "დადასტურების კოდის გაგზავ�
 msgid "Failed to update category"
 msgstr "კატეგორიის განახლება ვერ მოხერხდა"
 
-#: src/components/rss-dialog.tsx:215
+#: src/components/rss-dialog.tsx:214
 msgid "Failed to update feed"
 msgstr "არხის განახლება ვერ მოხერხდა"
 
-#: src/components/rss-dialog.tsx:235
+#: src/components/rss-dialog.tsx:234
 msgid "Feed created"
 msgstr "არხი შეიქმნა"
 
-#: src/components/rss-dialog.tsx:199
+#: src/components/rss-dialog.tsx:198
 msgid "Feed deleted"
 msgstr "არხი წაიშალა"
 
-#: src/components/rss-dialog.tsx:386
+#: src/components/rss-dialog.tsx:380
 msgid "Feed name"
 msgstr "არხის სახელი"
 
-#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:178
 msgid "Feed renamed"
 msgstr "არხს გადაერქვა სახელი"
 
@@ -934,11 +934,11 @@ msgstr "მართეთ თქვენი დაკავშირებუ�
 msgid "Mark all as read"
 msgstr "ყველას წაკითხულად მონიშვნა"
 
-#: src/features/notification/index.tsx:213
+#: src/features/notification/index.tsx:216
 msgid "Mark all read"
 msgstr "ყველას წაკითხულად მონიშვნა"
 
-#: src/features/notification/index.tsx:159
+#: src/features/notification/index.tsx:162
 msgid "Marking all as read..."
 msgstr "ყველას წაკითხულად მონიშვნა..."
 
@@ -1000,7 +1000,7 @@ msgstr "დაკავშირებული ანგარიშები �
 msgid "No groups available"
 msgstr "ხელმისაწვდომი ჯგუფები არ არის"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No notifications"
 msgstr "შეტყობინებები არ არის"
 
@@ -1030,7 +1030,7 @@ msgstr "შედეგები ვერ მოიძებნა"
 msgid "No results found."
 msgstr "შედეგები ვერ მოიძებნა."
 
-#: src/components/rss-dialog.tsx:260
+#: src/components/rss-dialog.tsx:254
 msgid "No RSS feeds yet"
 msgstr "RSS ფიდები ჯერ არ არის"
 
@@ -1042,7 +1042,7 @@ msgstr "დროის სარტყელი ვერ მოიძებნ
 msgid "No topic record yet — try again after the next notification."
 msgstr "თემის ჩანაწერი ჯერ არ არის — სცადეთ ხელახლა შემდეგი შეტყობინების შემდეგ."
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No unread notifications"
 msgstr "წაუკითხავი შეტყობინებები არ არის"
 
@@ -1074,8 +1074,8 @@ msgstr "არ არის დაყენებული"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:184
+#: src/features/notification/index.tsx:130
+#: src/features/notification/index.tsx:187
 msgid "Notifications"
 msgstr "შეტყობინებები"
 
@@ -1084,8 +1084,8 @@ msgstr "შეტყობინებები"
 msgid "Notifications: {0}"
 msgstr "შეტყობინებები: {0}"
 
-#: src/components/rss-dialog.tsx:358
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:359
 msgid "Notify by default"
 msgstr "ნაგულისხმევად შეტყობინება"
 
@@ -1289,11 +1289,12 @@ msgstr "მარჯვნიდან მარცხნივ"
 msgid "Rows per page"
 msgstr "სტრიქონები გვერდზე"
 
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "RSS ფიდი"
 
-#: src/components/rss-dialog.tsx:236
+#: src/components/rss-dialog.tsx:235
+#: src/features/notification/index.tsx:236
 msgid "RSS feeds"
 msgstr "RSS ფიდები"
 
@@ -1303,17 +1304,13 @@ msgstr "შაბათი"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:293
-#: src/components/rss-dialog.tsx:302
+#: src/components/rss-dialog.tsx:287
+#: src/components/rss-dialog.tsx:296
 msgid "Save"
 msgstr "შენახვა"
 
-#: src/components/rss-dialog.tsx:240
-msgid "Save this URL now. You won't be able to see the token again."
-msgstr "შეინახეთ ეს URL ახლა. ტოკენს ვერ ნახავთ თავიდან."
-
-#: src/components/rss-dialog.tsx:178
-#: src/components/rss-dialog.tsx:213
+#: src/components/rss-dialog.tsx:177
+#: src/components/rss-dialog.tsx:212
 msgid "Saving..."
 msgstr "შენახვა..."
 
@@ -1459,7 +1456,7 @@ msgstr "წყაროს და დანიშნულების დაყ
 msgid "Settings"
 msgstr "პარამეტრები"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:196
 msgid "Show all"
 msgstr "ყველას ჩვენება"
 
@@ -1573,7 +1570,7 @@ msgstr "თემის პარამეტრები"
 msgid "This page has not been created yet."
 msgstr "ეს გვერდი ჯერ არ შექმნილა."
 
-#: src/components/rss-dialog.tsx:471
+#: src/components/rss-dialog.tsx:465
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ეს სამუდამოდ წაშლის ამ ფიდს. ნებისმიერი RSS წამკითხავი, რომელიც მას იყენებდა, ვეღარ შეძლებს თქვენი შეტყობინებების წვდომას."
 
@@ -1689,7 +1686,7 @@ msgstr "ერთეულები"
 msgid "Unverified"
 msgstr "უსათაურო ლისტინგი"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:397
 msgid "Use this feed for your current notification subscriptions"
 msgstr "გამოიყენეთ ეს არხი თქვენი ამჟამინდელი შეტყობინების გამოწერებისთვის"
 

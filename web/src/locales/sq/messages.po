@@ -135,7 +135,7 @@ msgstr "Shto ekip/aplikacion"
 msgid "Add to existing notifications"
 msgstr "Shto te njoftimet ekzistuese"
 
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:394
 msgid "Add to existing subscriptions"
 msgstr "Shto te abonimet ekzistuese"
 
@@ -229,7 +229,7 @@ msgstr "Kthehu në fillim"
 msgid "Banner"
 msgstr "Banner-i"
 
-#: src/features/notification/index.tsx:79
+#: src/features/notification/index.tsx:81
 msgid "Blocked navigation to untrusted link"
 msgstr "Lundrimi te lidhja e pabesueshme u bllokua"
 
@@ -251,7 +251,7 @@ msgstr "Njoftime të shfletuesit"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:413
+#: src/components/rss-dialog.tsx:407
 msgid "Cancel"
 msgstr "Anulo"
 
@@ -299,7 +299,7 @@ msgid "Clear"
 msgstr "Pastro"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:228
+#: src/features/notification/index.tsx:231
 msgid "Clear all"
 msgstr "Pastro të gjitha"
 
@@ -321,7 +321,7 @@ msgstr "Pastro përzgjedhjen"
 msgid "Clear selection (Escape)"
 msgstr "Pastro përzgjedhjen (Escape)"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:175
 msgid "Clearing notifications..."
 msgstr "Po pastrohen njoftimet..."
 
@@ -416,16 +416,16 @@ msgid "Copied"
 msgstr "U kopjua"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:124
-#: src/components/rss-dialog.tsx:133
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "U kopjua në kujtesën e fragmenteve"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:317
-#: src/components/rss-dialog.tsx:326
-#: src/components/rss-dialog.tsx:443
-#: src/components/rss-dialog.tsx:452
+#: src/components/rss-dialog.tsx:311
+#: src/components/rss-dialog.tsx:320
+#: src/components/rss-dialog.tsx:437
+#: src/components/rss-dialog.tsx:446
 msgid "Copy"
 msgstr "Kopjo"
 
@@ -450,20 +450,20 @@ msgstr "Nuk u verifikua dot me atë llogari. Ju lutemi provoni përsëri."
 msgid "Create {0}"
 msgstr "Krijo {0}"
 
-#: src/components/rss-dialog.tsx:377
-#: src/components/rss-dialog.tsx:424
+#: src/components/rss-dialog.tsx:371
+#: src/components/rss-dialog.tsx:418
 msgid "Create feed"
 msgstr "Krijo feed"
 
-#: src/components/rss-dialog.tsx:261
+#: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "Krijo një për të nisur."
 
-#: src/components/rss-dialog.tsx:234
+#: src/components/rss-dialog.tsx:233
 msgid "Create RSS feed"
 msgstr "Krijo RSS feed"
 
-#: src/components/rss-dialog.tsx:144
+#: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
 msgstr "Po krijohet kanali RSS..."
 
@@ -505,16 +505,16 @@ msgstr "I parazgjedhur"
 msgid "Default AI account"
 msgstr "Llogaria e parazgjedhur AI"
 
-#: src/components/rss-dialog.tsx:472
+#: src/components/rss-dialog.tsx:466
 msgid "Delete"
 msgstr "Fshi"
 
-#: src/components/rss-dialog.tsx:348
-#: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:342
+#: src/components/rss-dialog.tsx:347
 msgid "Delete feed"
 msgstr "Fshi feed-in"
 
-#: src/components/rss-dialog.tsx:470
+#: src/components/rss-dialog.tsx:464
 msgid "Delete feed?"
 msgstr "Të fshihet feed-i?"
 
@@ -522,7 +522,7 @@ msgstr "Të fshihet feed-i?"
 msgid "Delete your account on the old server"
 msgstr "Fshini llogarinë tuaj në serverin e vjetër"
 
-#: src/components/rss-dialog.tsx:198
+#: src/components/rss-dialog.tsx:197
 msgid "Deleting feed..."
 msgstr "Po fshihet burimi..."
 
@@ -575,7 +575,7 @@ msgstr "Hidhe"
 msgid "Displays the mobile sidebar."
 msgstr "Shfaq anën mobile."
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:451
 msgid "Done"
 msgstr "Përfunduar"
 
@@ -592,7 +592,7 @@ msgstr "Shkarkimi dështoi"
 msgid "Dyslexia-friendly"
 msgstr "I përshtatshëm për disleksi"
 
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:383
 msgid "e.g., Feedly, NewsBlur"
 msgstr "p.sh., Feedly, NewsBlur"
 
@@ -600,8 +600,8 @@ msgstr "p.sh., Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Modifiko {label}"
 
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:339
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:333
 msgid "Edit feed"
 msgstr "Redakto burimin"
 
@@ -648,7 +648,7 @@ msgstr "Shtimi i llogarisë dështoi"
 msgid "Failed to add tag"
 msgstr "Shtimi i etiketës dështoi"
 
-#: src/features/notification/index.tsx:174
+#: src/features/notification/index.tsx:177
 msgid "Failed to clear notifications"
 msgstr "Pastrimi i njoftimeve dështoi"
 
@@ -657,11 +657,11 @@ msgstr "Pastrimi i njoftimeve dështoi"
 msgid "Failed to copy"
 msgstr "Kopjimi dështoi"
 
-#: src/components/rss-dialog.tsx:146
+#: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
 msgstr "Krijimi i kanalit RSS dështoi"
 
-#: src/components/rss-dialog.tsx:200
+#: src/components/rss-dialog.tsx:199
 msgid "Failed to delete feed"
 msgstr "Fshirja e feed dështoi"
 
@@ -677,11 +677,11 @@ msgstr "Ngarkimi i figurës dështoi"
 msgid "Failed to load video"
 msgstr "Ngarkimi i videos dështoi"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:165
 msgid "Failed to mark all as read"
 msgstr "Shënimi i të gjitha si të lexuara dështoi"
 
-#: src/features/notification/index.tsx:152
+#: src/features/notification/index.tsx:155
 msgid "Failed to mark as read"
 msgstr "Shënimi si i lexuar dështoi"
 
@@ -689,7 +689,7 @@ msgstr "Shënimi si i lexuar dështoi"
 msgid "Failed to remove account"
 msgstr "Heqja e llogarisë dështoi"
 
-#: src/components/rss-dialog.tsx:180
+#: src/components/rss-dialog.tsx:179
 msgid "Failed to rename feed"
 msgstr "Riemërimi i feed dështoi"
 
@@ -701,23 +701,23 @@ msgstr "Dërgimi i kodit të verifikimit dështoi"
 msgid "Failed to update category"
 msgstr "Përditësimi i kategorisë dështoi"
 
-#: src/components/rss-dialog.tsx:215
+#: src/components/rss-dialog.tsx:214
 msgid "Failed to update feed"
 msgstr "Përditësimi i feed dështoi"
 
-#: src/components/rss-dialog.tsx:235
+#: src/components/rss-dialog.tsx:234
 msgid "Feed created"
 msgstr "Feed u krijua"
 
-#: src/components/rss-dialog.tsx:199
+#: src/components/rss-dialog.tsx:198
 msgid "Feed deleted"
 msgstr "Feed u fshi"
 
-#: src/components/rss-dialog.tsx:386
+#: src/components/rss-dialog.tsx:380
 msgid "Feed name"
 msgstr "Emri i feed"
 
-#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:178
 msgid "Feed renamed"
 msgstr "Feed u riemërua"
 
@@ -934,11 +934,11 @@ msgstr "Menaxhoni llogaritë tuaja të lidhura për njoftime dhe shërbime."
 msgid "Mark all as read"
 msgstr "Shëno të gjitha si të lexuara"
 
-#: src/features/notification/index.tsx:213
+#: src/features/notification/index.tsx:216
 msgid "Mark all read"
 msgstr "Shëno të gjitha si të lexuara"
 
-#: src/features/notification/index.tsx:159
+#: src/features/notification/index.tsx:162
 msgid "Marking all as read..."
 msgstr "Po shënohen të gjitha si të lexuara..."
 
@@ -1000,7 +1000,7 @@ msgstr "Asnjë llogari e lidhur"
 msgid "No groups available"
 msgstr "Asnjë grup i disponueshëm"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No notifications"
 msgstr "Asnjë njoftim"
 
@@ -1030,7 +1030,7 @@ msgstr "Nuk u gjetën rezultate"
 msgid "No results found."
 msgstr "S'u gjet asnjë rezultat."
 
-#: src/components/rss-dialog.tsx:260
+#: src/components/rss-dialog.tsx:254
 msgid "No RSS feeds yet"
 msgstr "Ende pa RSS feeds"
 
@@ -1042,7 +1042,7 @@ msgstr "S'u gjet asnjë zonë kohore."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Ende asnjë regjistrim teme — provoni përsëri pas njoftimit tjetër."
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No unread notifications"
 msgstr "Asnjë njoftim i palexuar"
 
@@ -1074,8 +1074,8 @@ msgstr "I pacaktuar"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:184
+#: src/features/notification/index.tsx:130
+#: src/features/notification/index.tsx:187
 msgid "Notifications"
 msgstr "Njoftime"
 
@@ -1084,8 +1084,8 @@ msgstr "Njoftime"
 msgid "Notifications: {0}"
 msgstr "Njoftimet: {0}"
 
-#: src/components/rss-dialog.tsx:358
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:359
 msgid "Notify by default"
 msgstr "Njofto si parazgjedhje"
 
@@ -1289,11 +1289,12 @@ msgstr "Nga e djathta në të majtë"
 msgid "Rows per page"
 msgstr "Rreshta për faqe"
 
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:236
+#: src/components/rss-dialog.tsx:235
+#: src/features/notification/index.tsx:236
 msgid "RSS feeds"
 msgstr "RSS feeds"
 
@@ -1303,17 +1304,13 @@ msgstr "E shtunë"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:293
-#: src/components/rss-dialog.tsx:302
+#: src/components/rss-dialog.tsx:287
+#: src/components/rss-dialog.tsx:296
 msgid "Save"
 msgstr "Ruaj"
 
-#: src/components/rss-dialog.tsx:240
-msgid "Save this URL now. You won't be able to see the token again."
-msgstr "Ruajeni këtë URL tani. Nuk do të mund ta shihni më tokenin."
-
-#: src/components/rss-dialog.tsx:178
-#: src/components/rss-dialog.tsx:213
+#: src/components/rss-dialog.tsx:177
+#: src/components/rss-dialog.tsx:212
 msgid "Saving..."
 msgstr "Duke ruajtur..."
 
@@ -1459,7 +1456,7 @@ msgstr "Vendos origjinën dhe destinacionin"
 msgid "Settings"
 msgstr "Cilësimet"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:196
 msgid "Show all"
 msgstr "Shfaq të gjitha"
 
@@ -1573,7 +1570,7 @@ msgstr "Cilësimet e temës"
 msgid "This page has not been created yet."
 msgstr "Kjo faqe nuk është krijuar ende."
 
-#: src/components/rss-dialog.tsx:471
+#: src/components/rss-dialog.tsx:465
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Kjo do të fshijë përgjithmonë këtë burim. Çdo lexues RSS që e përdor nuk do të mund të aksesojë më njoftimet e tua."
 
@@ -1689,7 +1686,7 @@ msgstr "I panjohur"
 msgid "Unverified"
 msgstr "I paverifikuar"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:397
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Përdor këtë burim për abonimet e tua aktuale të njoftimeve"
 

@@ -135,7 +135,7 @@ msgstr "အဖွဲ့/app ထည့်မည်"
 msgid "Add to existing notifications"
 msgstr "ရှိပြီးသား အကြောင်းကြားချက်များတွင် ထည့်မည်"
 
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:394
 msgid "Add to existing subscriptions"
 msgstr "ရှိပြီးသား subscription များတွင် ထည့်မည်"
 
@@ -229,7 +229,7 @@ msgstr "ပင်မစာမျက်နှာ သို့ပြန်သွ�
 msgid "Banner"
 msgstr "ပိုစတာ"
 
-#: src/features/notification/index.tsx:79
+#: src/features/notification/index.tsx:81
 msgid "Blocked navigation to untrusted link"
 msgstr "မယုံကြည်ရသော လင့်ခ်သို့ သွားရောက်ခြင်းကို ပိတ်ဆို့ထားသည်"
 
@@ -251,7 +251,7 @@ msgstr "Browser အကြောင်းကြားချက်များ"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:413
+#: src/components/rss-dialog.tsx:407
 msgid "Cancel"
 msgstr "မလုပ်တော့ပါ"
 
@@ -299,7 +299,7 @@ msgid "Clear"
 msgstr "ရှင်းမည်"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:228
+#: src/features/notification/index.tsx:231
 msgid "Clear all"
 msgstr "အားလုံး ရှင်းမည်"
 
@@ -321,7 +321,7 @@ msgstr "ရွေးချယ်မှု ရှင်းမည်"
 msgid "Clear selection (Escape)"
 msgstr "ရွေးချယ်မှု ရှင်းမည် (Escape)"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:175
 msgid "Clearing notifications..."
 msgstr "အကြောင်းကြားချက်များကို ရှင်းလင်းနေသည်..."
 
@@ -416,16 +416,16 @@ msgid "Copied"
 msgstr "ကူးယူပြီးပါပြီ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:124
-#: src/components/rss-dialog.tsx:133
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "ကလစ်ဘုတ်သို့ ကူးပြီး"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:317
-#: src/components/rss-dialog.tsx:326
-#: src/components/rss-dialog.tsx:443
-#: src/components/rss-dialog.tsx:452
+#: src/components/rss-dialog.tsx:311
+#: src/components/rss-dialog.tsx:320
+#: src/components/rss-dialog.tsx:437
+#: src/components/rss-dialog.tsx:446
 msgid "Copy"
 msgstr "ကူးမည်"
 
@@ -450,20 +450,20 @@ msgstr "ထိုအကောင့်ဖြင့် အတည်ပြု၍�
 msgid "Create {0}"
 msgstr "{0} ဖန်တီးရန်"
 
-#: src/components/rss-dialog.tsx:377
-#: src/components/rss-dialog.tsx:424
+#: src/components/rss-dialog.tsx:371
+#: src/components/rss-dialog.tsx:418
 msgid "Create feed"
 msgstr "feed ဖန်တီးမည်"
 
-#: src/components/rss-dialog.tsx:261
+#: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "စတင်ရန် တစ်ခု ဖန်တီးပါ။"
 
-#: src/components/rss-dialog.tsx:234
+#: src/components/rss-dialog.tsx:233
 msgid "Create RSS feed"
 msgstr "RSS feed ဖန်တီးမည်"
 
-#: src/components/rss-dialog.tsx:144
+#: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
 msgstr "RSS ဖိဒ် ဖန်တီးနေသည်..."
 
@@ -505,16 +505,16 @@ msgstr "မူရင်း"
 msgid "Default AI account"
 msgstr "မူရင်း AI အကောင့်"
 
-#: src/components/rss-dialog.tsx:472
+#: src/components/rss-dialog.tsx:466
 msgid "Delete"
 msgstr "ဖျက်မည်"
 
-#: src/components/rss-dialog.tsx:348
-#: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:342
+#: src/components/rss-dialog.tsx:347
 msgid "Delete feed"
 msgstr "feed ဖျက်မည်"
 
-#: src/components/rss-dialog.tsx:470
+#: src/components/rss-dialog.tsx:464
 msgid "Delete feed?"
 msgstr "feed ဖျက်မလား?"
 
@@ -522,7 +522,7 @@ msgstr "feed ဖျက်မလား?"
 msgid "Delete your account on the old server"
 msgstr "ဟောင်းသောဆာဗာမှ သင်၏အကောင့်ကို ဖျက်ပါ"
 
-#: src/components/rss-dialog.tsx:198
+#: src/components/rss-dialog.tsx:197
 msgid "Deleting feed..."
 msgstr "ဖိဒ်ကို ဖျက်နေသည်..."
 
@@ -575,7 +575,7 @@ msgstr "ပယ်မည်"
 msgid "Displays the mobile sidebar."
 msgstr "မိုဘိုင်း ဘေးဘားကို ပြသသည်။"
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:451
 msgid "Done"
 msgstr "ပြီးပါပြီ"
 
@@ -592,7 +592,7 @@ msgstr "ဒေါင်းလုဒ် မအောင်မြင်ပါ"
 msgid "Dyslexia-friendly"
 msgstr "စာဖတ်ရခက်သူများအတွက်ရိုးရှင်း"
 
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:383
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ဥပမာ Feedly, NewsBlur"
 
@@ -600,8 +600,8 @@ msgstr "ဥပမာ Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} ကို တည်းဖြတ်ပါ"
 
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:339
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:333
 msgid "Edit feed"
 msgstr "ဖိဒ်ကို တည်းဖြတ်ပါ"
 
@@ -648,7 +648,7 @@ msgstr "အကောင့် ထည့်၍ မရပါ"
 msgid "Failed to add tag"
 msgstr "တဂ် ထည့်၍ မရပါ"
 
-#: src/features/notification/index.tsx:174
+#: src/features/notification/index.tsx:177
 msgid "Failed to clear notifications"
 msgstr "အကြောင်းကြားချက်များ ရှင်းလင်း၍ မရပါ"
 
@@ -657,11 +657,11 @@ msgstr "အကြောင်းကြားချက်များ ရှင�
 msgid "Failed to copy"
 msgstr "ကူးယူ၍ မရပါ"
 
-#: src/components/rss-dialog.tsx:146
+#: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
 msgstr "RSS ဖိဒ် ဖန်တီး၍ မရပါ"
 
-#: src/components/rss-dialog.tsx:200
+#: src/components/rss-dialog.tsx:199
 msgid "Failed to delete feed"
 msgstr "ဖိဒ် ဖျက်၍ မရပါ"
 
@@ -677,11 +677,11 @@ msgstr "ပုံကို ဖွင့်၍မရပါ"
 msgid "Failed to load video"
 msgstr "ဗီဒီယိုကို ဖွင့်၍မရပါ"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:165
 msgid "Failed to mark all as read"
 msgstr "အားလုံးကို ဖတ်ပြီးအဖြစ် မှတ်၍ မရပါ"
 
-#: src/features/notification/index.tsx:152
+#: src/features/notification/index.tsx:155
 msgid "Failed to mark as read"
 msgstr "ဖတ်ပြီးအဖြစ် မှတ်သား၍ မရပါ"
 
@@ -689,7 +689,7 @@ msgstr "ဖတ်ပြီးအဖြစ် မှတ်သား၍ မရပ�
 msgid "Failed to remove account"
 msgstr "အကောင့် ဖယ်ရှား၍ မရပါ"
 
-#: src/components/rss-dialog.tsx:180
+#: src/components/rss-dialog.tsx:179
 msgid "Failed to rename feed"
 msgstr "ဖိဒ် အမည်ပြောင်း၍ မရပါ"
 
@@ -701,23 +701,23 @@ msgstr "အတည်ပြုကုဒ် ပို့၍ မရပါ"
 msgid "Failed to update category"
 msgstr "အမျိုးအစား ပြင်ဆင်၍ မရပါ"
 
-#: src/components/rss-dialog.tsx:215
+#: src/components/rss-dialog.tsx:214
 msgid "Failed to update feed"
 msgstr "ဖိဒ် ပြင်ဆင်၍ မရပါ"
 
-#: src/components/rss-dialog.tsx:235
+#: src/components/rss-dialog.tsx:234
 msgid "Feed created"
 msgstr "ဖိဒ် ဖန်တီးပြီးပါပြီ"
 
-#: src/components/rss-dialog.tsx:199
+#: src/components/rss-dialog.tsx:198
 msgid "Feed deleted"
 msgstr "ဖိဒ် ဖျက်ပြီးပါပြီ"
 
-#: src/components/rss-dialog.tsx:386
+#: src/components/rss-dialog.tsx:380
 msgid "Feed name"
 msgstr "ဖိဒ် အမည်"
 
-#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:178
 msgid "Feed renamed"
 msgstr "ဖိဒ် အမည်ပြောင်းပြီးပါပြီ"
 
@@ -934,11 +934,11 @@ msgstr "အကြောင်းကြားချက်များနှင့
 msgid "Mark all as read"
 msgstr "အားလုံးကို ဖတ်ပြီးအဖြစ် မှတ်"
 
-#: src/features/notification/index.tsx:213
+#: src/features/notification/index.tsx:216
 msgid "Mark all read"
 msgstr "အားလုံး ဖတ်ပြီး မှတ်"
 
-#: src/features/notification/index.tsx:159
+#: src/features/notification/index.tsx:162
 msgid "Marking all as read..."
 msgstr "အားလုံးကို ဖတ်ပြီးအဖြစ် မှတ်သားနေသည်..."
 
@@ -1000,7 +1000,7 @@ msgstr "ချိတ်ဆက်ထားသော အကောင့်မျ�
 msgid "No groups available"
 msgstr "အုပ်စုများ မရရှိနိုင်ပါ"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No notifications"
 msgstr "အသိပေးချက်များ မရှိပါ"
 
@@ -1030,7 +1030,7 @@ msgstr "ရလဒ်မတွေ့ပါ"
 msgid "No results found."
 msgstr "ရလဒ်များ မတွေ့ပါ။"
 
-#: src/components/rss-dialog.tsx:260
+#: src/components/rss-dialog.tsx:254
 msgid "No RSS feeds yet"
 msgstr "RSS feeds မရှိသေးပါ"
 
@@ -1042,7 +1042,7 @@ msgstr "အချိန်ဇုန် မတွေ့ပါ။"
 msgid "No topic record yet — try again after the next notification."
 msgstr "topic မှတ်တမ်း မရှိသေးပါ — နောက်အသိပေးချက်ပြီးနောက် ထပ်စမ်းကြည့်ပါ။"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No unread notifications"
 msgstr "ဖတ်မပြီးသေးသော အသိပေးချက်များ မရှိ"
 
@@ -1074,8 +1074,8 @@ msgstr "မသတ်မှတ်ထားပါ"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:184
+#: src/features/notification/index.tsx:130
+#: src/features/notification/index.tsx:187
 msgid "Notifications"
 msgstr "အသိပေးချက်များ"
 
@@ -1084,8 +1084,8 @@ msgstr "အသိပေးချက်များ"
 msgid "Notifications: {0}"
 msgstr "အကြောင်းကြားချက်များ- {0}"
 
-#: src/components/rss-dialog.tsx:358
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:359
 msgid "Notify by default"
 msgstr "ပုံမှန်အားဖြင့် အသိပေး"
 
@@ -1289,11 +1289,12 @@ msgstr "ညာမှ ဘယ်သို့"
 msgid "Rows per page"
 msgstr "စာမျက်နှာတစ်ခုစီ၏ အတန်းများ"
 
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:236
+#: src/components/rss-dialog.tsx:235
+#: src/features/notification/index.tsx:236
 msgid "RSS feeds"
 msgstr "RSS feed များ"
 
@@ -1303,17 +1304,13 @@ msgstr "စနေနေ့"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:293
-#: src/components/rss-dialog.tsx:302
+#: src/components/rss-dialog.tsx:287
+#: src/components/rss-dialog.tsx:296
 msgid "Save"
 msgstr "သိမ်းမည်"
 
-#: src/components/rss-dialog.tsx:240
-msgid "Save this URL now. You won't be able to see the token again."
-msgstr "ဤ URL ကို ယခု သိမ်းပါ။ token ကို ထပ်မမြင်နိုင်ပါ။"
-
-#: src/components/rss-dialog.tsx:178
-#: src/components/rss-dialog.tsx:213
+#: src/components/rss-dialog.tsx:177
+#: src/components/rss-dialog.tsx:212
 msgid "Saving..."
 msgstr "သိမ်းနေသည်..."
 
@@ -1459,7 +1456,7 @@ msgstr "မူရင်းနှင့် ဦးတည်ရာ သတ်မှ�
 msgid "Settings"
 msgstr "ဆက်တင်များ"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:196
 msgid "Show all"
 msgstr "အားလုံး ပြမည်"
 
@@ -1573,7 +1570,7 @@ msgstr "အပြင်အဆင် ဆက်တင်များ"
 msgid "This page has not been created yet."
 msgstr "ဤစာမျက်နှာကို မဖန်တီးရသေးပါ။"
 
-#: src/components/rss-dialog.tsx:471
+#: src/components/rss-dialog.tsx:465
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "၎င်းသည် ဤ feed ကို အပြီးတိုင် ဖျက်ပါမည်။ ၎င်းကို သုံးနေသော RSS reader များသည် သင့်အသိပေးချက်များကို ဝင်ရောက်နိုင်တော့မည် မဟုတ်ပါ။"
 
@@ -1689,7 +1686,7 @@ msgstr "မသိရသော"
 msgid "Unverified"
 msgstr "အတည်ပြုမထား"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:397
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ဤ feed ကို သင်၏ လက်ရှိ အသိပေးချက် subscription များအတွက် သုံးပါ"
 

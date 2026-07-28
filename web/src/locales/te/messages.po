@@ -135,7 +135,7 @@ msgstr "టీమ్/యాప్‌ను జోడించండి"
 msgid "Add to existing notifications"
 msgstr "ప్రస్తుత నోటిఫికేషన్‌లకు జోడించండి"
 
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:394
 msgid "Add to existing subscriptions"
 msgstr "ప్రస్తుత చందాలకు జోడించండి"
 
@@ -229,7 +229,7 @@ msgstr "హోమ్‌కు తిరిగి వెళ్ళండి"
 msgid "Banner"
 msgstr "బ్యానర్"
 
-#: src/features/notification/index.tsx:79
+#: src/features/notification/index.tsx:81
 msgid "Blocked navigation to untrusted link"
 msgstr "నమ్మదగని లింక్‌కి నావిగేషన్ నిరోధించబడింది"
 
@@ -251,7 +251,7 @@ msgstr "బ్రౌజర్ నోటిఫికేషన్‌లు"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:413
+#: src/components/rss-dialog.tsx:407
 msgid "Cancel"
 msgstr "రద్దు చేయండి"
 
@@ -299,7 +299,7 @@ msgid "Clear"
 msgstr "క్లియర్ చేయండి"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:228
+#: src/features/notification/index.tsx:231
 msgid "Clear all"
 msgstr "అన్నీ క్లియర్ చేయండి"
 
@@ -321,7 +321,7 @@ msgstr "ఎంపికను క్లియర్ చేయండి"
 msgid "Clear selection (Escape)"
 msgstr "ఎంపికను క్లియర్ చేయండి (Escape)"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:175
 msgid "Clearing notifications..."
 msgstr "నోటిఫికేషన్‌లను క్లియర్ చేస్తోంది..."
 
@@ -416,16 +416,16 @@ msgid "Copied"
 msgstr "కాపీ అయింది"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:124
-#: src/components/rss-dialog.tsx:133
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "క్లిప్‌బోర్డ్‌కి కాపీ చేయబడింది"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:317
-#: src/components/rss-dialog.tsx:326
-#: src/components/rss-dialog.tsx:443
-#: src/components/rss-dialog.tsx:452
+#: src/components/rss-dialog.tsx:311
+#: src/components/rss-dialog.tsx:320
+#: src/components/rss-dialog.tsx:437
+#: src/components/rss-dialog.tsx:446
 msgid "Copy"
 msgstr "కాపీ చేయండి"
 
@@ -450,20 +450,20 @@ msgstr "ఆ ఖాతాతో ధృవీకరించడం సాధ్య
 msgid "Create {0}"
 msgstr "{0} సృష్టించండి"
 
-#: src/components/rss-dialog.tsx:377
-#: src/components/rss-dialog.tsx:424
+#: src/components/rss-dialog.tsx:371
+#: src/components/rss-dialog.tsx:418
 msgid "Create feed"
 msgstr "ఫీడ్‌ను సృష్టించండి"
 
-#: src/components/rss-dialog.tsx:261
+#: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "ప్రారంభించడానికి ఒకదాన్ని సృష్టించండి."
 
-#: src/components/rss-dialog.tsx:234
+#: src/components/rss-dialog.tsx:233
 msgid "Create RSS feed"
 msgstr "RSS ఫీడ్‌ను సృష్టించండి"
 
-#: src/components/rss-dialog.tsx:144
+#: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
 msgstr "RSS ఫీడ్‌ను సృష్టిస్తోంది..."
 
@@ -505,16 +505,16 @@ msgstr "డిఫాల్ట్"
 msgid "Default AI account"
 msgstr "డిఫాల్ట్ AI ఖాతా"
 
-#: src/components/rss-dialog.tsx:472
+#: src/components/rss-dialog.tsx:466
 msgid "Delete"
 msgstr "తొలగించండి"
 
-#: src/components/rss-dialog.tsx:348
-#: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:342
+#: src/components/rss-dialog.tsx:347
 msgid "Delete feed"
 msgstr "ఫీడ్‌ను తొలగించండి"
 
-#: src/components/rss-dialog.tsx:470
+#: src/components/rss-dialog.tsx:464
 msgid "Delete feed?"
 msgstr "ఫీడ్‌ను తొలగించాలా?"
 
@@ -522,7 +522,7 @@ msgstr "ఫీడ్‌ను తొలగించాలా?"
 msgid "Delete your account on the old server"
 msgstr "పాత సర్వర్‌లో మీ ఖాతాను తొలగించండి"
 
-#: src/components/rss-dialog.tsx:198
+#: src/components/rss-dialog.tsx:197
 msgid "Deleting feed..."
 msgstr "ఫీడ్ తొలగిస్తోంది..."
 
@@ -575,7 +575,7 @@ msgstr "విస్మరించండి"
 msgid "Displays the mobile sidebar."
 msgstr "మొబైల్ సైడ్‌బార్‌ను ప్రదర్శిస్తుంది."
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:451
 msgid "Done"
 msgstr "పూర్తయింది"
 
@@ -592,7 +592,7 @@ msgstr "డౌన్‌లోడ్ విఫలమైంది"
 msgid "Dyslexia-friendly"
 msgstr "డిస్లెక్సియా-అనుకూలం"
 
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:383
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ఉదా. Feedly, NewsBlur"
 
@@ -600,8 +600,8 @@ msgstr "ఉదా. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} సవరించు"
 
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:339
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:333
 msgid "Edit feed"
 msgstr "ఫీడ్‌ను సవరించండి"
 
@@ -648,7 +648,7 @@ msgstr "ఖాతాను జోడించడంలో విఫలమైం�
 msgid "Failed to add tag"
 msgstr "ట్యాగ్‌ను జోడించడంలో విఫలమైంది"
 
-#: src/features/notification/index.tsx:174
+#: src/features/notification/index.tsx:177
 msgid "Failed to clear notifications"
 msgstr "నోటిఫికేషన్‌లను క్లియర్ చేయడం విఫలమైంది"
 
@@ -657,11 +657,11 @@ msgstr "నోటిఫికేషన్‌లను క్లియర్ చ�
 msgid "Failed to copy"
 msgstr "కాపీ చేయడంలో విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:146
+#: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
 msgstr "RSS ఫీడ్‌ను సృష్టించడం విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:200
+#: src/components/rss-dialog.tsx:199
 msgid "Failed to delete feed"
 msgstr "ఫీడ్‌ను తొలగించడంలో విఫలమైంది"
 
@@ -677,11 +677,11 @@ msgstr "చిత్రాన్ని లోడ్ చేయడంలో వి
 msgid "Failed to load video"
 msgstr "వీడియోను లోడ్ చేయడంలో విఫలమైంది"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:165
 msgid "Failed to mark all as read"
 msgstr "అన్నింటినీ చదివినట్లు గుర్తించడంలో విఫలమైంది"
 
-#: src/features/notification/index.tsx:152
+#: src/features/notification/index.tsx:155
 msgid "Failed to mark as read"
 msgstr "చదివినట్లు గుర్తించడం విఫలమైంది"
 
@@ -689,7 +689,7 @@ msgstr "చదివినట్లు గుర్తించడం విఫ�
 msgid "Failed to remove account"
 msgstr "ఖాతాను తీసివేయడంలో విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:180
+#: src/components/rss-dialog.tsx:179
 msgid "Failed to rename feed"
 msgstr "ఫీడ్ పేరు మార్చడంలో విఫలమైంది"
 
@@ -701,23 +701,23 @@ msgstr "ధృవీకరణ కోడ్‌ను పంపడంలో వి
 msgid "Failed to update category"
 msgstr "విభాగాన్ని నవీకరించడంలో విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:215
+#: src/components/rss-dialog.tsx:214
 msgid "Failed to update feed"
 msgstr "ఫీడ్‌ను నవీకరించడంలో విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:235
+#: src/components/rss-dialog.tsx:234
 msgid "Feed created"
 msgstr "ఫీడ్ సృష్టించబడింది"
 
-#: src/components/rss-dialog.tsx:199
+#: src/components/rss-dialog.tsx:198
 msgid "Feed deleted"
 msgstr "ఫీడ్ తొలగించబడింది"
 
-#: src/components/rss-dialog.tsx:386
+#: src/components/rss-dialog.tsx:380
 msgid "Feed name"
 msgstr "ఫీడ్ పేరు"
 
-#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:178
 msgid "Feed renamed"
 msgstr "ఫీడ్ పేరు మార్చబడింది"
 
@@ -934,11 +934,11 @@ msgstr "నోటిఫికేషన్లు మరియు సేవల క
 msgid "Mark all as read"
 msgstr "అన్నింటినీ చదివినట్లు గుర్తించండి"
 
-#: src/features/notification/index.tsx:213
+#: src/features/notification/index.tsx:216
 msgid "Mark all read"
 msgstr "అన్నీ చదివినట్లు గుర్తించండి"
 
-#: src/features/notification/index.tsx:159
+#: src/features/notification/index.tsx:162
 msgid "Marking all as read..."
 msgstr "అన్నింటినీ చదివినట్లు గుర్తిస్తోంది..."
 
@@ -1000,7 +1000,7 @@ msgstr "కనెక్ట్ చేయబడిన ఖాతాలు లేవ
 msgid "No groups available"
 msgstr "గ్రూపులు అందుబాటులో లేవు"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No notifications"
 msgstr "నోటిఫికేషన్‌లు లేవు"
 
@@ -1030,7 +1030,7 @@ msgstr "ఫలితాలు కనుగొనబడలేదు"
 msgid "No results found."
 msgstr "ఫలితాలు ఏవీ కనుగొనబడలేదు."
 
-#: src/components/rss-dialog.tsx:260
+#: src/components/rss-dialog.tsx:254
 msgid "No RSS feeds yet"
 msgstr "ఇంకా RSS ఫీడ్‌లు లేవు"
 
@@ -1042,7 +1042,7 @@ msgstr "టైం జోన్ కనుగొనబడలేదు."
 msgid "No topic record yet — try again after the next notification."
 msgstr "ఇంకా టాపిక్ రికార్డ్ లేదు — తదుపరి నోటిఫికేషన్ తర్వాత మళ్లీ ప్రయత్నించండి."
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No unread notifications"
 msgstr "చదవని నోటిఫికేషన్‌లు లేవు"
 
@@ -1074,8 +1074,8 @@ msgstr "సెట్ చేయబడలేదు"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:184
+#: src/features/notification/index.tsx:130
+#: src/features/notification/index.tsx:187
 msgid "Notifications"
 msgstr "నోటిఫికేషన్‌లు"
 
@@ -1084,8 +1084,8 @@ msgstr "నోటిఫికేషన్‌లు"
 msgid "Notifications: {0}"
 msgstr "నోటిఫికేషన్‌లు: {0}"
 
-#: src/components/rss-dialog.tsx:358
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:359
 msgid "Notify by default"
 msgstr "డిఫాల్ట్‌గా నోటిఫై చేయండి"
 
@@ -1289,11 +1289,12 @@ msgstr "కుడి నుండి ఎడమకు"
 msgid "Rows per page"
 msgstr "ఒక్కో పేజీకి వరుసలు"
 
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "RSS ఫీడ్"
 
-#: src/components/rss-dialog.tsx:236
+#: src/components/rss-dialog.tsx:235
+#: src/features/notification/index.tsx:236
 msgid "RSS feeds"
 msgstr "RSS ఫీడ్‌లు"
 
@@ -1303,17 +1304,13 @@ msgstr "శనివారం"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:293
-#: src/components/rss-dialog.tsx:302
+#: src/components/rss-dialog.tsx:287
+#: src/components/rss-dialog.tsx:296
 msgid "Save"
 msgstr "సేవ్ చేయండి"
 
-#: src/components/rss-dialog.tsx:240
-msgid "Save this URL now. You won't be able to see the token again."
-msgstr "ఈ URLను ఇప్పుడే సేవ్ చేయండి. మీరు టోకెన్‌ను మళ్ళీ చూడలేరు."
-
-#: src/components/rss-dialog.tsx:178
-#: src/components/rss-dialog.tsx:213
+#: src/components/rss-dialog.tsx:177
+#: src/components/rss-dialog.tsx:212
 msgid "Saving..."
 msgstr "సేవ్ చేస్తోంది..."
 
@@ -1459,7 +1456,7 @@ msgstr "మూలం మరియు గమ్యస్థానాన్ని 
 msgid "Settings"
 msgstr "సెట్టింగ్‌లు"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:196
 msgid "Show all"
 msgstr "అన్నీ చూపించు"
 
@@ -1573,7 +1570,7 @@ msgstr "థీమ్ సెట్టింగ్‌లు"
 msgid "This page has not been created yet."
 msgstr "ఈ పేజీ ఇంకా సృష్టించబడలేదు."
 
-#: src/components/rss-dialog.tsx:471
+#: src/components/rss-dialog.tsx:465
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ఇది ఈ ఫీడ్‌ను శాశ్వతంగా తొలగిస్తుంది. దీన్ని ఉపయోగిస్తున్న ఏ RSS రీడర్లు ఇకపై మీ నోటిఫికేషన్లను యాక్సెస్ చేయలేరు."
 
@@ -1689,7 +1686,7 @@ msgstr "తెలియదు"
 msgid "Unverified"
 msgstr "ధృవీకరించబడలేదు"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:397
 msgid "Use this feed for your current notification subscriptions"
 msgstr "మీ ప్రస్తుత నోటిఫికేషన్ చందాల కోసం ఈ ఫీడ్‌ను ఉపయోగించండి"
 

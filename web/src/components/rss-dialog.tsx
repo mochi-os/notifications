@@ -10,7 +10,6 @@ import {
   ConfirmDialog,
   ResponsiveDialog,
   ResponsiveDialogContent,
-  ResponsiveDialogDescription,
   ResponsiveDialogFooter,
   ResponsiveDialogHeader,
   ResponsiveDialogTitle,
@@ -235,11 +234,6 @@ export function RssDialog({
               {view === 'created' && <Trans>Feed created</Trans>}
               {view === 'list' && <Trans>RSS feeds</Trans>}
             </ResponsiveDialogTitle>
-            {view === 'created' && (
-              <ResponsiveDialogDescription>
-                <Trans>Save this URL now. You won't be able to see the token again.</Trans>
-              </ResponsiveDialogDescription>
-            )}
           </ResponsiveDialogHeader>
 
           {view === 'list' && (
@@ -390,7 +384,7 @@ export function RssDialog({
                   value={newFeedName}
                   onChange={(e) => setNewFeedName(e.target.value)}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter') handleCreate()
+                    if (e.key === 'Enter' && !createMutation.isPending) handleCreate()
                   }}
                 />
               </div>

@@ -135,7 +135,7 @@ msgstr "Thêm nhóm/ứng dụng"
 msgid "Add to existing notifications"
 msgstr "Thêm vào thông báo hiện có"
 
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:394
 msgid "Add to existing subscriptions"
 msgstr "Thêm vào đăng ký hiện có"
 
@@ -229,7 +229,7 @@ msgstr "Về trang chủ"
 msgid "Banner"
 msgstr "Biểu ngữ"
 
-#: src/features/notification/index.tsx:79
+#: src/features/notification/index.tsx:81
 msgid "Blocked navigation to untrusted link"
 msgstr "Đã chặn điều hướng tới liên kết không tin cậy"
 
@@ -251,7 +251,7 @@ msgstr "Thông báo trình duyệt"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:413
+#: src/components/rss-dialog.tsx:407
 msgid "Cancel"
 msgstr "Hủy"
 
@@ -299,7 +299,7 @@ msgid "Clear"
 msgstr "Xóa"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:228
+#: src/features/notification/index.tsx:231
 msgid "Clear all"
 msgstr "Xóa tất cả"
 
@@ -321,7 +321,7 @@ msgstr "Bỏ chọn"
 msgid "Clear selection (Escape)"
 msgstr "Bỏ chọn (Escape)"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:175
 msgid "Clearing notifications..."
 msgstr "Đang xóa thông báo..."
 
@@ -416,16 +416,16 @@ msgid "Copied"
 msgstr "Đã sao chép"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:124
-#: src/components/rss-dialog.tsx:133
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "Đã sao chép vào bộ nhớ tạm"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:317
-#: src/components/rss-dialog.tsx:326
-#: src/components/rss-dialog.tsx:443
-#: src/components/rss-dialog.tsx:452
+#: src/components/rss-dialog.tsx:311
+#: src/components/rss-dialog.tsx:320
+#: src/components/rss-dialog.tsx:437
+#: src/components/rss-dialog.tsx:446
 msgid "Copy"
 msgstr "Sao chép"
 
@@ -450,20 +450,20 @@ msgstr "Không thể xác minh bằng tài khoản đó. Vui lòng thử lại."
 msgid "Create {0}"
 msgstr "Tạo {0}"
 
-#: src/components/rss-dialog.tsx:377
-#: src/components/rss-dialog.tsx:424
+#: src/components/rss-dialog.tsx:371
+#: src/components/rss-dialog.tsx:418
 msgid "Create feed"
 msgstr "Tạo feed"
 
-#: src/components/rss-dialog.tsx:261
+#: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "Tạo một cái để bắt đầu."
 
-#: src/components/rss-dialog.tsx:234
+#: src/components/rss-dialog.tsx:233
 msgid "Create RSS feed"
 msgstr "Tạo nguồn cấp RSS"
 
-#: src/components/rss-dialog.tsx:144
+#: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
 msgstr "Đang tạo nguồn cấp RSS..."
 
@@ -505,16 +505,16 @@ msgstr "Mặc định"
 msgid "Default AI account"
 msgstr "Tài khoản AI mặc định"
 
-#: src/components/rss-dialog.tsx:472
+#: src/components/rss-dialog.tsx:466
 msgid "Delete"
 msgstr "Xóa"
 
-#: src/components/rss-dialog.tsx:348
-#: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:342
+#: src/components/rss-dialog.tsx:347
 msgid "Delete feed"
 msgstr "Xóa feed"
 
-#: src/components/rss-dialog.tsx:470
+#: src/components/rss-dialog.tsx:464
 msgid "Delete feed?"
 msgstr "Xóa feed?"
 
@@ -522,7 +522,7 @@ msgstr "Xóa feed?"
 msgid "Delete your account on the old server"
 msgstr "Xóa tài khoản của bạn trên máy chủ cũ"
 
-#: src/components/rss-dialog.tsx:198
+#: src/components/rss-dialog.tsx:197
 msgid "Deleting feed..."
 msgstr "Đang xóa nguồn cấp..."
 
@@ -575,7 +575,7 @@ msgstr "Bỏ qua"
 msgid "Displays the mobile sidebar."
 msgstr "Hiển thị thanh bên di động."
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:451
 msgid "Done"
 msgstr "Xong"
 
@@ -592,7 +592,7 @@ msgstr "Tải xuống thất bại"
 msgid "Dyslexia-friendly"
 msgstr "Thân thiện với chứng khó đọc"
 
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:383
 msgid "e.g., Feedly, NewsBlur"
 msgstr "vd. Feedly, NewsBlur"
 
@@ -600,8 +600,8 @@ msgstr "vd. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Chỉnh sửa {label}"
 
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:339
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:333
 msgid "Edit feed"
 msgstr "Chỉnh sửa nguồn"
 
@@ -648,7 +648,7 @@ msgstr "Không thêm tài khoản được"
 msgid "Failed to add tag"
 msgstr "Không thêm thẻ được"
 
-#: src/features/notification/index.tsx:174
+#: src/features/notification/index.tsx:177
 msgid "Failed to clear notifications"
 msgstr "Không thể xóa thông báo"
 
@@ -657,11 +657,11 @@ msgstr "Không thể xóa thông báo"
 msgid "Failed to copy"
 msgstr "Không sao chép được"
 
-#: src/components/rss-dialog.tsx:146
+#: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
 msgstr "Không thể tạo nguồn cấp RSS"
 
-#: src/components/rss-dialog.tsx:200
+#: src/components/rss-dialog.tsx:199
 msgid "Failed to delete feed"
 msgstr "Không xoá nguồn cấp được"
 
@@ -677,11 +677,11 @@ msgstr "Không tải được hình ảnh"
 msgid "Failed to load video"
 msgstr "Không tải được video"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:165
 msgid "Failed to mark all as read"
 msgstr "Không đánh dấu tất cả là đã đọc được"
 
-#: src/features/notification/index.tsx:152
+#: src/features/notification/index.tsx:155
 msgid "Failed to mark as read"
 msgstr "Không thể đánh dấu là đã đọc"
 
@@ -689,7 +689,7 @@ msgstr "Không thể đánh dấu là đã đọc"
 msgid "Failed to remove account"
 msgstr "Không xoá tài khoản được"
 
-#: src/components/rss-dialog.tsx:180
+#: src/components/rss-dialog.tsx:179
 msgid "Failed to rename feed"
 msgstr "Không đổi tên nguồn cấp được"
 
@@ -701,23 +701,23 @@ msgstr "Không gửi mã xác minh được"
 msgid "Failed to update category"
 msgstr "Không cập nhật danh mục được"
 
-#: src/components/rss-dialog.tsx:215
+#: src/components/rss-dialog.tsx:214
 msgid "Failed to update feed"
 msgstr "Không cập nhật nguồn cấp được"
 
-#: src/components/rss-dialog.tsx:235
+#: src/components/rss-dialog.tsx:234
 msgid "Feed created"
 msgstr "Đã tạo nguồn cấp"
 
-#: src/components/rss-dialog.tsx:199
+#: src/components/rss-dialog.tsx:198
 msgid "Feed deleted"
 msgstr "Đã xoá nguồn cấp"
 
-#: src/components/rss-dialog.tsx:386
+#: src/components/rss-dialog.tsx:380
 msgid "Feed name"
 msgstr "Tên nguồn cấp"
 
-#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:178
 msgid "Feed renamed"
 msgstr "Đã đổi tên nguồn cấp"
 
@@ -934,11 +934,11 @@ msgstr "Quản lý các tài khoản đã kết nối của bạn để nhận t
 msgid "Mark all as read"
 msgstr "Đánh dấu tất cả là đã đọc"
 
-#: src/features/notification/index.tsx:213
+#: src/features/notification/index.tsx:216
 msgid "Mark all read"
 msgstr "Đánh dấu tất cả đã đọc"
 
-#: src/features/notification/index.tsx:159
+#: src/features/notification/index.tsx:162
 msgid "Marking all as read..."
 msgstr "Đang đánh dấu tất cả là đã đọc..."
 
@@ -1000,7 +1000,7 @@ msgstr "Không có tài khoản đã kết nối"
 msgid "No groups available"
 msgstr "Không có nhóm nào"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No notifications"
 msgstr "Không có thông báo"
 
@@ -1030,7 +1030,7 @@ msgstr "Không tìm thấy kết quả"
 msgid "No results found."
 msgstr "Không tìm thấy kết quả nào."
 
-#: src/components/rss-dialog.tsx:260
+#: src/components/rss-dialog.tsx:254
 msgid "No RSS feeds yet"
 msgstr "Chưa có feed RSS"
 
@@ -1042,7 +1042,7 @@ msgstr "Không tìm thấy múi giờ."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Chưa có bản ghi chủ đề — hãy thử lại sau thông báo tiếp theo."
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No unread notifications"
 msgstr "Không có thông báo chưa đọc"
 
@@ -1074,8 +1074,8 @@ msgstr "Chưa đặt"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:184
+#: src/features/notification/index.tsx:130
+#: src/features/notification/index.tsx:187
 msgid "Notifications"
 msgstr "Thông báo"
 
@@ -1084,8 +1084,8 @@ msgstr "Thông báo"
 msgid "Notifications: {0}"
 msgstr "Thông báo: {0}"
 
-#: src/components/rss-dialog.tsx:358
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:359
 msgid "Notify by default"
 msgstr "Thông báo theo mặc định"
 
@@ -1289,11 +1289,12 @@ msgstr "Phải sang trái"
 msgid "Rows per page"
 msgstr "Số hàng mỗi trang"
 
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "Feed RSS"
 
-#: src/components/rss-dialog.tsx:236
+#: src/components/rss-dialog.tsx:235
+#: src/features/notification/index.tsx:236
 msgid "RSS feeds"
 msgstr "Nguồn cấp RSS"
 
@@ -1303,17 +1304,13 @@ msgstr "Thứ bảy"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:293
-#: src/components/rss-dialog.tsx:302
+#: src/components/rss-dialog.tsx:287
+#: src/components/rss-dialog.tsx:296
 msgid "Save"
 msgstr "Lưu"
 
-#: src/components/rss-dialog.tsx:240
-msgid "Save this URL now. You won't be able to see the token again."
-msgstr "Lưu URL này ngay bây giờ. Bạn sẽ không thể xem lại token này nữa."
-
-#: src/components/rss-dialog.tsx:178
-#: src/components/rss-dialog.tsx:213
+#: src/components/rss-dialog.tsx:177
+#: src/components/rss-dialog.tsx:212
 msgid "Saving..."
 msgstr "Đang lưu..."
 
@@ -1459,7 +1456,7 @@ msgstr "Đặt điểm xuất phát và điểm đến"
 msgid "Settings"
 msgstr "Cài đặt"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:196
 msgid "Show all"
 msgstr "Hiển thị tất cả"
 
@@ -1573,7 +1570,7 @@ msgstr "Cài đặt giao diện"
 msgid "This page has not been created yet."
 msgstr "Trang này chưa được tạo."
 
-#: src/components/rss-dialog.tsx:471
+#: src/components/rss-dialog.tsx:465
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Thao tác này sẽ xóa vĩnh viễn nguồn cấp này. Mọi trình đọc RSS đang sử dụng nó sẽ không còn truy cập được các thông báo của bạn."
 
@@ -1689,7 +1686,7 @@ msgstr "Không rõ"
 msgid "Unverified"
 msgstr "Chưa xác minh"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:397
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Dùng nguồn cấp này cho các đăng ký thông báo hiện tại của bạn"
 

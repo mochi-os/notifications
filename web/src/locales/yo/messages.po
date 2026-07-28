@@ -135,7 +135,7 @@ msgstr "Fi ẹgbẹ́/app kún"
 msgid "Add to existing notifications"
 msgstr "Fi sí àwọn ìfitónilétí tó wà"
 
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:394
 msgid "Add to existing subscriptions"
 msgstr "Fi sí àwọn ìforúkọsílẹ̀ tó wà"
 
@@ -229,7 +229,7 @@ msgstr "Pada si ile"
 msgid "Banner"
 msgstr "Banner"
 
-#: src/features/notification/index.tsx:79
+#: src/features/notification/index.tsx:81
 msgid "Blocked navigation to untrusted link"
 msgstr "A dí ìrìnnà sí ọ̀nà tí a kò gbẹ́kẹ̀lé"
 
@@ -251,7 +251,7 @@ msgstr "Àwọn ìfitónilétí browser"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:413
+#: src/components/rss-dialog.tsx:407
 msgid "Cancel"
 msgstr "Fagilé"
 
@@ -299,7 +299,7 @@ msgid "Clear"
 msgstr "Pa rẹ́"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:228
+#: src/features/notification/index.tsx:231
 msgid "Clear all"
 msgstr "Pa gbogbo rẹ̀ rẹ́"
 
@@ -321,7 +321,7 @@ msgstr "Pa ìyàn rẹ́"
 msgid "Clear selection (Escape)"
 msgstr "Pa ìyàn rẹ́ (Escape)"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:175
 msgid "Clearing notifications..."
 msgstr "Ń pa àwọn ìfitónilétí rẹ́..."
 
@@ -416,16 +416,16 @@ msgid "Copied"
 msgstr "Ti dàkọ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:124
-#: src/components/rss-dialog.tsx:133
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "A ti ṣe àdàkọ sí clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:317
-#: src/components/rss-dialog.tsx:326
-#: src/components/rss-dialog.tsx:443
-#: src/components/rss-dialog.tsx:452
+#: src/components/rss-dialog.tsx:311
+#: src/components/rss-dialog.tsx:320
+#: src/components/rss-dialog.tsx:437
+#: src/components/rss-dialog.tsx:446
 msgid "Copy"
 msgstr "Ṣe àdàkọ"
 
@@ -450,20 +450,20 @@ msgstr "A kò lè fọwọ́sí pẹ̀lú àkàùntì yẹn. Jọ̀wọ́ gbìy�
 msgid "Create {0}"
 msgstr "Ṣẹ̀dá {0}"
 
-#: src/components/rss-dialog.tsx:377
-#: src/components/rss-dialog.tsx:424
+#: src/components/rss-dialog.tsx:371
+#: src/components/rss-dialog.tsx:418
 msgid "Create feed"
 msgstr "Dá feed"
 
-#: src/components/rss-dialog.tsx:261
+#: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "Dá ọ̀kan láti bẹ̀rẹ̀."
 
-#: src/components/rss-dialog.tsx:234
+#: src/components/rss-dialog.tsx:233
 msgid "Create RSS feed"
 msgstr "Ṣẹda ìfàn RSS"
 
-#: src/components/rss-dialog.tsx:144
+#: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
 msgstr "Ń ṣẹ̀dá ìfunni RSS..."
 
@@ -505,16 +505,16 @@ msgstr "Àìpé"
 msgid "Default AI account"
 msgstr "Àkáǹtì AI àìpé"
 
-#: src/components/rss-dialog.tsx:472
+#: src/components/rss-dialog.tsx:466
 msgid "Delete"
 msgstr "Pa rẹ́"
 
-#: src/components/rss-dialog.tsx:348
-#: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:342
+#: src/components/rss-dialog.tsx:347
 msgid "Delete feed"
 msgstr "Pa feed rẹ́"
 
-#: src/components/rss-dialog.tsx:470
+#: src/components/rss-dialog.tsx:464
 msgid "Delete feed?"
 msgstr "Pa feed rẹ́?"
 
@@ -522,7 +522,7 @@ msgstr "Pa feed rẹ́?"
 msgid "Delete your account on the old server"
 msgstr "Pa akonti rẹ rẹ lori olupin atijọ"
 
-#: src/components/rss-dialog.tsx:198
+#: src/components/rss-dialog.tsx:197
 msgid "Deleting feed..."
 msgstr "Ń pa ìṣàn rẹ́..."
 
@@ -575,7 +575,7 @@ msgstr "Mú kúrò"
 msgid "Displays the mobile sidebar."
 msgstr "Ó ń fi sidebar fóònù hàn."
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:451
 msgid "Done"
 msgstr "Ti parí"
 
@@ -592,7 +592,7 @@ msgstr "Ìgbasílẹ̀ kùnà"
 msgid "Dyslexia-friendly"
 msgstr "Ẹ̀dá lóàfin fún àìmoọ̀rọ̀"
 
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:383
 msgid "e.g., Feedly, NewsBlur"
 msgstr "f.a. Feedly, NewsBlur"
 
@@ -600,8 +600,8 @@ msgstr "f.a. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Ṣàtúnṣe {label}"
 
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:339
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:333
 msgid "Edit feed"
 msgstr "Tunṣe feed"
 
@@ -648,7 +648,7 @@ msgstr "Kò lè fi àkántì kún"
 msgid "Failed to add tag"
 msgstr "Kò lè fi tag kún"
 
-#: src/features/notification/index.tsx:174
+#: src/features/notification/index.tsx:177
 msgid "Failed to clear notifications"
 msgstr "Kò ṣàṣeyọrí láti pa àwọn ìfitónilétí rẹ́"
 
@@ -657,11 +657,11 @@ msgstr "Kò ṣàṣeyọrí láti pa àwọn ìfitónilétí rẹ́"
 msgid "Failed to copy"
 msgstr "Kò lè dà"
 
-#: src/components/rss-dialog.tsx:146
+#: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
 msgstr "Kò ṣàṣeyọrí láti ṣẹ̀dá ìfunni RSS"
 
-#: src/components/rss-dialog.tsx:200
+#: src/components/rss-dialog.tsx:199
 msgid "Failed to delete feed"
 msgstr "Kò lè pa feed rẹ́"
 
@@ -677,11 +677,11 @@ msgstr "Kò ṣeé gbé àwòrán wọlé"
 msgid "Failed to load video"
 msgstr "Kò ṣeé gbé fídíò wọlé"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:165
 msgid "Failed to mark all as read"
 msgstr "Kò lè samì sí gbogbo wọn gẹ́gẹ́ bí èyí tí a ti kà"
 
-#: src/features/notification/index.tsx:152
+#: src/features/notification/index.tsx:155
 msgid "Failed to mark as read"
 msgstr "Kò ṣàṣeyọrí láti samì sí bíi tí a ti kà"
 
@@ -689,7 +689,7 @@ msgstr "Kò ṣàṣeyọrí láti samì sí bíi tí a ti kà"
 msgid "Failed to remove account"
 msgstr "Kò lè mú àkántì kúrò"
 
-#: src/components/rss-dialog.tsx:180
+#: src/components/rss-dialog.tsx:179
 msgid "Failed to rename feed"
 msgstr "Kò lè tún sọ feed lórúkọ"
 
@@ -701,23 +701,23 @@ msgstr "Kò lè firanṣẹ́ kóòdù ìjẹ́rìí"
 msgid "Failed to update category"
 msgstr "Kò lè mú ẹ̀ka dòde"
 
-#: src/components/rss-dialog.tsx:215
+#: src/components/rss-dialog.tsx:214
 msgid "Failed to update feed"
 msgstr "Kò lè mú feed dòde"
 
-#: src/components/rss-dialog.tsx:235
+#: src/components/rss-dialog.tsx:234
 msgid "Feed created"
 msgstr "A ti dá feed"
 
-#: src/components/rss-dialog.tsx:199
+#: src/components/rss-dialog.tsx:198
 msgid "Feed deleted"
 msgstr "A ti pa feed rẹ́"
 
-#: src/components/rss-dialog.tsx:386
+#: src/components/rss-dialog.tsx:380
 msgid "Feed name"
 msgstr "Orúkọ feed"
 
-#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:178
 msgid "Feed renamed"
 msgstr "A ti tún feed sọ lórúkọ"
 
@@ -934,11 +934,11 @@ msgstr "Ṣàkóso àwọn àkáǹtì rẹ tí a ti sopọ̀ fún ìfitónilét�
 msgid "Mark all as read"
 msgstr "Sàmì sí gbogbo gẹ́gẹ́ bí kíkà"
 
-#: src/features/notification/index.tsx:213
+#: src/features/notification/index.tsx:216
 msgid "Mark all read"
 msgstr "Sàmì sí gbogbo gẹ́gẹ́ bí kíkà"
 
-#: src/features/notification/index.tsx:159
+#: src/features/notification/index.tsx:162
 msgid "Marking all as read..."
 msgstr "Ń samì sí gbogbo rẹ̀ bíi tí a ti kà..."
 
@@ -1000,7 +1000,7 @@ msgstr "Kò sí ìròyìn tó sopọ̀"
 msgid "No groups available"
 msgstr "Kò sí ẹgbẹ́ tó wà"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No notifications"
 msgstr "Kò sí ìfìtọ́nisí"
 
@@ -1030,7 +1030,7 @@ msgstr "Kò sí àbájáde"
 msgid "No results found."
 msgstr "A kò rí àbájáde kankan."
 
-#: src/components/rss-dialog.tsx:260
+#: src/components/rss-dialog.tsx:254
 msgid "No RSS feeds yet"
 msgstr "Kò sí feed RSS síbẹ̀"
 
@@ -1042,7 +1042,7 @@ msgstr "A kò rí àgbègbè àkókò kankan."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Kò sí àkọsílẹ̀ kókó síbẹ̀ — gbìyànjú lẹ́ẹ̀kan síi lẹ́yìn ìfìtọ́nisí tó kàn."
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No unread notifications"
 msgstr "Kò sí ìfìtọ́nisí tí a kò kà"
 
@@ -1074,8 +1074,8 @@ msgstr "A kò ṣètò"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:184
+#: src/features/notification/index.tsx:130
+#: src/features/notification/index.tsx:187
 msgid "Notifications"
 msgstr "Àwọn ìfìtọ́nisí"
 
@@ -1084,8 +1084,8 @@ msgstr "Àwọn ìfìtọ́nisí"
 msgid "Notifications: {0}"
 msgstr "Àwọn ìfitónilétí: {0}"
 
-#: src/components/rss-dialog.tsx:358
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:359
 msgid "Notify by default"
 msgstr "Fìtọ́nisí gẹ́gẹ́ bí àbùdá"
 
@@ -1289,11 +1289,12 @@ msgstr "Ọ̀tún sí Òsì"
 msgid "Rows per page"
 msgstr "Àwọn ila fún ojú-ìwé kọ̀ọ̀kan"
 
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "Feed RSS"
 
-#: src/components/rss-dialog.tsx:236
+#: src/components/rss-dialog.tsx:235
+#: src/features/notification/index.tsx:236
 msgid "RSS feeds"
 msgstr "Àwọn ìfàn RSS"
 
@@ -1303,17 +1304,13 @@ msgstr "Ọjọ́ Àbámẹ́ta"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:293
-#: src/components/rss-dialog.tsx:302
+#: src/components/rss-dialog.tsx:287
+#: src/components/rss-dialog.tsx:296
 msgid "Save"
 msgstr "Fi pamọ́"
 
-#: src/components/rss-dialog.tsx:240
-msgid "Save this URL now. You won't be able to see the token again."
-msgstr "Fi URL yìí pamọ́ báyìí. Ìwọ kò ní lè rí token náà mọ́."
-
-#: src/components/rss-dialog.tsx:178
-#: src/components/rss-dialog.tsx:213
+#: src/components/rss-dialog.tsx:177
+#: src/components/rss-dialog.tsx:212
 msgid "Saving..."
 msgstr "Ń fi pamọ́..."
 
@@ -1459,7 +1456,7 @@ msgstr "Ṣètò ibi tí o ti wá àti ibi tí o ń lọ"
 msgid "Settings"
 msgstr "Àwọn ìṣètò"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:196
 msgid "Show all"
 msgstr "Fi gbogbo rẹ̀ hàn"
 
@@ -1573,7 +1570,7 @@ msgstr "Àwọn ìṣètò Theme"
 msgid "This page has not been created yet."
 msgstr "A kò tí ì ṣẹ̀dá ojú-ìwé yìí."
 
-#: src/components/rss-dialog.tsx:471
+#: src/components/rss-dialog.tsx:465
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Èyí yóò pa ìfàn yìí rẹ́ pátápátá. Èyíkéyìí òǹkàwé RSS tó ń lò ó kò ní lè rí àwọn ìfitónilétí rẹ mọ́."
 
@@ -1689,7 +1686,7 @@ msgstr "Aláìmọ̀"
 msgid "Unverified"
 msgstr "Kò tíì jẹ́rìí sí"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:397
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Lo feed yìí fún àwọn ìforúkọsílẹ̀ ìfitónilétí lọ́wọ́lọ́wọ́"
 

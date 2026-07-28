@@ -516,7 +516,9 @@ def action_rss_update(a):
 
 	enabled = a.input("enabled", "").strip()
 	if enabled:
-		enabled_val = 1 if enabled == "1" else 0
+		# Accept both boolean forms, matching add_to_existing in rss/create;
+		# parsing only "1" made enabled=true silently disable the feed.
+		enabled_val = 1 if enabled == "1" or enabled == "true" else 0
 		mochi.db.execute("update rss set enabled = ? where id = ?", enabled_val, id)
 
 	return {"data": {}}

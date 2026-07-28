@@ -3,7 +3,7 @@
 // This file is part of Mochi, licensed under the GNU AGPL v3 with the
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
 
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Trans, useLingui } from '@lingui/react/macro'
 import {
   PageHeader,
@@ -30,9 +30,11 @@ import {
   Bell,
   Check,
   Loader2,
+  Rss,
   Trash2,
 } from 'lucide-react'
 import type { Notification as ApiNotification } from '@/api/notifications'
+import { RssDialog } from '@/components/rss-dialog'
 import { useNotificationWebSocket } from '@/hooks/useNotificationWebSocket'
 import {
   useNotificationsQuery,
@@ -127,6 +129,7 @@ export function Notifications() {
   const { t } = useLingui()
   usePageTitle(t`Notifications`)
   const [showAll, setShowAll] = useShellStorage(STORAGE_KEY, false)
+  const [rssOpen, setRssOpen] = useState(false)
 
   const { data, isLoading, error, refetch } = useNotificationsQuery()
 
@@ -228,9 +231,14 @@ export function Notifications() {
                 <span className='hidden md:inline'><Trans>Clear all</Trans></span>
               </Button>
             )}
+            <Button variant='ghost' size='sm' onClick={() => setRssOpen(true)}>
+              <Rss className='me-1.5 size-4' />
+              <span className='hidden md:inline'><Trans>RSS feeds</Trans></span>
+            </Button>
           </>
         }
       />
+      <RssDialog open={rssOpen} onOpenChange={setRssOpen} />
       <Main>
         <div>
           {/* Loading */}

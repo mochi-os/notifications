@@ -135,7 +135,7 @@ msgstr "Ajoute ekip/app"
 msgid "Add to existing notifications"
 msgstr "Ajoute nan notifikasyon ki egziste"
 
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:394
 msgid "Add to existing subscriptions"
 msgstr "Ajoute nan abònman ki egziste"
 
@@ -229,7 +229,7 @@ msgstr "Tounen lakay"
 msgid "Banner"
 msgstr "Banyè"
 
-#: src/features/notification/index.tsx:79
+#: src/features/notification/index.tsx:81
 msgid "Blocked navigation to untrusted link"
 msgstr "Navigasyon bloke nan lyen pa fyab"
 
@@ -251,7 +251,7 @@ msgstr "Notifikasyon navigatè"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:413
+#: src/components/rss-dialog.tsx:407
 msgid "Cancel"
 msgstr "Anile"
 
@@ -299,7 +299,7 @@ msgid "Clear"
 msgstr "Efase"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:228
+#: src/features/notification/index.tsx:231
 msgid "Clear all"
 msgstr "Efase tout"
 
@@ -321,7 +321,7 @@ msgstr "Efase seleksyon"
 msgid "Clear selection (Escape)"
 msgstr "Efase seleksyon (Escape)"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:175
 msgid "Clearing notifications..."
 msgstr "Ap efase notifikasyon yo..."
 
@@ -416,16 +416,16 @@ msgid "Copied"
 msgstr "Kopye"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:124
-#: src/components/rss-dialog.tsx:133
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "Kopye nan clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:317
-#: src/components/rss-dialog.tsx:326
-#: src/components/rss-dialog.tsx:443
-#: src/components/rss-dialog.tsx:452
+#: src/components/rss-dialog.tsx:311
+#: src/components/rss-dialog.tsx:320
+#: src/components/rss-dialog.tsx:437
+#: src/components/rss-dialog.tsx:446
 msgid "Copy"
 msgstr "Kopye"
 
@@ -450,20 +450,20 @@ msgstr "Nou pa t kapab verifye ak kont sa a. Tanpri eseye ankò."
 msgid "Create {0}"
 msgstr "Kreye {0}"
 
-#: src/components/rss-dialog.tsx:377
-#: src/components/rss-dialog.tsx:424
+#: src/components/rss-dialog.tsx:371
+#: src/components/rss-dialog.tsx:418
 msgid "Create feed"
 msgstr "Kreye fil"
 
-#: src/components/rss-dialog.tsx:261
+#: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "Kreye yon sèl pou kòmanse."
 
-#: src/components/rss-dialog.tsx:234
+#: src/components/rss-dialog.tsx:233
 msgid "Create RSS feed"
 msgstr "Kreye fil RSS"
 
-#: src/components/rss-dialog.tsx:144
+#: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
 msgstr "Ap kreye fil RSS..."
 
@@ -505,16 +505,16 @@ msgstr "Defo"
 msgid "Default AI account"
 msgstr "Kont AI defo"
 
-#: src/components/rss-dialog.tsx:472
+#: src/components/rss-dialog.tsx:466
 msgid "Delete"
 msgstr "Efase"
 
-#: src/components/rss-dialog.tsx:348
-#: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:342
+#: src/components/rss-dialog.tsx:347
 msgid "Delete feed"
 msgstr "Efase fil"
 
-#: src/components/rss-dialog.tsx:470
+#: src/components/rss-dialog.tsx:464
 msgid "Delete feed?"
 msgstr "Efase fil?"
 
@@ -522,7 +522,7 @@ msgstr "Efase fil?"
 msgid "Delete your account on the old server"
 msgstr "Efase kont ou sou ansyen sèvè a"
 
-#: src/components/rss-dialog.tsx:198
+#: src/components/rss-dialog.tsx:197
 msgid "Deleting feed..."
 msgstr "Ap efase fil..."
 
@@ -575,7 +575,7 @@ msgstr "Rejte"
 msgid "Displays the mobile sidebar."
 msgstr "Afiche ba kote mobil la."
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:451
 msgid "Done"
 msgstr "Fini"
 
@@ -592,7 +592,7 @@ msgstr "Telechajman an echwe"
 msgid "Dyslexia-friendly"
 msgstr "Adapte pou disleksi"
 
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:383
 msgid "e.g., Feedly, NewsBlur"
 msgstr "pa egzanp, Feedly, NewsBlur"
 
@@ -600,8 +600,8 @@ msgstr "pa egzanp, Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Modifye {label}"
 
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:339
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:333
 msgid "Edit feed"
 msgstr "Modifye feed"
 
@@ -648,7 +648,7 @@ msgstr "Echwe pou ajoute kont"
 msgid "Failed to add tag"
 msgstr "Echwe pou ajoute tag"
 
-#: src/features/notification/index.tsx:174
+#: src/features/notification/index.tsx:177
 msgid "Failed to clear notifications"
 msgstr "Echèk pou efase notifikasyon yo"
 
@@ -657,11 +657,11 @@ msgstr "Echèk pou efase notifikasyon yo"
 msgid "Failed to copy"
 msgstr "Echwe pou kopye"
 
-#: src/components/rss-dialog.tsx:146
+#: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
 msgstr "Echèk pou kreye fil RSS"
 
-#: src/components/rss-dialog.tsx:200
+#: src/components/rss-dialog.tsx:199
 msgid "Failed to delete feed"
 msgstr "Echwe pou efase feed"
 
@@ -677,11 +677,11 @@ msgstr "Echèk chajman imaj la"
 msgid "Failed to load video"
 msgstr "Echèk chajman videyo a"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:165
 msgid "Failed to mark all as read"
 msgstr "Echwe pou make tout kòm li"
 
-#: src/features/notification/index.tsx:152
+#: src/features/notification/index.tsx:155
 msgid "Failed to mark as read"
 msgstr "Echèk pou make kòm li"
 
@@ -689,7 +689,7 @@ msgstr "Echèk pou make kòm li"
 msgid "Failed to remove account"
 msgstr "Echwe pou retire kont"
 
-#: src/components/rss-dialog.tsx:180
+#: src/components/rss-dialog.tsx:179
 msgid "Failed to rename feed"
 msgstr "Echwe pou rebatize feed"
 
@@ -701,23 +701,23 @@ msgstr "Echwe pou voye kòd verifikasyon"
 msgid "Failed to update category"
 msgstr "Echwe pou mete ajou kategori"
 
-#: src/components/rss-dialog.tsx:215
+#: src/components/rss-dialog.tsx:214
 msgid "Failed to update feed"
 msgstr "Echwe pou mete ajou feed"
 
-#: src/components/rss-dialog.tsx:235
+#: src/components/rss-dialog.tsx:234
 msgid "Feed created"
 msgstr "Feed kreye"
 
-#: src/components/rss-dialog.tsx:199
+#: src/components/rss-dialog.tsx:198
 msgid "Feed deleted"
 msgstr "Feed efase"
 
-#: src/components/rss-dialog.tsx:386
+#: src/components/rss-dialog.tsx:380
 msgid "Feed name"
 msgstr "Non feed"
 
-#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:178
 msgid "Feed renamed"
 msgstr "Feed rebatize"
 
@@ -934,11 +934,11 @@ msgstr "Jere kont ou konekte yo pou notifikasyon ak sèvis."
 msgid "Mark all as read"
 msgstr "Make tout kòm li"
 
-#: src/features/notification/index.tsx:213
+#: src/features/notification/index.tsx:216
 msgid "Mark all read"
 msgstr "Make tout kòm li"
 
-#: src/features/notification/index.tsx:159
+#: src/features/notification/index.tsx:162
 msgid "Marking all as read..."
 msgstr "Ap make tout kòm li..."
 
@@ -1000,7 +1000,7 @@ msgstr "Pa gen kont konekte"
 msgid "No groups available"
 msgstr "Pa gen gwoup disponib"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No notifications"
 msgstr "Pa gen notifikasyon"
 
@@ -1030,7 +1030,7 @@ msgstr "Pa jwenn okenn rezilta"
 msgid "No results found."
 msgstr "Pa gen rezilta ki jwenn."
 
-#: src/components/rss-dialog.tsx:260
+#: src/components/rss-dialog.tsx:254
 msgid "No RSS feeds yet"
 msgstr "Poko gen flux RSS"
 
@@ -1042,7 +1042,7 @@ msgstr "Pa gen zòn lè ki jwenn."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Poko gen anrejistreman sijè — eseye ankò apre pwochèn notifikasyon an."
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No unread notifications"
 msgstr "Pa gen notifikasyon ki pa li"
 
@@ -1074,8 +1074,8 @@ msgstr "Pa defini"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:184
+#: src/features/notification/index.tsx:130
+#: src/features/notification/index.tsx:187
 msgid "Notifications"
 msgstr "Notifikasyon"
 
@@ -1084,8 +1084,8 @@ msgstr "Notifikasyon"
 msgid "Notifications: {0}"
 msgstr "Notifikasyon: {0}"
 
-#: src/components/rss-dialog.tsx:358
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:359
 msgid "Notify by default"
 msgstr "Notifye pa default"
 
@@ -1289,11 +1289,12 @@ msgstr "Dwat a Goch"
 msgid "Rows per page"
 msgstr "Ranje pa paj"
 
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "Flux RSS"
 
-#: src/components/rss-dialog.tsx:236
+#: src/components/rss-dialog.tsx:235
+#: src/features/notification/index.tsx:236
 msgid "RSS feeds"
 msgstr "Flux RSS yo"
 
@@ -1303,17 +1304,13 @@ msgstr "Samdi"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:293
-#: src/components/rss-dialog.tsx:302
+#: src/components/rss-dialog.tsx:287
+#: src/components/rss-dialog.tsx:296
 msgid "Save"
 msgstr "Sove"
 
-#: src/components/rss-dialog.tsx:240
-msgid "Save this URL now. You won't be able to see the token again."
-msgstr "Sove URL sa a kounye a. Ou pap kapab wè tokenn nan ankò."
-
-#: src/components/rss-dialog.tsx:178
-#: src/components/rss-dialog.tsx:213
+#: src/components/rss-dialog.tsx:177
+#: src/components/rss-dialog.tsx:212
 msgid "Saving..."
 msgstr "Ap sove..."
 
@@ -1459,7 +1456,7 @@ msgstr "Mete orijin ak destinasyon"
 msgid "Settings"
 msgstr "Paramèt"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:196
 msgid "Show all"
 msgstr "Montre tout"
 
@@ -1573,7 +1570,7 @@ msgstr "Paramèt Tèm"
 msgid "This page has not been created yet."
 msgstr "Paj sa a poko kreye."
 
-#: src/components/rss-dialog.tsx:471
+#: src/components/rss-dialog.tsx:465
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Sa pral efase feed sa pèmanan. Nenpòt lektè RSS k ap itilize l pap kapab aksè notifikasyon w yo ankò."
 
@@ -1689,7 +1686,7 @@ msgstr "Enkoni"
 msgid "Unverified"
 msgstr "Pa verifye"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:397
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Itilize feed sa pou abònman notifikasyon aktyèl ou yo"
 

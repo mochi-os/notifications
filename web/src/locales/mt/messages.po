@@ -135,7 +135,7 @@ msgstr "Żid tim/app"
 msgid "Add to existing notifications"
 msgstr "Żid man-notifiki eżistenti"
 
-#: src/components/rss-dialog.tsx:400
+#: src/components/rss-dialog.tsx:394
 msgid "Add to existing subscriptions"
 msgstr "Żid mas-sottoskrizzjonijiet eżistenti"
 
@@ -229,7 +229,7 @@ msgstr "Lura għall-paġna ewlenija"
 msgid "Banner"
 msgstr "Banner"
 
-#: src/features/notification/index.tsx:79
+#: src/features/notification/index.tsx:81
 msgid "Blocked navigation to untrusted link"
 msgstr "Navigazzjoni mblokkata lejn link mhux fdat"
 
@@ -251,7 +251,7 @@ msgstr "Notifiki tal-browser"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:413
+#: src/components/rss-dialog.tsx:407
 msgid "Cancel"
 msgstr "Ikkanċella"
 
@@ -299,7 +299,7 @@ msgid "Clear"
 msgstr "Naddaf"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:228
+#: src/features/notification/index.tsx:231
 msgid "Clear all"
 msgstr "Naddaf kollox"
 
@@ -321,7 +321,7 @@ msgstr "Naddaf l-għażla"
 msgid "Clear selection (Escape)"
 msgstr "Naddaf l-għażla (Escape)"
 
-#: src/features/notification/index.tsx:172
+#: src/features/notification/index.tsx:175
 msgid "Clearing notifications..."
 msgstr "Qed innaddaf in-notifiki..."
 
@@ -416,16 +416,16 @@ msgid "Copied"
 msgstr "Ikkupjat"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:124
-#: src/components/rss-dialog.tsx:133
+#: src/components/rss-dialog.tsx:123
+#: src/components/rss-dialog.tsx:132
 msgid "Copied to clipboard"
 msgstr "Ikkupjat fil-clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:317
-#: src/components/rss-dialog.tsx:326
-#: src/components/rss-dialog.tsx:443
-#: src/components/rss-dialog.tsx:452
+#: src/components/rss-dialog.tsx:311
+#: src/components/rss-dialog.tsx:320
+#: src/components/rss-dialog.tsx:437
+#: src/components/rss-dialog.tsx:446
 msgid "Copy"
 msgstr "Ikkupja"
 
@@ -450,20 +450,20 @@ msgstr "Ma stajniex nivverifikaw b'dak il-kont. Jekk jogħġbok erġa' pprova."
 msgid "Create {0}"
 msgstr "Oħloq {0}"
 
-#: src/components/rss-dialog.tsx:377
-#: src/components/rss-dialog.tsx:424
+#: src/components/rss-dialog.tsx:371
+#: src/components/rss-dialog.tsx:418
 msgid "Create feed"
 msgstr "Oħloq feed"
 
-#: src/components/rss-dialog.tsx:261
+#: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "Oħloq waħda biex tibda."
 
-#: src/components/rss-dialog.tsx:234
+#: src/components/rss-dialog.tsx:233
 msgid "Create RSS feed"
 msgstr "Oħloq feed RSS"
 
-#: src/components/rss-dialog.tsx:144
+#: src/components/rss-dialog.tsx:143
 msgid "Creating RSS feed..."
 msgstr "Qed noħloq feed RSS..."
 
@@ -505,16 +505,16 @@ msgstr "Default"
 msgid "Default AI account"
 msgstr "Kont AI default"
 
-#: src/components/rss-dialog.tsx:472
+#: src/components/rss-dialog.tsx:466
 msgid "Delete"
 msgstr "Ħassar"
 
-#: src/components/rss-dialog.tsx:348
-#: src/components/rss-dialog.tsx:353
+#: src/components/rss-dialog.tsx:342
+#: src/components/rss-dialog.tsx:347
 msgid "Delete feed"
 msgstr "Ħassar feed"
 
-#: src/components/rss-dialog.tsx:470
+#: src/components/rss-dialog.tsx:464
 msgid "Delete feed?"
 msgstr "Tħassar feed?"
 
@@ -522,7 +522,7 @@ msgstr "Tħassar feed?"
 msgid "Delete your account on the old server"
 msgstr "Ħassar il-kont tiegħek fuq is-server il-qadim"
 
-#: src/components/rss-dialog.tsx:198
+#: src/components/rss-dialog.tsx:197
 msgid "Deleting feed..."
 msgstr "Qed jitħassar il-feed..."
 
@@ -575,7 +575,7 @@ msgstr "Warrab"
 msgid "Displays the mobile sidebar."
 msgstr "Juri l-barra tal-ġenb tal-mobile."
 
-#: src/components/rss-dialog.tsx:457
+#: src/components/rss-dialog.tsx:451
 msgid "Done"
 msgstr "Lest"
 
@@ -592,7 +592,7 @@ msgstr "It-tniżżil falla"
 msgid "Dyslexia-friendly"
 msgstr "Adattat għad-disleksja"
 
-#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:383
 msgid "e.g., Feedly, NewsBlur"
 msgstr "eż., Feedly, NewsBlur"
 
@@ -600,8 +600,8 @@ msgstr "eż., Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Editja {label}"
 
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:339
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:333
 msgid "Edit feed"
 msgstr "Editja l-feed"
 
@@ -648,7 +648,7 @@ msgstr "Ma rnexxiex jiżdied il-kont"
 msgid "Failed to add tag"
 msgstr "Ma rnexxiex jiżdied it-tag"
 
-#: src/features/notification/index.tsx:174
+#: src/features/notification/index.tsx:177
 msgid "Failed to clear notifications"
 msgstr "Ma rnexxiex li jitnaddfu n-notifiki"
 
@@ -657,11 +657,11 @@ msgstr "Ma rnexxiex li jitnaddfu n-notifiki"
 msgid "Failed to copy"
 msgstr "Ma rnexxiex jiġi kkupjat"
 
-#: src/components/rss-dialog.tsx:146
+#: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
 msgstr "Ma rnexxiex li jinħoloq feed RSS"
 
-#: src/components/rss-dialog.tsx:200
+#: src/components/rss-dialog.tsx:199
 msgid "Failed to delete feed"
 msgstr "Ma rnexxiex titħassar il-feed"
 
@@ -677,11 +677,11 @@ msgstr "Ma rnexxielux jitgħabba l-istampa"
 msgid "Failed to load video"
 msgstr "Ma rnexxielux jitgħabba l-vidjo"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:165
 msgid "Failed to mark all as read"
 msgstr "Ma rnexxiex jiġu mmarkati kollha bħala maqruwa"
 
-#: src/features/notification/index.tsx:152
+#: src/features/notification/index.tsx:155
 msgid "Failed to mark as read"
 msgstr "Ma rnexxiex li jiġi mmarkat bħala moqri"
 
@@ -689,7 +689,7 @@ msgstr "Ma rnexxiex li jiġi mmarkat bħala moqri"
 msgid "Failed to remove account"
 msgstr "Ma rnexxiex jitneħħa l-kont"
 
-#: src/components/rss-dialog.tsx:180
+#: src/components/rss-dialog.tsx:179
 msgid "Failed to rename feed"
 msgstr "Ma rnexxiex tiġi msemmija mill-ġdid il-feed"
 
@@ -701,23 +701,23 @@ msgstr "Ma rnexxiex jintbagħat il-kodiċi tal-verifika"
 msgid "Failed to update category"
 msgstr "Ma rnexxiex tiġi aġġornata l-kategorija"
 
-#: src/components/rss-dialog.tsx:215
+#: src/components/rss-dialog.tsx:214
 msgid "Failed to update feed"
 msgstr "Ma rnexxiex tiġi aġġornata l-feed"
 
-#: src/components/rss-dialog.tsx:235
+#: src/components/rss-dialog.tsx:234
 msgid "Feed created"
 msgstr "Inħolqot il-feed"
 
-#: src/components/rss-dialog.tsx:199
+#: src/components/rss-dialog.tsx:198
 msgid "Feed deleted"
 msgstr "Tħassret il-feed"
 
-#: src/components/rss-dialog.tsx:386
+#: src/components/rss-dialog.tsx:380
 msgid "Feed name"
 msgstr "Isem il-feed"
 
-#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:178
 msgid "Feed renamed"
 msgstr "Il-feed ġiet imsemmija mill-ġdid"
 
@@ -934,11 +934,11 @@ msgstr "Immaniġġja l-kontijiet konnessi tiegħek għan-notifiki u s-servizzi."
 msgid "Mark all as read"
 msgstr "Immarka kollox bħala maqru"
 
-#: src/features/notification/index.tsx:213
+#: src/features/notification/index.tsx:216
 msgid "Mark all read"
 msgstr "Immarka kollox maqru"
 
-#: src/features/notification/index.tsx:159
+#: src/features/notification/index.tsx:162
 msgid "Marking all as read..."
 msgstr "Qed nimmarka kollox bħala moqri..."
 
@@ -1000,7 +1000,7 @@ msgstr "L-ebda kontijiet konnessi"
 msgid "No groups available"
 msgstr "L-ebda gruppi disponibbli"
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No notifications"
 msgstr "L-ebda notifiki"
 
@@ -1030,7 +1030,7 @@ msgstr "Ma nstab l-ebda riżultat"
 msgid "No results found."
 msgstr "Ma nstabu l-ebda riżultati."
 
-#: src/components/rss-dialog.tsx:260
+#: src/components/rss-dialog.tsx:254
 msgid "No RSS feeds yet"
 msgstr "L-ebda RSS feeds s'issa"
 
@@ -1042,7 +1042,7 @@ msgstr "Ma nstabu l-ebda żona ta' ħin."
 msgid "No topic record yet — try again after the next notification."
 msgstr "Għadu m'hemm l-ebda rekord tat-topic — erġa' pprova wara n-notifika li jmiss."
 
-#: src/features/notification/index.tsx:266
+#: src/features/notification/index.tsx:274
 msgid "No unread notifications"
 msgstr "L-ebda notifiki mhux moqrija"
 
@@ -1074,8 +1074,8 @@ msgstr "Mhux issettjat"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:128
-#: src/features/notification/index.tsx:184
+#: src/features/notification/index.tsx:130
+#: src/features/notification/index.tsx:187
 msgid "Notifications"
 msgstr "Notifiki"
 
@@ -1084,8 +1084,8 @@ msgstr "Notifiki"
 msgid "Notifications: {0}"
 msgstr "Notifiki: {0}"
 
-#: src/components/rss-dialog.tsx:358
-#: src/components/rss-dialog.tsx:365
+#: src/components/rss-dialog.tsx:352
+#: src/components/rss-dialog.tsx:359
 msgid "Notify by default"
 msgstr "Innotifika b'mod awtomatiku"
 
@@ -1289,11 +1289,12 @@ msgstr "Lemin għal Xellug"
 msgid "Rows per page"
 msgstr "Ringieli kull paġna"
 
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "Feed RSS"
 
-#: src/components/rss-dialog.tsx:236
+#: src/components/rss-dialog.tsx:235
+#: src/features/notification/index.tsx:236
 msgid "RSS feeds"
 msgstr "Feeds RSS"
 
@@ -1303,17 +1304,13 @@ msgstr "Is-Sibt"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:293
-#: src/components/rss-dialog.tsx:302
+#: src/components/rss-dialog.tsx:287
+#: src/components/rss-dialog.tsx:296
 msgid "Save"
 msgstr "Issejvja"
 
-#: src/components/rss-dialog.tsx:240
-msgid "Save this URL now. You won't be able to see the token again."
-msgstr "Issejvja dan l-URL issa. Mhux ser tkun tista' tara t-token mill-ġdid."
-
-#: src/components/rss-dialog.tsx:178
-#: src/components/rss-dialog.tsx:213
+#: src/components/rss-dialog.tsx:177
+#: src/components/rss-dialog.tsx:212
 msgid "Saving..."
 msgstr "Qed jiġi ssejvjat..."
 
@@ -1459,7 +1456,7 @@ msgstr "Issettja oriġini u destinazzjoni"
 msgid "Settings"
 msgstr "Settings"
 
-#: src/features/notification/index.tsx:193
+#: src/features/notification/index.tsx:196
 msgid "Show all"
 msgstr "Uri kollox"
 
@@ -1573,7 +1570,7 @@ msgstr "Settings tat-Tema"
 msgid "This page has not been created yet."
 msgstr "Din il-paġna għadha ma nħolqotx."
 
-#: src/components/rss-dialog.tsx:471
+#: src/components/rss-dialog.tsx:465
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Dan iħassar permanentement dan il-feed. Kwalunkwe RSS reader li jużah ma jibqax jista' jaċċessa n-notifiki tiegħek."
 
@@ -1689,7 +1686,7 @@ msgstr "Mhux magħruf"
 msgid "Unverified"
 msgstr "Mhux ivverifikat"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:397
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Uża dan il-feed għall-abbonamenti tan-notifiki attwali tiegħek"
 
