@@ -572,6 +572,20 @@ for c in json.load(sys.stdin).get('data', []):
     notif_curl POST "/-/categories/delete" -d "id=$CID&reassign_to=1" > /dev/null
 done
 
+# Test: Category rows carry a display label (translated at read time for the
+# seeded ids; equals the stored label under an English account)
+RESULT=$(notif_curl GET "/-/categories/list")
+if echo "$RESULT" | python3 -c "
+import sys, json
+cats = {c['id']: c for c in json.load(sys.stdin)['data']}
+ok = cats.get('1', {}).get('display') == 'Normal' and cats.get('0', {}).get('display') == 'No notifications'
+sys.exit(0 if ok else 1)
+" 2>/dev/null; then
+    pass "Seeded categories carry display labels"
+else
+    fail "Seeded categories carry display labels" "$(echo "$RESULT" | head -c 200)"
+fi
+
 # Cleanup: pre-fix aborts leak a half-created category; remove any BadDest rows
 notif_curl GET "/-/categories/list" | python3 -c "
 import sys, json

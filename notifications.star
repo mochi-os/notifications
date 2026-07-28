@@ -764,10 +764,25 @@ def function_topic_remove(context, topic="", object=""):
 	row_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
 	return True
 
+# category_display resolves the label to render for a category row. The two
+# seeded categories store English literals per host at create time, so
+# translate them at read time while they remain unrenamed; user categories
+# and renamed seeds render as stored. Consumers show `display` and edit
+# `label`, so a translation is never accidentally saved as a rename.
+def category_display(id, label):
+	if id == "0" and label == "No notifications":
+		return mochi.app.label("category.none")
+	if id == "1" and label == "Normal":
+		return mochi.app.label("category.normal")
+	return label
+
 # Permission-gated function for apps to list categories (for pickers shown in app UI).
 # Kept narrow — only labels and ids, no destinations.
 def function_categories(context):
-	return mochi.db.rows('select id, label, "default" from categories order by id') or []
+	rows = mochi.db.rows('select id, label, "default" from categories order by id') or []
+	for row in rows:
+		row["display"] = category_display(row["id"], row["label"])
+	return rows
 
 # Category CRUD — used by the settings page via the service proxy; gated by
 # notifications/manage in app.json.
@@ -778,6 +793,7 @@ def function_category_list(context):
 	for c in cats:
 		dests = mochi.db.rows("select type, target from destinations where category = ?", c["id"]) or []
 		c["destinations"] = dests
+		c["display"] = category_display(c["id"], c["label"])
 		result.append(c)
 	return result
 
