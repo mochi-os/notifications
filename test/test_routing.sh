@@ -339,6 +339,16 @@ else
     [ -n "$LEAK_ID" ] && notif_curl POST "/-/push/accounts/remove" -d "id=$LEAK_ID" > /dev/null
 fi
 
+# Test: Over-long feed token with session auth returns 404 (characterization:
+# same result as an unknown token; the cap only skips the lookup)
+LONG_FEED_TOKEN=$(python3 -c "print('k' * 1000)")
+RESULT=$("$CURL_HELPER" -a admin "/notifications/-/rss?token=$LONG_FEED_TOKEN")
+if echo "$RESULT" | grep -q "Feed not found"; then
+    pass "Over-long feed token returns 404"
+else
+    fail "Over-long feed token returns 404" "$(echo "$RESULT" | head -c 150)"
+fi
+
 # Test: Invalid feed token returns 401
 RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/-/rss?token=invalid_token_12345")
 if [ "$RESULT" = "401" ]; then

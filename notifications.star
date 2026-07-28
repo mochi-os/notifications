@@ -255,6 +255,9 @@ def action_rss(a):
 	feed_name = mochi.app.label("app.name")
 	feed_token = a.input("token", "").strip()
 	feed = None
+	if len(feed_token) > 512:
+		# Cannot match any stored token; skip the lookup.
+		return a.error.label(404, "errors.feed_not_found")
 	if feed_token:
 		# The token identifies the feed and is the gate: an unknown token was
 		# revoked with its feed, and a disabled feed's token stays revoked
