@@ -378,6 +378,35 @@ if [ -n "$FEED_TOKEN" ]; then
 fi
 
 # ============================================================================
+# TOPIC DELETE TESTS
+# ============================================================================
+
+echo ""
+echo "--- Topic Delete Tests ---"
+
+# Emit to create a topic row, delete it via the HTTP action, verify gone
+curl -s "http://localhost:8081/test/test_notifications_emit?object=topic-probe&body=topic-probe-body" > /dev/null
+RESULT=$(notif_curl POST "/-/topics/delete" -d "app=test&topic=probe&object=topic-probe")
+if echo "$RESULT" | grep -q '"data"'; then
+    pass "Topic delete succeeds"
+else
+    fail "Topic delete succeeds" "$(echo "$RESULT" | head -c 150)"
+fi
+RESULT=$(notif_curl GET "/-/topics/lookup?app=test&topic=probe&object=topic-probe")
+if echo "$RESULT" | grep -q '"data":null'; then
+    pass "Deleted topic no longer found"
+else
+    fail "Deleted topic no longer found" "$(echo "$RESULT" | head -c 150)"
+fi
+RESULT=$(notif_curl POST "/-/topics/delete" -d "app=test&topic=probe&object=topic-probe")
+if echo "$RESULT" | grep -q "Topic not found"; then
+    pass "Deleting a missing topic returns 404"
+else
+    fail "Deleting a missing topic returns 404" "$(echo "$RESULT" | head -c 150)"
+fi
+curl -s "http://localhost:8081/test/test_notifications_cleanup?object=topic-probe" > /dev/null
+
+# ============================================================================
 # ACCOUNT REMOVAL CLEANUP TESTS
 # ============================================================================
 

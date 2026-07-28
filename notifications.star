@@ -19,7 +19,7 @@ def row_merge(table, row):
 	conflict = "do update set " + ", ".join(['"' + c + '"=excluded."' + c + '"' for c in fields]) if fields else "do nothing"
 	mochi.db.execute('insert into "' + table + '" (' + ", ".join(['"' + c + '"' for c in cols]) + ") values (" + ", ".join(["?" for c in cols]) + ") on conflict (" + ", ".join(['"' + k + '"' for k in keys]) + ") " + conflict, *[row[c] for c in cols])
 
-# reg_set / reg_remove take a raw WHERE clause (without the "where" keyword) + args.
+# row_set / row_remove take a raw WHERE clause (without the "where" keyword) + args.
 def row_set(table, where, args, updates):
 	fields = list(updates)
 	mochi.db.execute('update "' + table + '" set ' + ", ".join(['"' + c + '"=?' for c in fields]) + " where (" + where + ")", *([updates[c] for c in fields] + list(args)))
@@ -182,20 +182,6 @@ def function_read_all(context):
 	mochi.db.execute("update notifications set read = ? where read = 0", now)
 	mochi.websocket.write("notifications", {"type": "read_all"})
 
-def version_gte(version, minimum):
-	"""Check if version >= minimum using numeric comparison"""
-	v_parts = version.split(".")
-	m_parts = minimum.split(".")
-	max_len = len(v_parts) if len(v_parts) > len(m_parts) else len(m_parts)
-	for i in range(max_len):
-		v_num = int(v_parts[i]) if i < len(v_parts) else 0
-		m_num = int(m_parts[i]) if i < len(m_parts) else 0
-		if v_num > m_num:
-			return True
-		if v_num < m_num:
-			return False
-	return True
-
 def badge_count():
 	row = mochi.db.row("select count(*) as count, coalesce(sum(count), 0) as total from notifications where read = 0")
 	return {"count": row["count"] if row else 0, "total": row["total"] if row else 0}
@@ -204,18 +190,14 @@ def action_list(a):
 	function_expire({})
 	rows = function_list({})
 	counts = badge_count()
-
-	version = mochi.server.version()
-	rss_supported = version_gte(version, "0.3")
-
 	return {
 		"data": rows,
 		"count": counts["count"],
-		"total": counts["total"],
-		"rss": rss_supported
+		"total": counts["total"]
 	}
 
 def action_count(a):
+	function_expire({})
 	return {"data": badge_count()}
 
 def action_read(a):
@@ -785,7 +767,8 @@ def function_topic_remove(context, topic="", object=""):
 def function_categories(context):
 	return mochi.db.rows('select id, label, "default" from categories order by id') or []
 
-# Category CRUD — used by the settings page (no permission gate; user-owned data)
+# Category CRUD — used by the settings page via the service proxy; gated by
+# notifications/manage in app.json.
 
 def function_category_list(context):
 	cats = mochi.db.rows('select id, label, "default", created from categories order by id') or []
@@ -1153,13 +1136,9 @@ def action_topics_lookup(a):
 def action_topics_delete(a):
 	app = a.input("app", "").strip()
 	topic = a.input("topic", "").strip()
-	object = a.input("object", "")
-	if not mochi.db.exists(
-		"select 1 from topics where app = ? and topic = ? and object = ?",
-		app, topic, object
-	):
+	object = a.input("object", "").strip()
+	if not function_topic_delete({}, app, topic, object):
 		return a.error.label(404, "errors.topic_not_found")
-	row_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
 	return {"data": {}}
 
 def action_destinations_list(a):
@@ -1337,8 +1316,9 @@ def function_push_inbound(context, account_id="", payload=""):
 	return {"ok": False, "error": "inbound endpoint not yet implemented"}
 
 # push_queue_if_unifiedpush writes a pending row to push_pending if the account
-# is a local-distributor unifiedpush subscription. Called from function_send
-# alongside the live mochi.account.notify attempt — the WS event is the fast
+# is a local-distributor unifiedpush subscription. Called from the commit hook
+# and the category test alongside the live mochi.account.notify attempt — the
+# WS event is the fast
 # happy-path; this row is the durable backstop for when the on-device WebSocket
 # isn't subscribed (phone killed by OEM, Doze drop, transient network). On
 # subscribe the phone drains rows over /menu/-/push/drain, acks via
