@@ -141,12 +141,23 @@ def clear_where(where, args):
 def function_clear_all(context):
 	clear_where("1=1", [])
 
-def function_clear_app(context, app):
+# clear/app and clear/object act on the CALLING app's own notifications only:
+# the app comes from context (stamped by core), never from an argument, so one
+# app cannot clear another's rows. Callers pass just the object.
+def function_clear_app(context):
+	app = context.get("app", "")
+	if not app:
+		return False
 	clear_where("app = ?", [app])
+	return True
 
-def function_clear_object(context, app, object):
+def function_clear_object(context, object=""):
+	app = context.get("app", "")
+	if not app:
+		return False
 	clear_where("app = ? and object = ?", [app, object])
 	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object})
+	return True
 
 def function_list(context):
 	return mochi.db.rows("select * from notifications order by created")
