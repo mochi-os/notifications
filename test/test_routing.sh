@@ -198,6 +198,74 @@ fi
 curl -s "http://localhost:8081/test/test_notifications_cleanup?object=collide-a" > /dev/null
 curl -s "http://localhost:8081/test/test_notifications_cleanup?object=collide-b" > /dev/null
 
+# ============================================================================
+# PUSH QUEUE SCOPING TESTS
+# ============================================================================
+
+echo ""
+echo "--- Push Queue Scoping Tests ---"
+
+extract_id() {
+    python3 -c "import sys, json; d = json.load(sys.stdin); d = d.get('data', d) if isinstance(d, dict) else d; print(d.get('id', ''))" 2>/dev/null || echo ""
+}
+
+# Register two local-distributor subscriptions (device A and device B)
+RESULT=$(notif_curl POST "/-/push/register" -d "label=drain-probe-a&auth=WPF1D0bTRYUiNH98kIfhjA&p256dh=BGc2vQrRsQGN6oKjmkP_3RaMtxAaAevBBe7N0xCv1tIJaEGI3DRD0fA73tk5Mt1JsmvP6Z8tFc8MGD7e2eUKHKM")
+SUB_A=$(echo "$RESULT" | extract_id)
+RESULT=$(notif_curl POST "/-/push/register" -d "label=drain-probe-b&auth=XPF1D0bTRYUiNH98kIfhjB&p256dh=BGc2vQrRsQGN6oKjmkP_3RaMtxAaAevBBe7N0xCv1tIJaEGI3DRD0fA73tk5Mt1JsmvP6Z8tFc8MGD7e2eUKHKN")
+SUB_B=$(echo "$RESULT" | extract_id)
+if [ -n "$SUB_A" ] && [ -n "$SUB_B" ] && [ "$SUB_A" != "$SUB_B" ]; then
+    pass "Register two push subscriptions"
+else
+    fail "Register two push subscriptions" "A=$SUB_A B=$SUB_B"
+fi
+
+# Emit: both subscriptions get a queued backstop row for the same event
+curl -s "http://localhost:8081/test/test_notifications_emit?object=drain-probe&body=drain-probe-body" > /dev/null
+PROBE_EVENT="test-probe-drain-probe"
+
+# Test: Scoped drain sees only the caller's subscription
+RESULT=$(notif_curl GET "/-/push/drain?subscription=$SUB_A")
+if echo "$RESULT" | grep -q "\"subId\":\"$SUB_A\"" && ! echo "$RESULT" | grep -q "\"subId\":\"$SUB_B\""; then
+    pass "Scoped drain returns only the caller's subscription"
+else
+    fail "Scoped drain returns only the caller's subscription" "$RESULT"
+fi
+
+# Test: Unscoped drain (installed clients) still returns everything
+RESULT=$(notif_curl GET "/-/push/drain")
+if echo "$RESULT" | grep -q "\"subId\":\"$SUB_A\"" && echo "$RESULT" | grep -q "\"subId\":\"$SUB_B\""; then
+    pass "Unscoped drain returns all subscriptions"
+else
+    fail "Unscoped drain returns all subscriptions" "$RESULT"
+fi
+
+# Test: Scoped ack cannot delete another subscription's row
+EVENTS_B="[{\"account\":\"$SUB_B\",\"event_id\":\"$PROBE_EVENT\"}]"
+notif_curl POST "/-/push/ack" -d "subscription=$SUB_A&events=$EVENTS_B" > /dev/null
+RESULT=$(notif_curl GET "/-/push/drain")
+if echo "$RESULT" | grep -q "\"subId\":\"$SUB_B\""; then
+    pass "Scoped ack cannot delete another subscription's row"
+else
+    fail "Scoped ack cannot delete another subscription's row" "$RESULT"
+fi
+
+# Test: Scoped ack deletes the caller's own row
+EVENTS_A="[{\"account\":\"$SUB_A\",\"event_id\":\"$PROBE_EVENT\"}]"
+notif_curl POST "/-/push/ack" -d "subscription=$SUB_A&events=$EVENTS_A" > /dev/null
+RESULT=$(notif_curl GET "/-/push/drain")
+if ! echo "$RESULT" | grep -q "\"subId\":\"$SUB_A\""; then
+    pass "Scoped ack deletes the caller's row"
+else
+    fail "Scoped ack deletes the caller's row" "$RESULT"
+fi
+
+# Cleanup: ack the remaining row, remove subscriptions and the probe rows
+notif_curl POST "/-/push/ack" -d "events=$EVENTS_B" > /dev/null
+notif_curl POST "/-/push/accounts/remove" -d "id=$SUB_A" > /dev/null
+notif_curl POST "/-/push/accounts/remove" -d "id=$SUB_B" > /dev/null
+curl -s "http://localhost:8081/test/test_notifications_cleanup?object=drain-probe" > /dev/null
+
 # Test: Invalid feed token returns 401
 RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/-/rss?token=invalid_token_12345")
 if [ "$RESULT" = "401" ]; then

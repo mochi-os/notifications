@@ -93,10 +93,6 @@
 		"accounts/add": {"function": "function_accounts_add", "permission": "notifications/send"},
 		"accounts/remove": {"function": "function_accounts_remove", "permission": "notifications/send"},
 		"push/register": {"function": "function_push_register", "permission": "notifications/send"},
-		"push/register/fcm": {"function": "function_push_register_fcm", "permission": "notifications/send"},
-		"push/setup": {"function": "function_push_setup", "permission": "notifications/send"},
-		"push/inbound": {"function": "function_push_inbound", "permission": "notifications/send"},
-		"push/drain": {"function": "function_push_drain", "permission": "notifications/send"},
-		"push/ack": {"function": "function_push_ack", "permission": "notifications/send"}
+		"push/inbound": {"function": "function_push_inbound", "permission": "notifications/send"}
 	}
 }

@@ -1303,12 +1303,14 @@ def push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, 
 		account_id, event_id, subscription, payload, mochi.time.now()
 	)
 
-# function_push_drain returns pending unifiedpush events for the caller and
-# opportunistically sweeps rows older than 7 days. The drain is read-only — the
-# phone acks explicitly via function_push_ack after the system notifications
-# have been posted, so a phone that crashes mid-drain can re-drain the same
-# rows on next subscribe.
-def function_push_drain(context):
+# function_push_drain returns pending unifiedpush events and opportunistically
+# sweeps rows older than 7 days. The drain is read-only — the phone acks
+# explicitly via function_push_ack after the system notifications have been
+# posted, so a phone that crashes mid-drain can re-drain the same rows on next
+# subscribe. `subscription` limits the result to that device's rows; without
+# it (installed clients that predate the parameter) every pending row is
+# returned and the phone filters by subId.
+def function_push_drain(context, subscription=""):
 	now = mochi.time.now()
 	# Opportunistic TTL sweep: drop rows older than 7 days, regardless of
 	# account or subscriber state. Pattern mirrors the unifiedpush account
@@ -1316,9 +1318,15 @@ def function_push_drain(context):
 	mochi.db.execute(
 		"delete from push_pending where created < ?", now - 7 * 86400
 	)
-	rows = mochi.db.rows(
-		"select account, event_id, subscription, payload, created from push_pending order by created"
-	) or []
+	if subscription:
+		rows = mochi.db.rows(
+			"select account, event_id, subscription, payload, created from push_pending where subscription = ? order by created",
+			subscription
+		) or []
+	else:
+		rows = mochi.db.rows(
+			"select account, event_id, subscription, payload, created from push_pending order by created"
+		) or []
 	# Re-shape into the same envelope the WebSocket would deliver, so the
 	# phone runs identical code on live and drained events.
 	out = []
@@ -1334,8 +1342,10 @@ def function_push_drain(context):
 # function_push_ack deletes the named rows from the queue. Idempotent — acking
 # a row that no longer exists (TTL'd, manually cleared, never queued because
 # delivered live first) is a no-op. The phone batches acks per drain or per
-# live event.
-def function_push_ack(context, account_event_ids=None):
+# live event. `subscription` bounds deletions to that device's rows so one
+# device cannot delete another's backstop copies; without it (installed
+# clients that predate the parameter) any of the user's rows can be acked.
+def function_push_ack(context, account_event_ids=None, subscription=""):
 	if not account_event_ids:
 		return {"acked": 0}
 	acked = 0
@@ -1344,10 +1354,16 @@ def function_push_ack(context, account_event_ids=None):
 		event_id = ae.get("event_id", "")
 		if not account or not event_id:
 			continue
-		mochi.db.execute(
-			"delete from push_pending where account = ? and event_id = ?",
-			account, event_id
-		)
+		if subscription:
+			mochi.db.execute(
+				"delete from push_pending where account = ? and event_id = ? and subscription = ?",
+				account, event_id, subscription
+			)
+		else:
+			mochi.db.execute(
+				"delete from push_pending where account = ? and event_id = ?",
+				account, event_id
+			)
 		acked += 1
 	return {"acked": acked}
 
@@ -1438,8 +1454,10 @@ def action_push_drain(a):
 	WebSocket wasn't subscribed (phone killed, Doze drop, network blip).
 	Phone calls this immediately after WS subscribe and after each
 	foreground entry. Read-only — phone must POST /notifications/-/push/ack
-	with the (account, event_id) pairs it actually delivered."""
-	return {"data": function_push_drain(None) or []}
+	with the (account, event_id) pairs it actually delivered. Pass
+	subscription=<id> to receive only that device's rows."""
+	subscription = a.input("subscription", "").strip()
+	return {"data": function_push_drain(None, subscription=subscription) or []}
 
 def action_push_ack(a):
 	"""Delete acknowledged rows from the pending queue. Body: events=<JSON
@@ -1452,4 +1470,5 @@ def action_push_ack(a):
 	events = json.decode(events_raw)
 	if type(events) != "list":
 		return a.error.label(400, "errors.invalid_subscription")
-	return {"data": function_push_ack(None, account_event_ids=events) or {"acked": 0}}
+	subscription = a.input("subscription", "").strip()
+	return {"data": function_push_ack(None, account_event_ids=events, subscription=subscription) or {"acked": 0}}
