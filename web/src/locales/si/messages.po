@@ -135,7 +135,7 @@ msgstr "කණ්ඩායමක්/app එකක් එක් කරන්න"
 msgid "Add to existing notifications"
 msgstr "පවතින දැනුම්දීම් වෙත එක් කරන්න"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "පවතින දායකත්වයන් වෙත එක් කරන්න"
 
@@ -251,16 +251,18 @@ msgstr "බ්‍රවුසර දැනුම්දීම්"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "අවලංගු කරන්න"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "මෙම දැනුම්දීම සඳහා ප්‍රවර්ගය"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "දැනුම්දීම් ප්‍රවර්ගය වෙනස් කරන්න"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Clipboard එකට පිටපත් කරන ලදී"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "පිටපත් කරන්න"
 
@@ -450,8 +452,8 @@ msgstr "එම ගිණුම සමඟ සත්‍යාපනය කළ න�
 msgid "Create {0}"
 msgstr "{0} සාදන්න"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "පෝෂණයක් නිර්මාණය කරන්න"
 
@@ -505,16 +507,16 @@ msgstr "පෙරනිමි"
 msgid "Default AI account"
 msgstr "පෙරනිමි AI ගිණුම"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "මකන්න"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "පෝෂණය මකන්න"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "පෝෂණය මකන්නද?"
 
@@ -575,7 +577,7 @@ msgstr "ඉවත ලන්න"
 msgid "Displays the mobile sidebar."
 msgstr "ජංගම පැති තීරුව සංදර්ශනය කරයි."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "නිමයි"
 
@@ -592,7 +594,7 @@ msgstr "බාගත කිරීම අසාර්ථක විය"
 msgid "Dyslexia-friendly"
 msgstr "ඩිස්ලෙක්සියාවට මිත්‍ර"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "උදා. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "උදා. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} සංස්කරණය කරන්න"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "පෝෂණය සංස්කරණය කරන්න"
 
@@ -697,7 +699,7 @@ msgstr "පෝෂණය නැවත නම් කිරීමට අසමත�
 msgid "Failed to send verification code"
 msgstr "සත්‍යාපන කේතය යැවීමට අසමත් විය"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "කාණ්ඩය යාවත්කාලීන කිරීමට අසමත් විය"
 
@@ -713,7 +715,7 @@ msgstr "පෝෂණය සාදන ලදී"
 msgid "Feed deleted"
 msgstr "පෝෂණය මකන ලදී"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "පෝෂණ නාමය"
 
@@ -1038,7 +1040,7 @@ msgstr "තවම RSS පෝෂණ නොමැත"
 msgid "No time zone found."
 msgstr "වේලා කලාප හමු නොවීය."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "තවම topic වාර්තාවක් නැත — ඊළඟ දැනුම්දීමෙන් පසු නැවත උත්සාහ කරන්න."
 
@@ -1084,8 +1086,8 @@ msgstr "දැනුම්දීම්"
 msgid "Notifications: {0}"
 msgstr "දැනුම්දීම්: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "පෙරනිමියෙන් දැනුම් දෙන්න"
 
@@ -1304,8 +1306,8 @@ msgstr "සෙනසුරාදා"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "සුරකින්න"
 
@@ -1570,7 +1572,7 @@ msgstr "theme සැකසුම්"
 msgid "This page has not been created yet."
 msgstr "මෙම පිටුව තවම සාදා නැත."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "මෙය මෙම පෝෂණය ස්ථිරවම මකා දමයි. එය භාවිතා කරන කිසිදු RSS කියවනයකට ඔබේ දැනුම්දීම් වෙත තවදුරටත් ප්‍රවේශ විය නොහැක."
 
@@ -1661,7 +1663,7 @@ msgstr "දුරස්ථ සේවාදායකයට සම්බන්ධ 
 msgid "Unable to redirect to login. Please try again."
 msgstr "login එකට යළි-යොමු කළ නොහැක. කරුණාකර නැවත උත්සාහ කරන්න."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "පවරා නැත"
 
@@ -1686,7 +1688,7 @@ msgstr "නොදන්නා"
 msgid "Unverified"
 msgstr "සත්‍යාපනය නොකළ"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ඔබේ වර්තමාන දැනුම්දීම් දායකත්ව සඳහා මෙම පෝෂණය භාවිතා කරන්න"
 

@@ -135,7 +135,7 @@ msgstr "팀 / 앱 추가"
 msgid "Add to existing notifications"
 msgstr "기존 알림에 추가"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "기존 구독에 추가"
 
@@ -251,16 +251,18 @@ msgstr "브라우저 알림"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "취소"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "이 알림의 카테고리"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "알림 카테고리 변경"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "클립보드에 복사되었어요"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "복사"
 
@@ -450,8 +452,8 @@ msgstr "해당 계정으로 인증하지 못했습니다. 다시 시도해 주�
 msgid "Create {0}"
 msgstr "{0} 만들기"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "피드 생성"
 
@@ -505,16 +507,16 @@ msgstr "기본값"
 msgid "Default AI account"
 msgstr "기본 AI 계정"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "삭제"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "피드 삭제"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "피드를 삭제할까요?"
 
@@ -575,7 +577,7 @@ msgstr "닫기"
 msgid "Displays the mobile sidebar."
 msgstr "모바일 사이드바를 표시해요."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "완료"
 
@@ -592,7 +594,7 @@ msgstr "다운로드 실패"
 msgid "Dyslexia-friendly"
 msgstr "난독증 친화적"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "예: Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "예: Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} 편집"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "피드 편집"
 
@@ -697,7 +699,7 @@ msgstr "피드 이름 변경에 실패했어요"
 msgid "Failed to send verification code"
 msgstr "인증 코드 전송에 실패했어요"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "카테고리 업데이트에 실패했어요"
 
@@ -713,7 +715,7 @@ msgstr "피드가 생성되었어요"
 msgid "Feed deleted"
 msgstr "피드가 삭제되었어요"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "피드 이름"
 
@@ -1038,7 +1040,7 @@ msgstr "아직 RSS 피드가 없어요"
 msgid "No time zone found."
 msgstr "타임존을 찾을 수 없어요."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "아직 토픽 기록이 없어요 — 다음 알림 후에 다시 시도해 주세요."
 
@@ -1084,8 +1086,8 @@ msgstr "알림"
 msgid "Notifications: {0}"
 msgstr "알림: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "기본으로 알림 보내기"
 
@@ -1304,8 +1306,8 @@ msgstr "토요일"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "저장"
 
@@ -1570,7 +1572,7 @@ msgstr "테마 설정"
 msgid "This page has not been created yet."
 msgstr "이 페이지는 아직 만들어지지 않았어요."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "이 피드가 영구적으로 삭제됩니다. 이 피드를 사용하는 RSS 리더는 더 이상 알림에 접근할 수 없습니다."
 
@@ -1661,7 +1663,7 @@ msgstr "원격 서버에 연결할 수 없습니다"
 msgid "Unable to redirect to login. Please try again."
 msgstr "로그인으로 리디렉션할 수 없어요. 다시 시도해 주세요."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "할당되지 않음"
 
@@ -1686,7 +1688,7 @@ msgstr "알 수 없음"
 msgid "Unverified"
 msgstr "확인되지 않음"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "현재 알림 구독에 이 피드를 사용해 주세요"
 

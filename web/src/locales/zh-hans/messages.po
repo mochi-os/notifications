@@ -135,7 +135,7 @@ msgstr "添加团队/应用"
 msgid "Add to existing notifications"
 msgstr "添加到现有通知"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "添加到现有订阅"
 
@@ -251,16 +251,18 @@ msgstr "浏览器通知"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "取消"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "该通知的分类"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "更改通知分类"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "已复制到剪贴板"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "复制"
 
@@ -450,8 +452,8 @@ msgstr "无法使用该账户进行验证。请重试。"
 msgid "Create {0}"
 msgstr "创建{0}"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "创建订阅源"
 
@@ -505,16 +507,16 @@ msgstr "默认"
 msgid "Default AI account"
 msgstr "默认 AI 账户"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "删除"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "删除订阅源"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "删除订阅源吗?"
 
@@ -575,7 +577,7 @@ msgstr "关闭"
 msgid "Displays the mobile sidebar."
 msgstr "显示移动端侧边栏。"
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "完成"
 
@@ -592,7 +594,7 @@ msgstr "下载失败"
 msgid "Dyslexia-friendly"
 msgstr "阅读障碍友好"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "例如:Feedly、NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "例如:Feedly、NewsBlur"
 msgid "Edit {label}"
 msgstr "编辑 {label}"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "编辑订阅"
 
@@ -697,7 +699,7 @@ msgstr "重命名信息流失败"
 msgid "Failed to send verification code"
 msgstr "发送验证码失败"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "更新分类失败"
 
@@ -713,7 +715,7 @@ msgstr "已创建信息流"
 msgid "Feed deleted"
 msgstr "已删除信息流"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "信息流名称"
 
@@ -1038,7 +1040,7 @@ msgstr "暂无 RSS 订阅源"
 msgid "No time zone found."
 msgstr "未找到时区。"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "暂无主题记录,请在下次通知后重试。"
 
@@ -1084,8 +1086,8 @@ msgstr "通知"
 msgid "Notifications: {0}"
 msgstr "通知：{0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "默认通知"
 
@@ -1304,8 +1306,8 @@ msgstr "星期六"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "保存"
 
@@ -1570,7 +1572,7 @@ msgstr "主题设置"
 msgid "This page has not been created yet."
 msgstr "此页面尚未创建。"
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "此操作将永久删除该源。使用该源的任何 RSS 阅读器都将无法再访问你的通知。"
 
@@ -1661,7 +1663,7 @@ msgstr "无法连接到远程服务器"
 msgid "Unable to redirect to login. Please try again."
 msgstr "无法重定向到登录页面。请重试。"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "未分配"
 
@@ -1686,7 +1688,7 @@ msgstr "未知"
 msgid "Unverified"
 msgstr "未验证"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "将此源用于您当前的通知订阅"
 

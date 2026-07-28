@@ -135,7 +135,7 @@ msgstr "Προσθήκη ομάδας/εφαρμογής"
 msgid "Add to existing notifications"
 msgstr "Προσθήκη σε υπάρχουσες ειδοποιήσεις"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "Προσθήκη σε υπάρχουσες συνδρομές"
 
@@ -251,16 +251,18 @@ msgstr "Ειδοποιήσεις προγράμματος περιήγησης"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "Κατηγορία για αυτήν την ειδοποίηση"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "Αλλαγή κατηγορίας ειδοποίησης"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Αντιγράφηκε στο πρόχειρο"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "Αντιγραφή"
 
@@ -450,8 +452,8 @@ msgstr "Δεν ήταν δυνατή η επαλήθευση με αυτόν τ�
 msgid "Create {0}"
 msgstr "Δημιουργία {0}"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "Δημιουργία ροής"
 
@@ -505,16 +507,16 @@ msgstr "Προεπιλογή"
 msgid "Default AI account"
 msgstr "Προεπιλεγμένος λογαριασμός AI"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "Διαγραφή ροής"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "Διαγραφή ροής;"
 
@@ -575,7 +577,7 @@ msgstr "Απόρριψη"
 msgid "Displays the mobile sidebar."
 msgstr "Εμφανίζει την πλευρική μπάρα κινητού."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
@@ -592,7 +594,7 @@ msgstr "Η λήψη απέτυχε"
 msgid "Dyslexia-friendly"
 msgstr "Φιλικό προς δυσλεξία"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "π.χ. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "π.χ. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Επεξεργασία {label}"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "Επεξεργασία ροής"
 
@@ -697,7 +699,7 @@ msgstr "Αποτυχία μετονομασίας ροής"
 msgid "Failed to send verification code"
 msgstr "Αποτυχία αποστολής κωδικού επαλήθευσης"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "Αποτυχία ενημέρωσης κατηγορίας"
 
@@ -713,7 +715,7 @@ msgstr "Η ροή δημιουργήθηκε"
 msgid "Feed deleted"
 msgstr "Η ροή διαγράφηκε"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "Όνομα ροής"
 
@@ -1038,7 +1040,7 @@ msgstr "Δεν υπάρχουν ακόμη ροές RSS"
 msgid "No time zone found."
 msgstr "Δεν βρέθηκε ζώνη ώρας."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "Δεν υπάρχει ακόμη εγγραφή θέματος — προσπαθήστε ξανά μετά την επόμενη ειδοποίηση."
 
@@ -1084,8 +1086,8 @@ msgstr "Ειδοποιήσεις"
 msgid "Notifications: {0}"
 msgstr "Ειδοποιήσεις: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "Ειδοποίηση από προεπιλογή"
 
@@ -1304,8 +1306,8 @@ msgstr "Σάββατο"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "Αποθήκευση"
 
@@ -1570,7 +1572,7 @@ msgstr "Ρυθμίσεις θέματος"
 msgid "This page has not been created yet."
 msgstr "Αυτή η σελίδα δεν έχει δημιουργηθεί ακόμη."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Αυτό θα διαγράψει οριστικά αυτή τη ροή. Τα προγράμματα ανάγνωσης RSS που τη χρησιμοποιούν δεν θα μπορούν πλέον να έχουν πρόσβαση στις ειδοποιήσεις σας."
 
@@ -1661,7 +1663,7 @@ msgstr "Δεν είναι δυνατή η σύνδεση με τον απομα�
 msgid "Unable to redirect to login. Please try again."
 msgstr "Δεν ήταν δυνατή η ανακατεύθυνση στη σύνδεση. Δοκιμάστε ξανά."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "Χωρίς ανάθεση"
 
@@ -1686,7 +1688,7 @@ msgstr "Άγνωστο"
 msgid "Unverified"
 msgstr "Μη επαληθευμένο"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Χρησιμοποιήστε αυτήν τη ροή για τις τρέχουσες εγγραφές ειδοποιήσεών σας"
 

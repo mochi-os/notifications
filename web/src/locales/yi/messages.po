@@ -135,7 +135,7 @@ msgstr "צולייגן מאַנשאַפֿט/אַפּ"
 msgid "Add to existing notifications"
 msgstr "צולייגן צו עקזיסטירנדיקע נאָטיפֿיקאַציעס"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "צולייגן צו עקזיסטירנדיקע אַבאָנעמענטן"
 
@@ -251,16 +251,18 @@ msgstr "בראָוזער נאָטיפֿיקאַציעס"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "אָפּזאָגן"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "קאַטעגאָריע פֿאַר דעם נאָטיפֿיקאַציע"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "ענדערן נאָטיפֿיקאַציע קאַטעגאָריע"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "קאָפּירט צו קליפּברעט"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "קאָפּירן"
 
@@ -450,8 +452,8 @@ msgstr "מע האָט נישט געקענט באַשטעטיקן מיט יענע
 msgid "Create {0}"
 msgstr "שאַף {0}"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "באַשאַפֿן פֿיד"
 
@@ -505,16 +507,16 @@ msgstr "פֿאַרשטאַנדלעך"
 msgid "Default AI account"
 msgstr "פֿאַרשטאַנדלעך AI קאָנטע"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "אויסמעקן"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "אויסמעקן פֿיד"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "אויסמעקן פֿיד?"
 
@@ -575,7 +577,7 @@ msgstr "אַראָפּזאָגן"
 msgid "Displays the mobile sidebar."
 msgstr "ווײַזט די מאָבילע סײַדבאַר."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "געטאָן"
 
@@ -592,7 +594,7 @@ msgstr "אַראָפּלאָדן דורכגעפֿאַלן"
 msgid "Dyslexia-friendly"
 msgstr "דיסלעקסיע פֿרײַנדלעך"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "למשל, Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "למשל, Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "רעדאַקטירן {label}"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "רעדאַקטירן פֿיד"
 
@@ -697,7 +699,7 @@ msgstr "ניט געלונגען צו איבערנעמען פֿיד"
 msgid "Failed to send verification code"
 msgstr "ניט געלונגען צו שיקן פֿאַרזיכערונג־קאָד"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "ניט געלונגען צו דערהײַנטיקן קאַטעגאָריע"
 
@@ -713,7 +715,7 @@ msgstr "פֿיד געשאַפֿן"
 msgid "Feed deleted"
 msgstr "פֿיד אויסגעמעקט"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "פֿיד־נאָמען"
 
@@ -1038,7 +1040,7 @@ msgstr "נאָך קיין RSS פֿידס"
 msgid "No time zone found."
 msgstr "קיין צײַט זאָנע ניט געפֿונען."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "נאָך קיין טעמע רעקאָרד — פּרוּוו ווידער נאָך דער ווײַטערדיקער מעלדונג."
 
@@ -1084,8 +1086,8 @@ msgstr "מעלדונגען"
 msgid "Notifications: {0}"
 msgstr "מעלדונגען: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "מעלד דורך פֿאַרשטעלונג"
 
@@ -1304,8 +1306,8 @@ msgstr "שבת"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "היט אויף"
 
@@ -1570,7 +1572,7 @@ msgstr "טעמע־אײַנשטעלונגען"
 msgid "This page has not been created yet."
 msgstr "די דאָזיקע זײַט איז נאָך נישט געשאַפֿן געוואָרן."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "דאָס וועט אויף שטענדיק אויסמעקן דעם פֿיד. אַלע RSS־לייענערס וואָס ניצן עס וועלן מער נישט קאָנען צוקומען צו אײַערע נאָטיפֿיקאַציעס."
 
@@ -1661,7 +1663,7 @@ msgstr "ניט געקענט פֿאַרבינדן צום ווײַטן סערוו�
 msgid "Unable to redirect to login. Please try again."
 msgstr "קאָן נישט רעדירעקטירן צו אַרײַנמעלדונג. פּרוּווט נאָך אַ מאָל."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "אומצוגעטיילט"
 
@@ -1686,7 +1688,7 @@ msgstr "אומבאַקאַנט"
 msgid "Unverified"
 msgstr "אומפֿאַריפֿיצירט"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ניצט דעם פֿיד פֿאַר אײַערע איצטיקע נאָטיפֿיקאַציע־אַבאָנעמענטן"
 

@@ -135,7 +135,7 @@ msgstr "టీమ్/యాప్‌ను జోడించండి"
 msgid "Add to existing notifications"
 msgstr "ప్రస్తుత నోటిఫికేషన్‌లకు జోడించండి"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "ప్రస్తుత చందాలకు జోడించండి"
 
@@ -251,16 +251,18 @@ msgstr "బ్రౌజర్ నోటిఫికేషన్‌లు"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "రద్దు చేయండి"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "ఈ నోటిఫికేషన్ కోసం వర్గం"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "నోటిఫికేషన్ వర్గాన్ని మార్చండి"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "క్లిప్‌బోర్డ్‌కి కాపీ చేయబడింది"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "కాపీ చేయండి"
 
@@ -450,8 +452,8 @@ msgstr "ఆ ఖాతాతో ధృవీకరించడం సాధ్య
 msgid "Create {0}"
 msgstr "{0} సృష్టించండి"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "ఫీడ్‌ను సృష్టించండి"
 
@@ -505,16 +507,16 @@ msgstr "డిఫాల్ట్"
 msgid "Default AI account"
 msgstr "డిఫాల్ట్ AI ఖాతా"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "తొలగించండి"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "ఫీడ్‌ను తొలగించండి"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "ఫీడ్‌ను తొలగించాలా?"
 
@@ -575,7 +577,7 @@ msgstr "విస్మరించండి"
 msgid "Displays the mobile sidebar."
 msgstr "మొబైల్ సైడ్‌బార్‌ను ప్రదర్శిస్తుంది."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "పూర్తయింది"
 
@@ -592,7 +594,7 @@ msgstr "డౌన్‌లోడ్ విఫలమైంది"
 msgid "Dyslexia-friendly"
 msgstr "డిస్లెక్సియా-అనుకూలం"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ఉదా. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "ఉదా. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} సవరించు"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "ఫీడ్‌ను సవరించండి"
 
@@ -697,7 +699,7 @@ msgstr "ఫీడ్ పేరు మార్చడంలో విఫలమై
 msgid "Failed to send verification code"
 msgstr "ధృవీకరణ కోడ్‌ను పంపడంలో విఫలమైంది"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "విభాగాన్ని నవీకరించడంలో విఫలమైంది"
 
@@ -713,7 +715,7 @@ msgstr "ఫీడ్ సృష్టించబడింది"
 msgid "Feed deleted"
 msgstr "ఫీడ్ తొలగించబడింది"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "ఫీడ్ పేరు"
 
@@ -1038,7 +1040,7 @@ msgstr "ఇంకా RSS ఫీడ్‌లు లేవు"
 msgid "No time zone found."
 msgstr "టైం జోన్ కనుగొనబడలేదు."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "ఇంకా టాపిక్ రికార్డ్ లేదు — తదుపరి నోటిఫికేషన్ తర్వాత మళ్లీ ప్రయత్నించండి."
 
@@ -1084,8 +1086,8 @@ msgstr "నోటిఫికేషన్‌లు"
 msgid "Notifications: {0}"
 msgstr "నోటిఫికేషన్‌లు: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "డిఫాల్ట్‌గా నోటిఫై చేయండి"
 
@@ -1304,8 +1306,8 @@ msgstr "శనివారం"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "సేవ్ చేయండి"
 
@@ -1570,7 +1572,7 @@ msgstr "థీమ్ సెట్టింగ్‌లు"
 msgid "This page has not been created yet."
 msgstr "ఈ పేజీ ఇంకా సృష్టించబడలేదు."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ఇది ఈ ఫీడ్‌ను శాశ్వతంగా తొలగిస్తుంది. దీన్ని ఉపయోగిస్తున్న ఏ RSS రీడర్లు ఇకపై మీ నోటిఫికేషన్లను యాక్సెస్ చేయలేరు."
 
@@ -1661,7 +1663,7 @@ msgstr "రిమోట్ సర్వర్‌కు కనెక్ట్ చ
 msgid "Unable to redirect to login. Please try again."
 msgstr "లాగిన్‌కు రీడైరెక్ట్ చేయలేకపోయింది. దయచేసి మళ్ళీ ప్రయత్నించండి."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "కేటాయించబడలేదు"
 
@@ -1686,7 +1688,7 @@ msgstr "తెలియదు"
 msgid "Unverified"
 msgstr "ధృవీకరించబడలేదు"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "మీ ప్రస్తుత నోటిఫికేషన్ చందాల కోసం ఈ ఫీడ్‌ను ఉపయోగించండి"
 

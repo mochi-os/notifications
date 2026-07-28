@@ -135,7 +135,7 @@ msgstr "ટીમ/એપ્લિકેશન ઉમેરો"
 msgid "Add to existing notifications"
 msgstr "વર્તમાન સૂચનાઓમાં ઉમેરો"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "વર્તમાન સબ્સ્ક્રિપ્શનોમાં ઉમેરો"
 
@@ -251,16 +251,18 @@ msgstr "બ્રાઉઝર સૂચનાઓ"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "રદ કરો"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "આ સૂચના માટેની શ્રેણી"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "સૂચના શ્રેણી બદલો"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "ક્લિપબોર્ડ પર કૉપિ કર્યું"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "કૉપિ કરો"
 
@@ -450,8 +452,8 @@ msgstr "તે ખાતા વડે ચકાસણી કરી શકાઈ 
 msgid "Create {0}"
 msgstr "{0} બનાવો"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "ફીડ બનાવો"
 
@@ -505,16 +507,16 @@ msgstr "ડિફૉલ્ટ"
 msgid "Default AI account"
 msgstr "ડિફૉલ્ટ AI ખાતું"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "કાઢી નાખો"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "ફીડ કાઢી નાખો"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "ફીડ કાઢી નાખવો છે?"
 
@@ -575,7 +577,7 @@ msgstr "રદ કરો"
 msgid "Displays the mobile sidebar."
 msgstr "મોબાઇલ સાઇડબાર દર્શાવે છે."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "થઈ ગયું"
 
@@ -592,7 +594,7 @@ msgstr "ડાઉનલોડ નિષ્ફળ"
 msgid "Dyslexia-friendly"
 msgstr "ડિસ્લેક્સિયા-મૈત્રીપૂર્ણ"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "દા.ત. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "દા.ત. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} સંપાદિત કરો"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "ફીડ સંપાદિત કરો"
 
@@ -697,7 +699,7 @@ msgstr "ફીડનું નામ બદલવામાં નિષ્ફળ
 msgid "Failed to send verification code"
 msgstr "ચકાસણી કોડ મોકલવામાં નિષ્ફળ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "કેટેગરી અપડેટ કરવામાં નિષ્ફળ"
 
@@ -713,7 +715,7 @@ msgstr "ફીડ બનાવ્યું"
 msgid "Feed deleted"
 msgstr "ફીડ કાઢી નાખ્યું"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "ફીડનું નામ"
 
@@ -1038,7 +1040,7 @@ msgstr "હજુ સુધી કોઈ RSS ફીડ્સ નથી"
 msgid "No time zone found."
 msgstr "કોઈ ટાઇમ ઝોન મળ્યો નથી."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "હજુ સુધી કોઈ ટોપિક રેકોર્ડ નથી — પછીની સૂચના પછી ફરી પ્રયાસ કરો."
 
@@ -1084,8 +1086,8 @@ msgstr "સૂચનાઓ"
 msgid "Notifications: {0}"
 msgstr "સૂચનાઓ: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "ડિફૉલ્ટ રૂપે સૂચિત કરો"
 
@@ -1304,8 +1306,8 @@ msgstr "શનિવાર"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "સાચવો"
 
@@ -1570,7 +1572,7 @@ msgstr "થીમ સેટિંગ્સ"
 msgid "This page has not been created yet."
 msgstr "આ પૃષ્ઠ હજુ સુધી બનાવવામાં આવ્યું નથી."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "આ આ ફીડને કાયમ માટે કાઢી નાખશે. તેનો ઉપયોગ કરતા કોઈપણ RSS રીડર્સ હવેથી તમારી સૂચનાઓ સુધી પહોંચી શકશે નહીં."
 
@@ -1661,7 +1663,7 @@ msgstr "રિમોટ સર્વર સાથે કનેક્ટ કર�
 msgid "Unable to redirect to login. Please try again."
 msgstr "લૉગિન પર રીડાયરેક્ટ કરી શકાતું નથી. કૃપા કરીને ફરી પ્રયાસ કરો."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "અસોંપાયેલ"
 
@@ -1686,7 +1688,7 @@ msgstr "અજાણ્યું"
 msgid "Unverified"
 msgstr "અપ્રમાણિત"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "તમારી વર્તમાન સૂચના સબ્સ્ક્રિપ્શન માટે આ ફીડ વાપરો"
 

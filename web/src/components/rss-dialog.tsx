@@ -31,7 +31,7 @@ import {
   TooltipContent,
   textUnchanged,
 } from '@mochi/web'
-import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil } from 'lucide-react'
+import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil, X } from 'lucide-react'
 import {
   type RssFeed,
   useCreateRssFeedMutation,
@@ -277,13 +277,7 @@ export function RssDialog({
                                 variant='ghost'
                                 size='sm'
                                 onClick={handleSaveEdit}
-                                disabled={
-                                  renameMutation.isPending ||
-                                  textUnchanged(
-                                    editingName.trim(),
-                                    feeds.find((f) => f.id === editingId)?.name ?? '',
-                                  )
-                                }
+                                disabled={renameMutation.isPending}
                                 aria-label={t`Save`}
                               >
                                 {renameMutation.isPending ? (
@@ -294,6 +288,20 @@ export function RssDialog({
                               </Button>
                             </TooltipTrigger>
                             <TooltipContent>{t`Save`}</TooltipContent>
+                          </Tooltip>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Button
+                                variant='ghost'
+                                size='sm'
+                                onClick={handleCancelEdit}
+                                disabled={renameMutation.isPending}
+                                aria-label={t`Cancel`}
+                              >
+                                <X className='h-4 w-4' />
+                              </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>{t`Cancel`}</TooltipContent>
                           </Tooltip>
                         </div>
                       ) : (

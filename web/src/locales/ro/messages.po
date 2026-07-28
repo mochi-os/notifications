@@ -135,7 +135,7 @@ msgstr "Adaugă echipă/aplicație"
 msgid "Add to existing notifications"
 msgstr "Adaugă la notificările existente"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "Adaugă la abonamentele existente"
 
@@ -251,16 +251,18 @@ msgstr "Notificări de browser"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "Anulează"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "Categorie pentru această notificare"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "Schimbă categoria notificării"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Copiat în clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "Copiază"
 
@@ -450,8 +452,8 @@ msgstr "Nu s-a putut verifica cu acel cont. Încearcă din nou."
 msgid "Create {0}"
 msgstr "Creați {0}"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "Creează flux"
 
@@ -505,16 +507,16 @@ msgstr "Implicit"
 msgid "Default AI account"
 msgstr "Cont AI implicit"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "Șterge"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "Șterge fluxul"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "Ștergi fluxul?"
 
@@ -575,7 +577,7 @@ msgstr "Renunță"
 msgid "Displays the mobile sidebar."
 msgstr "Afișează bara laterală mobilă."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "Terminat"
 
@@ -592,7 +594,7 @@ msgstr "Descărcarea a eșuat"
 msgid "Dyslexia-friendly"
 msgstr "Potrivit pentru dislexie"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "de ex., Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "de ex., Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Editează {label}"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "Editează fluxul"
 
@@ -697,7 +699,7 @@ msgstr "Redenumirea fluxului a eșuat"
 msgid "Failed to send verification code"
 msgstr "Trimiterea codului de verificare a eșuat"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "Actualizarea categoriei a eșuat"
 
@@ -713,7 +715,7 @@ msgstr "Flux creat"
 msgid "Feed deleted"
 msgstr "Flux șters"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "Numele fluxului"
 
@@ -1038,7 +1040,7 @@ msgstr "Încă nu există fluxuri RSS"
 msgid "No time zone found."
 msgstr "Nu s-a găsit niciun fus orar."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "Încă nu există înregistrare de subiect — încearcă din nou după următoarea notificare."
 
@@ -1084,8 +1086,8 @@ msgstr "Notificări"
 msgid "Notifications: {0}"
 msgstr "Notificări: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "Notifică implicit"
 
@@ -1304,8 +1306,8 @@ msgstr "Sâmbătă"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "Salvează"
 
@@ -1570,7 +1572,7 @@ msgstr "Setări temă"
 msgid "This page has not been created yet."
 msgstr "Această pagină nu a fost creată încă."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Aceasta va șterge definitiv acest feed. Orice cititoare RSS care îl folosesc nu vor mai putea accesa notificările tale."
 
@@ -1661,7 +1663,7 @@ msgstr "Nu se poate conecta la serverul la distanță"
 msgid "Unable to redirect to login. Please try again."
 msgstr "Nu se poate redirecționa la conectare. Încearcă din nou."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "Neatribuit"
 
@@ -1686,7 +1688,7 @@ msgstr "Necunoscut"
 msgid "Unverified"
 msgstr "Neverificat"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Folosește acest feed pentru abonamentele tale curente de notificare"
 

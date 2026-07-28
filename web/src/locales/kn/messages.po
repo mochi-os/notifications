@@ -135,7 +135,7 @@ msgstr "ಟೀಮ್/ಆ್ಯಪ್ ಸೇರಿಸಿ"
 msgid "Add to existing notifications"
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಅಧಿಸೂಚನೆಗಳಿಗೆ ಸೇರಿಸಿ"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಸಬ್‌ಸ್ಕ್ರಿಪ್ಷನ್‌ಗಳಿಗೆ ಸೇರಿಸಿ"
 
@@ -251,16 +251,18 @@ msgstr "ಬ್ರೌಸರ್ ಅಧಿಸೂಚನೆಗಳು"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "ರದ್ದುಮಾಡಿ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "ಈ ಅಧಿಸೂಚನೆಗಾಗಿ ವರ್ಗ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "ಅಧಿಸೂಚನೆ ವರ್ಗವನ್ನು ಬದಲಾಯಿಸಿ"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲಾಗಿದೆ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "ನಕಲಿಸಿ"
 
@@ -450,8 +452,8 @@ msgstr "ಆ ಖಾತೆಯೊಂದಿಗೆ ಪರಿಶೀಲಿಸಲು ಸ
 msgid "Create {0}"
 msgstr "{0} ರಚಿಸಿ"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "ಫೀಡ್ ರಚಿಸಿ"
 
@@ -505,16 +507,16 @@ msgstr "ಡೀಫಾಲ್ಟ್"
 msgid "Default AI account"
 msgstr "ಡೀಫಾಲ್ಟ್ AI ಖಾತೆ"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "ಅಳಿಸಿ"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "ಫೀಡ್ ಅಳಿಸಿ"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "ಫೀಡ್ ಅಳಿಸಬೇಕೆ?"
 
@@ -575,7 +577,7 @@ msgstr "ತಿರಸ್ಕರಿಸಿ"
 msgid "Displays the mobile sidebar."
 msgstr "ಮೊಬೈಲ್ ಸೈಡ್‌ಬಾರ್ ಪ್ರದರ್ಶಿಸುತ್ತದೆ."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "ಮುಗಿಯಿತು"
 
@@ -592,7 +594,7 @@ msgstr "ಡೌನ್‌ಲೋಡ್ ವಿಫಲವಾಗಿದೆ"
 msgid "Dyslexia-friendly"
 msgstr "ಡಿಸ್ಲೆಕ್ಸಿಯಾ-ಸ್ನೇಹಿ"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ಉದಾ. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "ಉದಾ. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} ಸಂಪಾದಿಸಿ"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "ಫೀಡ್ ಸಂಪಾದಿಸಿ"
 
@@ -697,7 +699,7 @@ msgstr "ಫೀಡ್ ಮರುಹೆಸರಿಸಲು ವಿಫಲವಾಗಿ�
 msgid "Failed to send verification code"
 msgstr "ಪರಿಶೀಲನಾ ಕೋಡ್ ಕಳುಹಿಸಲು ವಿಫಲವಾಗಿದೆ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "ವರ್ಗ ಅಪ್‌ಡೇಟ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ"
 
@@ -713,7 +715,7 @@ msgstr "ಫೀಡ್ ರಚಿಸಲಾಗಿದೆ"
 msgid "Feed deleted"
 msgstr "ಫೀಡ್ ಅಳಿಸಲಾಗಿದೆ"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "ಫೀಡ್ ಹೆಸರು"
 
@@ -1038,7 +1040,7 @@ msgstr "ಇನ್ನೂ ಯಾವುದೇ RSS ಫೀಡ್‌ಗಳಿಲ್ಲ
 msgid "No time zone found."
 msgstr "ಯಾವುದೇ ಟೈಮ್ ಜೋನ್ ಸಿಗಲಿಲ್ಲ."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "ಇನ್ನೂ ಯಾವುದೇ ಟಾಪಿಕ್ ರೆಕಾರ್ಡ್ ಇಲ್ಲ — ಮುಂದಿನ ನೋಟಿಫಿಕೇಶನ್ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
 
@@ -1084,8 +1086,8 @@ msgstr "ನೋಟಿಫಿಕೇಶನ್‌ಗಳು"
 msgid "Notifications: {0}"
 msgstr "ಅಧಿಸೂಚನೆಗಳು: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "ಡೀಫಾಲ್ಟ್ ಆಗಿ ನೋಟಿಫೈ ಮಾಡಿ"
 
@@ -1304,8 +1306,8 @@ msgstr "ಶನಿವಾರ"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "ಉಳಿಸಿ"
 
@@ -1570,7 +1572,7 @@ msgstr "ಥೀಮ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
 msgid "This page has not been created yet."
 msgstr "ಈ ಪುಟವನ್ನು ಇನ್ನೂ ರಚಿಸಲಾಗಿಲ್ಲ."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ಇದು ಈ ಫೀಡ್ ಅನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುತ್ತದೆ. ಅದನ್ನು ಬಳಸುವ ಯಾವುದೇ RSS ರೀಡರ್‌ಗಳು ಇನ್ನು ಮುಂದೆ ನಿಮ್ಮ ಅಧಿಸೂಚನೆಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗುವುದಿಲ್ಲ."
 
@@ -1661,7 +1663,7 @@ msgstr "ರಿಮೋಟ್ ಸರ್ವರ್‌ಗೆ ಸಂಪರ್ಕಿಸ�
 msgid "Unable to redirect to login. Please try again."
 msgstr "ಲಾಗಿನ್‌ಗೆ ಮರುನಿರ್ದೇಶಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "ನಿಯೋಜಿಸದ"
 
@@ -1686,7 +1688,7 @@ msgstr "ಅಜ್ಞಾತ"
 msgid "Unverified"
 msgstr "ಪರಿಶೀಲಿಸದ"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ನೋಟಿಫಿಕೇಶನ್ ಸಬ್‌ಸ್ಕ್ರಿಪ್ಶನ್‌ಗಳಿಗೆ ಈ ಫೀಡ್ ಅನ್ನು ಬಳಸಿ"
 

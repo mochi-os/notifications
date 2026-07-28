@@ -135,7 +135,7 @@ msgstr "Lisää tiimi/sovellus"
 msgid "Add to existing notifications"
 msgstr "Lisää olemassa oleviin ilmoituksiin"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "Lisää olemassa oleviin tilauksiin"
 
@@ -251,16 +251,18 @@ msgstr "Selaimen ilmoitukset"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "Peruuta"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "Tämän ilmoituksen kategoria"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "Vaihda ilmoituksen kategoria"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Kopioitu leikepöydälle"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "Kopioi"
 
@@ -450,8 +452,8 @@ msgstr "Vahvistaminen tällä tilillä ei onnistunut. Yritä uudelleen."
 msgid "Create {0}"
 msgstr "Luo {0}"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "Luo syöte"
 
@@ -505,16 +507,16 @@ msgstr "Oletus"
 msgid "Default AI account"
 msgstr "Oletustekoälytili"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "Poista"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "Poista syöte"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "Poistetaanko syöte?"
 
@@ -575,7 +577,7 @@ msgstr "Hylkää"
 msgid "Displays the mobile sidebar."
 msgstr "Näyttää mobiilisivupalkin."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "Valmis"
 
@@ -592,7 +594,7 @@ msgstr "Lataus epäonnistui"
 msgid "Dyslexia-friendly"
 msgstr "Lukihäiriöystävällinen"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "esim. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "esim. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Muokkaa {label}"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "Muokkaa syötettä"
 
@@ -697,7 +699,7 @@ msgstr "Syötteen uudelleennimeäminen epäonnistui"
 msgid "Failed to send verification code"
 msgstr "Vahvistuskoodin lähetys epäonnistui"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "Kategorian päivitys epäonnistui"
 
@@ -713,7 +715,7 @@ msgstr "Syöte luotu"
 msgid "Feed deleted"
 msgstr "Syöte poistettu"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "Syötteen nimi"
 
@@ -1038,7 +1040,7 @@ msgstr "Ei vielä RSS-syötteitä"
 msgid "No time zone found."
 msgstr "Aikavyöhykettä ei löytynyt."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "Ei vielä aihetietoa — yritä uudelleen seuraavan ilmoituksen jälkeen."
 
@@ -1084,8 +1086,8 @@ msgstr "Ilmoitukset"
 msgid "Notifications: {0}"
 msgstr "Ilmoitukset: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "Ilmoita oletuksena"
 
@@ -1304,8 +1306,8 @@ msgstr "Lauantai"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "Tallenna"
 
@@ -1570,7 +1572,7 @@ msgstr "Teema-asetukset"
 msgid "This page has not been created yet."
 msgstr "Tätä sivua ei ole vielä luotu."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Tämä poistaa syötteen pysyvästi. Sitä käyttävät RSS-lukijat eivät enää pääse käsiksi ilmoituksiisi."
 
@@ -1661,7 +1663,7 @@ msgstr "Etäpalvelimeen ei saatu yhteyttä"
 msgid "Unable to redirect to login. Please try again."
 msgstr "Kirjautumiseen ei voi siirtyä. Yritä uudelleen."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "Ei määritetty"
 
@@ -1686,7 +1688,7 @@ msgstr "Tuntematon"
 msgid "Unverified"
 msgstr "Vahvistamaton"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Käytä tätä syötettä nykyisille ilmoitustilauksillesi"
 

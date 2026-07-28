@@ -135,7 +135,7 @@ msgstr "Equipo/app yapay"
 msgid "Add to existing notifications"
 msgstr "Kawsachkan willaykuna-man yapay"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "Kawsachkan suscripciones-man yapay"
 
@@ -251,16 +251,18 @@ msgstr "Browser willaykuna"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "Mana ruway"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "Kay willaykuna categoría"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "Willaykuna categoría tikray"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Clipboard-man copiasqa"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "Copiay"
 
@@ -450,8 +452,8 @@ msgstr "Chay cuentawanqa mana takyachiyta atikurqachu. Ama hina kaspa watiqmanta
 msgid "Create {0}"
 msgstr "{0} kamay"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "Feed kamariy"
 
@@ -505,16 +507,16 @@ msgstr "Default"
 msgid "Default AI account"
 msgstr "Default AI cuenta"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "Wischuy"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "Feed wischuy"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "Feed wischuy?"
 
@@ -575,7 +577,7 @@ msgstr "Wischuy"
 msgid "Displays the mobile sidebar."
 msgstr "Movil sidebar qhawachin."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "Tukurqun"
 
@@ -592,7 +594,7 @@ msgstr "Urayachiy mana atikurqanchu"
 msgid "Dyslexia-friendly"
 msgstr "Disleksia llamkaywanmi"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "e.g., Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "e.g., Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} allinchay"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "Feedta allinchay"
 
@@ -697,7 +699,7 @@ msgstr "Mana feedta sutichayta atinchu"
 msgid "Failed to send verification code"
 msgstr "Mana sut'inchay códigota apachiyta atinchu"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "Mana categoríata musuqyachiyta atinchu"
 
@@ -713,7 +715,7 @@ msgstr "Feed paqarichisqa"
 msgid "Feed deleted"
 msgstr "Feed pichasqa"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "Feed suti"
 
@@ -1038,7 +1040,7 @@ msgstr "Manaraq RSS feedkuna"
 msgid "No time zone found."
 msgstr "Mana time zone tarisqachu."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "Manaraq topic registro — qatiqnin notificacionmanta watiqmanta ruway."
 
@@ -1084,8 +1086,8 @@ msgstr "Notificacionkuna"
 msgid "Notifications: {0}"
 msgstr "Willakuykuna: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "Por defecto willay"
 
@@ -1304,8 +1306,8 @@ msgstr "Sábado"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "Waqaychay"
 
@@ -1570,7 +1572,7 @@ msgstr "Tema Wakichiykuna"
 msgid "This page has not been created yet."
 msgstr "Kay p'anqaqa manaraqmi kamasqachu."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Kayqa wiñaypaq kay feedta qulluchinqa. Kayta apaykachaq RSS leeqkunaqa manaña willakuyniykunaman yaykuyta atinqakuchu."
 
@@ -1661,7 +1663,7 @@ msgstr "Karu servidorman mana tinkiy atikunchu"
 msgid "Unable to redirect to login. Please try again."
 msgstr "Loginman mana tikrachiyta atikurqanchu. Ama hina kaspa kutimanta ruway."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "Mana akllasqa"
 
@@ -1686,7 +1688,7 @@ msgstr "Mana riqsisqa"
 msgid "Unverified"
 msgstr "Mana qhawasqa"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Kunan willakuy subscripcionkunaykipaq kay feedta apaykachay"
 

@@ -135,7 +135,7 @@ msgstr "ਟੀਮ/ਐਪ ਜੋੜੋ"
 msgid "Add to existing notifications"
 msgstr "ਮੌਜੂਦਾ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ ਵਿੱਚ ਜੋੜੋ"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "ਮੌਜੂਦਾ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਵਿੱਚ ਜੋੜੋ"
 
@@ -251,16 +251,18 @@ msgstr "ਬ੍ਰਾਊਜ਼ਰ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "ਰੱਦ ਕਰੋ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "ਇਸ ਨੋਟੀਫਿਕੇਸ਼ਨ ਲਈ ਸ਼੍ਰੇਣੀ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ ਸ਼੍ਰੇਣੀ ਬਦਲੋ"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਹੋਇਆ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "ਕਾਪੀ ਕਰੋ"
 
@@ -450,8 +452,8 @@ msgstr "ਉਸ ਖਾਤੇ ਨਾਲ ਪੁਸ਼ਟੀ ਨਹੀਂ ਕੀਤ�
 msgid "Create {0}"
 msgstr "{0} ਬਣਾਓ"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "ਫੀਡ ਬਣਾਓ"
 
@@ -505,16 +507,16 @@ msgstr "ਡਿਫਾਲਟ"
 msgid "Default AI account"
 msgstr "ਡਿਫਾਲਟ AI ਖਾਤਾ"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "ਮਿਟਾਓ"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "ਫੀਡ ਮਿਟਾਓ"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "ਫੀਡ ਮਿਟਾਉਣੀ ਹੈ?"
 
@@ -575,7 +577,7 @@ msgstr "ਖਾਰਜ ਕਰੋ"
 msgid "Displays the mobile sidebar."
 msgstr "ਮੋਬਾਈਲ ਸਾਈਡਬਾਰ ਡਿਸਪਲੇ ਕਰਦਾ ਹੈ।"
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "ਹੋ ਗਿਆ"
 
@@ -592,7 +594,7 @@ msgstr "ਡਾਊਨਲੋਡ ਅਸਫਲ ਰਿਹਾ"
 msgid "Dyslexia-friendly"
 msgstr "ਡਿਸਲੈਕਸੀਆ-ਅਨੁਕੂਲ"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ਉਦਾ. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "ਉਦਾ. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} ਸੰਪਾਦਿਤ ਕਰੋ"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "ਫੀਡ ਸੰਪਾਦਿਤ ਕਰੋ"
 
@@ -697,7 +699,7 @@ msgstr "ਫੀਡ ਦਾ ਨਾਮ ਬਦਲਣ ਵਿੱਚ ਅਸਫਲ"
 msgid "Failed to send verification code"
 msgstr "ਤਸਦੀਕ ਕੋਡ ਭੇਜਣ ਵਿੱਚ ਅਸਫਲ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "ਸ਼੍ਰੇਣੀ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
@@ -713,7 +715,7 @@ msgstr "ਫੀਡ ਬਣਾਈ ਗਈ"
 msgid "Feed deleted"
 msgstr "ਫੀਡ ਮਿਟਾਈ ਗਈ"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "ਫੀਡ ਦਾ ਨਾਮ"
 
@@ -1038,7 +1040,7 @@ msgstr "ਅਜੇ ਕੋਈ RSS ਫੀਡ ਨਹੀਂ"
 msgid "No time zone found."
 msgstr "ਕੋਈ ਟਾਈਮ ਜ਼ੋਨ ਨਹੀਂ ਮਿਲਿਆ।"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "ਅਜੇ ਕੋਈ ਟੌਪਿਕ ਰਿਕਾਰਡ ਨਹੀਂ — ਅਗਲੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਤੋਂ ਬਾਅਦ ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
@@ -1084,8 +1086,8 @@ msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
 msgid "Notifications: {0}"
 msgstr "ਸੂਚਨਾਵਾਂ: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "ਡਿਫਾਲਟ ਤੌਰ 'ਤੇ ਨੋਟੀਫਾਈ ਕਰੋ"
 
@@ -1304,8 +1306,8 @@ msgstr "ਸ਼ਨੀਵਾਰ"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "ਸੰਭਾਲੋ"
 
@@ -1570,7 +1572,7 @@ msgstr "theme ਸੈਟਿੰਗਾਂ"
 msgid "This page has not been created yet."
 msgstr "ਇਹ ਪੰਨਾ ਅਜੇ ਤੱਕ ਨਹੀਂ ਬਣਾਇਆ ਗਿਆ।"
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ਇਹ ਇਸ ਫੀਡ ਨੂੰ ਪੱਕੇ ਤੌਰ ’ਤੇ ਮਿਟਾ ਦੇਵੇਗਾ। ਇਸ ਨੂੰ ਵਰਤਣ ਵਾਲੇ ਕੋਈ ਵੀ RSS ਰੀਡਰ ਹੁਣ ਤੁਹਾਡੀਆਂ ਸੂਚਨਾਵਾਂ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਕਰ ਸਕਣਗੇ।"
 
@@ -1661,7 +1663,7 @@ msgstr "ਰਿਮੋਟ ਸਰਵਰ ਨਾਲ ਕਨੈਕਟ ਨਹੀਂ ਹ�
 msgid "Unable to redirect to login. Please try again."
 msgstr "ਲੌਗਇਨ 'ਤੇ ਰੀਡਾਇਰੈਕਟ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ। ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "ਨਾ ਨਿਰਧਾਰਤ"
 
@@ -1686,7 +1688,7 @@ msgstr "ਅਣਜਾਣ"
 msgid "Unverified"
 msgstr "ਅਪ੍ਰਮਾਣਿਤ"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ਆਪਣੀਆਂ ਮੌਜੂਦਾ ਸੂਚਨਾ ਗਾਹਕੀਆਂ ਲਈ ਇਹ ਫੀਡ ਵਰਤੋ"
 

@@ -135,7 +135,7 @@ msgstr "குழு/பயன்பாடு சேர்"
 msgid "Add to existing notifications"
 msgstr "உள்ள அறிவிப்புகளுக்குச் சேர்"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "உள்ள சந்தாக்களுக்குச் சேர்"
 
@@ -251,16 +251,18 @@ msgstr "உலாவி அறிவிப்புகள்"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "இந்த அறிவிப்புக்கான வகை"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "அறிவிப்பு வகையை மாற்று"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "நகலெடு"
 
@@ -450,8 +452,8 @@ msgstr "அந்தக் கணக்கைச் சரிபார்க்�
 msgid "Create {0}"
 msgstr "{0} உருவாக்கு"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "ஃபீட் உருவாக்கு"
 
@@ -505,16 +507,16 @@ msgstr "இயல்புநிலை"
 msgid "Default AI account"
 msgstr "இயல்புநிலை AI கணக்கு"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "நீக்கு"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "ஃபீட்டை நீக்கு"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "ஃபீட்டை நீக்கவா?"
 
@@ -575,7 +577,7 @@ msgstr "நிராகரி"
 msgid "Displays the mobile sidebar."
 msgstr "மொபைல் பக்கப்பட்டியைக் காட்டுகிறது."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "முடிந்தது"
 
@@ -592,7 +594,7 @@ msgstr "பதிவிறக்கம் தோல்வியடைந்த�
 msgid "Dyslexia-friendly"
 msgstr "டிஸ்லெக்சியாவுக்கு உகந்தது"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "எ.கா. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "எ.கா. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} திருத்து"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "ஊட்டத்தைத் திருத்து"
 
@@ -697,7 +699,7 @@ msgstr "ஃபீட் பெயரை மாற்ற முடியவில
 msgid "Failed to send verification code"
 msgstr "சரிபார்ப்பு குறியீட்டை அனுப்ப முடியவில்லை"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "வகையைப் புதுப்பிக்க முடியவில்லை"
 
@@ -713,7 +715,7 @@ msgstr "ஃபீட் உருவாக்கப்பட்டது"
 msgid "Feed deleted"
 msgstr "ஃபீட் நீக்கப்பட்டது"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "ஃபீட் பெயர்"
 
@@ -1038,7 +1040,7 @@ msgstr "RSS ஃபீட்கள் இன்னும் இல்லை"
 msgid "No time zone found."
 msgstr "நேர மண்டலம் எதுவும் கிடைக்கவில்லை."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "தலைப்புப் பதிவு இன்னும் இல்லை — அடுத்த அறிவிப்புக்குப் பிறகு மீண்டும் முயற்சிக்கவும்."
 
@@ -1084,8 +1086,8 @@ msgstr "அறிவிப்புகள்"
 msgid "Notifications: {0}"
 msgstr "அறிவிப்புகள்: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "இயல்பாக அறிவிக்கவும்"
 
@@ -1304,8 +1306,8 @@ msgstr "சனிக்கிழமை"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "சேமி"
 
@@ -1570,7 +1572,7 @@ msgstr "தீம் அமைப்புகள்"
 msgid "This page has not been created yet."
 msgstr "இந்தப் பக்கம் இன்னும் உருவாக்கப்படவில்லை."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "இது இந்த ஊட்டத்தை நிரந்தரமாக நீக்கிவிடும். அதை பயன்படுத்தும் எந்த RSS படிப்பான்களும் இனி உங்கள் அறிவிப்புகளை அணுக முடியாது."
 
@@ -1661,7 +1663,7 @@ msgstr "தொலை சேவையகத்துடன் இணைக்க 
 msgid "Unable to redirect to login. Please try again."
 msgstr "உள்நுழைவுக்கு திருப்பி விட முடியவில்லை. தயவுசெய்து மீண்டும் முயற்சி செய்யுங்கள்."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "ஒதுக்கப்படாதது"
 
@@ -1686,7 +1688,7 @@ msgstr "தெரியாதது"
 msgid "Unverified"
 msgstr "சரிபார்க்கப்படாதது"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "உங்கள் தற்போதைய அறிவிப்பு சந்தாக்களுக்கு இந்த ஃபீட்டை பயன்படுத்து"
 

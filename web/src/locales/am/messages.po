@@ -135,7 +135,7 @@ msgstr "ቡድን/መተግበሪያ ጨምር"
 msgid "Add to existing notifications"
 msgstr "ወደ ነባር ማሳወቂያዎች ጨምር"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "ወደ ነባር ምዝገባዎች ጨምር"
 
@@ -251,16 +251,18 @@ msgstr "የአሳሽ ማሳወቂያዎች"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "ይቅር"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "ለዚህ ማሳወቂያ ምድብ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "የማሳወቂያ ምድብ ለውጥ"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "ወደ ቅንጥብ ሰሌዳ ተቀድቷል"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "ቅዳ"
 
@@ -450,8 +452,8 @@ msgstr "በዚያ መለያ ማረጋገጥ አልተቻለም። እባክዎ �
 msgid "Create {0}"
 msgstr "{0} ፍጠር"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "ፊድ ፍጠር"
 
@@ -505,16 +507,16 @@ msgstr "ነባሪ"
 msgid "Default AI account"
 msgstr "ነባሪ የAI መለያ"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "ሰርዝ"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "ፊድ ሰርዝ"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "ፊድ ይሰረዝ?"
 
@@ -575,7 +577,7 @@ msgstr "አጥፋ"
 msgid "Displays the mobile sidebar."
 msgstr "የሞባይል ጎንደርን ያሳያል።"
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "ተጠናቅቋል"
 
@@ -592,7 +594,7 @@ msgstr "ማውረድ አልተሳካም"
 msgid "Dyslexia-friendly"
 msgstr "ለዲስሌክሲያ ምቹ"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ለምሳሌ Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "ለምሳሌ Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label}ን አርትዕ"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "feed አስተካክል"
 
@@ -697,7 +699,7 @@ msgstr "ፊድ መሰየም አልተሳካም"
 msgid "Failed to send verification code"
 msgstr "የማረጋገጫ ኮድ መላክ አልተሳካም"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "ምድብን ማዘመን አልተሳካም"
 
@@ -713,7 +715,7 @@ msgstr "ፊድ ተፈጥሯል"
 msgid "Feed deleted"
 msgstr "ፊድ ተሰርዟል"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "የፊድ ስም"
 
@@ -1038,7 +1040,7 @@ msgstr "እስካሁን RSS ፊዶች የሉም"
 msgid "No time zone found."
 msgstr "ምንም የሰዓት ሰቅ አልተገኘም።"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "እስካሁን የርዕስ መዝገብ የለም — ከቀጣዩ ማሳወቂያ በኋላ እንደገና ይሞክሩ።"
 
@@ -1084,8 +1086,8 @@ msgstr "ማሳወቂያዎች"
 msgid "Notifications: {0}"
 msgstr "ማሳወቂያዎች፦ {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "በነባሪነት አሳውቅ"
 
@@ -1304,8 +1306,8 @@ msgstr "ቅዳሜ"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "ያስቀምጡ"
 
@@ -1570,7 +1572,7 @@ msgstr "የገጽታ ቅንብሮች"
 msgid "This page has not been created yet."
 msgstr "ይህ ገጽ ገና አልተፈጠረም።"
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ይህ ምግብ ለዘላለም ይሰረዛል። እርሱን የሚጠቀሙ ማናቸውም RSS አንባቢዎች ከእንግዲህ ማሳወቂያዎችዎን ማግኘት አይችሉም።"
 
@@ -1661,7 +1663,7 @@ msgstr "ከርቀት አገልጋይ ጋር መገናኘት አልተቻለም"
 msgid "Unable to redirect to login. Please try again."
 msgstr "ወደ መግቢያ መዞር አልተቻለም። እባክዎ እንደገና ይሞክሩ።"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "ያልተመደበ"
 
@@ -1686,7 +1688,7 @@ msgstr "ያልታወቀ"
 msgid "Unverified"
 msgstr "ያልተረጋገጠ"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ይህን ፊድ ለአሁኑ የማሳወቂያ ምዝገባዎችዎ ይጠቀሙ"
 

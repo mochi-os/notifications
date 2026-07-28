@@ -135,7 +135,7 @@ msgstr "Takım/uygulama ekle"
 msgid "Add to existing notifications"
 msgstr "Mevcut bildirimlere ekle"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "Mevcut aboneliklere ekle"
 
@@ -251,16 +251,18 @@ msgstr "Tarayıcı bildirimleri"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "İptal"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "Bu bildirim için kategori"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "Bildirim kategorisini değiştir"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Panoya kopyalandı"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "Kopyala"
 
@@ -450,8 +452,8 @@ msgstr "Bu hesapla doğrulama yapılamadı. Lütfen tekrar deneyin."
 msgid "Create {0}"
 msgstr "{0} oluştur"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "Feed oluştur"
 
@@ -505,16 +507,16 @@ msgstr "Varsayılan"
 msgid "Default AI account"
 msgstr "Varsayılan AI hesabı"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "Sil"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "Feed'i sil"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "Feed silinsin mi?"
 
@@ -575,7 +577,7 @@ msgstr "Kapat"
 msgid "Displays the mobile sidebar."
 msgstr "Mobil kenar çubuğunu görüntüler."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "Tamamlandı"
 
@@ -592,7 +594,7 @@ msgstr "İndirme başarısız oldu"
 msgid "Dyslexia-friendly"
 msgstr "Disleksi dostu"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "örn. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "örn. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} düzenle"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "Akışı düzenle"
 
@@ -697,7 +699,7 @@ msgstr "Akış yeniden adlandırılamadı"
 msgid "Failed to send verification code"
 msgstr "Doğrulama kodu gönderilemedi"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "Kategori güncellenemedi"
 
@@ -713,7 +715,7 @@ msgstr "Akış oluşturuldu"
 msgid "Feed deleted"
 msgstr "Akış silindi"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "Akış adı"
 
@@ -1038,7 +1040,7 @@ msgstr "Henüz RSS akışı yok"
 msgid "No time zone found."
 msgstr "Saat dilimi bulunamadı."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "Henüz konu kaydı yok — bir sonraki bildirimden sonra tekrar deneyin."
 
@@ -1084,8 +1086,8 @@ msgstr "Bildirimler"
 msgid "Notifications: {0}"
 msgstr "Bildirimler: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "Varsayılan olarak bildir"
 
@@ -1304,8 +1306,8 @@ msgstr "Cumartesi"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "Kaydet"
 
@@ -1570,7 +1572,7 @@ msgstr "Tema ayarları"
 msgid "This page has not been created yet."
 msgstr "Bu sayfa henüz oluşturulmadı."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Bu işlem bu akışı kalıcı olarak silecek. Bunu kullanan RSS okuyucuları artık bildirimlerine erişemeyecek."
 
@@ -1661,7 +1663,7 @@ msgstr "Uzak sunucuya bağlanılamadı"
 msgid "Unable to redirect to login. Please try again."
 msgstr "Giriş sayfasına yönlendirilemedi. Lütfen tekrar dene."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "Atanmamış"
 
@@ -1686,7 +1688,7 @@ msgstr "Bilinmiyor"
 msgid "Unverified"
 msgstr "Doğrulanmamış"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Mevcut bildirim abonelikleri için bu akışı kullan"
 

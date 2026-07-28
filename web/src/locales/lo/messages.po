@@ -135,7 +135,7 @@ msgstr "ເພີ່ມທີມ/ແອັບ"
 msgid "Add to existing notifications"
 msgstr "ເພີ່ມໃສ່ການແຈ້ງເຕືອນທີ່ມີຢູ່"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "ເພີ່ມໃສ່ການສະໝັກສະມາຊິກທີ່ມີຢູ່"
 
@@ -251,16 +251,18 @@ msgstr "ການແຈ້ງເຕືອນຕົວທ່ອງເວັບ"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "ຍົກເລີກ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "ໝວດໝູ່ສຳລັບການແຈ້ງເຕືອນນີ້"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "ປ່ຽນໝວດໝູ່ການແຈ້ງເຕືອນ"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "ສຳເນົາໄປຄລິບບອດແລ້ວ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "ສຳເນົາ"
 
@@ -450,8 +452,8 @@ msgstr "ບໍ່ສາມາດຢືນຢັນດ້ວຍບັນຊີນ
 msgid "Create {0}"
 msgstr "ສ້າງ {0}"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "ສ້າງຟີດ"
 
@@ -505,16 +507,16 @@ msgstr "ຄ່າເລີ່ມຕົ້ນ"
 msgid "Default AI account"
 msgstr "ບັນຊີ AI ເລີ່ມຕົ້ນ"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "ລົບ"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "ລົບຟີດ"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "ລົບຟີດບໍ?"
 
@@ -575,7 +577,7 @@ msgstr "ປິດ"
 msgid "Displays the mobile sidebar."
 msgstr "ສະແດງແຖບຂ້າງມືຖື."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "ສຳເລັດແລ້ວ"
 
@@ -592,7 +594,7 @@ msgstr "ດາວໂຫຼດບໍ່ສຳເລັດ"
 msgid "Dyslexia-friendly"
 msgstr "ເຫມາະສຳລັບໂລກອ່ານບໍ່ອອກ"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ເຊັ່ນ Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "ເຊັ່ນ Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "ແກ້ໄຂ {label}"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "ແກ້ໄຂຟີດ"
 
@@ -697,7 +699,7 @@ msgstr "ປ່ຽນຊື່ຟີດລົ້ມເຫຼວ"
 msgid "Failed to send verification code"
 msgstr "ສົ່ງລະຫັດຢືນຢັນລົ້ມເຫຼວ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "ອັບເດດໝວດໝູ່ລົ້ມເຫຼວ"
 
@@ -713,7 +715,7 @@ msgstr "ສ້າງຟີດແລ້ວ"
 msgid "Feed deleted"
 msgstr "ລຶບຟີດແລ້ວ"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "ຊື່ຟີດ"
 
@@ -1038,7 +1040,7 @@ msgstr "ຍັງບໍ່ມີ RSS feed"
 msgid "No time zone found."
 msgstr "ບໍ່ພົບເຂດເວລາ."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "ຍັງບໍ່ມີບັນທຶກຫົວຂໍ້ — ລອງໃໝ່ຫຼັງຈາກການແຈ້ງເຕືອນຄັ້ງຕໍ່ໄປ."
 
@@ -1084,8 +1086,8 @@ msgstr "ການແຈ້ງເຕືອນ"
 msgid "Notifications: {0}"
 msgstr "ການແຈ້ງເຕືອນ: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "ແຈ້ງເຕືອນເປັນຄ່າເລີ່ມຕົ້ນ"
 
@@ -1304,8 +1306,8 @@ msgstr "ວັນເສົາ"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "ບັນທຶກ"
 
@@ -1570,7 +1572,7 @@ msgstr "ການຕັ້ງຄ່າຮູບແບບ"
 msgid "This page has not been created yet."
 msgstr "ໜ້ານີ້ຍັງບໍ່ໄດ້ຖືກສ້າງຂຶ້ນ."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ນີ້ຈະລົບ feed ນີ້ແບບຖາວອນ. ໂປຣແກຣມອ່ານ RSS ໃດໆທີ່ໃຊ້ມັນຈະບໍ່ສາມາດເຂົ້າເຖິງການແຈ້ງເຕືອນຂອງທ່ານໄດ້ອີກຕໍ່ໄປ."
 
@@ -1661,7 +1663,7 @@ msgstr "ບໍ່ສາມາດເຊື່ອມຕໍ່ກັບເຊີບ
 msgid "Unable to redirect to login. Please try again."
 msgstr "ບໍ່ສາມາດປ່ຽນເສັ້ນທາງໄປຫາການເຂົ້າສູ່ລະບົບ. ກະລຸນາລອງອີກຄັ້ງ."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "ບໍ່ໄດ້ມອບໝາຍ"
 
@@ -1686,7 +1688,7 @@ msgstr "ບໍ່ຮູ້ຈັກ"
 msgid "Unverified"
 msgstr "ບໍ່ໄດ້ຢືນຢັນ"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "ໃຊ້ feed ນີ້ສຳລັບການສະໝັກສະມາຊິກການແຈ້ງເຕືອນປັດຈຸບັນຂອງທ່ານ"
 

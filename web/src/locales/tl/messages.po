@@ -135,7 +135,7 @@ msgstr "Magdagdag ng team/app"
 msgid "Add to existing notifications"
 msgstr "Idagdag sa mga umiiral na notification"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "Idagdag sa mga umiiral na subscription"
 
@@ -251,16 +251,18 @@ msgstr "Mga notification ng browser"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "Kanselahin"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "Category para sa notification na ito"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "Baguhin ang category ng notification"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Nakopya sa clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "Kopyahin"
 
@@ -450,8 +452,8 @@ msgstr "Hindi ma-verify gamit ang account na iyon. Pakisubukang muli."
 msgid "Create {0}"
 msgstr "Gumawa ng {0}"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "Gumawa ng feed"
 
@@ -505,16 +507,16 @@ msgstr "Default"
 msgid "Default AI account"
 msgstr "Default na AI account"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "I-delete"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "I-delete ang feed"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "I-delete ang feed?"
 
@@ -575,7 +577,7 @@ msgstr "I-dismiss"
 msgid "Displays the mobile sidebar."
 msgstr "Ipinapakita ang mobile sidebar."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "Tapos na"
 
@@ -592,7 +594,7 @@ msgstr "Nabigo ang pag-download"
 msgid "Dyslexia-friendly"
 msgstr "Angkop sa dyslexia"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "hal. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "hal. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "I-edit ang {label}"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "I-edit ang feed"
 
@@ -697,7 +699,7 @@ msgstr "Nabigong i-rename ang feed"
 msgid "Failed to send verification code"
 msgstr "Nabigong magpadala ng verification code"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "Nabigong i-update ang category"
 
@@ -713,7 +715,7 @@ msgstr "Nagawa ang feed"
 msgid "Feed deleted"
 msgstr "Nadelete ang feed"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "Pangalan ng feed"
 
@@ -1038,7 +1040,7 @@ msgstr "Wala pang RSS feed"
 msgid "No time zone found."
 msgstr "Walang nakitang time zone."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "Wala pang topic record — subukan muli pagkatapos ng susunod na notification."
 
@@ -1084,8 +1086,8 @@ msgstr "Mga Notification"
 msgid "Notifications: {0}"
 msgstr "Mga notification: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "Mag-notify bilang default"
 
@@ -1304,8 +1306,8 @@ msgstr "Sabado"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "I-save"
 
@@ -1570,7 +1572,7 @@ msgstr "Mga Setting ng Theme"
 msgid "This page has not been created yet."
 msgstr "Hindi pa nagagawa ang pahinang ito."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Permanenteng buburahin nito ang feed na ito. Ang anumang RSS reader na gumagamit nito ay hindi na makaka-access sa iyong mga notification."
 
@@ -1661,7 +1663,7 @@ msgstr "Hindi makakonekta sa malayong server"
 msgid "Unable to redirect to login. Please try again."
 msgstr "Hindi maka-redirect sa login. Pakisubukang muli."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "Walang nakatalaga"
 
@@ -1686,7 +1688,7 @@ msgstr "Hindi alam"
 msgid "Unverified"
 msgstr "Hindi naberipika"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Gamitin ang feed na ito para sa iyong kasalukuyang mga notification subscription"
 

@@ -135,7 +135,7 @@ msgstr "Tîm/sepan zêde bike"
 msgid "Add to existing notifications"
 msgstr "Li agahdariyên heyî zêde bike"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "Li abonetiyên heyî zêde bike"
 
@@ -251,16 +251,18 @@ msgstr "Agahdariyên geroka"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "Betal bike"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "Kategoriya vê agahdariyê"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "Kategoriya agahdariyê biguherîne"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Hat kopîkirin li clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "Kopî bike"
 
@@ -450,8 +452,8 @@ msgstr "Bi wê hesabê re piştrastkirin pêk nehat. Ji kerema xwe dîsa bicerib
 msgid "Create {0}"
 msgstr "{0} biafirîne"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "Feed çêbike"
 
@@ -505,16 +507,16 @@ msgstr "Standard"
 msgid "Default AI account"
 msgstr "Hesabê standard yê AI"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "Jê bibe"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "Feedê jê bibe"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "Feedê jê bibe?"
 
@@ -575,7 +577,7 @@ msgstr "Red bike"
 msgid "Displays the mobile sidebar."
 msgstr "Panela kêlekê ya mobîl nîşan dide."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "Qediya"
 
@@ -592,7 +594,7 @@ msgstr "Daxistin têk çû"
 msgid "Dyslexia-friendly"
 msgstr "Hevhewş ji bo dîslêksiyê"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "mînak., Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "mînak., Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} biguherîne"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "Feedê sererast bike"
 
@@ -697,7 +699,7 @@ msgstr "Ji nû ve navlêkirina feedê neserkeftî bû"
 msgid "Failed to send verification code"
 msgstr "Şandina koda rastandinê neserkeftî bû"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "Rojanekirina kategoriyê neserkeftî bû"
 
@@ -713,7 +715,7 @@ msgstr "Feed hat çêkirin"
 msgid "Feed deleted"
 msgstr "Feed hat jêbirin"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "Navê feedê"
 
@@ -1038,7 +1040,7 @@ msgstr "Hêj tu pelên RSS tune"
 msgid "No time zone found."
 msgstr "Tu herêma demê nehat dîtin."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "Hêj tu tomarê mijarê tune — piştî agahdariya pêştir dîsa biceribîne."
 
@@ -1084,8 +1086,8 @@ msgstr "Agahdarî"
 msgid "Notifications: {0}"
 msgstr "Agahdarî: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "Bi standard agahdar bike"
 
@@ -1304,8 +1306,8 @@ msgstr "Şemî"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "Tomar bike"
 
@@ -1570,7 +1572,7 @@ msgstr "Mîhengên Temayê"
 msgid "This page has not been created yet."
 msgstr "Ev rûpel hîna nehatiye çêkirin."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Ev dê vê feed-ê herheyî jê bibe. Xwendekarên RSS yên ku wê bi kar tînin êdî nikarin xwe bigihînin agahdariyên te."
 
@@ -1661,7 +1663,7 @@ msgstr "Nikare bi rajekarê dûr ve girê bide"
 msgid "Unable to redirect to login. Please try again."
 msgstr "Beralîkirina bo têketinê ne mumkin e. Ji kerema xwe dîsa biceribîne."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "Nehatiye diyarkirin"
 
@@ -1686,7 +1688,7 @@ msgstr "Nediyar"
 msgid "Unverified"
 msgstr "Nehatiye verast kirin"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Vê feed-ê ji bo abonetiyên agahdariyên xwe yên niha bi kar bîne"
 

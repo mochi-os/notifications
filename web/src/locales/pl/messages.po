@@ -135,7 +135,7 @@ msgstr "Dodaj zespół/aplikację"
 msgid "Add to existing notifications"
 msgstr "Dodaj do istniejących powiadomień"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "Dodaj do istniejących subskrypcji"
 
@@ -251,16 +251,18 @@ msgstr "Powiadomienia przeglądarki"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "Kategoria tego powiadomienia"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "Zmień kategorię powiadomienia"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Skopiowano do schowka"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "Kopiuj"
 
@@ -450,8 +452,8 @@ msgstr "Nie udało się zweryfikować przy użyciu tego konta. Spróbuj ponownie
 msgid "Create {0}"
 msgstr "Utwórz {0}"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "Utwórz kanał"
 
@@ -505,16 +507,16 @@ msgstr "Domyślny"
 msgid "Default AI account"
 msgstr "Domyślne konto AI"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "Usuń"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "Usuń kanał"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "Usunąć kanał?"
 
@@ -575,7 +577,7 @@ msgstr "Odrzuć"
 msgid "Displays the mobile sidebar."
 msgstr "Wyświetla pasek boczny mobilny."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "Gotowe"
 
@@ -592,7 +594,7 @@ msgstr "Pobieranie nie powiodło się"
 msgid "Dyslexia-friendly"
 msgstr "Przyjazna dla dysleksji"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "np. Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "np. Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Edytuj {label}"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "Edytuj kanał"
 
@@ -697,7 +699,7 @@ msgstr "Nie udało się zmienić nazwy kanału"
 msgid "Failed to send verification code"
 msgstr "Nie udało się wysłać kodu weryfikacyjnego"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "Nie udało się zaktualizować kategorii"
 
@@ -713,7 +715,7 @@ msgstr "Kanał utworzony"
 msgid "Feed deleted"
 msgstr "Kanał usunięty"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "Nazwa kanału"
 
@@ -1038,7 +1040,7 @@ msgstr "Brak kanałów RSS"
 msgid "No time zone found."
 msgstr "Nie znaleziono strefy czasowej."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "Brak jeszcze rekordu tematu — spróbuj ponownie po następnym powiadomieniu."
 
@@ -1084,8 +1086,8 @@ msgstr "Powiadomienia"
 msgid "Notifications: {0}"
 msgstr "Powiadomienia: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "Powiadamiaj domyślnie"
 
@@ -1304,8 +1306,8 @@ msgstr "Sobota"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "Zapisz"
 
@@ -1570,7 +1572,7 @@ msgstr "Ustawienia motywu"
 msgid "This page has not been created yet."
 msgstr "Ta strona nie została jeszcze utworzona."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Ta operacja trwale usunie ten kanał. Czytniki RSS, które z niego korzystają, nie będą już mogły uzyskać dostępu do Twoich powiadomień."
 
@@ -1661,7 +1663,7 @@ msgstr "Nie można połączyć się ze zdalnym serwerem"
 msgid "Unable to redirect to login. Please try again."
 msgstr "Nie można przekierować do logowania. Spróbuj ponownie."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "Nieprzypisane"
 
@@ -1686,7 +1688,7 @@ msgstr "Nieznany"
 msgid "Unverified"
 msgstr "Niezweryfikowane"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Użyj tego kanału dla bieżących subskrypcji powiadomień"
 

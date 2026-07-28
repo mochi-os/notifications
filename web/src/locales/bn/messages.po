@@ -135,7 +135,7 @@ msgstr "টিম/অ্যাপ যোগ করুন"
 msgid "Add to existing notifications"
 msgstr "বিদ্যমান নোটিফিকেশনে যোগ করুন"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "বিদ্যমান সাবস্ক্রিপশনে যোগ করুন"
 
@@ -251,16 +251,18 @@ msgstr "ব্রাউজার নোটিফিকেশন"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "বাতিল করুন"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "এই নোটিফিকেশনের ক্যাটেগরি"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "নোটিফিকেশন ক্যাটেগরি পরিবর্তন করুন"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "ক্লিপবোর্ডে কপি করা হয়েছে"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "কপি করুন"
 
@@ -450,8 +452,8 @@ msgstr "ওই অ্যাকাউন্ট দিয়ে যাচাই �
 msgid "Create {0}"
 msgstr "{0} তৈরি করুন"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "ফিড তৈরি করুন"
 
@@ -505,16 +507,16 @@ msgstr "ডিফল্ট"
 msgid "Default AI account"
 msgstr "ডিফল্ট AI অ্যাকাউন্ট"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "মুছুন"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "ফিড মুছুন"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "ফিড মুছবেন?"
 
@@ -575,7 +577,7 @@ msgstr "বাতিল করুন"
 msgid "Displays the mobile sidebar."
 msgstr "মোবাইল সাইডবার প্রদর্শন করে।"
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "সম্পন্ন"
 
@@ -592,7 +594,7 @@ msgstr "ডাউনলোড ব্যর্থ হয়েছে"
 msgid "Dyslexia-friendly"
 msgstr "ডিসলেক্সিয়া-বান্ধব"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "যেমন Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "যেমন Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} সম্পাদনা করুন"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "ফিড সম্পাদনা করুন"
 
@@ -697,7 +699,7 @@ msgstr "ফিডের নাম পরিবর্তন করতে ব্�
 msgid "Failed to send verification code"
 msgstr "যাচাইকরণ কোড পাঠাতে ব্যর্থ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "ক্যাটাগরি আপডেট করতে ব্যর্থ"
 
@@ -713,7 +715,7 @@ msgstr "ফিড তৈরি করা হয়েছে"
 msgid "Feed deleted"
 msgstr "ফিড মুছে ফেলা হয়েছে"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "ফিডের নাম"
 
@@ -1038,7 +1040,7 @@ msgstr "এখনও কোনো RSS ফিড নেই"
 msgid "No time zone found."
 msgstr "কোনো টাইম জোন পাওয়া যায়নি।"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "এখনও কোনো বিষয়ের রেকর্ড নেই — পরবর্তী বিজ্ঞপ্তির পরে আবার চেষ্টা করুন।"
 
@@ -1084,8 +1086,8 @@ msgstr "বিজ্ঞপ্তি"
 msgid "Notifications: {0}"
 msgstr "বিজ্ঞপ্তি: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "ডিফল্টভাবে অবহিত করুন"
 
@@ -1304,8 +1306,8 @@ msgstr "শনিবার"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "সংরক্ষণ করুন"
 
@@ -1570,7 +1572,7 @@ msgstr "থিম সেটিংস"
 msgid "This page has not been created yet."
 msgstr "এই পৃষ্ঠাটি এখনও তৈরি হয়নি।"
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "এটি এই ফিডটি স্থায়ীভাবে মুছে ফেলবে। এটি ব্যবহারকারী যেকোনো RSS রিডার আর আপনার বিজ্ঞপ্তিগুলিতে অ্যাক্সেস করতে পারবে না।"
 
@@ -1661,7 +1663,7 @@ msgstr "দূরবর্তী সার্ভারে সংযোগ কর
 msgid "Unable to redirect to login. Please try again."
 msgstr "লগইনে রিডাইরেক্ট করা যাচ্ছে না। অনুগ্রহ করে আবার চেষ্টা করুন।"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "অ্যাসাইন করা হয়নি"
 
@@ -1686,7 +1688,7 @@ msgstr "অজানা"
 msgid "Unverified"
 msgstr "যাচাই করা হয়নি"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "আপনার বর্তমান নোটিফিকেশন সাবস্ক্রিপশনের জন্য এই ফিড ব্যবহার করুন"
 

@@ -135,7 +135,7 @@ msgstr "ټیم/اپلیکیشن اضافه کړئ"
 msgid "Add to existing notifications"
 msgstr "موجوده خبرتیاو ته اضافه کړئ"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "موجوده ګډونونو ته اضافه کړئ"
 
@@ -251,16 +251,18 @@ msgstr "د براوزر خبرتیاوې"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "لغوه کول"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "د دې خبرتیا لپاره کټګورۍ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "د خبرتیا کټګورۍ بدله کړه"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "په کلیپ بورډ کاپي شو"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "کاپي کړئ"
 
@@ -450,8 +452,8 @@ msgstr "د دغه حساب سره تصدیق ونشو. مهرباني وکړئ �
 msgid "Create {0}"
 msgstr "{0} جوړ کړئ"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "فیډ جوړ کړئ"
 
@@ -505,16 +507,16 @@ msgstr "ډیفالټ"
 msgid "Default AI account"
 msgstr "د AI ډیفالټ حساب"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "ړنګ کړئ"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "فیډ ړنګ کړئ"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "فیډ ړنګ کړئ؟"
 
@@ -575,7 +577,7 @@ msgstr "وردکړه"
 msgid "Displays the mobile sidebar."
 msgstr "موبایل څنګې پټۍ ښیي."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "ترسره شو"
 
@@ -592,7 +594,7 @@ msgstr "ډاونلوډ ناکام شو"
 msgid "Dyslexia-friendly"
 msgstr "د لوستلو ستونزې سره مطابقت لري"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "د بېلګې په توګه، Feedly، NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "د بېلګې په توګه، Feedly، NewsBlur"
 msgid "Edit {label}"
 msgstr "{label} سمول"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "فیډ سمول"
 
@@ -697,7 +699,7 @@ msgstr "د فیډ نوم بدلولو پاتې راغلل"
 msgid "Failed to send verification code"
 msgstr "د تصدیق کوډ لیږلو پاتې راغلل"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "د کټګورۍ تازه کولو پاتې راغلل"
 
@@ -713,7 +715,7 @@ msgstr "فیډ جوړ شو"
 msgid "Feed deleted"
 msgstr "فیډ وشلید"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "د فیډ نوم"
 
@@ -1038,7 +1040,7 @@ msgstr "تر اوسه هیڅ RSS فیډونه نشته"
 msgid "No time zone found."
 msgstr "هیڅ وخت زون ونه موندل شو."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "تر اوسه د موضوع هیڅ ریکارډ نشته — د راتلونکې خبرتیا وروسته بیا هڅه وکړئ."
 
@@ -1084,8 +1086,8 @@ msgstr "خبرتیاوې"
 msgid "Notifications: {0}"
 msgstr "خبرتیاوې: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "په ډیفالټ ډول خبر کول"
 
@@ -1304,8 +1306,8 @@ msgstr "شنبه"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "خوندي کول"
 
@@ -1570,7 +1572,7 @@ msgstr "د ښکارندوی ترتیبات"
 msgid "This page has not been created yet."
 msgstr "دا مخ لا تر اوسه نه دی جوړ شوی."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "دا به دا فیډ دایمي ډول حذف کړي. هر هغه RSS لوستونکي چې له دې کاروي به نور ستاسو خبرتیاوو ته لاسرسی ونه لري."
 
@@ -1661,7 +1663,7 @@ msgstr "له لرې پرتي سرور سره نښلېدل ونشول"
 msgid "Unable to redirect to login. Please try again."
 msgstr "ننوتلو ته لارښوونه نشي کیدلی. مهرباني وکړئ بیا هڅه وکړئ."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "نه ګمارل شوی"
 
@@ -1686,7 +1688,7 @@ msgstr "نامعلوم"
 msgid "Unverified"
 msgstr "تصدیق نه شوی"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "د خپلو اوسنیو خبرتیا ګډونونو لپاره دا فیډ وکاروئ"
 

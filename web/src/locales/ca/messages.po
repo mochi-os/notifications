@@ -135,7 +135,7 @@ msgstr "Afegeix un equip o aplicació"
 msgid "Add to existing notifications"
 msgstr "Afegeix a les notificacions existents"
 
-#: src/components/rss-dialog.tsx:394
+#: src/components/rss-dialog.tsx:402
 msgid "Add to existing subscriptions"
 msgstr "Afegeix a les subscripcions existents"
 
@@ -251,16 +251,18 @@ msgstr "Notificacions del navegador"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:188
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
-#: src/components/rss-dialog.tsx:407
+#: src/components/rss-dialog.tsx:299
+#: src/components/rss-dialog.tsx:304
+#: src/components/rss-dialog.tsx:415
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:143
+#: ../../../lib/web/src/components/notification-category-button.tsx:146
 msgid "Category for this notification"
 msgstr "Categoria d'aquesta notificació"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:124
-#: ../../../lib/web/src/components/notification-category-button.tsx:135
+#: ../../../lib/web/src/components/notification-category-button.tsx:127
+#: ../../../lib/web/src/components/notification-category-button.tsx:138
 msgid "Change notification category"
 msgstr "Canvia la categoria de notificació"
 
@@ -422,10 +424,10 @@ msgid "Copied to clipboard"
 msgstr "Copiat al porta-retalls"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:311
-#: src/components/rss-dialog.tsx:320
-#: src/components/rss-dialog.tsx:437
-#: src/components/rss-dialog.tsx:446
+#: src/components/rss-dialog.tsx:319
+#: src/components/rss-dialog.tsx:328
+#: src/components/rss-dialog.tsx:445
+#: src/components/rss-dialog.tsx:454
 msgid "Copy"
 msgstr "Copia"
 
@@ -450,8 +452,8 @@ msgstr "No s'ha pogut verificar amb aquest compte. Torneu-ho a provar."
 msgid "Create {0}"
 msgstr "Crea {0}"
 
-#: src/components/rss-dialog.tsx:371
-#: src/components/rss-dialog.tsx:418
+#: src/components/rss-dialog.tsx:379
+#: src/components/rss-dialog.tsx:426
 msgid "Create feed"
 msgstr "Crea un canal"
 
@@ -505,16 +507,16 @@ msgstr "Per defecte"
 msgid "Default AI account"
 msgstr "Compte d'IA per defecte"
 
-#: src/components/rss-dialog.tsx:466
+#: src/components/rss-dialog.tsx:474
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: src/components/rss-dialog.tsx:342
-#: src/components/rss-dialog.tsx:347
+#: src/components/rss-dialog.tsx:350
+#: src/components/rss-dialog.tsx:355
 msgid "Delete feed"
 msgstr "Suprimeix el canal"
 
-#: src/components/rss-dialog.tsx:464
+#: src/components/rss-dialog.tsx:472
 msgid "Delete feed?"
 msgstr "Vols suprimir el canal?"
 
@@ -575,7 +577,7 @@ msgstr "Descarta"
 msgid "Displays the mobile sidebar."
 msgstr "Mostra la barra lateral mòbil."
 
-#: src/components/rss-dialog.tsx:451
+#: src/components/rss-dialog.tsx:459
 msgid "Done"
 msgstr "Fet"
 
@@ -592,7 +594,7 @@ msgstr "Ha fallat la baixada"
 msgid "Dyslexia-friendly"
 msgstr "Apte per a la dislèxia"
 
-#: src/components/rss-dialog.tsx:383
+#: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
 msgstr "p. ex., Feedly, NewsBlur"
 
@@ -600,8 +602,8 @@ msgstr "p. ex., Feedly, NewsBlur"
 msgid "Edit {label}"
 msgstr "Edita {label}"
 
-#: src/components/rss-dialog.tsx:328
-#: src/components/rss-dialog.tsx:333
+#: src/components/rss-dialog.tsx:336
+#: src/components/rss-dialog.tsx:341
 msgid "Edit feed"
 msgstr "Edita el canal"
 
@@ -697,7 +699,7 @@ msgstr "No s'ha pogut canviar el nom de la font"
 msgid "Failed to send verification code"
 msgstr "No s'ha pogut enviar el codi de verificació"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:111
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Failed to update category"
 msgstr "No s'ha pogut actualitzar la categoria"
 
@@ -713,7 +715,7 @@ msgstr "Font creada"
 msgid "Feed deleted"
 msgstr "Font suprimida"
 
-#: src/components/rss-dialog.tsx:380
+#: src/components/rss-dialog.tsx:388
 msgid "Feed name"
 msgstr "Nom de la font"
 
@@ -1038,7 +1040,7 @@ msgstr "Encara no hi ha canals RSS"
 msgid "No time zone found."
 msgstr "No s'ha trobat cap fus horari."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:147
+#: ../../../lib/web/src/components/notification-category-button.tsx:150
 msgid "No topic record yet — try again after the next notification."
 msgstr "Encara no hi ha cap registre de tema; torna-ho a provar després de la pròxima notificació."
 
@@ -1084,8 +1086,8 @@ msgstr "Notificacions"
 msgid "Notifications: {0}"
 msgstr "Notificacions: {0}"
 
-#: src/components/rss-dialog.tsx:352
-#: src/components/rss-dialog.tsx:359
+#: src/components/rss-dialog.tsx:360
+#: src/components/rss-dialog.tsx:367
 msgid "Notify by default"
 msgstr "Notifica per defecte"
 
@@ -1304,8 +1306,8 @@ msgstr "Dissabte"
 
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:122
 #: ../../../lib/web/src/components/ui/secret-field.tsx:77
-#: src/components/rss-dialog.tsx:287
-#: src/components/rss-dialog.tsx:296
+#: src/components/rss-dialog.tsx:281
+#: src/components/rss-dialog.tsx:290
 msgid "Save"
 msgstr "Desa"
 
@@ -1570,7 +1572,7 @@ msgstr "Configuració del tema"
 msgid "This page has not been created yet."
 msgstr "Aquesta pàgina encara no s'ha creat."
 
-#: src/components/rss-dialog.tsx:465
+#: src/components/rss-dialog.tsx:473
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Això eliminarà permanentment aquest canal. Els lectors RSS que l'utilitzin ja no podran accedir a les teves notificacions."
 
@@ -1661,7 +1663,7 @@ msgstr "No s'ha pogut connectar amb el servidor remot"
 msgid "Unable to redirect to login. Please try again."
 msgstr "No s'ha pogut redirigir a l'inici de sessió. Torna-ho a provar."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:155
+#: ../../../lib/web/src/components/notification-category-button.tsx:158
 msgid "Unassigned"
 msgstr "Sense assignar"
 
@@ -1686,7 +1688,7 @@ msgstr "Desconegut"
 msgid "Unverified"
 msgstr "No verificat"
 
-#: src/components/rss-dialog.tsx:397
+#: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Utilitza aquest canal per a les teves subscripcions de notificacions actuals"
 
