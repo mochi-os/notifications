@@ -368,6 +368,55 @@ if [ -n "$FEED_TOKEN" ]; then
 fi
 
 # ============================================================================
+# ACCOUNT REMOVAL CLEANUP TESTS
+# ============================================================================
+
+echo ""
+echo "--- Account Removal Cleanup Tests ---"
+
+# Register two subscriptions, queue a row for each, then remove one through
+# the notifications function path and one through the settings UI path;
+# neither queued row (nor the settings one's destination rows) may survive.
+RESULT=$(notif_curl POST "/-/push/register" -d "label=cleanup-probe-c&auth=YPF1D0bTRYUiNH98kIfhjC&p256dh=BGc2vQrRsQGN6oKjmkP_3RaMtxAaAevBBe7N0xCv1tIJaEGI3DRD0fA73tk5Mt1JsmvP6Z8tFc8MGD7e2eUKHKO")
+SUB_C=$(echo "$RESULT" | extract_id)
+RESULT=$(notif_curl POST "/-/push/register" -d "label=cleanup-probe-d&auth=ZPF1D0bTRYUiNH98kIfhjD&p256dh=BGc2vQrRsQGN6oKjmkP_3RaMtxAaAevBBe7N0xCv1tIJaEGI3DRD0fA73tk5Mt1JsmvP6Z8tFc8MGD7e2eUKHKP")
+SUB_D=$(echo "$RESULT" | extract_id)
+curl -s "http://localhost:8081/test/test_notifications_emit?object=cleanup-probe&body=cleanup-probe-body" > /dev/null
+
+RESULT=$(notif_curl GET "/-/push/drain")
+if echo "$RESULT" | grep -q "\"subId\":\"$SUB_C\"" && echo "$RESULT" | grep -q "\"subId\":\"$SUB_D\""; then
+    pass "Both subscriptions queued before removal"
+else
+    fail "Both subscriptions queued before removal" "$(echo "$RESULT" | head -c 200)"
+fi
+
+# Test: Removal through the notifications function path clears the queue
+notif_curl POST "/-/push/accounts/remove" -d "id=$SUB_C" > /dev/null
+RESULT=$(notif_curl GET "/-/push/drain")
+if ! echo "$RESULT" | grep -q "\"subId\":\"$SUB_C\"" && echo "$RESULT" | grep -q "\"subId\":\"$SUB_D\""; then
+    pass "Queued rows removed with the account (function path)"
+else
+    fail "Queued rows removed with the account (function path)" "$(echo "$RESULT" | head -c 200)"
+fi
+
+# Test: Removal through settings clears the queue and destinations
+settings_curl POST "/-/accounts/remove" -d "id=$SUB_D" > /dev/null
+RESULT=$(notif_curl GET "/-/push/drain")
+if ! echo "$RESULT" | grep -q "\"subId\":\"$SUB_D\""; then
+    pass "Queued rows removed with the account (settings path)"
+else
+    fail "Queued rows removed with the account (settings path)" "$(echo "$RESULT" | head -c 200)"
+fi
+RESULT=$(notif_curl GET "/-/categories/list")
+if ! echo "$RESULT" | grep -q "\"target\":\"$SUB_D\""; then
+    pass "Destination rows removed with the account (settings path)"
+else
+    fail "Destination rows removed with the account (settings path)" "$(echo "$RESULT" | head -c 200)"
+fi
+
+curl -s "http://localhost:8081/test/test_notifications_cleanup?object=cleanup-probe" > /dev/null
+
+# ============================================================================
 # MALFORMED INPUT TESTS
 # ============================================================================
 

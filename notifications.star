@@ -403,8 +403,11 @@ def action_accounts_remove(a):
 		a.error.label(400, "errors.invalid_id")
 		return
 
-	# Also remove from all categories' destinations
+	# Also remove from all categories' destinations and drop any queued
+	# push rows - otherwise unscoped drains keep serving the dead account's
+	# payloads until the 7-day TTL.
 	row_remove("destinations", "type = 'account' and target = ?", [id])
+	mochi.db.execute("delete from push_pending where account = ?", id)
 	result = mochi.account.remove(id)
 	return {"data": result}
 
@@ -1176,6 +1179,7 @@ def function_accounts_remove(context, id=0):
 	if not id:
 		return None
 	row_remove("destinations", "type = 'account' and target = ?", [str(id)])
+	mochi.db.execute("delete from push_pending where account = ?", str(id))
 	return mochi.account.remove(id)
 
 # UnifiedPush registration. The Mochi Android distributor calls this when a user
