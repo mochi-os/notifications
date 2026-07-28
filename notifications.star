@@ -219,8 +219,11 @@ def action_count(a):
 	return {"data": badge_count()}
 
 def action_read(a):
+	# Notification ids reach ~310 bytes: event-keyed rows are app id (~52) +
+	# ":" + event id (capped at 256), and pre-namespacing rows carry raw
+	# structured event ids over 100 bytes. A 64-byte cap rejected those.
 	id = a.input("id", "").strip()
-	if not id or len(id) > 64:
+	if not id or len(id) > 512:
 		a.error.label(400, "errors.invalid_id")
 		return
 	function_read({}, id)
@@ -1355,7 +1358,11 @@ def push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, 
 # posted, so a phone that crashes mid-drain can re-drain the same rows on next
 # subscribe. `subscription` limits the result to that device's rows; without
 # it (installed clients that predate the parameter) every pending row is
-# returned and the phone filters by subId.
+# returned and the phone filters by subId. The value is client-asserted, so
+# this is cooperative filtering against accidental cross-device drains within
+# one user's trust domain - not device isolation, which the session model
+# cannot provide (any holder of the user's session can read all notifications
+# through the tray actions regardless).
 def function_push_drain(context, subscription=""):
 	now = mochi.time.now()
 	# Opportunistic TTL sweep: drop rows older than 7 days, regardless of
@@ -1388,9 +1395,12 @@ def function_push_drain(context, subscription=""):
 # function_push_ack deletes the named rows from the queue. Idempotent — acking
 # a row that no longer exists (TTL'd, manually cleared, never queued because
 # delivered live first) is a no-op. The phone batches acks per drain or per
-# live event. `subscription` bounds deletions to that device's rows so one
-# device cannot delete another's backstop copies; without it (installed
-# clients that predate the parameter) any of the user's rows can be acked.
+# live event. `subscription` bounds deletions to that device's rows so a
+# well-behaved device does not delete another's backstop copies; without it
+# (installed clients that predate the parameter) any of the user's rows can
+# be acked. Client-asserted, so this is compatibility filtering against
+# accidental cross-device acks within one user's trust domain, not a device
+# security boundary; it becomes mandatory once released clients pass it.
 def function_push_ack(context, account_event_ids=None, subscription=""):
 	if not account_event_ids:
 		return {"acked": 0}

@@ -198,6 +198,35 @@ fi
 curl -s "http://localhost:8081/test/test_notifications_cleanup?object=collide-a" > /dev/null
 curl -s "http://localhost:8081/test/test_notifications_cleanup?object=collide-b" > /dev/null
 
+# Test: Event-keyed ids exceed 64 chars and must stay markable as read on both
+# HTTP paths (the notifications action and the menu tray proxy)
+LONG_EVENT=$(python3 -c "print('e' * 100)")
+curl -s -X POST -d "object=read-probe&body=read-probe-body&event=$LONG_EVENT" "http://localhost:8081/test/test_notifications_emit" > /dev/null
+RESULT=$(notif_curl POST "/-/read" -d "id=test:$LONG_EVENT")
+if echo "$RESULT" | grep -q '"data"'; then
+    pass "Long event-keyed id accepted by the read action"
+else
+    fail "Long event-keyed id accepted by the read action" "$(echo "$RESULT" | head -c 150)"
+fi
+RESULT=$("$CURL_HELPER" -a admin -X POST -d "id=test:$LONG_EVENT" "/menu/-/notifications/read")
+if echo "$RESULT" | grep -q '"ok":true'; then
+    pass "Long event-keyed id accepted by the menu tray"
+else
+    fail "Long event-keyed id accepted by the menu tray" "$(echo "$RESULT" | head -c 150)"
+fi
+RESULT=$(notif_curl GET "/-/list")
+if echo "$RESULT" | python3 -c "
+import sys, json
+rows = json.load(sys.stdin)['data']
+row = next((r for r in rows if r['object'] == 'read-probe'), None)
+sys.exit(0 if row and row['read'] != 0 else 1)
+" 2>/dev/null; then
+    pass "Long event-keyed notification marked read"
+else
+    fail "Long event-keyed notification marked read" "$(echo "$RESULT" | head -c 150)"
+fi
+curl -s "http://localhost:8081/test/test_notifications_cleanup?object=read-probe" > /dev/null
+
 # ============================================================================
 # PUSH QUEUE SCOPING TESTS
 # ============================================================================
