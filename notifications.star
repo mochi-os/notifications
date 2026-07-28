@@ -549,12 +549,9 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 
 	event_id: optional stable identifier for the source event (typically the
 	UID of the row that triggered the notification: a comment id, a post id,
-	a chess move id, etc.). When provided, used as the row primary key so
-	replicas processing the same logical event converge on the same row
-	rather than each minting their own UID. Without it, paired hosts both
-	insert independent rows for the same event and emails / pushbullet /
-	ntfy fire twice. Browser / FCM / unifiedpush absorb the duplication via
-	their tag-based dedup but the in-app badge count still drifts.
+	a chess move id, etc.). When provided, the new row's id is derived from
+	it, namespaced by the sending app, so a retried send keys the same row
+	rather than minting a new one.
 
 	The reserved app id "" is only accepted when the call originates from the
 	Mochi server itself (the core-only service_call_as_server helper sets
@@ -617,25 +614,35 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 				title, body, content, url, sender, now, notif_id
 			)
 	else:
-		notif_id = event_id if event_id else mochi.uid()
+		# Key the row by the caller's event id, namespaced by the sending app
+		# so two apps notifying about the same source row cannot collide.
+		notif_id = (app + ":" + event_id) if event_id else mochi.uid()
 		kind = "insert"
 		mochi.db.execute(
 			"insert or ignore into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read, fixed) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)",
 			notif_id, app, topic, object, title, body, content, url, sender,
 			count if count != None else 1, now, 1 if count != None else 0
 		)
+		# The insert is ignored when the id already keys another row (the
+		# same app reusing an event id under a different topic or object).
+		# Firing the hook for that id would redeliver the other row and this
+		# notification would be silently lost - fall back to a fresh uid.
+		if not mochi.db.exists("select 1 from notifications where id = ? and topic = ? and object = ?", notif_id, topic, object):
+			notif_id = mochi.uid()
+			mochi.db.execute(
+				"insert into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read, fixed) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)",
+				notif_id, app, topic, object, title, body, content, url, sender,
+				count if count != None else 1, now, 1 if count != None else 0
+			)
 
-	# Fire the commit hook for the local write. Replicated apply paths
-	# auto-fire it on the other host. The hook emits the websocket
-	# (every host - each has its own connected browser tabs) and -
-	# behind a per-user leader gate - fans out external deliveries
-	# (account push, email, pushbullet, ntfy). Exactly one host fires
-	# externals; both hosts emit websockets.
+	# Fire the commit hook for the write: it emits the websocket event and,
+	# for unread rows, fans out external deliveries (account push, email,
+	# pushbullet, ntfy) through the topic's category destinations.
 	mochi.db.commit.fire("notifications", kind, notif_id)
 	return 1
 
-# Commit hook for the notifications table. See function_send for the
-# replication-safety rationale.
+# Commit hook for the notifications table: websocket emission plus external
+# delivery fan-out for unread rows.
 def notifications_commit_hook(table, kind, row_uid):
 	if table != "notifications":
 		return
@@ -647,8 +654,7 @@ def notifications_commit_hook(table, kind, row_uid):
 	if not row:
 		return
 
-	# Websocket emission fires on every host. Each host has its own
-	# connected browser tabs subscribed to "notifications".
+	# Emit to any connected browser tabs subscribed to "notifications".
 	mochi.websocket.write("notifications", {
 		"type": "new",
 		"id": row["id"],
@@ -705,11 +711,11 @@ def notifications_commit_hook(table, kind, row_uid):
 # module-load time has neither, and Starlark globals are frozen so we
 # can't memoise the registration here. Re-registering the same function
 # name on every call is a plain assignment on the AppVersion struct
-# (cheap, no allocation). The framework invokes the hook for local
-# writes (via mochi.db.commit.fire) and replicated apply paths (auto-
-# fired by core). Each invocation is independently safe: the websocket
-# write is idempotent and mochi.account.notify carries the stable row
-# id for receiver-side dedup.
+# (cheap, no allocation). The framework invokes the hook via
+# mochi.db.commit.fire, and the pending-commit log retries a failed
+# handler on the next fire. Each invocation is independently safe: the
+# websocket write is idempotent and mochi.account.notify carries the
+# stable row id for receiver-side dedup.
 def ensure_commit_hook_registered():
 	mochi.db.commit.hook("notifications_commit_hook")
 

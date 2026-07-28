@@ -170,6 +170,34 @@ if [ -n "$UNSUB_FEED_ID" ]; then
     notif_curl POST "/-/rss/delete" -d "id=$UNSUB_FEED_ID" > /dev/null
 fi
 
+# ============================================================================
+# EVENT ID COLLISION TESTS
+# ============================================================================
+
+echo ""
+echo "--- Event ID Collision Tests ---"
+
+# Two notifications sharing an event id under different objects must both
+# survive: the row id is derived from (app, event id) and a same-app reuse
+# falls back to a fresh uid rather than being silently dropped.
+curl -s "http://localhost:8081/test/test_notifications_emit?object=collide-a&body=collide-body-a&event=collide-probe" > /dev/null
+curl -s "http://localhost:8081/test/test_notifications_emit?object=collide-b&body=collide-body-b&event=collide-probe" > /dev/null
+
+RESULT=$(notif_curl GET "/-/list")
+if echo "$RESULT" | grep -q 'collide-body-a'; then
+    pass "First event-keyed notification stored"
+else
+    fail "First event-keyed notification stored" "$RESULT"
+fi
+if echo "$RESULT" | grep -q 'collide-body-b'; then
+    pass "Colliding event id does not drop the second notification"
+else
+    fail "Colliding event id does not drop the second notification" "$RESULT"
+fi
+
+curl -s "http://localhost:8081/test/test_notifications_cleanup?object=collide-a" > /dev/null
+curl -s "http://localhost:8081/test/test_notifications_cleanup?object=collide-b" > /dev/null
+
 # Test: Invalid feed token returns 401
 RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/-/rss?token=invalid_token_12345")
 if [ "$RESULT" = "401" ]; then
