@@ -52,6 +52,10 @@ msgstr "{selectedCount, plural, zero {# atlasīti} one {# atlasīti} other {# at
 msgid "{selectedCount, plural, one {Bulk actions for # selected {entityName}} other {Bulk actions for # selected {manyName}}}"
 msgstr "{selectedCount, plural, zero {Lielapjoma darbības # atlasītiem {manyName}} one {Lielapjoma darbības # atlasītam {entityName}} other {Lielapjoma darbības # atlasītiem {manyName}}}"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:52
+msgid "{sentLabel} of {totalLabel}"
+msgstr "{sentLabel} no {totalLabel}"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:132
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, zero {Atvērt izvēlni (# neizlasītu paziņojumu)} one {Atvērt izvēlni (# neizlasīts paziņojums)} other {Atvērt izvēlni (# neizlasīti paziņojumi)}}"
@@ -562,6 +566,14 @@ msgstr "Virziens"
 #: ../../../lib/web/src/components/person-picker.tsx:214
 msgid "Directory"
 msgstr "Katalogs"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:300
+msgid "Discard"
+msgstr "Atmest"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:298
+msgid "Discard draft?"
+msgstr "Atmest melnrakstu?"
 
 #: ../../../lib/web/src/lib/chat-ui.ts:25
 #: ../../../lib/web/src/lib/chat-ui.ts:29
@@ -1157,6 +1169,7 @@ msgstr "Piekļuves atslēgas"
 msgid "Pick a date"
 msgstr "Izvēlieties datumu"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:95
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:304
 msgid "Please check your internet connection and try again."
@@ -1183,6 +1196,10 @@ msgstr "Iepriekšējais attēls"
 #: ../../../lib/web/src/features/document/document-page.tsx:44
 msgid "Privacy"
 msgstr "Privātums"
+
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:50
+msgid "Processing…"
+msgstr "Apstrādā…"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:137
 #: ../../../lib/web/src/components/profile-dropdown.tsx:114
@@ -1235,6 +1252,7 @@ msgstr "Relatīvs (5m, 3h, 2d)"
 msgid "Relative within 24 hours, else absolute"
 msgstr "Relatīvs 24 stundu laikā, citādi absolūts"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:232
 #: ../../../lib/web/src/features/access/access-list.tsx:270
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:180
 msgid "Remove"
@@ -1282,6 +1300,10 @@ msgstr "Atiestatīt {title}"
 #: ../../../lib/web/src/components/config-drawer.tsx:85
 msgid "Reset all settings to default values"
 msgstr "Atiestatīt visus iestatījumus uz noklusējuma vērtībām"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:249
+msgid "Retry"
+msgstr "Mēģināt vēlreiz"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:362
 msgid "Right to Left"
@@ -1688,6 +1710,10 @@ msgstr "Nezināms"
 msgid "Unverified"
 msgstr "Nav pārbaudīts"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:34
+msgid "Upload progress"
+msgstr "Augšupielādes norise"
+
 #: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Izmantot šo plūsmu jūsu pašreizējiem paziņojumu abonementiem"
@@ -1789,3 +1815,15 @@ msgstr "Jūs esat visu izlasījis!"
 #: ../../../lib/web/src/components/restore-banner.tsx:91
 msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
 msgstr "Jūsu konts tika pārvietots šeit no {source}. Kamēr to tur nedzēšat, ziņojumi un paziņojumi var sasniegt abus serverus, daļa jūsu satura joprojām tiek apkalpota no vecā servera un sekotājiem var paiet dažas minūtes, lai atrastu jūs šeit."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:291
+msgid "Your attachments will be lost."
+msgstr "Jūsu pielikumi tiks zaudēti."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:289
+msgid "Your text and attachments will be lost."
+msgstr "Jūsu teksts un pielikumi tiks zaudēti."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:292
+msgid "Your text will be lost."
+msgstr "Tavs teksts tiks zaudēts."

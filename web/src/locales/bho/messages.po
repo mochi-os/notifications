@@ -52,6 +52,10 @@ msgstr "{selectedCount, plural, one {# चुनल गइल} other {# चु�
 msgid "{selectedCount, plural, one {Bulk actions for # selected {entityName}} other {Bulk actions for # selected {manyName}}}"
 msgstr "{selectedCount, plural, one {# चुनल {entityName} खातिर थोक कार्रवाई} other {# चुनल {manyName} खातिर थोक कार्रवाई}}"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:52
+msgid "{sentLabel} of {totalLabel}"
+msgstr "{totalLabel} में से {sentLabel}"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:132
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, one {मेनू खोलीं (# बिना पढ़ल सूचना)} other {मेनू खोलीं (# बिना पढ़ल सूचना)}}"
@@ -562,6 +566,14 @@ msgstr "दिशा"
 #: ../../../lib/web/src/components/person-picker.tsx:214
 msgid "Directory"
 msgstr "निर्देशिका"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:300
+msgid "Discard"
+msgstr "छोड़ीं"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:298
+msgid "Discard draft?"
+msgstr "ड्राफ्ट छोड़ दीं?"
 
 #: ../../../lib/web/src/lib/chat-ui.ts:25
 #: ../../../lib/web/src/lib/chat-ui.ts:29
@@ -1157,6 +1169,7 @@ msgstr "Passkey"
 msgid "Pick a date"
 msgstr "तारीख चुनीं"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:95
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:304
 msgid "Please check your internet connection and try again."
@@ -1183,6 +1196,10 @@ msgstr "पिछिला तस्वीर"
 #: ../../../lib/web/src/features/document/document-page.tsx:44
 msgid "Privacy"
 msgstr "गोपनीयता"
+
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:50
+msgid "Processing…"
+msgstr "प्रोसेस हो रहल बा…"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:137
 #: ../../../lib/web/src/components/profile-dropdown.tsx:114
@@ -1235,6 +1252,7 @@ msgstr "सापेक्ष (5m, 3h, 2d)"
 msgid "Relative within 24 hours, else absolute"
 msgstr "24 घंटा के भीतर सापेक्ष, ना त निरपेक्ष"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:232
 #: ../../../lib/web/src/features/access/access-list.tsx:270
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:180
 msgid "Remove"
@@ -1282,6 +1300,10 @@ msgstr "{title} रीसेट करीं"
 #: ../../../lib/web/src/components/config-drawer.tsx:85
 msgid "Reset all settings to default values"
 msgstr "सब सेटिंग के डिफ़ॉल्ट मान पर रीसेट करीं"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:249
+msgid "Retry"
+msgstr "फेर से कोसिस करीं"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:362
 msgid "Right to Left"
@@ -1688,6 +1710,10 @@ msgstr "अनजान"
 msgid "Unverified"
 msgstr "असत्यापित"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:34
+msgid "Upload progress"
+msgstr "अपलोड के प्रगति"
+
 #: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "अपना वर्तमान सूचना सदस्यता खातिर एह फ़ीड के उपयोग करीं"
@@ -1789,3 +1815,15 @@ msgstr "रउआ सब देख लेनी!"
 #: ../../../lib/web/src/components/restore-banner.tsx:91
 msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
 msgstr "आपन खाता {source} से इहाँ हिलावल गइल। जब तक उहाँ से ना मेटाईं, संदेश आ सूचना दुनो सर्वर पर पहुँच सकेला, कुछ सामग्री पुरान सर्वर से आवत रही, आ फॉलोअर्स के इहाँ ढूंढे में कुछ मिनट लाग सकेला।"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:291
+msgid "Your attachments will be lost."
+msgstr "राउर संलग्नक खतम हो जाई।"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:289
+msgid "Your text and attachments will be lost."
+msgstr "राउर लिखल आ संलग्नक खतम हो जाई।"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:292
+msgid "Your text will be lost."
+msgstr "रउरा के टेक्स्ट खो जाई।"

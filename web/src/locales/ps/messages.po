@@ -52,6 +52,10 @@ msgstr "{selectedCount, plural, one {# غوره شوي} other {# غوره شوي
 msgid "{selectedCount, plural, one {Bulk actions for # selected {entityName}} other {Bulk actions for # selected {manyName}}}"
 msgstr "{selectedCount, plural, one {د # غوره شوي {entityName} لپاره ډله ایز کړنې} other {د # غوره شوي {manyName} لپاره ډله ایز کړنې}}"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:52
+msgid "{sentLabel} of {totalLabel}"
+msgstr "{sentLabel} له {totalLabel} څخه"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:132
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, one {مینو خلاص کړئ (# نالوستې خبرتیا)} other {مینو خلاص کړئ (# نالوستې خبرتیاوې)}}"
@@ -562,6 +566,14 @@ msgstr "لوری"
 #: ../../../lib/web/src/components/person-picker.tsx:214
 msgid "Directory"
 msgstr "لارښود"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:300
+msgid "Discard"
+msgstr "ړنګول"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:298
+msgid "Discard draft?"
+msgstr "مسوده ړنګه شي؟"
 
 #: ../../../lib/web/src/lib/chat-ui.ts:25
 #: ../../../lib/web/src/lib/chat-ui.ts:29
@@ -1157,6 +1169,7 @@ msgstr "د لاسرسي کيلۍ"
 msgid "Pick a date"
 msgstr "نېټه وټاکئ"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:95
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:304
 msgid "Please check your internet connection and try again."
@@ -1183,6 +1196,10 @@ msgstr "تېر انځور"
 #: ../../../lib/web/src/features/document/document-page.tsx:44
 msgid "Privacy"
 msgstr "محرمیت"
+
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:50
+msgid "Processing…"
+msgstr "پروسس کیږي…"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:137
 #: ../../../lib/web/src/components/profile-dropdown.tsx:114
@@ -1235,6 +1252,7 @@ msgstr "نسبي (5m, 3h, 2d)"
 msgid "Relative within 24 hours, else absolute"
 msgstr "په 24 ساعتونو کې نسبي، که نه نو مطلق"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:232
 #: ../../../lib/web/src/features/access/access-list.tsx:270
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:180
 msgid "Remove"
@@ -1282,6 +1300,10 @@ msgstr "{title} بیا تنظیم کړئ"
 #: ../../../lib/web/src/components/config-drawer.tsx:85
 msgid "Reset all settings to default values"
 msgstr "ټول تنظیمات د ډیفالټ ارزښتونو ته بیرته تنظیم کړئ"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:249
+msgid "Retry"
+msgstr "بیا هڅه وکړئ"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:362
 msgid "Right to Left"
@@ -1688,6 +1710,10 @@ msgstr "نامعلوم"
 msgid "Unverified"
 msgstr "تصدیق نه شوی"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:34
+msgid "Upload progress"
+msgstr "د پورته کولو پرمختګ"
+
 #: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "د خپلو اوسنیو خبرتیا ګډونونو لپاره دا فیډ وکاروئ"
@@ -1789,3 +1815,15 @@ msgstr "تاسو ټول ولیدل!"
 #: ../../../lib/web/src/components/restore-banner.tsx:91
 msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
 msgstr "ستاسو حساب له {source} دلته لیږدول شوی. تر هغه چې تاسو هلته یې ړنګ نه کړئ، پیغامونه او خبرتیاوې ممکن دواړه سرورونو ته ورسیږي، ستاسو د مینځپانګې یوه برخه لاهم له پخوانی سرور نه چمتو کیږي، او تعقیبونکي ممکن دلته ستاسو موندلو لپاره یو شیبه وخت ولري."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:291
+msgid "Your attachments will be lost."
+msgstr "ستاسو ضمیمې به له لاسه ولاړې شي."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:289
+msgid "Your text and attachments will be lost."
+msgstr "ستاسو متن او ضمیمې به له لاسه ولاړې شي."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:292
+msgid "Your text will be lost."
+msgstr "ستاسو متن به له لاسه ووځي."

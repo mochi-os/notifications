@@ -52,6 +52,10 @@ msgstr "{selectedCount, plural, one {# തിരഞ്ഞെടുത്തു} 
 msgid "{selectedCount, plural, one {Bulk actions for # selected {entityName}} other {Bulk actions for # selected {manyName}}}"
 msgstr "{selectedCount, plural, one {# തിരഞ്ഞെടുത്ത {entityName} എന്നതിനുള്ള ബൾക്ക് പ്രവർത്തനങ്ങൾ} other {# തിരഞ്ഞെടുത്ത {manyName} എന്നതിനുള്ള ബൾക്ക് പ്രവർത്തനങ്ങൾ}}"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:52
+msgid "{sentLabel} of {totalLabel}"
+msgstr "{totalLabel}-ൽ {sentLabel}"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:132
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, one {മെനു തുറക്കുക (# വായിക്കാത്ത അറിയിപ്പ്)} other {മെനു തുറക്കുക (# വായിക്കാത്ത അറിയിപ്പുകൾ)}}"
@@ -562,6 +566,14 @@ msgstr "ദിശ"
 #: ../../../lib/web/src/components/person-picker.tsx:214
 msgid "Directory"
 msgstr "ഡയറക്ടറി"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:300
+msgid "Discard"
+msgstr "ഉപേക്ഷിക്കുക"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:298
+msgid "Discard draft?"
+msgstr "ഡ്രാഫ്റ്റ് ഉപേക്ഷിക്കണോ?"
 
 #: ../../../lib/web/src/lib/chat-ui.ts:25
 #: ../../../lib/web/src/lib/chat-ui.ts:29
@@ -1157,6 +1169,7 @@ msgstr "പാസ്കീകൾ"
 msgid "Pick a date"
 msgstr "തീയതി തിരഞ്ഞെടുക്കുക"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:95
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:304
 msgid "Please check your internet connection and try again."
@@ -1183,6 +1196,10 @@ msgstr "മുമ്പത്തെ ഫോട്ടോ"
 #: ../../../lib/web/src/features/document/document-page.tsx:44
 msgid "Privacy"
 msgstr "സ്വകാര്യതാ നയം"
+
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:50
+msgid "Processing…"
+msgstr "പ്രോസസ്സ് ചെയ്യുന്നു…"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:137
 #: ../../../lib/web/src/components/profile-dropdown.tsx:114
@@ -1235,6 +1252,7 @@ msgstr "24 മണിക്കൂറിനുള്ളിൽ ആപേക്ഷ�
 msgid "Relative within 24 hours, else absolute"
 msgstr "24 മണിക്കൂറിനുള്ളിൽ ആപേക്ഷികം, അല്ലാത്തപക്ഷം കൃത്യം"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:232
 #: ../../../lib/web/src/features/access/access-list.tsx:270
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:180
 msgid "Remove"
@@ -1282,6 +1300,10 @@ msgstr "{title} പുനഃസജ്ജമാക്കുക"
 #: ../../../lib/web/src/components/config-drawer.tsx:85
 msgid "Reset all settings to default values"
 msgstr "മുൻഗണനകൾ റീസെറ്റ് ചെയ്യണോ?"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:249
+msgid "Retry"
+msgstr "വീണ്ടും ശ്രമിക്കുക"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:362
 msgid "Right to Left"
@@ -1688,6 +1710,10 @@ msgstr "അജ്ഞാതം"
 msgid "Unverified"
 msgstr "സ്ഥിരീകരിച്ചിട്ടില്ല"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:34
+msgid "Upload progress"
+msgstr "അപ്‌ലോഡ് പുരോഗതി"
+
 #: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "നിങ്ങളുടെ നിലവിലെ അറിയിപ്പ് സബ്സ്ക്രിപ്ഷനുകൾക്കായി ഈ ഫീഡ് ഉപയോഗിക്കുക"
@@ -1789,3 +1815,15 @@ msgstr "നിങ്ങൾ എല്ലാം കണ്ടു!"
 #: ../../../lib/web/src/components/restore-banner.tsx:91
 msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
 msgstr "നിങ്ങളുടെ അക്കൗണ്ട് {source} ൽ നിന്ന് ഇവിടേക്ക് മാറ്റി. അവിടെ ഇല്ലാതാക്കുന്നതുവരെ, സന്ദേശങ്ങളും അറിയിപ്പുകളും രണ്ട് സെർവറുകളിലും എത്തിയേക്കാം, നിങ്ങളുടെ ചില ഉള്ളടക്കം പഴയ സെർവറിൽ നിന്ന് വിതരണം ചെയ്യപ്പെടും, ഫോളോവർമാർ ഇവിടെ നിങ്ങളെ കണ്ടെത്താൻ ഏതാനും മിനിറ്റ് എടുക്കാം."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:291
+msgid "Your attachments will be lost."
+msgstr "നിങ്ങളുടെ അറ്റാച്ചുമെന്റുകൾ നഷ്ടപ്പെടും."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:289
+msgid "Your text and attachments will be lost."
+msgstr "നിങ്ങളുടെ ടെക്സ്റ്റും അറ്റാച്ചുമെന്റുകളും നഷ്ടപ്പെടും."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:292
+msgid "Your text will be lost."
+msgstr "നിങ്ങളുടെ ടെക്സ്റ്റ് നഷ്ടപ്പെടും."

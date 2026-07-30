@@ -52,6 +52,10 @@ msgstr "{selectedCount, plural, one {# сонгогдсон} other {# сонго
 msgid "{selectedCount, plural, one {Bulk actions for # selected {entityName}} other {Bulk actions for # selected {manyName}}}"
 msgstr "{selectedCount, plural, one {# сонгосон {entityName}-д зориулсан бөөнөөр үйлдэл} other {# сонгосон {manyName}-д зориулсан бөөнөөр үйлдэл}}"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:52
+msgid "{sentLabel} of {totalLabel}"
+msgstr "{totalLabel}-с {sentLabel}"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:132
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, one {Цэс нээх (# уншаагүй мэдэгдэл)} other {Цэс нээх (# уншаагүй мэдэгдэл)}}"
@@ -562,6 +566,14 @@ msgstr "Чиглэл"
 #: ../../../lib/web/src/components/person-picker.tsx:214
 msgid "Directory"
 msgstr "Лавлах"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:300
+msgid "Discard"
+msgstr "Хаях"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:298
+msgid "Discard draft?"
+msgstr "Ноорогийг хаах уу?"
 
 #: ../../../lib/web/src/lib/chat-ui.ts:25
 #: ../../../lib/web/src/lib/chat-ui.ts:29
@@ -1157,6 +1169,7 @@ msgstr "Passkey-ууд"
 msgid "Pick a date"
 msgstr "Огноо сонгох"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:95
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:304
 msgid "Please check your internet connection and try again."
@@ -1183,6 +1196,10 @@ msgstr "Өмнөх зураг"
 #: ../../../lib/web/src/features/document/document-page.tsx:44
 msgid "Privacy"
 msgstr "Нууцлал"
+
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:50
+msgid "Processing…"
+msgstr "Боловсруулж байна…"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:137
 #: ../../../lib/web/src/components/profile-dropdown.tsx:114
@@ -1235,6 +1252,7 @@ msgstr "Харьцангуй (5м, 3ц, 2ө)"
 msgid "Relative within 24 hours, else absolute"
 msgstr "24 цагийн дотор харьцангуй, эс бөгөөс үнэмлэхүй"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:232
 #: ../../../lib/web/src/features/access/access-list.tsx:270
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:180
 msgid "Remove"
@@ -1282,6 +1300,10 @@ msgstr "{title}-ийг шинэчлэх"
 #: ../../../lib/web/src/components/config-drawer.tsx:85
 msgid "Reset all settings to default values"
 msgstr "Бүх тохиргоог анхдагч утгад нь сэргээх"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:249
+msgid "Retry"
+msgstr "Дахин оролдох"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:362
 msgid "Right to Left"
@@ -1688,6 +1710,10 @@ msgstr "Үл мэдэгдэх"
 msgid "Unverified"
 msgstr "Баталгаажаагүй"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:34
+msgid "Upload progress"
+msgstr "Байршуулалтын явц"
+
 #: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "Энэ feed-г одоогийн мэдэгдлийн захиалгад ашиглах"
@@ -1789,3 +1815,15 @@ msgstr "Та бүгдийг үзсэн!"
 #: ../../../lib/web/src/components/restore-banner.tsx:91
 msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
 msgstr "Таны бүртгэл {source}-с энд шилжсэн. Тэнд устгах хүртэл мессеж, мэдэгдлүүд хоёр сервер рүү хүрч болно, таны зарим контент хуучин серверээс ирсээр байж болно, дагагчид таныг эндээс олоход хэдэн минут зарцуулж магадгүй."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:291
+msgid "Your attachments will be lost."
+msgstr "Таны хавсралтууд устах болно."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:289
+msgid "Your text and attachments will be lost."
+msgstr "Таны текст болон хавсралтууд устах болно."
+
+#: ../../../lib/web/src/components/comment-composer.tsx:292
+msgid "Your text will be lost."
+msgstr "Чиний текст алдагдана."

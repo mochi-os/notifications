@@ -52,6 +52,10 @@ msgstr "{selectedCount, plural, one {# منتخب} other {# منتخب}}"
 msgid "{selectedCount, plural, one {Bulk actions for # selected {entityName}} other {Bulk actions for # selected {manyName}}}"
 msgstr "{selectedCount, plural, one {# منتخب {entityName} کے لیے بلک کارروائیاں} other {# منتخب {manyName} کے لیے بلک کارروائیاں}}"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:52
+msgid "{sentLabel} of {totalLabel}"
+msgstr "{totalLabel} میں سے {sentLabel}"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:132
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, one {مینو کھولیں (# غیر پڑھی اطلاع)} other {مینو کھولیں (# غیر پڑھی اطلاعات)}}"
@@ -562,6 +566,14 @@ msgstr "سمت"
 #: ../../../lib/web/src/components/person-picker.tsx:214
 msgid "Directory"
 msgstr "ڈائریکٹری"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:300
+msgid "Discard"
+msgstr "رد کریں"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:298
+msgid "Discard draft?"
+msgstr "مسودہ رد کریں؟"
 
 #: ../../../lib/web/src/lib/chat-ui.ts:25
 #: ../../../lib/web/src/lib/chat-ui.ts:29
@@ -1157,6 +1169,7 @@ msgstr "passkeys"
 msgid "Pick a date"
 msgstr "تاریخ منتخب کریں"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:95
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:304
 msgid "Please check your internet connection and try again."
@@ -1183,6 +1196,10 @@ msgstr "پچھلی تصویر"
 #: ../../../lib/web/src/features/document/document-page.tsx:44
 msgid "Privacy"
 msgstr "پرائیویسی"
+
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:50
+msgid "Processing…"
+msgstr "پروسیس ہو رہا ہے…"
 
 #: ../../../lib/web/src/components/layout/nav-user.tsx:137
 #: ../../../lib/web/src/components/profile-dropdown.tsx:114
@@ -1235,6 +1252,7 @@ msgstr "نسبتی (5m، 3h، 2d)"
 msgid "Relative within 24 hours, else absolute"
 msgstr "24 گھنٹوں کے اندر نسبتی، ورنہ مطلق"
 
+#: ../../../lib/web/src/components/comment-composer.tsx:232
 #: ../../../lib/web/src/features/access/access-list.tsx:270
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:180
 msgid "Remove"
@@ -1282,6 +1300,10 @@ msgstr "{title} ری سیٹ کریں"
 #: ../../../lib/web/src/components/config-drawer.tsx:85
 msgid "Reset all settings to default values"
 msgstr "تمام سیٹنگز کو ڈیفالٹ ویلیوز پر reset کریں"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:249
+msgid "Retry"
+msgstr "دوبارہ کوشش کریں"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:362
 msgid "Right to Left"
@@ -1688,6 +1710,10 @@ msgstr "نامعلوم"
 msgid "Unverified"
 msgstr "غیر تصدیق شدہ"
 
+#: ../../../lib/web/src/components/ui/upload-progress.tsx:34
+msgid "Upload progress"
+msgstr "اپ لوڈ کی پیش رفت"
+
 #: src/components/rss-dialog.tsx:405
 msgid "Use this feed for your current notification subscriptions"
 msgstr "اپنی موجودہ نوٹیفکیشن سبسکرپشنز کے لیے یہ فیڈ استعمال کریں"
@@ -1789,3 +1815,15 @@ msgstr "آپ نے سب دیکھ لیا!"
 #: ../../../lib/web/src/components/restore-banner.tsx:91
 msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
 msgstr "آپ کا اکاؤنٹ {source} سے یہاں منتقل کر دیا گیا ہے۔ جب تک آپ اسے وہاں سے حذف نہیں کرتے، پیغامات اور اطلاعات دونوں سرورز تک پہنچ سکتی ہیں، آپ کے کچھ مواد پرانے سرور سے فراہم ہوتے رہیں گے، اور فالوورز کو آپ کو یہاں تلاش کرنے میں چند منٹ لگ سکتے ہیں۔"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:291
+msgid "Your attachments will be lost."
+msgstr "آپ کے منسلکات ضائع ہو جائیں گے۔"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:289
+msgid "Your text and attachments will be lost."
+msgstr "آپ کا متن اور منسلکات ضائع ہو جائیں گے۔"
+
+#: ../../../lib/web/src/components/comment-composer.tsx:292
+msgid "Your text will be lost."
+msgstr "آپ کا متن ضائع ہو جائے گا۔"
