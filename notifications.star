@@ -589,6 +589,13 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	# A truncated URL is broken anyway; degrade to none.
 	if len(url) > 2048:
 		url = ""
+	# The link becomes a click target in the recipient's notification menu, so
+	# only a local path or a mochi: URI is acceptable. A scheme the sender chose
+	# (javascript:, data:) would run in the origin, and "//host" names another
+	# origin without ever spelling out a scheme. Callers are apps, but an app
+	# may be relaying a value that reached it from a remote peer.
+	if url and not url.startswith("mochi:") and (not url.startswith("/") or url.startswith("//")):
+		url = ""
 	if count != None:
 		count = min(max(count, 0), 999999)
 
