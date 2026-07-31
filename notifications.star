@@ -594,6 +594,15 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	# (javascript:, data:) would run in the origin, and "//host" names another
 	# origin without ever spelling out a scheme. Callers are apps, but an app
 	# may be relaying a value that reached it from a remote peer.
+	#
+	# Tab, newline, carriage return and backslash are rejected wherever they
+	# appear: a URL parser strips the first three and remaps the fourth to "/",
+	# so "/\evil.example" and "/<tab>/evil.example" both resolve to another
+	# origin while passing a naive "starts with a single slash" test. Those four
+	# are the complete set that can move the authority - every other C0
+	# character stays in the path.
+	if url and ("\\" in url or "\t" in url or "\n" in url or "\r" in url):
+		url = ""
 	if url and not url.startswith("mochi:") and (not url.startswith("/") or url.startswith("//")):
 		url = ""
 	if count != None:
