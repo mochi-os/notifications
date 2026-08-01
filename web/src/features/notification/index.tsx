@@ -35,7 +35,6 @@ import {
 } from 'lucide-react'
 import type { Notification as ApiNotification } from '@/api/notifications'
 import { RssDialog } from '@/components/rss-dialog'
-import { useNotificationWebSocket } from '@/hooks/useNotificationWebSocket'
 import {
   useNotificationsQuery,
   useMarkAsReadMutation,
@@ -133,7 +132,6 @@ export function Notifications() {
 
   const { data, isLoading, error, refetch } = useNotificationsQuery()
 
-  useNotificationWebSocket()
   const markAsReadMutation = useMarkAsReadMutation()
   const markAllAsReadMutation = useMarkAllAsReadMutation()
   const clearAllMutation = useClearAllMutation()
