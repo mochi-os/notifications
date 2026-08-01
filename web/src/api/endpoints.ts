@@ -10,6 +10,16 @@ const endpoints = {
     readAll: '-/read/all',
     clearAll: '-/clear/all',
   },
+  // This app owns the notifications service, so it reads categories and topics
+  // from its own actions. The shared category button used to fetch the menu
+  // app's equivalents with this app's token, which core refuses.
+  categories: {
+    list: '-/categories/list',
+  },
+  topics: {
+    lookup: '-/topics/lookup',
+    setCategory: '-/topics/set_category',
+  },
 } as const
 
 export default endpoints

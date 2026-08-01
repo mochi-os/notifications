@@ -41,6 +41,7 @@ import {
   useMarkAllAsReadMutation,
   useClearAllMutation,
 } from '@/hooks/useNotifications'
+import { useNotificationCategories } from '@/hooks/useNotificationCategories'
 
 const STORAGE_KEY = 'notifications-show-all'
 const TRUSTED_EXTERNAL_REDIRECT_HOSTS = (
@@ -53,9 +54,11 @@ const TRUSTED_EXTERNAL_REDIRECT_HOSTS = (
 function NotificationItem({
   notification,
   onMarkAsRead,
+  categories,
 }: {
   notification: ApiNotification
   onMarkAsRead: (id: string) => void
+  categories: ReturnType<typeof useNotificationCategories>
 }) {
   const { t } = useLingui()
   const { formatTimestamp } = useFormat()
@@ -115,9 +118,21 @@ function NotificationItem({
         </div>
       </button>
       <NotificationCategoryButton
-        app={notification.app}
-        topic={notification.topic}
-        object={notification.object}
+        categories={categories.categories}
+        topic={categories.topic}
+        saving={categories.saving}
+        open={
+          categories.openKey ===
+          categories.keyFor(notification.app, notification.topic, notification.object)
+        }
+        onOpenChange={(next) => {
+          if (next) {
+            void categories.open(notification.app, notification.topic, notification.object)
+          } else {
+            categories.close()
+          }
+        }}
+        onCategoryChange={categories.changeCategory}
         className='mt-0.5 shrink-0'
       />
     </div>
@@ -126,6 +141,7 @@ function NotificationItem({
 
 export function Notifications() {
   const { t } = useLingui()
+  const categoryPicker = useNotificationCategories()
   usePageTitle(t`Notifications`)
   const [showAll, setShowAll] = useShellStorage(STORAGE_KEY, false)
   const [rssOpen, setRssOpen] = useState(false)
@@ -280,6 +296,7 @@ export function Notifications() {
                       key={notification.id}
                       notification={notification}
                       onMarkAsRead={handleMarkAsRead}
+                      categories={categoryPicker}
                     />
                   ))}
                 </div>
