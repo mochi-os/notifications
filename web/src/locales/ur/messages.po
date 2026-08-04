@@ -60,6 +60,10 @@ msgstr "{selectedCount, plural, one {# منتخب {entityName} کے لیے بل�
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{totalLabel} میں سے {sentLabel}"
 
+#: src/hooks/useNotificationCategories.ts:71
+msgid "{topicLabel} moved to the {categoryLabel} category"
+msgstr "{topicLabel} کو {categoryLabel} زمرے میں منتقل کر دیا گیا"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:165
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, one {مینو کھولیں (# غیر پڑھی اطلاع)} other {مینو کھولیں (# غیر پڑھی اطلاعات)}}"
@@ -290,8 +294,12 @@ msgid "Cancel"
 msgstr "منسوخ کریں"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:102
-msgid "Category for this notification"
-msgstr "اس نوٹیفکیشن کے لیے زمرہ"
+msgid "Category for these notifications"
+msgstr "ان نوٹیفکیشنز کے لیے زمرہ"
+
+#: src/hooks/useNotificationCategories.ts:72
+msgid "Category updated"
+msgstr "زمرہ اپ ڈیٹ ہو گیا"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:83
 #: ../../../lib/web/src/components/notification-category-button.tsx:94
@@ -780,7 +788,7 @@ msgstr "RSS رسائی منسوخ کرنے میں ناکام"
 msgid "Failed to send verification code"
 msgstr "تصدیقی کوڈ بھیجنے میں ناکامی"
 
-#: src/hooks/useNotificationCategories.ts:71
+#: src/hooks/useNotificationCategories.ts:76
 msgid "Failed to update category"
 msgstr "زمرہ اپڈیٹ کرنے میں ناکامی"
 
@@ -1020,6 +1028,10 @@ msgstr "کامیابی سے لاگ آؤٹ ہو گئے"
 msgid "Logging out…"
 msgstr "لاگ آؤٹ ہو رہا ہے…"
 
+#: ../../../lib/web/src/components/notification-category-button.tsx:130
+msgid "Manage categories"
+msgstr "زمروں کا نظم کریں"
+
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:192
 msgid "Manage your connected accounts for notifications and services."
 msgstr "اطلاعات اور خدمات کے لیے اپنے منسلک اکاؤنٹس کا نظم کریں۔"
@@ -1157,7 +1169,7 @@ msgstr "ابھی تک کوئی RSS feeds نہیں"
 msgid "No time zone found."
 msgstr "کوئی time zone نہیں ملا۔"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:106
+#: ../../../lib/web/src/components/notification-category-button.tsx:109
 msgid "No topic record yet — try again after the next notification."
 msgstr "ابھی تک کوئی topic record نہیں — اگلی notification کے بعد دوبارہ کوشش کریں۔"
 
@@ -1864,7 +1876,7 @@ msgstr "دور دراز سرور سے منسلک ہونے سے قاصر"
 msgid "Unable to redirect to login. Please try again."
 msgstr "لاگ ان پر ری ڈائریکٹ کرنے سے قاصر۔ براہ کرم دوبارہ کوشش کریں۔"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:114
+#: ../../../lib/web/src/components/notification-category-button.tsx:117
 msgid "Unassigned"
 msgstr "غیر تفویض شدہ"
 

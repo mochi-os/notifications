@@ -60,6 +60,10 @@ msgstr "{selectedCount, plural, other {მასობრივი მოქმ�
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} / {totalLabel}"
 
+#: src/hooks/useNotificationCategories.ts:71
+msgid "{topicLabel} moved to the {categoryLabel} category"
+msgstr "{topicLabel} გადატანილია კატეგორიაში {categoryLabel}"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:165
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, other {მენიუს გახსნა (# წაუკითხავი შეტყობინება)}}"
@@ -290,8 +294,12 @@ msgid "Cancel"
 msgstr "გაუქმება"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:102
-msgid "Category for this notification"
-msgstr "ამ შეტყობინების კატეგორია"
+msgid "Category for these notifications"
+msgstr "ამ შეტყობინებების კატეგორია"
+
+#: src/hooks/useNotificationCategories.ts:72
+msgid "Category updated"
+msgstr "კატეგორია განახლდა"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:83
 #: ../../../lib/web/src/components/notification-category-button.tsx:94
@@ -780,7 +788,7 @@ msgstr "RSS წვდომის გაუქმება ვერ მოხ�
 msgid "Failed to send verification code"
 msgstr "დადასტურების კოდის გაგზავნა ვერ მოხერხდა"
 
-#: src/hooks/useNotificationCategories.ts:71
+#: src/hooks/useNotificationCategories.ts:76
 msgid "Failed to update category"
 msgstr "კატეგორიის განახლება ვერ მოხერხდა"
 
@@ -1020,6 +1028,10 @@ msgstr "წარმატებით გავიდა"
 msgid "Logging out…"
 msgstr "გასვლა…"
 
+#: ../../../lib/web/src/components/notification-category-button.tsx:130
+msgid "Manage categories"
+msgstr "კატეგორიების მართვა"
+
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:192
 msgid "Manage your connected accounts for notifications and services."
 msgstr "მართეთ თქვენი დაკავშირებული ანგარიშები შეტყობინებებისა და სერვისებისთვის."
@@ -1157,7 +1169,7 @@ msgstr "RSS ფიდები ჯერ არ არის"
 msgid "No time zone found."
 msgstr "დროის სარტყელი ვერ მოიძებნა."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:106
+#: ../../../lib/web/src/components/notification-category-button.tsx:109
 msgid "No topic record yet — try again after the next notification."
 msgstr "თემის ჩანაწერი ჯერ არ არის — სცადეთ ხელახლა შემდეგი შეტყობინების შემდეგ."
 
@@ -1864,7 +1876,7 @@ msgstr "დისტანციურ სერვერთან დაკა�
 msgid "Unable to redirect to login. Please try again."
 msgstr "ვერსიის ინფორმაციის ჩატვირთვა ვერ ხერხდება"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:114
+#: ../../../lib/web/src/components/notification-category-button.tsx:117
 msgid "Unassigned"
 msgstr "ფიდების სერვისთან სინქრონიზება ვერ ხერხდება. ნაჩვენებია ქეშირებული მონაცემები."
 

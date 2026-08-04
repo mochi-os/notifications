@@ -60,6 +60,10 @@ msgstr "{selectedCount, plural, one {ለ# የተመረጠ {entityName} የጅም
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} ከ {totalLabel}"
 
+#: src/hooks/useNotificationCategories.ts:71
+msgid "{topicLabel} moved to the {categoryLabel} category"
+msgstr "{topicLabel} ወደ {categoryLabel} ምድብ ተዛውሯል"
+
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx:165
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, one {ምናሌን ክፈት (# ያልተነበበ ማሳወቂያ)} other {ምናሌን ክፈት (# ያልተነበቡ ማሳወቂያዎች)}}"
@@ -290,8 +294,12 @@ msgid "Cancel"
 msgstr "ይቅር"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:102
-msgid "Category for this notification"
-msgstr "ለዚህ ማሳወቂያ ምድብ"
+msgid "Category for these notifications"
+msgstr "ለእነዚህ ማሳወቂያዎች ምድብ"
+
+#: src/hooks/useNotificationCategories.ts:72
+msgid "Category updated"
+msgstr "ምድብ ተዘምኗል"
 
 #: ../../../lib/web/src/components/notification-category-button.tsx:83
 #: ../../../lib/web/src/components/notification-category-button.tsx:94
@@ -780,7 +788,7 @@ msgstr "የRSS መዳረሻን መሻር አልተቻለም"
 msgid "Failed to send verification code"
 msgstr "የማረጋገጫ ኮድ መላክ አልተሳካም"
 
-#: src/hooks/useNotificationCategories.ts:71
+#: src/hooks/useNotificationCategories.ts:76
 msgid "Failed to update category"
 msgstr "ምድብን ማዘመን አልተሳካም"
 
@@ -1020,6 +1028,10 @@ msgstr "በተሳካ ሁኔታ ወጥቷል"
 msgid "Logging out…"
 msgstr "በመውጣት ላይ…"
 
+#: ../../../lib/web/src/components/notification-category-button.tsx:130
+msgid "Manage categories"
+msgstr "ምድቦችን ያስተዳድሩ"
+
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:192
 msgid "Manage your connected accounts for notifications and services."
 msgstr "ለማሳወቂያዎችና አገልግሎቶች የተገናኙ መለያዎችዎን ያስተዳድሩ።"
@@ -1157,7 +1169,7 @@ msgstr "እስካሁን RSS ፊዶች የሉም"
 msgid "No time zone found."
 msgstr "ምንም የሰዓት ሰቅ አልተገኘም።"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:106
+#: ../../../lib/web/src/components/notification-category-button.tsx:109
 msgid "No topic record yet — try again after the next notification."
 msgstr "እስካሁን የርዕስ መዝገብ የለም — ከቀጣዩ ማሳወቂያ በኋላ እንደገና ይሞክሩ።"
 
@@ -1864,7 +1876,7 @@ msgstr "ከርቀት አገልጋይ ጋር መገናኘት አልተቻለም"
 msgid "Unable to redirect to login. Please try again."
 msgstr "ወደ መግቢያ መዞር አልተቻለም። እባክዎ እንደገና ይሞክሩ።"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:114
+#: ../../../lib/web/src/components/notification-category-button.tsx:117
 msgid "Unassigned"
 msgstr "ያልተመደበ"
 

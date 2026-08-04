@@ -63,9 +63,14 @@ export function useNotificationCategories() {
     try {
       await notificationsApi.setTopicCategory(row, category)
       setTopic({ ...row, category: parseInt(category, 10) })
-      const label = row.label || row.topic
+      const topicLabel = row.label || row.topic
       const chosen = categories?.find((c) => String(c.id) === category)
-      toast.success(chosen ? `${label}: ${chosen.display ?? chosen.label}` : label)
+      const categoryLabel = chosen ? (chosen.display ?? chosen.label) : null
+      toast.success(
+        categoryLabel
+          ? t`${topicLabel} moved to the ${categoryLabel} category`
+          : t`Category updated`
+      )
       close()
     } catch (error) {
       toast.error(getErrorMessage(error, t`Failed to update category`))
