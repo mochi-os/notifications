@@ -60,7 +60,7 @@ msgstr "{selectedCount, plural, one {د # غوره شوي {entityName} لپار�
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} له {totalLabel} څخه"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:148
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:165
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, one {مینو خلاص کړئ (# نالوستې خبرتیا)} other {مینو خلاص کړئ (# نالوستې خبرتیاوې)}}"
 
@@ -105,7 +105,7 @@ msgstr "حساب اضافه شو"
 msgid "Account removed"
 msgstr "حساب لرې شو"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:126
+#: ../../../lib/web/src/features/accounts/account-add.tsx:139
 msgid "Account type"
 msgstr "د حساب ډول"
 
@@ -115,11 +115,11 @@ msgstr "حساب تایید شو"
 
 #: ../../../lib/web/src/components/entity/entity-field-editor.tsx:717
 #: ../../../lib/web/src/features/access/access-dialog.tsx:332
-#: ../../../lib/web/src/features/accounts/account-add.tsx:196
+#: ../../../lib/web/src/features/accounts/account-add.tsx:209
 msgid "Add"
 msgstr "اضافه کړئ"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:120
+#: ../../../lib/web/src/features/accounts/account-add.tsx:133
 msgid "Add a new account"
 msgstr "نوی حساب اضافه کړئ"
 
@@ -127,7 +127,7 @@ msgstr "نوی حساب اضافه کړئ"
 msgid "Add access"
 msgstr "لاسرسی اضافه کړئ"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:119
+#: ../../../lib/web/src/features/accounts/account-add.tsx:132
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:288
 msgid "Add account"
 msgstr "حساب اضافه کړئ"
@@ -157,7 +157,7 @@ msgstr "ټاګ اضافه کړئ..."
 msgid "Add team/app"
 msgstr "ټیم/اپلیکیشن اضافه کړئ"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:162
+#: ../../../lib/web/src/features/accounts/account-add.tsx:175
 msgid "Add to existing notifications"
 msgstr "موجوده خبرتیاو ته اضافه کړئ"
 
@@ -233,6 +233,10 @@ msgstr "تصدیق شوي کارنان"
 msgid "Authenticator code"
 msgstr "د Authenticator کوډ"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:51
+msgid "Available keyboard shortcuts"
+msgstr "د موجود کیبورد شارټ کټونه"
+
 #: ../../../lib/web/src/components/entity-avatar.tsx:99
 msgid "Avatar"
 msgstr "اوتار"
@@ -255,9 +259,9 @@ msgstr "کور ته بېرته"
 msgid "Banner"
 msgstr "بانر"
 
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:156
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:166
-#: src/features/notification/index.tsx:81
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:237
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:247
+#: src/features/notification/index.tsx:83
 msgid "Blocked navigation to untrusted link"
 msgstr "نه باور لرونکي لینک ته نیویګیشن بنده شوه"
 
@@ -277,7 +281,7 @@ msgstr "د براوزر خبرتیاوې"
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:132
 #: ../../../lib/web/src/features/access/access-dialog.tsx:328
 #: ../../../lib/web/src/features/access/access-list.tsx:268
-#: ../../../lib/web/src/features/accounts/account-add.tsx:188
+#: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
 #: src/components/rss-dialog.tsx:299
 #: src/components/rss-dialog.tsx:304
@@ -285,12 +289,12 @@ msgstr "د براوزر خبرتیاوې"
 msgid "Cancel"
 msgstr "لغوه کول"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:146
+#: ../../../lib/web/src/components/notification-category-button.tsx:102
 msgid "Category for this notification"
 msgstr "د دې خبرتیا لپاره کټګورۍ"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:127
-#: ../../../lib/web/src/components/notification-category-button.tsx:138
+#: ../../../lib/web/src/components/notification-category-button.tsx:83
+#: ../../../lib/web/src/components/notification-category-button.tsx:94
 msgid "Change notification category"
 msgstr "د خبرتیا کټګورۍ بدله کړه"
 
@@ -298,7 +302,7 @@ msgstr "د خبرتیا کټګورۍ بدله کړه"
 msgid "Check \"All\" to see your past notifications."
 msgstr "د تیرو خبرتیاوو لیدلو لپاره \"ټول\" وټاکئ."
 
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:38
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:37
 msgid "Choose a game from the sidebar or start a new one."
 msgstr "د څنګې پټۍ څخه لوبه وټاکئ یا نوې پیل کړئ."
 
@@ -323,8 +327,8 @@ msgstr "د سیسټم غوره توب، روښانه حالت، یا تیاره 
 msgid "Choose language"
 msgstr "ژبه وټاکئ"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:270
-#: ../../../lib/web/src/components/colour-picker.tsx:351
+#: ../../../lib/web/src/components/colour-picker.tsx:274
+#: ../../../lib/web/src/components/colour-picker.tsx:355
 #: ../../../lib/web/src/components/travelling-picker.tsx:164
 #: ../../../lib/web/src/components/travelling-picker.tsx:170
 #: ../../../lib/web/src/components/travelling-picker.tsx:231
@@ -333,7 +337,7 @@ msgid "Clear"
 msgstr "پاک کړئ"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:231
+#: src/features/notification/index.tsx:245
 msgid "Clear all"
 msgstr "ټول پاک کړئ"
 
@@ -355,7 +359,7 @@ msgstr "ټاکل پاک کړئ"
 msgid "Clear selection (Escape)"
 msgstr "ټاکل پاک کړئ (Escape)"
 
-#: src/features/notification/index.tsx:175
+#: src/features/notification/index.tsx:189
 msgid "Clearing notifications..."
 msgstr "خبرتیاوې پاکیږي..."
 
@@ -375,6 +379,10 @@ msgstr "نیویګیشن وتړئ"
 #: ../../../lib/web/src/components/layout/right-panel.tsx:268
 msgid "Close panel"
 msgstr "پټۍ بنده کړئ"
+
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:32
+msgid "Close panel / cancel"
+msgstr "پینل وتړئ / لغوه کړئ"
 
 #: ../../../lib/web/src/components/header-search.tsx:54
 msgid "Close search"
@@ -467,6 +475,10 @@ msgstr "کاپي کړئ"
 msgid "Could not load this document. Please try again later."
 msgstr "دا سند نشي پورته کیدلی. مهرباني وکړئ وروسته بیا هڅه وکړئ."
 
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:121
+msgid "Couldn't load notifications"
+msgstr "خبرتیاوې نه شول پورته کولی"
+
 #: ../../../lib/web/src/components/step-up-dialog.tsx:184
 msgid "Couldn't send the code. Please try again."
 msgstr "کوډ نه شو لیږل کیدی. مهرباني وکړئ بیا هڅه وکړئ."
@@ -489,6 +501,10 @@ msgstr "{0} جوړ کړئ"
 msgid "Create feed"
 msgstr "فیډ جوړ کړئ"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:25
+msgid "Create new item"
+msgstr "نوی توکی جوړ کړئ"
+
 #: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "د پیل کولو لپاره یو جوړ کړئ."
@@ -505,11 +521,11 @@ msgstr "د RSS فیډ جوړیږي..."
 msgid "Creating..."
 msgstr "جوړیږي..."
 
-#: ../../../lib/web/src/components/map-view.tsx:208
+#: ../../../lib/web/src/components/map-view.tsx:217
 msgid "Current location"
 msgstr "اوسنی ځای"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:261
+#: ../../../lib/web/src/components/colour-picker.tsx:265
 msgid "Custom"
 msgstr "دودیز"
 
@@ -519,9 +535,6 @@ msgstr "دودیز"
 msgid "Dark"
 msgstr "تیاره"
 
-#: ../../../lib/web/src/components/layout/nav-user.tsx:91
-#: ../../../lib/web/src/components/layout/nav-user.tsx:154
-#: ../../../lib/web/src/components/layout/nav-user.tsx:205
 #: ../../../lib/web/src/components/profile-dropdown.tsx:87
 #: ../../../lib/web/src/components/profile-dropdown.tsx:123
 msgid "Dark mode"
@@ -539,7 +552,7 @@ msgstr "رد کړئ"
 msgid "Default"
 msgstr "ډیفالټ"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:172
+#: ../../../lib/web/src/features/accounts/account-add.tsx:185
 msgid "Default AI account"
 msgstr "د AI ډیفالټ حساب"
 
@@ -599,11 +612,11 @@ msgstr "لوری"
 msgid "Directory"
 msgstr "لارښود"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:300
+#: ../../../lib/web/src/components/comment-composer.tsx:304
 msgid "Discard"
 msgstr "ړنګول"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:298
+#: ../../../lib/web/src/components/comment-composer.tsx:302
 msgid "Discard draft?"
 msgstr "مسوده ړنګه شي؟"
 
@@ -651,6 +664,10 @@ msgstr "{label} سمول"
 msgid "Edit feed"
 msgstr "فیډ سمول"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:31
+msgid "Edit selected card"
+msgstr "غوره شوې کارت سمول"
+
 #: ../../../lib/web/src/features/accounts/types.ts:15
 msgid "Email"
 msgstr "بریښنالیک"
@@ -694,7 +711,7 @@ msgstr "د حساب اضافه کولو پاتې راغلل"
 msgid "Failed to add tag"
 msgstr "د ټګ اضافه کولو پاتې راغلل"
 
-#: src/features/notification/index.tsx:177
+#: src/features/notification/index.tsx:191
 msgid "Failed to clear notifications"
 msgstr "خبرتیاوې پاکې نه شوې"
 
@@ -702,6 +719,10 @@ msgstr "خبرتیاوې پاکې نه شوې"
 #: ../../../lib/web/src/lib/toast-utils.ts:44
 msgid "Failed to copy"
 msgstr "د کاپي کولو پاتې راغلل"
+
+#: ../../../lib/web/src/components/options-menu.tsx:99
+msgid "Failed to create link"
+msgstr "د لینک جوړولو پاتې راغلل"
 
 #: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
@@ -711,23 +732,35 @@ msgstr "د RSS فیډ جوړ نه شو"
 msgid "Failed to delete feed"
 msgstr "د فیډ حذف کولو پاتې راغلل"
 
+#: ../../../lib/web/src/components/options-menu.tsx:123
+msgid "Failed to get RSS token"
+msgstr "د RSS ټوکن ترلاسه کولو پاتې راغلل"
+
 #: ../../../lib/web/src/hooks/use-load-more.ts:74
 msgid "Failed to load"
 msgstr "د بار کولو پاتې راغلل"
+
+#: ../../../lib/web/src/components/audit-timeline.tsx:72
+msgid "Failed to load history"
+msgstr "د تاریخچې د بار کولو پاتې راغلل"
 
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:263
 msgid "Failed to load image"
 msgstr "انځور بار نه شو"
 
+#: src/hooks/useNotificationCategories.ts:51
+msgid "Failed to load notification categories"
+msgstr "د خبرتیا کټګوریو د بار کولو پاتې راغلل"
+
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:263
 msgid "Failed to load video"
 msgstr "ویډیو بار نه شو"
 
-#: src/features/notification/index.tsx:165
+#: src/features/notification/index.tsx:179
 msgid "Failed to mark all as read"
 msgstr "د ټولو د لوستل شویو په توګه نښه کولو پاتې راغلل"
 
-#: src/features/notification/index.tsx:155
+#: src/features/notification/index.tsx:169
 msgid "Failed to mark as read"
 msgstr "د لوستل شوي په توګه ونه نښل شو"
 
@@ -739,11 +772,15 @@ msgstr "د حساب لیرې کولو پاتې راغلل"
 msgid "Failed to rename feed"
 msgstr "د فیډ نوم بدلولو پاتې راغلل"
 
+#: ../../../lib/web/src/components/options-menu.tsx:133
+msgid "Failed to revoke RSS access"
+msgstr "د RSS لاسرسي لغوه کول ناکام شول"
+
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:257
 msgid "Failed to send verification code"
 msgstr "د تصدیق کوډ لیږلو پاتې راغلل"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:114
+#: src/hooks/useNotificationCategories.ts:71
 msgid "Failed to update category"
 msgstr "د کټګورۍ تازه کولو پاتې راغلل"
 
@@ -851,8 +888,12 @@ msgstr "پټ کړه"
 msgid "Hide password"
 msgstr "پټنوم پټ کړئ"
 
+#: ../../../lib/web/src/components/audit-timeline.tsx:64
+msgid "History"
+msgstr "تاریخچه"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:90
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:175
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:192
 #: ../../../lib/web/src/components/layout/top-bar.tsx:71
 #: ../../../lib/web/src/components/layout/top-bar.tsx:100
 msgid "Home"
@@ -911,6 +952,10 @@ msgstr "داسې ښکاري چې هغه مخ چې تاسو یې لټوئ <0/>ش�
 msgid "Just now"
 msgstr "همدا اوس"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:48
+msgid "Keyboard shortcuts"
+msgstr "د کیبورډ شارټ کټونه"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:108
 #: ../../../lib/web/src/lib/preference-utils.ts:135
 msgid "Large"
@@ -939,6 +984,10 @@ msgstr "یوازې توري، شمېرې، تشې او خط"
 msgid "Light"
 msgstr "روښانه"
 
+#: ../../../lib/web/src/components/options-menu.tsx:190
+msgid "Link"
+msgstr "لینک"
+
 #: ../../../lib/web/src/components/ui/load-more.tsx:35
 msgid "Load more"
 msgstr "نور بار کړئ"
@@ -952,9 +1001,6 @@ msgstr "منځپانګه بارېږي…"
 msgid "Loading..."
 msgstr "بار کیږي..."
 
-#: ../../../lib/web/src/components/layout/nav-user.tsx:101
-#: ../../../lib/web/src/components/layout/nav-user.tsx:167
-#: ../../../lib/web/src/components/layout/nav-user.tsx:215
 #: ../../../lib/web/src/components/profile-dropdown.tsx:69
 #: ../../../lib/web/src/components/profile-dropdown.tsx:98
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:26
@@ -978,17 +1024,17 @@ msgstr "لاګ آوټ کیږي…"
 msgid "Manage your connected accounts for notifications and services."
 msgstr "د خبرتیاوو او خدماتو لپاره خپل نښلول شوي حسابونه اداره کړئ."
 
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:118
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:125
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:202
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:209
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:224
 msgid "Mark all as read"
 msgstr "ټول د لوستل شویو په توګه نښه کړئ"
 
-#: src/features/notification/index.tsx:216
+#: src/features/notification/index.tsx:230
 msgid "Mark all read"
 msgstr "ټول د لوستل شویو په توګه نښه کړئ"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:176
 msgid "Marking all as read..."
 msgstr "ټول د لوستل شوي په توګه نښل کیږي..."
 
@@ -1000,7 +1046,7 @@ msgstr "MCP سرور"
 msgid "Medium"
 msgstr "منځنی"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:190
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:207
 msgid "Menu"
 msgstr "مینو"
 
@@ -1016,9 +1062,18 @@ msgstr "میټریک"
 msgid "Mochi web"
 msgstr "Mochi وېب"
 
+#: ../../../lib/web/src/components/options-menu.tsx:164
+msgid "Moderation"
+msgstr ""
+
 #: ../../../lib/web/src/lib/preference-utils.ts:59
 msgid "Monday"
 msgstr "دوشنبه"
+
+#: ../../../lib/web/src/components/options-menu.tsx:145
+#: ../../../lib/web/src/components/options-menu.tsx:152
+msgid "More options"
+msgstr "نور انتخابونه"
 
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:102
 msgid "Name cannot contain angle brackets, backslash, semicolon, quotes or backticks"
@@ -1037,8 +1092,8 @@ msgstr "د شبکې تېروتنه"
 msgid "New"
 msgstr "نوی"
 
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:42
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:54
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:41
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:53
 msgid "New game"
 msgstr "نوې لوبه"
 
@@ -1055,7 +1110,7 @@ msgstr "د لاسرسي قاعدې نه دي تنظیم شوې. د دې سرچی
 msgid "No connected accounts"
 msgstr "هیڅ نښلول شوي حسابونه نشته"
 
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:51
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:50
 msgid "No games yet"
 msgstr "تر اوسه هیڅ لوبې نشته"
 
@@ -1063,7 +1118,7 @@ msgstr "تر اوسه هیڅ لوبې نشته"
 msgid "No groups available"
 msgstr "هیڅ ډلې شتون نلري"
 
-#: src/features/notification/index.tsx:274
+#: src/features/notification/index.tsx:288
 msgid "No notifications"
 msgstr "هیڅ خبرتیاوې نشته"
 
@@ -1102,11 +1157,12 @@ msgstr "تر اوسه هیڅ RSS فیډونه نشته"
 msgid "No time zone found."
 msgstr "هیڅ وخت زون ونه موندل شو."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:150
+#: ../../../lib/web/src/components/notification-category-button.tsx:106
 msgid "No topic record yet — try again after the next notification."
 msgstr "تر اوسه د موضوع هیڅ ریکارډ نشته — د راتلونکې خبرتیا وروسته بیا هڅه وکړئ."
 
-#: src/features/notification/index.tsx:274
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:132
+#: src/features/notification/index.tsx:288
 msgid "No unread notifications"
 msgstr "هیڅ نه لوستل شوې خبرتیاوې نشته"
 
@@ -1114,7 +1170,7 @@ msgstr "هیڅ نه لوستل شوې خبرتیاوې نشته"
 msgid "No users found"
 msgstr "هیڅ کاروونکي ونه موندل شول"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:345
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 #: ../../../lib/web/src/components/person-picker.tsx:350
 #: ../../../lib/web/src/lib/preference-utils.ts:105
 #: ../../../lib/web/src/lib/preference-utils.ts:125
@@ -1138,13 +1194,13 @@ msgstr "نه دی ټاکل شوی"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:130
-#: src/features/notification/index.tsx:187
+#: src/features/notification/index.tsx:145
+#: src/features/notification/index.tsx:201
 msgid "Notifications"
 msgstr "خبرتیاوې"
 
 #. placeholder {0}: unread.length
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:111
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:195
 msgid "Notifications: {0}"
 msgstr "خبرتیاوې: {0}"
 
@@ -1171,7 +1227,7 @@ msgstr "د حساب کړنې خلاصې کړئ"
 msgid "Open actions"
 msgstr "کړنې پرانیزئ"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:149
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:166
 msgid "Open menu"
 msgstr "مینو خلاص کړئ"
 
@@ -1184,6 +1240,10 @@ msgstr "نیویګیشن خلاص کړئ"
 #: ../../../lib/web/src/components/layout/top-nav.tsx:44
 msgid "Open navigation menu"
 msgstr "د نیویګیشن مینو خلاص کړئ"
+
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:30
+msgid "Open selected card"
+msgstr "ټاکل شوی کارت خلاص کړئ"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:58
 #: ../../../lib/web/src/components/config-drawer.tsx:66
@@ -1219,7 +1279,7 @@ msgstr "د لاسرسي کيلۍ"
 msgid "Pick a date"
 msgstr "نېټه وټاکئ"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:95
+#: ../../../lib/web/src/components/comment-composer.tsx:99
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:323
 msgid "Please check your internet connection and try again."
@@ -1237,6 +1297,14 @@ msgstr "مهرباني وکړئ بیا هڅه وکړئ."
 msgid "Please wait a moment and try again."
 msgstr "مهرباني وکړئ یوه شېبه انتظار وکړئ او بیا هڅه وکړئ."
 
+#: ../../../lib/web/src/components/options-menu.tsx:175
+msgid "Posts"
+msgstr "لیکنې"
+
+#: ../../../lib/web/src/components/options-menu.tsx:178
+msgid "Posts and comments"
+msgstr "لیکنې او تبصرې"
+
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:377
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:382
 msgid "Previous image"
@@ -1251,7 +1319,6 @@ msgstr "محرمیت"
 msgid "Processing…"
 msgstr "پروسس کیږي…"
 
-#: ../../../lib/web/src/components/layout/nav-user.tsx:137
 #: ../../../lib/web/src/components/profile-dropdown.tsx:114
 msgid "Profile"
 msgstr "پروفایل"
@@ -1276,7 +1343,7 @@ msgstr "پر دې سرور خپل حسابونه بیا وصل کړئ"
 msgid "Re-register your passkeys on this server"
 msgstr "خپل د لاسرسي کيلۍ پدې سرور کې بیا ثبت کړئ"
 
-#: ../../../lib/web/src/components/search-entity-dialog.tsx:217
+#: ../../../lib/web/src/components/search-entity-dialog.tsx:220
 #: ../../../lib/web/src/components/search-entity-page.tsx:243
 msgid "Recommended"
 msgstr "سپارښتل شوی"
@@ -1285,7 +1352,7 @@ msgstr "سپارښتل شوی"
 msgid "Reconnecting ({retries})..."
 msgstr "بیا نښلول ({retries})..."
 
-#: ../../../lib/web/src/components/layout/authenticated-layout.tsx:133
+#: ../../../lib/web/src/components/layout/authenticated-layout.tsx:136
 msgid "Redirecting to login."
 msgstr "ننوتلو ته بیرته لارښود کول."
 
@@ -1302,7 +1369,7 @@ msgstr "نسبي (5m, 3h, 2d)"
 msgid "Relative within 24 hours, else absolute"
 msgstr "په 24 ساعتونو کې نسبي، که نه نو مطلق"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:232
+#: ../../../lib/web/src/components/comment-composer.tsx:236
 #: ../../../lib/web/src/features/access/access-list.tsx:270
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:180
 msgid "Remove"
@@ -1355,9 +1422,13 @@ msgstr "{title} بیا تنظیم کړئ"
 msgid "Reset all settings to default values"
 msgstr "ټول تنظیمات د ډیفالټ ارزښتونو ته بیرته تنظیم کړئ"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:249
+#: ../../../lib/web/src/components/comment-composer.tsx:253
 msgid "Retry"
 msgstr "بیا هڅه وکړئ"
+
+#: ../../../lib/web/src/components/options-menu.tsx:181
+msgid "Revoke access"
+msgstr "لاسرسی لغوه کړئ"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:362
 msgid "Right to Left"
@@ -1367,14 +1438,23 @@ msgstr "له ښي څخه کیڼ ته"
 msgid "Rows per page"
 msgstr "په هر پاڼه کې قطارونه"
 
+#: ../../../lib/web/src/components/options-menu.tsx:131
+msgid "RSS access revoked"
+msgstr "د RSS لاسرسی لغوه شو"
+
+#: ../../../lib/web/src/components/options-menu.tsx:171
 #: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "RSS فیډ"
 
 #: src/components/rss-dialog.tsx:235
-#: src/features/notification/index.tsx:236
+#: src/features/notification/index.tsx:250
 msgid "RSS feeds"
 msgstr "RSS فیډونه"
+
+#: ../../../lib/web/src/components/options-menu.tsx:121
+msgid "RSS URL copied to clipboard"
+msgstr "د RSS URL کلیپبورډ ته کاپي شو"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:64
 msgid "Saturday"
@@ -1432,7 +1512,7 @@ msgstr "کاروونکي وپلټئ"
 msgid "Search..."
 msgstr "لټون..."
 
-#: ../../../lib/web/src/components/search-entity-dialog.tsx:175
+#: ../../../lib/web/src/components/search-entity-dialog.tsx:178
 #: ../../../lib/web/src/components/search-entity-page.tsx:201
 #: ../../../lib/web/src/features/access/access-dialog.tsx:202
 msgid "Searching..."
@@ -1443,7 +1523,7 @@ msgstr "د لټون په حال کې..."
 msgid "Select {0}"
 msgstr "{0} وټاکئ"
 
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:37
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:36
 msgid "Select a game"
 msgstr "یوه لوبه وټاکئ"
 
@@ -1459,7 +1539,7 @@ msgstr "د لاسرسي قاعده وټاکئ"
 msgid "Select account"
 msgstr "حساب وټاکئ"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:129
+#: ../../../lib/web/src/features/accounts/account-add.tsx:142
 msgid "Select account type"
 msgstr "د حساب ډول وټاکئ"
 
@@ -1475,9 +1555,17 @@ msgstr "د طرحې سټایل وټاکئ"
 msgid "Select location"
 msgstr "ځای وټاکئ"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:28
+msgid "Select next card"
+msgstr "بل کارت وټاکئ"
+
 #: ../../../lib/web/src/components/person-picker.tsx:83
 msgid "Select person..."
 msgstr "یو کس وټاکئ..."
+
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:29
+msgid "Select previous card"
+msgstr "مخکینی کارت وټاکئ"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:247
 msgid "Select sidebar style"
@@ -1540,21 +1628,23 @@ msgstr "سیشن پای ته ورسېد. مهرباني وکړئ بیا ننوځ
 msgid "Set origin and destination"
 msgstr "سرچینه او منزل وټاکئ"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:109
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:115
-#: ../../../lib/web/src/components/layout/nav-user.tsx:84
-#: ../../../lib/web/src/components/layout/nav-user.tsx:148
-#: ../../../lib/web/src/components/layout/nav-user.tsx:198
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:126
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:132
+#: ../../../lib/web/src/components/options-menu.tsx:196
 msgid "Settings"
 msgstr "ترتیبات"
 
-#: src/features/notification/index.tsx:196
+#: src/features/notification/index.tsx:210
 msgid "Show all"
 msgstr "ټول وښیه"
 
 #: ../../../lib/web/src/components/password-input.tsx:27
 msgid "Show password"
 msgstr "پټنوم وښيئ"
+
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:33
+msgid "Show this help"
+msgstr "دا مرسته وښیه"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:39
 msgid "Showing {totalShown} of {total}"
@@ -1566,12 +1656,12 @@ msgstr "د {total} څخه {totalShown} ښودل کیږي"
 msgid "Sidebar"
 msgstr "سایډبار"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:121
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:127
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:138
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:144
 msgid "Sign out"
 msgstr "وتل"
 
-#: ../../../lib/web/src/components/layout/authenticated-layout.tsx:131
+#: ../../../lib/web/src/components/layout/authenticated-layout.tsx:134
 msgid "Signing out..."
 msgstr "د وتلو په حال کې..."
 
@@ -1583,6 +1673,10 @@ msgstr "اصلي ته تېر کړئ"
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Small"
 msgstr "کوچنی"
+
+#: ../../../lib/web/src/components/options-menu.tsx:158
+msgid "Sources"
+msgstr "سرچینې"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:97
 msgid "Spacious"
@@ -1605,6 +1699,11 @@ msgstr "ګډون وکړئ"
 msgid "Sunday"
 msgstr "یکشنبه"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:27
+msgid "Switch to view 1-9"
+msgstr "د 1-9 لیدلو ته بدل کړئ"
+
+#: ../../../lib/web/src/components/audit-timeline.tsx:111
 #: ../../../lib/web/src/components/config-drawer.tsx:209
 #: ../../../lib/web/src/components/theme-switch.tsx:59
 #: ../../../lib/web/src/lib/preference-utils.ts:21
@@ -1645,10 +1744,6 @@ msgstr "هغه کوډ غلط دی یا یې موده تېره ده."
 #: ../../../lib/web/src/features/errors/general-error.tsx:68
 msgid "The requested content could not be found."
 msgstr "غوښتل شوې منځپانګه ونه موندل شوه."
-
-#: ../../../lib/web/src/lib/api-response-interceptors.ts:152
-#~ msgid "The server returned a web page instead of data, which usually means the address was wrong."
-#~ msgstr ""
 
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:152
 msgid "The server returned a web page instead of data."
@@ -1713,6 +1808,10 @@ msgstr "سایډبار بدل کړئ"
 msgid "Toggle theme"
 msgstr "ښکارندوی بدل کړئ"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:26
+msgid "Toggle view options"
+msgstr "د لیدلو اختیارونه بدل کړئ"
+
 #: ../../../lib/web/src/features/errors/general-error.tsx:74
 msgid "Too many requests"
 msgstr "ډېرې زیاتې غوښتنې"
@@ -1725,7 +1824,7 @@ msgstr "بره"
 msgid "Travelling"
 msgstr "په سفر کې"
 
-#: ../../../lib/web/src/components/search-entity-dialog.tsx:191
+#: ../../../lib/web/src/components/search-entity-dialog.tsx:194
 #: ../../../lib/web/src/components/search-entity-page.tsx:217
 msgid "Try adjusting your search terms"
 msgstr "د خپل لټون اصطلاحات سمول هڅه وکړئ"
@@ -1760,12 +1859,12 @@ msgstr "د لټون لپاره ولیکئ..."
 msgid "Unable to connect to remote server"
 msgstr "له لرې پرتي سرور سره نښلېدل ونشول"
 
-#: ../../../lib/web/src/lib/auth-manager.ts:85
-#: ../../../lib/web/src/lib/auth-manager.ts:97
+#: ../../../lib/web/src/lib/auth-manager.ts:92
+#: ../../../lib/web/src/lib/auth-manager.ts:104
 msgid "Unable to redirect to login. Please try again."
 msgstr "ننوتلو ته لارښوونه نشي کیدلی. مهرباني وکړئ بیا هڅه وکړئ."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:158
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Unassigned"
 msgstr "نه ګمارل شوی"
 
@@ -1786,6 +1885,10 @@ msgstr "متحده ایالات"
 msgid "Unknown"
 msgstr "نامعلوم"
 
+#: ../../../lib/web/src/components/options-menu.tsx:211
+msgid "Unsubscribe"
+msgstr "ګډون لغوه کول"
+
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:135
 msgid "Unverified"
 msgstr "تصدیق نه شوی"
@@ -1802,7 +1905,7 @@ msgstr "د خپلو اوسنیو خبرتیا ګډونونو لپاره دا ف�
 msgid "Use your passkey"
 msgstr "خپله پاس کیلۍ وکاروئ"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:102
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:119
 #: ../../../lib/web/src/features/access/access-dialog.tsx:158
 msgid "User"
 msgstr "کاروونکی"
@@ -1846,8 +1949,8 @@ msgstr "ولید"
 msgid "View all"
 msgstr "ټول وګورئ"
 
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:131
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:139
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:215
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:223
 msgid "View all notifications"
 msgstr "ټولې خبرتیاوې وګورئ"
 
@@ -1884,10 +1987,6 @@ msgstr "تاسو دې برخې ته لاسرسی نه لرئ."
 msgid "You don't have necessary permission <0/>to view this resource."
 msgstr "تاسو د دې سرچینې لیدو لپاره <0/>اړینه اجازه نه لرئ."
 
-#: ../../../lib/web/src/lib/show-submitted-data.tsx:9
-msgid "You submitted the following values:"
-msgstr "تاسو لاندې ارزښتونه واستول:"
-
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:193
 msgid "You're all caught up!"
 msgstr "تاسو ټول ولیدل!"
@@ -1896,14 +1995,14 @@ msgstr "تاسو ټول ولیدل!"
 msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
 msgstr "ستاسو حساب له {source} دلته لیږدول شوی. تر هغه چې تاسو هلته یې ړنګ نه کړئ، پیغامونه او خبرتیاوې ممکن دواړه سرورونو ته ورسیږي، ستاسو د مینځپانګې یوه برخه لاهم له پخوانی سرور نه چمتو کیږي، او تعقیبونکي ممکن دلته ستاسو موندلو لپاره یو شیبه وخت ولري."
 
-#: ../../../lib/web/src/components/comment-composer.tsx:291
+#: ../../../lib/web/src/components/comment-composer.tsx:295
 msgid "Your attachments will be lost."
 msgstr "ستاسو ضمیمې به له لاسه ولاړې شي."
 
-#: ../../../lib/web/src/components/comment-composer.tsx:289
+#: ../../../lib/web/src/components/comment-composer.tsx:293
 msgid "Your text and attachments will be lost."
 msgstr "ستاسو متن او ضمیمې به له لاسه ولاړې شي."
 
-#: ../../../lib/web/src/components/comment-composer.tsx:292
+#: ../../../lib/web/src/components/comment-composer.tsx:296
 msgid "Your text will be lost."
 msgstr "ستاسو متن به له لاسه ووځي."

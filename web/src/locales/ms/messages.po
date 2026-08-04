@@ -60,7 +60,7 @@ msgstr "{selectedCount, plural, one {Tindakan pukal untuk # {entityName} dipilih
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} daripada {totalLabel}"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:148
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:165
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
 msgstr "{unreadCount, plural, one {Buka menu (# pemberitahuan belum dibaca)} other {Buka menu (# pemberitahuan belum dibaca)}}"
 
@@ -105,7 +105,7 @@ msgstr "Akaun ditambah"
 msgid "Account removed"
 msgstr "Akaun dialih keluar"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:126
+#: ../../../lib/web/src/features/accounts/account-add.tsx:139
 msgid "Account type"
 msgstr "Jenis akaun"
 
@@ -115,11 +115,11 @@ msgstr "Akaun disahkan"
 
 #: ../../../lib/web/src/components/entity/entity-field-editor.tsx:717
 #: ../../../lib/web/src/features/access/access-dialog.tsx:332
-#: ../../../lib/web/src/features/accounts/account-add.tsx:196
+#: ../../../lib/web/src/features/accounts/account-add.tsx:209
 msgid "Add"
 msgstr "Tambah"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:120
+#: ../../../lib/web/src/features/accounts/account-add.tsx:133
 msgid "Add a new account"
 msgstr "Tambah akaun baharu"
 
@@ -127,7 +127,7 @@ msgstr "Tambah akaun baharu"
 msgid "Add access"
 msgstr "Tambah akses"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:119
+#: ../../../lib/web/src/features/accounts/account-add.tsx:132
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:288
 msgid "Add account"
 msgstr "Tambah akaun"
@@ -157,7 +157,7 @@ msgstr "Tambah tag..."
 msgid "Add team/app"
 msgstr "Tambah pasukan/apl"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:162
+#: ../../../lib/web/src/features/accounts/account-add.tsx:175
 msgid "Add to existing notifications"
 msgstr "Tambah ke pemberitahuan sedia ada"
 
@@ -233,6 +233,10 @@ msgstr "Pengguna disahkan"
 msgid "Authenticator code"
 msgstr "Kod authenticator"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:51
+msgid "Available keyboard shortcuts"
+msgstr "Pintasan papan kekunci yang tersedia"
+
 #: ../../../lib/web/src/components/entity-avatar.tsx:99
 msgid "Avatar"
 msgstr "Avatar"
@@ -255,9 +259,9 @@ msgstr "Kembali ke laman utama"
 msgid "Banner"
 msgstr "Sepanduk"
 
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:156
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:166
-#: src/features/notification/index.tsx:81
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:237
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:247
+#: src/features/notification/index.tsx:83
 msgid "Blocked navigation to untrusted link"
 msgstr "Navigasi ke pautan tidak dipercayai disekat"
 
@@ -277,7 +281,7 @@ msgstr "Pemberitahuan pelayar"
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:132
 #: ../../../lib/web/src/features/access/access-dialog.tsx:328
 #: ../../../lib/web/src/features/access/access-list.tsx:268
-#: ../../../lib/web/src/features/accounts/account-add.tsx:188
+#: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
 #: src/components/rss-dialog.tsx:299
 #: src/components/rss-dialog.tsx:304
@@ -285,12 +289,12 @@ msgstr "Pemberitahuan pelayar"
 msgid "Cancel"
 msgstr "Batal"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:146
+#: ../../../lib/web/src/components/notification-category-button.tsx:102
 msgid "Category for this notification"
 msgstr "Kategori untuk pemberitahuan ini"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:127
-#: ../../../lib/web/src/components/notification-category-button.tsx:138
+#: ../../../lib/web/src/components/notification-category-button.tsx:83
+#: ../../../lib/web/src/components/notification-category-button.tsx:94
 msgid "Change notification category"
 msgstr "Tukar kategori pemberitahuan"
 
@@ -298,7 +302,7 @@ msgstr "Tukar kategori pemberitahuan"
 msgid "Check \"All\" to see your past notifications."
 msgstr "Tandakan \"Semua\" untuk melihat pemberitahuan lepas."
 
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:38
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:37
 msgid "Choose a game from the sidebar or start a new one."
 msgstr "Pilih permainan daripada bar sisi atau mulakan yang baharu."
 
@@ -323,8 +327,8 @@ msgstr "Pilih antara keutamaan sistem, mod cerah, atau mod gelap"
 msgid "Choose language"
 msgstr "Pilih bahasa"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:270
-#: ../../../lib/web/src/components/colour-picker.tsx:351
+#: ../../../lib/web/src/components/colour-picker.tsx:274
+#: ../../../lib/web/src/components/colour-picker.tsx:355
 #: ../../../lib/web/src/components/travelling-picker.tsx:164
 #: ../../../lib/web/src/components/travelling-picker.tsx:170
 #: ../../../lib/web/src/components/travelling-picker.tsx:231
@@ -333,7 +337,7 @@ msgid "Clear"
 msgstr "Kosongkan"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:231
+#: src/features/notification/index.tsx:245
 msgid "Clear all"
 msgstr "Kosongkan semua"
 
@@ -355,7 +359,7 @@ msgstr "Kosongkan pilihan"
 msgid "Clear selection (Escape)"
 msgstr "Kosongkan pilihan (Escape)"
 
-#: src/features/notification/index.tsx:175
+#: src/features/notification/index.tsx:189
 msgid "Clearing notifications..."
 msgstr "Mengosongkan pemberitahuan..."
 
@@ -375,6 +379,10 @@ msgstr "Tutup navigasi"
 #: ../../../lib/web/src/components/layout/right-panel.tsx:268
 msgid "Close panel"
 msgstr "Tutup panel"
+
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:32
+msgid "Close panel / cancel"
+msgstr "Tutup panel / batal"
 
 #: ../../../lib/web/src/components/header-search.tsx:54
 msgid "Close search"
@@ -467,6 +475,10 @@ msgstr "Salin"
 msgid "Could not load this document. Please try again later."
 msgstr "Tidak dapat memuatkan dokumen ini. Sila cuba lagi kemudian."
 
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:121
+msgid "Couldn't load notifications"
+msgstr "Tidak dapat memuatkan pemberitahuan"
+
 #: ../../../lib/web/src/components/step-up-dialog.tsx:184
 msgid "Couldn't send the code. Please try again."
 msgstr "Tidak dapat menghantar kod. Sila cuba lagi."
@@ -489,6 +501,10 @@ msgstr "Cipta {0}"
 msgid "Create feed"
 msgstr "Cipta suapan"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:25
+msgid "Create new item"
+msgstr "Cipta item baharu"
+
 #: src/components/rss-dialog.tsx:255
 msgid "Create one to get started."
 msgstr "Cipta satu untuk bermula."
@@ -505,11 +521,11 @@ msgstr "Mencipta suapan RSS..."
 msgid "Creating..."
 msgstr "Mencipta..."
 
-#: ../../../lib/web/src/components/map-view.tsx:208
+#: ../../../lib/web/src/components/map-view.tsx:217
 msgid "Current location"
 msgstr "Lokasi semasa"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:261
+#: ../../../lib/web/src/components/colour-picker.tsx:265
 msgid "Custom"
 msgstr "Tersuai"
 
@@ -519,9 +535,6 @@ msgstr "Tersuai"
 msgid "Dark"
 msgstr "Gelap"
 
-#: ../../../lib/web/src/components/layout/nav-user.tsx:91
-#: ../../../lib/web/src/components/layout/nav-user.tsx:154
-#: ../../../lib/web/src/components/layout/nav-user.tsx:205
 #: ../../../lib/web/src/components/profile-dropdown.tsx:87
 #: ../../../lib/web/src/components/profile-dropdown.tsx:123
 msgid "Dark mode"
@@ -539,7 +552,7 @@ msgstr "Tolak"
 msgid "Default"
 msgstr "Lalai"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:172
+#: ../../../lib/web/src/features/accounts/account-add.tsx:185
 msgid "Default AI account"
 msgstr "Akaun AI lalai"
 
@@ -599,11 +612,11 @@ msgstr "Arah"
 msgid "Directory"
 msgstr "Direktori"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:300
+#: ../../../lib/web/src/components/comment-composer.tsx:304
 msgid "Discard"
 msgstr "Buang"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:298
+#: ../../../lib/web/src/components/comment-composer.tsx:302
 msgid "Discard draft?"
 msgstr "Buang draf?"
 
@@ -651,6 +664,10 @@ msgstr "Edit {label}"
 msgid "Edit feed"
 msgstr "Sunting suapan"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:31
+msgid "Edit selected card"
+msgstr "Edit kad terpilih"
+
 #: ../../../lib/web/src/features/accounts/types.ts:15
 msgid "Email"
 msgstr "E-mel"
@@ -694,7 +711,7 @@ msgstr "Gagal menambah akaun"
 msgid "Failed to add tag"
 msgstr "Gagal menambah tag"
 
-#: src/features/notification/index.tsx:177
+#: src/features/notification/index.tsx:191
 msgid "Failed to clear notifications"
 msgstr "Gagal mengosongkan pemberitahuan"
 
@@ -702,6 +719,10 @@ msgstr "Gagal mengosongkan pemberitahuan"
 #: ../../../lib/web/src/lib/toast-utils.ts:44
 msgid "Failed to copy"
 msgstr "Gagal menyalin"
+
+#: ../../../lib/web/src/components/options-menu.tsx:99
+msgid "Failed to create link"
+msgstr "Gagal mencipta pautan"
 
 #: src/components/rss-dialog.tsx:145
 msgid "Failed to create RSS feed"
@@ -711,23 +732,35 @@ msgstr "Gagal mencipta suapan RSS"
 msgid "Failed to delete feed"
 msgstr "Gagal memadam suapan"
 
+#: ../../../lib/web/src/components/options-menu.tsx:123
+msgid "Failed to get RSS token"
+msgstr "Gagal mendapatkan token RSS"
+
 #: ../../../lib/web/src/hooks/use-load-more.ts:74
 msgid "Failed to load"
 msgstr "Gagal memuatkan"
+
+#: ../../../lib/web/src/components/audit-timeline.tsx:72
+msgid "Failed to load history"
+msgstr "Gagal memuatkan sejarah"
 
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:263
 msgid "Failed to load image"
 msgstr "Gagal memuatkan imej"
 
+#: src/hooks/useNotificationCategories.ts:51
+msgid "Failed to load notification categories"
+msgstr "Gagal memuatkan kategori pemberitahuan"
+
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:263
 msgid "Failed to load video"
 msgstr "Gagal memuatkan video"
 
-#: src/features/notification/index.tsx:165
+#: src/features/notification/index.tsx:179
 msgid "Failed to mark all as read"
 msgstr "Gagal menanda semua sebagai dibaca"
 
-#: src/features/notification/index.tsx:155
+#: src/features/notification/index.tsx:169
 msgid "Failed to mark as read"
 msgstr "Gagal menanda sebagai dibaca"
 
@@ -739,11 +772,15 @@ msgstr "Gagal mengalih keluar akaun"
 msgid "Failed to rename feed"
 msgstr "Gagal menamakan semula suapan"
 
+#: ../../../lib/web/src/components/options-menu.tsx:133
+msgid "Failed to revoke RSS access"
+msgstr "Gagal membatalkan akses RSS"
+
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:257
 msgid "Failed to send verification code"
 msgstr "Gagal menghantar kod pengesahan"
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:114
+#: src/hooks/useNotificationCategories.ts:71
 msgid "Failed to update category"
 msgstr "Gagal mengemas kini kategori"
 
@@ -851,8 +888,12 @@ msgstr "Sembunyikan"
 msgid "Hide password"
 msgstr "Sembunyikan kata laluan"
 
+#: ../../../lib/web/src/components/audit-timeline.tsx:64
+msgid "History"
+msgstr "Sejarah"
+
 #: ../../../lib/web/src/components/layout/app-sidebar.tsx:90
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:175
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:192
 #: ../../../lib/web/src/components/layout/top-bar.tsx:71
 #: ../../../lib/web/src/components/layout/top-bar.tsx:100
 msgid "Home"
@@ -911,6 +952,10 @@ msgstr "Nampaknya halaman yang anda cari <0/>tidak wujud atau telah dialih kelua
 msgid "Just now"
 msgstr "Sebentar tadi"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:48
+msgid "Keyboard shortcuts"
+msgstr "Pintasan papan kekunci"
+
 #: ../../../lib/web/src/lib/preference-utils.ts:108
 #: ../../../lib/web/src/lib/preference-utils.ts:135
 msgid "Large"
@@ -939,6 +984,10 @@ msgstr "Hanya huruf, nombor, ruang dan sengkang"
 msgid "Light"
 msgstr "Terang"
 
+#: ../../../lib/web/src/components/options-menu.tsx:190
+msgid "Link"
+msgstr "Pautan"
+
 #: ../../../lib/web/src/components/ui/load-more.tsx:35
 msgid "Load more"
 msgstr "Muatkan lagi"
@@ -952,9 +1001,6 @@ msgstr "Memuatkan kandungan…"
 msgid "Loading..."
 msgstr "Memuatkan..."
 
-#: ../../../lib/web/src/components/layout/nav-user.tsx:101
-#: ../../../lib/web/src/components/layout/nav-user.tsx:167
-#: ../../../lib/web/src/components/layout/nav-user.tsx:215
 #: ../../../lib/web/src/components/profile-dropdown.tsx:69
 #: ../../../lib/web/src/components/profile-dropdown.tsx:98
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:26
@@ -978,17 +1024,17 @@ msgstr "Sedang log keluar…"
 msgid "Manage your connected accounts for notifications and services."
 msgstr "Urus akaun tersambung anda untuk pemberitahuan dan perkhidmatan."
 
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:118
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:125
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:202
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:209
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:224
 msgid "Mark all as read"
 msgstr "Tanda semua sebagai dibaca"
 
-#: src/features/notification/index.tsx:216
+#: src/features/notification/index.tsx:230
 msgid "Mark all read"
 msgstr "Tanda semua dibaca"
 
-#: src/features/notification/index.tsx:162
+#: src/features/notification/index.tsx:176
 msgid "Marking all as read..."
 msgstr "Menanda semua sebagai dibaca..."
 
@@ -1000,7 +1046,7 @@ msgstr "Pelayan MCP"
 msgid "Medium"
 msgstr "Sederhana"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:190
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:207
 msgid "Menu"
 msgstr "Menu"
 
@@ -1016,9 +1062,18 @@ msgstr "Metrik"
 msgid "Mochi web"
 msgstr "Web Mochi"
 
+#: ../../../lib/web/src/components/options-menu.tsx:164
+msgid "Moderation"
+msgstr ""
+
 #: ../../../lib/web/src/lib/preference-utils.ts:59
 msgid "Monday"
 msgstr "Isnin"
+
+#: ../../../lib/web/src/components/options-menu.tsx:145
+#: ../../../lib/web/src/components/options-menu.tsx:152
+msgid "More options"
+msgstr "Lagi pilihan"
 
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:102
 msgid "Name cannot contain angle brackets, backslash, semicolon, quotes or backticks"
@@ -1037,8 +1092,8 @@ msgstr "Ralat rangkaian"
 msgid "New"
 msgstr "Baharu"
 
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:42
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:54
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:41
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:53
 msgid "New game"
 msgstr "Permainan baharu"
 
@@ -1055,7 +1110,7 @@ msgstr "Tiada peraturan akses dikonfigurasikan. Tambah peraturan untuk mengawal 
 msgid "No connected accounts"
 msgstr "Tiada akaun bersambung"
 
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:51
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:50
 msgid "No games yet"
 msgstr "Tiada permainan lagi"
 
@@ -1063,7 +1118,7 @@ msgstr "Tiada permainan lagi"
 msgid "No groups available"
 msgstr "Tiada kumpulan tersedia"
 
-#: src/features/notification/index.tsx:274
+#: src/features/notification/index.tsx:288
 msgid "No notifications"
 msgstr "Tiada pemberitahuan"
 
@@ -1102,11 +1157,12 @@ msgstr "Tiada suapan RSS lagi"
 msgid "No time zone found."
 msgstr "Tiada zon waktu dijumpai."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:150
+#: ../../../lib/web/src/components/notification-category-button.tsx:106
 msgid "No topic record yet — try again after the next notification."
 msgstr "Tiada rekod topik lagi — cuba lagi selepas pemberitahuan seterusnya."
 
-#: src/features/notification/index.tsx:274
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:132
+#: src/features/notification/index.tsx:288
 msgid "No unread notifications"
 msgstr "Tiada pemberitahuan belum dibaca"
 
@@ -1114,7 +1170,7 @@ msgstr "Tiada pemberitahuan belum dibaca"
 msgid "No users found"
 msgstr "Tiada pengguna dijumpai"
 
-#: ../../../lib/web/src/components/colour-picker.tsx:345
+#: ../../../lib/web/src/components/colour-picker.tsx:349
 #: ../../../lib/web/src/components/person-picker.tsx:350
 #: ../../../lib/web/src/lib/preference-utils.ts:105
 #: ../../../lib/web/src/lib/preference-utils.ts:125
@@ -1138,13 +1194,13 @@ msgstr "Tidak ditetapkan"
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:236
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:257
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:261
-#: src/features/notification/index.tsx:130
-#: src/features/notification/index.tsx:187
+#: src/features/notification/index.tsx:145
+#: src/features/notification/index.tsx:201
 msgid "Notifications"
 msgstr "Pemberitahuan"
 
 #. placeholder {0}: unread.length
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:111
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:195
 msgid "Notifications: {0}"
 msgstr "Pemberitahuan: {0}"
 
@@ -1171,7 +1227,7 @@ msgstr "Buka tindakan akaun"
 msgid "Open actions"
 msgstr "Buka tindakan"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:149
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:166
 msgid "Open menu"
 msgstr "Buka menu"
 
@@ -1184,6 +1240,10 @@ msgstr "Buka navigasi"
 #: ../../../lib/web/src/components/layout/top-nav.tsx:44
 msgid "Open navigation menu"
 msgstr "Buka menu navigasi"
+
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:30
+msgid "Open selected card"
+msgstr "Buka kad terpilih"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:58
 #: ../../../lib/web/src/components/config-drawer.tsx:66
@@ -1219,7 +1279,7 @@ msgstr "Passkey"
 msgid "Pick a date"
 msgstr "Pilih tarikh"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:95
+#: ../../../lib/web/src/components/comment-composer.tsx:99
 #: ../../../lib/web/src/features/errors/general-error.tsx:54
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:323
 msgid "Please check your internet connection and try again."
@@ -1237,6 +1297,14 @@ msgstr "Sila cuba lagi."
 msgid "Please wait a moment and try again."
 msgstr "Sila tunggu sebentar dan cuba lagi."
 
+#: ../../../lib/web/src/components/options-menu.tsx:175
+msgid "Posts"
+msgstr "Hantaran"
+
+#: ../../../lib/web/src/components/options-menu.tsx:178
+msgid "Posts and comments"
+msgstr "Hantaran dan komen"
+
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:377
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:382
 msgid "Previous image"
@@ -1251,7 +1319,6 @@ msgstr "Privasi"
 msgid "Processing…"
 msgstr "Memproses…"
 
-#: ../../../lib/web/src/components/layout/nav-user.tsx:137
 #: ../../../lib/web/src/components/profile-dropdown.tsx:114
 msgid "Profile"
 msgstr "Profil"
@@ -1276,7 +1343,7 @@ msgstr "Pautkan semula akaun anda di pelayan ini"
 msgid "Re-register your passkeys on this server"
 msgstr "Daftar semula kunci laluan anda di pelayan ini"
 
-#: ../../../lib/web/src/components/search-entity-dialog.tsx:217
+#: ../../../lib/web/src/components/search-entity-dialog.tsx:220
 #: ../../../lib/web/src/components/search-entity-page.tsx:243
 msgid "Recommended"
 msgstr "Disyorkan"
@@ -1285,7 +1352,7 @@ msgstr "Disyorkan"
 msgid "Reconnecting ({retries})..."
 msgstr "Menyambung semula ({retries})..."
 
-#: ../../../lib/web/src/components/layout/authenticated-layout.tsx:133
+#: ../../../lib/web/src/components/layout/authenticated-layout.tsx:136
 msgid "Redirecting to login."
 msgstr "Melencongkan ke log masuk."
 
@@ -1302,7 +1369,7 @@ msgstr "Relatif (5m, 3j, 2h)"
 msgid "Relative within 24 hours, else absolute"
 msgstr "Relatif dalam 24 jam, jika tidak mutlak"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:232
+#: ../../../lib/web/src/components/comment-composer.tsx:236
 #: ../../../lib/web/src/features/access/access-list.tsx:270
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:180
 msgid "Remove"
@@ -1355,9 +1422,13 @@ msgstr "Tetap semula {title}"
 msgid "Reset all settings to default values"
 msgstr "Tetapkan semula semua tetapan kepada nilai lalai"
 
-#: ../../../lib/web/src/components/comment-composer.tsx:249
+#: ../../../lib/web/src/components/comment-composer.tsx:253
 msgid "Retry"
 msgstr "Cuba lagi"
+
+#: ../../../lib/web/src/components/options-menu.tsx:181
+msgid "Revoke access"
+msgstr "Batalkan akses"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:362
 msgid "Right to Left"
@@ -1367,14 +1438,23 @@ msgstr "Kanan ke Kiri"
 msgid "Rows per page"
 msgstr "Baris setiap halaman"
 
+#: ../../../lib/web/src/components/options-menu.tsx:131
+msgid "RSS access revoked"
+msgstr "Akses RSS dibatalkan"
+
+#: ../../../lib/web/src/components/options-menu.tsx:171
 #: src/components/rss-dialog.tsx:138
 msgid "RSS feed"
 msgstr "Suapan RSS"
 
 #: src/components/rss-dialog.tsx:235
-#: src/features/notification/index.tsx:236
+#: src/features/notification/index.tsx:250
 msgid "RSS feeds"
 msgstr "Suapan RSS"
+
+#: ../../../lib/web/src/components/options-menu.tsx:121
+msgid "RSS URL copied to clipboard"
+msgstr "URL RSS disalin ke papan keratan"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:64
 msgid "Saturday"
@@ -1432,7 +1512,7 @@ msgstr "Cari pengguna"
 msgid "Search..."
 msgstr "Cari..."
 
-#: ../../../lib/web/src/components/search-entity-dialog.tsx:175
+#: ../../../lib/web/src/components/search-entity-dialog.tsx:178
 #: ../../../lib/web/src/components/search-entity-page.tsx:201
 #: ../../../lib/web/src/features/access/access-dialog.tsx:202
 msgid "Searching..."
@@ -1443,7 +1523,7 @@ msgstr "Sedang mencari..."
 msgid "Select {0}"
 msgstr "Pilih {0}"
 
-#: ../../../lib/web/src/components/game/game-empty-state.tsx:37
+#: ../../../lib/web/src/components/game/game-empty-state.tsx:36
 msgid "Select a game"
 msgstr "Pilih permainan"
 
@@ -1459,7 +1539,7 @@ msgstr "Pilih peraturan akses"
 msgid "Select account"
 msgstr "Pilih akaun"
 
-#: ../../../lib/web/src/features/accounts/account-add.tsx:129
+#: ../../../lib/web/src/features/accounts/account-add.tsx:142
 msgid "Select account type"
 msgstr "Pilih jenis akaun"
 
@@ -1475,9 +1555,17 @@ msgstr "Pilih gaya susun atur"
 msgid "Select location"
 msgstr "Pilih lokasi"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:28
+msgid "Select next card"
+msgstr "Pilih kad seterusnya"
+
 #: ../../../lib/web/src/components/person-picker.tsx:83
 msgid "Select person..."
 msgstr "Pilih orang..."
+
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:29
+msgid "Select previous card"
+msgstr "Pilih kad sebelumnya"
 
 #: ../../../lib/web/src/components/config-drawer.tsx:247
 msgid "Select sidebar style"
@@ -1540,21 +1628,23 @@ msgstr "Sesi telah tamat. Sila log masuk semula."
 msgid "Set origin and destination"
 msgstr "Tetapkan asal dan destinasi"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:109
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:115
-#: ../../../lib/web/src/components/layout/nav-user.tsx:84
-#: ../../../lib/web/src/components/layout/nav-user.tsx:148
-#: ../../../lib/web/src/components/layout/nav-user.tsx:198
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:126
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:132
+#: ../../../lib/web/src/components/options-menu.tsx:196
 msgid "Settings"
 msgstr "Tetapan"
 
-#: src/features/notification/index.tsx:196
+#: src/features/notification/index.tsx:210
 msgid "Show all"
 msgstr "Tunjukkan semua"
 
 #: ../../../lib/web/src/components/password-input.tsx:27
 msgid "Show password"
 msgstr "Tunjukkan kata laluan"
+
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:33
+msgid "Show this help"
+msgstr "Tunjukkan bantuan ini"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:39
 msgid "Showing {totalShown} of {total}"
@@ -1566,12 +1656,12 @@ msgstr "Memaparkan {totalShown} daripada {total}"
 msgid "Sidebar"
 msgstr "Bar sisi"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:121
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:127
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:138
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:144
 msgid "Sign out"
 msgstr "Log keluar"
 
-#: ../../../lib/web/src/components/layout/authenticated-layout.tsx:131
+#: ../../../lib/web/src/components/layout/authenticated-layout.tsx:134
 msgid "Signing out..."
 msgstr "Sedang log keluar..."
 
@@ -1583,6 +1673,10 @@ msgstr "Langkau ke Utama"
 #: ../../../lib/web/src/lib/preference-utils.ts:133
 msgid "Small"
 msgstr "Kecil"
+
+#: ../../../lib/web/src/components/options-menu.tsx:158
+msgid "Sources"
+msgstr "Sumber"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:97
 msgid "Spacious"
@@ -1605,6 +1699,11 @@ msgstr "Langgan"
 msgid "Sunday"
 msgstr "Ahad"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:27
+msgid "Switch to view 1-9"
+msgstr "Tukar ke paparan 1-9"
+
+#: ../../../lib/web/src/components/audit-timeline.tsx:111
 #: ../../../lib/web/src/components/config-drawer.tsx:209
 #: ../../../lib/web/src/components/theme-switch.tsx:59
 #: ../../../lib/web/src/lib/preference-utils.ts:21
@@ -1645,10 +1744,6 @@ msgstr "Kod itu tidak betul atau telah tamat tempoh."
 #: ../../../lib/web/src/features/errors/general-error.tsx:68
 msgid "The requested content could not be found."
 msgstr "Kandungan yang diminta tidak ditemui."
-
-#: ../../../lib/web/src/lib/api-response-interceptors.ts:152
-#~ msgid "The server returned a web page instead of data, which usually means the address was wrong."
-#~ msgstr ""
 
 #: ../../../lib/web/src/lib/api-response-interceptors.ts:152
 msgid "The server returned a web page instead of data."
@@ -1713,6 +1808,10 @@ msgstr "Togol Bar Sisi"
 msgid "Toggle theme"
 msgstr "Togol tema"
 
+#: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx:26
+msgid "Toggle view options"
+msgstr "Togol pilihan paparan"
+
 #: ../../../lib/web/src/features/errors/general-error.tsx:74
 msgid "Too many requests"
 msgstr "Terlalu banyak permintaan"
@@ -1725,7 +1824,7 @@ msgstr "Atas"
 msgid "Travelling"
 msgstr "Sedang dalam perjalanan"
 
-#: ../../../lib/web/src/components/search-entity-dialog.tsx:191
+#: ../../../lib/web/src/components/search-entity-dialog.tsx:194
 #: ../../../lib/web/src/components/search-entity-page.tsx:217
 msgid "Try adjusting your search terms"
 msgstr "Cuba laraskan istilah carian anda"
@@ -1760,12 +1859,12 @@ msgstr "Taip untuk mencari..."
 msgid "Unable to connect to remote server"
 msgstr "Tidak dapat menyambung ke pelayan jauh"
 
-#: ../../../lib/web/src/lib/auth-manager.ts:85
-#: ../../../lib/web/src/lib/auth-manager.ts:97
+#: ../../../lib/web/src/lib/auth-manager.ts:92
+#: ../../../lib/web/src/lib/auth-manager.ts:104
 msgid "Unable to redirect to login. Please try again."
 msgstr "Tidak dapat mengubah hala ke log masuk. Sila cuba lagi."
 
-#: ../../../lib/web/src/components/notification-category-button.tsx:158
+#: ../../../lib/web/src/components/notification-category-button.tsx:114
 msgid "Unassigned"
 msgstr "Tidak diberikan"
 
@@ -1786,6 +1885,10 @@ msgstr "Amerika Syarikat"
 msgid "Unknown"
 msgstr "Tidak diketahui"
 
+#: ../../../lib/web/src/components/options-menu.tsx:211
+msgid "Unsubscribe"
+msgstr "Berhenti melanggan"
+
 #: ../../../lib/web/src/features/accounts/account-manager.tsx:135
 msgid "Unverified"
 msgstr "Belum disahkan"
@@ -1802,7 +1905,7 @@ msgstr "Gunakan suapan ini untuk langganan pemberitahuan semasa anda"
 msgid "Use your passkey"
 msgstr "Gunakan kunci laluan anda"
 
-#: ../../../lib/web/src/components/layout/mochi-menu.tsx:102
+#: ../../../lib/web/src/components/layout/mochi-menu.tsx:119
 #: ../../../lib/web/src/features/access/access-dialog.tsx:158
 msgid "User"
 msgstr "Pengguna"
@@ -1846,8 +1949,8 @@ msgstr "Lihat"
 msgid "View all"
 msgstr "Lihat semua"
 
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:131
-#: ../../../lib/web/src/components/layout/notification-menu.tsx:139
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:215
+#: ../../../lib/web/src/components/layout/notification-menu.tsx:223
 msgid "View all notifications"
 msgstr "Lihat semua pemberitahuan"
 
@@ -1884,10 +1987,6 @@ msgstr "Anda tidak mempunyai akses kepada bahagian ini."
 msgid "You don't have necessary permission <0/>to view this resource."
 msgstr "Anda tidak mempunyai kebenaran yang diperlukan <0/>untuk melihat sumber ini."
 
-#: ../../../lib/web/src/lib/show-submitted-data.tsx:9
-msgid "You submitted the following values:"
-msgstr "Anda menghantar nilai berikut:"
-
 #: ../../../lib/web/src/components/notifications-dropdown.tsx:193
 msgid "You're all caught up!"
 msgstr "Anda sudah membaca semua!"
@@ -1896,14 +1995,14 @@ msgstr "Anda sudah membaca semua!"
 msgid "Your account was moved here from {source}. Until you delete it there, messages and notifications may reach both servers, some of your content keeps being served from the old server, and followers may take a few minutes to find you here."
 msgstr "Akaun anda telah dipindahkan ke sini dari {source}. Sehingga anda memadamnya di sana, mesej dan pemberitahuan mungkin sampai ke kedua-dua pelayan, sebahagian kandungan anda terus dihidangkan dari pelayan lama, dan pengikut mungkin mengambil masa beberapa minit untuk mencari anda di sini."
 
-#: ../../../lib/web/src/components/comment-composer.tsx:291
+#: ../../../lib/web/src/components/comment-composer.tsx:295
 msgid "Your attachments will be lost."
 msgstr "Lampiran anda akan hilang."
 
-#: ../../../lib/web/src/components/comment-composer.tsx:289
+#: ../../../lib/web/src/components/comment-composer.tsx:293
 msgid "Your text and attachments will be lost."
 msgstr "Teks dan lampiran anda akan hilang."
 
-#: ../../../lib/web/src/components/comment-composer.tsx:292
+#: ../../../lib/web/src/components/comment-composer.tsx:296
 msgid "Your text will be lost."
 msgstr "Teks anda akan hilang."
