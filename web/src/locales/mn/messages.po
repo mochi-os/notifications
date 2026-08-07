@@ -44,6 +44,22 @@ msgstr "{0, plural, one {# сонгогдсон} other {# сонгогдсон}}
 msgid "{0} option preview"
 msgstr "{0} сонголтын урьдчилан харах"
 
+#: ../../../lib/web/src/lib/locale-format.ts:121
+msgid "{count, plural, one {#d} other {#d}}"
+msgstr "{count, plural, one {#ө} other {#ө}}"
+
+#: ../../../lib/web/src/lib/locale-format.ts:117
+msgid "{count, plural, one {#h} other {#h}}"
+msgstr "{count, plural, one {#ц} other {#ц}}"
+
+#: ../../../lib/web/src/lib/locale-format.ts:113
+msgid "{count, plural, one {#m} other {#m}}"
+msgstr "{count, plural, one {#мин} other {#мин}}"
+
+#: ../../../lib/web/src/lib/locale-format.ts:125
+msgid "{count, plural, one {#w} other {#w}}"
+msgstr "{count, plural, one {#дол} other {#дол}}"
+
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:174
 msgid "{entityLabel} name"
 msgstr "{entityLabel} нэр"
@@ -199,7 +215,7 @@ msgstr "Шинэ бүртгэл нэмэх"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:215
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:220
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:292
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:291
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:94
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:194
 msgid "Add option"
@@ -250,7 +266,7 @@ msgstr "Бүгд"
 msgid "Allow anyone to search for {0}"
 msgstr "Хэн ч {0} хайхыг зөвшөөрөх"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:226
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:225
 msgid "Allow sort by"
 msgstr "Дараах байдлаар эрэмбэлэхийг зөвшөөрөх"
 
@@ -776,7 +792,7 @@ msgstr "Фийд устгах"
 msgid "Delete feed?"
 msgstr "Фийд устгах уу?"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:301
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:300
 msgid "Delete field"
 msgstr "Талбар устгах"
 
@@ -785,8 +801,8 @@ msgid "Delete option"
 msgstr "Сонголтыг устгах"
 
 #. placeholder {0}: opt.name
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:279
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:284
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:278
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:283
 msgid "Delete option {0}"
 msgstr "{0} сонголтыг устгах"
 
@@ -859,7 +875,7 @@ msgstr "Болих"
 msgid "Displays the mobile sidebar."
 msgstr "Гар утасны хажуугийн самбарыг харуулна."
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:306
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:305
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:524
 #: src/components/rss-dialog.tsx:459
 msgid "Done"
@@ -901,11 +917,11 @@ msgstr "{label} засах"
 msgid "Edit feed"
 msgstr "Фидийг засах"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:138
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:137
 msgid "Edit field"
 msgstr "Талбар засах"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:139
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:138
 msgid "Edit field settings"
 msgstr "Талбарын тохиргоо засах"
 
@@ -914,8 +930,8 @@ msgid "Edit option"
 msgstr "Сонголт засах"
 
 #. placeholder {0}: opt.name
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:264
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:269
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:263
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:268
 msgid "Edit option {0}"
 msgstr "Сонголт {0} засах"
 
@@ -1102,7 +1118,7 @@ msgstr "Шүүх..."
 msgid "Finish moving your account"
 msgstr "Бүртгэлээ шилжүүлэхийг дуусгана уу"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:222
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:221
 msgid "Flags"
 msgstr "Тэмдэгт"
 
@@ -1201,7 +1217,7 @@ msgstr "Нүүр"
 msgid "Hot"
 msgstr "Хот"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:153
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:152
 msgid "ID"
 msgstr ""
 
@@ -1250,7 +1266,7 @@ msgstr "Баталгаажуулах код хүчингүй"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Таны хайж буй хуудас <0/>байхгүй эсвэл устгагдсан бололтой."
 
-#: ../../../lib/web/src/lib/locale-format.ts:62
+#: ../../../lib/web/src/lib/locale-format.ts:110
 msgid "Just now"
 msgstr "Дөнгөж сая"
 
@@ -1357,7 +1373,7 @@ msgstr "Бүгдийг уншсан гэж тэмдэглэх"
 msgid "Marking all as read..."
 msgstr "Бүгдийг уншсан гэж тэмдэглэж байна..."
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:199
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:198
 msgid "Maximum length"
 msgstr "Хамгийн их урт"
 
@@ -1381,7 +1397,7 @@ msgstr "Мессеж"
 msgid "Metric"
 msgstr "Метрик"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:188
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:187
 msgid "Minimum length"
 msgstr "Хамгийн бага урт"
 
@@ -1404,7 +1420,7 @@ msgstr "Бусад сонголтууд"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:118
 #: ../../../lib/web/src/components/entity/entity-board-column.tsx:614
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:143
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:142
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:128
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:299
 msgid "Name"
@@ -1657,7 +1673,7 @@ msgid "Option name"
 msgstr "Сонголтын нэр"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:168
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:241
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:240
 msgid "Options"
 msgstr "Сонголтууд"
 
@@ -1690,7 +1706,7 @@ msgstr "Нэвтрэх түлхүүрийн баталгаажуулалт ам�
 msgid "Passkeys"
 msgstr "Passkey-ууд"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:210
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:209
 msgid "Pattern (regex)"
 msgstr "Загвар (regex)"
 
@@ -1857,7 +1873,7 @@ msgstr "Хариу"
 msgid "Reply to {0}..."
 msgstr "{0}-д хариу..."
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:225
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:224
 msgid "Required"
 msgstr "Шаардлагатай"
 
@@ -1892,7 +1908,7 @@ msgid "Right to Left"
 msgstr "Баруунаас зүүн"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:150
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:169
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:168
 msgid "Rows"
 msgstr "Мөрүүд"
 
@@ -2161,7 +2177,7 @@ msgid "Signing out..."
 msgstr "Гарч байна..."
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:161
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:180
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:179
 msgid "Single line of text only"
 msgstr "Зөвхөн нэг мөр текст"
 
@@ -2367,7 +2383,7 @@ msgid "Tuesday"
 msgstr "Мягмар гараг"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:130
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:163
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:162
 msgid "Type"
 msgstr "Төрөл"
 

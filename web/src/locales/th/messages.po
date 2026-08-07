@@ -44,6 +44,22 @@ msgstr "{0, plural, one {เลือกแล้ว #} other {เลือก�
 msgid "{0} option preview"
 msgstr "ตัวอย่างตัวเลือก {0}"
 
+#: ../../../lib/web/src/lib/locale-format.ts:121
+msgid "{count, plural, one {#d} other {#d}}"
+msgstr "{count, plural, one {#ว} other {#ว}}"
+
+#: ../../../lib/web/src/lib/locale-format.ts:117
+msgid "{count, plural, one {#h} other {#h}}"
+msgstr "{count, plural, one {#ชม} other {#ชม}}"
+
+#: ../../../lib/web/src/lib/locale-format.ts:113
+msgid "{count, plural, one {#m} other {#m}}"
+msgstr "{count, plural, one {#น} other {#น}}"
+
+#: ../../../lib/web/src/lib/locale-format.ts:125
+msgid "{count, plural, one {#w} other {#w}}"
+msgstr "{count, plural, one {#สัป} other {#สัป}}"
+
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:174
 msgid "{entityLabel} name"
 msgstr "ชื่อ {entityLabel}"
@@ -199,7 +215,7 @@ msgstr "เพิ่มบัญชีใหม่"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:215
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:220
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:292
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:291
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:94
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:194
 msgid "Add option"
@@ -250,7 +266,7 @@ msgstr "ทั้งหมด"
 msgid "Allow anyone to search for {0}"
 msgstr "อนุญาตให้ใครก็ตามค้นหา{0}"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:226
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:225
 msgid "Allow sort by"
 msgstr "อนุญาตให้เรียงตาม"
 
@@ -776,7 +792,7 @@ msgstr "ลบฟีด"
 msgid "Delete feed?"
 msgstr "ลบฟีดหรือไม่?"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:301
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:300
 msgid "Delete field"
 msgstr "ลบฟิลด์"
 
@@ -785,8 +801,8 @@ msgid "Delete option"
 msgstr "ลบตัวเลือก"
 
 #. placeholder {0}: opt.name
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:279
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:284
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:278
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:283
 msgid "Delete option {0}"
 msgstr "ลบตัวเลือก{0}"
 
@@ -859,7 +875,7 @@ msgstr "ปิด"
 msgid "Displays the mobile sidebar."
 msgstr "แสดงแถบด้านข้างบนมือถือ"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:306
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:305
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:524
 #: src/components/rss-dialog.tsx:459
 msgid "Done"
@@ -901,11 +917,11 @@ msgstr "แก้ไข {label}"
 msgid "Edit feed"
 msgstr "แก้ไขฟีด"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:138
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:137
 msgid "Edit field"
 msgstr "แก้ไขฟิลด์"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:139
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:138
 msgid "Edit field settings"
 msgstr "แก้ไขการตั้งค่าฟิลด์"
 
@@ -914,8 +930,8 @@ msgid "Edit option"
 msgstr "แก้ไขตัวเลือก"
 
 #. placeholder {0}: opt.name
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:264
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:269
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:263
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:268
 msgid "Edit option {0}"
 msgstr "แก้ไขตัวเลือก {0}"
 
@@ -1102,7 +1118,7 @@ msgstr "กรอง..."
 msgid "Finish moving your account"
 msgstr "เสร็จสิ้นการย้ายบัญชี"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:222
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:221
 msgid "Flags"
 msgstr "Flags"
 
@@ -1201,7 +1217,7 @@ msgstr "หน้าหลัก"
 msgid "Hot"
 msgstr "ยอดนิยม"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:153
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:152
 msgid "ID"
 msgstr ""
 
@@ -1250,7 +1266,7 @@ msgstr "รหัสยืนยันไม่ถูกต้อง"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "ดูเหมือนว่าหน้าที่คุณกำลังมองหา <0/>ไม่มีอยู่หรืออาจถูกลบไปแล้ว"
 
-#: ../../../lib/web/src/lib/locale-format.ts:62
+#: ../../../lib/web/src/lib/locale-format.ts:110
 msgid "Just now"
 msgstr "เมื่อสักครู่"
 
@@ -1357,7 +1373,7 @@ msgstr "ทำเครื่องหมายว่าอ่านแล้ว
 msgid "Marking all as read..."
 msgstr "กำลังทำเครื่องหมายทั้งหมดว่าอ่านแล้ว..."
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:199
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:198
 msgid "Maximum length"
 msgstr "ความยาวสูงสุด"
 
@@ -1381,7 +1397,7 @@ msgstr "ข้อความ"
 msgid "Metric"
 msgstr "เมตริก"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:188
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:187
 msgid "Minimum length"
 msgstr "ความยาวขั้นต่ำ"
 
@@ -1404,7 +1420,7 @@ msgstr "ตัวเลือกเพิ่มเติม"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:118
 #: ../../../lib/web/src/components/entity/entity-board-column.tsx:614
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:143
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:142
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:128
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:299
 msgid "Name"
@@ -1657,7 +1673,7 @@ msgid "Option name"
 msgstr "ชื่อตัวเลือก"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:168
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:241
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:240
 msgid "Options"
 msgstr "ตัวเลือก"
 
@@ -1690,7 +1706,7 @@ msgstr "การยืนยันด้วยพาสคีย์ล้มเ
 msgid "Passkeys"
 msgstr "พาสคีย์"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:210
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:209
 msgid "Pattern (regex)"
 msgstr "รูปแบบ (regex)"
 
@@ -1857,7 +1873,7 @@ msgstr "ตอบกลับ"
 msgid "Reply to {0}..."
 msgstr "ตอบกลับ {0}..."
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:225
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:224
 msgid "Required"
 msgstr "จำเป็น"
 
@@ -1892,7 +1908,7 @@ msgid "Right to Left"
 msgstr "ขวาไปซ้าย"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:150
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:169
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:168
 msgid "Rows"
 msgstr "แถว"
 
@@ -2161,7 +2177,7 @@ msgid "Signing out..."
 msgstr "กำลังออกจากระบบ..."
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:161
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:180
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:179
 msgid "Single line of text only"
 msgstr "ข้อความบรรทัดเดียวเท่านั้น"
 
@@ -2367,7 +2383,7 @@ msgid "Tuesday"
 msgstr "วันอังคาร"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:130
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:163
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:162
 msgid "Type"
 msgstr "ประเภท"
 

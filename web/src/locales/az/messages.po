@@ -44,6 +44,22 @@ msgstr "{0, plural, one {# istifadəçi banlandı} other {# istifadəçi banland
 msgid "{0} option preview"
 msgstr "{0} seçiminin önizləməsi"
 
+#: ../../../lib/web/src/lib/locale-format.ts:121
+msgid "{count, plural, one {#d} other {#d}}"
+msgstr "{count, plural, one {#g} other {#g}}"
+
+#: ../../../lib/web/src/lib/locale-format.ts:117
+msgid "{count, plural, one {#h} other {#h}}"
+msgstr "{count, plural, one {#s} other {#s}}"
+
+#: ../../../lib/web/src/lib/locale-format.ts:113
+msgid "{count, plural, one {#m} other {#m}}"
+msgstr "{count, plural, one {#dəq} other {#dəq}}"
+
+#: ../../../lib/web/src/lib/locale-format.ts:125
+msgid "{count, plural, one {#w} other {#w}}"
+msgstr "{count, plural, one {#h} other {#h}}"
+
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:174
 msgid "{entityLabel} name"
 msgstr "{entityLabel} adı"
@@ -199,7 +215,7 @@ msgstr "Yeni hesab əlavə et"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:215
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:220
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:292
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:291
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:94
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:194
 msgid "Add option"
@@ -250,7 +266,7 @@ msgstr "Hamısı"
 msgid "Allow anyone to search for {0}"
 msgstr "Hər kəsə {0} axtarmağa icazə ver"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:226
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:225
 msgid "Allow sort by"
 msgstr "Sıralamağa icazə ver"
 
@@ -776,7 +792,7 @@ msgstr "Feed-i sil"
 msgid "Delete feed?"
 msgstr "Feed silinsin?"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:301
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:300
 msgid "Delete field"
 msgstr "Sahəni sil"
 
@@ -785,8 +801,8 @@ msgid "Delete option"
 msgstr "Variantı sil"
 
 #. placeholder {0}: opt.name
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:279
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:284
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:278
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:283
 msgid "Delete option {0}"
 msgstr "{0} variantını sil"
 
@@ -859,7 +875,7 @@ msgstr "Rədd et"
 msgid "Displays the mobile sidebar."
 msgstr "Mobil yan paneli göstərir."
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:306
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:305
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:524
 #: src/components/rss-dialog.tsx:459
 msgid "Done"
@@ -901,11 +917,11 @@ msgstr "{label} redaktə et"
 msgid "Edit feed"
 msgstr "Lenti redaktə et"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:138
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:137
 msgid "Edit field"
 msgstr "Sahəni redaktə et"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:139
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:138
 msgid "Edit field settings"
 msgstr "Sahə parametrlərini redaktə et"
 
@@ -914,8 +930,8 @@ msgid "Edit option"
 msgstr "Variantı redaktə et"
 
 #. placeholder {0}: opt.name
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:264
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:269
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:263
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:268
 msgid "Edit option {0}"
 msgstr "{0} variantını redaktə et"
 
@@ -1102,7 +1118,7 @@ msgstr "Süz..."
 msgid "Finish moving your account"
 msgstr "Hesabınızın köçürülməsini tamamlayın"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:222
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:221
 msgid "Flags"
 msgstr "Bayraqlar"
 
@@ -1201,7 +1217,7 @@ msgstr "Ev"
 msgid "Hot"
 msgstr "İsti"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:153
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:152
 msgid "ID"
 msgstr ""
 
@@ -1250,7 +1266,7 @@ msgstr "Etibarsız doğrulama kodu"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Axtardığınız səhifə <0/>mövcud deyil və ya silinib."
 
-#: ../../../lib/web/src/lib/locale-format.ts:62
+#: ../../../lib/web/src/lib/locale-format.ts:110
 msgid "Just now"
 msgstr "İndicə"
 
@@ -1357,7 +1373,7 @@ msgstr "Hamısını oxunmuş işarələ"
 msgid "Marking all as read..."
 msgstr "Hamısı oxunmuş kimi işarələnir..."
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:199
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:198
 msgid "Maximum length"
 msgstr "Maksimum uzunluq"
 
@@ -1381,7 +1397,7 @@ msgstr "Mesaj"
 msgid "Metric"
 msgstr "Metrik"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:188
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:187
 msgid "Minimum length"
 msgstr "Minimum uzunluq"
 
@@ -1404,7 +1420,7 @@ msgstr "Digər seçimlər"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:118
 #: ../../../lib/web/src/components/entity/entity-board-column.tsx:614
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:143
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:142
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:128
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:299
 msgid "Name"
@@ -1657,7 +1673,7 @@ msgid "Option name"
 msgstr "Seçim adı"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:168
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:241
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:240
 msgid "Options"
 msgstr "Seçimlər"
 
@@ -1690,7 +1706,7 @@ msgstr "Giriş açarının doğrulanması alınmadı. Zəhmət olmasa yenidən c
 msgid "Passkeys"
 msgstr "Passkey-lər"
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:210
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:209
 msgid "Pattern (regex)"
 msgstr "Şablon (regex)"
 
@@ -1857,7 +1873,7 @@ msgstr "Cavabla"
 msgid "Reply to {0}..."
 msgstr "{0} üçün cavab..."
 
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:225
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:224
 msgid "Required"
 msgstr "Tələb olunur"
 
@@ -1892,7 +1908,7 @@ msgid "Right to Left"
 msgstr "Sağdan Sola"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:150
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:169
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:168
 msgid "Rows"
 msgstr "Sətirlər"
 
@@ -2161,7 +2177,7 @@ msgid "Signing out..."
 msgstr "Çıxılır..."
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:161
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:180
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:179
 msgid "Single line of text only"
 msgstr "Yalnız bir sətir mətn"
 
@@ -2367,7 +2383,7 @@ msgid "Tuesday"
 msgstr "Əmr yazın və ya axtarın..."
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx:130
-#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:163
+#: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:162
 msgid "Type"
 msgstr "Mesaj yazın..."
 
