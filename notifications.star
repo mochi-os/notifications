@@ -28,6 +28,16 @@ def row_remove(table, where, args):
 	mochi.db.execute('delete from "' + table + '" where (' + where + ")", *args)
 
 def database_upgrade(version):
+	if version == 3:
+		# The event that last incremented this row's unread count. A replayed
+		# broadcast re-runs notify(), and the roll-up below did count+1 with no
+		# memory of what it had already counted, so a resync inflated every
+		# unread badge it touched.
+		columns = []
+		for column in mochi.db.table("notifications"):
+			columns.append(column["name"])
+		if "last_event" not in columns:
+			mochi.db.execute("alter table notifications add column last_event text not null default ''")
 	if version == 2:
 		# Drop the pre-2026-07 broadcast tables left in the app data DB when
 		# broadcast state moved to the per-app system DB - inert, but stale
@@ -50,6 +60,7 @@ def database_create():
 		created integer not null,
 		read integer not null default 0,
 		fixed integer not null default 0,
+		last_event text not null default '',
 		unique ( app, topic, object )
 	)""")
 	mochi.db.execute("create index if not exists notifications_created on notifications(created)")
@@ -606,7 +617,15 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	if url and not url.startswith("mochi:") and (not url.startswith("/") or url.startswith("//")):
 		url = ""
 	if count != None:
-		count = min(max(count, 0), 999999)
+		# min/max raise on a non-numeric, and there is no try/except in
+		# Starlark - so a caller passing a string aborted the whole handler and
+		# the notification was simply never delivered, with the sender none the
+		# wiser. Treat an unusable count as absent, which is what the column
+		# already allows.
+		if type(count) not in ["int", "float"]:
+			count = None
+		else:
+			count = min(max(int(count), 0), 999999)
 
 	ensure_commit_hook_registered()
 
@@ -641,7 +660,7 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	# state value (fixed=1), stored verbatim; otherwise count is the unread
 	# item count - reset to 1 when the previous state was read, else +1.
 	existing_notif = mochi.db.row(
-		"select id, read from notifications where app = ? and topic = ? and object = ?",
+		"select id, read, last_event from notifications where app = ? and topic = ? and object = ?",
 		app, topic, object
 	)
 	if existing_notif:
@@ -652,10 +671,18 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=?, read=0, count=?, fixed=1 where id=?",
 				title, body, content, url, sender, now, count, notif_id
 			)
+		elif event_id and existing_notif["last_event"] == (app + ":" + event_id):
+			# Already counted this event. A replay must still refresh the
+			# content - the sender may be repairing it - but must not advance
+			# the unread count again.
+			mochi.db.execute(
+				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=? where id=?",
+				title, body, content, url, sender, now, notif_id
+			)
 		else:
 			mochi.db.execute(
-				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=?, read=0, count=case when read != 0 then 1 else count + 1 end, fixed=0 where id=?",
-				title, body, content, url, sender, now, notif_id
+				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=?, read=0, count=case when read != 0 then 1 else count + 1 end, fixed=0, last_event=? where id=?",
+				title, body, content, url, sender, now, (app + ":" + event_id) if event_id else "", notif_id
 			)
 	else:
 		# Key the row by the caller's event id, namespaced by the sending app
