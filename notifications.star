@@ -28,6 +28,28 @@ def row_remove(table, where, args):
 	mochi.db.execute('delete from "' + table + '" where (' + where + ")", *args)
 
 def database_upgrade(version):
+	if version == 4:
+		# push_pending.account was declared integer but has always held a text
+		# uid: core's accounts table is `id text not null primary key`
+		# (core/server/db.go), and mochi.account.add returns that. Integer
+		# affinity leaves a value as TEXT only while it does not parse as a
+		# number: an id whose 32 hex characters happen to all be digits is
+		# converted on insert, losing its leading zeros, and then never
+		# matches the text uid the delete and select paths pass. The column
+		# is the primary key AND indexed, so that row is unreachable. Rebuild
+		# with the honest type; the data is already text.
+		mochi.db.execute("""create table if not exists push_pending_new (
+			account text not null,
+			event_id text not null,
+			subscription text not null,
+			payload text not null,
+			created integer not null,
+			primary key (account, event_id)
+		)""")
+		mochi.db.execute("insert or ignore into push_pending_new ( account, event_id, subscription, payload, created ) select cast(account as text), event_id, subscription, payload, created from push_pending")
+		mochi.db.execute("drop table push_pending")
+		mochi.db.execute("alter table push_pending_new rename to push_pending")
+		mochi.db.execute("create index if not exists push_pending_created on push_pending(account, created)")
 	if version == 3:
 		# The event that last incremented this row's unread count. A replayed
 		# broadcast re-runs notify(), and the roll-up below did count+1 with no
@@ -100,7 +122,7 @@ def database_create():
 	)""")
 
 	mochi.db.execute("""create table if not exists push_pending (
-		account integer not null,
+		account text not null,
 		event_id text not null,
 		subscription text not null,
 		payload text not null,
@@ -270,7 +292,7 @@ def action_rss(a):
 		# in no category (created with "add to existing subscriptions" off,
 		# or later removed from all categories) carries nothing.
 		rows = mochi.db.rows("""
-			select n.id, n.app, n.topic, n.content, n.link, n.count, n.created
+			select n.id, n.app, n.topic, n.title, n.content, n.link, n.count, n.created
 			from notifications n
 			join topics t on n.app = t.app and n.topic = t.topic and n.object = t.object
 			join destinations d on d.category = t.category
@@ -280,7 +302,7 @@ def action_rss(a):
 	else:
 		# Session access without a token is the user's own full bell view.
 		rows = mochi.db.rows("""
-			select id, app, topic, content, link, count, created
+			select id, app, topic, title, content, link, count, created
 			from notifications order by created desc limit 100
 		""")
 
@@ -309,7 +331,13 @@ def action_rss(a):
 			app_name = server_name
 		else:
 			app_name = app_names.get(row["app"], row["app"].capitalize())
-		title = app_name + ": " + row["topic"]
+		# The sender's own title, not the raw topic key. topic is a machine
+		# identifier - live values include "invite/received",
+		# "accept/accepted" and "update/created" - and it was being printed
+		# verbatim as the feed item's headline. notifications.title is what
+		# the sending app wrote for a human to read; fall back to the key
+		# only when a sender left it empty.
+		title = app_name + ": " + (row["title"] if row["title"] else row["topic"])
 		if row["count"] > 1:
 			title = title + " (" + str(row["count"]) + ")"
 
