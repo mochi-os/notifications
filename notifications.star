@@ -856,7 +856,7 @@ def function_categories(context):
 	return rows
 
 # Category CRUD — used by the settings page via the service proxy; gated by
-# notifications/manage in app.json.
+# notifications/write in app.json.
 
 def function_category_list(context):
 	cats = mochi.db.rows('select id, label, "default", created from categories order by id') or []
