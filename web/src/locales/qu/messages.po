@@ -916,8 +916,7 @@ msgstr "Disleksia llamkaywanmi"
 
 #: src/components/rss-dialog.tsx:391
 msgid "e.g., Feedly, NewsBlur"
-msgstr "e.g., Feedly, NewsBlur"
-
+msgstr "kikin: Feedly, NewsBlur"
 #: ../../../lib/web/src/components/entity/entity-comment-thread.tsx:308
 #: ../../../lib/web/src/components/entity/entity-comment-thread.tsx:353
 msgid "Edit"
