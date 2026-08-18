@@ -35,6 +35,13 @@ notif_curl() {
     "$CURL_HELPER" -a admin -X "$method" "$@" "/notifications$path"
 }
 
+# Helper to drive the test app's probe actions. They are not declared public,
+# so they need the same admin session as everything else here; a bare curl is
+# refused, and every assertion downstream of a probe then fails with it.
+test_curl() {
+    "$CURL_HELPER" -a admin -X GET "/test$1"
+}
+
 # Helper to make settings requests (for account creation)
 settings_curl() {
     local method="$1"
@@ -124,7 +131,7 @@ notif_curl POST "/-/rss/update" -d "id=$UNSUB_FEED_ID&enabled=1" > /dev/null
 
 # Test: Emit a routed notification (topic lands in the default category,
 # which the subscribed "Test Feed" is an rss destination of)
-RESULT=$(curl -s "http://localhost:8081/test/test_notifications_emit")
+RESULT=$(test_curl "/test_notifications_emit")
 if echo "$RESULT" | grep -q '"sent":1'; then
     pass "Emit routed probe notification"
 else
@@ -176,7 +183,7 @@ else
 fi
 
 # Cleanup: remove the probe notification/topic and the unsubscribed feed
-curl -s "http://localhost:8081/test/test_notifications_cleanup" > /dev/null
+test_curl "/test_notifications_cleanup" > /dev/null
 if [ -n "$UNSUB_FEED_ID" ]; then
     notif_curl POST "/-/rss/delete" -d "id=$UNSUB_FEED_ID" > /dev/null
 fi
@@ -191,8 +198,8 @@ echo "--- Event ID Collision Tests ---"
 # Two notifications sharing an event id under different objects must both
 # survive: the row id is derived from (app, event id) and a same-app reuse
 # falls back to a fresh uid rather than being silently dropped.
-curl -s "http://localhost:8081/test/test_notifications_emit?object=collide-a&body=collide-body-a&event=collide-probe" > /dev/null
-curl -s "http://localhost:8081/test/test_notifications_emit?object=collide-b&body=collide-body-b&event=collide-probe" > /dev/null
+test_curl "/test_notifications_emit?object=collide-a&body=collide-body-a&event=collide-probe" > /dev/null
+test_curl "/test_notifications_emit?object=collide-b&body=collide-body-b&event=collide-probe" > /dev/null
 
 RESULT=$(notif_curl GET "/-/list")
 if echo "$RESULT" | grep -q 'collide-body-a'; then
@@ -206,13 +213,13 @@ else
     fail "Colliding event id does not drop the second notification" "$RESULT"
 fi
 
-curl -s "http://localhost:8081/test/test_notifications_cleanup?object=collide-a" > /dev/null
-curl -s "http://localhost:8081/test/test_notifications_cleanup?object=collide-b" > /dev/null
+test_curl "/test_notifications_cleanup?object=collide-a" > /dev/null
+test_curl "/test_notifications_cleanup?object=collide-b" > /dev/null
 
 # Test: Event-keyed ids exceed 64 chars and must stay markable as read on both
 # HTTP paths (the notifications action and the menu tray proxy)
 LONG_EVENT=$(python3 -c "print('e' * 100)")
-curl -s -X POST -d "object=read-probe&body=read-probe-body&event=$LONG_EVENT" "http://localhost:8081/test/test_notifications_emit" > /dev/null
+"$CURL_HELPER" -a admin -X POST -d "object=read-probe&body=read-probe-body&event=$LONG_EVENT" "/test/test_notifications_emit" > /dev/null
 RESULT=$(notif_curl POST "/-/read" -d "id=test:$LONG_EVENT")
 if echo "$RESULT" | grep -q '"data"'; then
     pass "Long event-keyed id accepted by the read action"
@@ -236,7 +243,7 @@ sys.exit(0 if row and row['read'] != 0 else 1)
 else
     fail "Long event-keyed notification marked read" "$(echo "$RESULT" | head -c 150)"
 fi
-curl -s "http://localhost:8081/test/test_notifications_cleanup?object=read-probe" > /dev/null
+test_curl "/test_notifications_cleanup?object=read-probe" > /dev/null
 
 # ============================================================================
 # PUSH QUEUE SCOPING TESTS
@@ -261,7 +268,7 @@ else
 fi
 
 # Emit: both subscriptions get a queued backstop row for the same event
-curl -s "http://localhost:8081/test/test_notifications_emit?object=drain-probe&body=drain-probe-body" > /dev/null
+test_curl "/test_notifications_emit?object=drain-probe&body=drain-probe-body" > /dev/null
 PROBE_EVENT="test-probe-drain-probe"
 
 # Test: Scoped drain sees only the caller's subscription
@@ -304,7 +311,7 @@ fi
 notif_curl POST "/-/push/ack" -d "events=$EVENTS_B" > /dev/null
 notif_curl POST "/-/push/accounts/remove" -d "id=$SUB_A" > /dev/null
 notif_curl POST "/-/push/accounts/remove" -d "id=$SUB_B" > /dev/null
-curl -s "http://localhost:8081/test/test_notifications_cleanup?object=drain-probe" > /dev/null
+test_curl "/test_notifications_cleanup?object=drain-probe" > /dev/null
 
 # ============================================================================
 # INPUT SIZE LIMIT TESTS
@@ -315,7 +322,7 @@ echo "--- Input Size Limit Tests ---"
 
 # Test: Oversized body is truncated but the notification still arrives
 LONG_BODY=$(python3 -c "print('a' * 5000)")
-curl -s -X POST -d "object=size-probe&body=$LONG_BODY" "http://localhost:8081/test/test_notifications_emit" > /dev/null
+"$CURL_HELPER" -a admin -X POST -d "object=size-probe&body=$LONG_BODY" "/test/test_notifications_emit" > /dev/null
 RESULT=$(notif_curl GET "/-/list")
 if echo "$RESULT" | python3 -c "
 import sys, json
@@ -327,16 +334,16 @@ sys.exit(0 if row and 0 < len(row['body']) <= 2048 else 1)
 else
     fail "Oversized body truncated but delivered" "$(echo "$RESULT" | head -c 200)"
 fi
-curl -s "http://localhost:8081/test/test_notifications_cleanup?object=size-probe" > /dev/null
+test_curl "/test_notifications_cleanup?object=size-probe" > /dev/null
 
 # Test: Oversized topic is rejected (identity keys are never truncated)
 LONG_TOPIC=$(python3 -c "print('t' * 300)")
-RESULT=$(curl -s -X POST -d "topic=$LONG_TOPIC&object=size-probe-2&body=x" "http://localhost:8081/test/test_notifications_emit")
+RESULT=$("$CURL_HELPER" -a admin -X POST -d "topic=$LONG_TOPIC&object=size-probe-2&body=x" "/test/test_notifications_emit")
 if echo "$RESULT" | grep -q '"sent":0'; then
     pass "Oversized topic rejected"
 else
     fail "Oversized topic rejected" "$RESULT"
-    curl -s -X POST -d "topic=$LONG_TOPIC&object=size-probe-2" "http://localhost:8081/test/test_notifications_cleanup" > /dev/null
+    "$CURL_HELPER" -a admin -X POST -d "topic=$LONG_TOPIC&object=size-probe-2" "/test/test_notifications_cleanup" > /dev/null
 fi
 
 # Test: Oversized push registration endpoint is refused
@@ -396,7 +403,7 @@ echo ""
 echo "--- Topic Delete Tests ---"
 
 # Emit to create a topic row, delete it via the HTTP action, verify gone
-curl -s "http://localhost:8081/test/test_notifications_emit?object=topic-probe&body=topic-probe-body" > /dev/null
+test_curl "/test_notifications_emit?object=topic-probe&body=topic-probe-body" > /dev/null
 RESULT=$(notif_curl POST "/-/topics/delete" -d "app=test&topic=probe&object=topic-probe")
 if echo "$RESULT" | grep -q '"data"'; then
     pass "Topic delete succeeds"
@@ -415,7 +422,7 @@ if echo "$RESULT" | grep -q "Topic not found"; then
 else
     fail "Deleting a missing topic returns 404" "$(echo "$RESULT" | head -c 150)"
 fi
-curl -s "http://localhost:8081/test/test_notifications_cleanup?object=topic-probe" > /dev/null
+test_curl "/test_notifications_cleanup?object=topic-probe" > /dev/null
 
 # ============================================================================
 # ACCOUNT REMOVAL CLEANUP TESTS
@@ -431,7 +438,7 @@ RESULT=$(notif_curl POST "/-/push/register" -d "label=cleanup-probe-c&auth=YPF1D
 SUB_C=$(echo "$RESULT" | extract_id)
 RESULT=$(notif_curl POST "/-/push/register" -d "label=cleanup-probe-d&auth=ZPF1D0bTRYUiNH98kIfhjD&p256dh=BGc2vQrRsQGN6oKjmkP_3RaMtxAaAevBBe7N0xCv1tIJaEGI3DRD0fA73tk5Mt1JsmvP6Z8tFc8MGD7e2eUKHKP")
 SUB_D=$(echo "$RESULT" | extract_id)
-curl -s "http://localhost:8081/test/test_notifications_emit?object=cleanup-probe&body=cleanup-probe-body" > /dev/null
+test_curl "/test_notifications_emit?object=cleanup-probe&body=cleanup-probe-body" > /dev/null
 
 RESULT=$(notif_curl GET "/-/push/drain")
 if echo "$RESULT" | grep -q "\"subId\":\"$SUB_C\"" && echo "$RESULT" | grep -q "\"subId\":\"$SUB_D\""; then
@@ -464,7 +471,7 @@ else
     fail "Destination rows removed with the account (settings path)" "$(echo "$RESULT" | head -c 200)"
 fi
 
-curl -s "http://localhost:8081/test/test_notifications_cleanup?object=cleanup-probe" > /dev/null
+test_curl "/test_notifications_cleanup?object=cleanup-probe" > /dev/null
 
 # ============================================================================
 # MALFORMED INPUT TESTS
