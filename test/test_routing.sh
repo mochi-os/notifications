@@ -35,9 +35,8 @@ notif_curl() {
     "$CURL_HELPER" -a admin -X "$method" "$@" "/notifications$path"
 }
 
-# Helper to drive the test app's probe actions. They are not declared public,
-# so they need the same admin session as everything else here; a bare curl is
-# refused, and every assertion downstream of a probe then fails with it.
+# Drive the test app's probe actions; they are not public, so use the admin
+# session.
 test_curl() {
     "$CURL_HELPER" -a admin -X GET "/test$1"
 }

@@ -29,15 +29,9 @@ def row_remove(table, where, args):
 
 def database_upgrade(version):
 	if version == 4:
-		# push_pending.account was declared integer but has always held a text
-		# uid: core's accounts table is `id text not null primary key`
-		# (core/server/db.go), and mochi.account.add returns that. Integer
-		# affinity leaves a value as TEXT only while it does not parse as a
-		# number: an id whose 32 hex characters happen to all be digits is
-		# converted on insert, losing its leading zeros, and then never
-		# matches the text uid the delete and select paths pass. The column
-		# is the primary key AND indexed, so that row is unreachable. Rebuild
-		# with the honest type; the data is already text.
+		# Rebuild push_pending.account as text: under integer affinity an all-digit
+		# uid was stored as a number, losing leading zeros, so the text uid the select
+		# and delete paths pass never matched.
 		mochi.db.execute("""create table if not exists push_pending_new (
 			account text not null,
 			event_id text not null,
@@ -61,9 +55,8 @@ def database_upgrade(version):
 		if "last_event" not in columns:
 			mochi.db.execute("alter table notifications add column last_event text not null default ''")
 	if version == 2:
-		# Drop the pre-2026-07 broadcast tables left in the app data DB when
-		# broadcast state moved to the per-app system DB - inert, but stale
-		# sequence/log copies mislead diagnosis.
+		# Drop the broadcast tables left in the app data DB when broadcast state moved
+		# to the per-app system DB - stale copies mislead diagnosis.
 		for table in ["sequence", "log", "acknowledged", "received"]:
 			mochi.db.execute("drop table if exists " + table)
 
@@ -143,9 +136,7 @@ def seed_categories():
 	# (User-created categories are single-origin and correctly keep
 	# mochi.uid() via function_category_create.)
 	mochi.db.execute("insert or ignore into categories (id, label, created) values ('0', 'No notifications', ?)", now)
-	# "Normal" lives at the deterministic id '1'. Guard against a legacy
-	# uid-keyed "Normal" seeded before this change: keep it rather than add a
-	# second row (the divergent legacy rows are converged by db migration).
+	# A legacy "Normal" seeded under a uid is kept rather than duplicated.
 	existing_normal = mochi.db.row("select id from categories where label = 'Normal'")
 	if existing_normal:
 		normal_id = existing_normal["id"]
@@ -155,12 +146,9 @@ def seed_categories():
 	# Ensure exactly one default exists (Normal by default)
 	if not mochi.db.exists('select 1 from categories where "default" = 1'):
 		mochi.db.execute('update categories set "default" = 1 where id = ?', normal_id)
-	# Normal seeds only the web destination. Accounts and RSS feeds wire
-	# themselves into every category when they are added (see
-	# add_destination_to_categories), so there is nothing to enumerate here at
-	# create time - and database_create can run in a permission-less context
-	# (e.g. a P2P-triggered create where app_user_setup has not granted
-	# accounts/read), so calling mochi.account.list() here would fail.
+	# Only the web destination is seeded: accounts and feeds join every category
+	# when added, and database_create may run without accounts/read, so
+	# mochi.account.list() would fail here.
 	if not mochi.db.exists("select 1 from destinations where category = ?", normal_id):
 		mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'web', '')", normal_id)
 
@@ -286,11 +274,6 @@ def action_rss(a):
 	function_expire({})
 
 	if feed:
-		# A feed carries only its routed content: notifications whose topic's
-		# category lists this feed as an rss destination. Topics with no row,
-		# category NULL (web-only) or "0" (dropped) reach no feed, and a feed
-		# in no category (created with "add to existing subscriptions" off,
-		# or later removed from all categories) carries nothing.
 		rows = mochi.db.rows("""
 			select n.id, n.app, n.topic, n.title, n.content, n.link, n.count, n.created
 			from notifications n
@@ -331,12 +314,8 @@ def action_rss(a):
 			app_name = server_name
 		else:
 			app_name = app_names.get(row["app"], row["app"].capitalize())
-		# The sender's own title, not the raw topic key. topic is a machine
-		# identifier - live values include "invite/received",
-		# "accept/accepted" and "update/created" - and it was being printed
-		# verbatim as the feed item's headline. notifications.title is what
-		# the sending app wrote for a human to read; fall back to the key
-		# only when a sender left it empty.
+		# topic is a machine key ("invite/received"); headline only when title is
+		# empty.
 		title = app_name + ": " + (row["title"] if row["title"] else row["topic"])
 		if row["count"] > 1:
 			title = title + " (" + str(row["count"]) + ")"
@@ -473,11 +452,9 @@ def add_destination_to_categories(type, target):
 	for c in cats or []:
 		row_merge("destinations", {"category": c["id"], "type": type, "target": target})
 
-# function_destinations_add(context, type, target) -> bool: wire a
-# (type, target) destination into every user category. Called by the
-# settings app after adding an account when "add to existing
-# subscriptions" is on; previously named add_destination_to_all but
-# renamed during the categories redesign.
+# function_destinations_add(context, type, target) -> bool: wire a (type,
+# target) destination into every user category. Called by settings after adding
+# an account.
 def function_destinations_add(context, type="", target=""):
 	if not type or not target:
 		return False
@@ -565,59 +542,18 @@ def action_rss_update(a):
 # Topic service functions
 
 def function_send(context, topic, object="", title="", body="", url="", label="", name="", sender="", count=None, event_id=""):
-	"""Send a notification from the calling app.
-
-	Topics are keyed by (app, topic, object) and created lazily. On first send
-	for a given key, a topic row is inserted with the user's default category.
-	Subsequent sends look up the row's category and route accordingly. The
-	caller passes a human-readable `label` resolved from its own labels (so the
-	settings UI can group and display topics in the user's language); the
-	stored label is refreshed on every send to track language changes.
-
-	`name` is the object's display name (page title, conversation name, …) for
-	per-object topics whose object isn't a global entity. Optional - feeds /
-	forums / projects key on entity fingerprints and fall back to
-	mochi.entity.name(); apps with their own object IDs (wikis pages, chat
-	threads) must supply it explicitly. Refreshed on every send so renames
-	propagate.
-
-	Routing:
-	  1. Topic row's category = "0" ("No notifications") → drop entirely.
-	  2. Topic row's category is NULL (no default category exists) → web-only.
-	  3. Otherwise → fan out to the category's destinations.
-
-	count: optional override on the badge counter:
-	  None (default) - increment by 1 when rolling up an unread row, set to 1
-	                   on insert. Existing behaviour. Suits chat / feeds /
-	                   posts where count = unread items.
-	  <integer>      - force count to this value on both rollup and insert.
-	                   Pass count=1 for state-style notifications (e.g. server
-	                   upgrade alerts) where the latest version is a state,
-	                   not an item count.
-
-	event_id: optional stable identifier for the source event (typically the
-	UID of the row that triggered the notification: a comment id, a post id,
-	a chess move id, etc.). When provided, the new row's id is derived from
-	it, namespaced by the sending app, so a retried send keys the same row
-	rather than minting a new one.
-
-	The reserved app id "" is only accepted when the call originates from the
-	Mochi server itself (the core-only service_call_as_server helper sets
-	context["_server"]=True). Apps calling through mochi.service.call always
-	have their own app id in context, so this can't be spoofed.
-	"""
+	"""Send a notification from the calling app. Topics are keyed (app, topic, object),
+	created on first send with the default category; label and name refresh on every send.
+	count=None increments the unread count, an integer stores a state value; event_id keys
+	a retried send to the same row. The empty app id is accepted only with context["_server"]."""
 	app = context.get("app", "")
 	if not app and not context.get("_server", False):
 		return 0
 	if not title or not body:
 		return 0
 
-	# Size limits. Identity keys are rejected over-length - truncating them
-	# could merge two distinct topics into one row - while display fields
-	# are truncated and delivered: a notification is a courtesy signal, and
-	# dropping it because a remote post title is huge silently loses the
-	# event. Truncation is by byte; only abusive input can lose a trailing
-	# multi-byte character, which downstream encoding replaces harmlessly.
+	# Identity keys are rejected over-length (truncation could merge two topics);
+	# display fields are truncated and delivered.
 	if len(topic) > 128 or len(object) > 256 or len(event_id) > 256:
 		return 0
 	title = title[:256]
@@ -628,28 +564,17 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	# A truncated URL is broken anyway; degrade to none.
 	if len(url) > 2048:
 		url = ""
-	# The link becomes a click target in the recipient's notification menu, so
-	# only a local path or a mochi: URI is acceptable. A scheme the sender chose
-	# (javascript:, data:) would run in the origin, and "//host" names another
-	# origin without ever spelling out a scheme. Callers are apps, but an app
-	# may be relaying a value that reached it from a remote peer.
-	#
-	# Tab, newline, carriage return and backslash are rejected wherever they
-	# appear: a URL parser strips the first three and remaps the fourth to "/",
-	# so "/\evil.example" and "/<tab>/evil.example" both resolve to another
-	# origin while passing a naive "starts with a single slash" test. Those four
-	# are the complete set that can move the authority - every other C0
-	# character stays in the path.
+	# Only a local path or mochi: URI may become a click target: a sender's scheme
+	# or "//host" would leave the origin. Tab, newline, CR and backslash are
+	# rejected anywhere - URL parsers strip or remap them, so "/\evil" still
+	# changes authority.
 	if url and ("\\" in url or "\t" in url or "\n" in url or "\r" in url):
 		url = ""
 	if url and not url.startswith("mochi:") and (not url.startswith("/") or url.startswith("//")):
 		url = ""
 	if count != None:
-		# min/max raise on a non-numeric, and there is no try/except in
-		# Starlark - so a caller passing a string aborted the whole handler and
-		# the notification was simply never delivered, with the sender none the
-		# wiser. Treat an unusable count as absent, which is what the column
-		# already allows.
+		# min/max abort the handler on a non-numeric; treat an unusable count as
+		# absent.
 		if type(count) not in ["int", "float"]:
 			count = None
 		else:
@@ -682,11 +607,8 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	now = mochi.time.now()
 	content = title + ": " + body
 
-	# Roll up onto the existing (app,topic,object) row when there is one, so
-	# the id stays stable for clients; otherwise insert (keyed by the caller's
-	# event_id when supplied, else a fresh uid). A caller-supplied count is a
-	# state value (fixed=1), stored verbatim; otherwise count is the unread
-	# item count - reset to 1 when the previous state was read, else +1.
+	# Roll up onto the existing (app, topic, object) row so the id stays stable;
+	# otherwise insert keyed by event_id when supplied.
 	existing_notif = mochi.db.row(
 		"select id, read, last_event from notifications where app = ? and topic = ? and object = ?",
 		app, topic, object
@@ -804,17 +726,9 @@ def notifications_commit_hook(table, kind, row_uid):
 		# web destinations are handled by the websocket emission above;
 		# rss destinations are queried on demand, no active delivery.
 
-# Hook registration is per-app-version and idempotent. We register
-# lazily from inside function_send because mochi.db.commit.hook needs
-# the user/app context that's only present during a real request -
-# module-load time has neither, and Starlark globals are frozen so we
-# can't memoise the registration here. Re-registering the same function
-# name on every call is a plain assignment on the AppVersion struct
-# (cheap, no allocation). The framework invokes the hook via
-# mochi.db.commit.fire, and the pending-commit log retries a failed
-# handler on the next fire. Each invocation is independently safe: the
-# websocket write is idempotent and mochi.account.notify carries the
-# stable row id for receiver-side dedup.
+# Registered lazily from function_send: mochi.db.commit.hook needs the request's
+# user/app context, which module load lacks. Re-registering is a cheap
+# assignment.
 def ensure_commit_hook_registered():
 	mochi.db.commit.hook("notifications_commit_hook")
 
@@ -835,11 +749,9 @@ def function_topic_remove(context, topic="", object=""):
 	row_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
 	return True
 
-# category_display resolves the label to render for a category row. The two
-# seeded categories store English literals per host at create time, so
-# translate them at read time while they remain unrenamed; user categories
-# and renamed seeds render as stored. Consumers show `display` and edit
-# `label`, so a translation is never accidentally saved as a rename.
+# Label to render for a category: the two seeds store English literals, so they
+# are translated at read time while unrenamed. Consumers show display and edit
+# label.
 def category_display(id, label):
 	if id == "0" and label == "No notifications":
 		return mochi.app.label("category.none")
@@ -906,11 +818,6 @@ def function_category_update(context, id=None, label=None, destinations=None, de
 	return True
 
 def function_category_delete(context, id=None, reassign_to=None):
-	"""Delete a category, reassigning any topic rows to `reassign_to`.
-
-	reassign_to must be the id of another existing category. Use "0" for No
-	notifications. The "0" sentinel category itself cannot be deleted.
-	"""
 	if not id or id == "0":
 		return False
 	if not mochi.db.exists("select 1 from categories where id = ?", id):
@@ -932,14 +839,8 @@ def function_category_delete(context, id=None, reassign_to=None):
 	return True
 
 def function_category_test(context, id=None):
-	"""Send a test notification through the category's destinations.
-
-	External destinations (accounts) are invoked via mochi.account.notify. A
-	bell entry is always written so the user gets immediate visible feedback
-	that the test fired, even when 'web' is not among the configured
-	destinations — otherwise a stale row from a previous test could persist
-	and look like the most recent click landed nothing fresh.
-	"""
+	"""Send a test notification through the category's destinations. A bell entry is
+	always written, even without a web destination, so the click gets visible feedback."""
 	if not id:
 		return {"sent": 0, "web": False}
 	cat = mochi.db.row("select label from categories where id = ?", id)
@@ -950,11 +851,8 @@ def function_category_test(context, id=None):
 	web = False
 	title = mochi.app.label("notifications.body.test")
 	body_web = mochi.app.label("notifications.body.test_via_web")
-	# Write a bell entry directly. Test notifications bypass the topic →
-	# category routing in the commit hook (the test is itself the
-	# category-routing check), so we don't go through function_send -
-	# we just need a row, the websocket emission for instant visible
-	# feedback, and the per-account push fan-out below.
+	# Written directly rather than through function_send: the test bypasses topic
+	# routing.
 	now = mochi.time.now()
 	existing_notif = mochi.db.row(
 		"select id from notifications where app = 'notifications' and topic = 'test' and object = ?",
@@ -1006,10 +904,6 @@ def function_category_test(context, id=None):
 	return {"sent": sent, "web": web}
 
 def account_display_label(account_id):
-	"""Friendly name for a connected account, for test-notification bodies.
-	Prefers the user-set label, falls back to a provider-typed string.
-	Returns "" when the account row no longer exists (stale destinations
-	pointing at deleted accounts)."""
 	acc = mochi.account.get(account_id)
 	if not acc:
 		return ""
@@ -1266,14 +1160,10 @@ def function_accounts_remove(context, id=0):
 	mochi.db.execute("delete from push_pending where account = ?", str(id))
 	return mochi.account.remove(id)
 
-# UnifiedPush registration. The Mochi Android distributor calls this when a user
-# picks it as their UP distributor. Two cases:
-#   - Local case (endpoint=""): server allocates a path that the distributor will
-#     concatenate with its known server URL to form the absolute endpoint. The
-#     distributor stores the matching private p256dh half on-device.
-#   - Foreign case (endpoint set, e.g. ntfy.sh URL): the user picked a third-
-#     party distributor. We just store the foreign endpoint and POST RFC 8030
-#     to it at delivery time — endpoint is opaque to us.
+# UnifiedPush registration. endpoint="" is the local distributor: the server
+# allocates a path the app appends to its server URL. A set endpoint is a
+# third-party distributor (ntfy etc), stored opaque and POSTed to per RFC 8030
+# at delivery.
 def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 	if not auth or not p256dh:
 		return None
@@ -1312,12 +1202,9 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 	add_destination_to_categories("account", str(account_id))
 	return result
 
-# function_push_register_fcm stores an FCM device token for this user, keyed
-# by the Firebase Installations ID (FID). The server-side `case "fcm"` in
-# api_account_add does the upsert: token refreshes update the existing row
-# in place, and a second phone (different FID) creates a separate row so
-# both devices receive pushes. The row id is stable, so destinations rows
-# pointing at it survive token refreshes.
+# Stores an FCM device token keyed by Firebase Installations ID: core upserts,
+# so a token refresh updates the row in place and a second device gets its own
+# row.
 def function_push_register_fcm(context, token="", install_id="", device=""):
 	if not token or not install_id:
 		return None
@@ -1334,20 +1221,10 @@ def function_push_register_fcm(context, token="", install_id="", device=""):
 	add_destination_to_categories("account", str(account_id))
 	return result
 
-# function_push_setup tells the client which push transport this server uses.
-# When the admin has pasted Firebase config into system settings, returns
-# {"transport": "fcm", "firebase_config": {project_id, app_id, api_key,
-# messaging_sender_id}} and the client initialises Firebase Messaging
-# against it. Otherwise returns {"transport": "unifiedpush"} and the client
-# falls back to the UnifiedPush distributor.
-#
-# Accepts two paste formats so the admin can drop whichever file Firebase
-# Console gave them:
-#   1. google-services.json verbatim — has project_info.{project_id,
-#      project_number} + client[0].client_info.mobilesdk_app_id +
-#      client[0].api_key[0].current_key
-#   2. A flat {project_id, app_id, api_key, messaging_sender_id} JSON.
-# Both reduce to the same four-field response.
+# Tells the client its push transport: {"transport": "fcm", "firebase_config":
+# {...}} when the admin pasted Firebase config (google-services.json verbatim or
+# a flat {project_id, app_id, api_key, messaging_sender_id}), else {"transport":
+# "unifiedpush"}.
 def function_push_setup(context):
 	config_raw = mochi.setting.get("fcm.firebase_config")
 	if not config_raw:
@@ -1404,18 +1281,10 @@ def function_push_inbound(context, account_id="", payload=""):
 	# binary-safe write (current API is JSON text only).
 	return {"ok": False, "error": "inbound endpoint not yet implemented"}
 
-# push_queue_if_unifiedpush writes a pending row to push_pending if the account
-# is a local-distributor unifiedpush subscription. Called from the commit hook
-# and the category test alongside the live mochi.account.notify attempt — the
-# WS event is the fast
-# happy-path; this row is the durable backstop for when the on-device WebSocket
-# isn't subscribed (phone killed by OEM, Doze drop, transient network). On
-# subscribe the phone drains rows over /menu/-/push/drain, acks via
-# /menu/-/push/ack, and matching rows here are deleted.
-#
-# Foreign-endpoint unifiedpush accounts (ntfy etc) are excluded — third-party
-# Application Servers handle their own retry. Other account types (email,
-# pushbullet, browser, url) also have their own server-side retry semantics.
+# Queues a durable backstop row for local-distributor unifiedpush accounts, for
+# when the device's WebSocket is not subscribed; the phone drains and acks it
+# via push/drain and push/ack. Foreign distributors and other account types
+# handle their own retry.
 def push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, notif_id):
 	acc = mochi.account.get(account_id)
 	if not acc or acc.get("type") != "unifiedpush":
@@ -1450,17 +1319,10 @@ def push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, 
 		account_id, event_id, subscription, payload, mochi.time.now()
 	)
 
-# function_push_drain returns pending unifiedpush events and opportunistically
-# sweeps rows older than 7 days. The drain is read-only — the phone acks
-# explicitly via function_push_ack after the system notifications have been
-# posted, so a phone that crashes mid-drain can re-drain the same rows on next
-# subscribe. `subscription` limits the result to that device's rows; without
-# it (installed clients that predate the parameter) every pending row is
-# returned and the phone filters by subId. The value is client-asserted, so
-# this is cooperative filtering against accidental cross-device drains within
-# one user's trust domain - not device isolation, which the session model
-# cannot provide (any holder of the user's session can read all notifications
-# through the tray actions regardless).
+# Returns pending unifiedpush rows and sweeps rows older than 7 days. Read-only:
+# the phone acks via function_push_ack after posting, so a crash mid-drain
+# re-drains. subscription is client-asserted - a courtesy filter between one
+# user's devices, not a boundary.
 def function_push_drain(context, subscription=""):
 	now = mochi.time.now()
 	# Opportunistic TTL sweep: drop rows older than 7 days, regardless of
@@ -1490,15 +1352,9 @@ def function_push_drain(context, subscription=""):
 		})
 	return out
 
-# function_push_ack deletes the named rows from the queue. Idempotent — acking
-# a row that no longer exists (TTL'd, manually cleared, never queued because
-# delivered live first) is a no-op. The phone batches acks per drain or per
-# live event. `subscription` bounds deletions to that device's rows so a
-# well-behaved device does not delete another's backstop copies; without it
-# (installed clients that predate the parameter) any of the user's rows can
-# be acked. Client-asserted, so this is compatibility filtering against
-# accidental cross-device acks within one user's trust domain, not a device
-# security boundary; it becomes mandatory once released clients pass it.
+# Deletes the named rows; acking a missing row is a no-op. subscription bounds
+# the delete to one device's rows and is client-asserted - a courtesy filter,
+# not a security boundary.
 def function_push_ack(context, account_event_ids=None, subscription=""):
 	if not account_event_ids:
 		return {"acked": 0}
@@ -1523,10 +1379,7 @@ def function_push_ack(context, account_event_ids=None, subscription=""):
 		acked += 1
 	return {"acked": acked}
 
-# Client-facing action wrappers. Used to live in the menu app
-# (/menu/-/push/*); moved here because push is owned by the notifications
-# app, not by the menu UI. The menu app retained only the user-menu /
-# notifications-tray surface; everything push-transport-related lives here.
+# Client-facing action wrappers.
 
 def action_push_vapid(a):
 	"""Get VAPID key for browser push subscription."""
@@ -1579,11 +1432,7 @@ def action_push_register(a):
 	return {"data": result}
 
 def action_push_register_fcm(a):
-	"""Register the client's FCM device token. Keyed by Firebase Installations
-	ID so token refreshes update the existing row and additional phones
-	(different FID) create their own row. Called by the Android client after
-	FirebaseMessaging.getToken() returns and again from
-	FirebaseMessagingService.onNewToken on refresh."""
+	"""Register the client's FCM device token, keyed by Firebase Installations ID."""
 	token = a.input("token", "").strip()
 	install_id = a.input("install_id", "").strip()
 	if not token or not install_id:
@@ -1608,12 +1457,8 @@ def action_push_inbound(a):
 	return a.error.label(501, "errors.inbound_not_implemented")
 
 def action_push_drain(a):
-	"""Return any unifiedpush events that were queued while the on-device
-	WebSocket wasn't subscribed (phone killed, Doze drop, network blip).
-	Phone calls this immediately after WS subscribe and after each
-	foreground entry. Read-only — phone must POST /notifications/-/push/ack
-	with the (account, event_id) pairs it actually delivered. Pass
-	subscription=<id> to receive only that device's rows."""
+	"""Return queued unifiedpush events. Read-only: the phone posts push/ack with the
+	(account, event_id) pairs it delivered. subscription=<id> limits to one device."""
 	subscription = a.input("subscription", "").strip()
 	return {"data": function_push_drain(None, subscription=subscription) or []}
 

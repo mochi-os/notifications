@@ -14,15 +14,9 @@ import { useLingui } from '@lingui/react/macro'
 import { notificationsApi } from '@/api/notifications'
 
 /**
- * Drives the shared category picker from THIS app's own actions.
- *
- * The picker holds no data and issues no request of its own: lib/web ships
- * inside every app's bundle and cannot read the notifications service on an
- * app's behalf. It used to try, against the menu app's routes with this app's
- * token, which core refuses with app_token_mismatch - so the picker silently
- * never loaded here. This app owns the service, so it supplies the data.
- *
- * Only one picker is open at a time, so a single slot of state serves every row.
+ * Supplies the shared category picker from this app's own actions: lib/web
+ * cannot read the notifications service on an app's behalf. One picker is open
+ * at a time, so a single slot of state serves every row.
  */
 export function useNotificationCategories() {
   const { t } = useLingui()
