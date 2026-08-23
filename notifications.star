@@ -1340,8 +1340,9 @@ def function_push_drain(context, subscription=""):
 		rows = mochi.db.rows(
 			"select account, event_id, subscription, payload, created from push_pending order by created"
 		) or []
-	# Re-shape into the same envelope the WebSocket would deliver, so the
-	# phone runs identical code on live and drained events.
+	# Drain's own envelope, not the WebSocket's: that one spells the subscription
+	# sub_id and carries no event_id. The client parses the two separately - raw
+	# JSON here, Gson there - so a key renamed on one side does not reach the other.
 	out = []
 	for r in rows:
 		out.append({
