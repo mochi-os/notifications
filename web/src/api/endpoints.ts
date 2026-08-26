@@ -15,7 +15,14 @@ const endpoints = {
   },
   topics: {
     lookup: '-/topics/lookup',
-    setCategory: '-/topics/set_category',
+    setCategory: '-/topics/category/set',
+  },
+  rss: {
+    list: '-/rss/list',
+    create: '-/rss/create',
+    delete: '-/rss/delete',
+    rename: '-/rss/rename',
+    update: '-/rss/update',
   },
 } as const
 

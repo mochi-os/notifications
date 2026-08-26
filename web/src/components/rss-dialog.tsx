@@ -39,6 +39,7 @@ import {
   useRenameRssFeedMutation,
   useToggleRssFeedEnabledMutation,
 } from '@/hooks/useRssFeeds'
+import endpoints from '@/api/endpoints'
 
 type DialogView = 'list' | 'create' | 'created'
 
@@ -110,7 +111,7 @@ export function RssDialog({
   } = useQueryWithError({
     queryKey: ['rss-feeds'],
     queryFn: async () => {
-      return await requestHelpers.get<RssFeed[]>('-/rss/list')
+      return await requestHelpers.get<RssFeed[]>(endpoints.rss.list)
     },
     enabled: open,
   })
@@ -118,7 +119,10 @@ export function RssDialog({
 
   const handleCopy = async (token: string) => {
     const ok = await shellClipboardWrite(buildRssUrl(token))
-    if (!ok) return
+    if (!ok) {
+      toast.error(t`Failed to copy`)
+      return
+    }
     setCopied(true)
     toast.success(t`Copied to clipboard`)
     if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current)
@@ -127,7 +131,10 @@ export function RssDialog({
 
   const handleCopyFeed = async (feed: RssFeed) => {
     const ok = await shellClipboardWrite(buildRssUrl(feed.token))
-    if (!ok) return
+    if (!ok) {
+      toast.error(t`Failed to copy`)
+      return
+    }
     setCopiedId(feed.id)
     toast.success(t`Copied to clipboard`)
     if (copiedIdTimerRef.current) clearTimeout(copiedIdTimerRef.current)
@@ -222,6 +229,14 @@ export function RssDialog({
   const handleClose = () => {
     onOpenChange(false)
     // State reset is handled by the useEffect watching `open`
+  }
+
+  // Leaving the create view without closing the dialog, so the reset the
+  // `open` effect performs never runs - clear the form here instead.
+  const handleCancelCreate = () => {
+    setNewFeedName('')
+    setAddToExisting(true)
+    setView('list')
   }
 
   return (
@@ -411,7 +426,7 @@ export function RssDialog({
                 />
               </div>
               <ResponsiveDialogFooter>
-                <Button variant='outline' onClick={handleClose}>
+                <Button variant='outline' onClick={handleCancelCreate}>
                   <Trans>Cancel</Trans>
                 </Button>
                 <Button

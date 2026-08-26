@@ -50,7 +50,7 @@
 		"-/categories/test": {"function": "action_categories_test"},
 		"-/topics/list": {"function": "action_topics_list"},
 		"-/topics/lookup": {"function": "action_topics_lookup"},
-		"-/topics/set_category": {"function": "action_topics_set_category"},
+		"-/topics/category/set": {"function": "action_topics_category_set"},
 		"-/topics/delete": {"function": "action_topics_delete"},
 		"-/destinations/list": {"function": "action_destinations_list"},
 		"-/push/vapid": {"function": "action_push_vapid"},
@@ -92,7 +92,6 @@
 		"accounts/list": {"function": "function_accounts_list", "permission": "notifications/send"},
 		"accounts/add": {"function": "function_accounts_add", "permission": "notifications/send"},
 		"accounts/remove": {"function": "function_accounts_remove", "permission": "notifications/send"},
-		"push/register": {"function": "function_push_register", "permission": "notifications/send"},
-		"push/inbound": {"function": "function_push_inbound", "permission": "notifications/send"}
+		"push/register": {"function": "function_push_register", "permission": "notifications/send"}
 	}
 }

@@ -6,6 +6,8 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { getAppPath, requestHelpers } from '@mochi/web'
 
+import endpoints from '@/api/endpoints'
+
 export interface RssFeed {
   id: string
   name: string
@@ -27,7 +29,7 @@ export function useCreateRssFeedMutation() {
       addToExisting: boolean
     }) =>
       requestHelpers.post<RssFeed>(
-        '-/rss/create',
+        endpoints.rss.create,
         {
           name,
           add_to_existing: addToExisting ? '1' : '0',
@@ -47,7 +49,7 @@ export function useDeleteRssFeedMutation() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (id: string) => {
-      await requestHelpers.post('-/rss/delete', { id }, NO_TOAST)
+      await requestHelpers.post(endpoints.rss.delete, { id }, NO_TOAST)
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
@@ -62,7 +64,7 @@ export function useRenameRssFeedMutation() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, name }: { id: string; name: string }) => {
-      await requestHelpers.post('-/rss/rename', { id, name }, NO_TOAST)
+      await requestHelpers.post(endpoints.rss.rename, { id, name }, NO_TOAST)
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['rss-feeds'] })
@@ -75,7 +77,7 @@ export function useToggleRssFeedEnabledMutation() {
   return useMutation({
     mutationFn: async ({ id, enabled }: { id: string; enabled: boolean }) => {
       await requestHelpers.post(
-        '-/rss/update',
+        endpoints.rss.update,
         { id, enabled: enabled ? '1' : '0' },
         NO_TOAST
       )

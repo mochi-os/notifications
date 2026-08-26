@@ -370,7 +370,12 @@ def action_accounts_add(a):
 	if not type:
 		a.error.label(400, "errors.type_is_required")
 		return
-	if not provider_valid(type):
+	provider = None
+	for p in mochi.account.providers() or []:
+		if p.get("type") == type:
+			provider = p
+			break
+	if not provider:
 		return a.error.label(400, "errors.invalid_type")
 
 	fields = {}
@@ -381,6 +386,25 @@ def action_accounts_add(a):
 				a.error.label(400, "errors.value_too_long", maximum=4096)
 				return
 			fields[key] = val
+
+	# Core refuses a missing required field with an abort (a 500 that mails the
+	# operator); providers() declares which fields are required, so answer 400.
+	for field in provider.get("fields") or []:
+		name = field.get("name")
+		shown = field.get("label") or name
+		value = fields.get(name)
+		if field.get("required") and not value:
+			return a.error.label(400, "errors.field_required", field=shown)
+		# "email" is core's own email_valid behind mochi.text.valid, so this
+		# cannot accept an address the add would then reject, or the reverse.
+		if value and field.get("type") == "email" and not mochi.text.valid(value, "email"):
+			return a.error.label(400, "errors.field_invalid", field=shown)
+
+	# The browser provider declares no fields at all - its endpoint comes from
+	# the JavaScript push subscription rather than a form - so the loop above
+	# cannot see it, and core has its own refusal for a missing one.
+	if type == "browser" and not fields.get("endpoint"):
+		return a.error.label(400, "errors.push_subscription_missing")
 
 	add_to_existing = a.input("add_to_existing", "1")
 	add_to_existing = add_to_existing == "1" or add_to_existing == "true"
@@ -550,6 +574,11 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	if not app and not context.get("_server", False):
 		return 0
 	if not title or not body:
+		return 0
+
+	# topic, object and event_id come from the calling app, so a non-string one
+	# would reach len() below and abort the send rather than be refused.
+	if type(topic) != "string" or type(object) != "string" or type(event_id) != "string":
 		return 0
 
 	# Identity keys are rejected over-length (truncation could merge two topics);
@@ -1092,7 +1121,7 @@ def action_categories_test(a):
 def action_topics_list(a):
 	return {"data": function_topic_list({})}
 
-def action_topics_set_category(a):
+def action_topics_category_set(a):
 	# An empty category clears the topic's category; anything over-long cannot
 	# name a real category and is rejected rather than treated as a clear.
 	app = a.input("app", "").strip()
@@ -1130,8 +1159,13 @@ def action_destinations_list(a):
 # Service functions for account management (permission-gated)
 
 def function_accounts_vapid(context):
+	# None, not {"key": ""}, when the server has no VAPID key: an empty string
+	# is indistinguishable from a real answer by the time it reaches a caller,
+	# and both callers refuse on None.
 	key = mochi.webpush.key()
-	return {"key": key or ""}
+	if not key:
+		return None
+	return {"key": key}
 
 def function_accounts_list(context, capability=""):
 	return mochi.account.list(capability) or []
@@ -1205,7 +1239,7 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 # Stores an FCM device token keyed by Firebase Installations ID: core upserts,
 # so a token refresh updates the row in place and a second device gets its own
 # row.
-def function_push_register_fcm(context, token="", install_id="", device=""):
+def push_register_fcm(context, token="", install_id="", device=""):
 	if not token or not install_id:
 		return None
 	if len(token) > 512 or len(install_id) > 256 or len(device) > 256:
@@ -1225,7 +1259,7 @@ def function_push_register_fcm(context, token="", install_id="", device=""):
 # {...}} when the admin pasted Firebase config (google-services.json verbatim or
 # a flat {project_id, app_id, api_key, messaging_sender_id}), else {"transport":
 # "unifiedpush"}.
-def function_push_setup(context):
+def push_setup(context):
 	config_raw = mochi.setting.get("fcm.firebase_config")
 	if not config_raw:
 		return {"transport": "unifiedpush"}
@@ -1270,17 +1304,6 @@ def extract_firebase_config(raw):
 			return None
 	return out
 
-# Inbound RFC 8030 push from a third-party Application Server (e.g. Mastodon
-# whose user picked the Mochi distributor). Forwards the opaque encrypted body
-# to the device via the existing WebSocket fast-path. Deferred — the primary
-# use case (Mochi-server-to-its-own-users) doesn't need this.
-def function_push_inbound(context, account_id="", payload=""):
-	if not account_id:
-		return {"ok": False, "error": "missing account_id"}
-	# TODO: forward via mochi.websocket.write once the Go side exposes a
-	# binary-safe write (current API is JSON text only).
-	return {"ok": False, "error": "inbound endpoint not yet implemented"}
-
 # Queues a durable backstop row for local-distributor unifiedpush accounts, for
 # when the device's WebSocket is not subscribed; the phone drains and acks it
 # via push/drain and push/ack. Foreign distributors and other account types
@@ -1320,10 +1343,10 @@ def push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, 
 	)
 
 # Returns pending unifiedpush rows and sweeps rows older than 7 days. Read-only:
-# the phone acks via function_push_ack after posting, so a crash mid-drain
+# the phone acks via push_ack after posting, so a crash mid-drain
 # re-drains. subscription is client-asserted - a courtesy filter between one
 # user's devices, not a boundary.
-def function_push_drain(context, subscription=""):
+def push_drain(context, subscription=""):
 	now = mochi.time.now()
 	# Opportunistic TTL sweep: drop rows older than 7 days, regardless of
 	# account or subscriber state. Pattern mirrors the unifiedpush account
@@ -1356,7 +1379,7 @@ def function_push_drain(context, subscription=""):
 # Deletes the named rows; acking a missing row is a no-op. subscription bounds
 # the delete to one device's rows and is client-asserted - a courtesy filter,
 # not a security boundary.
-def function_push_ack(context, account_event_ids=None, subscription=""):
+def push_ack(context, account_event_ids=None, subscription=""):
 	if not account_event_ids:
 		return {"acked": 0}
 	acked = 0
@@ -1439,7 +1462,7 @@ def action_push_register_fcm(a):
 	if not token or not install_id:
 		return a.error.label(400, "errors.invalid_subscription")
 	device = a.input("device", "").strip()
-	result = function_push_register_fcm(None, token=token, install_id=install_id, device=device)
+	result = push_register_fcm(None, token=token, install_id=install_id, device=device)
 	if not result:
 		return a.error.label(500, "errors.registration_failed")
 	return {"data": result}
@@ -1449,19 +1472,24 @@ def action_push_setup(a):
 	{"transport": "fcm", "firebase_config": {...}} when the admin has
 	pasted Firebase config into system settings, else
 	{"transport": "unifiedpush"}. firebase_config is public-by-design."""
-	return {"data": function_push_setup(None) or {"transport": "unifiedpush"}}
+	return {"data": push_setup(None) or {"transport": "unifiedpush"}}
 
 def action_push_inbound(a):
 	"""Receive an RFC 8030 push from an external Application Server.
 	Deferred — forwards via WebSocket fast-path once the Go side exposes
-	a binary-safe write API. Currently returns 501."""
+	a binary-safe write API. Currently returns 501.
+
+	The route stays declared even though nothing implements it: the Android
+	distributor hands this URL to third-party UnifiedPush apps, and an
+	undeclared action falls through to the catch-all that serves the SPA, so
+	the Application Server would read an HTML 200 as a delivered push."""
 	return a.error.label(501, "errors.inbound_not_implemented")
 
 def action_push_drain(a):
 	"""Return queued unifiedpush events. Read-only: the phone posts push/ack with the
 	(account, event_id) pairs it delivered. subscription=<id> limits to one device."""
 	subscription = a.input("subscription", "").strip()
-	return {"data": function_push_drain(None, subscription=subscription) or []}
+	return {"data": push_drain(None, subscription=subscription) or []}
 
 def action_push_ack(a):
 	"""Delete acknowledged rows from the pending queue. Body: events=<JSON
@@ -1475,4 +1503,4 @@ def action_push_ack(a):
 	if type(events) != "list" or len(events) > 1000:
 		return a.error.label(400, "errors.invalid_subscription")
 	subscription = a.input("subscription", "").strip()
-	return {"data": function_push_ack(None, account_event_ids=events, subscription=subscription) or {"acked": 0}}
+	return {"data": push_ack(None, account_event_ids=events, subscription=subscription) or {"acked": 0}}
