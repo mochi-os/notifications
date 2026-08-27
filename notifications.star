@@ -182,19 +182,24 @@ def function_clear_object(context, object=""):
 
 # The join and condition restricting notifications n to the rows a surface
 # sees, with the condition's arguments. A surface is where a notification is
-# visible - "web" is the browser bell - as distinct from the push targets it is
-# delivered to. A caller naming no surface sees every row. The category carries
-# the destinations, so a topic with no category, or a row with no topic, shows
-# on every surface.
-def surface_filter(surface):
-	if surface != "web":
+# visible - "web" is the shared browser bell, a device is one phone's own list
+# - as distinct from the push targets it is delivered to. A registered device
+# is its own surface whatever else the request asks for; a caller with neither
+# sees every row. The category carries the destinations, so a topic with no
+# category, or a row with no topic, shows on every surface.
+def surface_filter(surface, device=""):
+	if device:
+		type, target = "device", device
+	elif surface == "web":
+		type, target = "web", ""
+	else:
 		return "", "", []
 	join = " left join topics t on t.app = n.app and t.topic = n.topic and t.object = n.object"
-	condition = "(t.category is null or exists (select 1 from destinations d where d.category = t.category and d.type = ?))"
-	return join, condition, [surface]
+	condition = "(t.category is null or exists (select 1 from destinations d where d.category = t.category and d.type = ? and d.target = ?))"
+	return join, condition, [type, target]
 
-def function_list(context, surface=""):
-	join, condition, args = surface_filter(surface)
+def function_list(context, surface="", device=""):
+	join, condition, args = surface_filter(surface, device)
 	where = " where " + condition if condition else ""
 	return mochi.db.rows("select n.* from notifications n" + join + where + " order by n.created", *args)
 
@@ -218,20 +223,20 @@ def function_read_all(context):
 	mochi.db.execute("update notifications set read = ? where read = 0", now)
 	mochi.websocket.write("notifications", {"type": "read_all"})
 
-def badge_count(surface=""):
-	join, condition, args = surface_filter(surface)
+def badge_count(surface="", device=""):
+	join, condition, args = surface_filter(surface, device)
 	where = " where n.read = 0" + (" and " + condition if condition else "")
 	row = mochi.db.row("select count(*) as count, coalesce(sum(n.count), 0) as total from notifications n" + join + where, *args)
 	return {"count": row["count"] if row else 0, "total": row["total"] if row else 0}
 
-# The caller asserts its surface; the browser bell sends "web". A client that
-# sends none - the Android app, until it carries a device identity - sees
-# every row.
+# The caller asserts its surface: the browser bell sends surface=web, the
+# Android app its Device header. A client that sends neither sees every row.
 def action_list(a):
 	function_expire({})
 	surface = a.input("surface", "")
-	rows = function_list({}, surface)
-	counts = badge_count(surface)
+	device = device_header(a)
+	rows = function_list({}, surface, device)
+	counts = badge_count(surface, device)
 	return {
 		"data": rows,
 		"count": counts["count"],
@@ -240,7 +245,7 @@ def action_list(a):
 
 def action_count(a):
 	function_expire({})
-	return {"data": badge_count(a.input("surface", ""))}
+	return {"data": badge_count(a.input("surface", ""), device_header(a))}
 
 def action_read(a):
 	# Notification ids reach ~310 bytes: event-keyed rows are app id (~52) +
@@ -985,6 +990,10 @@ def account_display_label(account_id):
 		return mochi.app.label("notifications.account.url")
 	return t
 
+# What a destination row can name: the two surfaces (web, and a device by id),
+# a push or delivery account, and an RSS feed.
+DESTINATION_TYPES = ("web", "device", "account", "rss")
+
 def apply_destinations(category_id, destinations):
 	if destinations == None:
 		return
@@ -999,7 +1008,7 @@ def apply_destinations(category_id, destinations):
 			continue
 		dest_type = dest.get("type", "")
 		dest_target = str(dest.get("target", ""))
-		if dest_type not in ("web", "account", "rss") or len(dest_target) > 64:
+		if dest_type not in DESTINATION_TYPES or len(dest_target) > 64:
 			continue
 		row_merge("destinations", {"category": category_id, "type": dest_type, "target": dest_target})
 
@@ -1016,7 +1025,7 @@ def destinations_input(a):
 	for dest in destinations:
 		if type(dest) != "dict":
 			return False, None
-		if dest.get("type", "") not in ("web", "account", "rss"):
+		if dest.get("type", "") not in DESTINATION_TYPES:
 			return False, None
 		if len(str(dest.get("target", ""))) > 64:
 			return False, None
@@ -1091,7 +1100,8 @@ def function_destinations_available(context):
 	Used by the settings UI to build the category editor grid."""
 	accounts = mochi.account.list("notify") or []
 	feeds = mochi.db.rows("select id, name, enabled from rss") or []
-	return {"accounts": accounts, "feeds": feeds}
+	devices = mochi.device.list() or []
+	return {"accounts": accounts, "feeds": feeds, "devices": devices}
 
 # HTTP action endpoints (settings page calls these via service proxy; kept for direct use too)
 
@@ -1338,6 +1348,7 @@ def function_device_remove(context, id=""):
 		return False
 	for account in accounts:
 		mochi.db.execute("delete from destinations where type = 'account' and target = ?", account)
+	mochi.db.execute("delete from destinations where type = 'device' and target = ?", id)
 	return True
 
 # Tells the client its push transport: {"transport": "fcm", "firebase_config":
@@ -1533,7 +1544,14 @@ def action_device_register(a):
 	label = a.input("label", "").strip()
 	if not device_valid(id) or len(label) > 256:
 		return a.error.label(400, "errors.invalid_id")
-	return {"data": mochi.device.register(id, label)}
+	result = mochi.device.register(id, label)
+	# A device with no surface rows joins every category, so a new phone - or
+	# one registered before device surfaces existed - starts by showing
+	# everything. Judged by the rows, not by whether the device is new: a
+	# re-registration must not tick back a category the user unticked.
+	if not mochi.db.exists("select 1 from destinations where type = 'device' and target = ?", id):
+		add_destination_to_categories("device", id)
+	return {"data": result}
 
 def action_push_register(a):
 	"""Register a UnifiedPush subscription. Local distributor leaves

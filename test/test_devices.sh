@@ -146,6 +146,100 @@ else
     fail "Re-registration renames the one row, and settings lists it" "$LISTED"
 fi
 
+# Exit 0 when category $1 lists the device surface $2.
+category_has_device() {
+    settings_curl GET "/-/notifications/categories" | CATEGORY="$1" DEVICE="$2" python3 -c "
+import sys, json, os
+cats = {c['id']: c for c in json.load(sys.stdin)}
+cat = cats.get(os.environ['CATEGORY']) or {'destinations': []}
+sys.exit(0 if any(d['type'] == 'device' and d['target'] == os.environ['DEVICE'] for d in cat['destinations']) else 1)" 2>/dev/null
+}
+
+if category_has_device "1" "$DEVICE" && ! category_has_device "0" "$DEVICE"; then
+    pass "A registered device joins every category but No notifications"
+else
+    fail "A registered device joins every category but No notifications" "$(settings_curl GET /-/notifications/categories)"
+fi
+
+if settings_curl GET "/-/notifications/destinations" | DEVICE="$DEVICE" python3 -c "
+import sys, json, os
+sys.exit(0 if any(d['id'] == os.environ['DEVICE'] for d in json.load(sys.stdin).get('devices') or []) else 1)" 2>/dev/null; then
+    pass "Destinations available lists the device"
+else
+    fail "Destinations available lists the device" "$(settings_curl GET /-/notifications/destinations)"
+fi
+
+echo ""
+echo "--- The device surface ---"
+
+CURL_HELPER="/home/alistair/mochi/claude/scripts/curl.sh"
+PROBE_TOPIC="device"
+PROBE_OBJECT="device-probe"
+"$CURL_HELPER" "/test/test_notifications_cleanup?topic=$PROBE_TOPIC&object=$PROBE_OBJECT" > /dev/null 2>&1
+
+# Exit 0 when the probe row is in -/list, with the Device header when
+# DEVICE_HEADER is set.
+probe_listed() {
+    notifications_curl GET "/-/list" | PROBE_TOPIC="$PROBE_TOPIC" PROBE_OBJECT="$PROBE_OBJECT" python3 -c "
+import sys, json, os
+rows = json.load(sys.stdin).get('data') or []
+sys.exit(0 if any(r['topic'] == os.environ['PROBE_TOPIC'] and r['object'] == os.environ['PROBE_OBJECT'] for r in rows) else 1)" 2>/dev/null
+}
+
+SURFACE_OFF_ID=$(settings_curl POST "/-/notifications/categories/create" --data-urlencode "label=DeviceSurfaceOff" --data-urlencode 'destinations=[{"type":"web","target":""}]' | json_field id)
+"$CURL_HELPER" "/test/test_notifications_emit?topic=$PROBE_TOPIC&object=$PROBE_OBJECT&title=Device%20probe&body=device-probe-body" > /dev/null
+PROBE_APP=$(settings_curl GET "/-/notifications/topics" | PROBE_TOPIC="$PROBE_TOPIC" PROBE_OBJECT="$PROBE_OBJECT" python3 -c "
+import sys, json, os
+rows = json.load(sys.stdin)
+match = next((t for t in rows if t['topic'] == os.environ['PROBE_TOPIC'] and t['object'] == os.environ['PROBE_OBJECT']), None)
+print(match['app'] if match else '')" 2>/dev/null)
+
+# The probe's topic sits in the default category, which the device joined.
+if probe_listed; then
+    pass "Device surface on: the device lists the probe"
+else
+    fail "Device surface on: the device lists the probe" "$(notifications_curl GET /-/list)"
+fi
+
+settings_curl POST "/-/notifications/topics/set/category" -d "app=$PROBE_APP&topic=$PROBE_TOPIC&object=$PROBE_OBJECT&category=$SURFACE_OFF_ID" > /dev/null
+if ! probe_listed; then
+    pass "Device surface off: the device does not list the probe"
+else
+    fail "Device surface off: the device does not list the probe" "$(notifications_curl GET /-/list)"
+fi
+COUNTED=$(notifications_curl GET "/-/count")
+LISTED=$(notifications_curl GET "/-/list")
+if python3 -c "
+import sys, json
+listed = json.loads(sys.argv[1]); counted = json.loads(sys.argv[2])['data']
+sys.exit(0 if listed['count'] == counted['count'] == len([r for r in listed['data'] if r['read'] == 0]) else 1)" "$LISTED" "$COUNTED" 2>/dev/null; then
+    pass "Device surface count matches its list"
+else
+    fail "Device surface count matches its list" "list=$LISTED count=$COUNTED"
+fi
+
+SAVED_HEADER="$DEVICE_HEADER"
+DEVICE_HEADER=""
+if probe_listed; then
+    pass "No device: every row, including the probe"
+else
+    fail "No device: every row, including the probe" "$(notifications_curl GET /-/list)"
+fi
+DEVICE_HEADER="$SAVED_HEADER"
+
+# The web surface is on for that category, so the browser still sees it.
+if notifications_curl GET "/-/list?surface=web" | PROBE_TOPIC="$PROBE_TOPIC" PROBE_OBJECT="$PROBE_OBJECT" python3 -c "
+import sys, json, os
+rows = json.load(sys.stdin).get('data') or []
+sys.exit(0 if any(r['topic'] == os.environ['PROBE_TOPIC'] and r['object'] == os.environ['PROBE_OBJECT'] for r in rows) else 1)" 2>/dev/null; then
+    fail "A registered device is its own surface whatever the query asks" "surface=web with a Device header listed the probe"
+else
+    pass "A registered device is its own surface whatever the query asks"
+fi
+
+"$CURL_HELPER" "/test/test_notifications_cleanup?topic=$PROBE_TOPIC&object=$PROBE_OBJECT" > /dev/null 2>&1
+settings_curl POST "/-/notifications/categories/delete" -d "id=$SURFACE_OFF_ID&reassign=0" > /dev/null
+
 echo ""
 echo "--- Push accounts on the device ---"
 
@@ -203,10 +297,10 @@ echo ""
 echo "--- Forgetting the device ---"
 
 RESULT=$(settings_curl POST "/-/notifications/devices/remove" -d "id=$DEVICE")
-if echo "$RESULT" | grep -q '"ok":true' && [ -z "$(accounts_on_device "$DEVICE")" ] && ! category_has_account "1" "$UP_ID"; then
-    pass "Forgetting the device takes its push account and destination rows"
+if echo "$RESULT" | grep -q '"ok":true' && [ -z "$(accounts_on_device "$DEVICE")" ] && ! category_has_account "1" "$UP_ID" && ! category_has_device "1" "$DEVICE"; then
+    pass "Forgetting the device takes its push account, surface and destination rows"
 else
-    fail "Forgetting the device takes its push account and destination rows" "$RESULT / on device: $(accounts_on_device "$DEVICE")"
+    fail "Forgetting the device takes its push account, surface and destination rows" "$RESULT / on device: $(accounts_on_device "$DEVICE")"
 fi
 
 LISTED=$(settings_curl GET "/-/notifications/devices")
