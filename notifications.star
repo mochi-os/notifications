@@ -180,8 +180,23 @@ def function_clear_object(context, object=""):
 	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object})
 	return True
 
-def function_list(context):
-	return mochi.db.rows("select * from notifications order by created")
+# The join and condition restricting notifications n to the rows a surface
+# sees, with the condition's arguments. A surface is where a notification is
+# visible - "web" is the browser bell - as distinct from the push targets it is
+# delivered to. A caller naming no surface sees every row. The category carries
+# the destinations, so a topic with no category, or a row with no topic, shows
+# on every surface.
+def surface_filter(surface):
+	if surface != "web":
+		return "", "", []
+	join = " left join topics t on t.app = n.app and t.topic = n.topic and t.object = n.object"
+	condition = "(t.category is null or exists (select 1 from destinations d where d.category = t.category and d.type = ?))"
+	return join, condition, [surface]
+
+def function_list(context, surface=""):
+	join, condition, args = surface_filter(surface)
+	where = " where " + condition if condition else ""
+	return mochi.db.rows("select n.* from notifications n" + join + where + " order by n.created", *args)
 
 def function_read(context, id):
 	now = mochi.time.now()
@@ -203,14 +218,20 @@ def function_read_all(context):
 	mochi.db.execute("update notifications set read = ? where read = 0", now)
 	mochi.websocket.write("notifications", {"type": "read_all"})
 
-def badge_count():
-	row = mochi.db.row("select count(*) as count, coalesce(sum(count), 0) as total from notifications where read = 0")
+def badge_count(surface=""):
+	join, condition, args = surface_filter(surface)
+	where = " where n.read = 0" + (" and " + condition if condition else "")
+	row = mochi.db.row("select count(*) as count, coalesce(sum(n.count), 0) as total from notifications n" + join + where, *args)
 	return {"count": row["count"] if row else 0, "total": row["total"] if row else 0}
 
+# The caller asserts its surface; the browser bell sends "web". A client that
+# sends none - the Android app, until it carries a device identity - sees
+# every row.
 def action_list(a):
 	function_expire({})
-	rows = function_list({})
-	counts = badge_count()
+	surface = a.input("surface", "")
+	rows = function_list({}, surface)
+	counts = badge_count(surface)
 	return {
 		"data": rows,
 		"count": counts["count"],
@@ -219,7 +240,7 @@ def action_list(a):
 
 def action_count(a):
 	function_expire({})
-	return {"data": badge_count()}
+	return {"data": badge_count(a.input("surface", ""))}
 
 def action_read(a):
 	# Notification ids reach ~310 bytes: event-keyed rows are app id (~52) +
@@ -704,7 +725,10 @@ def notifications_commit_hook(table, kind, row_uid):
 	if not row:
 		return
 
-	# Emit to any connected browser tabs subscribed to "notifications".
+	# Tell every subscribed client - browser tabs, the Android badge - to
+	# refetch. Unconditional on purpose: each client's list is filtered by its
+	# own surface on read (surface_filter), so a row hidden from the bell is
+	# announced and then not returned.
 	mochi.websocket.write("notifications", {
 		"type": "new",
 		"id": row["id"],
@@ -730,7 +754,8 @@ def notifications_commit_hook(table, kind, row_uid):
 	if not topic_row:
 		return
 	category = topic_row["category"]
-	# "0" = "No notifications", NULL = no default category (web-only).
+	# "0" = "No notifications", NULL = no default category: shown on every
+	# surface, delivered nowhere.
 	if category == "0" or category == None:
 		return
 
@@ -752,8 +777,8 @@ def notifications_commit_hook(table, kind, row_uid):
 				link=row["link"],
 				id=row["id"]
 			)
-		# web destinations are handled by the websocket emission above;
-		# rss destinations are queried on demand, no active delivery.
+		# Surfaces (web) and rss destinations need no delivery: both are
+		# applied when the rows are read.
 
 # Registered lazily from function_send: mochi.db.commit.hook needs the request's
 # user/app context, which module load lacks. Re-registering is a cheap
@@ -868,8 +893,9 @@ def function_category_delete(context, id=None, reassign_to=None):
 	return True
 
 def function_category_test(context, id=None):
-	"""Send a test notification through the category's destinations. A bell entry is
-	always written, even without a web destination, so the click gets visible feedback."""
+	"""Send a test notification through the category's destinations. The bell
+	entry is written only when the web surface is on, so the test shows what the
+	switch does; the response says whether it was."""
 	if not id:
 		return {"sent": 0, "web": False}
 	cat = mochi.db.row("select label from categories where id = ?", id)
@@ -878,10 +904,14 @@ def function_category_test(context, id=None):
 	dests = mochi.db.rows("select type, target from destinations where category = ?", id) or []
 	sent = 0
 	web = False
+	for dest in dests:
+		if dest["type"] == "web":
+			web = True
 	title = mochi.app.label("notifications.body.test")
 	body_web = mochi.app.label("notifications.body.test_via_web")
 	# Written directly rather than through function_send: the test bypasses topic
-	# routing.
+	# routing, so the surface filter cannot hide the row and it is not written
+	# at all when the surface is off.
 	now = mochi.time.now()
 	existing_notif = mochi.db.row(
 		"select id from notifications where app = 'notifications' and topic = 'test' and object = ?",
@@ -889,30 +919,29 @@ def function_category_test(context, id=None):
 	)
 	notif_id = existing_notif["id"] if existing_notif else mochi.uid()
 	content = title + ": " + body_web
-	# State-style: fixed=1 so the stored count of 1 is shown as-is.
-	row_merge("notifications", {
-		"id": notif_id, "app": "notifications", "topic": "test", "object": str(id),
-		"title": title, "body": body_web, "content": content,
-		"link": "/settings/user/notifications", "sender": "",
-		"count": 1, "created": now, "read": 0, "fixed": 1,
-	})
-	mochi.websocket.write("notifications", {
-		"type": "new",
-		"id": notif_id,
-		"app": "notifications",
-		"topic": "test",
-		"object": str(id),
-		"content": content,
-		"link": "/settings/user/notifications",
-		"count": 1,
-		"created": now,
-		"read": 0,
-	})
+	if web:
+		# State-style: fixed=1 so the stored count of 1 is shown as-is.
+		row_merge("notifications", {
+			"id": notif_id, "app": "notifications", "topic": "test", "object": str(id),
+			"title": title, "body": body_web, "content": content,
+			"link": "/settings/user/notifications", "sender": "",
+			"count": 1, "created": now, "read": 0, "fixed": 1,
+		})
+		mochi.websocket.write("notifications", {
+			"type": "new",
+			"id": notif_id,
+			"app": "notifications",
+			"topic": "test",
+			"object": str(id),
+			"content": content,
+			"link": "/settings/user/notifications",
+			"count": 1,
+			"created": now,
+			"read": 0,
+		})
+		sent += 1
 	for dest in dests:
-		if dest["type"] == "web":
-			web = True
-			sent += 1
-		elif dest["type"] == "account":
+		if dest["type"] == "account":
 			account_id = dest["target"]
 			account_label = account_display_label(account_id)
 			if not account_label:
@@ -1194,11 +1223,48 @@ def function_accounts_remove(context, id=0):
 	mochi.db.execute("delete from push_pending where account = ?", str(id))
 	return mochi.account.remove(id)
 
+# The shape core holds a device id to: the client mints a UUID.
+DEVICE_ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-"
+
+def device_valid(id):
+	if len(id) < 8 or len(id) > 64:
+		return False
+	for c in id.elems():
+		if c not in DEVICE_ALPHABET:
+			return False
+	return True
+
+# The device a request came from: the id the client asserts in its Device
+# header, kept only when it names a device the user has registered. Anything
+# else - no header, a client from before devices existed, an id the user has
+# forgotten - is a request from no device: reads are unfiltered and a push
+# registration is unbound.
+def device_header(a):
+	id = (a.header("Device") or "").strip()
+	if not device_valid(id) or not mochi.device.get(id):
+		return ""
+	return id
+
+# After a push registration. The account it replaced on the same device, if
+# any, carried the destination switches the user set: move them across, then
+# drop the dead rows. Join every category only for an account that is new to
+# the user - a re-registration keeps what it had, or a phone that was unticked
+# everywhere would tick itself back at its next launch.
+def push_account_bind(result):
+	account_id = str(result["id"])
+	superseded = [str(id) for id in (result.get("superseded") or [])]
+	for old in superseded:
+		mochi.db.execute("update or ignore destinations set target = ? where type = 'account' and target = ?", account_id, old)
+		mochi.db.execute("delete from destinations where type = 'account' and target = ?", old)
+	if not superseded and not result.get("existing"):
+		add_destination_to_categories("account", account_id)
+
 # UnifiedPush registration. endpoint="" is the local distributor: the server
 # allocates a path the app appends to its server URL. A set endpoint is a
 # third-party distributor (ntfy etc), stored opaque and POSTed to per RFC 8030
-# at delivery.
-def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
+# at delivery. device is the registered device the subscription belongs to, or
+# "" for none.
+def function_push_register(context, label="", auth="", p256dh="", endpoint="", device=""):
 	if not auth or not p256dh:
 		return None
 	# Bound like the accounts paths: over-length registration input is a
@@ -1209,6 +1275,8 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 	fields = {"auth": auth, "p256dh": p256dh}
 	if label:
 		fields["label"] = label
+	if device:
+		fields["device"] = device
 
 	if endpoint:
 		fields["endpoint"] = endpoint
@@ -1233,27 +1301,44 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint=""):
 		result["endpoint"] = path
 
 	mochi.account.update(account_id, enabled=True)
-	add_destination_to_categories("account", str(account_id))
+	push_account_bind(result)
 	return result
 
 # Stores an FCM device token keyed by Firebase Installations ID: core upserts,
 # so a token refresh updates the row in place and a second device gets its own
-# row.
-def push_register_fcm(context, token="", install_id="", device=""):
+# row. label is the device's name; device the registered device, or "".
+def push_register_fcm(context, token="", install_id="", label="", device=""):
 	if not token or not install_id:
 		return None
-	if len(token) > 512 or len(install_id) > 256 or len(device) > 256:
+	if len(token) > 512 or len(install_id) > 256 or len(label) > 256:
 		return None
 	kwargs = {"token": token, "install_id": install_id}
+	if label:
+		kwargs["label"] = label
 	if device:
-		kwargs["label"] = device
+		kwargs["device"] = device
 	result = mochi.account.add("fcm", **kwargs)
 	if not result or not result.get("id"):
 		return result
 	account_id = result["id"]
 	mochi.account.update(account_id, enabled=True)
-	add_destination_to_categories("account", str(account_id))
+	push_account_bind(result)
 	return result
+
+# Devices for the settings page: the list, and forgetting one, which takes the
+# push accounts registered from it and their destination switches with it.
+def function_device_list(context):
+	return mochi.device.list() or []
+
+def function_device_remove(context, id=""):
+	if not device_valid(id):
+		return False
+	accounts = [str(acc["id"]) for acc in (mochi.account.list() or []) if acc.get("device") == id]
+	if not mochi.device.remove(id):
+		return False
+	for account in accounts:
+		mochi.db.execute("delete from destinations where type = 'account' and target = ?", account)
+	return True
 
 # Tells the client its push transport: {"transport": "fcm", "firebase_config":
 # {...}} when the admin pasted Firebase config (google-services.json verbatim or
@@ -1440,6 +1525,16 @@ def action_push_accounts_remove(a):
 	result = function_accounts_remove(None, id=id)
 	return {"data": result or {}}
 
+def action_device_register(a):
+	"""Register the calling client's device, or refresh its name. The id is
+	the client's own, asserted in the Device header; the label is the device's
+	name, sent on every launch so a renamed phone updates itself."""
+	id = (a.header("Device") or "").strip()
+	label = a.input("label", "").strip()
+	if not device_valid(id) or len(label) > 256:
+		return a.error.label(400, "errors.invalid_id")
+	return {"data": mochi.device.register(id, label)}
+
 def action_push_register(a):
 	"""Register a UnifiedPush subscription. Local distributor leaves
 	endpoint blank and we synthesise a path; foreign distributor (ntfy
@@ -1450,7 +1545,7 @@ def action_push_register(a):
 	endpoint = a.input("endpoint", "").strip()
 	if not auth or not p256dh:
 		return a.error.label(400, "errors.invalid_subscription")
-	result = function_push_register(None, label=label, auth=auth, p256dh=p256dh, endpoint=endpoint)
+	result = function_push_register(None, label=label, auth=auth, p256dh=p256dh, endpoint=endpoint, device=device_header(a))
 	if not result:
 		return a.error.label(500, "errors.registration_failed")
 	return {"data": result}
@@ -1461,8 +1556,8 @@ def action_push_register_fcm(a):
 	install_id = a.input("install_id", "").strip()
 	if not token or not install_id:
 		return a.error.label(400, "errors.invalid_subscription")
-	device = a.input("device", "").strip()
-	result = push_register_fcm(None, token=token, install_id=install_id, device=device)
+	label = a.input("label", "").strip()
+	result = push_register_fcm(None, token=token, install_id=install_id, label=label, device=device_header(a))
 	if not result:
 		return a.error.label(500, "errors.registration_failed")
 	return {"data": result}

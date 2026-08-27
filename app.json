@@ -5,7 +5,7 @@
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
 
 {
-	"version": "3.80",
+	"version": "3.81",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -57,6 +57,7 @@
 		"-/push/accounts/list": {"function": "action_push_accounts_list"},
 		"-/push/accounts/add": {"function": "action_push_accounts_add"},
 		"-/push/accounts/remove": {"function": "action_push_accounts_remove"},
+		"-/device/register": {"function": "action_device_register"},
 		"-/push/register": {"function": "action_push_register"},
 		"-/push/register/fcm": {"function": "action_push_register_fcm"},
 		"-/push/setup": {"function": "action_push_setup"},
@@ -88,6 +89,8 @@
 		"topic/delete": {"function": "function_topic_delete", "permission": "notifications/write"},
 		"destinations/available": {"function": "function_destinations_available", "permission": "notifications/write"},
 		"destinations/add": {"function": "function_destinations_add", "permission": "notifications/send"},
+		"device/list": {"function": "function_device_list", "permission": "notifications/write"},
+		"device/remove": {"function": "function_device_remove", "permission": "notifications/write"},
 		"accounts/vapid": {"function": "function_accounts_vapid", "permission": "notifications/send"},
 		"accounts/list": {"function": "function_accounts_list", "permission": "notifications/send"},
 		"accounts/add": {"function": "function_accounts_add", "permission": "notifications/send"},

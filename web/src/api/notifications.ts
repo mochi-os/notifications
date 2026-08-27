@@ -28,8 +28,11 @@ export interface NotificationsListResponse {
 }
 
 const listNotifications = async (): Promise<NotificationsListResponse> => {
+  // This page is a browser surface: a category with the web switch off is
+  // not shown here.
   const response = await requestHelpers.getRaw<NotificationsListResponse>(
-    endpoints.notifications.list
+    endpoints.notifications.list,
+    { params: { surface: 'web' } }
   )
   return response ?? { data: [], count: 0, total: 0 }
 }
