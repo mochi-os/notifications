@@ -252,6 +252,18 @@ else
     fail "FCM registration binds the account to the device" "$RESULT"
 fi
 
+# The connected-accounts pages fold a bound account under its device, so the
+# settings accounts list must say which device an account belongs to.
+RESULT=$(settings_curl GET "/-/accounts/list")
+if echo "$RESULT" | FCM_ID="$FCM_ID" DEVICE="$DEVICE" python3 -c "
+import sys, json, os
+rows = json.load(sys.stdin)
+sys.exit(0 if any(r['id'] == os.environ['FCM_ID'] and r.get('device') == os.environ['DEVICE'] for r in rows) else 1)" 2>/dev/null; then
+    pass "Settings accounts list carries the account's device"
+else
+    fail "Settings accounts list carries the account's device" "$RESULT"
+fi
+
 # A category created after the FCM account exists does not carry it: that is
 # the switch state a transport change must preserve.
 OFF_ID=$(settings_curl POST "/-/notifications/categories/create" --data-urlencode "label=DeviceOff" --data-urlencode 'destinations=[]' | json_field id)
