@@ -287,7 +287,7 @@ else
     fail "Destination switches carried across the supersede" "$(settings_curl GET /-/notifications/categories)"
 fi
 
-RESULT=$(notifications_curl POST "/-/push/register" -d "label=Renamed phone&auth=auth-1&p256dh=p256dh-1&endpoint=/menu/-/push/inbound/$UP_ID")
+RESULT=$(notifications_curl POST "/-/push/register" -d "label=Renamed phone&auth=auth-1&p256dh=p256dh-1&endpoint=/notifications/-/push/inbound/$UP_ID")
 if [ "$(echo "$RESULT" | json_field data id)" = "$UP_ID" ] && [ "$(accounts_on_device "$DEVICE")" = "$UP_ID" ] && ! category_has_account "$OFF_ID" "$UP_ID"; then
     pass "Re-registering the same endpoint keeps the account and its switches"
 else

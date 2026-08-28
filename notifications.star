@@ -1303,10 +1303,16 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint="", d
 	account_id = result["id"]
 
 	# Local case: now that we have the account ID, write the canonical path back.
-	# Inbound endpoint will be /menu/-/push/inbound/<account_id> guarded by
+	# Inbound endpoint is /notifications/-/push/inbound/<account_id>, guarded by
 	# the on-device p256dh keypair (only the matching distributor can decrypt).
+	# This app's own route, not the menu's: menu declares no inbound action, so
+	# core's catch-all served its SPA and an Application Server read the HTML
+	# 200 as a delivered push - the hazard action_push_inbound's docstring
+	# describes. It is the route the Android distributor already builds, and it
+	# stays path-only because push_queue_if_unifiedpush reads a leading "http"
+	# as a foreign distributor.
 	if not endpoint:
-		path = "/menu/-/push/inbound/%s" % account_id
+		path = "/notifications/-/push/inbound/%s" % account_id
 		mochi.account.update(account_id, endpoint=path)
 		result["endpoint"] = path
 
