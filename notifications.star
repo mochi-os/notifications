@@ -752,6 +752,12 @@ def notifications_commit_hook(table, kind, row_uid):
 	if row["read"]:
 		return
 
+	# The category test delivers to accounts itself, one send per account so
+	# it can name the account in the body and count each result; only the
+	# websocket emission above is wanted from here.
+	if row["app"] == "notifications" and row["topic"] == "test":
+		return
+
 	topic_row = mochi.db.row(
 		"select category from topics where app = ? and topic = ? and object = ?",
 		row["app"], row["topic"], row["object"]
@@ -949,18 +955,12 @@ def function_category_test(context, id=None):
 			"link": "/settings/user/notifications", "sender": "",
 			"count": 1, "created": now, "read": 0, "fixed": 1,
 		})
-		mochi.websocket.write("notifications", {
-			"type": "new",
-			"id": notif_id,
-			"app": "notifications",
-			"topic": "test",
-			"object": str(id),
-			"content": content,
-			"link": "/settings/user/notifications",
-			"count": 1,
-			"created": now,
-			"read": 0,
-		})
+		# The websocket event goes out from the commit hook, after the row is
+		# committed. Emitting inline raced the bell: the event landed while
+		# this action was still mid-transaction (the account pushes below take
+		# a round trip), so a client refetching on it read the old state.
+		ensure_commit_hook_registered()
+		mochi.db.commit.fire("notifications", "update" if existing_notif else "insert", notif_id)
 		# Each surface and feed with the row in reach counts as reached.
 		sent += surfaces + feeds
 	for dest in dests:
