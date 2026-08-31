@@ -222,7 +222,7 @@ sys.exit(0 if any(r['app'] == 'notifications' and r['topic'] == 'test' and r['ob
 "$CURL_HELPER" "/test/test_notifications_cleanup?topic=$PROBE_TOPIC&object=$PROBE_OBJECT" > /dev/null 2>&1
 for stale in $(settings_curl GET "/-/notifications/categories" | python3 -c "
 import sys, json
-print(' '.join(c['id'] for c in json.load(sys.stdin) if c['label'] in ('SurfaceOn', 'SurfaceOff')))" 2>/dev/null); do
+print(' '.join(c['id'] for c in json.load(sys.stdin) if c['label'] in ('SurfaceOn', 'SurfaceOff', 'SurfaceDevice', 'SurfaceRss', 'SurfaceAll')))" 2>/dev/null); do
     settings_curl POST "/-/notifications/categories/delete" -d "id=$stale&reassign=0" > /dev/null 2>&1
 done
 
@@ -309,6 +309,104 @@ sys.exit(0 if d.get('web') is True and d.get('sent') >= 1 else 1)" 2>/dev/null &
 else
     fail "Test send with the web surface on writes a bell entry" "$RESULT"
 fi
+
+# ============================================================================
+# TEST SEND: DEVICE AND RSS DESTINATIONS
+# ============================================================================
+
+echo ""
+echo "--- Test send: device and RSS destinations ---"
+
+# Register a throwaway device; the category below gives it a surface.
+DEV="testdev-$$-$(date +%s)"
+notifications_curl "/-/device/register" -X POST -H "Device: $DEV" -d "label=TestPhone" > /dev/null
+
+DEVCAT_ID=$(settings_curl POST "/-/notifications/categories/create" --data-urlencode "label=SurfaceDevice" --data-urlencode "destinations=[{\"type\":\"device\",\"target\":\"$DEV\"}]" | python3 -c "import sys, json; print(json.load(sys.stdin)['id'])" 2>/dev/null || echo "")
+
+RESULT=$(settings_curl POST "/-/notifications/categories/test" -d "id=$DEVCAT_ID")
+if echo "$RESULT" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+sys.exit(0 if d.get('sent') == 1 and d.get('failed') == 0 and d.get('total') == 1 and d.get('web') is False else 1)" 2>/dev/null; then
+    pass "Device destination counts in the test send"
+else
+    fail "Device destination counts in the test send" "$RESULT"
+fi
+
+if notifications_curl "/-/list" -H "Device: $DEV" | CATEGORY="$DEVCAT_ID" python3 -c "
+import sys, json, os
+rows = json.load(sys.stdin).get('data') or []
+sys.exit(0 if any(r['app'] == 'notifications' and r['topic'] == 'test' and r['object'] == os.environ['CATEGORY'] for r in rows) else 1)" 2>/dev/null; then
+    pass "Device-only test row is listed on that device's surface"
+else
+    fail "Device-only test row is listed on that device's surface" "$(notifications_curl "/-/list" -H "Device: $DEV")"
+fi
+
+if ! test_row_listed "?surface=web" "$DEVCAT_ID"; then
+    pass "Device-only test row is hidden from the web surface"
+else
+    fail "Device-only test row is hidden from the web surface" "$(notifications_curl '/-/list?surface=web')"
+fi
+
+# An RSS feed, kept out of the other categories and enabled by hand
+# (add_to_existing=0 creates it disabled).
+FEED_JSON=$(notifications_curl "/-/rss/create" -X POST -d "name=TestFeed" -d "add_to_existing=0")
+FEED_ID=$(echo "$FEED_JSON" | python3 -c "import sys, json; print(json.load(sys.stdin)['data']['id'])" 2>/dev/null || echo "")
+FEED_TOKEN=$(echo "$FEED_JSON" | python3 -c "import sys, json; print(json.load(sys.stdin)['data']['token'])" 2>/dev/null || echo "")
+notifications_curl "/-/rss/update" -X POST -d "id=$FEED_ID" -d "enabled=1" > /dev/null
+
+RSSCAT_ID=$(settings_curl POST "/-/notifications/categories/create" --data-urlencode "label=SurfaceRss" --data-urlencode "destinations=[{\"type\":\"rss\",\"target\":\"$FEED_ID\"}]" | python3 -c "import sys, json; print(json.load(sys.stdin)['id'])" 2>/dev/null || echo "")
+
+RESULT=$(settings_curl POST "/-/notifications/categories/test" -d "id=$RSSCAT_ID")
+if echo "$RESULT" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+sys.exit(0 if d.get('sent') == 1 and d.get('total') == 1 and d.get('web') is False else 1)" 2>/dev/null; then
+    pass "RSS destination counts in the test send"
+else
+    fail "RSS destination counts in the test send" "$RESULT"
+fi
+
+if notifications_curl "/-/rss?token=$FEED_TOKEN" | grep -q "Test notification"; then
+    pass "Test row reaches the RSS feed"
+else
+    fail "Test row reaches the RSS feed" "$(notifications_curl "/-/rss?token=$FEED_TOKEN" | head -c 300)"
+fi
+
+# All three in-app-ish destinations together: web + device + rss.
+ALLCAT_ID=$(settings_curl POST "/-/notifications/categories/create" --data-urlencode "label=SurfaceAll" --data-urlencode "destinations=[{\"type\":\"web\",\"target\":\"\"},{\"type\":\"device\",\"target\":\"$DEV\"},{\"type\":\"rss\",\"target\":\"$FEED_ID\"}]" | python3 -c "import sys, json; print(json.load(sys.stdin)['id'])" 2>/dev/null || echo "")
+RESULT=$(settings_curl POST "/-/notifications/categories/test" -d "id=$ALLCAT_ID")
+if echo "$RESULT" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+sys.exit(0 if d.get('sent') == 3 and d.get('failed') == 0 and d.get('total') == 3 and d.get('web') is True else 1)" 2>/dev/null; then
+    pass "Web, device and RSS destinations all count in one test send"
+else
+    fail "Web, device and RSS destinations all count in one test send" "$RESULT"
+fi
+
+# The routing rows the test writes are plumbing, not subscriptions.
+if notifications_curl "/-/topics/list" | python3 -c "
+import sys, json
+rows = json.load(sys.stdin).get('data') or []
+sys.exit(1 if any(r['app'] == 'notifications' and r['topic'] == 'test' for r in rows) else 0)" 2>/dev/null; then
+    pass "Test tuples stay out of the topics list"
+else
+    fail "Test tuples stay out of the topics list" "$(notifications_curl '/-/topics/list')"
+fi
+
+# Clean up the device/RSS fixtures: mark their test rows read, then remove
+# the categories, the device (which takes its destination rows), and the feed.
+for CAT in "$DEVCAT_ID" "$RSSCAT_ID" "$ALLCAT_ID"; do
+    ROW=$(notifications_curl "/-/list" | CATEGORY="$CAT" python3 -c "
+import sys, json, os
+rows = json.load(sys.stdin).get('data') or []
+print(next((r['id'] for r in rows if r['app'] == 'notifications' and r['topic'] == 'test' and r['object'] == os.environ['CATEGORY']), ''))" 2>/dev/null)
+    [ -n "$ROW" ] && notifications_curl "/-/read" -d "id=$ROW" > /dev/null
+    settings_curl POST "/-/notifications/categories/delete" -d "id=$CAT&reassign=0" > /dev/null
+done
+settings_curl POST "/-/notifications/devices/remove" -d "id=$DEV" > /dev/null
+notifications_curl "/-/rss/delete" -X POST -d "id=$FEED_ID" > /dev/null
 
 # Clean up: the probe and its topic, the bell entry the test send wrote,
 # then the categories.

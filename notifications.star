@@ -898,37 +898,54 @@ def function_category_delete(context, id=None, reassign_to=None):
 	return True
 
 def function_category_test(context, id=None):
-	"""Send a test notification through the category's destinations. The bell
-	entry is written only when the web surface is on, so the test shows what the
-	switch does; the response says whether it was."""
+	"""Send a test notification through the category's destinations, routed the
+	way a real notification is: a topics row binds the test tuple to the
+	category, so each in-app surface's filter and the category's RSS feeds
+	decide visibility themselves. The count reports destinations actually
+	reached, with push failures counted separately."""
 	if not id:
-		return {"sent": 0, "web": False}
+		return {"sent": 0, "failed": 0, "total": 0, "web": False}
 	cat = mochi.db.row("select label from categories where id = ?", id)
 	if not cat:
-		return {"sent": 0, "web": False}
+		return {"sent": 0, "failed": 0, "total": 0, "web": False}
 	dests = mochi.db.rows("select type, target from destinations where category = ?", id) or []
-	sent = 0
+	title = mochi.app.label("notifications.body.test")
+	body = mochi.app.label("notifications.body.test_category", name=cat["label"])
+	now = mochi.time.now()
+
 	web = False
+	surfaces = 0
+	feeds = 0
 	for dest in dests:
 		if dest["type"] == "web":
 			web = True
-	title = mochi.app.label("notifications.body.test")
-	body_web = mochi.app.label("notifications.body.test_via_web")
-	# Written directly rather than through function_send: the test bypasses topic
-	# routing, so the surface filter cannot hide the row and it is not written
-	# at all when the surface is off.
-	now = mochi.time.now()
+			surfaces += 1
+		elif dest["type"] == "device":
+			surfaces += 1
+		elif dest["type"] == "rss":
+			feeds += 1
+
 	existing_notif = mochi.db.row(
 		"select id from notifications where app = 'notifications' and topic = 'test' and object = ?",
 		str(id)
 	)
 	notif_id = existing_notif["id"] if existing_notif else mochi.uid()
-	content = title + ": " + body_web
-	if web:
+	content = title + ": " + body
+	sent = 0
+	failed = 0
+	if surfaces or feeds:
+		# The topics row routes the test tuple through this category, so the
+		# bell, each device's list and the RSS join all apply their real
+		# filters to it. function_topic_list hides the tuple from the Topics
+		# tab - it is test plumbing, not a subscription.
+		row_merge("topics", {
+			"app": "notifications", "topic": "test", "object": str(id),
+			"name": cat["label"], "label": title, "category": str(id), "created": now,
+		})
 		# State-style: fixed=1 so the stored count of 1 is shown as-is.
 		row_merge("notifications", {
 			"id": notif_id, "app": "notifications", "topic": "test", "object": str(id),
-			"title": title, "body": body_web, "content": content,
+			"title": title, "body": body, "content": content,
 			"link": "/settings/user/notifications", "sender": "",
 			"count": 1, "created": now, "read": 0, "fixed": 1,
 		})
@@ -944,27 +961,33 @@ def function_category_test(context, id=None):
 			"created": now,
 			"read": 0,
 		})
-		sent += 1
+		# Each surface and feed with the row in reach counts as reached.
+		sent += surfaces + feeds
 	for dest in dests:
 		if dest["type"] == "account":
 			account_id = dest["target"]
 			account_label = account_display_label(account_id)
 			if not account_label:
 				continue  # stale destination row pointing at a deleted account
-			body = mochi.app.label("notifications.body.test_via_account", account=account_label)
-			push_queue_if_unifiedpush(account_id, "notifications", "test", "", title, body, "", notif_id)
-			mochi.account.notify(
+			account_body = mochi.app.label("notifications.body.test_via_account", account=account_label)
+			push_queue_if_unifiedpush(account_id, "notifications", "test", "", title, account_body, "", notif_id)
+			result = mochi.account.notify(
 				account=account_id,
 				app="notifications",
 				category="test",
 				object="",
 				title=title,
-				body=body,
+				body=account_body,
 				link="",
 				id=notif_id
 			)
-			sent += 1
-	return {"sent": sent, "web": web}
+			# Count what core delivered, not what was attempted: an unverified
+			# account or a dead token reports nothing sent.
+			if result and result.get("sent", 0) > 0:
+				sent += 1
+			else:
+				failed += 1
+	return {"sent": sent, "failed": failed, "total": sent + failed, "web": web}
 
 def account_display_label(account_id):
 	acc = mochi.account.get(account_id)
@@ -1038,7 +1061,10 @@ def function_topic_list(context):
 	is the stored `name` (set by the calling app on send); for objects that
 	are global entities we fall back to mochi.entity.name() so feeds/forums/
 	projects keep working without each app having to supply a name."""
-	rows = mochi.db.rows("select * from topics order by created desc") or []
+	# The notifications/test tuples are category-test plumbing, not
+	# subscriptions - they route each category's test notification through
+	# its own filters and have no place in the user's topic list.
+	rows = mochi.db.rows("select * from topics where not (app = 'notifications' and topic = 'test') order by created desc") or []
 	if not rows:
 		return []
 	all_apps = mochi.app.list()
