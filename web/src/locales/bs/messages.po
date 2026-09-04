@@ -118,6 +118,10 @@ msgstr "Nivo pristupa"
 msgid "Account type"
 msgstr "Vrsta računa"
 
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:415
+msgid "Activity"
+msgstr "Aktivnost"
+
 #: ../../../lib/web/src/components/entity/entity-field-editor.tsx:758
 #: ../../../lib/web/src/features/access/access-dialog.tsx:332
 #: ../../../lib/web/src/features/accounts/account-add.tsx:209
@@ -161,7 +165,7 @@ msgstr "Dodaj polje"
 msgid "Add item..."
 msgstr "Dodaj stavku..."
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:320
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:314
 msgid "Add link"
 msgstr "Dodaj link"
 
@@ -239,6 +243,10 @@ msgstr "Sve što je pretplaćeno na ovaj kanal prestat će ga primati. Nakon tog
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Jeste li sigurni da želite obrisati \"{0}\"?"
 
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:671
+msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
+msgstr "Jeste li sigurni da želite obrisati \"{title}\"? Ova radnja se ne može poništiti."
+
 #: ../../../lib/web/src/components/entity/entity-board-column.tsx:631
 msgid "Are you sure you want to delete the \"{name}\" column? This cannot be undone."
 msgstr "Jeste li sigurni da želite obrisati kolonu \"{name}\"? Ovo se ne može poništiti."
@@ -250,6 +258,14 @@ msgstr "Jeste li sigurni da želite obrisati ovaj komentar? Ovo će također obr
 #: ../../../lib/web/src/components/sign-out-dialog.tsx:27
 msgid "Are you sure you want to log out? You will need to log in again to access your account."
 msgstr "Jeste li sigurni da se želite odjaviti? Morat ćete se ponovo prijaviti za pristup vašem računu."
+
+#: ../../../lib/web/src/components/game/game-end-dialogs.tsx:39
+msgid "Are you sure you want to resign?"
+msgstr "Jeste li sigurni da želite predati partiju?"
+
+#: ../../../lib/web/src/components/game/game-end-dialogs.tsx:38
+msgid "Are you sure you want to resign? {opponentName} will win the game."
+msgstr "Jeste li sigurni da želite predati partiju? {opponentName} će pobijediti."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx:27
 msgid "Ascending"
@@ -293,12 +309,21 @@ msgstr "Nazad"
 msgid "Back to home"
 msgstr "Nazad na početnu"
 
+#: ../../../lib/web/src/components/banner-section.tsx:80
 #: ../../../lib/web/src/components/entity-banner.tsx:17
 msgid "Banner"
 msgstr "Baner"
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:68
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:215
+#: ../../../lib/web/src/components/banner-section.tsx:69
+msgid "Banner removed"
+msgstr "Banner uklonjen"
+
+#: ../../../lib/web/src/components/banner-section.tsx:69
+msgid "Banner updated"
+msgstr "Banner ažuriran"
+
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:72
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:209
 msgid "Blocked by"
 msgstr "Blokirao"
 
@@ -308,7 +333,7 @@ msgstr "Blokirao"
 msgid "Blocked navigation to untrusted link"
 msgstr "Blokirana navigacija na nepouzdani link"
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:66
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:70
 msgid "Blocks"
 msgstr "Blokovi"
 
@@ -414,6 +439,7 @@ msgstr "Odaberite igru sa bočne trake ili započnite novu."
 msgid "Choose language"
 msgstr "Odaberite jezik"
 
+#: ../../../lib/web/src/components/banner-section.tsx:111
 #: ../../../lib/web/src/components/colour-picker.tsx:274
 #: ../../../lib/web/src/components/colour-picker.tsx:355
 #: ../../../lib/web/src/components/travelling-picker.tsx:145
@@ -436,8 +462,8 @@ msgstr "Očisti pretragu"
 msgid "Clearing notifications..."
 msgstr "Brisanje obavještenja..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:523
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:528
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:517
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:522
 #: ../../../lib/web/src/components/ui/dialog.tsx:78
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:480
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:483
@@ -511,6 +537,11 @@ msgstr "Radnje komentara"
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:455
 msgid "Comments"
 msgstr "Komentari"
+
+#. placeholder {0}: data.comment_count || 0
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:411
+msgid "Comments ({0})"
+msgstr "Komentari ({0})"
 
 #: ../../../lib/web/src/lib/preference-utils.ts:90
 msgid "Compact"
@@ -597,8 +628,8 @@ msgstr "Provjera s tim računom nije uspjela. Molimo pokušajte ponovo."
 
 #: ../../../lib/web/src/components/entity/entity-board-column.tsx:551
 #: ../../../lib/web/src/components/entity/entity-board-column.tsx:691
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:513
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:682
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:507
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:676
 #: ../../../lib/web/src/components/entity/entity-tree-view.tsx:672
 msgid "Create"
 msgstr "Kreiraj"
@@ -638,7 +669,7 @@ msgstr "Kreirano {field}"
 msgid "Creating RSS feed..."
 msgstr "Kreiranje RSS izvora..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:682
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:676
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx:260
 msgid "Creating..."
 msgstr "Kreiranje..."
@@ -689,6 +720,8 @@ msgstr "Podrazumijevano sortiranje"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:672
+#: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
 #: src/components/rss-dialog.tsx:489
 msgid "Delete"
 msgstr "Obriši"
@@ -717,6 +750,16 @@ msgstr "Obrisati feed?"
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:304
 msgid "Delete field"
 msgstr "Obriši polje"
+
+#: ../../../lib/web/src/components/game/game-end-dialogs.tsx:69
+msgid "Delete game?"
+msgstr "Obrisati igru?"
+
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:491
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:670
+msgid "Delete item"
+msgstr "Obriši stavku"
 
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:117
 msgid "Delete option"
@@ -747,6 +790,10 @@ msgstr "Obrisano {field}"
 #: src/components/rss-dialog.tsx:204
 msgid "Deleting feed..."
 msgstr "Brisanje feeda..."
+
+#: ../../../lib/web/src/components/game/game-end-dialogs.tsx:75
+msgid "Deleting..."
+msgstr "Brisanje..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx:27
 msgid "Descending"
@@ -802,6 +849,7 @@ msgid "Does not match the required pattern"
 msgstr "Ne odgovara traženom obrascu"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:495
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
 #: src/components/rss-dialog.tsx:474
 msgid "Done"
@@ -818,7 +866,7 @@ msgstr "Preuzmi"
 msgid "Download failed"
 msgstr "Preuzimanje nije uspjelo"
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:67
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:71
 msgid "Duplicates"
 msgstr "Duplikati"
 
@@ -882,6 +930,10 @@ msgstr "E-pošta"
 msgid "Email code"
 msgstr "Email kod"
 
+#: ../../../lib/web/src/components/banner-section.tsx:88
+msgid "Enter banner text (markdown supported)..."
+msgstr "Unesite tekst banera (markdown podržan)..."
+
 #: ../../../lib/web/src/components/step-up-dialog.tsx:290
 msgid "Enter the code from your email"
 msgstr "Unesite kod iz vaše e-pošte"
@@ -889,6 +941,10 @@ msgstr "Unesite kod iz vaše e-pošte"
 #: ../../../lib/web/src/components/step-up-dialog.tsx:315
 msgid "Enter your authenticator code"
 msgstr "Unesite kod iz aplikacije za autentifikaciju"
+
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:381
+msgid "Error"
+msgstr "Greška"
 
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:101
 #: ../../../lib/web/src/components/comment-tree-layout.tsx:110
@@ -924,7 +980,7 @@ msgstr "Brisanje obavještenja nije uspjelo"
 msgid "Failed to copy"
 msgstr "Kopiranje nije uspjelo"
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:137
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:131
 #: ../../../lib/web/src/components/options-menu.tsx:98
 msgid "Failed to create link"
 msgstr "Kreiranje veze nije uspjelo"
@@ -932,6 +988,10 @@ msgstr "Kreiranje veze nije uspjelo"
 #: src/components/rss-dialog.tsx:152
 msgid "Failed to create RSS feed"
 msgstr "Kreiranje RSS izvora nije uspjelo"
+
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+msgid "Failed to delete"
+msgstr "Brisanje nije uspjelo"
 
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:130
 msgid "Failed to delete attachment"
@@ -945,7 +1005,7 @@ msgstr "Brisanje komentara nije uspjelo"
 msgid "Failed to delete feed"
 msgstr "Brisanje feeda nije uspjelo"
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:159
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:153
 msgid "Failed to delete link"
 msgstr "Brisanje veze nije uspjelo"
 
@@ -964,6 +1024,11 @@ msgstr "Učitavanje historije nije uspjelo"
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx:350
 msgid "Failed to load image"
 msgstr "Slika se nije mogla učitati"
+
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:382
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:385
+msgid "Failed to load item"
+msgstr "Učitavanje stavke nije uspjelo"
 
 #: src/hooks/useNotificationCategories.ts:45
 msgid "Failed to load notification categories"
@@ -985,6 +1050,10 @@ msgstr "Označavanje svega kao pročitano nije uspjelo"
 msgid "Failed to mark as read"
 msgstr "Označavanje kao pročitano nije uspjelo"
 
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+msgid "Failed to move"
+msgstr "Premještanje nije uspjelo"
+
 #: ../../../lib/web/src/components/entity/entity-comment-list.tsx:155
 msgid "Failed to post comment"
 msgstr "Slanje komentara nije uspjelo"
@@ -1001,9 +1070,17 @@ msgstr "Resetovanje prompta nije uspjelo"
 msgid "Failed to revoke RSS access"
 msgstr "Neuspješno opozivanje RSS pristupa"
 
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+msgid "Failed to save"
+msgstr "Spremanje nije uspjelo"
+
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:111
 msgid "Failed to save prompt"
 msgstr "Spremanje prompta nije uspjelo"
+
+#: ../../../lib/web/src/components/banner-section.tsx:71
+msgid "Failed to update banner"
+msgstr "Ažuriranje banera nije uspjelo"
 
 #: src/hooks/useNotificationCategories.ts:70
 msgid "Failed to update category"
@@ -1016,6 +1093,10 @@ msgstr "Ažuriranje komentara nije uspjelo"
 #: src/components/rss-dialog.tsx:221
 msgid "Failed to update feed"
 msgstr "Ažuriranje feeda nije uspjelo"
+
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+msgid "Failed to update watching"
+msgstr "Ažuriranje praćenja nije uspjelo"
 
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:114
 msgid "Failed to upload attachment"
@@ -1037,7 +1118,7 @@ msgstr "Naziv feeda"
 msgid "Feed renamed"
 msgstr "Feed preimenovan"
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:611
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:605
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:160
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:180
 msgid "Files"
@@ -1149,6 +1230,10 @@ msgstr "Nevažeći datum"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Izgleda da stranica koju tražite <0/>ne postoji ili je uklonjena."
 
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:441
+msgid "Item details"
+msgstr "Detalji stavke"
+
 #: ../../../lib/web/src/lib/locale-format.ts:180
 msgid "Just now"
 msgstr "Upravo sada"
@@ -1178,7 +1263,7 @@ msgstr "Svijetla"
 msgid "Link"
 msgstr "Veza"
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:279
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:273
 msgid "Links"
 msgstr "Veze"
 
@@ -1193,6 +1278,14 @@ msgstr "Učitaj više"
 #: ../../../lib/web/src/components/ui/loading-content.tsx:26
 msgid "Loading content…"
 msgstr "Učitavanje sadržaja…"
+
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:365
+msgid "Loading item"
+msgstr "Učitavanje stavke"
+
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:366
+msgid "Loading item details"
+msgstr "Učitavanje detalja stavke"
 
 #: ../../../lib/web/src/components/ui/load-more.tsx:39
 #: ../../../lib/web/src/features/document/document-page.tsx:88
@@ -1323,7 +1416,7 @@ msgstr "Ime mora imati 1000 ili manje znakova"
 msgid "Network error"
 msgstr "Greška mreže"
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:498
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:492
 #: ../../../lib/web/src/components/ui/sort-selector.tsx:43
 msgid "New"
 msgstr "Novo"
@@ -1338,7 +1431,7 @@ msgstr "Nova igra"
 msgid "Next image"
 msgstr "Sljedeća slika"
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:577
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:571
 msgid "No {parentClassNames} to add to"
 msgstr "Nema {parentClassNames} za dodavanje"
 
@@ -1362,11 +1455,11 @@ msgstr "Još nema igara"
 msgid "No groups available"
 msgstr "Nema dostupnih grupa"
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:544
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:538
 msgid "No item types can be created yet. Create the required parent items first."
 msgstr "Nijedan tip stavke se još ne može kreirati. Prvo kreirajte potrebne nadređene stavke."
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:360
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:354
 msgid "No matching objects"
 msgstr "Nema odgovarajućih objekata"
 
@@ -1424,9 +1517,13 @@ msgid "No views"
 msgstr "Nema pregleda"
 
 #: ../../../lib/web/src/components/colour-picker.tsx:349
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:560
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:563
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:567
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:557
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:570
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:571
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:575
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1536,7 +1633,9 @@ msgstr "Drugo"
 msgid "Owner"
 msgstr "Vlasnik"
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:552
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:553
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:569
 msgid "Parent"
 msgstr "Nadređeni"
 
@@ -1605,6 +1704,10 @@ msgstr "Obrada…"
 msgid "Prompt saved"
 msgstr "Prompt sačuvan"
 
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:408
+msgid "Properties"
+msgstr "Svojstva"
+
 #: ../../../lib/web/src/features/accounts/types.ts:21
 msgid "Push notification"
 msgstr "Push obavijest"
@@ -1646,7 +1749,7 @@ msgstr "Preusmjeravanje na prijavu."
 msgid "Reduce interest"
 msgstr "Smanji interes"
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:65
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:69
 msgid "Relates"
 msgstr "Povezuje"
 
@@ -1702,8 +1805,8 @@ msgstr "Ukloni interes"
 msgid "Remove item"
 msgstr "Ukloni stavku"
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:304
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:309
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:298
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:303
 msgid "Remove link"
 msgstr "Ukloni vezu"
 
@@ -1737,6 +1840,18 @@ msgstr "Obavezno"
 #: ../../../lib/web/src/components/step-up-dialog.tsx:358
 msgid "Resend email"
 msgstr "Ponovo pošalji e-poštu"
+
+#: ../../../lib/web/src/components/game/game-end-dialogs.tsx:48
+msgid "Resign"
+msgstr "Predaj se"
+
+#: ../../../lib/web/src/components/game/game-end-dialogs.tsx:35
+msgid "Resign game?"
+msgstr "Predati partiju?"
+
+#: ../../../lib/web/src/components/game/game-end-dialogs.tsx:45
+msgid "Resigning..."
+msgstr "Predaja..."
 
 #: ../../../lib/web/src/components/attachment-composer.tsx:348
 msgid "Retry"
@@ -1787,6 +1902,7 @@ msgstr "Subota"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
 #: ../../../lib/web/src/components/attachment-composer.tsx:430
+#: ../../../lib/web/src/components/banner-section.tsx:99
 #: ../../../lib/web/src/components/entity/entity-comment-thread.tsx:231
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
@@ -1829,7 +1945,7 @@ msgstr "Pretraži odredište..."
 msgid "Search for origin..."
 msgstr "Pretraži porijeklo..."
 
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:337
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:331
 msgid "Search objects..."
 msgstr "Pretraži objekte..."
 
@@ -2016,6 +2132,11 @@ msgstr "Prostrano"
 msgid "Start the discussion by adding the first comment."
 msgstr "Započni diskusiju dodavanjem prvog komentara."
 
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:471
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:476
+msgid "Stop watching"
+msgstr "Prestani pratiti"
+
 #: ../../../lib/web/src/features/access/access-list.tsx:196
 msgid "Subject"
 msgstr "Predmet"
@@ -2110,6 +2231,10 @@ msgstr "Server je vratio web stranicu umjesto podataka."
 #: ../../../lib/web/src/lib/shell-errors.ts:17
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Ova aplikacija nema dozvolu da koristi vaš passkey. Dozvolite joj to u Postavkama, pod Dozvole."
+
+#: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
+msgid "This permanently deletes the game and its chat. This cannot be undone."
+msgstr "Ovo trajno briše igru i njen chat. Ova radnja se ne može poništiti."
 
 #: src/components/rss-dialog.tsx:488
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
@@ -2231,9 +2356,8 @@ msgstr "Nepoznato"
 msgid "Unsubscribe"
 msgstr "Otkaži pretplatu"
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:299
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:103
-#: ../../../lib/web/src/components/entity/entity-object-links.tsx:184
+#: ../../../lib/web/src/components/entity/entity-object-links.tsx:178
+#: ../../../lib/web/src/lib/entity-title.ts:40
 msgid "Untitled"
 msgstr "Bez naslova"
 
@@ -2247,7 +2371,7 @@ msgstr "Ažurirano"
 msgid "Updated {field}"
 msgstr "Ažurirano {field}"
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:661
+#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:655
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:304
 msgid "Upload"
 msgstr "Otpremi"
@@ -2301,6 +2425,10 @@ msgstr "Preglednik videa: {0}"
 msgid "View all notifications"
 msgstr "Pregledaj sve obavijesti"
 
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:442
+msgid "View and edit item details"
+msgstr "Pregledaj i uredi detalje stavke"
+
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx:170
 msgid "View controls"
 msgstr "Kontrole pregleda"
@@ -2308,6 +2436,11 @@ msgstr "Kontrole pregleda"
 #: ../../../lib/web/src/lib/shell-errors.ts:33
 msgid "Voice recording is not supported in this browser"
 msgstr "Snimanje glasa nije podržano u ovom pregledniku"
+
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:471
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:476
+msgid "Watch"
+msgstr "Prati"
 
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx:269
 #: ../../../lib/web/src/components/filter-bar.tsx:35
