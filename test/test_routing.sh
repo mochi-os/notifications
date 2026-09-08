@@ -115,7 +115,7 @@ echo ""
 echo "--- RSS Routing Tests ---"
 
 # Test: Create a feed subscribed to no category
-RESULT=$(notif_curl POST "/-/rss/create" -d "name=Unsubscribed Feed&add_to_existing=0")
+RESULT=$(notif_curl POST "/-/rss/create" -d "name=Unsubscribed Feed&existing=0")
 UNSUB_FEED_ID=$(echo "$RESULT" | python3 -c "import sys, json; print(json.load(sys.stdin)['data']['id'])" 2>/dev/null || echo "")
 UNSUB_TOKEN=$(echo "$RESULT" | python3 -c "import sys, json; print(json.load(sys.stdin)['data']['token'])" 2>/dev/null || echo "")
 if [ -n "$UNSUB_TOKEN" ]; then
@@ -124,7 +124,7 @@ else
     fail "Create unsubscribed feed" "$RESULT"
 fi
 
-# add_to_existing=0 also creates the feed disabled; enable it so the empty
+# existing=0 also creates the feed disabled; enable it so the empty
 # result below proves category routing, not the enabled gate
 notif_curl POST "/-/rss/update" -d "id=$UNSUB_FEED_ID&enabled=1" > /dev/null
 
@@ -272,7 +272,7 @@ PROBE_EVENT="test-probe-drain-probe"
 
 # Test: Scoped drain sees only the caller's subscription
 RESULT=$(notif_curl GET "/-/push/drain?subscription=$SUB_A")
-if echo "$RESULT" | grep -q "\"subId\":\"$SUB_A\"" && ! echo "$RESULT" | grep -q "\"subId\":\"$SUB_B\""; then
+if echo "$RESULT" | grep -q "\"subscription\":\"$SUB_A\"" && ! echo "$RESULT" | grep -q "\"subscription\":\"$SUB_B\""; then
     pass "Scoped drain returns only the caller's subscription"
 else
     fail "Scoped drain returns only the caller's subscription" "$RESULT"
@@ -280,27 +280,27 @@ fi
 
 # Test: Unscoped drain (installed clients) still returns everything
 RESULT=$(notif_curl GET "/-/push/drain")
-if echo "$RESULT" | grep -q "\"subId\":\"$SUB_A\"" && echo "$RESULT" | grep -q "\"subId\":\"$SUB_B\""; then
+if echo "$RESULT" | grep -q "\"subscription\":\"$SUB_A\"" && echo "$RESULT" | grep -q "\"subscription\":\"$SUB_B\""; then
     pass "Unscoped drain returns all subscriptions"
 else
     fail "Unscoped drain returns all subscriptions" "$RESULT"
 fi
 
 # Test: Scoped ack cannot delete another subscription's row
-EVENTS_B="[{\"account\":\"$SUB_B\",\"event_id\":\"$PROBE_EVENT\"}]"
+EVENTS_B="[{\"account\":\"$SUB_B\",\"event\":\"$PROBE_EVENT\"}]"
 notif_curl POST "/-/push/ack" -d "subscription=$SUB_A&events=$EVENTS_B" > /dev/null
 RESULT=$(notif_curl GET "/-/push/drain")
-if echo "$RESULT" | grep -q "\"subId\":\"$SUB_B\""; then
+if echo "$RESULT" | grep -q "\"subscription\":\"$SUB_B\""; then
     pass "Scoped ack cannot delete another subscription's row"
 else
     fail "Scoped ack cannot delete another subscription's row" "$RESULT"
 fi
 
 # Test: Scoped ack deletes the caller's own row
-EVENTS_A="[{\"account\":\"$SUB_A\",\"event_id\":\"$PROBE_EVENT\"}]"
+EVENTS_A="[{\"account\":\"$SUB_A\",\"event\":\"$PROBE_EVENT\"}]"
 notif_curl POST "/-/push/ack" -d "subscription=$SUB_A&events=$EVENTS_A" > /dev/null
 RESULT=$(notif_curl GET "/-/push/drain")
-if ! echo "$RESULT" | grep -q "\"subId\":\"$SUB_A\""; then
+if ! echo "$RESULT" | grep -q "\"subscription\":\"$SUB_A\""; then
     pass "Scoped ack deletes the caller's row"
 else
     fail "Scoped ack deletes the caller's row" "$RESULT"
@@ -401,10 +401,12 @@ fi
 echo ""
 echo "--- Topic Delete Tests ---"
 
-# Emit to create a topic row, delete it via the HTTP action, verify gone
+# Emit to create a topic row, delete it through settings (which owns the topic
+# management surface and calls this app's topic/delete service function), then
+# confirm the app's own lookup route no longer finds it.
 test_curl "/test_notifications_emit?object=topic-probe&body=topic-probe-body" > /dev/null
-RESULT=$(notif_curl POST "/-/topics/delete" -d "app=test&topic=probe&object=topic-probe")
-if echo "$RESULT" | grep -q '"data"'; then
+RESULT=$(settings_curl POST "/-/notifications/topics/delete" -d "app=test&topic=probe&object=topic-probe")
+if echo "$RESULT" | grep -q '"ok"'; then
     pass "Topic delete succeeds"
 else
     fail "Topic delete succeeds" "$(echo "$RESULT" | head -c 150)"
@@ -415,8 +417,8 @@ if echo "$RESULT" | grep -q '"data":null'; then
 else
     fail "Deleted topic no longer found" "$(echo "$RESULT" | head -c 150)"
 fi
-RESULT=$(notif_curl POST "/-/topics/delete" -d "app=test&topic=probe&object=topic-probe")
-if echo "$RESULT" | grep -q "Topic not found"; then
+RESULT=$(settings_curl POST "/-/notifications/topics/delete" -d "app=test&topic=probe&object=topic-probe")
+if echo "$RESULT" | grep -q "Not found"; then
     pass "Deleting a missing topic returns 404"
 else
     fail "Deleting a missing topic returns 404" "$(echo "$RESULT" | head -c 150)"
@@ -440,7 +442,7 @@ SUB_D=$(echo "$RESULT" | extract_id)
 test_curl "/test_notifications_emit?object=cleanup-probe&body=cleanup-probe-body" > /dev/null
 
 RESULT=$(notif_curl GET "/-/push/drain")
-if echo "$RESULT" | grep -q "\"subId\":\"$SUB_C\"" && echo "$RESULT" | grep -q "\"subId\":\"$SUB_D\""; then
+if echo "$RESULT" | grep -q "\"subscription\":\"$SUB_C\"" && echo "$RESULT" | grep -q "\"subscription\":\"$SUB_D\""; then
     pass "Both subscriptions queued before removal"
 else
     fail "Both subscriptions queued before removal" "$(echo "$RESULT" | head -c 200)"
@@ -449,7 +451,7 @@ fi
 # Test: Removal through the notifications function path clears the queue
 notif_curl POST "/-/push/accounts/remove" -d "id=$SUB_C" > /dev/null
 RESULT=$(notif_curl GET "/-/push/drain")
-if ! echo "$RESULT" | grep -q "\"subId\":\"$SUB_C\"" && echo "$RESULT" | grep -q "\"subId\":\"$SUB_D\""; then
+if ! echo "$RESULT" | grep -q "\"subscription\":\"$SUB_C\"" && echo "$RESULT" | grep -q "\"subscription\":\"$SUB_D\""; then
     pass "Queued rows removed with the account (function path)"
 else
     fail "Queued rows removed with the account (function path)" "$(echo "$RESULT" | head -c 200)"
@@ -458,7 +460,7 @@ fi
 # Test: Removal through settings clears the queue and destinations
 settings_curl POST "/-/accounts/remove" -d "id=$SUB_D" > /dev/null
 RESULT=$(notif_curl GET "/-/push/drain")
-if ! echo "$RESULT" | grep -q "\"subId\":\"$SUB_D\""; then
+if ! echo "$RESULT" | grep -q "\"subscription\":\"$SUB_D\""; then
     pass "Queued rows removed with the account (settings path)"
 else
     fail "Queued rows removed with the account (settings path)" "$(echo "$RESULT" | head -c 200)"
@@ -479,8 +481,13 @@ test_curl "/test_notifications_cleanup?object=cleanup-probe" > /dev/null
 echo ""
 echo "--- Malformed Input Tests ---"
 
+# Category and account management is the settings app's surface: it validates,
+# then calls this app's service functions. The notifications app used to carry a
+# parallel set of HTTP routes for the same operations with no client; they were
+# removed, so these drive the surface that is actually reachable.
+
 # Test: Malformed destinations JSON answers a clean 400
-RESULT=$(notif_curl POST "/-/categories/create" -d "label=BadDest&destinations={not-json")
+RESULT=$(settings_curl POST "/-/notifications/categories/create" -d "label=BadDest&destinations={not-json")
 if echo "$RESULT" | grep -q "Invalid destinations"; then
     pass "Malformed destinations JSON returns clean 400"
 else
@@ -488,7 +495,7 @@ else
 fi
 
 # Test: Non-dict destination elements answer a clean 400
-RESULT=$(notif_curl POST "/-/categories/create" -d 'label=BadDest&destinations=["x"]')
+RESULT=$(settings_curl POST "/-/notifications/categories/create" -d 'label=BadDest&destinations=["x"]')
 if echo "$RESULT" | grep -q "Invalid destinations"; then
     pass "Non-dict destination elements return clean 400"
 else
@@ -497,33 +504,19 @@ fi
 
 # Test: Oversized destinations list answers a clean 400
 BIG_DESTS=$(python3 -c "import json; print(json.dumps([{'type':'web','target':str(i)} for i in range(101)], separators=(',', ':')))")
-RESULT=$(notif_curl POST "/-/categories/create" -d "label=BadDest&destinations=$BIG_DESTS")
+RESULT=$(settings_curl POST "/-/notifications/categories/create" -d "label=BadDest&destinations=$BIG_DESTS")
 if echo "$RESULT" | grep -q "Invalid destinations"; then
     pass "Oversized destinations list returns clean 400"
 else
     fail "Oversized destinations list returns clean 400" "$(echo "$RESULT" | head -c 200)"
 fi
 
-# Test: The settings proxy answers the same clean 400
-RESULT=$(settings_curl POST "/-/notifications/categories/create" -d "label=BadDest&destinations={not-json")
-if echo "$RESULT" | grep -q "Invalid destinations"; then
-    pass "Settings proxy returns clean 400 for malformed destinations"
-else
-    fail "Settings proxy returns clean 400 for malformed destinations" "$(echo "$RESULT" | head -c 200)"
-fi
-
-# Test: Unknown account type answers a clean 400 on both add surfaces
-RESULT=$(notif_curl POST "/-/accounts/add" -d "type=garbage&label=x")
-if echo "$RESULT" | grep -q "Invalid type"; then
-    pass "Unknown account type returns clean 400 (notifications)"
-else
-    fail "Unknown account type returns clean 400 (notifications)" "$(echo "$RESULT" | head -c 150)"
-fi
+# Test: Unknown account type answers a clean 400
 RESULT=$(settings_curl POST "/-/accounts/add" -d "type=garbage&label=x")
 if echo "$RESULT" | grep -q "Invalid type"; then
-    pass "Unknown account type returns clean 400 (settings)"
+    pass "Unknown account type returns clean 400"
 else
-    fail "Unknown account type returns clean 400 (settings)" "$(echo "$RESULT" | head -c 150)"
+    fail "Unknown account type returns clean 400" "$(echo "$RESULT" | head -c 150)"
 fi
 
 # Test: Malformed ack events JSON answers a clean 400
@@ -535,7 +528,7 @@ else
 fi
 
 # Test: Oversized ack batch answers a clean 400
-BIG_EVENTS=$(python3 -c "import json; print(json.dumps([{'account':'x','event_id':str(i)} for i in range(1001)], separators=(',', ':')))")
+BIG_EVENTS=$(python3 -c "import json; print(json.dumps([{'account':'x','event':str(i)} for i in range(1001)], separators=(',', ':')))")
 RESULT=$(notif_curl POST "/-/push/ack" -d "events=$BIG_EVENTS")
 if echo "$RESULT" | grep -q "Invalid push subscription"; then
     pass "Oversized ack batch returns clean 400"
@@ -544,7 +537,7 @@ else
 fi
 
 # Test: Unknown destination type answers a clean 400
-RESULT=$(notif_curl POST "/-/categories/create" -d 'label=BadDest&destinations=[{"type":"evil","target":"x"}]')
+RESULT=$(settings_curl POST "/-/notifications/categories/create" -d 'label=BadDest&destinations=[{"type":"evil","target":"x"}]')
 if echo "$RESULT" | grep -q "Invalid destinations"; then
     pass "Unknown destination type returns clean 400"
 else
@@ -553,7 +546,7 @@ fi
 
 # Test: Oversized destination target answers a clean 400
 LONG_TARGET=$(python3 -c "print('t' * 100)")
-RESULT=$(notif_curl POST "/-/categories/create" -d "label=BadDest&destinations=[{\"type\":\"web\",\"target\":\"$LONG_TARGET\"}]")
+RESULT=$(settings_curl POST "/-/notifications/categories/create" -d "label=BadDest&destinations=[{\"type\":\"web\",\"target\":\"$LONG_TARGET\"}]")
 if echo "$RESULT" | grep -q "Invalid destinations"; then
     pass "Oversized destination target returns clean 400"
 else
@@ -562,7 +555,7 @@ fi
 
 # Test: Over-length category label is rejected
 LONG_LABEL=$(python3 -c "print('L' * 200)")
-RESULT=$(notif_curl POST "/-/categories/create" -d "label=$LONG_LABEL")
+RESULT=$(settings_curl POST "/-/notifications/categories/create" -d "label=$LONG_LABEL")
 if echo "$RESULT" | grep -q "Invalid category"; then
     pass "Over-length category label rejected"
 else
@@ -575,7 +568,7 @@ for c in json.load(sys.stdin).get('data', []):
     if len(c.get('label', '')) > 100:
         print(c['id'])
 " 2>/dev/null | while read -r CID; do
-    notif_curl POST "/-/categories/delete" -d "id=$CID&reassign_to=1" > /dev/null
+    settings_curl POST "/-/notifications/categories/delete" -d "id=$CID&reassign=1" > /dev/null
 done
 
 # Test: Category rows carry a display label (translated at read time for the
@@ -599,7 +592,7 @@ for c in json.load(sys.stdin).get('data', []):
     if c.get('label') == 'BadDest':
         print(c['id'])
 " 2>/dev/null | while read -r CID; do
-    notif_curl POST "/-/categories/delete" -d "id=$CID&reassign_to=1" > /dev/null
+    settings_curl POST "/-/notifications/categories/delete" -d "id=$CID&reassign=1" > /dev/null
 done
 
 # ============================================================================
@@ -634,20 +627,14 @@ else
     fail "External URL account immediately verified" "$RESULT"
 fi
 
-# Test: Over-length account label updates are rejected on both surfaces
+# Test: Over-length account label updates are rejected
 LONG_ALABEL=$(python3 -c "print('A' * 5000)")
 if [ -n "$URL_ID" ]; then
-    RESULT=$(notif_curl POST "/-/accounts/update" -d "id=$URL_ID&label=$LONG_ALABEL")
-    if echo "$RESULT" | grep -q "too long"; then
-        pass "Over-length account label rejected (notifications)"
-    else
-        fail "Over-length account label rejected (notifications)" "$(echo "$RESULT" | head -c 150)"
-    fi
     RESULT=$(settings_curl POST "/-/accounts/update" -d "id=$URL_ID&label=$LONG_ALABEL")
     if echo "$RESULT" | grep -q "too long"; then
-        pass "Over-length account label rejected (settings)"
+        pass "Over-length account label rejected"
     else
-        fail "Over-length account label rejected (settings)" "$(echo "$RESULT" | head -c 150)"
+        fail "Over-length account label rejected" "$(echo "$RESULT" | head -c 150)"
     fi
 fi
 

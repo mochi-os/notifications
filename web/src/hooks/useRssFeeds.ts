@@ -32,7 +32,7 @@ export function useCreateRssFeedMutation() {
         endpoints.rss.create,
         {
           name,
-          add_to_existing: addToExisting ? '1' : '0',
+          existing: addToExisting ? '1' : '0',
         },
         NO_TOAST
       ),

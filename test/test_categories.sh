@@ -132,9 +132,13 @@ sys.exit(0 if match and match['label'] == 'Renamed' else 1)" 2>/dev/null; then
     fi
 fi
 
-# Delete: must reassign; deleting id 0 must fail
-RESULT=$(settings_curl POST "/-/notifications/categories/delete" -d "id=0&reassign_to=1")
-if echo "$RESULT" | grep -qE '"error"|Error 4[0-9][0-9]'; then
+# Delete: must reassign; deleting id 0 must fail.
+# The parameter is `reassign` - `reassign_to` was refused by the proxy's own
+# "reassign is required" check before id 0 was ever looked at, so this passed
+# whether or not the id-0 refusal worked. Assert the specific error too, or a
+# parameter typo can satisfy it again.
+RESULT=$(settings_curl POST "/-/notifications/categories/delete" -d "id=0&reassign=1")
+if echo "$RESULT" | grep -q 'Could not delete'; then
     pass "Cannot delete 'No notifications' (id 0)"
 else
     fail "Cannot delete 'No notifications' (id 0)" "$RESULT"
@@ -254,7 +258,7 @@ PROBE_APP=$(settings_curl GET "/-/notifications/topics" | PROBE_TOPIC="$PROBE_TO
 import sys, json, os
 rows = json.load(sys.stdin)
 match = next((t for t in rows if t['topic'] == os.environ['PROBE_TOPIC'] and t['object'] == os.environ['PROBE_OBJECT']), None)
-print(match['app'] if match else '')" 2>/dev/null)
+print(match['app']['id'] if match else '')" 2>/dev/null)
 
 settings_curl POST "/-/notifications/topics/set/category" -d "app=$PROBE_APP&topic=$PROBE_TOPIC&object=$PROBE_OBJECT&category=$OFF_ID" > /dev/null
 if probe_listed ""; then
@@ -349,8 +353,8 @@ else
 fi
 
 # An RSS feed, kept out of the other categories and enabled by hand
-# (add_to_existing=0 creates it disabled).
-FEED_JSON=$(notifications_curl "/-/rss/create" -X POST -d "name=TestFeed" -d "add_to_existing=0")
+# (existing=0 creates it disabled).
+FEED_JSON=$(notifications_curl "/-/rss/create" -X POST -d "name=TestFeed" -d "existing=0")
 FEED_ID=$(echo "$FEED_JSON" | python3 -c "import sys, json; print(json.load(sys.stdin)['data']['id'])" 2>/dev/null || echo "")
 FEED_TOKEN=$(echo "$FEED_JSON" | python3 -c "import sys, json; print(json.load(sys.stdin)['data']['token'])" 2>/dev/null || echo "")
 notifications_curl "/-/rss/update" -X POST -d "id=$FEED_ID" -d "enabled=1" > /dev/null
@@ -385,14 +389,16 @@ else
     fail "Web, device and RSS destinations all count in one test send" "$RESULT"
 fi
 
-# The routing rows the test writes are plumbing, not subscriptions.
-if notifications_curl "/-/topics/list" | python3 -c "
+# The routing rows the test writes are plumbing, not subscriptions. Read
+# through the settings proxy: the notifications app's own topics/list route was
+# a second surface with no client and has been removed.
+if settings_curl GET "/-/notifications/topics" | python3 -c "
 import sys, json
-rows = json.load(sys.stdin).get('data') or []
-sys.exit(1 if any(r['app'] == 'notifications' and r['topic'] == 'test' for r in rows) else 0)" 2>/dev/null; then
+rows = json.load(sys.stdin) or []
+sys.exit(1 if any(r['app']['id'] == 'notifications' and r['topic'] == 'test' for r in rows) else 0)" 2>/dev/null; then
     pass "Test tuples stay out of the topics list"
 else
-    fail "Test tuples stay out of the topics list" "$(notifications_curl '/-/topics/list')"
+    fail "Test tuples stay out of the topics list" "$(settings_curl GET '/-/notifications/topics')"
 fi
 
 # Clean up the device/RSS fixtures: mark their test rows read, then remove

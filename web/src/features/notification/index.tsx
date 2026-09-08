@@ -8,6 +8,7 @@ import { Trans, useLingui } from '@lingui/react/macro'
 import {
   PageHeader,
   Main,
+  ConfirmDialog,
   EmptyState,
   ListSkeleton,
   GeneralError,
@@ -151,6 +152,7 @@ export function Notifications() {
   const markAsReadMutation = useMarkAsReadMutation()
   const markAllAsReadMutation = useMarkAllAsReadMutation()
   const clearAllMutation = useClearAllMutation()
+  const [clearing, setClearing] = useState(false)
 
   const allNotifications = useMemo(() => data?.data ?? [], [data])
   const unreadCount = useMemo(
@@ -184,6 +186,7 @@ export function Notifications() {
   }
 
   const handleClearAll = async () => {
+    setClearing(false)
     try {
       await toastAction(clearAllMutation.mutateAsync(), {
         loading: t`Clearing notifications...`,
@@ -234,7 +237,7 @@ export function Notifications() {
               <Button
                 variant='ghost'
                 size='sm'
-                onClick={handleClearAll}
+                onClick={() => setClearing(true)}
                 disabled={clearAllMutation.isPending}
               >
                 {clearAllMutation.isPending ? (
@@ -253,6 +256,19 @@ export function Notifications() {
         }
       />
       <RssDialog open={rssOpen} onOpenChange={setRssOpen} />
+
+      <ConfirmDialog
+        open={clearing}
+        onOpenChange={setClearing}
+        title={t`Clear all notifications?`}
+        desc={t`This permanently deletes every notification, read and unread.`}
+        confirmText={t`Clear all`}
+        destructive
+        handleConfirm={() => {
+          void handleClearAll()
+        }}
+        isLoading={clearAllMutation.isPending}
+      />
       <Main>
         <div>
           {/* Loading */}

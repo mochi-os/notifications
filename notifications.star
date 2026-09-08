@@ -28,10 +28,56 @@ def row_remove(table, where, args):
 	mochi.db.execute('delete from "' + table + '" where (' + where + ")", *args)
 
 def database_upgrade(version):
+	if version == 5:
+		# push_pending -> queue, and its event_id column -> event: both are
+		# glued/abbreviated names on storage the drain envelope mirrors. The
+		# table cannot be called `pending` - core creates a `pending` table of
+		# its own in every app database (the broadcast pending buffer).
+		if mochi.db.table("push_pending"):
+			mochi.db.execute("drop index if exists push_pending_created")
+			mochi.db.execute("alter table push_pending rename to queue")
+		columns = []
+		for column in mochi.db.table("queue"):
+			columns.append(column["name"])
+		if "event_id" in columns:
+			mochi.db.execute("alter table queue rename column event_id to event")
+		mochi.db.execute("create index if not exists queue_created on queue(account, created)")
+		columns = []
+		for column in mochi.db.table("notifications"):
+			columns.append(column["name"])
+		if "last_event" in columns:
+			mochi.db.execute("alter table notifications rename column last_event to event")
+		# Expiry used to run as a delete on every list/count/rss request; the
+		# stamp lets it run at most hourly.
+		maintenance_schema_create()
+		# Backfill the display name every send has supplied since topics grew a
+		# name column, so the read path no longer resolves entities one row at
+		# a time.
+		for row in mochi.db.rows("select app, topic, object from topics where name = '' and object != ''") or []:
+			if not mochi.text.valid(row["object"], "entity"):
+				continue
+			name = mochi.entity.name(row["object"]) or ""
+			if name:
+				mochi.db.execute(
+					"update topics set name=? where app=? and topic=? and object=?",
+					name, row["app"], row["topic"], row["object"]
+				)
 	if version == 4:
 		# Rebuild push_pending.account as text: under integer affinity an all-digit
 		# uid was stored as a number, losing leading zeros, so the text uid the select
 		# and delete paths pass never matched.
+		# The table this reads was created by the schema of the day; version 5
+		# renames it to `queue`, so nothing later builds it. Declare it here so
+		# the migration is self-contained - on a database that reaches this step
+		# the table always exists and the create is a no-op.
+		mochi.db.execute("""create table if not exists push_pending (
+			account text not null,
+			event_id text not null,
+			subscription text not null,
+			payload text not null,
+			created integer not null,
+			primary key (account, event_id)
+		)""")
 		mochi.db.execute("""create table if not exists push_pending_new (
 			account text not null,
 			event_id text not null,
@@ -75,7 +121,7 @@ def database_create():
 		created integer not null,
 		read integer not null default 0,
 		fixed integer not null default 0,
-		last_event text not null default '',
+		event text not null default '',
 		unique ( app, topic, object )
 	)""")
 	mochi.db.execute("create index if not exists notifications_created on notifications(created)")
@@ -114,15 +160,17 @@ def database_create():
 		foreign key (category) references categories(id) on delete cascade
 	)""")
 
-	mochi.db.execute("""create table if not exists push_pending (
+	mochi.db.execute("""create table if not exists queue (
 		account text not null,
-		event_id text not null,
+		event text not null,
 		subscription text not null,
 		payload text not null,
 		created integer not null,
-		primary key (account, event_id)
+		primary key (account, event)
 	)""")
-	mochi.db.execute("create index if not exists push_pending_created on push_pending(account, created)")
+	mochi.db.execute("create index if not exists queue_created on queue(account, created)")
+
+	maintenance_schema_create()
 
 	seed_categories()
 
@@ -152,7 +200,34 @@ def seed_categories():
 	if not mochi.db.exists("select 1 from destinations where category = ?", normal_id):
 		mochi.db.execute("insert or ignore into destinations (category, type, target) values (?, 'web', '')", normal_id)
 
-def function_expire(context):
+# Housekeeping stamps. One row per job, so a sweep can be rate-limited
+# without running its delete on every read request.
+def maintenance_schema_create():
+	mochi.db.execute("""create table if not exists maintenance (
+		name text not null primary key,
+		time integer not null default 0
+	)""")
+
+EXPIRE_INTERVAL = 3600
+
+# expire_due claims the expiry slot for this request, at most once an hour.
+# The stamp is written before the delete: a concurrent request must not run
+# the same sweep, and losing one hour's expiry to a failed delete is cheaper
+# than every list, count and RSS request writing to the notifications table.
+def expire_due():
+	now = mochi.time.now()
+	row = mochi.db.row("select time from maintenance where name = 'expire'")
+	if row and now - row["time"] < EXPIRE_INTERVAL:
+		return False
+	mochi.db.execute(
+		"insert into maintenance (name, time) values ('expire', ?) on conflict(name) do update set time = excluded.time",
+		now
+	)
+	return True
+
+def expire():
+	if not expire_due():
+		return
 	now = mochi.time.now()
 	mochi.db.execute("delete from notifications where (read = 0 and created < ?) or (read != 0 and created < ?)", now - 30 * 86400, now - 7 * 86400)
 
@@ -232,7 +307,7 @@ def badge_count(surface="", device=""):
 # The caller asserts its surface: the browser bell sends surface=web, the
 # Android app its Device header. A client that sends neither sees every row.
 def action_list(a):
-	function_expire({})
+	expire()
 	surface = a.input("surface", "")
 	device = device_header(a)
 	rows = function_list({}, surface, device)
@@ -244,7 +319,7 @@ def action_list(a):
 	}
 
 def action_count(a):
-	function_expire({})
+	expire()
 	return {"data": badge_count(a.input("surface", ""), device_header(a))}
 
 def action_read(a):
@@ -297,7 +372,7 @@ def action_rss(a):
 			return a.error.label(404, "errors.feed_not_found")
 		feed_name = feed["name"]
 
-	function_expire({})
+	expire()
 
 	if feed:
 		rows = mochi.db.rows("""
@@ -316,11 +391,11 @@ def action_rss(a):
 		""")
 
 	all_apps = mochi.app.list()
-	app_names = {}
-	for app in all_apps:
-		app_names[app["id"]] = app["name"]
-		for path in app.get("paths", []):
-			app_names[path] = app["name"]
+	names = {}
+	for entry in all_apps:
+		names[entry["id"]] = entry["name"]
+		for path in entry.get("paths", []):
+			names[path] = entry["name"]
 	server_name = mochi.app.label("notifications.app.server")
 
 	a.header("Content-Type", "application/rss+xml; charset=utf-8")
@@ -328,8 +403,9 @@ def action_rss(a):
 	a.print('<?xml version="1.0" encoding="UTF-8"?>\n')
 	a.print('<rss version="2.0">\n')
 	a.print('<channel>\n')
+	origin = a.origin
 	a.print('<title>' + escape_xml(feed_name) + '</title>\n')
-	a.print('<link>/notifications</link>\n')
+	a.print('<link>' + escape_xml(origin + '/notifications') + '</link>\n')
 	a.print('<description>' + escape_xml(mochi.app.label("rss.description")) + '</description>\n')
 
 	if rows:
@@ -337,16 +413,20 @@ def action_rss(a):
 
 	for row in rows:
 		if row["app"] == "":
-			app_name = server_name
+			label = server_name
 		else:
-			app_name = app_names.get(row["app"], row["app"].capitalize())
+			label = names.get(row["app"], row["app"].capitalize())
 		# topic is a machine key ("invite/received"); headline only when title is
 		# empty.
-		title = app_name + ": " + (row["title"] if row["title"] else row["topic"])
+		title = label + ": " + (row["title"] if row["title"] else row["topic"])
 		if row["count"] > 1:
 			title = title + " (" + str(row["count"]) + ")"
 
+		# A stored link is a site path ("/feeds/abc"); anything else - a
+		# mochi: link, or an absolute URL an app supplied - is left alone.
 		link = row["link"] if row["link"] else "/notifications"
+		if link.startswith("/"):
+			link = origin + link
 
 		a.print('<item>\n')
 		a.print('<title>' + escape_xml(title) + '</title>\n')
@@ -359,111 +439,27 @@ def action_rss(a):
 	a.print('</channel>\n')
 	a.print('</rss>')
 
-# provider_valid reports whether `type` names a real account provider. Core
-# rejects unknown types with a Starlark abort, which surfaces as an internal
-# error, so the boundaries check first and answer a clean 400.
-def provider_valid(type):
+# provider_get returns the account provider `type` names, or None. Core rejects
+# an unknown type with a Starlark abort, which surfaces as an internal error, so
+# the boundary checks first and refuses cleanly.
+def provider_get(type):
 	if not type or len(type) > 64:
-		return False
+		return None
 	for p in mochi.account.providers() or []:
 		if p.get("type") == type:
-			return True
-	return False
+			return p
+	return None
 
-# Connected accounts endpoints (thin wrappers around mochi.account.* API)
-
-def action_accounts_providers(a):
-	capability = a.input("capability")
-	return {"data": mochi.account.providers(capability)}
-
-def action_accounts_list(a):
-	capability = a.input("capability")
-	return {"data": mochi.account.list(capability)}
-
-def action_accounts_get(a):
-	# Account ids are mochi.uid() text since the integer-id re-keying; only
-	# pre-migration rows kept digit ids, so an isdigit() check here (and in
-	# update/remove/verify below) rejected every account created since.
-	id = a.input("id", "").strip()
-	if not id or len(id) > 64:
-		a.error.label(400, "errors.invalid_id")
-		return
-	result = mochi.account.get(id)
-	return {"data": result}
-
-def action_accounts_add(a):
-	type = a.input("type")
-	if not type:
-		a.error.label(400, "errors.type_is_required")
-		return
-	provider = None
-	for p in mochi.account.providers() or []:
-		if p.get("type") == type:
-			provider = p
-			break
-	if not provider:
-		return a.error.label(400, "errors.invalid_type")
-
-	fields = {}
-	for key in ["label", "address", "token", "api_key", "url", "endpoint", "auth", "p256dh", "secret", "topic", "server"]:
-		val = a.input(key)
-		if val:
-			if len(val) > 4096:
-				a.error.label(400, "errors.value_too_long", maximum=4096)
-				return
-			fields[key] = val
-
-	# Core refuses a missing required field with an abort (a 500 that mails the
-	# operator); providers() declares which fields are required, so answer 400.
-	for field in provider.get("fields") or []:
-		name = field.get("name")
-		shown = field.get("label") or name
-		value = fields.get(name)
-		if field.get("required") and not value:
-			return a.error.label(400, "errors.field_required", field=shown)
-		# "email" is core's own email_valid behind mochi.text.valid, so this
-		# cannot accept an address the add would then reject, or the reverse.
-		if value and field.get("type") == "email" and not mochi.text.valid(value, "email"):
-			return a.error.label(400, "errors.field_invalid", field=shown)
-
-	# The browser provider declares no fields at all - its endpoint comes from
-	# the JavaScript push subscription rather than a form - so the loop above
-	# cannot see it, and core has its own refusal for a missing one.
-	if type == "browser" and not fields.get("endpoint"):
-		return a.error.label(400, "errors.push_subscription_missing")
-
-	add_to_existing = a.input("add_to_existing", "1")
-	add_to_existing = add_to_existing == "1" or add_to_existing == "true"
-
-	result = mochi.account.add(type, **fields)
-
-	if result and result.get("id"):
-		account_id = result["id"]
-		mochi.account.update(account_id, enabled=add_to_existing)
-		# If flagged, add as destination to every existing category (except "0")
-		if add_to_existing:
-			add_destination_to_categories("account", str(account_id))
-
-	return {"data": result}
-
-def action_accounts_update(a):
-	id = a.input("id", "").strip()
-	if not id or len(id) > 64:
-		a.error.label(400, "errors.invalid_id")
-		return
-
-	fields = {}
-	label = a.input("label")
-	if label != None:
-		if len(label) > 4096:
-			a.error.label(400, "errors.value_too_long", maximum=4096)
-			return
-		fields["label"] = label
-
-	result = mochi.account.update(id, **fields)
-	return {"data": result}
+# Connected account removal. The rest of the connected-account surface -
+# providers, list, get, add, update, verify, vapid - is the settings app's,
+# which reaches mochi.account.* directly and proxies the notification parts
+# through this app's service functions. This route stays because the Android
+# client calls it directly to drop a dead push account.
 
 def action_accounts_remove(a):
+	# Account ids are mochi.uid() text since the integer-id re-keying; only
+	# pre-migration rows kept digit ids, so an isdigit() check here rejected
+	# every account created since.
 	id = a.input("id", "").strip()
 	if not id or len(id) > 64:
 		a.error.label(400, "errors.invalid_id")
@@ -473,28 +469,9 @@ def action_accounts_remove(a):
 	# push rows - otherwise unscoped drains keep serving the dead account's
 	# payloads until the 7-day TTL.
 	row_remove("destinations", "type = 'account' and target = ?", [id])
-	mochi.db.execute("delete from push_pending where account = ?", id)
+	mochi.db.execute("delete from queue where account = ?", id)
 	result = mochi.account.remove(id)
 	return {"data": result}
-
-def action_accounts_verify(a):
-	id = a.input("id", "").strip()
-	if not id or len(id) > 64:
-		a.error.label(400, "errors.invalid_id")
-		return
-
-	code = a.input("code", "").strip()
-	if not code or len(code) > 256:
-		a.error.label(400, "errors.invalid_code")
-		return
-	result = mochi.account.verify(id, code)
-	return {"data": result}
-
-def action_accounts_vapid(a):
-	key = mochi.webpush.key()
-	if not key:
-		return a.error.label(503, "errors.push_notifications_not_available")
-	return {"data": {"key": key}}
 
 def add_destination_to_categories(type, target):
 	# Add this destination to every category except "0" (No notifications)
@@ -507,6 +484,10 @@ def add_destination_to_categories(type, target):
 # an account.
 def function_destinations_add(context, type="", target=""):
 	if not type or not target:
+		return False
+	# Same bounds apply_destinations enforces: an unknown type is never
+	# delivered, and an over-long target is not a real destination.
+	if type not in DESTINATION_TYPES or len(str(target)) > 64:
 		return False
 	add_destination_to_categories(type, str(target))
 	return True
@@ -524,8 +505,8 @@ def action_rss_create(a):
 	if not name:
 		return a.error.label(400, "errors.feed_name_is_required")
 
-	add_to_existing = a.input("add_to_existing", "1")
-	add_to_existing = add_to_existing == "1" or add_to_existing == "true"
+	existing = a.input("existing", "1")
+	existing = existing == "1" or existing == "true"
 
 	id = mochi.uid()
 	# Bound to the feed action. Notifications has no per-entity feed route -
@@ -536,10 +517,10 @@ def action_rss_create(a):
 		return a.error.label(500, "errors.failed_to_create_token")
 	now = mochi.time.now()
 
-	enabled = 1 if add_to_existing else 0
+	enabled = 1 if existing else 0
 	mochi.db.execute("insert into rss (id, name, token, created, enabled) values (?, ?, ?, ?, ?)", id, name, token, now, enabled)
 
-	if add_to_existing:
+	if existing:
 		add_destination_to_categories("rss", id)
 
 	return {"data": {"id": id, "name": name, "token": token, "created": now, "enabled": enabled}}
@@ -582,7 +563,7 @@ def action_rss_update(a):
 
 	enabled = a.input("enabled", "").strip()
 	if enabled:
-		# Accept both boolean forms, matching add_to_existing in rss/create;
+		# Accept both boolean forms, matching existing in rss/create;
 		# parsing only "1" made enabled=true silently disable the feed.
 		enabled_val = 1 if enabled == "1" or enabled == "true" else 0
 		mochi.db.execute("update rss set enabled = ? where id = ?", enabled_val, id)
@@ -591,10 +572,10 @@ def action_rss_update(a):
 
 # Topic service functions
 
-def function_send(context, topic, object="", title="", body="", url="", label="", name="", sender="", count=None, event_id=""):
+def function_send(context, topic, object="", title="", body="", url="", label="", name="", sender="", count=None, event=""):
 	"""Send a notification from the calling app. Topics are keyed (app, topic, object),
 	created on first send with the default category; label and name refresh on every send.
-	count=None increments the unread count, an integer stores a state value; event_id keys
+	count=None increments the unread count, an integer stores a state value; event keys
 	a retried send to the same row. The empty app id is accepted only with context["_server"]."""
 	app = context.get("app", "")
 	if not app and not context.get("_server", False):
@@ -602,15 +583,23 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	if not title or not body:
 		return 0
 
-	# topic, object and event_id come from the calling app, so a non-string one
+	# topic, object and event come from the calling app, so a non-string one
 	# would reach len() below and abort the send rather than be refused.
-	if type(topic) != "string" or type(object) != "string" or type(event_id) != "string":
+	if type(topic) != "string" or type(object) != "string" or type(event) != "string":
 		return 0
 
 	# Identity keys are rejected over-length (truncation could merge two topics);
 	# display fields are truncated and delivered.
-	if len(topic) > 128 or len(object) > 256 or len(event_id) > 256:
+	if len(topic) > 128 or len(object) > 256 or len(event) > 256:
 		return 0
+
+	# Display fields are sliced and measured below, which aborts on a
+	# non-string just as len() does above. a.input() answers None for a
+	# missing field, so a calling app relaying one lands here.
+	for value in (title, body, url, label, name, sender):
+		if type(value) != "string":
+			return 0
+
 	title = title[:256]
 	body = body[:2048]
 	label = label[:256]
@@ -663,9 +652,9 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 	content = title + ": " + body
 
 	# Roll up onto the existing (app, topic, object) row so the id stays stable;
-	# otherwise insert keyed by event_id when supplied.
+	# otherwise insert keyed by event when supplied.
 	existing_notif = mochi.db.row(
-		"select id, read, last_event from notifications where app = ? and topic = ? and object = ?",
+		"select id, read, event from notifications where app = ? and topic = ? and object = ?",
 		app, topic, object
 	)
 	if existing_notif:
@@ -676,28 +665,33 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=?, read=0, count=?, fixed=1 where id=?",
 				title, body, content, url, sender, now, count, notif_id
 			)
-		elif event_id and existing_notif["last_event"] == (app + ":" + event_id):
+		elif event and existing_notif["event"] == (app + ":" + event):
 			# Already counted this event. A replay must still refresh the
 			# content - the sender may be repairing it - but must not advance
-			# the unread count again.
+			# the unread count again, and must not re-deliver: core's email,
+			# Pushbullet, ntfy and URL senders carry no event-level dedup, so
+			# a second fire is a second message in the user's mailbox. "refresh"
+			# reaches the hook's websocket write and stops before the fan-out.
+			kind = "refresh"
 			mochi.db.execute(
 				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=? where id=?",
 				title, body, content, url, sender, now, notif_id
 			)
 		else:
 			mochi.db.execute(
-				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=?, read=0, count=case when read != 0 then 1 else count + 1 end, fixed=0, last_event=? where id=?",
-				title, body, content, url, sender, now, (app + ":" + event_id) if event_id else "", notif_id
+				"update notifications set title=?, body=?, content=?, link=?, sender=?, created=?, read=0, count=case when read != 0 then 1 else count + 1 end, fixed=0, event=? where id=?",
+				title, body, content, url, sender, now, (app + ":" + event) if event else "", notif_id
 			)
 	else:
 		# Key the row by the caller's event id, namespaced by the sending app
 		# so two apps notifying about the same source row cannot collide.
-		notif_id = (app + ":" + event_id) if event_id else mochi.uid()
+		notif_id = (app + ":" + event) if event else mochi.uid()
 		kind = "insert"
 		mochi.db.execute(
-			"insert or ignore into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read, fixed) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)",
+			"insert or ignore into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read, fixed, event) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)",
 			notif_id, app, topic, object, title, body, content, url, sender,
-			count if count != None else 1, now, 1 if count != None else 0
+			count if count != None else 1, now, 1 if count != None else 0,
+			(app + ":" + event) if event else ""
 		)
 		# The insert is ignored when the id already keys another row (the
 		# same app reusing an event id under a different topic or object).
@@ -706,9 +700,10 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 		if not mochi.db.exists("select 1 from notifications where id = ? and topic = ? and object = ?", notif_id, topic, object):
 			notif_id = mochi.uid()
 			mochi.db.execute(
-				"insert into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read, fixed) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)",
+				"insert into notifications (id, app, topic, object, title, body, content, link, sender, count, created, read, fixed, event) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)",
 				notif_id, app, topic, object, title, body, content, url, sender,
-				count if count != None else 1, now, 1 if count != None else 0
+				count if count != None else 1, now, 1 if count != None else 0,
+				(app + ":" + event) if event else ""
 			)
 
 	# Fire the commit hook for the write: it emits the websocket event and,
@@ -722,7 +717,7 @@ def function_send(context, topic, object="", title="", body="", url="", label=""
 def notifications_commit_hook(table, kind, row_uid):
 	if table != "notifications":
 		return
-	if kind not in ("insert", "update"):
+	if kind not in ("insert", "update", "refresh"):
 		return
 	if not row_uid:
 		return
@@ -746,6 +741,11 @@ def notifications_commit_hook(table, kind, row_uid):
 		"created": row["created"],
 		"read": row["read"],
 	})
+
+	# A refresh carries no new event: the content changed, the count did not,
+	# and every destination has already been told once.
+	if kind == "refresh":
+		return
 
 	# Skip external delivery for read rows (the row was marked read; no
 	# new event fired).
@@ -871,7 +871,10 @@ def function_category_update(context, id=None, label=None, destinations=None, de
 	if not mochi.db.exists("select 1 from categories where id = ?", id):
 		return False
 	if label != None:
-		if len(label) > 100 or not mochi.text.valid(label, "text"):
+		# "" reaches here as a rename to nothing - mochi.text.valid's "text"
+		# type caps length and admits the empty string. None means "leave
+		# unchanged" and is handled by the branch above.
+		if not label or len(label) > 100 or not mochi.text.valid(label, "text"):
 			return False
 		row_set("categories", "id = ?", [id], {"label": label})
 	if default != None and id != "0":
@@ -882,25 +885,25 @@ def function_category_update(context, id=None, label=None, destinations=None, de
 		apply_destinations(id, destinations)
 	return True
 
-def function_category_delete(context, id=None, reassign_to=None):
+def function_category_delete(context, id=None, reassign=None):
 	if not id or id == "0":
 		return False
 	if not mochi.db.exists("select 1 from categories where id = ?", id):
 		return False
-	if reassign_to == None:
+	if reassign == None:
 		return False
-	if not mochi.db.exists("select 1 from categories where id = ?", reassign_to):
+	if not mochi.db.exists("select 1 from categories where id = ?", reassign):
 		return False
-	if reassign_to == id:
+	if reassign == id:
 		return False
 	# If we're deleting the default, promote the reassign target to be the new
 	# default (can't leave the system without a default).
 	was_default = mochi.db.exists('select 1 from categories where id = ? and "default" = 1', id)
-	row_set("topics", "category = ?", [id], {"category": reassign_to})
+	row_set("topics", "category = ?", [id], {"category": reassign})
 	row_remove("destinations", "category = ?", [id])
 	row_remove("categories", "id = ?", [id])
 	if was_default:
-		set_default(reassign_to)
+		set_default(reassign)
 	return True
 
 def function_category_test(context, id=None):
@@ -1026,7 +1029,9 @@ def apply_destinations(category_id, destinations):
 	for dest in destinations:
 		# Service callers can pass arbitrary shapes; skip elements that are
 		# not dicts, carry an unknown type, or an over-long target rather
-		# than aborting or persisting junk (the HTTP actions reject upfront).
+		# than aborting or persisting junk. The settings app rejects these
+		# upfront on its own routes and answers 400; this is the backstop for
+		# every other caller.
 		if type(dest) != "dict":
 			continue
 		dest_type = dest.get("type", "")
@@ -1035,53 +1040,35 @@ def apply_destinations(category_id, destinations):
 			continue
 		row_merge("destinations", {"category": category_id, "type": dest_type, "target": dest_target})
 
-# destinations_input decodes and shape-checks the client's destinations JSON
-# parameter: a bounded list of dicts, or absent. Returns (valid, destinations);
-# on invalid input the caller answers 400.
-def destinations_input(a):
-	raw = a.input("destinations", "").strip()
-	if not raw:
-		return True, None
-	destinations = json.decode(raw, None)
-	if type(destinations) != "list" or len(destinations) > 100:
-		return False, None
-	for dest in destinations:
-		if type(dest) != "dict":
-			return False, None
-		if dest.get("type", "") not in DESTINATION_TYPES:
-			return False, None
-		if len(str(dest.get("target", ""))) > 64:
-			return False, None
-	return True, destinations
-
 # Topic helpers — used by settings page and notification dropdown
 
 def function_topic_list(context):
-	"""List every topic row with app name resolved. The object's display name
-	is the stored `name` (set by the calling app on send); for objects that
-	are global entities we fall back to mochi.entity.name() so feeds/forums/
-	projects keep working without each app having to supply a name."""
+	"""List every topic row with the app's display name resolved. The object's
+	display name is the stored `name`, which every send supplies and the
+	schema 5 migration backfilled for older rows - resolving it here cost one
+	mochi.entity.name() per row on every settings page load. The row count is
+	the user's own subscribed topics and the settings page renders all of
+	them, so this is deliberately unpaginated: a limit would silently drop
+	topics the user can otherwise recategorise."""
 	# The notifications/test tuples are category-test plumbing, not
 	# subscriptions - they route each category's test notification through
 	# its own filters and have no place in the user's topic list.
 	rows = mochi.db.rows("select * from topics where not (app = 'notifications' and topic = 'test') order by created desc") or []
 	if not rows:
 		return []
-	all_apps = mochi.app.list()
-	app_names = {}
-	for app in all_apps:
-		app_names[app["id"]] = app["name"]
-		for path in app.get("paths", []):
-			app_names[path] = app["name"]
-	server_name = mochi.app.label("notifications.app.server")
+	names = {}
+	for entry in mochi.app.list():
+		names[entry["id"]] = entry["name"]
+		for path in entry.get("paths", []):
+			names[path] = entry["name"]
+	server = mochi.app.label("notifications.app.server")
 	result = []
 	for row in rows:
-		if row["app"] == "":
-			row["app_name"] = server_name
-		else:
-			row["app_name"] = app_names.get(row["app"], row["app"].capitalize())
-		if not row.get("name") and row["object"] and mochi.text.valid(row["object"], "entity"):
-			row["name"] = mochi.entity.name(row["object"]) or ""
+		id = row["app"]
+		row["app"] = {
+			"id": id,
+			"name": server if id == "" else names.get(id, id.capitalize())
+		}
 		result.append(row)
 	return result
 
@@ -1134,58 +1121,6 @@ def function_destinations_available(context):
 def action_categories_list(a):
 	return {"data": function_category_list({})}
 
-def action_categories_create(a):
-	label = a.input("label", "").strip()
-	if not label:
-		return a.error.label(400, "errors.label_is_required")
-	default_raw = a.input("default", "")
-	default = 1 if default_raw == "1" or default_raw == "true" else None
-	valid, destinations = destinations_input(a)
-	if not valid:
-		return a.error.label(400, "errors.invalid_destinations")
-	cid = function_category_create({}, label, destinations, default)
-	if not cid:
-		return a.error.label(400, "errors.invalid_category")
-	return {"data": {"id": cid}}
-
-def action_categories_update(a):
-	id = a.input("id", "").strip()
-	if not id or len(id) > 64:
-		return a.error.label(400, "errors.invalid_id")
-	label = a.input("label")
-	default_raw = a.input("default")
-	default = None
-	if default_raw != None and default_raw != "":
-		default = 1 if default_raw == "1" or default_raw == "true" else 0
-	valid, destinations = destinations_input(a)
-	if not valid:
-		return a.error.label(400, "errors.invalid_destinations")
-	ok = function_category_update({}, id, label, destinations, default)
-	if not ok:
-		return a.error.label(404, "errors.not_found")
-	return {"data": {}}
-
-def action_categories_delete(a):
-	id = a.input("id", "").strip()
-	reassign = a.input("reassign_to", "").strip()
-	if not id or len(id) > 64:
-		return a.error.label(400, "errors.invalid_id")
-	if not reassign or len(reassign) > 64:
-		return a.error.label(400, "errors.reassign_to_is_required")
-	ok = function_category_delete({}, id, reassign)
-	if not ok:
-		return a.error.label(400, "errors.could_not_delete")
-	return {"data": {}}
-
-def action_categories_test(a):
-	id = a.input("id", "").strip()
-	if not id or len(id) > 64:
-		return a.error.label(400, "errors.invalid_id")
-	return {"data": function_category_test({}, id)}
-
-def action_topics_list(a):
-	return {"data": function_topic_list({})}
-
 def action_topics_category_set(a):
 	# An empty category clears the topic's category; anything over-long cannot
 	# name a real category and is rejected rather than treated as a clear.
@@ -1210,17 +1145,6 @@ def action_topics_lookup(a):
 	row = function_topic_lookup({}, app, topic, object)
 	return {"data": row}
 
-def action_topics_delete(a):
-	app = a.input("app", "").strip()
-	topic = a.input("topic", "").strip()
-	object = a.input("object", "").strip()
-	if not function_topic_delete({}, app, topic, object):
-		return a.error.label(404, "errors.topic_not_found")
-	return {"data": {}}
-
-def action_destinations_list(a):
-	return {"data": function_destinations_available({})}
-
 # Service functions for account management (permission-gated)
 
 def function_accounts_vapid(context):
@@ -1236,15 +1160,30 @@ def function_accounts_list(context, capability=""):
 	return mochi.account.list(capability) or []
 
 def function_accounts_add(context, type="", **fields):
-	if not provider_valid(type):
+	provider = provider_get(type)
+	if not provider:
 		return None
-	# Bound each field like the HTTP action_accounts_add path (4096/field). This
-	# service call is the other entry point to the same account insert (the menu
-	# shell reaches it via mochi.service.call), so it must enforce the same limit
-	# rather than store unbounded values.
+	# 4096 per field: this is the app's only entry point to the account insert
+	# (the menu shell reaches it via mochi.service.call), so the bound has to
+	# live here rather than in a caller.
 	for value in fields.values():
 		if len(str(value)) > 4096:
 			return None
+	# Core aborts on a missing required field - a 500 that mails the operator -
+	# so refuse first. providers() declares which fields are required and their
+	# types; "email" is core's own email_valid behind mochi.text.valid, so this
+	# cannot reject an address the add would have taken, or the reverse.
+	for field in provider.get("fields") or []:
+		value = fields.get(field.get("name"))
+		if field.get("required") and not value:
+			return None
+		if value and field.get("type") == "email" and not mochi.text.valid(value, "email"):
+			return None
+	# The browser provider declares no fields at all - its endpoint comes from
+	# the JavaScript push subscription rather than a form - so the loop above
+	# cannot see it, and core has its own refusal for a missing one.
+	if type == "browser" and not fields.get("endpoint"):
+		return None
 	result = mochi.account.add(type, **fields)
 	if result and result.get("id"):
 		account_id = result["id"]
@@ -1256,7 +1195,7 @@ def function_accounts_remove(context, id=0):
 	if not id:
 		return None
 	row_remove("destinations", "type = 'account' and target = ?", [str(id)])
-	mochi.db.execute("delete from push_pending where account = ?", str(id))
+	mochi.db.execute("delete from queue where account = ?", str(id))
 	return mochi.account.remove(id)
 
 # The shape core holds a device id to: the client mints a UUID.
@@ -1349,12 +1288,15 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint="", d
 # Stores an FCM device token keyed by Firebase Installations ID: core upserts,
 # so a token refresh updates the row in place and a second device gets its own
 # row. label is the device's name; device the registered device, or "".
-def push_register_fcm(context, token="", install_id="", label="", device=""):
-	if not token or not install_id:
+def push_register_fcm(context, token="", installation="", label="", device=""):
+	if not token or not installation:
 		return None
-	if len(token) > 512 or len(install_id) > 256 or len(label) > 256:
+	if len(token) > 512 or len(installation) > 256 or len(label) > 256:
 		return None
-	kwargs = {"token": token, "install_id": install_id}
+	# The app spells this `installation` on its own routes and in the drain
+	# envelope; core's account field is `install_id`, so translate here
+	# rather than renaming a core API from an app.
+	kwargs = {"token": token, "install_id": installation}
 	if label:
 		kwargs["label"] = label
 	if device:
@@ -1459,18 +1401,18 @@ def push_queue_if_unifiedpush(account_id, app, topic, object, title, body, url, 
 		"tag": app + "-" + topic + "-" + object,
 		"id": notif_id,
 	})
-	event_id = app + "-" + topic + "-" + object
+	event = app + "-" + topic + "-" + object
 
 	# Same logical push hitting the queue twice (multi-replica fan-out, or
 	# repeat updates to the same coalesced thread) becomes one row with the
 	# latest payload — phone gets the latest content on drain. ON CONFLICT
 	# replaces payload + created.
 	mochi.db.execute(
-		"insert into push_pending (account, event_id, subscription, payload, created) values (?, ?, ?, ?, ?) on conflict(account, event_id) do update set payload=excluded.payload, created=excluded.created",
-		account_id, event_id, subscription, payload, mochi.time.now()
+		"insert into queue (account, event, subscription, payload, created) values (?, ?, ?, ?, ?) on conflict(account, event) do update set payload=excluded.payload, created=excluded.created",
+		account_id, event, subscription, payload, mochi.time.now()
 	)
 
-# Returns pending unifiedpush rows and sweeps rows older than 7 days. Read-only:
+# Returns queued unifiedpush rows and sweeps rows older than 7 days. Read-only:
 # the phone acks via push_ack after posting, so a crash mid-drain
 # re-drains. subscription is client-asserted - a courtesy filter between one
 # user's devices, not a boundary.
@@ -1480,26 +1422,26 @@ def push_drain(context, subscription=""):
 	# account or subscriber state. Pattern mirrors the unifiedpush account
 	# TTL sweep in api_account_notify (core/server/accounts.go).
 	mochi.db.execute(
-		"delete from push_pending where created < ?", now - 7 * 86400
+		"delete from queue where created < ?", now - 7 * 86400
 	)
 	if subscription:
 		rows = mochi.db.rows(
-			"select account, event_id, subscription, payload, created from push_pending where subscription = ? order by created",
+			"select account, event, subscription, payload, created from queue where subscription = ? order by created",
 			subscription
 		) or []
 	else:
 		rows = mochi.db.rows(
-			"select account, event_id, subscription, payload, created from push_pending order by created"
+			"select account, event, subscription, payload, created from queue order by created"
 		) or []
 	# Drain's own envelope, not the WebSocket's: that one spells the subscription
-	# sub_id and carries no event_id. The client parses the two separately - raw
+	# sub_id and carries no event. The client parses the two separately - raw
 	# JSON here, Gson there - so a key renamed on one side does not reach the other.
 	out = []
 	for r in rows:
 		out.append({
-			"subId": r["subscription"],
+			"subscription": r["subscription"],
 			"payload": r["payload"],
-			"event_id": r["event_id"],
+			"event": r["event"],
 			"account": r["account"],
 		})
 	return out
@@ -1507,58 +1449,31 @@ def push_drain(context, subscription=""):
 # Deletes the named rows; acking a missing row is a no-op. subscription bounds
 # the delete to one device's rows and is client-asserted - a courtesy filter,
 # not a security boundary.
-def push_ack(context, account_event_ids=None, subscription=""):
-	if not account_event_ids:
+def push_ack(context, account_events=None, subscription=""):
+	if not account_events:
 		return {"acked": 0}
 	acked = 0
-	for ae in account_event_ids:
+	for ae in account_events:
 		if type(ae) != "dict":
 			continue
 		account = ae.get("account", "")
-		event_id = ae.get("event_id", "")
-		if not account or not event_id:
+		event = ae.get("event", "")
+		if not account or not event:
 			continue
 		if subscription:
 			mochi.db.execute(
-				"delete from push_pending where account = ? and event_id = ? and subscription = ?",
-				account, event_id, subscription
+				"delete from queue where account = ? and event = ? and subscription = ?",
+				account, event, subscription
 			)
 		else:
 			mochi.db.execute(
-				"delete from push_pending where account = ? and event_id = ?",
-				account, event_id
+				"delete from queue where account = ? and event = ?",
+				account, event
 			)
 		acked += 1
 	return {"acked": acked}
 
 # Client-facing action wrappers.
-
-def action_push_vapid(a):
-	"""Get VAPID key for browser push subscription."""
-	result = function_accounts_vapid(None)
-	if result == None:
-		return a.error.label(503, "errors.push_notifications_not_available")
-	return {"data": result}
-
-def action_push_accounts_list(a):
-	"""List push accounts."""
-	capability = a.input("capability", "")
-	return {"data": function_accounts_list(None, capability=capability) or []}
-
-def action_push_accounts_add(a):
-	"""Register a browser push account."""
-	type = a.input("type", "").strip()
-	if not type:
-		return a.error.label(400, "errors.type_is_required")
-	if not provider_valid(type):
-		return a.error.label(400, "errors.invalid_type")
-	fields = {}
-	for key in ["label", "endpoint", "auth", "p256dh"]:
-		val = a.input(key, "")
-		if val != "":
-			fields[key] = val
-	result = function_accounts_add(None, type=type, **fields)
-	return {"data": result or {}}
 
 def action_push_accounts_remove(a):
 	"""Remove a push account."""
@@ -1603,11 +1518,11 @@ def action_push_register(a):
 def action_push_register_fcm(a):
 	"""Register the client's FCM device token, keyed by Firebase Installations ID."""
 	token = a.input("token", "").strip()
-	install_id = a.input("install_id", "").strip()
-	if not token or not install_id:
+	installation = a.input("installation", "").strip()
+	if not token or not installation:
 		return a.error.label(400, "errors.invalid_subscription")
 	label = a.input("label", "").strip()
-	result = push_register_fcm(None, token=token, install_id=install_id, label=label, device=device_header(a))
+	result = push_register_fcm(None, token=token, installation=installation, label=label, device=device_header(a))
 	if not result:
 		return a.error.label(500, "errors.registration_failed")
 	return {"data": result}
@@ -1632,13 +1547,13 @@ def action_push_inbound(a):
 
 def action_push_drain(a):
 	"""Return queued unifiedpush events. Read-only: the phone posts push/ack with the
-	(account, event_id) pairs it delivered. subscription=<id> limits to one device."""
+	(account, event) pairs it delivered. subscription=<id> limits to one device."""
 	subscription = a.input("subscription", "").strip()
 	return {"data": push_drain(None, subscription=subscription) or []}
 
 def action_push_ack(a):
-	"""Delete acknowledged rows from the pending queue. Body: events=<JSON
-	array of {account, event_id}>. Idempotent — acking a row that no
+	"""Delete acknowledged rows from the push queue. Body: events=<JSON
+	array of {account, event}>. Idempotent — acking a row that no
 	longer exists is a no-op (TTL'd, manually cleared, or never queued
 	because of a live race)."""
 	events_raw = a.input("events", "")
@@ -1648,4 +1563,4 @@ def action_push_ack(a):
 	if type(events) != "list" or len(events) > 1000:
 		return a.error.label(400, "errors.invalid_subscription")
 	subscription = a.input("subscription", "").strip()
-	return {"data": push_ack(None, account_event_ids=events, subscription=subscription) or {"acked": 0}}
+	return {"data": push_ack(None, account_events=events, subscription=subscription) or {"acked": 0}}

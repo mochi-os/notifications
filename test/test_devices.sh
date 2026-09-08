@@ -77,11 +77,14 @@ for key in sys.argv[1:]:
 print(value if not isinstance(value, (list, dict)) else json.dumps(value))" "$@" 2>/dev/null
 }
 
-# The account rows carrying $1 as their device, as ids on one line.
+# The account rows carrying $1 as their device, as ids on one line. Read through
+# settings, which owns the connected-account surface; the notifications app's own
+# accounts/list route had no client and has been removed.
 accounts_on_device() {
-    notifications_curl GET "/-/accounts/list" | DEVICE="$1" python3 -c "
+    settings_curl GET "/-/accounts/list" | DEVICE="$1" python3 -c "
 import sys, json, os
-rows = json.load(sys.stdin).get('data') or []
+answer = json.load(sys.stdin)
+rows = (answer.get('data') if isinstance(answer, dict) else answer) or []
 print(' '.join(r['id'] for r in rows if r.get('device') == os.environ['DEVICE']))" 2>/dev/null
 }
 
@@ -192,7 +195,7 @@ PROBE_APP=$(settings_curl GET "/-/notifications/topics" | PROBE_TOPIC="$PROBE_TO
 import sys, json, os
 rows = json.load(sys.stdin)
 match = next((t for t in rows if t['topic'] == os.environ['PROBE_TOPIC'] and t['object'] == os.environ['PROBE_OBJECT']), None)
-print(match['app'] if match else '')" 2>/dev/null)
+print(match['app']['id'] if match else '')" 2>/dev/null)
 
 # The probe's topic sits in the default category, which the device joined.
 if probe_listed; then
@@ -244,7 +247,7 @@ echo ""
 echo "--- Push accounts on the device ---"
 
 RESULT=$(notifications_curl POST "/-/push/register/fcm" -H "Content-Type: application/json" \
-    -d "{\"token\":\"fcm-token-1\",\"install_id\":\"install-1\",\"label\":\"Renamed phone\"}")
+    -d "{\"token\":\"fcm-token-1\",\"installation\":\"install-1\",\"label\":\"Renamed phone\"}")
 FCM_ID=$(echo "$RESULT" | json_field data id)
 if [ -n "$FCM_ID" ] && [ "$(echo "$RESULT" | json_field data device)" = "$DEVICE" ]; then
     pass "FCM registration binds the account to the device"

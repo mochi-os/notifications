@@ -62,10 +62,10 @@ const clearAll = async (): Promise<void> => {
 }
 
 const listCategories = async (): Promise<NotificationCategory[]> => {
-  const response = await requestHelpers.get<{ data?: NotificationCategory[] } | NotificationCategory[]>(
+  const response = await requestHelpers.get<{ data: NotificationCategory[] }>(
     endpoints.categories.list
   )
-  return Array.isArray(response) ? response : (response.data ?? [])
+  return response.data
 }
 
 const lookupTopic = async (
@@ -74,13 +74,10 @@ const lookupTopic = async (
   object: string
 ): Promise<NotificationTopic | null> => {
   const params = new URLSearchParams({ app, topic, object })
-  const response = await requestHelpers.get<{ data?: NotificationTopic | null } | NotificationTopic | null>(
+  const response = await requestHelpers.get<{ data: NotificationTopic | null }>(
     `${endpoints.topics.lookup}?${params.toString()}`
   )
-  if (!response) return null
-  return 'data' in (response as object)
-    ? ((response as { data?: NotificationTopic | null }).data ?? null)
-    : (response as NotificationTopic)
+  return response.data
 }
 
 const setTopicCategory = async (

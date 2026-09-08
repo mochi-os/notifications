@@ -46,16 +46,11 @@ type DialogView = 'list' | 'create' | 'created'
 interface RssDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
-  initialView?: DialogView
 }
 
-export function RssDialog({
-  open,
-  onOpenChange,
-  initialView = 'list',
-}: RssDialogProps) {
+export function RssDialog({ open, onOpenChange }: RssDialogProps) {
   const { t } = useLingui()
-  const [view, setView] = useState<DialogView>(initialView)
+  const [view, setView] = useState<DialogView>('list')
   const [copied, setCopied] = useState(false)
   const [copiedId, setCopiedId] = useState<string | null>(null)
   const [newFeedName, setNewFeedName] = useState('')
@@ -85,7 +80,7 @@ export function RssDialog({
   useEffect(() => {
     if (!open) {
       const timer = setTimeout(() => {
-        setView(initialView)
+        setView('list')
         setNewFeedName('')
         setAddToExisting(true)
         setCreatedFeed(null)
@@ -96,7 +91,7 @@ export function RssDialog({
       }, 200)
       return () => clearTimeout(timer)
     }
-  }, [open, initialView])
+  }, [open])
 
   const buildRssUrl = (token: string) => {
     return `${window.location.origin}${getAppPath()}/-/rss?token=${token}`
@@ -412,13 +407,8 @@ export function RssDialog({
                 />
               </div>
               <div className='flex items-center justify-between rounded-lg border p-4'>
-                <div>
-                  <div className='font-medium'>
-                    <Trans>Add to existing subscriptions</Trans>
-                  </div>
-                  <div className='text-muted-foreground text-sm'>
-                    <Trans>Use this feed for your current notification subscriptions</Trans>
-                  </div>
+                <div className='font-medium'>
+                  <Trans>Add to existing subscriptions</Trans>
                 </div>
                 <Switch
                   checked={addToExisting}
