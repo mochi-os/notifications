@@ -123,7 +123,7 @@ msgstr "Επίπεδο πρόσβασης"
 msgid "Account type"
 msgstr "Τύπος λογαριασμού"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Δραστηριότητα"
 
@@ -190,7 +190,7 @@ msgstr "Προσθήκη ετικέτας..."
 msgid "Add to existing notifications"
 msgstr "Προσθήκη σε υπάρχουσες ειδοποιήσεις"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Προσθήκη σε υπάρχουσες συνδρομές"
 
@@ -248,7 +248,7 @@ msgstr "Ό,τι είναι εγγεγραμμένο σε αυτήν τη ροή 
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Είστε βέβαιοι ότι θέλετε να διαγράψετε \"{0}\";"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Είστε βέβαιοι ότι θέλετε να διαγράψετε \"{title}\"; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
 
@@ -334,7 +334,7 @@ msgstr "Αποκλείεται από"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Αποκλείστηκε η πλοήγηση σε μη αξιόπιστο σύνδεσμο"
 
@@ -381,9 +381,9 @@ msgstr "Η κάμερα δεν είναι διαθέσιμη"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Εκκαθάριση"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Εκκαθάριση όλων"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Διαγραφή όλων των ειδοποιήσεων;"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Εκκαθάριση αναζήτησης"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Εκκαθάριση ειδοποιήσεων..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Σχόλια"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Σχόλια ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Αντιγράφηκε"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Αντιγράφηκε στο πρόχειρο"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Αντιγραφή"
 
@@ -643,8 +648,8 @@ msgstr "Δημιουργία"
 msgid "Create {entityLabel}"
 msgstr "Δημιουργία {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Δημιουργία ροής"
 
@@ -652,11 +657,11 @@ msgstr "Δημιουργία ροής"
 msgid "Create new item"
 msgstr "Δημιουργία νέου στοιχείου"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Δημιουργήστε ένα για να ξεκινήσετε."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Δημιουργία ροής RSS"
 
@@ -670,7 +675,7 @@ msgstr "Δημιουργήθηκε"
 msgid "Created {field}"
 msgstr "Δημιουργήθηκε {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Δημιουργία ροής RSS..."
 
@@ -725,9 +730,9 @@ msgstr "Προεπιλεγμένη ταξινόμηση"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Διαγραφή"
 
@@ -743,12 +748,12 @@ msgstr "Διαγραφή στήλης"
 msgid "Delete comment"
 msgstr "Διαγραφή σχολίου"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Διαγραφή ροής"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Διαγραφή ροής;"
 
@@ -760,9 +765,9 @@ msgstr "Διαγραφή πεδίου"
 msgid "Delete game?"
 msgstr "Διαγραφή παιχνιδιού;"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Διαγραφή στοιχείου"
 
@@ -792,7 +797,7 @@ msgstr "Διαγράφηκε"
 msgid "Deleted {field}"
 msgstr "Διαγράφηκε {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Διαγραφή ροής..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Δεν ταιριάζει με το απαιτούμενο μοτίβο"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
@@ -879,7 +884,7 @@ msgstr "Διπλότυπο"
 msgid "Dyslexia-friendly"
 msgstr "Φιλικό προς δυσλεξία"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "π.χ. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Επεξεργασία {label}"
 msgid "Edit caption"
 msgstr "Επεξεργασία λεζάντας"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Επεξεργασία ροής"
 
@@ -947,7 +952,7 @@ msgstr "Εισαγάγετε τον κωδικό από το email σας"
 msgid "Enter your authenticator code"
 msgstr "Εισαγάγετε τον κωδικό της εφαρμογής ελέγχου ταυτότητας"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Σφάλμα"
 
@@ -974,14 +979,14 @@ msgstr "Πολύ μεγάλο"
 msgid "Failed to add account"
 msgstr "Αποτυχία προσθήκης λογαριασμού"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Αποτυχία εκκαθάρισης ειδοποιήσεων"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Αποτυχία αντιγραφής"
 
@@ -990,11 +995,11 @@ msgstr "Αποτυχία αντιγραφής"
 msgid "Failed to create link"
 msgstr "Αποτυχία δημιουργίας συνδέσμου"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Αποτυχία δημιουργίας ροής RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Αποτυχία διαγραφής"
 
@@ -1006,7 +1011,7 @@ msgstr "Αποτυχία διαγραφής συνημμένου"
 msgid "Failed to delete comment"
 msgstr "Αποτυχία διαγραφής σχολίου"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Αποτυχία διαγραφής ροής"
 
@@ -1034,8 +1039,8 @@ msgstr "Αποτυχία φόρτωσης ιστορικού"
 msgid "Failed to load image"
 msgstr "Αποτυχία φόρτωσης εικόνας"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Αποτυχία φόρτωσης στοιχείου"
 
@@ -1051,15 +1056,15 @@ msgstr "Αποτυχία φόρτωσης προτροπών"
 msgid "Failed to load video"
 msgstr "Αποτυχία φόρτωσης βίντεο"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Αποτυχία επισήμανσης όλων ως αναγνωσμένα"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Αποτυχία επισήμανσης ως αναγνωσμένου"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Αποτυχία μετακίνησης"
 
@@ -1067,7 +1072,7 @@ msgstr "Αποτυχία μετακίνησης"
 msgid "Failed to post comment"
 msgstr "Αποτυχία ανάρτησης σχολίου"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Αποτυχία μετονομασίας ροής"
 
@@ -1079,7 +1084,7 @@ msgstr "Αποτυχία επαναφοράς προτροπής"
 msgid "Failed to revoke RSS access"
 msgstr "Αποτυχία ανάκλησης πρόσβασης RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Αποτυχία αποθήκευσης"
 
@@ -1099,11 +1104,11 @@ msgstr "Αποτυχία ενημέρωσης κατηγορίας"
 msgid "Failed to update comment"
 msgstr "Αποτυχία ενημέρωσης σχολίου"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Αποτυχία ενημέρωσης ροής"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Αποτυχία ενημέρωσης παρακολούθησης"
 
@@ -1111,19 +1116,19 @@ msgstr "Αποτυχία ενημέρωσης παρακολούθησης"
 msgid "Failed to upload attachment"
 msgstr "Αποτυχία μεταφόρτωσης συνημμένου"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Η ροή δημιουργήθηκε"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Η ροή διαγράφηκε"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Όνομα ροής"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Η ροή μετονομάστηκε"
 
@@ -1239,7 +1244,7 @@ msgstr "Μη έγκυρη ημερομηνία"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Φαίνεται ότι η σελίδα που αναζητάτε <0/>δεν υπάρχει ή έχει καταργηθεί."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Λεπτομέρειες στοιχείου"
 
@@ -1288,11 +1293,11 @@ msgstr "Φόρτωση περισσότερων"
 msgid "Loading content…"
 msgstr "Φόρτωση περιεχομένου…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Φόρτωση στοιχείου"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Φόρτωση λεπτομερειών στοιχείου"
 
@@ -1331,11 +1336,11 @@ msgstr "Χειροκίνητο"
 msgid "Mark all as read"
 msgstr "Σήμανση όλων ως αναγνωσμένα"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Σήμανση όλων ως αναγνωσμένα"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Επισήμανση όλων ως αναγνωσμένων..."
 
@@ -1472,7 +1477,7 @@ msgstr "Δεν μπορούν να δημιουργηθούν ακόμη τύπ�
 msgid "No matching objects"
 msgstr "Δεν υπάρχουν αντίστοιχα αντικείμενα"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Καμία ειδοποίηση"
 
@@ -1494,7 +1499,7 @@ msgstr "Δεν βρέθηκαν αποτελέσματα"
 msgid "No results found."
 msgstr "Δεν βρέθηκαν αποτελέσματα."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Δεν υπάρχουν ακόμη ροές RSS"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Δεν υπάρχει ακόμη εγγραφή θέματος — προσπαθήστε ξανά μετά την επόμενη ειδοποίηση."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Καμία μη αναγνωσμένη ειδοποίηση"
 
@@ -1529,10 +1534,10 @@ msgstr "Χωρίς προβολές"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Δεν έχει οριστεί"
 msgid "Nothing found"
 msgstr "Δεν βρέθηκε τίποτα"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Ειδοποιήσεις"
 
@@ -1572,8 +1577,8 @@ msgstr "Ειδοποιήσεις"
 msgid "Notifications: {0}"
 msgstr "Ειδοποιήσεις: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Ειδοποίηση από προεπιλογή"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Ιδιοκτήτης"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Γονικό"
 
@@ -1713,7 +1718,7 @@ msgstr "Γίνεται επεξεργασία…"
 msgid "Prompt saved"
 msgstr "Το prompt αποθηκεύτηκε"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Ιδιότητες"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Η πρόσβαση RSS ανακλήθηκε"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "Ροή RSS"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "Ροές RSS"
 
@@ -1916,14 +1921,14 @@ msgstr "Σάββατο"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Αποθήκευση"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Αποθήκευση..."
 
@@ -2078,7 +2083,7 @@ msgstr "Ορίστε αφετηρία και προορισμό"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Εμφάνιση όλων"
 
@@ -2141,8 +2146,8 @@ msgstr "Ευρύχωρο"
 msgid "Start the discussion by adding the first comment."
 msgstr "Ξεκινήστε τη συζήτηση προσθέτοντας το πρώτο σχόλιο."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Διακοπή παρακολούθησης"
 
@@ -2241,11 +2246,15 @@ msgstr "Ο διακομιστής επέστρεψε ιστοσελίδα αντ
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Αυτή η εφαρμογή δεν επιτρέπεται να χρησιμοποιήσει το passkey σας. Επιτρέψτε το στις Ρυθμίσεις, στην ενότητα Δικαιώματα."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Αυτό θα διαγράψει οριστικά όλες τις ειδοποιήσεις, αναγνωσμένες και μη αναγνωσμένες."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Αυτό θα διαγράψει οριστικά το παιχνίδι και τη συνομιλία του. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Αυτό θα διαγράψει οριστικά αυτή τη ροή. Τα προγράμματα ανάγνωσης RSS που τη χρησιμοποιούν δεν θα μπορούν πλέον να έχουν πρόσβαση στις ειδοποιήσεις σας."
 
@@ -2389,10 +2398,6 @@ msgstr "Μεταφόρτωση"
 msgid "Upload progress"
 msgstr "Πρόοδος μεταφόρτωσης"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Χρησιμοποιήστε αυτήν τη ροή για τις τρέχουσες εγγραφές ειδοποιήσεών σας"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Χρησιμοποιήστε το κλειδί πρόσβασής σας"
@@ -2434,7 +2439,7 @@ msgstr "Προβολή βίντεο: {0}"
 msgid "View all notifications"
 msgstr "Προβολή όλων των ειδοποιήσεων"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Προβολή και επεξεργασία λεπτομερειών στοιχείου"
 
@@ -2446,8 +2451,8 @@ msgstr "Στοιχεία ελέγχου προβολής"
 msgid "Voice recording is not supported in this browser"
 msgstr "Η φωνητική εγγραφή δεν υποστηρίζεται σε αυτό το πρόγραμμα περιήγησης"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Παρακολούθηση"
 

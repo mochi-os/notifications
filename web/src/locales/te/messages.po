@@ -123,7 +123,7 @@ msgstr "యాక్సెస్ స్థాయి"
 msgid "Account type"
 msgstr "ఖాతా రకం"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "కార్యకలాపం"
 
@@ -190,7 +190,7 @@ msgstr "ట్యాగ్‌ను జోడించండి..."
 msgid "Add to existing notifications"
 msgstr "ప్రస్తుత నోటిఫికేషన్‌లకు జోడించండి"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "ప్రస్తుత చందాలకు జోడించండి"
 
@@ -248,7 +248,7 @@ msgstr "ఈ ఫీడ్‌కు సభ్యత్వం పొందిన �
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "మీరు \"{0}\"ని తొలగించాలనుకుంటున్నారా?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "మీరు \"{title}\"ని తొలగించాలనుకుంటున్నారా? ఈ చర్యను రద్దు చేయలేరు."
 
@@ -334,7 +334,7 @@ msgstr "నిరోధించినది"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "నమ్మదగని లింక్‌కి నావిగేషన్ నిరోధించబడింది"
 
@@ -381,9 +381,9 @@ msgstr "కెమెరా అందుబాటులో లేదు"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "రద్దు చేయండి"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "క్లియర్ చేయండి"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "అన్నీ క్లియర్ చేయండి"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "అన్ని నోటిఫికేషన్‌లను క్లియర్ చేయాలా?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "శోధనను క్లియర్ చేయండి"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "నోటిఫికేషన్‌లను క్లియర్ చేస్తోంది..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "వ్యాఖ్యలు"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "వ్యాఖ్యలు ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "కాపీ అయింది"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "క్లిప్‌బోర్డ్‌కి కాపీ చేయబడింది"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "కాపీ చేయండి"
 
@@ -643,8 +648,8 @@ msgstr "సృష్టించండి"
 msgid "Create {entityLabel}"
 msgstr "{entityLabel} సృష్టించు"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "ఫీడ్‌ను సృష్టించండి"
 
@@ -652,11 +657,11 @@ msgstr "ఫీడ్‌ను సృష్టించండి"
 msgid "Create new item"
 msgstr "కొత్త ఐటెమ్‌ను సృష్టించండి"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "ప్రారంభించడానికి ఒకదాన్ని సృష్టించండి."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "RSS ఫీడ్‌ను సృష్టించండి"
 
@@ -670,7 +675,7 @@ msgstr "సృష్టించబడింది"
 msgid "Created {field}"
 msgstr "{field} సృష్టించబడింది"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "RSS ఫీడ్‌ను సృష్టిస్తోంది..."
 
@@ -725,9 +730,9 @@ msgstr "డిఫాల్ట్ క్రమబద్ధీకరణ"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "తొలగించండి"
 
@@ -743,12 +748,12 @@ msgstr "కాలమ్‌ను తొలగించండి"
 msgid "Delete comment"
 msgstr "వ్యాఖ్యను తొలగించండి"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "ఫీడ్‌ను తొలగించండి"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "ఫీడ్‌ను తొలగించాలా?"
 
@@ -760,9 +765,9 @@ msgstr "ఫీల్డ్‌ను తొలగించండి"
 msgid "Delete game?"
 msgstr "గేమ్‌ను తొలగించాలా?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "ఐటెమ్‌ను తొలగించండి"
 
@@ -792,7 +797,7 @@ msgstr "తొలగించబడింది"
 msgid "Deleted {field}"
 msgstr "{field} తొలగించబడింది"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "ఫీడ్ తొలగిస్తోంది..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "అవసరమైన నమూనాతో సరిపోలడం లేదు"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "పూర్తయింది"
 
@@ -879,7 +884,7 @@ msgstr "నకలు చేస్తుంది"
 msgid "Dyslexia-friendly"
 msgstr "డిస్లెక్సియా-అనుకూలం"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ఉదా. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "{label} సవరించు"
 msgid "Edit caption"
 msgstr "క్యాప్షన్ సవరించండి"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "ఫీడ్‌ను సవరించండి"
 
@@ -947,7 +952,7 @@ msgstr "మీ ఇమెయిల్‌లోని కోడ్‌ను నమ
 msgid "Enter your authenticator code"
 msgstr "మీ ప్రమాణీకరణ కోడ్‌ను నమోదు చేయండి"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "లోపం"
 
@@ -974,14 +979,14 @@ msgstr "అదనపు పెద్దది"
 msgid "Failed to add account"
 msgstr "ఖాతాను జోడించడంలో విఫలమైంది"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "నోటిఫికేషన్‌లను క్లియర్ చేయడం విఫలమైంది"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "కాపీ చేయడంలో విఫలమైంది"
 
@@ -990,11 +995,11 @@ msgstr "కాపీ చేయడంలో విఫలమైంది"
 msgid "Failed to create link"
 msgstr "లింక్‌ను సృష్టించడంలో విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "RSS ఫీడ్‌ను సృష్టించడం విఫలమైంది"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "తొలగించడంలో విఫలమైంది"
 
@@ -1006,7 +1011,7 @@ msgstr "జోడింపును తొలగించడంలో విఫ�
 msgid "Failed to delete comment"
 msgstr "వ్యాఖ్యను తొలగించడంలో విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "ఫీడ్‌ను తొలగించడంలో విఫలమైంది"
 
@@ -1034,8 +1039,8 @@ msgstr "చరిత్రను లోడ్ చేయడంలో విఫల
 msgid "Failed to load image"
 msgstr "చిత్రాన్ని లోడ్ చేయడంలో విఫలమైంది"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "అంశాన్ని లోడ్ చేయడంలో విఫలమైంది"
 
@@ -1051,15 +1056,15 @@ msgstr "ప్రాంప్ట్‌లను లోడ్ చేయడంల�
 msgid "Failed to load video"
 msgstr "వీడియోను లోడ్ చేయడంలో విఫలమైంది"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "అన్నింటినీ చదివినట్లు గుర్తించడంలో విఫలమైంది"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "చదివినట్లు గుర్తించడం విఫలమైంది"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "తరలించడంలో విఫలమైంది"
 
@@ -1067,7 +1072,7 @@ msgstr "తరలించడంలో విఫలమైంది"
 msgid "Failed to post comment"
 msgstr "వ్యాఖ్యను పోస్ట్ చేయడంలో విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "ఫీడ్ పేరు మార్చడంలో విఫలమైంది"
 
@@ -1079,7 +1084,7 @@ msgstr "ప్రాంప్ట్‌ను రీసెట్ చేయడం�
 msgid "Failed to revoke RSS access"
 msgstr "RSS యాక్సెస్ ఉపసంహరించడంలో విఫలమైంది"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "సేవ్ చేయడంలో విఫలమైంది"
 
@@ -1099,11 +1104,11 @@ msgstr "విభాగాన్ని నవీకరించడంలో వ�
 msgid "Failed to update comment"
 msgstr "వ్యాఖ్యను నవీకరించడంలో విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "ఫీడ్‌ను నవీకరించడంలో విఫలమైంది"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "పర్యవేక్షణ నవీకరించడంలో విఫలమైంది"
 
@@ -1111,19 +1116,19 @@ msgstr "పర్యవేక్షణ నవీకరించడంలో వ�
 msgid "Failed to upload attachment"
 msgstr "జోడింపును అప్‌లోడ్ చేయడంలో విఫలమైంది"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "ఫీడ్ సృష్టించబడింది"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "ఫీడ్ తొలగించబడింది"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "ఫీడ్ పేరు"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "ఫీడ్ పేరు మార్చబడింది"
 
@@ -1239,7 +1244,7 @@ msgstr "చెల్లని తేదీ"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "మీరు వెతుకుతున్న పేజీ <0/>లేదు లేదా తీసివేయబడి ఉండవచ్చు."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "అంశం వివరాలు"
 
@@ -1288,11 +1293,11 @@ msgstr "మరింత లోడ్ చేయండి"
 msgid "Loading content…"
 msgstr "కంటెంట్ లోడ్ అవుతోంది…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "అంశాన్ని లోడ్ చేస్తోంది"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "అంశం వివరాలను లోడ్ చేస్తోంది"
 
@@ -1331,11 +1336,11 @@ msgstr "మాన్యువల్"
 msgid "Mark all as read"
 msgstr "అన్నింటినీ చదివినట్లు గుర్తించండి"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "అన్నీ చదివినట్లు గుర్తించండి"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "అన్నింటినీ చదివినట్లు గుర్తిస్తోంది..."
 
@@ -1472,7 +1477,7 @@ msgstr "ఇంకా ఏ ఐటెం రకాలను సృష్టిం�
 msgid "No matching objects"
 msgstr "మ్యాచింగ్ ఆబ్జెక్ట్‌లు లేవు"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "నోటిఫికేషన్‌లు లేవు"
 
@@ -1494,7 +1499,7 @@ msgstr "ఫలితాలు కనుగొనబడలేదు"
 msgid "No results found."
 msgstr "ఫలితాలు ఏవీ కనుగొనబడలేదు."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "ఇంకా RSS ఫీడ్‌లు లేవు"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "ఇంకా టాపిక్ రికార్డ్ లేదు — తదుపరి నోటిఫికేషన్ తర్వాత మళ్లీ ప్రయత్నించండి."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "చదవని నోటిఫికేషన్‌లు లేవు"
 
@@ -1529,10 +1534,10 @@ msgstr "వ్యూస్ లేవు"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "సెట్ చేయబడలేదు"
 msgid "Nothing found"
 msgstr "ఏమీ కనుగొనబడలేదు"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "నోటిఫికేషన్‌లు"
 
@@ -1572,8 +1577,8 @@ msgstr "నోటిఫికేషన్‌లు"
 msgid "Notifications: {0}"
 msgstr "నోటిఫికేషన్‌లు: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "డిఫాల్ట్‌గా నోటిఫై చేయండి"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "ఓనర్"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "పేరెంట్"
 
@@ -1713,7 +1718,7 @@ msgstr "ప్రాసెస్ అవుతోంది…"
 msgid "Prompt saved"
 msgstr "ప్రాంప్ట్ సేవ్ చేయబడింది"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "లక్షణాలు"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS యాక్సెస్ ఉపసంహరించబడింది"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS ఫీడ్"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS ఫీడ్‌లు"
 
@@ -1916,14 +1921,14 @@ msgstr "శనివారం"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "సేవ్ చేయండి"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "సేవ్ చేస్తోంది..."
 
@@ -2078,7 +2083,7 @@ msgstr "మూలం మరియు గమ్యస్థానాన్ని 
 msgid "Settings"
 msgstr "సెట్టింగ్‌లు"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "అన్నీ చూపించు"
 
@@ -2141,8 +2146,8 @@ msgstr "విశాలమైన"
 msgid "Start the discussion by adding the first comment."
 msgstr "మొదటి వ్యాఖ్యను జోడించడం ద్వారా చర్చను ప్రారంభించండి."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "చూడటం ఆపండి"
 
@@ -2241,11 +2246,15 @@ msgstr "సర్వర్ డేటాకు బదులుగా వెబ్
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "ఈ యాప్‌కు మీ పాస్‌కీని ఉపయోగించే అనుమతి లేదు. సెట్టింగ్‌లలో, అనుమతుల కింద దానికి అనుమతించండి."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "ఇది చదివిన మరియు చదవని అన్ని నోటిఫికేషన్‌లను శాశ్వతంగా తొలగిస్తుంది."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "ఇది గేమ్‌ను మరియు దాని చాట్‌ను శాశ్వతంగా తొలగిస్తుంది. ఈ చర్యను తిరిగి మార్చలేరు."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ఇది ఈ ఫీడ్‌ను శాశ్వతంగా తొలగిస్తుంది. దీన్ని ఉపయోగిస్తున్న ఏ RSS రీడర్లు ఇకపై మీ నోటిఫికేషన్లను యాక్సెస్ చేయలేరు."
 
@@ -2389,10 +2398,6 @@ msgstr "అప్‌లోడ్ చేయండి"
 msgid "Upload progress"
 msgstr "అప్‌లోడ్ పురోగతి"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "మీ ప్రస్తుత నోటిఫికేషన్ చందాల కోసం ఈ ఫీడ్‌ను ఉపయోగించండి"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "మీ పాస్‌కీని ఉపయోగించండి"
@@ -2434,7 +2439,7 @@ msgstr "వీడియో వీక్షకం: {0}"
 msgid "View all notifications"
 msgstr "అన్ని నోటిఫికేషన్‌లను వీక్షించండి"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "ఐటెమ్ వివరాలను వీక్షించండి మరియు ఎడిట్ చేయండి"
 
@@ -2446,8 +2451,8 @@ msgstr "కంట్రోల్‌లను వీక్షించండి"
 msgid "Voice recording is not supported in this browser"
 msgstr "ఈ బ్రౌజర్‌లో వాయిస్ రికార్డింగ్‌కు మద్దతు లేదు"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "చూడండి"
 

@@ -123,7 +123,7 @@ msgstr "Aðgangsstig"
 msgid "Account type"
 msgstr "Tegund reiknings"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Virkni"
 
@@ -190,7 +190,7 @@ msgstr "Bæta við merki..."
 msgid "Add to existing notifications"
 msgstr "Bæta við núverandi tilkynningar"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Bæta við núverandi áskriftir"
 
@@ -248,7 +248,7 @@ msgstr "Allt sem er áskrifandi að þessari veitu hættir að fá hana. Þú ge
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Ertu viss um að þú viljir eyða „{0}“?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Ertu viss um að þú viljir eyða „{title}“? Þessari aðgerð er ekki hægt að afturkalla."
 
@@ -334,7 +334,7 @@ msgstr "Lokað af"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Blokkaði leiðsögn á ótraustan tengil"
 
@@ -381,9 +381,9 @@ msgstr "Myndavél ekki tiltæk"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Hætta við"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Hreinsa"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Hreinsa allt"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Hreinsa allar tilkynningar?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Hreinsa leit"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Hreinsa tilkynningar..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Athugasemdir"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Athugasemdir ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Afritað"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Afritað á klippiborðið"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Afrita"
 
@@ -643,8 +648,8 @@ msgstr "Búa til"
 msgid "Create {entityLabel}"
 msgstr "Búa til {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Búa til streymi"
 
@@ -652,11 +657,11 @@ msgstr "Búa til streymi"
 msgid "Create new item"
 msgstr "Búa til nýtt atriði"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Búðu til einn til að byrja."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Búa til RSS-streymi"
 
@@ -670,7 +675,7 @@ msgstr "Búið til"
 msgid "Created {field}"
 msgstr "Bjó til {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Bý til RSS-veitu..."
 
@@ -725,9 +730,9 @@ msgstr "Sjálfgefin röðun"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Eyða"
 
@@ -743,12 +748,12 @@ msgstr "Eyða dálki"
 msgid "Delete comment"
 msgstr "Eyða athugasemd"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Eyða streymi"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Eyða streymi?"
 
@@ -760,9 +765,9 @@ msgstr "Eyða sviði"
 msgid "Delete game?"
 msgstr "Eyða leiknum?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Eyða atriði"
 
@@ -792,7 +797,7 @@ msgstr "Eytt"
 msgid "Deleted {field}"
 msgstr "Eyddi {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Eyði streymi..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Samsvarar ekki tilskildu mynstri"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Lokið"
 
@@ -879,7 +884,7 @@ msgstr "Tvítekur"
 msgid "Dyslexia-friendly"
 msgstr "Lesblinduvænt"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "t.d. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Breyta {label}"
 msgid "Edit caption"
 msgstr "Breyta myndatexta"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Breyta straumi"
 
@@ -947,7 +952,7 @@ msgstr "Sláðu inn kóðann úr tölvupóstinum þínum"
 msgid "Enter your authenticator code"
 msgstr "Sláðu inn auðkenniskóðann þinn"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Villa"
 
@@ -974,14 +979,14 @@ msgstr "Mjög stórt"
 msgid "Failed to add account"
 msgstr "Tókst ekki að bæta við reikningi"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Tókst ekki að hreinsa tilkynningar"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Tókst ekki að afrita"
 
@@ -990,11 +995,11 @@ msgstr "Tókst ekki að afrita"
 msgid "Failed to create link"
 msgstr "Tókst ekki að búa til tengil"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Tókst ekki að búa til RSS-veitu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Tókst ekki að eyða"
 
@@ -1006,7 +1011,7 @@ msgstr "Tókst ekki að eyða viðhengi"
 msgid "Failed to delete comment"
 msgstr "Tókst ekki að eyða athugasemd"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Tókst ekki að eyða streymi"
 
@@ -1034,8 +1039,8 @@ msgstr "Tókst ekki að hlaða sögu"
 msgid "Failed to load image"
 msgstr "Ekki tókst að hlaða mynd"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Tókst ekki að hlaða atriði"
 
@@ -1051,15 +1056,15 @@ msgstr "Tókst ekki að hlaða kvaðningar"
 msgid "Failed to load video"
 msgstr "Ekki tókst að hlaða myndskeið"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Tókst ekki að merkja allt sem lesið"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Tókst ekki að merkja sem lesið"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Ekki tókst að færa"
 
@@ -1067,7 +1072,7 @@ msgstr "Ekki tókst að færa"
 msgid "Failed to post comment"
 msgstr "Tókst ekki að senda athugasemd"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Tókst ekki að endurnefna streymi"
 
@@ -1079,7 +1084,7 @@ msgstr "Tókst ekki að endurstilla kvaðningu"
 msgid "Failed to revoke RSS access"
 msgstr "Ekki tókst að afturkalla RSS-aðgang"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Tókst ekki að vista"
 
@@ -1099,11 +1104,11 @@ msgstr "Tókst ekki að uppfæra flokk"
 msgid "Failed to update comment"
 msgstr "Tókst ekki að uppfæra athugasemd"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Tókst ekki að uppfæra streymi"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Ekki tókst að uppfæra vöktun"
 
@@ -1111,19 +1116,19 @@ msgstr "Ekki tókst að uppfæra vöktun"
 msgid "Failed to upload attachment"
 msgstr "Tókst ekki að hlaða upp viðhengi"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Streymi búið til"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Streymi eytt"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Nafn streymis"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Streymi endurnefnt"
 
@@ -1239,7 +1244,7 @@ msgstr "Ógild dagsetning"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Svo virðist sem síðan sem þú leitar að <0/>sé ekki til eða hafi verið fjarlægð."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Upplýsingar um atriði"
 
@@ -1288,11 +1293,11 @@ msgstr "Hlaða meiru"
 msgid "Loading content…"
 msgstr "Hleð inn efni…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Hleð atriði"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Hleð upplýsingum um atriði"
 
@@ -1331,11 +1336,11 @@ msgstr "Handvirkt"
 msgid "Mark all as read"
 msgstr "Merkja allt sem lesið"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Merkja allt lesið"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Merki allt sem lesið..."
 
@@ -1472,7 +1477,7 @@ msgstr "Ekki er enn hægt að búa til neinar tegundir atriða. Búðu fyrst til
 msgid "No matching objects"
 msgstr "Engir samsvarandi hlutir"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Engar tilkynningar"
 
@@ -1494,7 +1499,7 @@ msgstr "Engar niðurstöður fundust"
 msgid "No results found."
 msgstr "Engar niðurstöður fundust."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Engir RSS-straumar ennþá"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Engin færsla um efni ennþá — reyndu aftur eftir næstu tilkynningu."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Engar ólesnar tilkynningar"
 
@@ -1529,10 +1534,10 @@ msgstr "Engar skoðanir"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Ekki stillt"
 msgid "Nothing found"
 msgstr "Ekkert fundið"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Tilkynningar"
 
@@ -1572,8 +1577,8 @@ msgstr "Tilkynningar"
 msgid "Notifications: {0}"
 msgstr "Tilkynningar: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Tilkynna sjálfgefið"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Eigandi"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Foreldri"
 
@@ -1713,7 +1718,7 @@ msgstr "Í vinnslu…"
 msgid "Prompt saved"
 msgstr "Hvati vistaður"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Eiginleikar"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS-aðgangur afturkallaður"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS-straumur"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS-streymi"
 
@@ -1916,14 +1921,14 @@ msgstr "Laugardagur"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Vista"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Vista..."
 
@@ -2078,7 +2083,7 @@ msgstr "Stilltu upphafsstað og áfangastað"
 msgid "Settings"
 msgstr "Stillingar"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Sýna allt"
 
@@ -2141,8 +2146,8 @@ msgstr "Rúmgott"
 msgid "Start the discussion by adding the first comment."
 msgstr "Hefjaðu umræðuna með því að bæta við fyrstu athugasemdinni."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Hætta að fylgjast með"
 
@@ -2241,11 +2246,15 @@ msgstr "Þjónninn skilaði vefsíðu í stað gagna."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Þetta forrit má ekki nota aðgangslykilinn þinn. Leyfðu það í Stillingum, undir Heimildir."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Þetta eyðir öllum tilkynningum varanlega, lesnum og ólesnum."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Þetta eyðir leiknum og spjallinu varanlega. Ekki er hægt að afturkalla þessa aðgerð."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Þetta eyðir streyminu varanlega. RSS-lesarar sem nota það munu ekki lengur hafa aðgang að tilkynningunum þínum."
 
@@ -2389,10 +2398,6 @@ msgstr "Hlaða upp"
 msgid "Upload progress"
 msgstr "Framvinda upphleðslu"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Nota þennan straum fyrir núverandi tilkynningaáskriftir þínar"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Notaðu aðgangslykilinn þinn"
@@ -2434,7 +2439,7 @@ msgstr "Myndskeiðaskoðari: {0}"
 msgid "View all notifications"
 msgstr "Skoða allar tilkynningar"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Skoða og breyta upplýsingum hlutarins"
 
@@ -2446,8 +2451,8 @@ msgstr "Skoða stjórntæki"
 msgid "Voice recording is not supported in this browser"
 msgstr "Talupptaka er ekki studd í þessum vafra"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Fylgjast með"
 

@@ -123,7 +123,7 @@ msgstr "Jeike rupa"
 msgid "Account type"
 msgstr "Tetãygua peteĩchagua"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Tembiaporã"
 
@@ -190,7 +190,7 @@ msgstr "Embojuaju tag..."
 msgid "Add to existing notifications"
 msgstr "Embojuaju ñe'ẽmondo oĩvape"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Embojuaju ñembojuaju oĩvape"
 
@@ -248,7 +248,7 @@ msgstr "Opa mba'e osuscribíva ko feed-pe ndohupytyvéima. Upéi ikatu embokopia
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Añetehápe ehundise \"{0}\"?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Añetehápe ehundise \"{title}\"? Ko tembiapo ndojeapojeýiva."
 
@@ -334,7 +334,7 @@ msgstr "Ojejokóva"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Tape ojejokóma jehegui'ỹva-pe"
 
@@ -381,9 +381,9 @@ msgstr "Cámara ndaipóri"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Heja"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Embopotĩ"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Embopotĩ opaite"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "¿Embogue opa marandukauka?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Embopotĩ jeheka"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Oñemboguehína marandukuéra..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Comentariokuéra"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Comentariokuéra ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Oñemonguatia"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Oñekopiáma clipboard-pe"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Kopia"
 
@@ -643,8 +648,8 @@ msgstr "Embojeguáva"
 msgid "Create {entityLabel}"
 msgstr "Ejapo {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Embojeguáva feed"
 
@@ -652,11 +657,11 @@ msgstr "Embojeguáva feed"
 msgid "Create new item"
 msgstr "Embojeguáva mba'e pyahu"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Embojeguáva peteĩ eñepyrũ hag̃ua."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Embojeguáva RSS feed"
 
@@ -670,7 +675,7 @@ msgstr "Oñembojeguáma"
 msgid "Created {field}"
 msgstr "{field} ojejapo"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Ojejapohína RSS feed..."
 
@@ -725,9 +730,9 @@ msgstr "Default sort"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Hundi"
 
@@ -743,12 +748,12 @@ msgstr "Hundi columna"
 msgid "Delete comment"
 msgstr "Hundi comentario"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Hundi feed"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Hundi feed?"
 
@@ -760,9 +765,9 @@ msgstr "Hundi campo"
 msgid "Delete game?"
 msgstr "Ehundi ñembosarái?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Hundi mba'e"
 
@@ -792,7 +797,7 @@ msgstr "Oñemboguete"
 msgid "Deleted {field}"
 msgstr "{field} oñemboguete"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Ojejukahína marandu..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Ndojojái pe ta'ãnga ojejeruréva ndive"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Apopyre"
 
@@ -879,7 +884,7 @@ msgstr "Duplicados"
 msgid "Dyslexia-friendly"
 msgstr "Disléxia peguarã iporãva"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "techapyrã, Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Embosako'i {label}"
 msgid "Edit caption"
 msgstr "Emboheko ñemyesakã"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Emyatyrõ feed"
 
@@ -947,7 +952,7 @@ msgstr "Emoinge code ne email-pegua"
 msgid "Enter your authenticator code"
 msgstr "Emoinge nde código autenticador rehegua"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Jejavy"
 
@@ -974,14 +979,14 @@ msgstr "Tuichavéva"
 msgid "Failed to add account"
 msgstr "Ndaikatúi oñembojuaju cuenta"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Ndaikatúi oñembogue marandukuéra"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Ndaikatúi oñemonguatia"
 
@@ -990,11 +995,11 @@ msgstr "Ndaikatúi oñemonguatia"
 msgid "Failed to create link"
 msgstr "Ndaikatúi oñembojuaju link"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Ndaikatúi ojejapo RSS feed"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Ndaikatúi ojejuka"
 
@@ -1006,7 +1011,7 @@ msgstr "Ndaikatúi ojejuka archivo"
 msgid "Failed to delete comment"
 msgstr "Ndaikatúi ojejuka comentario"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Ndaikatúi ojejuka feed"
 
@@ -1034,8 +1039,8 @@ msgstr "Ndaikatúi oñembogue tembiasakue"
 msgid "Failed to load image"
 msgstr "Ndaikatúi omyanyhẽ ta'anga"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Ndaikatúi oñembogue artículo"
 
@@ -1051,15 +1056,15 @@ msgstr "Ndaikatúi oñembogue promptkuéra"
 msgid "Failed to load video"
 msgstr "Ndaikatúi omyanyhẽ video"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Ndaikatúi oñehecha pyre opavave"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Ndaikatúi oñemarka moñeʼẽmbyréramo"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Ndaikatúi omongu'e"
 
@@ -1067,7 +1072,7 @@ msgstr "Ndaikatúi omongu'e"
 msgid "Failed to post comment"
 msgstr "Ndaikatúi oñemonde comentario"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Ndaikatúi oñembohera'ã feed"
 
@@ -1079,7 +1084,7 @@ msgstr "Ndaikatúi oñembogue jey prompt"
 msgid "Failed to revoke RSS access"
 msgstr "Ndaikatúi omboyke RSS jeike"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Ndaikatúi oñongatu"
 
@@ -1099,11 +1104,11 @@ msgstr "Ndaikatúi oñembohera'ã pyahu categoría"
 msgid "Failed to update comment"
 msgstr "Ndaikatúi oñembohera'ã pyahu comentario"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Ndaikatúi oñembohera'ã pyahu feed"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Ndaikatúi omoĩmbaite ñemaña"
 
@@ -1111,19 +1116,19 @@ msgstr "Ndaikatúi omoĩmbaite ñemaña"
 msgid "Failed to upload attachment"
 msgstr "Ndaikatúi oñemondo archivo"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Oñembojuaju feed"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Oñembogue feed"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Feed téra"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Oñembohera'ã feed"
 
@@ -1239,7 +1244,7 @@ msgstr "Arange ndoikóiva"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Ojehecha pe kuatiarogue rehekáva <0/>ndaipóri térã oñemboguéma."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Artículo detalles"
 
@@ -1288,11 +1293,11 @@ msgstr "Embojuaju hetave"
 msgid "Loading content…"
 msgstr "Contenido henyhẽhína…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Ojembogue artículo"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Ojembogue artículo detalles"
 
@@ -1331,11 +1336,11 @@ msgstr "Manual"
 msgid "Mark all as read"
 msgstr "Ehecha pyre opavave"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Ehecha pyre opavave"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Oñemarka opavave moñeʼẽmbyréramo..."
 
@@ -1472,7 +1477,7 @@ msgstr "Ndaikatúi oñemoheñói item peteĩchagua. Emoheñói raẽ peteĩchagu
 msgid "No matching objects"
 msgstr "Ndaipóri mba'e ojuajúva"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Ndaipóri ñehenói"
 
@@ -1494,7 +1499,7 @@ msgstr "Ndojejuhúi mba'eve"
 msgid "No results found."
 msgstr "Ndojejuhúi resultados."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Noĩri gueteri RSS feeds"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Ndaipóri tópico marandu gueteri — eha'ã jey notificación pyahu rire."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Ndaipóri marandu omoñe'ẽ'ỹva"
 
@@ -1529,10 +1534,10 @@ msgstr "Ndaipóri jehecha"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Noñemoĩri"
 msgid "Nothing found"
 msgstr "Ndojejuhúi mba'eve"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Ñehenói"
 
@@ -1572,8 +1577,8 @@ msgstr "Ñehenói"
 msgid "Notifications: {0}"
 msgstr "Marandu: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Eñenotifika ypy guive"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Mburuvicha"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Sy/ru"
 
@@ -1713,7 +1718,7 @@ msgstr "Oñemba'apo hína…"
 msgid "Prompt saved"
 msgstr "Prompt oñeñongatu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Mba'éichagua"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS jeike oñemboyke"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS feeds"
 
@@ -1916,14 +1921,14 @@ msgstr "Saturday"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Ñongatu"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Oñeñongatuhína..."
 
@@ -2078,7 +2083,7 @@ msgstr "Emoĩ ñepyrũmby ha ohohaguã"
 msgid "Settings"
 msgstr "Ñemboheko"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Ohechauka opa"
 
@@ -2141,8 +2146,8 @@ msgstr "Ipa'ũva"
 msgid "Start the discussion by adding the first comment."
 msgstr "Eñepyrũ ñomongeta embojuaju peteĩha ñe'ẽmbyre."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Ñehapykuere'ỹ"
 
@@ -2241,11 +2246,15 @@ msgstr "Servidor ombohovái peteĩ web rogue, datos rangue."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Ko aplicación ndaikatúi oiporu nde passkey. Emoneĩ Ajustes-pe, Permisos guýpe."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Kóva ohundíta opa árape g̃uarã opaite marandu, ojeleéva ha ojeleéỹva."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Kóva ohundíta opa árape g̃uarã ñembosarái ha ijoayhuháicha. Ndaikatuvéima ojejapo jey."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Kóva oguéta tapiarã ko feed. Mavevereveva RSS reader oipuru ko feed ndaikatumo'ãi ohecha ne marandu."
 
@@ -2389,10 +2398,6 @@ msgstr "Ehupi"
 msgid "Upload progress"
 msgstr "Jehupi jeku'e"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Eipuru ko feed ne ko'ág̃a marandu mboatypyrépe"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Eipuru nde passkey"
@@ -2434,7 +2439,7 @@ msgstr "Video jehecha: {0}"
 msgid "View all notifications"
 msgstr "Ehecha opa marandu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Ehecha ha embogua mba'e marandu"
 
@@ -2446,8 +2451,8 @@ msgstr "Ehecha control"
 msgid "Voice recording is not supported in this browser"
 msgstr "Ko navegador ndoipytyvõi ñe'ẽ grabación"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Ehecha"
 

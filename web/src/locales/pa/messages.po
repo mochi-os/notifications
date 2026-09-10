@@ -123,7 +123,7 @@ msgstr "ਪਹੁੰਚ ਪੱਧਰ"
 msgid "Account type"
 msgstr "ਖਾਤੇ ਦੀ ਕਿਸਮ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "ਗਤੀਵਿਧੀ"
 
@@ -190,7 +190,7 @@ msgstr "ਟੈਗ ਜੋੜੋ..."
 msgid "Add to existing notifications"
 msgstr "ਮੌਜੂਦਾ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ ਵਿੱਚ ਜੋੜੋ"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "ਮੌਜੂਦਾ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਵਿੱਚ ਜੋੜੋ"
 
@@ -248,7 +248,7 @@ msgstr "ਇਸ ਫੀਡ ਦੀ ਗਾਹਕੀ ਲੈਣ ਵਾਲਾ ਸਭ �
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਹੋ ਕਿ ਤੁਸੀਂ \"{0}\" ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਹੋ ਕਿ ਤੁਸੀਂ \"{title}\" ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ? ਇਹ ਕਾਰਵਾਈ ਵਾਪਸ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ।"
 
@@ -334,7 +334,7 @@ msgstr "ਦੁਆਰਾ ਬਲੌਕ ਕੀਤਾ"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "ਅਣਭਰੋਸੇਯੋਗ ਲਿੰਕ ਉੱਤੇ ਨੈਵੀਗੇਸ਼ਨ ਬਲਾਕ ਕੀਤੀ ਗਈ"
 
@@ -381,9 +381,9 @@ msgstr "ਕੈਮਰਾ ਉਪਲਬਧ ਨਹੀਂ"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "ਰੱਦ ਕਰੋ"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "ਸਾਫ਼ ਕਰੋ"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "ਸਭ ਸਾਫ਼ ਕਰੋ"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "ਸਾਰੀਆਂ ਸੂਚਨਾਵਾਂ ਸਾਫ਼ ਕਰਨੀਆਂ ਹਨ?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "ਖੋਜ ਸਾਫ਼ ਕਰੋ"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "ਸੂਚਨਾਵਾਂ ਸਾਫ਼ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "ਟਿੱਪਣੀਆਂ"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "ਟਿੱਪਣੀਆਂ ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "ਕਾਪੀ ਕੀਤਾ ਗਿਆ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਹੋਇਆ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "ਕਾਪੀ ਕਰੋ"
 
@@ -643,8 +648,8 @@ msgstr "ਬਣਾਓ"
 msgid "Create {entityLabel}"
 msgstr "{entityLabel} ਬਣਾਓ"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "ਫੀਡ ਬਣਾਓ"
 
@@ -652,11 +657,11 @@ msgstr "ਫੀਡ ਬਣਾਓ"
 msgid "Create new item"
 msgstr "ਨਵੀਂ ਆਈਟਮ ਬਣਾਓ"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਇੱਕ ਬਣਾਓ।"
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "RSS ਫੀਡ ਬਣਾਓ"
 
@@ -670,7 +675,7 @@ msgstr "ਬਣਾਇਆ ਗਿਆ"
 msgid "Created {field}"
 msgstr "{field} ਬਣਾਇਆ ਗਿਆ"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "RSS ਫੀਡ ਬਣਾਈ ਜਾ ਰਹੀ ਹੈ..."
 
@@ -725,9 +730,9 @@ msgstr "ਡਿਫਾਲਟ ਛਾਂਟ"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "ਮਿਟਾਓ"
 
@@ -743,12 +748,12 @@ msgstr "ਕਾਲਮ ਮਿਟਾਓ"
 msgid "Delete comment"
 msgstr "ਟਿੱਪਣੀ ਮਿਟਾਓ"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "ਫੀਡ ਮਿਟਾਓ"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "ਫੀਡ ਮਿਟਾਉਣੀ ਹੈ?"
 
@@ -760,9 +765,9 @@ msgstr "ਖੇਤਰ ਮਿਟਾਓ"
 msgid "Delete game?"
 msgstr "ਗੇਮ ਮਿਟਾਈਏ?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "ਆਈਟਮ ਮਿਟਾਓ"
 
@@ -792,7 +797,7 @@ msgstr "ਮਿਟਾਇਆ ਗਿਆ"
 msgid "Deleted {field}"
 msgstr "{field} ਮਿਟਾਇਆ ਗਿਆ"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "ਫੀਡ ਮਿਟਾਈ ਜਾ ਰਹੀ ਹੈ..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "ਲੋੜੀਂਦੇ ਪੈਟਰਨ ਨਾਲ ਮੇਲ ਨਹੀਂ ਖਾਂਦਾ"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "ਹੋ ਗਿਆ"
 
@@ -879,7 +884,7 @@ msgstr "ਡੁਪਲੀਕੇਟ"
 msgid "Dyslexia-friendly"
 msgstr "ਡਿਸਲੈਕਸੀਆ-ਅਨੁਕੂਲ"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ਉਦਾ. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "{label} ਸੰਪਾਦਿਤ ਕਰੋ"
 msgid "Edit caption"
 msgstr "ਕੈਪਸ਼ਨ ਸੰਪਾਦਿਤ ਕਰੋ"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "ਫੀਡ ਸੰਪਾਦਿਤ ਕਰੋ"
 
@@ -947,7 +952,7 @@ msgstr "ਆਪਣੀ ਈਮੇਲ ਵਿੱਚੋਂ ਕੋਡ ਦਾਖਲ ਕ�
 msgid "Enter your authenticator code"
 msgstr "ਆਪਣਾ ਪ੍ਰਮਾਣੀਕਰਤਾ ਕੋਡ ਦਾਖਲ ਕਰੋ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "ਗ਼ਲਤੀ"
 
@@ -974,14 +979,14 @@ msgstr "ਵਾਧੂ ਵੱਡਾ"
 msgid "Failed to add account"
 msgstr "ਖਾਤਾ ਜੋੜਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "ਸੂਚਨਾਵਾਂ ਸਾਫ਼ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "ਕਾਪੀ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
@@ -990,11 +995,11 @@ msgstr "ਕਾਪੀ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 msgid "Failed to create link"
 msgstr "ਲਿੰਕ ਬਣਾਉਣ ਵਿੱਚ ਅਸਫਲ"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "RSS ਫੀਡ ਬਣਾਉਣ ਵਿੱਚ ਅਸਫਲ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "ਮਿਟਾਉਣ ਵਿੱਚ ਅਸਫਲ"
 
@@ -1006,7 +1011,7 @@ msgstr "ਅਟੈਚਮੈਂਟ ਮਿਟਾਉਣ ਵਿੱਚ ਅਸਫਲ"
 msgid "Failed to delete comment"
 msgstr "ਟਿੱਪਣੀ ਮਿਟਾਉਣ ਵਿੱਚ ਅਸਫਲ"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "ਫੀਡ ਮਿਟਾਉਣ ਵਿੱਚ ਅਸਫਲ"
 
@@ -1034,8 +1039,8 @@ msgstr "ਇਤਿਹਾਸ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 msgid "Failed to load image"
 msgstr "ਚਿੱਤਰ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "ਆਈਟਮ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
@@ -1051,15 +1056,15 @@ msgstr "ਪ੍ਰੋਮਪਟ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 msgid "Failed to load video"
 msgstr "ਵੀਡੀਓ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "ਸਾਰਿਆਂ ਨੂੰ ਪੜ੍ਹੇ ਵਜੋਂ ਨਿਸ਼ਾਨਬੱਧ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "ਪੜ੍ਹਿਆ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਉਣ ਵਿੱਚ ਅਸਫਲ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "ਹਿਲਾਉਣ ਵਿੱਚ ਅਸਫਲ"
 
@@ -1067,7 +1072,7 @@ msgstr "ਹਿਲਾਉਣ ਵਿੱਚ ਅਸਫਲ"
 msgid "Failed to post comment"
 msgstr "ਟਿੱਪਣੀ ਪੋਸਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "ਫੀਡ ਦਾ ਨਾਮ ਬਦਲਣ ਵਿੱਚ ਅਸਫਲ"
 
@@ -1079,7 +1084,7 @@ msgstr "ਪ੍ਰੋਮਪਟ ਰੀਸੈੱਟ ਕਰਨ ਵਿੱਚ ਅਸ�
 msgid "Failed to revoke RSS access"
 msgstr "RSS ਪਹੁੰਚ ਰੱਦ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "ਸੁਰੱਖਿਅਤ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
@@ -1099,11 +1104,11 @@ msgstr "ਸ਼੍ਰੇਣੀ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸ�
 msgid "Failed to update comment"
 msgstr "ਟਿੱਪਣੀ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "ਫੀਡ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "ਨਿਗਰਾਨੀ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
@@ -1111,19 +1116,19 @@ msgstr "ਨਿਗਰਾਨੀ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸ�
 msgid "Failed to upload attachment"
 msgstr "ਅਟੈਚਮੈਂਟ ਅੱਪਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "ਫੀਡ ਬਣਾਈ ਗਈ"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "ਫੀਡ ਮਿਟਾਈ ਗਈ"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "ਫੀਡ ਦਾ ਨਾਮ"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "ਫੀਡ ਦਾ ਨਾਮ ਬਦਲਿਆ ਗਿਆ"
 
@@ -1239,7 +1244,7 @@ msgstr "ਅਯੋਗ ਮਿਤੀ"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "ਜਾਪਦਾ ਹੈ ਕਿ ਜਿਹੜਾ ਪੰਨਾ ਤੁਸੀਂ ਲੱਭ ਰਹੇ ਹੋ <0/>ਉਹ ਮੌਜੂਦ ਨਹੀਂ ਹੈ ਜਾਂ ਹਟਾ ਦਿੱਤਾ ਗਿਆ ਹੈ।"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "ਆਈਟਮ ਦੇ ਵੇਰਵੇ"
 
@@ -1288,11 +1293,11 @@ msgstr "ਲਾਕ"
 msgid "Loading content…"
 msgstr "ਸਮੱਗਰੀ ਲੋਡ ਹੋ ਰਹੀ ਹੈ…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "ਪਾਸਕੀ ਨਾਲ ਲਾਗਇਨ ਕਰੋ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "ਆਪਣੇ ਈਮੇਲ ਪਤੇ ਨਾਲ ਲਾਗਇਨ ਕਰੋ"
 
@@ -1331,11 +1336,11 @@ msgstr "ਮੈਨੁਅਲ"
 msgid "Mark all as read"
 msgstr "ਸਾਰੇ ਪੜ੍ਹੇ ਵਜੋਂ ਮਾਰਕ ਕਰੋ"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "ਸਾਰੇ ਪੜ੍ਹੇ ਮਾਰਕ ਕਰੋ"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "ਸਭ ਨੂੰ ਪੜ੍ਹਿਆ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਇਆ ਜਾ ਰਿਹਾ ਹੈ..."
 
@@ -1472,7 +1477,7 @@ msgstr "ਅਜੇ ਕੋਈ ਆਈਟਮ ਕਿਸਮ ਨਹੀਂ ਬਣਾਈ 
 msgid "No matching objects"
 msgstr "ਕੋਈ ਮੇਲ ਖਾਂਦਾ ਆਬਜੈਕਟ ਨਹੀਂ"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "ਕੋਈ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨਹੀਂ"
 
@@ -1494,7 +1499,7 @@ msgstr "ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ ਮਿਲਿਆ"
 msgid "No results found."
 msgstr "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ ਮਿਲੇ।"
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "ਅਜੇ ਕੋਈ RSS ਫੀਡ ਨਹੀਂ"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "ਅਜੇ ਕੋਈ ਟੌਪਿਕ ਰਿਕਾਰਡ ਨਹੀਂ — ਅਗਲੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਤੋਂ ਬਾਅਦ ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "ਕੋਈ ਨਾ-ਪੜ੍ਹੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨਹੀਂ"
 
@@ -1529,10 +1534,10 @@ msgstr "ਕੋਈ ਵਿਊ ਨਹੀਂ"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "ਸੈੱਟ ਨਹੀਂ"
 msgid "Nothing found"
 msgstr "ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
 
@@ -1572,8 +1577,8 @@ msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
 msgid "Notifications: {0}"
 msgstr "ਸੂਚਨਾਵਾਂ: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "ਡਿਫਾਲਟ ਤੌਰ 'ਤੇ ਨੋਟੀਫਾਈ ਕਰੋ"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "ਮਾਲਕ"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "ਪੇਰੈਂਟ"
 
@@ -1713,7 +1718,7 @@ msgstr "ਪ੍ਰਕਿਰਿਆ ਜਾਰੀ ਹੈ…"
 msgid "Prompt saved"
 msgstr "ਪ੍ਰਾਂਪਟ ਸੇਵ ਹੋ ਗਿਆ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS ਪਹੁੰਚ ਰੱਦ ਕੀਤੀ ਗਈ"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS ਫੀਡ"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS ਫੀਡਾਂ"
 
@@ -1916,14 +1921,14 @@ msgstr "ਸ਼ਨੀਵਾਰ"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "ਸੰਭਾਲੋ"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "ਸੰਭਾਲ ਰਿਹਾ ਹੈ..."
 
@@ -2078,7 +2083,7 @@ msgstr "ਮੁੱਢ ਅਤੇ ਮੰਜ਼ਿਲ ਸੈੱਟ ਕਰੋ"
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "ਸਭ ਦਿਖਾਓ"
 
@@ -2141,8 +2146,8 @@ msgstr "ਵਿਸ਼ਾਲ"
 msgid "Start the discussion by adding the first comment."
 msgstr "ਪਹਿਲੀ ਟਿੱਪਣੀ ਜੋੜ ਕੇ ਚਰਚਾ ਸ਼ੁਰੂ ਕਰੋ।"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "ਦੇਖਣਾ ਬੰਦ ਕਰੋ"
 
@@ -2241,11 +2246,15 @@ msgstr "ਸਰਵਰ ਨੇ ਡਾਟੇ ਦੀ ਬਜਾਏ ਵੈੱਬ ਪੰ
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "ਇਸ ਐਪ ਨੂੰ ਤੁਹਾਡੀ ਪਾਸਕੀ ਵਰਤਣ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ। ਸੈਟਿੰਗਾਂ ਵਿੱਚ, ਇਜਾਜ਼ਤਾਂ ਹੇਠ ਇਸ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ।"
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "ਇਹ ਪੜ੍ਹੀਆਂ ਅਤੇ ਅਣਪੜ੍ਹੀਆਂ ਸਾਰੀਆਂ ਸੂਚਨਾਵਾਂ ਨੂੰ ਸਥਾਈ ਤੌਰ 'ਤੇ ਮਿਟਾ ਦੇਵੇਗਾ।"
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "ਇਹ ਗੇਮ ਅਤੇ ਇਸਦੀ ਚੈਟ ਨੂੰ ਸਥਾਈ ਤੌਰ 'ਤੇ ਮਿਟਾ ਦੇਵੇਗਾ। ਇਸ ਕਾਰਵਾਈ ਨੂੰ ਵਾਪਸ ਨਹੀਂ ਲਿਆ ਜਾ ਸਕਦਾ।"
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "ਇਹ ਇਸ ਫੀਡ ਨੂੰ ਪੱਕੇ ਤੌਰ ’ਤੇ ਮਿਟਾ ਦੇਵੇਗਾ। ਇਸ ਨੂੰ ਵਰਤਣ ਵਾਲੇ ਕੋਈ ਵੀ RSS ਰੀਡਰ ਹੁਣ ਤੁਹਾਡੀਆਂ ਸੂਚਨਾਵਾਂ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਕਰ ਸਕਣਗੇ।"
 
@@ -2389,10 +2398,6 @@ msgstr "ਅੱਪਲੋਡ ਕਰੋ"
 msgid "Upload progress"
 msgstr "ਅੱਪਲੋਡ ਪ੍ਰਗਤੀ"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "ਆਪਣੀਆਂ ਮੌਜੂਦਾ ਸੂਚਨਾ ਗਾਹਕੀਆਂ ਲਈ ਇਹ ਫੀਡ ਵਰਤੋ"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "ਆਪਣੀ ਪਾਸਕੀ ਵਰਤੋ"
@@ -2434,7 +2439,7 @@ msgstr "ਵੀਡੀਓ ਦਰਸ਼ਕ: {0}"
 msgid "View all notifications"
 msgstr "ਸਾਰੀਆਂ ਸੂਚਨਾਵਾਂ ਦੇਖੋ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "ਆਈਟਮ ਦੇ ਵੇਰਵੇ ਦੇਖੋ ਅਤੇ ਸੰਪਾਦਿਤ ਕਰੋ"
 
@@ -2446,8 +2451,8 @@ msgstr "ਨਿਯੰਤਰਣ ਦੇਖੋ"
 msgid "Voice recording is not supported in this browser"
 msgstr "ਇਸ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਵੌਇਸ ਰਿਕਾਰਡਿੰਗ ਸਮਰਥਿਤ ਨਹੀਂ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "ਦੇਖੋ"
 

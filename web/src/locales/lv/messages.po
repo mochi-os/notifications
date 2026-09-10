@@ -123,7 +123,7 @@ msgstr "Piekļuves līmenis"
 msgid "Account type"
 msgstr "Konta veids"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Aktivitāte"
 
@@ -190,7 +190,7 @@ msgstr "Pievienot tagu..."
 msgid "Add to existing notifications"
 msgstr "Pievienot esošajiem paziņojumiem"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Pievienot esošajām abonēšanām"
 
@@ -248,7 +248,7 @@ msgstr "Viss, kas ir abonējis šo plūsmu, pārstās to saņemt. Pēc tam varē
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Vai tiešām vēlies dzēst \"{0}\"?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Vai tiešām vēlies dzēst \"{title}\"? Šo darbību nevar atsaukt."
 
@@ -334,7 +334,7 @@ msgstr "Bloķēja"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Navigācija uz neuzticamu saiti bloķēta"
 
@@ -381,9 +381,9 @@ msgstr "Kamera nav pieejama"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Atcelt"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Notīrīt"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Notīrīt visu"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Notīrīt visus paziņojumus?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Notīrīt meklēšanu"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Notīra paziņojumus..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Komentāri"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Komentāri ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Nokopēts"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Nokopēts starpliktuvē"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Kopēt"
 
@@ -643,8 +648,8 @@ msgstr "Izveidot"
 msgid "Create {entityLabel}"
 msgstr "Izveidot {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Izveidot plūsmu"
 
@@ -652,11 +657,11 @@ msgstr "Izveidot plūsmu"
 msgid "Create new item"
 msgstr "Izveidot jaunu vienumu"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Izveido vienu, lai sāktu."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Izveidot RSS plūsmu"
 
@@ -670,7 +675,7 @@ msgstr "Izveidots"
 msgid "Created {field}"
 msgstr "Izveidots {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Izveido RSS plūsmu..."
 
@@ -725,9 +730,9 @@ msgstr "Noklusētā kārtošana"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Dzēst"
 
@@ -743,12 +748,12 @@ msgstr "Dzēst kolonnu"
 msgid "Delete comment"
 msgstr "Dzēst komentāru"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Dzēst plūsmu"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Dzēst plūsmu?"
 
@@ -760,9 +765,9 @@ msgstr "Dzēst lauku"
 msgid "Delete game?"
 msgstr "Dzēst spēli?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Dzēst vienumu"
 
@@ -792,7 +797,7 @@ msgstr "Dzēsts"
 msgid "Deleted {field}"
 msgstr "Dzēsts {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Dzēš plūsmu..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Neatbilst prasītajam šablonam"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Pabeigts"
 
@@ -879,7 +884,7 @@ msgstr "Dublikāti"
 msgid "Dyslexia-friendly"
 msgstr "Disleksijai draudzīgs"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "piem., Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Rediģēt {label}"
 msgid "Edit caption"
 msgstr "Rediģēt parakstu"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Rediģēt plūsmu"
 
@@ -947,7 +952,7 @@ msgstr "Ievadiet kodu no sava e-pasta"
 msgid "Enter your authenticator code"
 msgstr "Ievadiet autentifikatora kodu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Kļūda"
 
@@ -974,14 +979,14 @@ msgstr "Ļoti liels"
 msgid "Failed to add account"
 msgstr "Neizdevās pievienot kontu"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Neizdevās notīrīt paziņojumus"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Neizdevās kopēt"
 
@@ -990,11 +995,11 @@ msgstr "Neizdevās kopēt"
 msgid "Failed to create link"
 msgstr "Neizdevās izveidot saiti"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Neizdevās izveidot RSS plūsmu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Neizdevās dzēst"
 
@@ -1006,7 +1011,7 @@ msgstr "Neizdevās dzēst pielikumu"
 msgid "Failed to delete comment"
 msgstr "Neizdevās dzēst komentāru"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Neizdevās dzēst plūsmu"
 
@@ -1034,8 +1039,8 @@ msgstr "Neizdevās ielādēt vēsturi"
 msgid "Failed to load image"
 msgstr "Neizdevās ielādēt attēlu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Neizdevās ielādēt vienumu"
 
@@ -1051,15 +1056,15 @@ msgstr "Neizdevās ielādēt uzvednes"
 msgid "Failed to load video"
 msgstr "Neizdevās ielādēt video"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Neizdevās atzīmēt visus kā lasītus"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Neizdevās atzīmēt kā lasītu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Neizdevās pārvietot"
 
@@ -1067,7 +1072,7 @@ msgstr "Neizdevās pārvietot"
 msgid "Failed to post comment"
 msgstr "Neizdevās publicēt komentāru"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Neizdevās pārdēvēt plūsmu"
 
@@ -1079,7 +1084,7 @@ msgstr "Neizdevās atiestatīt uzvedni"
 msgid "Failed to revoke RSS access"
 msgstr "Neizdevās atsaukt RSS piekļuvi"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Neizdevās saglabāt"
 
@@ -1099,11 +1104,11 @@ msgstr "Neizdevās atjaunināt kategoriju"
 msgid "Failed to update comment"
 msgstr "Neizdevās atjaunināt komentāru"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Neizdevās atjaunināt plūsmu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Neizdevās atjaunināt novērošanu"
 
@@ -1111,19 +1116,19 @@ msgstr "Neizdevās atjaunināt novērošanu"
 msgid "Failed to upload attachment"
 msgstr "Neizdevās augšupielādēt pielikumu"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Plūsma izveidota"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Plūsma dzēsta"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Plūsmas nosaukums"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Plūsma pārdēvēta"
 
@@ -1239,7 +1244,7 @@ msgstr "Nederīgs datums"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Šķiet, ka meklētā lapa <0/>neeksistē vai ir noņemta."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Vienuma informācija"
 
@@ -1288,11 +1293,11 @@ msgstr "Ielādēt vairāk"
 msgid "Loading content…"
 msgstr "Notiek satura ielāde…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Ielādē vienumu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Ielādē vienuma informāciju"
 
@@ -1331,11 +1336,11 @@ msgstr "Manuāls"
 msgid "Mark all as read"
 msgstr "Atzīmēt visus kā lasītus"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Atzīmēt visus kā lasītus"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Atzīmē visu kā lasītu..."
 
@@ -1472,7 +1477,7 @@ msgstr "Vēl nevar izveidot vienumu tipus. Vispirms izveidojiet nepieciešamos v
 msgid "No matching objects"
 msgstr "Nav atbilstošu objektu"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Nav paziņojumu"
 
@@ -1494,7 +1499,7 @@ msgstr "Rezultāti nav atrasti"
 msgid "No results found."
 msgstr "Rezultāti nav atrasti."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Vēl nav RSS plūsmu"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Vēl nav tēmas ieraksta — mēģiniet vēlreiz pēc nākamā paziņojuma."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Nav nelasītu paziņojumu"
 
@@ -1529,10 +1534,10 @@ msgstr "Nav skatījumu"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Nav iestatīts"
 msgid "Nothing found"
 msgstr "Nekas nav atrasts"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Paziņojumi"
 
@@ -1572,8 +1577,8 @@ msgstr "Paziņojumi"
 msgid "Notifications: {0}"
 msgstr "Paziņojumi: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Pēc noklusējuma paziņot"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Īpašnieks"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Vecāks"
 
@@ -1713,7 +1718,7 @@ msgstr "Apstrādā…"
 msgid "Prompt saved"
 msgstr "Pamudinājums saglabāts"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Īpašības"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS piekļuve atsaukta"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS plūsma"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS plūsmas"
 
@@ -1916,14 +1921,14 @@ msgstr "Sestdiena"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Saglabāt"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Saglabā..."
 
@@ -2078,7 +2083,7 @@ msgstr "Iestatīt sākuma un galapunktu"
 msgid "Settings"
 msgstr "Iestatījumi"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Rādīt visu"
 
@@ -2141,8 +2146,8 @@ msgstr "Plašs"
 msgid "Start the discussion by adding the first comment."
 msgstr "Sāciet diskusiju, pievienojot pirmo komentāru."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Pārtraukt skatīšanos"
 
@@ -2241,11 +2246,15 @@ msgstr "Serveris atgrieza tīmekļa lapu, nevis datus."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Šai lietotnei nav atļauts izmantot jūsu piekļuves atslēgu. Atļaujiet to Iestatījumos, sadaļā Atļaujas."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Tas neatgriezeniski dzēsīs visus paziņojumus, izlasītos un neizlasītos."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Tas neatgriezeniski dzēsīs spēli un tās tērzēšanu. Šo darbību nevar atsaukt."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Tas neatgriezeniski izdzēsīs šo plūsmu. RSS lasītāji, kas to izmanto, vairs nevarēs piekļūt jūsu paziņojumiem."
 
@@ -2389,10 +2398,6 @@ msgstr "Augšupielādēt"
 msgid "Upload progress"
 msgstr "Augšupielādes norise"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Izmantot šo plūsmu jūsu pašreizējiem paziņojumu abonementiem"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Izmantojiet savu piekļuves atslēgu"
@@ -2434,7 +2439,7 @@ msgstr "Video skatītājs: {0}"
 msgid "View all notifications"
 msgstr "Skatīt visus paziņojumus"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Skatīt un rediģēt vienuma detaļas"
 
@@ -2446,8 +2451,8 @@ msgstr "Skata vadīklas"
 msgid "Voice recording is not supported in this browser"
 msgstr "Balss ierakstīšana šajā pārlūkā netiek atbalstīta"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Skatīties"
 

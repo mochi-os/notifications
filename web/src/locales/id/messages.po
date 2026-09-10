@@ -123,7 +123,7 @@ msgstr "Tingkat akses"
 msgid "Account type"
 msgstr "Tipe akun"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Aktivitas"
 
@@ -190,7 +190,7 @@ msgstr "Tambah tag..."
 msgid "Add to existing notifications"
 msgstr "Tambah ke notifikasi yang ada"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Tambah ke langganan yang ada"
 
@@ -248,7 +248,7 @@ msgstr "Apa pun yang berlangganan umpan ini akan berhenti menerimanya. Anda dapa
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Apakah Anda yakin ingin menghapus \"{0}\"?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Apakah Anda yakin ingin menghapus \"{title}\"? Tindakan ini tidak dapat dibatalkan."
 
@@ -334,7 +334,7 @@ msgstr "Diblokir oleh"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Navigasi ke tautan tidak tepercaya diblokir"
 
@@ -381,9 +381,9 @@ msgstr "Kamera tidak tersedia"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Batal"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Bersihkan"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Bersihkan semua"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Hapus semua notifikasi?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Bersihkan pencarian"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Menghapus notifikasi..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Komentar"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Komentar ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Disalin"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Disalin ke clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Salin"
 
@@ -643,8 +648,8 @@ msgstr "Buat"
 msgid "Create {entityLabel}"
 msgstr "Buat {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Buat feed"
 
@@ -652,11 +657,11 @@ msgstr "Buat feed"
 msgid "Create new item"
 msgstr "Buat item baru"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Buat satu untuk memulai."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Buat umpan RSS"
 
@@ -670,7 +675,7 @@ msgstr "Dibuat"
 msgid "Created {field}"
 msgstr "{field} dibuat"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Membuat umpan RSS..."
 
@@ -725,9 +730,9 @@ msgstr "Pengurutan default"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Hapus"
 
@@ -743,12 +748,12 @@ msgstr "Hapus kolom"
 msgid "Delete comment"
 msgstr "Hapus komentar"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Hapus feed"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Hapus feed?"
 
@@ -760,9 +765,9 @@ msgstr "Hapus field"
 msgid "Delete game?"
 msgstr "Hapus permainan?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Hapus item"
 
@@ -792,7 +797,7 @@ msgstr "Dihapus"
 msgid "Deleted {field}"
 msgstr "{field} dihapus"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Menghapus umpan..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Tidak sesuai dengan pola yang diperlukan"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Selesai"
 
@@ -879,7 +884,7 @@ msgstr "Duplikat"
 msgid "Dyslexia-friendly"
 msgstr "Ramah disleksia"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "mis. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Edit {label}"
 msgid "Edit caption"
 msgstr "Edit keterangan"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Sunting umpan"
 
@@ -947,7 +952,7 @@ msgstr "Masukkan kode dari email Anda"
 msgid "Enter your authenticator code"
 msgstr "Masukkan kode autentikator Anda"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Galat"
 
@@ -974,14 +979,14 @@ msgstr "Ekstra besar"
 msgid "Failed to add account"
 msgstr "Gagal menambahkan akun"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Gagal menghapus notifikasi"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Gagal menyalin"
 
@@ -990,11 +995,11 @@ msgstr "Gagal menyalin"
 msgid "Failed to create link"
 msgstr "Gagal membuat tautan"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Gagal membuat umpan RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Gagal menghapus"
 
@@ -1006,7 +1011,7 @@ msgstr "Gagal menghapus lampiran"
 msgid "Failed to delete comment"
 msgstr "Gagal menghapus komentar"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Gagal menghapus feed"
 
@@ -1034,8 +1039,8 @@ msgstr "Gagal memuat riwayat"
 msgid "Failed to load image"
 msgstr "Gagal memuat gambar"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Gagal memuat item"
 
@@ -1051,15 +1056,15 @@ msgstr "Gagal memuat prompt"
 msgid "Failed to load video"
 msgstr "Gagal memuat video"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Gagal menandai semua sebagai sudah dibaca"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Gagal menandai sebagai sudah dibaca"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Gagal memindahkan"
 
@@ -1067,7 +1072,7 @@ msgstr "Gagal memindahkan"
 msgid "Failed to post comment"
 msgstr "Gagal mengirim komentar"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Gagal mengganti nama feed"
 
@@ -1079,7 +1084,7 @@ msgstr "Gagal mengatur ulang prompt"
 msgid "Failed to revoke RSS access"
 msgstr "Gagal mencabut akses RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Gagal menyimpan"
 
@@ -1099,11 +1104,11 @@ msgstr "Gagal memperbarui kategori"
 msgid "Failed to update comment"
 msgstr "Gagal memperbarui komentar"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Gagal memperbarui feed"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Gagal memperbarui pemantauan"
 
@@ -1111,19 +1116,19 @@ msgstr "Gagal memperbarui pemantauan"
 msgid "Failed to upload attachment"
 msgstr "Gagal mengunggah lampiran"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Feed dibuat"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Feed dihapus"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Nama feed"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Nama feed diubah"
 
@@ -1239,7 +1244,7 @@ msgstr "Tanggal tidak valid"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Sepertinya halaman yang Anda cari <0/>tidak ada atau telah dihapus."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Detail item"
 
@@ -1288,11 +1293,11 @@ msgstr "Muat lebih banyak"
 msgid "Loading content…"
 msgstr "Memuat konten…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Memuat item"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Memuat detail item"
 
@@ -1331,11 +1336,11 @@ msgstr "Manual"
 msgid "Mark all as read"
 msgstr "Tandai semua sebagai sudah dibaca"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Tandai semua sudah dibaca"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Menandai semua sebagai sudah dibaca..."
 
@@ -1472,7 +1477,7 @@ msgstr "Belum ada jenis item yang dapat dibuat. Buat item induk yang diperlukan 
 msgid "No matching objects"
 msgstr "Tidak ada objek yang cocok"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Tidak ada notifikasi"
 
@@ -1494,7 +1499,7 @@ msgstr "Tidak ada hasil"
 msgid "No results found."
 msgstr "Tidak ada hasil yang ditemukan."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Belum ada feed RSS"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Belum ada catatan topik — coba lagi setelah notifikasi berikutnya."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Tidak ada notifikasi yang belum dibaca"
 
@@ -1529,10 +1534,10 @@ msgstr "Tidak ada tampilan"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Belum diatur"
 msgid "Nothing found"
 msgstr "Tidak ada yang ditemukan"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Notifikasi"
 
@@ -1572,8 +1577,8 @@ msgstr "Notifikasi"
 msgid "Notifications: {0}"
 msgstr "Notifikasi: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Beri tahu secara default"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Pemilik"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Induk"
 
@@ -1713,7 +1718,7 @@ msgstr "Memproses…"
 msgid "Prompt saved"
 msgstr "Prompt disimpan"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Properti"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Akses RSS dicabut"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "Feed RSS"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "Umpan RSS"
 
@@ -1916,14 +1921,14 @@ msgstr "Sabtu"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Simpan"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Menyimpan..."
 
@@ -2078,7 +2083,7 @@ msgstr "Tetapkan asal dan tujuan"
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Tampilkan semua"
 
@@ -2141,8 +2146,8 @@ msgstr "Luas"
 msgid "Start the discussion by adding the first comment."
 msgstr "Mulai diskusi dengan menambahkan komentar pertama."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Berhenti memantau"
 
@@ -2241,11 +2246,15 @@ msgstr "Server mengembalikan halaman web alih-alih data."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Aplikasi ini tidak diizinkan menggunakan passkey Anda. Izinkan di Pengaturan, di bagian Izin."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Ini akan menghapus semua notifikasi secara permanen, yang sudah dibaca maupun belum."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Ini akan menghapus permainan dan obrolannya secara permanen. Tindakan ini tidak dapat dibatalkan."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Tindakan ini akan menghapus umpan ini secara permanen. Pembaca RSS yang menggunakannya tidak akan dapat lagi mengakses notifikasi Anda."
 
@@ -2389,10 +2398,6 @@ msgstr "Unggah"
 msgid "Upload progress"
 msgstr "Progres unggahan"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Gunakan umpan ini untuk langganan notifikasi Anda saat ini"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Gunakan kunci sandi Anda"
@@ -2434,7 +2439,7 @@ msgstr "Penampil video: {0}"
 msgid "View all notifications"
 msgstr "Lihat semua notifikasi"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Lihat dan edit detail item"
 
@@ -2446,8 +2451,8 @@ msgstr "Kontrol tampilan"
 msgid "Voice recording is not supported in this browser"
 msgstr "Perekaman suara tidak didukung di browser ini"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Pantau"
 

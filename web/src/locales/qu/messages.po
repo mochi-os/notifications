@@ -123,7 +123,7 @@ msgstr "Yaykuy patachan"
 msgid "Account type"
 msgstr "Cuenta laya"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Kawsay"
 
@@ -190,7 +190,7 @@ msgstr "Tag yapay..."
 msgid "Add to existing notifications"
 msgstr "Kawsachkan willaykuna-man yapay"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Kawsachkan suscripciones-man yapay"
 
@@ -248,7 +248,7 @@ msgstr "Kay feed-ta suscribisqa tukuy imapas manaña chaskinqachu. Chaymanta mus
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "\"{0}\"-ta wischuyta munanki?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "\"{title}\"-ta wischuyta munanki? Kay ruway mana kutichipuy atinmanchu."
 
@@ -334,7 +334,7 @@ msgstr "Hark'aq"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Mana iñikuq link-man yaykuy hark'asqa"
 
@@ -381,9 +381,9 @@ msgstr "Cámara mana kanchu"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Mana ruway"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Pichay"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Llapan pichay"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Llapan willaykunata pichanachu?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Maskhay pichay"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Willaykunata pichachkan..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Comentarios"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Comentarios ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Kopiasqa"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Clipboard-man copiasqa"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Copiay"
 
@@ -643,8 +648,8 @@ msgstr "Kamariy"
 msgid "Create {entityLabel}"
 msgstr "{entityLabel} kamay"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Feed kamariy"
 
@@ -652,11 +657,11 @@ msgstr "Feed kamariy"
 msgid "Create new item"
 msgstr "Musuq item kamariy"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Hukta kamariy qallarinapaq."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "RSS feed kamariy"
 
@@ -670,7 +675,7 @@ msgstr "Kamarisqa"
 msgid "Created {field}"
 msgstr "{field} kamasqa"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "RSS feedta ruwachkan..."
 
@@ -725,9 +730,9 @@ msgstr "Default sort"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Wischuy"
 
@@ -743,12 +748,12 @@ msgstr "Columna wischuy"
 msgid "Delete comment"
 msgstr "Comentario wischuy"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Feed wischuy"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Feed wischuy?"
 
@@ -760,9 +765,9 @@ msgstr "Campo wischuy"
 msgid "Delete game?"
 msgstr "Pukllayta wischuy?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Item wischuy"
 
@@ -792,7 +797,7 @@ msgstr "Pichasqa"
 msgid "Deleted {field}"
 msgstr "{field} pichasqa"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Mikhuyta pichachkan..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Mana mañakusqa patrónwan tupanchu"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Tukurqun"
 
@@ -879,7 +884,7 @@ msgstr "Iskaynisqakuna"
 msgid "Dyslexia-friendly"
 msgstr "Disleksia llamkaywanmi"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "kikin: Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "{label} allinchay"
 msgid "Edit caption"
 msgstr "Sut'inchayta allinchay"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Feedta allinchay"
 
@@ -947,7 +952,7 @@ msgstr "Email nikiymanta hamuq código yaykuchiy"
 msgid "Enter your authenticator code"
 msgstr "Takyachiqniykiq codigonta yaykuchiy"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Pantay"
 
@@ -974,14 +979,14 @@ msgstr "Sinchi hatun"
 msgid "Failed to add account"
 msgstr "Mana cuentata yapayta atinchu"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Willaykunata pichay mana atikurqanchu"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Mana kikinchayta atinchu"
 
@@ -990,11 +995,11 @@ msgstr "Mana kikinchayta atinchu"
 msgid "Failed to create link"
 msgstr "Mana enlaceta paqarichiyta atinchu"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "RSS feed ruway mana atikurqanchu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Mana pichayta atinchu"
 
@@ -1006,7 +1011,7 @@ msgstr "Mana adjuntota pichayta atinchu"
 msgid "Failed to delete comment"
 msgstr "Mana comentariota pichayta atinchu"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Mana feedta pichayta atinchu"
 
@@ -1034,8 +1039,8 @@ msgstr "Mana historiata wichachiyta atinchu"
 msgid "Failed to load image"
 msgstr "Manam rikchata cargayta atikunchu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Mana itemta wichachiyta atinchu"
 
@@ -1051,15 +1056,15 @@ msgstr "Mana promptkunata wichachiyta atinchu"
 msgid "Failed to load video"
 msgstr "Manam videota cargayta atikunchu"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Mana llapanta ñawinchasqaman churayta atinchu"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Ñawinchasqa hina churay mana atikurqanchu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Mana kuyuchiyta atinchu"
 
@@ -1067,7 +1072,7 @@ msgstr "Mana kuyuchiyta atinchu"
 msgid "Failed to post comment"
 msgstr "Mana comentariota willakuyta atinchu"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Mana feedta sutichayta atinchu"
 
@@ -1079,7 +1084,7 @@ msgstr "Mana promptta kaqmanta churayta atinchu"
 msgid "Failed to revoke RSS access"
 msgstr "Mana atikunchu RSS yaykuyta chinkachiy"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Mana waqaychayta atinchu"
 
@@ -1099,11 +1104,11 @@ msgstr "Mana categoríata musuqyachiyta atinchu"
 msgid "Failed to update comment"
 msgstr "Mana comentariota musuqyachiyta atinchu"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Mana feedta musuqyachiyta atinchu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Qhawayta mana musuqchayta atinchu"
 
@@ -1111,19 +1116,19 @@ msgstr "Qhawayta mana musuqchayta atinchu"
 msgid "Failed to upload attachment"
 msgstr "Mana adjuntota wichachiyta atinchu"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Feed paqarichisqa"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Feed pichasqa"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Feed suti"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Feed sutichasqa"
 
@@ -1239,7 +1244,7 @@ msgstr "Mana allin pacha"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Maskasqayki p'anqaqa <0/>manam kanchu icha qichusqam."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Item willakuy"
 
@@ -1288,11 +1293,11 @@ msgstr "Aswan wichachiy"
 msgid "Loading content…"
 msgstr "Contenido kargachkan…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Item wichachichkan"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Item willakuy wichachichkan"
 
@@ -1331,11 +1336,11 @@ msgstr "Maki ruway"
 msgid "Mark all as read"
 msgstr "Llapanta ñawinchasqaman churay"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Llapanta ñawinchasqaman churay"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Llapanta ñawinchasqa hina churachkan..."
 
@@ -1472,7 +1477,7 @@ msgstr "Manaraq item niraqkuna ruwakuyta atin. Ñawpaqta munasqa parent itemkuna
 msgid "No matching objects"
 msgstr "Mana tupaq objetokuna"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Mana willaykuna"
 
@@ -1494,7 +1499,7 @@ msgstr "Manam ima tarikunchu"
 msgid "No results found."
 msgstr "Mana resultadokuna tarisqachu."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Manaraq RSS feedkuna"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Manaraq topic registro — qatiqnin notificacionmanta watiqmanta ruway."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Mana ñawinchasqa notificacionkuna"
 
@@ -1529,10 +1534,10 @@ msgstr "Mana qhawaykuna"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Mana churasqa"
 msgid "Nothing found"
 msgstr "Mana imapas tarisqachu"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Notificacionkuna"
 
@@ -1572,8 +1577,8 @@ msgstr "Notificacionkuna"
 msgid "Notifications: {0}"
 msgstr "Willakuykuna: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Por defecto willay"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Apuq"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Yaya"
 
@@ -1713,7 +1718,7 @@ msgstr "Ruwakuchkan…"
 msgid "Prompt saved"
 msgstr "Prompt waqaychasqa"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Kayninkuna"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS yaykuy chinkachisqa"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS feedkuna"
 
@@ -1916,14 +1921,14 @@ msgstr "Sábado"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Waqaychay"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Waqaychashan..."
 
@@ -2078,7 +2083,7 @@ msgstr "Pukyu chayanata churay"
 msgid "Settings"
 msgstr "Wakichiykuna"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Llapanta rikuchiy"
 
@@ -2141,8 +2146,8 @@ msgstr "Hatun"
 msgid "Start the discussion by adding the first comment."
 msgstr "Ñawpaq comentariota churaspa rimanakuyta qallariy."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Qhaway saqiy"
 
@@ -2241,11 +2246,15 @@ msgstr "Servidorqa mana willakuykunatachu kutichirqan, huk web p'anqatam."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Kay aplicacionqa manam passkeykita llamk'achiyta atinchu. Ajustes ukhupi, Permisos ukhupi saqiy."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Kayqa tukuy willakuykunata wiñaypaq wischun, ñawinchasqa mana ñawinchasqa ima."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Kayqa pukllayta rimanakuywantin wiñaypaq wischun. Kayta mana kutichinachu."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Kayqa wiñaypaq kay feedta qulluchinqa. Kayta apaykachaq RSS leeqkunaqa manaña willakuyniykunaman yaykuyta atinqakuchu."
 
@@ -2389,10 +2398,6 @@ msgstr "Upload"
 msgid "Upload progress"
 msgstr "Cargasqa puririynin"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Kunan willakuy subscripcionkunaykipaq kay feedta apaykachay"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Yaykuna llaveykita llamk'achiy"
@@ -2434,7 +2439,7 @@ msgstr "Video qhawana: {0}"
 msgid "View all notifications"
 msgstr "Llapan willakuykunata qhaway"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Itemq detallenkunata qhaway hinaspa tikray"
 
@@ -2446,8 +2451,8 @@ msgstr "Qhaway controlkuna"
 msgid "Voice recording is not supported in this browser"
 msgstr "Kay navegadorpiqa manam kunka grabay atikunchu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Qhaway"
 

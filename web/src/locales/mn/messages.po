@@ -123,7 +123,7 @@ msgstr "Хандалтын түвшин"
 msgid "Account type"
 msgstr "Бүртгэлийн төрөл"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Үйл ажиллагаа"
 
@@ -190,7 +190,7 @@ msgstr "Шошго нэмэх..."
 msgid "Add to existing notifications"
 msgstr "Одоогийн мэдэгдэлд нэмэх"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Одоогийн захиалгад нэмэх"
 
@@ -248,7 +248,7 @@ msgstr "Энэ хангамжид бүртгүүлсэн бүх зүйл хүл�
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "\"{0}\"-г устгахдаа итгэлтэй байна уу?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "\"{title}\"-г устгахдаа итгэлтэй байна уу? Энэ үйлдлийг буцаах боломжгүй."
 
@@ -334,7 +334,7 @@ msgstr "Блоклосон"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Найдвартай биш холбоос руу шилжихийг блоклосон"
 
@@ -381,9 +381,9 @@ msgstr "Камер ашиглах боломжгүй"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Цуцлах"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Цэвэрлэх"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Бүгдийг цэвэрлэх"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Бүх мэдэгдлийг арилгах уу?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Хайлтыг цэвэрлэх"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Мэдэгдлийг цэвэрлэж байна..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Сэтгэгдэлүүд"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Сэтгэгдэлүүд ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Хуулагдлаа"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Хуулбарласан"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Хуулах"
 
@@ -643,8 +648,8 @@ msgstr "Үүсгэх"
 msgid "Create {entityLabel}"
 msgstr "{entityLabel} үүсгэх"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Фийд үүсгэх"
 
@@ -652,11 +657,11 @@ msgstr "Фийд үүсгэх"
 msgid "Create new item"
 msgstr "Шинэ зүйл үүсгэх"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Эхлүүлэхийн тулд нэгийг үүсгэнэ."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "RSS фийд үүсгэх"
 
@@ -670,7 +675,7 @@ msgstr "Үүсгэгдсэн"
 msgid "Created {field}"
 msgstr "{field} үүсгэсэн"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "RSS фийд үүсгэж байна..."
 
@@ -725,9 +730,9 @@ msgstr "Үндсэн эрэмбэлэлт"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Устгах"
 
@@ -743,12 +748,12 @@ msgstr "Багана устгах"
 msgid "Delete comment"
 msgstr "Сэтгэгдэл устгах"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Фийд устгах"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Фийд устгах уу?"
 
@@ -760,9 +765,9 @@ msgstr "Талбар устгах"
 msgid "Delete game?"
 msgstr "Тоглоомыг устгах уу?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Зүйл устгах"
 
@@ -792,7 +797,7 @@ msgstr "Устгасан"
 msgid "Deleted {field}"
 msgstr "{field} устгасан"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Урсгал устгаж байна..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Шаардлагатай хэв маягт тохирохгүй байна"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Дууссан"
 
@@ -879,7 +884,7 @@ msgstr "Давхардлууд"
 msgid "Dyslexia-friendly"
 msgstr "Дислексид зориулсан"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "жнь, Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "{label} засах"
 msgid "Edit caption"
 msgstr "Тайлбар засах"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Фидийг засах"
 
@@ -947,7 +952,7 @@ msgstr "Имэйлд ирсэн кодоо оруулна уу"
 msgid "Enter your authenticator code"
 msgstr "Баталгаажуулагчийн кодоо оруулна уу"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Алдаа"
 
@@ -974,14 +979,14 @@ msgstr "Маш том"
 msgid "Failed to add account"
 msgstr "Бүртгэл нэмж чадсангүй"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Мэдэгдлийг цэвэрлэж чадсангүй"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Хуулж чадсангүй"
 
@@ -990,11 +995,11 @@ msgstr "Хуулж чадсангүй"
 msgid "Failed to create link"
 msgstr "Холбоос үүсгэж чадсангүй"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "RSS фийд үүсгэж чадсангүй"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Устгаж чадсангүй"
 
@@ -1006,7 +1011,7 @@ msgstr "Хавсралт устгаж чадсангүй"
 msgid "Failed to delete comment"
 msgstr "Сэтгэгдэл устгаж чадсангүй"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Feed устгаж чадсангүй"
 
@@ -1034,8 +1039,8 @@ msgstr "Түүх ачаалж чадсангүй"
 msgid "Failed to load image"
 msgstr "Зургийг ачаалж чадсангүй"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Зүйл ачаалж чадсангүй"
 
@@ -1051,15 +1056,15 @@ msgstr "Промптуудыг ачаалж чадсангүй"
 msgid "Failed to load video"
 msgstr "Видеог ачаалж чадсангүй"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Бүгдийг уншсан гэж тэмдэглэж чадсангүй"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Уншсан гэж тэмдэглэж чадсангүй"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Зөөж чадсангүй"
 
@@ -1067,7 +1072,7 @@ msgstr "Зөөж чадсангүй"
 msgid "Failed to post comment"
 msgstr "Сэтгэгдэл нийтэлж чадсангүй"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Feed-н нэрийг өөрчилж чадсангүй"
 
@@ -1079,7 +1084,7 @@ msgstr "Промптыг дахин тохируулж чадсангүй"
 msgid "Failed to revoke RSS access"
 msgstr "RSS хандалтыг цуцалж чадсангүй"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Хадгалж чадсангүй"
 
@@ -1099,11 +1104,11 @@ msgstr "Ангилал шинэчилж чадсангүй"
 msgid "Failed to update comment"
 msgstr "Сэтгэгдэл шинэчилж чадсангүй"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Feed шинэчилж чадсангүй"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Хяналтыг шинэчилж чадсангүй"
 
@@ -1111,19 +1116,19 @@ msgstr "Хяналтыг шинэчилж чадсангүй"
 msgid "Failed to upload attachment"
 msgstr "Хавсралт байршуулж чадсангүй"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Feed үүсгэгдсэн"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Feed устгагдсан"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Feed нэр"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Feed-н нэр өөрчлөгдсөн"
 
@@ -1239,7 +1244,7 @@ msgstr "Огноо хүчингүй"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Таны хайж буй хуудас <0/>байхгүй эсвэл устгагдсан бололтой."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Зүйлийн дэлгэрэнгүй"
 
@@ -1288,11 +1293,11 @@ msgstr "Илүү ачаалах"
 msgid "Loading content…"
 msgstr "Контент ачааллаж байна…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Зүйл ачаалж байна"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Зүйлийн дэлгэрэнгүй ачаалж байна"
 
@@ -1331,11 +1336,11 @@ msgstr "Гар аргаар"
 msgid "Mark all as read"
 msgstr "Бүгдийг уншсан гэж тэмдэглэх"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Бүгдийг уншсан гэж тэмдэглэх"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Бүгдийг уншсан гэж тэмдэглэж байна..."
 
@@ -1472,7 +1477,7 @@ msgstr "Одоогоор зүйл үүсгэх боломжгүй. Эхлээд 
 msgid "No matching objects"
 msgstr "Тохирох обьект алга"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Мэдэгдэл алга"
 
@@ -1494,7 +1499,7 @@ msgstr "Үр дүн олдсонгүй"
 msgid "No results found."
 msgstr "Үр дүн олдсонгүй."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "RSS-ийн фидүүд алга байна"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Сэдвийн бичлэг алга — дараагийн мэдэгдлийн дараа дахин оролдоно уу."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Уншаагүй мэдэгдэл алга"
 
@@ -1529,10 +1534,10 @@ msgstr "Үзэлт алга"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Тохируулаагүй"
 msgid "Nothing found"
 msgstr "Юу ч олдсонгүй"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Мэдэгдэл"
 
@@ -1572,8 +1577,8 @@ msgstr "Мэдэгдэл"
 msgid "Notifications: {0}"
 msgstr "Мэдэгдэл: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Анхдагчаар мэдэгдэх"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Эзэмшигч"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Эх"
 
@@ -1713,7 +1718,7 @@ msgstr "Боловсруулж байна…"
 msgid "Prompt saved"
 msgstr "Prompt хадгалагдсан"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Шинж чанарууд"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS хандалтыг цуцаллаа"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS фид"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS фидүүд"
 
@@ -1916,14 +1921,14 @@ msgstr "Бямба"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Хадгалах"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Хадгалж байна..."
 
@@ -2078,7 +2083,7 @@ msgstr "Эхлэл, очих газрыг тогтоох"
 msgid "Settings"
 msgstr "Тохиргоо"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Бүгдийг харуулах"
 
@@ -2141,8 +2146,8 @@ msgstr "Уужим"
 msgid "Start the discussion by adding the first comment."
 msgstr "Эхний сэтгэгдэл нэмж хэлэлцүүлэг эхлүүл."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Үзэхээ зогсоох"
 
@@ -2241,11 +2246,15 @@ msgstr "Сервер өгөгдлийн оронд вэб хуудас буца�
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Энэ аппад таны passkey-г ашиглахыг зөвшөөрөөгүй. Тохиргооны Зөвшөөрөл хэсэгт зөвшөөрнө үү."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Энэ нь уншсан болон уншаагүй бүх мэдэгдлийг бүрмөсөн устгана."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Энэ нь тоглоом болон түүний чатыг бүрмөсөн устгана. Энэ үйлдлийг буцаах боломжгүй."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Энэ нь энэ feed-г бүрмөсөн устгана. Үүнийг ашиглаж байгаа аливаа RSS уншигчид таны мэдэгдлүүдэд хандах боломжгүй болно."
 
@@ -2389,10 +2398,6 @@ msgstr "Байршуулах"
 msgid "Upload progress"
 msgstr "Байршуулалтын явц"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Энэ feed-г одоогийн мэдэгдлийн захиалгад ашиглах"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Нэвтрэх түлхүүрээ ашиглах"
@@ -2434,7 +2439,7 @@ msgstr "Видео үзэгч: {0}"
 msgid "View all notifications"
 msgstr "Бүх мэдэгдлүүдийг үзэх"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Зүйлийн дэлгэрэнгүйг үзэх, засварлах"
 
@@ -2446,8 +2451,8 @@ msgstr "Хяналт үзэх"
 msgid "Voice recording is not supported in this browser"
 msgstr "Энэ хөтөч дуу бичихийг дэмждэггүй"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Үзэх"
 

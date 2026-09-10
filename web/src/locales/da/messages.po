@@ -123,7 +123,7 @@ msgstr "Adgangsniveau"
 msgid "Account type"
 msgstr "Kontotype"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Aktivitet"
 
@@ -190,7 +190,7 @@ msgstr "Tilføj tag..."
 msgid "Add to existing notifications"
 msgstr "Tilføj til eksisterende notifikationer"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Tilføj til eksisterende abonnementer"
 
@@ -248,7 +248,7 @@ msgstr "Alt, der abonnerer på dette feed, holder op med at modtage det. Du kan 
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Er du sikker på, at du vil slette \"{0}\"?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Er du sikker på, at du vil slette \"{title}\"? Denne handling kan ikke fortrydes."
 
@@ -334,7 +334,7 @@ msgstr "Blokeret af"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Blokerede navigation til upålideligt link"
 
@@ -381,9 +381,9 @@ msgstr "Kamera ikke tilgængeligt"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Annuller"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Ryd"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Ryd alle"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Ryd alle notifikationer?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Ryd søgning"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Rydder notifikationer..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Kommentarer"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Kommentarer ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Kopieret"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Kopieret til udklipsholder"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Kopier"
 
@@ -643,8 +648,8 @@ msgstr "Opret"
 msgid "Create {entityLabel}"
 msgstr "Opret {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Opret feed"
 
@@ -652,11 +657,11 @@ msgstr "Opret feed"
 msgid "Create new item"
 msgstr "Opret nyt punkt"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Opret en for at komme i gang."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Opret RSS-feed"
 
@@ -670,7 +675,7 @@ msgstr "Oprettet"
 msgid "Created {field}"
 msgstr "{field} oprettet"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Opretter RSS-feed..."
 
@@ -725,9 +730,9 @@ msgstr "Standardsortering"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Slet"
 
@@ -743,12 +748,12 @@ msgstr "Slet kolonne"
 msgid "Delete comment"
 msgstr "Slet kommentar"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Slet feed"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Slet feed?"
 
@@ -760,9 +765,9 @@ msgstr "Slet felt"
 msgid "Delete game?"
 msgstr "Slet spillet?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Slet punkt"
 
@@ -792,7 +797,7 @@ msgstr "Slettet"
 msgid "Deleted {field}"
 msgstr "{field} slettet"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Sletter feed..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Matcher ikke det påkrævede mønster"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Færdig"
 
@@ -879,7 +884,7 @@ msgstr "Duplikerer"
 msgid "Dyslexia-friendly"
 msgstr "Ordblindevenlig"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "f.eks. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Rediger {label}"
 msgid "Edit caption"
 msgstr "Rediger billedtekst"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Rediger feed"
 
@@ -947,7 +952,7 @@ msgstr "Indtast koden fra din e-mail"
 msgid "Enter your authenticator code"
 msgstr "Indtast din autentificeringskode"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Fejl"
 
@@ -974,14 +979,14 @@ msgstr "Ekstra stor"
 msgid "Failed to add account"
 msgstr "Kunne ikke tilføje konto"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Kunne ikke rydde notifikationer"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Kunne ikke kopiere"
 
@@ -990,11 +995,11 @@ msgstr "Kunne ikke kopiere"
 msgid "Failed to create link"
 msgstr "Kunne ikke oprette link"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Kunne ikke oprette RSS-feed"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Kunne ikke slette"
 
@@ -1006,7 +1011,7 @@ msgstr "Kunne ikke slette vedhæftning"
 msgid "Failed to delete comment"
 msgstr "Kunne ikke slette kommentar"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Kunne ikke slette feed"
 
@@ -1034,8 +1039,8 @@ msgstr "Kunne ikke indlæse historik"
 msgid "Failed to load image"
 msgstr "Billedet kunne ikke indlæses"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Kunne ikke indlæse element"
 
@@ -1051,15 +1056,15 @@ msgstr "Kunne ikke indlæse prompts"
 msgid "Failed to load video"
 msgstr "Videoen kunne ikke indlæses"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Kunne ikke markere alle som læst"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Kunne ikke markere som læst"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Kunne ikke flytte"
 
@@ -1067,7 +1072,7 @@ msgstr "Kunne ikke flytte"
 msgid "Failed to post comment"
 msgstr "Kunne ikke poste kommentar"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Kunne ikke omdøbe feed"
 
@@ -1079,7 +1084,7 @@ msgstr "Kunne ikke nulstille prompt"
 msgid "Failed to revoke RSS access"
 msgstr "Kunne ikke tilbagekalde RSS-adgang"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Kunne ikke gemme"
 
@@ -1099,11 +1104,11 @@ msgstr "Kunne ikke opdatere kategori"
 msgid "Failed to update comment"
 msgstr "Kunne ikke opdatere kommentar"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Kunne ikke opdatere feed"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Kunne ikke opdatere overvågning"
 
@@ -1111,19 +1116,19 @@ msgstr "Kunne ikke opdatere overvågning"
 msgid "Failed to upload attachment"
 msgstr "Kunne ikke uploade vedhæftning"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Feed oprettet"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Feed slettet"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Feednavn"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Feed omdøbt"
 
@@ -1239,7 +1244,7 @@ msgstr "Ugyldig dato"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Det ser ud til, at den side, du leder efter, <0/>ikke findes eller er blevet fjernet."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Elementdetaljer"
 
@@ -1288,11 +1293,11 @@ msgstr "Indlæs flere"
 msgid "Loading content…"
 msgstr "Indlæser indhold…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Indlæser element"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Indlæser elementdetaljer"
 
@@ -1331,11 +1336,11 @@ msgstr "Manuel"
 msgid "Mark all as read"
 msgstr "Markér alle som læst"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Markér alle læst"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Markerer alle som læst..."
 
@@ -1472,7 +1477,7 @@ msgstr "Ingen emnetyper kan oprettes endnu. Opret først de nødvendige overordn
 msgid "No matching objects"
 msgstr "Ingen matchende objekter"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Ingen notifikationer"
 
@@ -1494,7 +1499,7 @@ msgstr "Ingen resultater fundet"
 msgid "No results found."
 msgstr "Ingen resultater fundet."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Ingen RSS-feeds endnu"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Ingen emnepost endnu — prøv igen efter næste notifikation."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Ingen ulæste notifikationer"
 
@@ -1529,10 +1534,10 @@ msgstr "Ingen visninger"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Ikke angivet"
 msgid "Nothing found"
 msgstr "Intet fundet"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Notifikationer"
 
@@ -1572,8 +1577,8 @@ msgstr "Notifikationer"
 msgid "Notifications: {0}"
 msgstr "Notifikationer: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Notificér som standard"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Ejer"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Overordnet"
 
@@ -1713,7 +1718,7 @@ msgstr "Behandler…"
 msgid "Prompt saved"
 msgstr "Prompt gemt"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Egenskaber"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS-adgang tilbagekaldt"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS-feed"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS-feeds"
 
@@ -1916,14 +1921,14 @@ msgstr "Lørdag"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Gem"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Gemmer..."
 
@@ -2078,7 +2083,7 @@ msgstr "Angiv oprindelse og destination"
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Vis alle"
 
@@ -2141,8 +2146,8 @@ msgstr "Rummeligt"
 msgid "Start the discussion by adding the first comment."
 msgstr "Start diskussionen ved at tilføje den første kommentar."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Stop overvågning"
 
@@ -2241,11 +2246,15 @@ msgstr "Serveren returnerede en webside i stedet for data."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Denne app må ikke bruge din adgangsnøgle. Tillad det i Indstillinger under Tilladelser."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Dette sletter alle notifikationer permanent, læste og ulæste."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Dette sletter spillet og dets chat permanent. Dette kan ikke fortrydes."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Dette sletter dette feed permanent. RSS-læsere, der bruger det, vil ikke længere have adgang til dine notifikationer."
 
@@ -2389,10 +2398,6 @@ msgstr "Upload"
 msgid "Upload progress"
 msgstr "Fremgang for upload"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Brug dette feed til dine nuværende notifikationsabonnementer"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Brug din adgangsnøgle"
@@ -2434,7 +2439,7 @@ msgstr "Videofremviser: {0}"
 msgid "View all notifications"
 msgstr "Vis alle notifikationer"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Vis og redigér elementets detaljer"
 
@@ -2446,8 +2451,8 @@ msgstr "Vis kontroller"
 msgid "Voice recording is not supported in this browser"
 msgstr "Stemmeoptagelse understøttes ikke i denne browser"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Overvåg"
 

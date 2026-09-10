@@ -123,7 +123,7 @@ msgstr "Antas ng access"
 msgid "Account type"
 msgstr "Uri ng account"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Aktibidad"
 
@@ -190,7 +190,7 @@ msgstr "Magdagdag ng tag..."
 msgid "Add to existing notifications"
 msgstr "Idagdag sa mga umiiral na notification"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Idagdag sa mga umiiral na subscription"
 
@@ -248,7 +248,7 @@ msgstr "Titigil sa pagtanggap nito ang lahat ng naka-subscribe sa feed na ito. M
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Sigurado ka bang gusto mong i-delete ang \"{0}\"?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Sigurado ka bang gusto mong i-delete ang \"{title}\"? Hindi na ito maibabalik."
 
@@ -334,7 +334,7 @@ msgstr "Hinarang ng"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Hinarang ang pag-navigate sa di-pinagkakatiwalaang link"
 
@@ -381,9 +381,9 @@ msgstr "Hindi available ang camera"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Kanselahin"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Burahin"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Burahin lahat"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "I-clear ang lahat ng abiso?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Burahin ang paghahanap"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Nililinis ang mga abiso..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Mga komento"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Mga komento ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Nakopya"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Nakopya sa clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Kopyahin"
 
@@ -643,8 +648,8 @@ msgstr "Gumawa"
 msgid "Create {entityLabel}"
 msgstr "Gumawa ng {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Gumawa ng feed"
 
@@ -652,11 +657,11 @@ msgstr "Gumawa ng feed"
 msgid "Create new item"
 msgstr "Gumawa ng bagong item"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Gumawa ng isa para magsimula."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Gumawa ng RSS feed"
 
@@ -670,7 +675,7 @@ msgstr "Nagawa"
 msgid "Created {field}"
 msgstr "Ginawa ang {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Gumagawa ng RSS feed..."
 
@@ -725,9 +730,9 @@ msgstr "Default na sort"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "I-delete"
 
@@ -743,12 +748,12 @@ msgstr "I-delete ang column"
 msgid "Delete comment"
 msgstr "I-delete ang komento"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "I-delete ang feed"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "I-delete ang feed?"
 
@@ -760,9 +765,9 @@ msgstr "I-delete ang field"
 msgid "Delete game?"
 msgstr "I-delete ang laro?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "I-delete ang item"
 
@@ -792,7 +797,7 @@ msgstr "Tinanggal"
 msgid "Deleted {field}"
 msgstr "Tinanggal ang {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Tinatanggal ang feed..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Hindi tumutugma sa kinakailangang pattern"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Tapos na"
 
@@ -879,7 +884,7 @@ msgstr "Duplicate"
 msgid "Dyslexia-friendly"
 msgstr "Angkop sa dyslexia"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "hal. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "I-edit ang {label}"
 msgid "Edit caption"
 msgstr "I-edit ang caption"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "I-edit ang feed"
 
@@ -947,7 +952,7 @@ msgstr "Ilagay ang code mula sa iyong email"
 msgid "Enter your authenticator code"
 msgstr "Ilagay ang iyong authenticator code"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Error"
 
@@ -974,14 +979,14 @@ msgstr "Sobrang laki"
 msgid "Failed to add account"
 msgstr "Nabigong magdagdag ng account"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Nabigong linisin ang mga abiso"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Nabigong kumopya"
 
@@ -990,11 +995,11 @@ msgstr "Nabigong kumopya"
 msgid "Failed to create link"
 msgstr "Nabigong gumawa ng link"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Nabigong gumawa ng RSS feed"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Nabigong magdelete"
 
@@ -1006,7 +1011,7 @@ msgstr "Nabigong magdelete ng attachment"
 msgid "Failed to delete comment"
 msgstr "Nabigong magdelete ng comment"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Nabigong magdelete ng feed"
 
@@ -1034,8 +1039,8 @@ msgstr "Nabigong i-load ang history"
 msgid "Failed to load image"
 msgstr "Nabigong i-load ang larawan"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Nabigong i-load ang item"
 
@@ -1051,15 +1056,15 @@ msgstr "Nabigong i-load ang mga prompt"
 msgid "Failed to load video"
 msgstr "Nabigong i-load ang video"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Nabigong i-mark lahat bilang read"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Nabigong markahan bilang nabasa"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Nabigong ilipat"
 
@@ -1067,7 +1072,7 @@ msgstr "Nabigong ilipat"
 msgid "Failed to post comment"
 msgstr "Nabigong mag-post ng comment"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Nabigong i-rename ang feed"
 
@@ -1079,7 +1084,7 @@ msgstr "Nabigong i-reset ang prompt"
 msgid "Failed to revoke RSS access"
 msgstr "Nabigong bawiin ang RSS access"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Nabigong i-save"
 
@@ -1099,11 +1104,11 @@ msgstr "Nabigong i-update ang category"
 msgid "Failed to update comment"
 msgstr "Nabigong i-update ang comment"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Nabigong i-update ang feed"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Nabigong i-update ang pagsubaybay"
 
@@ -1111,19 +1116,19 @@ msgstr "Nabigong i-update ang pagsubaybay"
 msgid "Failed to upload attachment"
 msgstr "Nabigong mag-upload ng attachment"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Nagawa ang feed"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Nadelete ang feed"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Pangalan ng feed"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Na-rename ang feed"
 
@@ -1239,7 +1244,7 @@ msgstr "Invalid na petsa"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Mukhang ang pahinang hinahanap mo <0/>ay wala o maaaring inalis na."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Detalye ng item"
 
@@ -1288,11 +1293,11 @@ msgstr "Mag-load ng higit pa"
 msgid "Loading content…"
 msgstr "Nilo-load ang nilalaman…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Nilo-load ang item"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Nilo-load ang detalye ng item"
 
@@ -1331,11 +1336,11 @@ msgstr "Manwal"
 msgid "Mark all as read"
 msgstr "Markahan lahat bilang nabasa"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Markahang nabasa lahat"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Minamarkahan lahat bilang nabasa..."
 
@@ -1472,7 +1477,7 @@ msgstr "Wala pang uri ng item na magagawa. Gumawa muna ng kinakailangang parent 
 msgid "No matching objects"
 msgstr "Walang tugmang object"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Walang notification"
 
@@ -1494,7 +1499,7 @@ msgstr "Walang nahanap na resulta"
 msgid "No results found."
 msgstr "Walang nakitang resulta."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Wala pang RSS feed"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Wala pang topic record — subukan muli pagkatapos ng susunod na notification."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Walang hindi pa nababasang notification"
 
@@ -1529,10 +1534,10 @@ msgstr "Walang view"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Hindi naka-set"
 msgid "Nothing found"
 msgstr "Walang nakita"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Mga Notification"
 
@@ -1572,8 +1577,8 @@ msgstr "Mga Notification"
 msgid "Notifications: {0}"
 msgstr "Mga notification: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Mag-notify bilang default"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "May-ari"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Magulang"
 
@@ -1713,7 +1718,7 @@ msgstr "Pinoproseso…"
 msgid "Prompt saved"
 msgstr "Na-save ang prompt"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Mga katangian"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Nabawi ang RSS access"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "Mga RSS feed"
 
@@ -1916,14 +1921,14 @@ msgstr "Sabado"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "I-save"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Sini-save..."
 
@@ -2078,7 +2083,7 @@ msgstr "Itakda ang origin at destination"
 msgid "Settings"
 msgstr "Mga setting"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Ipakita lahat"
 
@@ -2141,8 +2146,8 @@ msgstr "Maluwag"
 msgid "Start the discussion by adding the first comment."
 msgstr "Simulan ang diskusyon sa pamamagitan ng pagdagdag ng unang komento."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Itigil ang pagmamasid"
 
@@ -2241,11 +2246,15 @@ msgstr "Nagbalik ang server ng web page sa halip na data."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Hindi pinapayagan ang app na ito na gamitin ang iyong passkey. Payagan ito sa Mga Setting, sa ilalim ng Mga Pahintulot."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Permanenteng buburahin nito ang lahat ng notipikasyon, nabasa man o hindi."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Permanenteng buburahin nito ang laro at ang chat nito. Hindi na maaaring bawiin ang aksyong ito."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Permanenteng buburahin nito ang feed na ito. Ang anumang RSS reader na gumagamit nito ay hindi na makaka-access sa iyong mga notification."
 
@@ -2389,10 +2398,6 @@ msgstr "Mag-upload"
 msgid "Upload progress"
 msgstr "Progreso ng pag-upload"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Gamitin ang feed na ito para sa iyong kasalukuyang mga notification subscription"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Gamitin ang iyong passkey"
@@ -2434,7 +2439,7 @@ msgstr "Video viewer: {0}"
 msgid "View all notifications"
 msgstr "Tingnan lahat ng notification"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Tingnan at i-edit ang mga detalye ng item"
 
@@ -2446,8 +2451,8 @@ msgstr "Mga view control"
 msgid "Voice recording is not supported in this browser"
 msgstr "Hindi suportado ang voice recording sa browser na ito"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Manood"
 

@@ -123,7 +123,7 @@ msgstr "Nivell d'accés"
 msgid "Account type"
 msgstr "Tipus de compte"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Activitat"
 
@@ -190,7 +190,7 @@ msgstr "Afegeix una etiqueta..."
 msgid "Add to existing notifications"
 msgstr "Afegeix a les notificacions existents"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Afegeix a les subscripcions existents"
 
@@ -248,7 +248,7 @@ msgstr "Tot allò subscrit a aquest canal deixarà de rebre'l. Després en podre
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Segur que vols suprimir «{0}»?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Segur que vols suprimir «{title}»? Aquesta acció no es pot desfer."
 
@@ -334,7 +334,7 @@ msgstr "Bloquejat per"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "S'ha bloquejat la navegació a un enllaç no fiable"
 
@@ -381,9 +381,9 @@ msgstr "Càmera no disponible"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Esborra"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Esborra-ho tot"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Voleu esborrar totes les notificacions?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Esborra la cerca"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "S'estan esborrant les notificacions..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Comentaris"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Comentaris ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Copiat"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Copiat al porta-retalls"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Copia"
 
@@ -643,8 +648,8 @@ msgstr "Crea"
 msgid "Create {entityLabel}"
 msgstr "Crea {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Crea un canal"
 
@@ -652,11 +657,11 @@ msgstr "Crea un canal"
 msgid "Create new item"
 msgstr "Crea un element nou"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Crea'n un per començar."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Crea un canal RSS"
 
@@ -670,7 +675,7 @@ msgstr "Creat"
 msgid "Created {field}"
 msgstr "S'ha creat {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "S'està creant el canal RSS..."
 
@@ -725,9 +730,9 @@ msgstr "Ordre per defecte"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Suprimeix"
 
@@ -743,12 +748,12 @@ msgstr "Suprimeix la columna"
 msgid "Delete comment"
 msgstr "Suprimeix el comentari"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Suprimeix el canal"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Vols suprimir el canal?"
 
@@ -760,9 +765,9 @@ msgstr "Suprimeix el camp"
 msgid "Delete game?"
 msgstr "Vols suprimir la partida?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Suprimeix l'element"
 
@@ -792,7 +797,7 @@ msgstr "Suprimit"
 msgid "Deleted {field}"
 msgstr "S'ha suprimit {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Suprimint el canal..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "No coincideix amb el patró requerit"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Fet"
 
@@ -879,7 +884,7 @@ msgstr "Duplicats"
 msgid "Dyslexia-friendly"
 msgstr "Apte per a la dislèxia"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "p. ex., Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Edita {label}"
 msgid "Edit caption"
 msgstr "Edita la llegenda"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Edita el canal"
 
@@ -947,7 +952,7 @@ msgstr "Introduïu el codi del vostre correu electrònic"
 msgid "Enter your authenticator code"
 msgstr "Introduïu el codi de l'autenticador"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Error"
 
@@ -974,14 +979,14 @@ msgstr "Extra gran"
 msgid "Failed to add account"
 msgstr "No s'ha pogut afegir el compte"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "No s'han pogut esborrar les notificacions"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "No s'ha pogut copiar"
 
@@ -990,11 +995,11 @@ msgstr "No s'ha pogut copiar"
 msgid "Failed to create link"
 msgstr "No s'ha pogut crear l'enllaç"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "No s'ha pogut crear el canal RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "No s'ha pogut suprimir"
 
@@ -1006,7 +1011,7 @@ msgstr "No s'ha pogut suprimir l'adjunt"
 msgid "Failed to delete comment"
 msgstr "No s'ha pogut suprimir el comentari"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "No s'ha pogut suprimir la font"
 
@@ -1034,8 +1039,8 @@ msgstr "No s'ha pogut carregar l'historial"
 msgid "Failed to load image"
 msgstr "No s'ha pogut carregar la imatge"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "No s'ha pogut carregar l'element"
 
@@ -1051,15 +1056,15 @@ msgstr "No s'han pogut carregar els indicadors"
 msgid "Failed to load video"
 msgstr "No s'ha pogut carregar el vídeo"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "No s'ha pogut marcar tot com a llegit"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "No s'ha pogut marcar com a llegit"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "No s'ha pogut moure"
 
@@ -1067,7 +1072,7 @@ msgstr "No s'ha pogut moure"
 msgid "Failed to post comment"
 msgstr "No s'ha pogut publicar el comentari"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "No s'ha pogut canviar el nom de la font"
 
@@ -1079,7 +1084,7 @@ msgstr "No s'ha pogut restablir l'indicador"
 msgid "Failed to revoke RSS access"
 msgstr "No s'ha pogut revocar l'accés RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "No s'ha pogut desar"
 
@@ -1099,11 +1104,11 @@ msgstr "No s'ha pogut actualitzar la categoria"
 msgid "Failed to update comment"
 msgstr "No s'ha pogut actualitzar el comentari"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "No s'ha pogut actualitzar la font"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "No s'ha pogut actualitzar el seguiment"
 
@@ -1111,19 +1116,19 @@ msgstr "No s'ha pogut actualitzar el seguiment"
 msgid "Failed to upload attachment"
 msgstr "No s'ha pogut pujar l'adjunt"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Font creada"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Font suprimida"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Nom de la font"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Font reanomenada"
 
@@ -1239,7 +1244,7 @@ msgstr "Data no vàlida"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Sembla que la pàgina que cerqueu <0/>no existeix o s'ha eliminat."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Detalls de l'element"
 
@@ -1288,11 +1293,11 @@ msgstr "Carrega'n més"
 msgid "Loading content…"
 msgstr "S'està carregant el contingut…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "S'està carregant l'element"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "S'estan carregant els detalls de l'element"
 
@@ -1331,11 +1336,11 @@ msgstr "Manual"
 msgid "Mark all as read"
 msgstr "Marca-ho tot com a llegit"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Marca-ho tot com a llegit"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "S'està marcant tot com a llegit..."
 
@@ -1472,7 +1477,7 @@ msgstr "Encara no es pot crear cap tipus d'element. Crea primer els elements par
 msgid "No matching objects"
 msgstr "No hi ha objectes coincidents"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Sense notificacions"
 
@@ -1494,7 +1499,7 @@ msgstr "No s'han trobat resultats"
 msgid "No results found."
 msgstr "No s'ha trobat cap resultat."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Encara no hi ha canals RSS"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Encara no hi ha cap registre de tema; torna-ho a provar després de la pròxima notificació."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Sense notificacions no llegides"
 
@@ -1529,10 +1534,10 @@ msgstr "Sense visualitzacions"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "No establert"
 msgid "Nothing found"
 msgstr "No s'ha trobat res"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Notificacions"
 
@@ -1572,8 +1577,8 @@ msgstr "Notificacions"
 msgid "Notifications: {0}"
 msgstr "Notificacions: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Notifica per defecte"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Propietari"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Pare"
 
@@ -1713,7 +1718,7 @@ msgstr "S'està processant…"
 msgid "Prompt saved"
 msgstr "Sol·licitud desada"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Propietats"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Accés RSS revocat"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "Canal RSS"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "Canals RSS"
 
@@ -1916,14 +1921,14 @@ msgstr "Dissabte"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Desa"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Desant..."
 
@@ -2078,7 +2083,7 @@ msgstr "Estableix origen i destinació"
 msgid "Settings"
 msgstr "Configuració"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Mostra-ho tot"
 
@@ -2141,8 +2146,8 @@ msgstr "Espaiós"
 msgid "Start the discussion by adding the first comment."
 msgstr "Inicia la discussió afegint el primer comentari."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Deixa de seguir"
 
@@ -2241,11 +2246,15 @@ msgstr "El servidor ha retornat una pàgina web en lloc de dades."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Aquesta aplicació no té permís per utilitzar la vostra clau d'accés. Permeteu-ho a Configuració, sota Permisos."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Això suprimeix permanentment totes les notificacions, llegides i no llegides."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Això suprimeix permanentment la partida i el seu xat. Aquesta acció no es pot desfer."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Això eliminarà permanentment aquest canal. Els lectors RSS que l'utilitzin ja no podran accedir a les teves notificacions."
 
@@ -2389,10 +2398,6 @@ msgstr "Puja"
 msgid "Upload progress"
 msgstr "Progrés de la pujada"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Utilitza aquest canal per a les teves subscripcions de notificacions actuals"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Utilitzeu la vostra clau d'accés"
@@ -2434,7 +2439,7 @@ msgstr "Visor de vídeos: {0}"
 msgid "View all notifications"
 msgstr "Mostra totes les notificacions"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Visualitza i edita els detalls de l'element"
 
@@ -2446,8 +2451,8 @@ msgstr "Controls de visualització"
 msgid "Voice recording is not supported in this browser"
 msgstr "L'enregistrament de veu no és compatible amb aquest navegador"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Segueix"
 

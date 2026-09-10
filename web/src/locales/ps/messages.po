@@ -123,7 +123,7 @@ msgstr "د لاسرسي کچه"
 msgid "Account type"
 msgstr "د حساب ډول"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "فعالیت"
 
@@ -190,7 +190,7 @@ msgstr "ټاګ اضافه کړئ..."
 msgid "Add to existing notifications"
 msgstr "موجوده خبرتیاو ته اضافه کړئ"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "موجوده ګډونونو ته اضافه کړئ"
 
@@ -248,7 +248,7 @@ msgstr "هر څه چې دې فیډ ته ګډون کړی، ترلاسه کول ب
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "ایا تاسو ډاډه یاست چې غواړئ \"{0}\" ړنګ کړئ؟"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "ایا تاسو ډاډه یاست چې غواړئ \"{title}\" ړنګ کړئ؟ دا کړنه نشي بیرته اخیستل کیدلی."
 
@@ -334,7 +334,7 @@ msgstr "بند شوی لخوا"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "نه باور لرونکي لینک ته نیویګیشن بنده شوه"
 
@@ -381,9 +381,9 @@ msgstr "کامره شتون نلري"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "لغوه کول"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "پاک کړئ"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "ټول پاک کړئ"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "ټولې خبرتیاوې پاکې کړو؟"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "لټون پاک کړئ"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "خبرتیاوې پاکیږي..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "تبصرې"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "تبصرې ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "کاپي شو"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "په کلیپ بورډ کاپي شو"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "کاپي کړئ"
 
@@ -643,8 +648,8 @@ msgstr "جوړ کړئ"
 msgid "Create {entityLabel}"
 msgstr "{entityLabel} جوړ کړئ"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "فیډ جوړ کړئ"
 
@@ -652,11 +657,11 @@ msgstr "فیډ جوړ کړئ"
 msgid "Create new item"
 msgstr "نوی توکی جوړ کړئ"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "د پیل کولو لپاره یو جوړ کړئ."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "د RSS فیډ جوړ کړئ"
 
@@ -670,7 +675,7 @@ msgstr "جوړ شو"
 msgid "Created {field}"
 msgstr "{field} جوړ شو"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "د RSS فیډ جوړیږي..."
 
@@ -725,9 +730,9 @@ msgstr "ډیفالټ ترتیب"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "ړنګ کړئ"
 
@@ -743,12 +748,12 @@ msgstr "کالم ړنګ کړئ"
 msgid "Delete comment"
 msgstr "تبصره ړنګه کړئ"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "فیډ ړنګ کړئ"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "فیډ ړنګ کړئ؟"
 
@@ -760,9 +765,9 @@ msgstr "ساحه ړنګه کړئ"
 msgid "Delete game?"
 msgstr "لوبه ړنګه شي؟"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "توکی ړنګ کړئ"
 
@@ -792,7 +797,7 @@ msgstr "ړنګ شو"
 msgid "Deleted {field}"
 msgstr "{field} ړنګ شو"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "د فیډ ړنګول..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "د اړین نمونې سره سمون نه خوري"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "ترسره شو"
 
@@ -879,7 +884,7 @@ msgstr "نقلونه"
 msgid "Dyslexia-friendly"
 msgstr "د لوستلو ستونزې سره مطابقت لري"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "د بېلګې په توګه، Feedly، NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "{label} سمول"
 msgid "Edit caption"
 msgstr "تشریح سمول"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "فیډ سمول"
 
@@ -947,7 +952,7 @@ msgstr "هغه کوډ دننه کړئ چې ستاسو په برېښنالیک ک
 msgid "Enter your authenticator code"
 msgstr "د خپل تصدیق کوونکي کوډ دننه کړئ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "تېروتنه"
 
@@ -974,14 +979,14 @@ msgstr "ډېر لوی"
 msgid "Failed to add account"
 msgstr "د حساب اضافه کولو پاتې راغلل"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "خبرتیاوې پاکې نه شوې"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "د کاپي کولو پاتې راغلل"
 
@@ -990,11 +995,11 @@ msgstr "د کاپي کولو پاتې راغلل"
 msgid "Failed to create link"
 msgstr "د لینک جوړولو پاتې راغلل"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "د RSS فیډ جوړ نه شو"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "د حذف کولو پاتې راغلل"
 
@@ -1006,7 +1011,7 @@ msgstr "د ضمیمې حذف کولو پاتې راغلل"
 msgid "Failed to delete comment"
 msgstr "د تبصرې حذف کولو پاتې راغلل"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "د فیډ حذف کولو پاتې راغلل"
 
@@ -1034,8 +1039,8 @@ msgstr "د تاریخچې د بار کولو پاتې راغلل"
 msgid "Failed to load image"
 msgstr "انځور بار نه شو"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "د توکي د بار کولو پاتې راغلل"
 
@@ -1051,15 +1056,15 @@ msgstr "د promptونو د بار کولو پاتې راغلل"
 msgid "Failed to load video"
 msgstr "ویډیو بار نه شو"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "د ټولو د لوستل شویو په توګه نښه کولو پاتې راغلل"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "د لوستل شوي په توګه ونه نښل شو"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "لیږدول ناکام شول"
 
@@ -1067,7 +1072,7 @@ msgstr "لیږدول ناکام شول"
 msgid "Failed to post comment"
 msgstr "د تبصرې پوسټ کولو پاتې راغلل"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "د فیډ نوم بدلولو پاتې راغلل"
 
@@ -1079,7 +1084,7 @@ msgstr "د prompt د بیا تنظیم پاتې راغلل"
 msgid "Failed to revoke RSS access"
 msgstr "د RSS لاسرسي لغوه کول ناکام شول"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "د خوندي کولو پاتې راغلل"
 
@@ -1099,11 +1104,11 @@ msgstr "د کټګورۍ تازه کولو پاتې راغلل"
 msgid "Failed to update comment"
 msgstr "د تبصرې تازه کولو پاتې راغلل"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "د فیډ تازه کولو پاتې راغلل"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "د څارنې تازه کول ناکام شول"
 
@@ -1111,19 +1116,19 @@ msgstr "د څارنې تازه کول ناکام شول"
 msgid "Failed to upload attachment"
 msgstr "د ضمیمې اپلوډ پاتې راغلل"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "فیډ جوړ شو"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "فیډ وشلید"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "د فیډ نوم"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "د فیډ نوم بدل شو"
 
@@ -1239,7 +1244,7 @@ msgstr "ناسمه نېټه"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "داسې ښکاري چې هغه مخ چې تاسو یې لټوئ <0/>شتون نلري یا لرې شوی دی."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "د توکي جزئیات"
 
@@ -1288,11 +1293,11 @@ msgstr "نور بار کړئ"
 msgid "Loading content…"
 msgstr "منځپانګه بارېږي…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "توکی بار کیږي"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "د توکي جزئیات بار کیږي"
 
@@ -1331,11 +1336,11 @@ msgstr "لاسي"
 msgid "Mark all as read"
 msgstr "ټول د لوستل شویو په توګه نښه کړئ"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "ټول د لوستل شویو په توګه نښه کړئ"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "ټول د لوستل شوي په توګه نښل کیږي..."
 
@@ -1472,7 +1477,7 @@ msgstr "تر اوسه د توکو ډولونه نشي جوړیدلی. لومړی
 msgid "No matching objects"
 msgstr "هیڅ سمونوال شیان نشته"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "هیڅ خبرتیاوې نشته"
 
@@ -1494,7 +1499,7 @@ msgstr "هیڅ پایله ونه موندل شوه"
 msgid "No results found."
 msgstr "هیڅ پایلې ونه موندل شوې."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "تر اوسه هیڅ RSS فیډونه نشته"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "تر اوسه د موضوع هیڅ ریکارډ نشته — د راتلونکې خبرتیا وروسته بیا هڅه وکړئ."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "هیڅ نه لوستل شوې خبرتیاوې نشته"
 
@@ -1529,10 +1534,10 @@ msgstr "هیڅ کتنې نشته"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "نه دی ټاکل شوی"
 msgid "Nothing found"
 msgstr "هیڅ نه موندل شو"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "خبرتیاوې"
 
@@ -1572,8 +1577,8 @@ msgstr "خبرتیاوې"
 msgid "Notifications: {0}"
 msgstr "خبرتیاوې: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "په ډیفالټ ډول خبر کول"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "مالک"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "مور"
 
@@ -1713,7 +1718,7 @@ msgstr "پروسس کیږي…"
 msgid "Prompt saved"
 msgstr "پرامپټ خوندي شو"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "ځانګړتیاوې"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "د RSS لاسرسی لغوه شو"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS فیډ"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS فیډونه"
 
@@ -1916,14 +1921,14 @@ msgstr "شنبه"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "خوندي کول"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "د خوندي کولو په حال کې..."
 
@@ -2078,7 +2083,7 @@ msgstr "سرچینه او منزل وټاکئ"
 msgid "Settings"
 msgstr "ترتیبات"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "ټول وښیه"
 
@@ -2141,8 +2146,8 @@ msgstr "پراخه"
 msgid "Start the discussion by adding the first comment."
 msgstr "د لومړۍ تبصرې اضافه کولو سره بحث پیل کړئ."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "کتل بند کړئ"
 
@@ -2241,11 +2246,15 @@ msgstr "سرور د معلوماتو پر ځای یوه ویب پاڼه راست
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "دې اپ ته اجازه نشته چې ستاسو passkey وکاروي. په تنظیماتو کې، د اجازو لاندې یې اجازه ورکړئ."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "دا به ټول خبرتیاوې، لوستل شوې او نالوستل شوې، د تل لپاره ړنګې کړي."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "دا به لوبه او د هغې چیټ د تل لپاره ړنګ کړي. دا کړنه بیرته نشي کیدی."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "دا به دا فیډ دایمي ډول حذف کړي. هر هغه RSS لوستونکي چې له دې کاروي به نور ستاسو خبرتیاوو ته لاسرسی ونه لري."
 
@@ -2389,10 +2398,6 @@ msgstr "اپلوډ"
 msgid "Upload progress"
 msgstr "د پورته کولو پرمختګ"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "د خپلو اوسنیو خبرتیا ګډونونو لپاره دا فیډ وکاروئ"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "خپله پاس کیلۍ وکاروئ"
@@ -2434,7 +2439,7 @@ msgstr "د ویډیو کتونکی: {0}"
 msgid "View all notifications"
 msgstr "ټولې خبرتیاوې وګورئ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "د توکي تفصیلات وګورئ او سم کړئ"
 
@@ -2446,8 +2451,8 @@ msgstr "د کنټرول لیدل"
 msgid "Voice recording is not supported in this browser"
 msgstr "په دې براوزر کې غږ ثبتول ملاتړ نه لري"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "وګورئ"
 

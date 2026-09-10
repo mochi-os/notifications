@@ -123,7 +123,7 @@ msgstr "Sarbide maila"
 msgid "Account type"
 msgstr "Kontu mota"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Jarduera"
 
@@ -190,7 +190,7 @@ msgstr "Gehitu etiketa..."
 msgid "Add to existing notifications"
 msgstr "Gehitu lehendik dauden jakinarazpenei"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Gehitu lehendik dauden harpidetzei"
 
@@ -248,7 +248,7 @@ msgstr "Jario honetara harpidetutako guztiak jasotzeari utziko dio. Ondoren URL 
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Ziur al zaude \"{0}\" ezabatu nahi duzula?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Ziur al zaude \"{title}\" ezabatu nahi duzula? Ekintza hau ezin da desegin."
 
@@ -334,7 +334,7 @@ msgstr "Blokeatzailea"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Konfiantzazkoa ez den estekarako nabigazioa blokeatu da"
 
@@ -381,9 +381,9 @@ msgstr "Kamera ez dago erabilgarri"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Utzi"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Garbitu"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Garbitu dena"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Jakinarazpen guztiak garbitu?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Garbitu bilaketa"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Jakinarazpenak garbitzen..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Iruzkinak"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Iruzkinak ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Kopiatuta"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Arbelera kopiatu da"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Kopiatu"
 
@@ -643,8 +648,8 @@ msgstr "Sortu"
 msgid "Create {entityLabel}"
 msgstr "Sortu {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Sortu jarioa"
 
@@ -652,11 +657,11 @@ msgstr "Sortu jarioa"
 msgid "Create new item"
 msgstr "Sortu elementu berria"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Sortu bat hasteko."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Sortu RSS jarioa"
 
@@ -670,7 +675,7 @@ msgstr "Sortua"
 msgid "Created {field}"
 msgstr "{field} sortu da"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "RSS jarioa sortzen..."
 
@@ -725,9 +730,9 @@ msgstr "Lehenetsitako ordena"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Ezabatu"
 
@@ -743,12 +748,12 @@ msgstr "Ezabatu zutabea"
 msgid "Delete comment"
 msgstr "Ezabatu iruzkina"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Ezabatu jarioa"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Ezabatu jarioa?"
 
@@ -760,9 +765,9 @@ msgstr "Ezabatu eremua"
 msgid "Delete game?"
 msgstr "Jokoa ezabatu?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Ezabatu elementua"
 
@@ -792,7 +797,7 @@ msgstr "Ezabatuta"
 msgid "Deleted {field}"
 msgstr "{field} ezabatu da"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Jarioa ezabatzen..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Ez dator bat beharrezko ereduarekin"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Eginda"
 
@@ -879,7 +884,7 @@ msgstr "Bikoiztuak"
 msgid "Dyslexia-friendly"
 msgstr "Dislexiarako egokia"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "adib., Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Editatu {label}"
 msgid "Edit caption"
 msgstr "Editatu epigrafea"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Editatu jarioa"
 
@@ -947,7 +952,7 @@ msgstr "Sartu zure mezu elektronikoko kodea"
 msgid "Enter your authenticator code"
 msgstr "Sartu zure autentifikazio-aplikazioaren kodea"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Errorea"
 
@@ -974,14 +979,14 @@ msgstr "Oso handia"
 msgid "Failed to add account"
 msgstr "Ezin izan da kontua gehitu"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Ezin izan dira jakinarazpenak garbitu"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Ezin izan da kopiatu"
 
@@ -990,11 +995,11 @@ msgstr "Ezin izan da kopiatu"
 msgid "Failed to create link"
 msgstr "Ezin izan da esteka sortu"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Ezin izan da RSS jarioa sortu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Ezin izan da ezabatu"
 
@@ -1006,7 +1011,7 @@ msgstr "Ezin izan da eranskina ezabatu"
 msgid "Failed to delete comment"
 msgstr "Ezin izan da iruzkina ezabatu"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Ezin izan da jarioa ezabatu"
 
@@ -1034,8 +1039,8 @@ msgstr "Ezin izan da historia kargatu"
 msgid "Failed to load image"
 msgstr "Ezin izan da irudia kargatu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Ezin izan da elementua kargatu"
 
@@ -1051,15 +1056,15 @@ msgstr "Ezin izan dira galderak kargatu"
 msgid "Failed to load video"
 msgstr "Ezin izan da bideoa kargatu"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Ezin izan dira denak irakurritzat markatu"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Ezin izan da irakurritako gisa markatu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Ezin izan da mugitu"
 
@@ -1067,7 +1072,7 @@ msgstr "Ezin izan da mugitu"
 msgid "Failed to post comment"
 msgstr "Ezin izan da iruzkina argitaratu"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Ezin izan da jarioa berrizendatu"
 
@@ -1079,7 +1084,7 @@ msgstr "Ezin izan da galdera berrezarri"
 msgid "Failed to revoke RSS access"
 msgstr "Ezin izan da RSS sarbidea ezeztatu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Ezin izan da gorde"
 
@@ -1099,11 +1104,11 @@ msgstr "Ezin izan da kategoria eguneratu"
 msgid "Failed to update comment"
 msgstr "Ezin izan da iruzkina eguneratu"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Ezin izan da jarioa eguneratu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Ezin izan da jarraipena eguneratu"
 
@@ -1111,19 +1116,19 @@ msgstr "Ezin izan da jarraipena eguneratu"
 msgid "Failed to upload attachment"
 msgstr "Ezin izan da eranskina igo"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Jarioa sortuta"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Jarioa ezabatuta"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Jarioaren izena"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Jarioa berrizendatuta"
 
@@ -1239,7 +1244,7 @@ msgstr "Data baliogabea"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Bilatzen ari zaren orria <0/>ez dela existitzen edo kendu egin dela dirudi."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Elementuaren xehetasunak"
 
@@ -1288,11 +1293,11 @@ msgstr "Kargatu gehiago"
 msgid "Loading content…"
 msgstr "Edukia kargatzen…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Elementua kargatzen"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Elementuaren xehetasunak kargatzen"
 
@@ -1331,11 +1336,11 @@ msgstr "Eskuz"
 msgid "Mark all as read"
 msgstr "Markatu denak irakurritzat"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Markatu denak irakurritzat"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Dena irakurritako gisa markatzen..."
 
@@ -1472,7 +1477,7 @@ msgstr "Oraindik ezin da elementu motarik sortu. Sortu lehenik beharrezko elemen
 msgid "No matching objects"
 msgstr "Bat datorren objekturik ez"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Jakinarazpenik ez"
 
@@ -1494,7 +1499,7 @@ msgstr "Ez da emaitzarik aurkitu"
 msgid "No results found."
 msgstr "Ez da emaitzarik aurkitu."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Oraindik ez dago RSS jariorik"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Oraindik gairik ez — saiatu berriro hurrengo jakinarazpenaren ondoren."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Irakurri gabeko jakinarazpenik ez"
 
@@ -1529,10 +1534,10 @@ msgstr "Ikuspegirik ez"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Ezarri gabe"
 msgid "Nothing found"
 msgstr "Ez da ezer aurkitu"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Jakinarazpenak"
 
@@ -1572,8 +1577,8 @@ msgstr "Jakinarazpenak"
 msgid "Notifications: {0}"
 msgstr "Jakinarazpenak: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Lehenetsiz jakinarazi"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Jabea"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Gurasoa"
 
@@ -1713,7 +1718,7 @@ msgstr "Prozesatzen…"
 msgid "Prompt saved"
 msgstr "Galdera-aukera gorde da"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Propietateak"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS sarbidea ezeztatuta"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS jarioa"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS jarioak"
 
@@ -1916,14 +1921,14 @@ msgstr "Larunbata"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Gorde"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Gordetzen..."
 
@@ -2078,7 +2083,7 @@ msgstr "Ezarri jatorria eta helmuga"
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Erakutsi guztiak"
 
@@ -2141,8 +2146,8 @@ msgstr "Lasaia"
 msgid "Start the discussion by adding the first comment."
 msgstr "Hasi eztabaida lehen iruzkina gehituz."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Utzi ikusten"
 
@@ -2241,11 +2246,15 @@ msgstr "Zerbitzariak web-orri bat itzuli du datuen ordez."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Aplikazio honek ez du baimenik zure passkey-a erabiltzeko. Baimendu Ezarpenetan, Baimenak atalean."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Honek jakinarazpen guztiak betiko ezabatuko ditu, irakurriak eta irakurri gabeak."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Honek jokoa eta bere txata betiko ezabatuko ditu. Ekintza hau ezin da desegin."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Honek jario hau betiko ezabatuko du. Hau erabiltzen duten RSS irakurleek ezingo dute zure jakinarazpenetara sartu."
 
@@ -2389,10 +2398,6 @@ msgstr "Igo"
 msgid "Upload progress"
 msgstr "Igoeraren aurrerapena"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Erabili jario hau zure egungo jakinarazpen-harpidetzetarako"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Erabili zure sarbide-gakoa"
@@ -2434,7 +2439,7 @@ msgstr "Bideo-ikustailea: {0}"
 msgid "View all notifications"
 msgstr "Ikusi jakinarazpen guztiak"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Ikusi eta editatu elementuaren xehetasunak"
 
@@ -2446,8 +2451,8 @@ msgstr "Ikuspegi-kontrolak"
 msgid "Voice recording is not supported in this browser"
 msgstr "Nabigatzaile honek ez du ahots-grabazioa onartzen"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Ikusi"
 

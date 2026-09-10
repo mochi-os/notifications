@@ -123,7 +123,7 @@ msgstr "Ìpele ìwọlé"
 msgid "Account type"
 msgstr "Irú àkáǹtì"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Ìgbòkègbodò"
 
@@ -190,7 +190,7 @@ msgstr "Fi tag kún..."
 msgid "Add to existing notifications"
 msgstr "Fi sí àwọn ìfitónilétí tó wà"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Fi sí àwọn ìforúkọsílẹ̀ tó wà"
 
@@ -248,7 +248,7 @@ msgstr "Gbogbo ohun tí ó forúkọsílẹ̀ sí ìjẹun yìí yóò dáwọ́
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Ṣé o dájú pé o fẹ́ pa \"{0}\" rẹ́?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Ṣé o dájú pé o fẹ́ pa \"{title}\" rẹ́? A kò lè yí ìṣe yìí padà."
 
@@ -334,7 +334,7 @@ msgstr "Dídènà nípasẹ̀"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "A dí ìrìnnà sí ọ̀nà tí a kò gbẹ́kẹ̀lé"
 
@@ -381,9 +381,9 @@ msgstr "Kamẹra kò sí"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Fagilé"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Pa rẹ́"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Pa gbogbo rẹ̀ rẹ́"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Pa gbogbo àwọn ìfitónilétí rẹ́?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Pa àwárí rẹ́"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Ń pa àwọn ìfitónilétí rẹ́..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Àwọn àlàyé"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Àwọn ọ̀rọ̀ ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Ti dàkọ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "A ti ṣe àdàkọ sí clipboard"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Ṣe àdàkọ"
 
@@ -643,8 +648,8 @@ msgstr "Dá"
 msgid "Create {entityLabel}"
 msgstr "Ṣẹ̀dá {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Dá feed"
 
@@ -652,11 +657,11 @@ msgstr "Dá feed"
 msgid "Create new item"
 msgstr "Dá ohun tuntun"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Dá ọ̀kan láti bẹ̀rẹ̀."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Ṣẹda ìfàn RSS"
 
@@ -670,7 +675,7 @@ msgstr "Tí a dá"
 msgid "Created {field}"
 msgstr "A ṣẹ̀dá {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Ń ṣẹ̀dá ìfunni RSS..."
 
@@ -725,9 +730,9 @@ msgstr "Ìtò àìpé"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Pa rẹ́"
 
@@ -743,12 +748,12 @@ msgstr "Pa ọ̀wọ́n rẹ́"
 msgid "Delete comment"
 msgstr "Pa àlàyé rẹ́"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Pa feed rẹ́"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Pa feed rẹ́?"
 
@@ -760,9 +765,9 @@ msgstr "Pa pápá rẹ́"
 msgid "Delete game?"
 msgstr "Pa eré náà rẹ́?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Pa ohun rẹ́"
 
@@ -792,7 +797,7 @@ msgstr "A parẹ́"
 msgid "Deleted {field}"
 msgstr "A parẹ́ {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Ń pa ìṣàn rẹ́..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Kò bá àpẹẹrẹ tí a béèrè mu"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Ti parí"
 
@@ -879,7 +884,7 @@ msgstr "Ẹ̀dà"
 msgid "Dyslexia-friendly"
 msgstr "Ẹ̀dá lóàfin fún àìmoọ̀rọ̀"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "f.a. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Ṣàtúnṣe {label}"
 msgid "Edit caption"
 msgstr "Ṣàtúnṣe àlàyé"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Tunṣe feed"
 
@@ -947,7 +952,7 @@ msgstr "Tẹ koodu láti inú ímeèlì rẹ"
 msgid "Enter your authenticator code"
 msgstr "Tẹ kóòdù authenticator rẹ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Àṣìṣe"
 
@@ -974,14 +979,14 @@ msgstr "Tóbi gan"
 msgid "Failed to add account"
 msgstr "Kò lè fi àkántì kún"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Kò ṣàṣeyọrí láti pa àwọn ìfitónilétí rẹ́"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Kò lè dà"
 
@@ -990,11 +995,11 @@ msgstr "Kò lè dà"
 msgid "Failed to create link"
 msgstr "Kò lè dá ìjápọ̀"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Kò ṣàṣeyọrí láti ṣẹ̀dá ìfunni RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Kò lè parẹ́"
 
@@ -1006,7 +1011,7 @@ msgstr "Kò lè pa àfikún rẹ́"
 msgid "Failed to delete comment"
 msgstr "Kò lè pa ọ̀rọ̀-ìṣàlàyé rẹ́"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Kò lè pa feed rẹ́"
 
@@ -1034,8 +1039,8 @@ msgstr "Kò lè ṣí ìtàn lọ̀"
 msgid "Failed to load image"
 msgstr "Kò ṣeé gbé àwòrán wọlé"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Kò lè ṣí ohun lọ̀"
 
@@ -1051,15 +1056,15 @@ msgstr "Kò lè ṣí àwọn prompt lọ̀"
 msgid "Failed to load video"
 msgstr "Kò ṣeé gbé fídíò wọlé"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Kò lè samì sí gbogbo wọn gẹ́gẹ́ bí èyí tí a ti kà"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Kò ṣàṣeyọrí láti samì sí bíi tí a ti kà"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Ìkùnà láti gbé"
 
@@ -1067,7 +1072,7 @@ msgstr "Ìkùnà láti gbé"
 msgid "Failed to post comment"
 msgstr "Kò lè fi ọ̀rọ̀-ìṣàlàyé ránṣẹ́"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Kò lè tún sọ feed lórúkọ"
 
@@ -1079,7 +1084,7 @@ msgstr "Kò lè tún prompt ṣe"
 msgid "Failed to revoke RSS access"
 msgstr "Ìkùnà láti fagilé ìwọlé RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Kò lè fi pamọ́"
 
@@ -1099,11 +1104,11 @@ msgstr "Kò lè mú ẹ̀ka dòde"
 msgid "Failed to update comment"
 msgstr "Kò lè mú ọ̀rọ̀-ìṣàlàyé dòde"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Kò lè mú feed dòde"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Ìkùnà láti ṣàtúnṣe ìṣọ́"
 
@@ -1111,19 +1116,19 @@ msgstr "Ìkùnà láti ṣàtúnṣe ìṣọ́"
 msgid "Failed to upload attachment"
 msgstr "Kò lè gbé àfikún sókè"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "A ti dá feed"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "A ti pa feed rẹ́"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Orúkọ feed"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "A ti tún feed sọ lórúkọ"
 
@@ -1239,7 +1244,7 @@ msgstr "Ọjọ́ aláìdára"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Ó dàbí pé ojú-ìwé tí o ń wá <0/>kò sí tàbí a ti yọ ọ́ kúrò."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Àwọn àlàyé ohun"
 
@@ -1288,11 +1293,11 @@ msgstr "Ṣí síwájú"
 msgid "Loading content…"
 msgstr "Ìkójọpọ̀ àkóónú ń lọ…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Ń ṣí ohun"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Ń ṣí àwọn àlàyé ohun"
 
@@ -1331,11 +1336,11 @@ msgstr "Ìwé ìtọ́nisọ́nà"
 msgid "Mark all as read"
 msgstr "Sàmì sí gbogbo gẹ́gẹ́ bí kíkà"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Sàmì sí gbogbo gẹ́gẹ́ bí kíkà"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Ń samì sí gbogbo rẹ̀ bíi tí a ti kà..."
 
@@ -1472,7 +1477,7 @@ msgstr "A kò lè dá oríṣi item kankan sílẹ̀ síbẹ̀. Dá àwọn item
 msgid "No matching objects"
 msgstr "Kò sí object tó bámu"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Kò sí ìfìtọ́nisí"
 
@@ -1494,7 +1499,7 @@ msgstr "Kò sí àbájáde"
 msgid "No results found."
 msgstr "A kò rí àbájáde kankan."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Kò sí feed RSS síbẹ̀"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Kò sí àkọsílẹ̀ kókó síbẹ̀ — gbìyànjú lẹ́ẹ̀kan síi lẹ́yìn ìfìtọ́nisí tó kàn."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Kò sí ìfìtọ́nisí tí a kò kà"
 
@@ -1529,10 +1534,10 @@ msgstr "Kò sí ìwò"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "A kò ṣètò"
 msgid "Nothing found"
 msgstr "A kò rí ohunkóhun"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Àwọn ìfìtọ́nisí"
 
@@ -1572,8 +1577,8 @@ msgstr "Àwọn ìfìtọ́nisí"
 msgid "Notifications: {0}"
 msgstr "Àwọn ìfitónilétí: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Fìtọ́nisí gẹ́gẹ́ bí àbùdá"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Onílé"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Òbí"
 
@@ -1713,7 +1718,7 @@ msgstr "Ń ṣiṣẹ́ lé e…"
 msgid "Prompt saved"
 msgstr "A ti tọ́jú prompt"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Àwọn àmì"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Ìwọlé RSS ti fagilé"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "Feed RSS"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "Àwọn ìfàn RSS"
 
@@ -1916,14 +1921,14 @@ msgstr "Ọjọ́ Àbámẹ́ta"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Fi pamọ́"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Ń fi pamọ́..."
 
@@ -2078,7 +2083,7 @@ msgstr "Ṣètò ibi tí o ti wá àti ibi tí o ń lọ"
 msgid "Settings"
 msgstr "Àwọn ìṣètò"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Fi gbogbo rẹ̀ hàn"
 
@@ -2141,8 +2146,8 @@ msgstr "Àáyè"
 msgid "Start the discussion by adding the first comment."
 msgstr "Bẹ̀rẹ̀ ìjíròrò nípa fífi àsọyé àkọ́kọ́ kún."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Dáwọ́ ìríran dúró"
 
@@ -2241,11 +2246,15 @@ msgstr "Olupin naa da oju-ìwé wẹ́ẹ̀bù padà dípò data."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Ìṣàmúlò yìí kò ní àṣẹ láti lo passkey rẹ. Fàyè gbà á ní Ètò, lábẹ́ Àwọn Àṣẹ."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Èyí yóò pa gbogbo ìfitónilétí rẹ́ pátápátá, èyí tí a ti kà àti èyí tí a kò tíì kà."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Èyí yóò pa eré náà àti ìjíròrò rẹ̀ rẹ́ pátápátá. A kò lè yí ìṣe yìí padà."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Èyí yóò pa ìfàn yìí rẹ́ pátápátá. Èyíkéyìí òǹkàwé RSS tó ń lò ó kò ní lè rí àwọn ìfitónilétí rẹ mọ́."
 
@@ -2389,10 +2398,6 @@ msgstr "Gbé jáde"
 msgid "Upload progress"
 msgstr "Ìlọsíwájú ìgbéjáde"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Lo feed yìí fún àwọn ìforúkọsílẹ̀ ìfitónilétí lọ́wọ́lọ́wọ́"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Lo passkey rẹ"
@@ -2434,7 +2439,7 @@ msgstr "Ẹ̀rọ ìwo fídíò: {0}"
 msgid "View all notifications"
 msgstr "Wo gbogbo àwọn ìfitónilétí"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Wo kí o sì ṣàtúnṣe àlàyé nǹkan"
 
@@ -2446,8 +2451,8 @@ msgstr "Àwọn ìṣàkóso ìwòye"
 msgid "Voice recording is not supported in this browser"
 msgstr "Aṣàwákiri yìí kò ṣe àtìlẹ́yìn fún gbigbasilẹ ohùn"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Wo"
 

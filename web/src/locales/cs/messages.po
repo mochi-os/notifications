@@ -123,7 +123,7 @@ msgstr "Úroveň přístupu"
 msgid "Account type"
 msgstr "Typ účtu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Aktivita"
 
@@ -190,7 +190,7 @@ msgstr "Přidat štítek..."
 msgid "Add to existing notifications"
 msgstr "Přidat ke stávajícím oznámením"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Přidat ke stávajícím odběrům"
 
@@ -248,7 +248,7 @@ msgstr "Vše, co je k tomuto kanálu přihlášeno, jej přestane dostávat. Pot
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Opravdu chcete smazat „{0}“?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Opravdu chcete smazat „{title}“? Tuto akci nelze vrátit zpět."
 
@@ -334,7 +334,7 @@ msgstr "Blokováno"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Navigace na nedůvěryhodný odkaz zablokována"
 
@@ -381,9 +381,9 @@ msgstr "Kamera není k dispozici"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Vymazat"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Vymazat vše"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Vymazat všechna oznámení?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Vymazat hledání"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Mazání oznámení..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Komentáře"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Komentáře ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Zkopírováno"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Zkopírováno do schránky"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Kopírovat"
 
@@ -643,8 +648,8 @@ msgstr "Vytvořit"
 msgid "Create {entityLabel}"
 msgstr "Vytvořit {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Vytvořit kanál"
 
@@ -652,11 +657,11 @@ msgstr "Vytvořit kanál"
 msgid "Create new item"
 msgstr "Vytvořit novou položku"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Začněte vytvořením nového."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Vytvořit RSS kanál"
 
@@ -670,7 +675,7 @@ msgstr "Vytvořeno"
 msgid "Created {field}"
 msgstr "Vytvořeno {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Vytváření kanálu RSS..."
 
@@ -725,9 +730,9 @@ msgstr "Výchozí řazení"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Smazat"
 
@@ -743,12 +748,12 @@ msgstr "Smazat sloupec"
 msgid "Delete comment"
 msgstr "Smazat komentář"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Smazat kanál"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Smazat kanál?"
 
@@ -760,9 +765,9 @@ msgstr "Smazat pole"
 msgid "Delete game?"
 msgstr "Smazat hru?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Smazat položku"
 
@@ -792,7 +797,7 @@ msgstr "Smazáno"
 msgid "Deleted {field}"
 msgstr "Smazáno {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Mazání kanálu..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Neodpovídá požadovanému vzoru"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Hotovo"
 
@@ -879,7 +884,7 @@ msgstr "Duplikuje"
 msgid "Dyslexia-friendly"
 msgstr "Vhodné pro dyslexii"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "např. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Upravit {label}"
 msgid "Edit caption"
 msgstr "Upravit popisek"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Upravit kanál"
 
@@ -947,7 +952,7 @@ msgstr "Zadejte kód z vašeho e-mailu"
 msgid "Enter your authenticator code"
 msgstr "Zadejte kód z autentizační aplikace"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Chyba"
 
@@ -974,14 +979,14 @@ msgstr "Velmi velké"
 msgid "Failed to add account"
 msgstr "Nepodařilo se přidat účet"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Oznámení se nepodařilo smazat"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Nepodařilo se zkopírovat"
 
@@ -990,11 +995,11 @@ msgstr "Nepodařilo se zkopírovat"
 msgid "Failed to create link"
 msgstr "Nepodařilo se vytvořit odkaz"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Kanál RSS se nepodařilo vytvořit"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Nepodařilo se smazat"
 
@@ -1006,7 +1011,7 @@ msgstr "Nepodařilo se smazat přílohu"
 msgid "Failed to delete comment"
 msgstr "Nepodařilo se smazat komentář"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Nepodařilo se smazat kanál"
 
@@ -1034,8 +1039,8 @@ msgstr "Nepodařilo se načíst historii"
 msgid "Failed to load image"
 msgstr "Obrázek se nepodařilo načíst"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Nepodařilo se načíst položku"
 
@@ -1051,15 +1056,15 @@ msgstr "Nepodařilo se načíst prompty"
 msgid "Failed to load video"
 msgstr "Video se nepodařilo načíst"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Nepodařilo se označit vše jako přečtené"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Nepodařilo se označit jako přečtené"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Přesunutí se nezdařilo"
 
@@ -1067,7 +1072,7 @@ msgstr "Přesunutí se nezdařilo"
 msgid "Failed to post comment"
 msgstr "Nepodařilo se odeslat komentář"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Nepodařilo se přejmenovat kanál"
 
@@ -1079,7 +1084,7 @@ msgstr "Nepodařilo se obnovit prompt"
 msgid "Failed to revoke RSS access"
 msgstr "Zrušení přístupu RSS se nezdařilo"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Nepodařilo se uložit"
 
@@ -1099,11 +1104,11 @@ msgstr "Nepodařilo se aktualizovat kategorii"
 msgid "Failed to update comment"
 msgstr "Nepodařilo se aktualizovat komentář"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Nepodařilo se aktualizovat kanál"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Sledování se nepodařilo aktualizovat"
 
@@ -1111,19 +1116,19 @@ msgstr "Sledování se nepodařilo aktualizovat"
 msgid "Failed to upload attachment"
 msgstr "Nepodařilo se nahrát přílohu"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Kanál vytvořen"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Kanál smazán"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Název kanálu"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Kanál přejmenován"
 
@@ -1239,7 +1244,7 @@ msgstr "Neplatné datum"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Zdá se, že stránka, kterou hledáte, <0/>neexistuje nebo byla odebrána."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Podrobnosti položky"
 
@@ -1288,11 +1293,11 @@ msgstr "Načíst další"
 msgid "Loading content…"
 msgstr "Načítání obsahu…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Načítám položku"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Načítám podrobnosti položky"
 
@@ -1331,11 +1336,11 @@ msgstr "Ručně"
 msgid "Mark all as read"
 msgstr "Označit vše jako přečtené"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Označit vše jako přečtené"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Označování všech jako přečtené..."
 
@@ -1472,7 +1477,7 @@ msgstr "Zatím nelze vytvořit žádné typy položek. Nejprve vytvořte potřeb
 msgid "No matching objects"
 msgstr "Žádné odpovídající objekty"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Žádná oznámení"
 
@@ -1494,7 +1499,7 @@ msgstr "Nenalezeny žádné výsledky"
 msgid "No results found."
 msgstr "Žádné výsledky nenalezeny."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Zatím žádné RSS kanály"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Zatím žádný záznam o tématu — zkuste to znovu po dalším oznámení."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Žádná nepřečtená oznámení"
 
@@ -1529,10 +1534,10 @@ msgstr "Žádná zobrazení"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Nenastaveno"
 msgid "Nothing found"
 msgstr "Nic nenalezeno"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Oznámení"
 
@@ -1572,8 +1577,8 @@ msgstr "Oznámení"
 msgid "Notifications: {0}"
 msgstr "Oznámení: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Oznamovat ve výchozím nastavení"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Vlastník"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Rodič"
 
@@ -1713,7 +1718,7 @@ msgstr "Zpracovává se…"
 msgid "Prompt saved"
 msgstr "Prompt uložen"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Vlastnosti"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Přístup RSS zrušen"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS kanál"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS kanály"
 
@@ -1916,14 +1921,14 @@ msgstr "Sobota"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Uložit"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Ukládá se..."
 
@@ -2078,7 +2083,7 @@ msgstr "Nastavit výchozí bod a cíl"
 msgid "Settings"
 msgstr "Nastavení"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Zobrazit vše"
 
@@ -2141,8 +2146,8 @@ msgstr "Prostorné"
 msgid "Start the discussion by adding the first comment."
 msgstr "Začněte diskusi přidáním prvního komentáře."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Přestat sledovat"
 
@@ -2241,11 +2246,15 @@ msgstr "Server vrátil webovou stránku místo dat."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Tato aplikace nemá povolení používat váš passkey. Povolte ji v Nastavení v části Oprávnění."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Tímto trvale smažete všechna oznámení, přečtená i nepřečtená."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Tímto trvale smažete hru a její chat. Tuto akci nelze vzít zpět."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Tímto se tento kanál trvale smaže. Žádné RSS čtečky, které jej používají, již nebudou mít přístup k vašim oznámením."
 
@@ -2389,10 +2398,6 @@ msgstr "Nahrát"
 msgid "Upload progress"
 msgstr "Průběh nahrávání"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Použít tento kanál pro vaše aktuální odběry oznámení"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Použijte svůj přístupový klíč"
@@ -2434,7 +2439,7 @@ msgstr "Přehrávač videa: {0}"
 msgid "View all notifications"
 msgstr "Zobrazit všechna oznámení"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Zobrazit a upravit detaily položky"
 
@@ -2446,8 +2451,8 @@ msgstr "Zobrazit ovládací prvky"
 msgid "Voice recording is not supported in this browser"
 msgstr "Nahrávání hlasu není v tomto prohlížeči podporováno"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Sledovat"
 

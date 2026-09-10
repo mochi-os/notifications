@@ -123,7 +123,7 @@ msgstr "Узровень доступу"
 msgid "Account type"
 msgstr "Тып уліковага запісу"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Актыўнасць"
 
@@ -190,7 +190,7 @@ msgstr "Дадаць тэг..."
 msgid "Add to existing notifications"
 msgstr "Дадаць да існуючых апавяшчэнняў"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Дадаць да існуючых падпісак"
 
@@ -248,7 +248,7 @@ msgstr "Усё, што падпісана на гэтую стужку, пера
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Вы ўпэўнены, што хочаце выдаліць \"{0}\"?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Вы ўпэўнены, што хочаце выдаліць \"{title}\"? Гэтае дзеянне нельга адмяніць."
 
@@ -334,7 +334,7 @@ msgstr "Заблакавана"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Заблакаваны пераход па ненадзейнай спасылцы"
 
@@ -381,9 +381,9 @@ msgstr "Камера недаступная"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Адмена"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Ачысціць"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Ачысціць усё"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Ачысціць усе апавяшчэнні?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Ачысціць пошук"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Ачыстка апавяшчэнняў..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Каментарыі"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Каментарыі ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Скапіявана"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Скапіравана ў буфер абмену"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Капіраваць"
 
@@ -643,8 +648,8 @@ msgstr "Стварыць"
 msgid "Create {entityLabel}"
 msgstr "Стварыць {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Стварыць стужку"
 
@@ -652,11 +657,11 @@ msgstr "Стварыць стужку"
 msgid "Create new item"
 msgstr "Стварыць новы элемент"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Стварыце адзін, каб пачаць."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Стварыць RSS-стужку"
 
@@ -670,7 +675,7 @@ msgstr "Створана"
 msgid "Created {field}"
 msgstr "Створана {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Стварэнне стужкі RSS..."
 
@@ -725,9 +730,9 @@ msgstr "Сартаванне па змаўчанні"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Выдаліць"
 
@@ -743,12 +748,12 @@ msgstr "Выдаліць слупок"
 msgid "Delete comment"
 msgstr "Выдаліць каментарый"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Выдаліць стужку"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Выдаліць стужку?"
 
@@ -760,9 +765,9 @@ msgstr "Выдаліць поле"
 msgid "Delete game?"
 msgstr "Выдаліць гульню?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Выдаліць элемент"
 
@@ -792,7 +797,7 @@ msgstr "Выдалена"
 msgid "Deleted {field}"
 msgstr "Выдалена {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Выдаленне стужкі..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Не адпавядае патрэбнаму шаблону"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Гатова"
 
@@ -879,7 +884,7 @@ msgstr "Дублікаты"
 msgid "Dyslexia-friendly"
 msgstr "Сябар дыслексіі"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "напр., Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Рэдагаваць {label}"
 msgid "Edit caption"
 msgstr "Рэдагаваць подпіс"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Рэдагаваць стужку"
 
@@ -947,7 +952,7 @@ msgstr "Увядзіце код з вашай электроннай пошты"
 msgid "Enter your authenticator code"
 msgstr "Увядзіце код з праграмы-аўтэнтыфікатара"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Памылка"
 
@@ -974,14 +979,14 @@ msgstr "Вельмі вялікі"
 msgid "Failed to add account"
 msgstr "Не ўдалося дадаць акаўнт"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Не ўдалося ачысціць апавяшчэнні"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Не ўдалося скапіяваць"
 
@@ -990,11 +995,11 @@ msgstr "Не ўдалося скапіяваць"
 msgid "Failed to create link"
 msgstr "Не ўдалося стварыць спасылку"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Не ўдалося стварыць стужку RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Не ўдалося выдаліць"
 
@@ -1006,7 +1011,7 @@ msgstr "Не ўдалося выдаліць укладанне"
 msgid "Failed to delete comment"
 msgstr "Не ўдалося выдаліць каментарый"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Не ўдалося выдаліць стужку"
 
@@ -1034,8 +1039,8 @@ msgstr "Не ўдалося загрузіць гісторыю"
 msgid "Failed to load image"
 msgstr "Не ўдалося загрузіць відарыс"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Не ўдалося загрузіць элемент"
 
@@ -1051,15 +1056,15 @@ msgstr "Не ўдалося загрузіць запыты"
 msgid "Failed to load video"
 msgstr "Не ўдалося загрузіць відэа"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Не ўдалося адзначыць усё як прачытанае"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Не ўдалося адзначыць як прачытанае"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Не ўдалося перамясціць"
 
@@ -1067,7 +1072,7 @@ msgstr "Не ўдалося перамясціць"
 msgid "Failed to post comment"
 msgstr "Не ўдалося апублікаваць каментарый"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Не ўдалося перайменаваць стужку"
 
@@ -1079,7 +1084,7 @@ msgstr "Не ўдалося скінуць запыт"
 msgid "Failed to revoke RSS access"
 msgstr "Не ўдалося адклікаць доступ RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Не ўдалося захаваць"
 
@@ -1099,11 +1104,11 @@ msgstr "Не ўдалося абнавіць катэгорыю"
 msgid "Failed to update comment"
 msgstr "Не ўдалося абнавіць каментарый"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Не ўдалося абнавіць стужку"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Не ўдалося абнавіць адсочванне"
 
@@ -1111,19 +1116,19 @@ msgstr "Не ўдалося абнавіць адсочванне"
 msgid "Failed to upload attachment"
 msgstr "Не ўдалося загрузіць укладанне"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Стужка створана"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Стужка выдалена"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Назва стужкі"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Стужка перайменавана"
 
@@ -1239,7 +1244,7 @@ msgstr "Няправільная дата"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Здаецца, старонка, якую вы шукаеце, <0/>не існуе або была выдалена."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Дэталі элемента"
 
@@ -1288,11 +1293,11 @@ msgstr "Загрузіць больш"
 msgid "Loading content…"
 msgstr "Загрузка змесціва…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Загрузка элемента"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Загрузка дэталяў элемента"
 
@@ -1331,11 +1336,11 @@ msgstr "Уручную"
 msgid "Mark all as read"
 msgstr "Адзначыць усё як прачытанае"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Адзначыць усе прачытаныя"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Адзначэнне ўсіх як прачытаныя..."
 
@@ -1472,7 +1477,7 @@ msgstr "Пакуль нельга стварыць тыпы элементаў. 
 msgid "No matching objects"
 msgstr "Адпаведных аб'ектаў няма"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Апавяшчэнняў няма"
 
@@ -1494,7 +1499,7 @@ msgstr "Нічога не знойдзена"
 msgid "No results found."
 msgstr "Вынікі не знойдзены."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Пакуль няма RSS-стужак"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Запісу тэмы яшчэ няма — паспрабуйце пасля наступнага апавяшчэння."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Непрачытаных апавяшчэнняў няма"
 
@@ -1529,10 +1534,10 @@ msgstr "Праглядаў няма"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Не ўсталявана"
 msgid "Nothing found"
 msgstr "Нічога не знойдзена"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Апавяшчэнні"
 
@@ -1572,8 +1577,8 @@ msgstr "Апавяшчэнні"
 msgid "Notifications: {0}"
 msgstr "Апавяшчэнні: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Апавяшчаць па змаўчанні"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Уладальнік"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Бацькоўскі"
 
@@ -1713,7 +1718,7 @@ msgstr "Апрацоўка…"
 msgid "Prompt saved"
 msgstr "Падказка захавана"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Уласцівасці"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Доступ RSS адкліканы"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS-стужка"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS-стужкі"
 
@@ -1916,14 +1921,14 @@ msgstr "Субота"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Захаваць"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Захаванне..."
 
@@ -2078,7 +2083,7 @@ msgstr "Задаць адпраўленне і прызначэнне"
 msgid "Settings"
 msgstr "Налады"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Паказаць усё"
 
@@ -2141,8 +2146,8 @@ msgstr "Прасторны"
 msgid "Start the discussion by adding the first comment."
 msgstr "Пачніце абмеркаванне, дадаўшы першы каментарый."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Спыніць сачэнне"
 
@@ -2241,11 +2246,15 @@ msgstr "Сервер вярнуў вэб-старонку замест даны�
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Гэтай праграме не дазволена выкарыстоўваць ваш passkey. Дазвольце гэта ў Наладах, у раздзеле Дазволы."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Гэта незваротна выдаліць усе апавяшчэнні, прачытаныя і непрачытаныя."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Гэта незваротна выдаліць гульню і яе чат. Гэтае дзеянне нельга адрабіць."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Гэта незваротна выдаліць гэтую стужку. Любыя RSS-чытачы, якія яе выкарыстоўваюць, больш не змогуць атрымліваць доступ да вашых апавяшчэнняў."
 
@@ -2389,10 +2398,6 @@ msgstr "Загрузіць"
 msgid "Upload progress"
 msgstr "Ход запампоўкі"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Выкарыстоўваць гэтую стужку для бягучых падпісак на апавяшчэнні"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Скарыстайцеся ключом доступу"
@@ -2434,7 +2439,7 @@ msgstr "Прагляд відэа: {0}"
 msgid "View all notifications"
 msgstr "Паглядзець усе апавяшчэнні"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Паглядзіце і адрэдагуйце дэталі элемента"
 
@@ -2446,8 +2451,8 @@ msgstr "Элементы кіравання выглядам"
 msgid "Voice recording is not supported in this browser"
 msgstr "Запіс голасу не падтрымліваецца ў гэтым браўзеры"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Сачыць"
 

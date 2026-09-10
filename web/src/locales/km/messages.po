@@ -123,7 +123,7 @@ msgstr "កម្រិតការចូលប្រើ"
 msgid "Account type"
 msgstr "ប្រភេទគណនី"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "សកម្មភាព"
 
@@ -190,7 +190,7 @@ msgstr "បន្ថែមស្លាក..."
 msgid "Add to existing notifications"
 msgstr "បន្ថែមទៅការជូនដំណឹងដែលមានស្រាប់"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "បន្ថែមទៅការជាវដែលមានស្រាប់"
 
@@ -248,7 +248,7 @@ msgstr "អ្វីៗដែលបានជាវព័ត៌មាននេះ
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "តើអ្នកប្រាកដថាចង់លុប \"{0}\" មែនទេ?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "តើអ្នកប្រាកដថាចង់លុប \"{title}\" មែនទេ? សកម្មភាពនេះមិនអាចបញ្ច្រាសបានទេ។"
 
@@ -334,7 +334,7 @@ msgstr "ត្រូវបានរារាំងដោយ"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "បានរារាំងការរុករកទៅតំណមិនគួរឱ្យទុកចិត្ត"
 
@@ -381,9 +381,9 @@ msgstr "កាមេរ៉ាមិនអាចប្រើបាន"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "បោះបង់"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "សម្អាត"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "សម្អាតទាំងអស់"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "សម្អាតការជូនដំណឹងទាំងអស់?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "សម្អាតការស្វែងរក"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "កំពុងសម្អាតការជូនដំណឹង..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "មតិយោបល់"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "មតិយោបល់ ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "បានចម្លង"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "បានចម្លងទៅក្ដារតម្បៀតខ្ទាស់"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "ចម្លង"
 
@@ -643,8 +648,8 @@ msgstr "បង្កើត"
 msgid "Create {entityLabel}"
 msgstr "បង្កើត {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "បង្កើតមតិព័ត៌មាន"
 
@@ -652,11 +657,11 @@ msgstr "បង្កើតមតិព័ត៌មាន"
 msgid "Create new item"
 msgstr "បង្កើតធាតុថ្មី"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "បង្កើតមួយដើម្បីចាប់ផ្តើម។"
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "បង្កើតមតិព័ត៌មាន RSS"
 
@@ -670,7 +675,7 @@ msgstr "បានបង្កើត"
 msgid "Created {field}"
 msgstr "បានបង្កើត {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "កំពុងបង្កើតមតិព័ត៌មាន RSS..."
 
@@ -725,9 +730,9 @@ msgstr "ការតម្រៀបលំនាំដើម"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "លុប"
 
@@ -743,12 +748,12 @@ msgstr "លុបជួរឈរ"
 msgid "Delete comment"
 msgstr "លុបមតិយោបល់"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "លុបមតិព័ត៌មាន"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "លុបមតិព័ត៌មាន?"
 
@@ -760,9 +765,9 @@ msgstr "លុបប្រអប់"
 msgid "Delete game?"
 msgstr "លុបហ្គេម?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "លុបធាតុ"
 
@@ -792,7 +797,7 @@ msgstr "បានលុប"
 msgid "Deleted {field}"
 msgstr "បានលុប {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "កំពុងលុបព័ត៌មាន..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "មិនត្រូវនឹងលំនាំដែលទាមទារ"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "រួចរាល់"
 
@@ -879,7 +884,7 @@ msgstr "ស្ទួន"
 msgid "Dyslexia-friendly"
 msgstr "ស័ក្តិសមនឹងជំងឺឌីស្លេកស៊ី"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "ឧ. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "កែ {label}"
 msgid "Edit caption"
 msgstr "កែសម្រួលចំណងជើង"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "កែ feed"
 
@@ -947,7 +952,7 @@ msgstr "បញ្ចូលកូដពីអ៊ីមែលរបស់អ្ន
 msgid "Enter your authenticator code"
 msgstr "បញ្ចូលកូដ authenticator របស់អ្នក"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "កំហុស"
 
@@ -974,14 +979,14 @@ msgstr "ធំពិសេស"
 msgid "Failed to add account"
 msgstr "បរាជ័យក្នុងការបន្ថែមគណនី"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "មិនអាចសម្អាតការជូនដំណឹងបានទេ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "បរាជ័យក្នុងការចម្លង"
 
@@ -990,11 +995,11 @@ msgstr "បរាជ័យក្នុងការចម្លង"
 msgid "Failed to create link"
 msgstr "បរាជ័យក្នុងការបង្កើតតំណ"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "មិនអាចបង្កើតមតិព័ត៌មាន RSS បានទេ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "បរាជ័យក្នុងការលុប"
 
@@ -1006,7 +1011,7 @@ msgstr "បរាជ័យក្នុងការលុបឯកសារភ្
 msgid "Failed to delete comment"
 msgstr "បរាជ័យក្នុងការលុបមតិយោបល់"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "បរាជ័យក្នុងការលុបព័ត៌មានបង្ហាញ"
 
@@ -1034,8 +1039,8 @@ msgstr "បរាជ័យក្នុងការផ្ទុកប្រវត
 msgid "Failed to load image"
 msgstr "បរាជ័យក្នុងការផ្ទុករូបភាព"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "បរាជ័យក្នុងការផ្ទុកធាតុ"
 
@@ -1051,15 +1056,15 @@ msgstr "បរាជ័យក្នុងការផ្ទុកប្រអប
 msgid "Failed to load video"
 msgstr "បរាជ័យក្នុងការផ្ទុកវីដេអូ"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "បរាជ័យក្នុងការសម្គាល់ទាំងអស់ថាបានអាន"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "មិនអាចសម្គាល់ថាបានអានទេ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "ការផ្លាស់ទីបានបរាជ័យ"
 
@@ -1067,7 +1072,7 @@ msgstr "ការផ្លាស់ទីបានបរាជ័យ"
 msgid "Failed to post comment"
 msgstr "បរាជ័យក្នុងការបង្ហោះមតិយោបល់"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "បរាជ័យក្នុងការប្ដូរឈ្មោះព័ត៌មានបង្ហាញ"
 
@@ -1079,7 +1084,7 @@ msgstr "បរាជ័យក្នុងការកំណត់ប្រអប
 msgid "Failed to revoke RSS access"
 msgstr "បរាជ័យក្នុងការដកហូតការចូលប្រើ RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "បរាជ័យក្នុងការរក្សាទុក"
 
@@ -1099,11 +1104,11 @@ msgstr "បរាជ័យក្នុងការធ្វើបច្ចុប
 msgid "Failed to update comment"
 msgstr "បរាជ័យក្នុងការធ្វើបច្ចុប្បន្នភាពមតិយោបល់"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "បរាជ័យក្នុងការធ្វើបច្ចុប្បន្នភាពព័ត៌មានបង្ហាញ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "ការធ្វើបច្ចុប្បន្នភាពការតាមដានបានបរាជ័យ"
 
@@ -1111,19 +1116,19 @@ msgstr "ការធ្វើបច្ចុប្បន្នភាពការ
 msgid "Failed to upload attachment"
 msgstr "បរាជ័យក្នុងការផ្ទុកឡើងឯកសារភ្ជាប់"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "បានបង្កើតព័ត៌មានបង្ហាញ"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "បានលុបព័ត៌មានបង្ហាញ"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "ឈ្មោះព័ត៌មានបង្ហាញ"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "បានប្ដូរឈ្មោះព័ត៌មានបង្ហាញ"
 
@@ -1239,7 +1244,7 @@ msgstr "កាលបរិច្ឆេទមិនត្រឹមត្រូវ
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "ហាក់ដូចជាទំព័រដែលអ្នកកំពុងស្វែងរក <0/>មិនមាន ឬត្រូវបានលុបចេញ។"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "ព័ត៌មានលម្អិតធាតុ"
 
@@ -1288,11 +1293,11 @@ msgstr "ផ្ទុកបន្ថែម"
 msgid "Loading content…"
 msgstr "កំពុងផ្ទុកមាតិកា…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "កំពុងផ្ទុកធាតុ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "កំពុងផ្ទុកព័ត៌មានលម្អិតធាតុ"
 
@@ -1331,11 +1336,11 @@ msgstr "សៀវភៅណែនាំ"
 msgid "Mark all as read"
 msgstr "សម្គាល់ទាំងអស់ថាបានអាន"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "សម្គាល់ទាំងអស់បានអាន"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "កំពុងសម្គាល់ទាំងអស់ថាបានអាន..."
 
@@ -1472,7 +1477,7 @@ msgstr "មិនអាចបង្កើតប្រភេទធាតុបា
 msgid "No matching objects"
 msgstr "មិនមានវត្ថុដែលត្រូវនឹង"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "មិនមានការជូនដំណឹង"
 
@@ -1494,7 +1499,7 @@ msgstr "រកមិនឃើញលទ្ធផល"
 msgid "No results found."
 msgstr "រកមិនឃើញលទ្ធផល។"
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "មិនទាន់មាន RSS feed"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "មិនទាន់មានកំណត់ត្រាប្រធានបទ — សាកល្បងម្តងទៀតបន្ទាប់ពីការជូនដំណឹងលើកក្រោយ។"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "មិនមានការជូនដំណឹងដែលមិនទាន់អាន"
 
@@ -1529,10 +1534,10 @@ msgstr "មិនមានការមើល"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "មិនបានកំណត់"
 msgid "Nothing found"
 msgstr "រកមិនឃើញ"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "ការជូនដំណឹង"
 
@@ -1572,8 +1577,8 @@ msgstr "ការជូនដំណឹង"
 msgid "Notifications: {0}"
 msgstr "ការជូនដំណឹង៖ {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "ជូនដំណឹងតាមលំនាំដើម"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "ម្ចាស់"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "មេ"
 
@@ -1713,7 +1718,7 @@ msgstr "កំពុងដំណើរការ…"
 msgid "Prompt saved"
 msgstr "បានរក្សាទុក prompt"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "លក្ខណៈសម្បត្តិ"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "បានដកហូតការចូលប្រើ RSS"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS feeds"
 
@@ -1916,14 +1921,14 @@ msgstr "ថ្ងៃសៅរ៍"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "រក្សាទុក"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "កំពុងរក្សាទុក..."
 
@@ -2078,7 +2083,7 @@ msgstr "កំណត់ចំណុចចេញដំណើរ និងគោ�
 msgid "Settings"
 msgstr "ការកំណត់"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "បង្ហាញទាំងអស់"
 
@@ -2141,8 +2146,8 @@ msgstr "ធំទូលាយ"
 msgid "Start the discussion by adding the first comment."
 msgstr "ចាប់ផ្តើមការពិភាក្សាដោយបន្ថែមមតិយោបល់ដំបូង។"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "បញ្ឈប់ការតាមដាន"
 
@@ -2241,11 +2246,15 @@ msgstr "ម៉ាស៊ីនមេបានបញ្ជូនត្រឡប់
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "កម្មវិធីនេះមិនត្រូវបានអនុញ្ញាតឱ្យប្រើ passkey របស់អ្នកទេ។ អនុញ្ញាតវានៅក្នុងការកំណត់ ក្រោមផ្នែកសិទ្ធិ។"
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "សកម្មភាពនេះនឹងលុបការជូនដំណឹងទាំងអស់ជាអចិន្ត្រៃយ៍ ទាំងដែលបានអាន និងមិនទាន់អាន។"
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "សកម្មភាពនេះនឹងលុបហ្គេម និងជជែកកំសាន្តរបស់វាជាអចិន្ត្រៃយ៍។ សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។"
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "នេះនឹងលុបព័ត៌មាននេះជាអចិន្ត្រៃយ៍។ កម្មវិធីអាន RSS ណាមួយដែលប្រើវានឹងលែងអាចចូលប្រើការជូនដំណឹងរបស់អ្នកបានទៀតទេ។"
 
@@ -2389,10 +2398,6 @@ msgstr "បង្ហោះ"
 msgid "Upload progress"
 msgstr "វឌ្ឍនភាពនៃការផ្ទុកឡើង"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "ប្រើព័ត៌មាននេះសម្រាប់ការជាវការជូនដំណឹងបច្ចុប្បន្នរបស់អ្នក"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "ប្រើ passkey របស់អ្នក"
@@ -2434,7 +2439,7 @@ msgstr "កម្មវិធីមើលវីដេអូ៖ {0}"
 msgid "View all notifications"
 msgstr "មើលការជូនដំណឹងទាំងអស់"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "មើល និងកែសម្រួលព័ត៌មានលម្អិតធាតុ"
 
@@ -2446,8 +2451,8 @@ msgstr "ការគ្រប់គ្រងទិដ្ឋភាព"
 msgid "Voice recording is not supported in this browser"
 msgstr "កម្មវិធីរុករកនេះមិនគាំទ្រការថតសំឡេងទេ"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "មើល"
 

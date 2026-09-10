@@ -123,7 +123,7 @@ msgstr "مستوى الوصول"
 msgid "Account type"
 msgstr "نوع الحساب"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "النشاط"
 
@@ -190,7 +190,7 @@ msgstr "إضافة وسم..."
 msgid "Add to existing notifications"
 msgstr "إضافة إلى الإشعارات الحالية"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "إضافة إلى الاشتراكات الحالية"
 
@@ -248,7 +248,7 @@ msgstr "سيتوقف أي شيء مشترك في هذه التغذية عن تل
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "هل أنت متأكد من حذف \"{0}\"؟"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "هل أنت متأكد من حذف \"{title}\"؟ لا يمكن التراجع عن هذا الإجراء."
 
@@ -334,7 +334,7 @@ msgstr "محظور بواسطة"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "تم حظر الانتقال إلى رابط غير موثوق"
 
@@ -381,9 +381,9 @@ msgstr "الكاميرا غير متاحة"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "إلغاء"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "مسح"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "مسح الكل"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "مسح جميع الإشعارات؟"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "مسح البحث"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "جارٍ مسح الإشعارات..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "التعليقات"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "التعليقات ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "تم النسخ"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "تم النسخ إلى الحافظة"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "نسخ"
 
@@ -643,8 +648,8 @@ msgstr "إنشاء"
 msgid "Create {entityLabel}"
 msgstr "إنشاء {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "إنشاء تغذية"
 
@@ -652,11 +657,11 @@ msgstr "إنشاء تغذية"
 msgid "Create new item"
 msgstr "إنشاء عنصر جديد"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "أنشئ واحدًا للبدء."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "إنشاء موجز RSS"
 
@@ -670,7 +675,7 @@ msgstr "تم الإنشاء"
 msgid "Created {field}"
 msgstr "تم إنشاء {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "جارٍ إنشاء موجز RSS..."
 
@@ -725,9 +730,9 @@ msgstr "الترتيب الافتراضي"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "حذف"
 
@@ -743,12 +748,12 @@ msgstr "حذف العمود"
 msgid "Delete comment"
 msgstr "حذف التعليق"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "حذف التغذية"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "حذف التغذية؟"
 
@@ -760,9 +765,9 @@ msgstr "حذف الحقل"
 msgid "Delete game?"
 msgstr "حذف اللعبة؟"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "حذف العنصر"
 
@@ -792,7 +797,7 @@ msgstr "تم الحذف"
 msgid "Deleted {field}"
 msgstr "تم حذف {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "جارٍ حذف الموجز..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "لا يطابق النمط المطلوب"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "منتهٍ"
 
@@ -879,7 +884,7 @@ msgstr "يكرر"
 msgid "Dyslexia-friendly"
 msgstr "مناسب لعسر القراءة"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "مثل Feedly وNewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "تعديل {label}"
 msgid "Edit caption"
 msgstr "تعديل التسمية التوضيحية"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "تعديل الخلاصة"
 
@@ -947,7 +952,7 @@ msgstr "أدخل الرمز من بريدك الإلكتروني"
 msgid "Enter your authenticator code"
 msgstr "أدخل رمز تطبيق المصادقة"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "خطأ"
 
@@ -974,14 +979,14 @@ msgstr "كبير جداً"
 msgid "Failed to add account"
 msgstr "فشل إضافة الحساب"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "فشل مسح الإشعارات"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "فشل النسخ"
 
@@ -990,11 +995,11 @@ msgstr "فشل النسخ"
 msgid "Failed to create link"
 msgstr "فشل إنشاء الرابط"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "فشل إنشاء موجز RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "فشل الحذف"
 
@@ -1006,7 +1011,7 @@ msgstr "فشل حذف المرفق"
 msgid "Failed to delete comment"
 msgstr "فشل حذف التعليق"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "فشل حذف التغذية"
 
@@ -1034,8 +1039,8 @@ msgstr "فشل تحميل السجل"
 msgid "Failed to load image"
 msgstr "تعذّر تحميل الصورة"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "فشل تحميل العنصر"
 
@@ -1051,15 +1056,15 @@ msgstr "فشل تحميل المطالبات"
 msgid "Failed to load video"
 msgstr "تعذّر تحميل الفيديو"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "فشل وضع علامة على الكل كمقروء"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "فشل وضع علامة مقروء"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "فشل النقل"
 
@@ -1067,7 +1072,7 @@ msgstr "فشل النقل"
 msgid "Failed to post comment"
 msgstr "فشل نشر التعليق"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "فشل إعادة تسمية التغذية"
 
@@ -1079,7 +1084,7 @@ msgstr "فشل إعادة تعيين المطالبة"
 msgid "Failed to revoke RSS access"
 msgstr "فشل إلغاء وصول RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "فشل الحفظ"
 
@@ -1099,11 +1104,11 @@ msgstr "فشل تحديث الفئة"
 msgid "Failed to update comment"
 msgstr "فشل تحديث التعليق"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "فشل تحديث التغذية"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "فشل تحديث المتابعة"
 
@@ -1111,19 +1116,19 @@ msgstr "فشل تحديث المتابعة"
 msgid "Failed to upload attachment"
 msgstr "فشل رفع المرفق"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "تم إنشاء التغذية"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "تم حذف التغذية"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "اسم التغذية"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "تمت إعادة تسمية التغذية"
 
@@ -1239,7 +1244,7 @@ msgstr "تاريخ غير صالح"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "يبدو أن الصفحة التي تبحث عنها <0/>غير موجودة أو ربما تمت إزالتها."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "تفاصيل العنصر"
 
@@ -1288,11 +1293,11 @@ msgstr "تحميل المزيد"
 msgid "Loading content…"
 msgstr "جارٍ تحميل المحتوى…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "جارٍ تحميل العنصر"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "جارٍ تحميل تفاصيل العنصر"
 
@@ -1331,11 +1336,11 @@ msgstr "يدوي"
 msgid "Mark all as read"
 msgstr "وضع علامة مقروء على الكل"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "وضع علامة مقروء على الكل"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "جارٍ وضع علامة مقروء على الكل..."
 
@@ -1472,7 +1477,7 @@ msgstr "لا يمكن إنشاء أنواع عناصر بعد. أنشئ العن
 msgid "No matching objects"
 msgstr "لا توجد كائنات مطابقة"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "لا توجد إشعارات"
 
@@ -1494,7 +1499,7 @@ msgstr "لم يتم العثور على نتائج"
 msgid "No results found."
 msgstr "لم يتم العثور على نتائج."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "لا توجد RSS feeds بعد"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "لا يوجد سجل موضوع بعد — حاول مرة أخرى بعد الإشعار التالي."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "لا توجد إشعارات غير مقروءة"
 
@@ -1529,10 +1534,10 @@ msgstr "لا توجد عروض"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "غير محدد"
 msgid "Nothing found"
 msgstr "لم يتم العثور على شيء"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "الإشعارات"
 
@@ -1572,8 +1577,8 @@ msgstr "الإشعارات"
 msgid "Notifications: {0}"
 msgstr "الإشعارات: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "إشعار افتراضياً"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "المالك"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "الأصل"
 
@@ -1713,7 +1718,7 @@ msgstr "جارٍ المعالجة…"
 msgid "Prompt saved"
 msgstr "تم حفظ الموجه"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "الخصائص"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "تم إلغاء وصول RSS"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "موجزات RSS"
 
@@ -1916,14 +1921,14 @@ msgstr "السبت"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "حفظ"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "جاري الحفظ..."
 
@@ -2078,7 +2083,7 @@ msgstr "تعيين المنشأ والوجهة"
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "عرض الكل"
 
@@ -2141,8 +2146,8 @@ msgstr "واسع"
 msgid "Start the discussion by adding the first comment."
 msgstr "ابدأ النقاش بإضافة التعليق الأول."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "إيقاف المتابعة"
 
@@ -2241,11 +2246,15 @@ msgstr "أعاد الخادم صفحة ويب بدلاً من البيانات."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "لا يُسمح لهذا التطبيق باستخدام مفتاح المرور الخاص بك. اسمح له في الإعدادات، ضمن الأذونات."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "سيؤدي هذا إلى حذف جميع الإشعارات نهائيًا، المقروءة وغير المقروءة."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "سيؤدي هذا إلى حذف اللعبة ومحادثتها نهائيًا. لا يمكن التراجع عن هذا الإجراء."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "سيؤدي هذا إلى حذف هذا الموجز نهائيًا. لن تتمكن أي قارئات RSS تستخدمه من الوصول إلى إشعاراتك بعد الآن."
 
@@ -2389,10 +2398,6 @@ msgstr "رفع"
 msgid "Upload progress"
 msgstr "تقدّم الرفع"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "استخدم هذا feed لاشتراكات الإشعارات الحالية"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "استخدم مفتاح المرور الخاص بك"
@@ -2434,7 +2439,7 @@ msgstr "عارض الفيديو: {0}"
 msgid "View all notifications"
 msgstr "عرض جميع الإشعارات"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "عرض وتعديل تفاصيل العنصر"
 
@@ -2446,8 +2451,8 @@ msgstr "عناصر تحكم العرض"
 msgid "Voice recording is not supported in this browser"
 msgstr "التسجيل الصوتي غير مدعوم في هذا المتصفح"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "متابعة"
 

@@ -123,7 +123,7 @@ msgstr "Leibhéal rochtana"
 msgid "Account type"
 msgstr "Cineál cuntais"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Gníomhaíocht"
 
@@ -190,7 +190,7 @@ msgstr "Cuir clib leis..."
 msgid "Add to existing notifications"
 msgstr "Cuir le fógraí atá ann cheana"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Cuir le síntiúis atá ann cheana"
 
@@ -248,7 +248,7 @@ msgstr "Stopfaidh aon rud atá liostáilte leis an bhfotha seo á fháil. Is fé
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "An bhfuil tú cinnte gur mian leat \"{0}\" a scriosadh?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "An bhfuil tú cinnte gur mian leat \"{title}\" a scriosadh? Ní féidir an gníomh seo a chealú."
 
@@ -334,7 +334,7 @@ msgstr "Coiscthe ag"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Cuireadh bac le nascleanúint go nasc neamhiontaofa"
 
@@ -381,9 +381,9 @@ msgstr "Ceamara ar fáil"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Cealaigh"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Glan"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Glan an t-iomlán"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Glan gach fógra?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Glan cuardach"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Fógraí á nglanadh..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Nótaí tráchta"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Nótaí tráchta ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Cóipeáilte"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Cóipeáilte chuig an ngearrthaisce"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Cóipeáil"
 
@@ -643,8 +648,8 @@ msgstr "Cruthaigh"
 msgid "Create {entityLabel}"
 msgstr "Cruthaigh {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Cruthaigh fotha"
 
@@ -652,11 +657,11 @@ msgstr "Cruthaigh fotha"
 msgid "Create new item"
 msgstr "Cruthaigh mír nua"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Cruthaigh ceann chun tosú."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Cruthaigh fotha RSS"
 
@@ -670,7 +675,7 @@ msgstr "Cruthaithe"
 msgid "Created {field}"
 msgstr "Cruthaíodh {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Fotha RSS á chruthú..."
 
@@ -725,9 +730,9 @@ msgstr "Sórtáil réamhshocraithe"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Scrios"
 
@@ -743,12 +748,12 @@ msgstr "Scrios colún"
 msgid "Delete comment"
 msgstr "Scrios nóta tráchta"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Scrios fotha"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Scrios fotha?"
 
@@ -760,9 +765,9 @@ msgstr "Scrios réimse"
 msgid "Delete game?"
 msgstr "Scrios an cluiche?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Scrios mír"
 
@@ -792,7 +797,7 @@ msgstr "Scriosta"
 msgid "Deleted {field}"
 msgstr "Scriosadh {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Fotha á scriosadh..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Ní mheaitseálann sé an patrún riachtanach"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Críochnaithe"
 
@@ -879,7 +884,7 @@ msgstr "Dúblaigh"
 msgid "Dyslexia-friendly"
 msgstr "Oiriúnach do disléicse"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "m.sh., Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Cuir {label} in eagar"
 msgid "Edit caption"
 msgstr "Cuir an fhoscríbhinn in eagar"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Cuir an fothú in eagar"
 
@@ -947,7 +952,7 @@ msgstr "Cuir isteach an cód ó do ríomhphost"
 msgid "Enter your authenticator code"
 msgstr "Cuir isteach cód d'aip fhíordheimhnithe"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Earráid"
 
@@ -974,14 +979,14 @@ msgstr "Breise mór"
 msgid "Failed to add account"
 msgstr "Theip ar chuntas a chur leis"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Theip ar fhógraí a ghlanadh"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Theip ar chóipeáil"
 
@@ -990,11 +995,11 @@ msgstr "Theip ar chóipeáil"
 msgid "Failed to create link"
 msgstr "Theip ar nasc a chruthú"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Theip ar fhotha RSS a chruthú"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Theip ar scriosadh"
 
@@ -1006,7 +1011,7 @@ msgstr "Theip ar cheangaltán a scriosadh"
 msgid "Failed to delete comment"
 msgstr "Theip ar nóta tráchta a scriosadh"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Theip ar fhotha a scriosadh"
 
@@ -1034,8 +1039,8 @@ msgstr "Theip ar luchtú staire"
 msgid "Failed to load image"
 msgstr "Theip ar an íomhá a lódáil"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Theip ar luchtú míre"
 
@@ -1051,15 +1056,15 @@ msgstr "Theip ar luchtú na leideanna"
 msgid "Failed to load video"
 msgstr "Theip ar an bhfíseán a lódáil"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Theip ar mharcáil mar léite"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Theip ar mharcáil mar léite"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Theip ar an mbogadh"
 
@@ -1067,7 +1072,7 @@ msgstr "Theip ar an mbogadh"
 msgid "Failed to post comment"
 msgstr "Theip ar nóta tráchta a phostáil"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Theip ar athainmniú fotha"
 
@@ -1079,7 +1084,7 @@ msgstr "Theip ar leid a athshocrú"
 msgid "Failed to revoke RSS access"
 msgstr "Theip ar rochtain RSS a chúlghairm"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Theip ar shábháil"
 
@@ -1099,11 +1104,11 @@ msgstr "Theip ar nuashonrú catagóire"
 msgid "Failed to update comment"
 msgstr "Theip ar nuashonrú nóta tráchta"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Theip ar nuashonrú fotha"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Theip ar an bhfaire a nuashonrú"
 
@@ -1111,19 +1116,19 @@ msgstr "Theip ar an bhfaire a nuashonrú"
 msgid "Failed to upload attachment"
 msgstr "Theip ar uaslódáil ceangaltáin"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Fotha cruthaithe"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Fotha scriosta"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Ainm an fhotha"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Fotha athainmnithe"
 
@@ -1239,7 +1244,7 @@ msgstr "Dáta neamhbhailí"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Dealraíonn sé nach bhfuil an leathanach atá á lorg agat <0/>ann nó gur baineadh é."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Sonraí na míre"
 
@@ -1288,11 +1293,11 @@ msgstr "Luchtaigh tuilleadh"
 msgid "Loading content…"
 msgstr "Ábhar á luchtú…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Mír á luchtú"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Sonraí na míre á luchtú"
 
@@ -1331,11 +1336,11 @@ msgstr "Láimhe"
 msgid "Mark all as read"
 msgstr "Marcáil gach rud mar léite"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Marcáil gach rud léite"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Gach rud á mharcáil mar léite..."
 
@@ -1472,7 +1477,7 @@ msgstr "Ní féidir aon chineál míre a chruthú fós. Cruthaigh na míreanna t
 msgid "No matching objects"
 msgstr "Níl aon réad ag teacht"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Níl aon fhógra"
 
@@ -1494,7 +1499,7 @@ msgstr "Níor aimsíodh aon torthaí"
 msgid "No results found."
 msgstr "Níor aimsíodh aon toradh."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Níl aon fhotha RSS fós"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Níl aon taifead ábhair fós — bain triail eile as tar éis an chéad fhógra eile."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Níl aon fhógra gan léamh"
 
@@ -1529,10 +1534,10 @@ msgstr "Níl aon amharc"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Gan socrú"
 msgid "Nothing found"
 msgstr "Níor aimsíodh aon rud"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Fógraí"
 
@@ -1572,8 +1577,8 @@ msgstr "Fógraí"
 msgid "Notifications: {0}"
 msgstr "Fógraí: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Cuir fógra mar réamhshocrú"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Úinéir"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Tuismitheoir"
 
@@ -1713,7 +1718,7 @@ msgstr "Á phróiseáil…"
 msgid "Prompt saved"
 msgstr "Leid sábháilte"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Airíonna"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Rochtain RSS cúlghairthe"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "Fotha RSS"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "Fothaí RSS"
 
@@ -1916,14 +1921,14 @@ msgstr "Dé Sathairn"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Sábháil"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Á shábháil..."
 
@@ -2078,7 +2083,7 @@ msgstr "Socraigh an bunús agus an ceann scríbe"
 msgid "Settings"
 msgstr "Socruithe"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Taispeáin gach ceann"
 
@@ -2141,8 +2146,8 @@ msgstr "Spáslach"
 msgid "Start the discussion by adding the first comment."
 msgstr "Tosaigh an plé tríd an gcéad nóta tráchta a chur leis."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Stop ag faire"
 
@@ -2241,11 +2246,15 @@ msgstr "Sheol an freastalaí leathanach gréasáin ar ais in ionad sonraí."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Níl cead ag an aip seo do phasluí a úsáid. Ceadaigh é i Socruithe, faoi Ceadanna."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Scriosfaidh sé seo gach fógra go buan, léite agus gan léamh."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Scriosfaidh sé seo an cluiche agus a chomhrá go buan. Ní féidir é seo a chur ar ceal."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Scriosfaidh sé seo an fotha seo go buan. Ní bheidh aon léitheoirí RSS a úsáideann é in ann rochtain a fháil ar do chuid fógraí a thuilleadh."
 
@@ -2389,10 +2398,6 @@ msgstr "Uaslódáil"
 msgid "Upload progress"
 msgstr "Dul chun cinn an uaslódála"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Úsáid an fotha seo do shíntiúis fhógraí reatha"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Úsáid d'eochair rochtana"
@@ -2434,7 +2439,7 @@ msgstr "Amharcán físeán: {0}"
 msgid "View all notifications"
 msgstr "Féach ar gach fógra"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Féach ar shonraí na míre agus cuir in eagar iad"
 
@@ -2446,8 +2451,8 @@ msgstr "Rialuithe radhairc"
 msgid "Voice recording is not supported in this browser"
 msgstr "Ní thacaítear le taifeadadh gutha sa bhrabhsálaí seo"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Faire"
 

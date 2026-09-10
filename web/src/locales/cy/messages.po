@@ -123,7 +123,7 @@ msgstr "Lefel mynediad"
 msgid "Account type"
 msgstr "Math o gyfrif"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Gweithgaredd"
 
@@ -190,7 +190,7 @@ msgstr "Ychwanegu tag..."
 msgid "Add to existing notifications"
 msgstr "Ychwanegu at hysbysiadau presennol"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Ychwanegu at danysgrifiadau presennol"
 
@@ -248,7 +248,7 @@ msgstr "Bydd unrhyw beth sydd wedi tanysgrifio i'r porthiant hwn yn peidio â'i 
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Ydych chi'n siŵr eich bod am ddileu \"{0}\"?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Ydych chi'n siŵr eich bod am ddileu \"{title}\"? Ni ellir dadwneud y weithred hon."
 
@@ -334,7 +334,7 @@ msgstr "Wedi'i flocio gan"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Llywio at ddolen heb ymddiriedaeth wedi'i blocio"
 
@@ -381,9 +381,9 @@ msgstr "Camera ddim ar gael"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Canslo"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Clirio"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Clirio popeth"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Clirio pob hysbysiad?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Clirio chwiliad"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Yn clirio hysbysiadau..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Sylwadau"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Sylwadau ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Copïwyd"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Wedi'i gopïo i'r clipfwrdd"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Copïo"
 
@@ -643,8 +648,8 @@ msgstr "Creu"
 msgid "Create {entityLabel}"
 msgstr "Creu {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Creu porthiant"
 
@@ -652,11 +657,11 @@ msgstr "Creu porthiant"
 msgid "Create new item"
 msgstr "Creu eitem newydd"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Crëwch un i ddechrau."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Creu porthiant RSS"
 
@@ -670,7 +675,7 @@ msgstr "Wedi'i greu"
 msgid "Created {field}"
 msgstr "Crëwyd {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Yn creu ffrwd RSS..."
 
@@ -725,9 +730,9 @@ msgstr "Trefnu diofyn"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Dileu"
 
@@ -743,12 +748,12 @@ msgstr "Dileu colofn"
 msgid "Delete comment"
 msgstr "Dileu sylw"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Dileu porthiant"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Dileu porthiant?"
 
@@ -760,9 +765,9 @@ msgstr "Dileu maes"
 msgid "Delete game?"
 msgstr "Dileu'r gêm?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Dileu eitem"
 
@@ -792,7 +797,7 @@ msgstr "Dilëwyd"
 msgid "Deleted {field}"
 msgstr "Dilëwyd {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Yn dileu ffrwd..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Nid yw'n cyfateb i'r patrwm gofynnol"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Wedi gorffen"
 
@@ -879,7 +884,7 @@ msgstr "Dyblygion"
 msgid "Dyslexia-friendly"
 msgstr "Cyfeillgar i ddyslecsia"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "e.e., Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Golygu {label}"
 msgid "Edit caption"
 msgstr "Golygu capsiwn"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Golygu’r ffrwd"
 
@@ -947,7 +952,7 @@ msgstr "Rhowch y cod o'ch e-bost"
 msgid "Enter your authenticator code"
 msgstr "Rhowch god eich ap dilysu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Gwall"
 
@@ -974,14 +979,14 @@ msgstr "Ychwanegol o fawr"
 msgid "Failed to add account"
 msgstr "Methwyd ychwanegu cyfrif"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Methwyd â chlirio hysbysiadau"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Methwyd copïo"
 
@@ -990,11 +995,11 @@ msgstr "Methwyd copïo"
 msgid "Failed to create link"
 msgstr "Methwyd creu dolen"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Methwyd â chreu ffrwd RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Methwyd dileu"
 
@@ -1006,7 +1011,7 @@ msgstr "Methwyd dileu'r atodiad"
 msgid "Failed to delete comment"
 msgstr "Methwyd dileu'r sylw"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Methwyd dileu'r ffrwd"
 
@@ -1034,8 +1039,8 @@ msgstr "Methwyd llwytho hanes"
 msgid "Failed to load image"
 msgstr "Methwyd llwytho'r ddelwedd"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Methwyd llwytho'r eitem"
 
@@ -1051,15 +1056,15 @@ msgstr "Methwyd llwytho'r anogiadau"
 msgid "Failed to load video"
 msgstr "Methwyd llwytho'r fideo"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Methwyd marcio'r cyfan fel wedi'u darllen"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Methwyd â nodi fel wedi'i ddarllen"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Methwyd symud"
 
@@ -1067,7 +1072,7 @@ msgstr "Methwyd symud"
 msgid "Failed to post comment"
 msgstr "Methwyd postio sylw"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Methwyd ailenwi'r ffrwd"
 
@@ -1079,7 +1084,7 @@ msgstr "Methwyd ailosod yr anogiad"
 msgid "Failed to revoke RSS access"
 msgstr "Methwyd â dirymu mynediad RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Methwyd cadw"
 
@@ -1099,11 +1104,11 @@ msgstr "Methwyd diweddaru'r categori"
 msgid "Failed to update comment"
 msgstr "Methwyd diweddaru'r sylw"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Methwyd diweddaru'r ffrwd"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Methwyd diweddaru gwylio"
 
@@ -1111,19 +1116,19 @@ msgstr "Methwyd diweddaru gwylio"
 msgid "Failed to upload attachment"
 msgstr "Methwyd llwytho'r atodiad"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Ffrwd wedi'i greu"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Ffrwd wedi'i ddileu"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Enw'r ffrwd"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Ffrwd wedi'i hailenwi"
 
@@ -1239,7 +1244,7 @@ msgstr "Dyddiad annilys"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Mae'n ymddangos nad yw'r dudalen rydych yn chwilio amdani <0/>yn bodoli neu ei bod wedi'i thynnu."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Manylion yr eitem"
 
@@ -1288,11 +1293,11 @@ msgstr "Llwytho mwy"
 msgid "Loading content…"
 msgstr "Yn llwytho cynnwys…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Yn llwytho eitem"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Yn llwytho manylion yr eitem"
 
@@ -1331,11 +1336,11 @@ msgstr "Llawlyfr"
 msgid "Mark all as read"
 msgstr "Marcio'r cyfan fel wedi'u darllen"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Marcio'r cyfan wedi'u darllen"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Yn nodi popeth fel wedi'i ddarllen..."
 
@@ -1472,7 +1477,7 @@ msgstr "Ni ellir creu unrhyw fathau o eitemau eto. Crëwch yr eitemau rhiant gof
 msgid "No matching objects"
 msgstr "Dim gwrthrychau cyfatebol"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Dim hysbysiadau"
 
@@ -1494,7 +1499,7 @@ msgstr "Ni chanfuwyd canlyniadau"
 msgid "No results found."
 msgstr "Heb ddod o hyd i ganlyniadau."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Dim porthwyr RSS eto"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Dim cofnod pwnc eto — rhowch gynnig arall arni ar ôl yr hysbysiad nesaf."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Dim hysbysiadau heb eu darllen"
 
@@ -1529,10 +1534,10 @@ msgstr "Dim golygiadau"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Heb ei osod"
 msgid "Nothing found"
 msgstr "Heb ddod o hyd i ddim"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Hysbysiadau"
 
@@ -1572,8 +1577,8 @@ msgstr "Hysbysiadau"
 msgid "Notifications: {0}"
 msgstr "Hysbysiadau: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Hysbysu yn ddiofyn"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Perchennog"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Rhiant"
 
@@ -1713,7 +1718,7 @@ msgstr "Wrthi'n prosesu…"
 msgid "Prompt saved"
 msgstr "Anogiad wedi'i gadw"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Priodweddau"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Mynediad RSS wedi'i ddirymu"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "Porthwr RSS"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "Porthwyr RSS"
 
@@ -1916,14 +1921,14 @@ msgstr "Dydd Sadwrn"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Cadw"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Yn cadw..."
 
@@ -2078,7 +2083,7 @@ msgstr "Gosod tarddiad a chyrchfan"
 msgid "Settings"
 msgstr "Gosodiadau"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Dangos pob un"
 
@@ -2141,8 +2146,8 @@ msgstr "Helaeth"
 msgid "Start the discussion by adding the first comment."
 msgstr "Cychwynnwch y drafodaeth drwy ychwanegu'r sylw cyntaf."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Stopio gwylio"
 
@@ -2241,11 +2246,15 @@ msgstr "Dychwelodd y gweinydd dudalen we yn lle data."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Nid yw'r ap hwn yn cael defnyddio eich pasallwedd. Caniatewch hynny yn Gosodiadau, o dan Caniatadau."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Bydd hyn yn dileu pob hysbysiad yn barhaol, wedi'u darllen a heb eu darllen."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Bydd hyn yn dileu'r gêm a'i sgwrs yn barhaol. Ni ellir dadwneud hyn."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Bydd hyn yn dileu'r porthiant hwn yn barhaol. Ni fydd unrhyw ddarllenyddion RSS sy'n ei ddefnyddio yn gallu cael mynediad i'ch hysbysiadau mwyach."
 
@@ -2389,10 +2398,6 @@ msgstr "Llwytho i fyny"
 msgid "Upload progress"
 msgstr "Cynnydd llwytho i fyny"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Defnyddio'r porthiant hwn ar gyfer eich tanysgrifiadau hysbysu cyfredol"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Defnyddiwch eich allwedd mynediad"
@@ -2434,7 +2439,7 @@ msgstr "Gwyliwr fideo: {0}"
 msgid "View all notifications"
 msgstr "Gweld pob hysbysiad"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Gweld a golygu manylion eitem"
 
@@ -2446,8 +2451,8 @@ msgstr "Rheolaethau golwg"
 msgid "Voice recording is not supported in this browser"
 msgstr "Nid yw recordio llais yn cael ei gefnogi yn y porwr hwn"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Gwylio"
 

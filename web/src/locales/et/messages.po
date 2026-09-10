@@ -123,7 +123,7 @@ msgstr "Juurdepääsu tase"
 msgid "Account type"
 msgstr "Konto tüüp"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Tegevus"
 
@@ -190,7 +190,7 @@ msgstr "Lisa silt..."
 msgid "Add to existing notifications"
 msgstr "Lisa olemasolevatele teavitustele"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Lisa olemasolevatele tellimustele"
 
@@ -248,7 +248,7 @@ msgstr "Kõik, mis on selle voo tellinud, lakkab seda saamast. Pärast saad kope
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Kas oled kindel, et soovid kustutada \"{0}\"?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Kas oled kindel, et soovid kustutada \"{title}\"? Seda toimingut ei saa tagasi võtta."
 
@@ -334,7 +334,7 @@ msgstr "Blokeeritud"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Liikumine usaldamata lingile blokeeritud"
 
@@ -381,9 +381,9 @@ msgstr "Kaamera pole saadaval"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Tühista"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Tühjenda"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Tühjenda kõik"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Kustutada kõik teavitused?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Tühjenda otsing"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Teadete tühjendamine..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Kommentaarid"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Kommentaarid ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Kopeeritud"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Kopeeritud lõikelauale"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Kopeeri"
 
@@ -643,8 +648,8 @@ msgstr "Loo"
 msgid "Create {entityLabel}"
 msgstr "Loo {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Loo voog"
 
@@ -652,11 +657,11 @@ msgstr "Loo voog"
 msgid "Create new item"
 msgstr "Loo uus kirje"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Loo üks alustamiseks."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Loo RSS-voog"
 
@@ -670,7 +675,7 @@ msgstr "Loodud"
 msgid "Created {field}"
 msgstr "{field} loodud"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "RSS-voo loomine..."
 
@@ -725,9 +730,9 @@ msgstr "Vaikimisi sortimine"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Kustuta"
 
@@ -743,12 +748,12 @@ msgstr "Kustuta veerg"
 msgid "Delete comment"
 msgstr "Kustuta kommentaar"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Kustuta voog"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Kustutada voog?"
 
@@ -760,9 +765,9 @@ msgstr "Kustuta väli"
 msgid "Delete game?"
 msgstr "Kas kustutada mäng?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Kustuta kirje"
 
@@ -792,7 +797,7 @@ msgstr "Kustutatud"
 msgid "Deleted {field}"
 msgstr "{field} kustutatud"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Voo kustutamine..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Ei vasta nõutud mustrile"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Tehtud"
 
@@ -879,7 +884,7 @@ msgstr "Duplikaadid"
 msgid "Dyslexia-friendly"
 msgstr "Düsleksiasõbralik"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "nt Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Muuda {label}"
 msgid "Edit caption"
 msgstr "Muuda pealdist"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Muuda voogu"
 
@@ -947,7 +952,7 @@ msgstr "Sisesta e-kirjas saadud kood"
 msgid "Enter your authenticator code"
 msgstr "Sisestage oma autentimisrakenduse kood"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Viga"
 
@@ -974,14 +979,14 @@ msgstr "Eriti suur"
 msgid "Failed to add account"
 msgstr "Konto lisamine ebaõnnestus"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Teadete tühjendamine ebaõnnestus"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Kopeerimine ebaõnnestus"
 
@@ -990,11 +995,11 @@ msgstr "Kopeerimine ebaõnnestus"
 msgid "Failed to create link"
 msgstr "Lingi loomine ebaõnnestus"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "RSS-voo loomine ebaõnnestus"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Kustutamine ebaõnnestus"
 
@@ -1006,7 +1011,7 @@ msgstr "Manuse kustutamine ebaõnnestus"
 msgid "Failed to delete comment"
 msgstr "Kommentaari kustutamine ebaõnnestus"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Voo kustutamine ebaõnnestus"
 
@@ -1034,8 +1039,8 @@ msgstr "Ajaloo laadimine ebaõnnestus"
 msgid "Failed to load image"
 msgstr "Pildi laadimine ebaõnnestus"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Elemendi laadimine ebaõnnestus"
 
@@ -1051,15 +1056,15 @@ msgstr "Viipade laadimine ebaõnnestus"
 msgid "Failed to load video"
 msgstr "Video laadimine ebaõnnestus"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Kõigi loetuks märkimine ebaõnnestus"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Loetuks märkimine ebaõnnestus"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Teisaldamine ebaõnnestus"
 
@@ -1067,7 +1072,7 @@ msgstr "Teisaldamine ebaõnnestus"
 msgid "Failed to post comment"
 msgstr "Kommentaari postitamine ebaõnnestus"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Voo ümbernimetamine ebaõnnestus"
 
@@ -1079,7 +1084,7 @@ msgstr "Viiba lähtestamine ebaõnnestus"
 msgid "Failed to revoke RSS access"
 msgstr "RSS-juurdepääsu tühistamine ebaõnnestus"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Salvestamine ebaõnnestus"
 
@@ -1099,11 +1104,11 @@ msgstr "Kategooria värskendamine ebaõnnestus"
 msgid "Failed to update comment"
 msgstr "Kommentaari värskendamine ebaõnnestus"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Voo värskendamine ebaõnnestus"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Jälgimise uuendamine ebaõnnestus"
 
@@ -1111,19 +1116,19 @@ msgstr "Jälgimise uuendamine ebaõnnestus"
 msgid "Failed to upload attachment"
 msgstr "Manuse üleslaadimine ebaõnnestus"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Voog loodud"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Voog kustutatud"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Voo nimi"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Voog ümber nimetatud"
 
@@ -1239,7 +1244,7 @@ msgstr "Vigane kuupäev"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Näib, et otsitavat lehte <0/>pole olemas või on see eemaldatud."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Elemendi üksikasjad"
 
@@ -1288,11 +1293,11 @@ msgstr "Lae rohkem"
 msgid "Loading content…"
 msgstr "Sisu laadimine…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Elemendi laadimine"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Elemendi üksikasjade laadimine"
 
@@ -1331,11 +1336,11 @@ msgstr "Käsitsi"
 msgid "Mark all as read"
 msgstr "Märgi kõik loetuks"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Märgi kõik loetuks"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Kõigi loetuks märkimine..."
 
@@ -1472,7 +1477,7 @@ msgstr "Ühtegi tüüpi ei saa veel luua. Loo kõigepealt vajalikud vanemüksuse
 msgid "No matching objects"
 msgstr "Vastavaid objekte pole"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Teavitusi pole"
 
@@ -1494,7 +1499,7 @@ msgstr "Tulemusi ei leitud"
 msgid "No results found."
 msgstr "Tulemusi ei leitud."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "RSS-vooge veel pole"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Teemakirjet veel pole — proovi uuesti pärast järgmist teavitust."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Lugemata teavitusi pole"
 
@@ -1529,10 +1534,10 @@ msgstr "Vaatamisi pole"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Pole määratud"
 msgid "Nothing found"
 msgstr "Midagi ei leitud"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Teavitused"
 
@@ -1572,8 +1577,8 @@ msgstr "Teavitused"
 msgid "Notifications: {0}"
 msgstr "Teatised: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Vaikimisi teavita"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Omanik"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Vanem"
 
@@ -1713,7 +1718,7 @@ msgstr "Töötlemine…"
 msgid "Prompt saved"
 msgstr "Viip salvestatud"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Atribuudid"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "RSS-juurdepääs tühistatud"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS-voog"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS-vood"
 
@@ -1916,14 +1921,14 @@ msgstr "Laupäev"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Salvesta"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Salvestamine..."
 
@@ -2078,7 +2083,7 @@ msgstr "Määra lähtekoht ja sihtkoht"
 msgid "Settings"
 msgstr "Seaded"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Näita kõiki"
 
@@ -2141,8 +2146,8 @@ msgstr "Avar"
 msgid "Start the discussion by adding the first comment."
 msgstr "Alusta arutelu, lisades esimese kommentaari."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Lõpeta jälgimine"
 
@@ -2241,11 +2246,15 @@ msgstr "Server tagastas andmete asemel veebilehe."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Sellel rakendusel pole luba sinu pääsuvõtit kasutada. Luba see Seadetes jaotises Õigused."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "See kustutab jäädavalt kõik teavitused, nii loetud kui ka lugemata."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "See kustutab mängu ja selle vestluse jäädavalt. Seda ei saa tagasi võtta."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "See kustutab jäädavalt selle voo. Seda kasutavad RSS-lugejad ei pääse enam sinu teadetele ligi."
 
@@ -2389,10 +2398,6 @@ msgstr "Lae üles"
 msgid "Upload progress"
 msgstr "Üleslaadimise edenemine"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Kasuta seda voogu oma praeguste teateid puudutavate tellimuste jaoks"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Kasutage oma pääsuvõtit"
@@ -2434,7 +2439,7 @@ msgstr "Videovaatur: {0}"
 msgid "View all notifications"
 msgstr "Vaata kõiki teateid"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Vaata ja muuda elemendi üksikasju"
 
@@ -2446,8 +2451,8 @@ msgstr "Vaate juhtelemendid"
 msgid "Voice recording is not supported in this browser"
 msgstr "Häälsalvestust ei toetata selles brauseris"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Jälgi"
 

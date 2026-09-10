@@ -123,7 +123,7 @@ msgstr "Sadarkaa seensaa"
 msgid "Account type"
 msgstr "Gosa akkaawuntii"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Sochii"
 
@@ -190,7 +190,7 @@ msgstr "Tag dabali..."
 msgid "Add to existing notifications"
 msgstr "Beeksisaalee jiranitti dabali"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Soramii jiranitti dabali"
 
@@ -248,7 +248,7 @@ msgstr "Wanti kamiyyuu nyaata kana ajaje fudhachuu ni dhaaba. Booda URL haaraa g
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "\"{0}\" haquu mirkanaa'oo dha?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "\"{title}\" haquu mirkanaa'oo dha? Tarkaanfiin kun deebi'uu hin danda'u."
 
@@ -334,7 +334,7 @@ msgstr "Kan dhorkame"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Karaa hin amanamne irraa qajeelfamni dhorkame"
 
@@ -381,9 +381,9 @@ msgstr "Kaameraan hin argamu"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Haquu"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Cilliisi"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Hunda cilliisi"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Beeksisawwan hunda haquu?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Barbaadii cilliisi"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Beeksisawwan haqaa jira..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Yaadawwan"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Yaadawwan ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Garagalfame"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Garagalfamee gara saanduqa garagalchaa"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Garagalchi"
 
@@ -643,8 +648,8 @@ msgstr "Uumi"
 msgid "Create {entityLabel}"
 msgstr "{entityLabel} uumi"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Sora uumi"
 
@@ -652,11 +657,11 @@ msgstr "Sora uumi"
 msgid "Create new item"
 msgstr "Wanta haaraa uumi"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Eegaluuf tokko uumi."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Sora RSS Uumi"
 
@@ -670,7 +675,7 @@ msgstr "Uumame"
 msgid "Created {field}"
 msgstr "{field} uumameera"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Feedii RSS uumaa jira..."
 
@@ -725,9 +730,9 @@ msgstr "Tartiiba idilee"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Haqi"
 
@@ -743,12 +748,12 @@ msgstr "Tarjaa haqi"
 msgid "Delete comment"
 msgstr "Yaada haqi"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Sora haqi"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Sora haqu?"
 
@@ -760,9 +765,9 @@ msgstr "Dirree haqi"
 msgid "Delete game?"
 msgstr "Taphicha haqi?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Wanta haqi"
 
@@ -792,7 +797,7 @@ msgstr "Haqameera"
 msgid "Deleted {field}"
 msgstr "{field} haqameera"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Feed haqaa jira..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Boca barbaachisu wajjin wal hin simu"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Xumurame"
 
@@ -879,7 +884,7 @@ msgstr "Lameetfamtoota"
 msgid "Dyslexia-friendly"
 msgstr "Dyslexiyaa Walitti Dhufu"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "fkn., Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "{label} gulaali"
 msgid "Edit caption"
 msgstr "Ibsa gulaaluu"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Feed sirreessuu"
 
@@ -947,7 +952,7 @@ msgstr "Koodii imeelii kee irraa galchi"
 msgid "Enter your authenticator code"
 msgstr "Koodii mirkaneessaa kee galchi"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Dogoggora"
 
@@ -974,14 +979,14 @@ msgstr "Guddaa Akkaan"
 msgid "Failed to add account"
 msgstr "Akkaawuntii dabaluu hin dandeenye"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Beeksisawwan haquun hin milkoofne"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Garagalchuu hin dandeenye"
 
@@ -990,11 +995,11 @@ msgstr "Garagalchuu hin dandeenye"
 msgid "Failed to create link"
 msgstr "Hidhaa uumuu hin dandeenye"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Feedii RSS uumuun hin milkoofne"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Haquu hin dandeenye"
 
@@ -1006,7 +1011,7 @@ msgstr "Maxxansa haquu hin dandeenye"
 msgid "Failed to delete comment"
 msgstr "Yaada haquu hin dandeenye"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Feed haquu hin dandeenye"
 
@@ -1034,8 +1039,8 @@ msgstr "Seenaa fe'achuu hin dandeenye"
 msgid "Failed to load image"
 msgstr "Fakkii fe'uu hin dandeenye"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Iddoo fe'achuu hin dandeenye"
 
@@ -1051,15 +1056,15 @@ msgstr "Boorsaawwan fe'achuu hin dandeenye"
 msgid "Failed to load video"
 msgstr "Viidiyoo fe'uu hin dandeenye"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Hunda dubbifame jechuu mallatteessuu hin dandeenye"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Akka dubbifametti mallatteessuun hin milkoofne"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Sochuun hin milkoofne"
 
@@ -1067,7 +1072,7 @@ msgstr "Sochuun hin milkoofne"
 msgid "Failed to post comment"
 msgstr "Yaada maxxansuu hin dandeenye"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Feed moggaasuu hin dandeenye"
 
@@ -1079,7 +1084,7 @@ msgstr "Boorsa deebii idilee taasisuu hin dandeenye"
 msgid "Failed to revoke RSS access"
 msgstr "Argama RSS haquun hin milkoofne"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Olkaa'uu hin dandeenye"
 
@@ -1099,11 +1104,11 @@ msgstr "Ramaddii toattaachuu hin dandeenye"
 msgid "Failed to update comment"
 msgstr "Yaada toattaachuu hin dandeenye"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Feed toattaachuu hin dandeenye"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Hordoffii haaromsuun hin milkoofne"
 
@@ -1111,19 +1116,19 @@ msgstr "Hordoffii haaromsuun hin milkoofne"
 msgid "Failed to upload attachment"
 msgstr "Mallattoo olkaa'uu hin dandeenye"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Feed uumame"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Feed haqame"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Maqaa feed"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Feed moggaafame"
 
@@ -1239,7 +1244,7 @@ msgstr "Guyyaa sirrii hin taane"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Fuulli ati barbaadaa jirtu <0/>hin jiru yookaan haqameera fakkaata."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Bal'ina iddoo"
 
@@ -1288,11 +1293,11 @@ msgstr "Caalaa fe'i"
 msgid "Loading content…"
 msgstr "Qabiyyee fe’aa jira…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Iddoo fe'aa jiraa"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Bal'ina iddoo fe'aa jiraa"
 
@@ -1331,11 +1336,11 @@ msgstr "Harkaan"
 msgid "Mark all as read"
 msgstr "Hunda dubbifame jechuu mallatteessi"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Hunda dubbifame"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Hunda akka dubbifametti mallatteessaa jira..."
 
@@ -1472,7 +1477,7 @@ msgstr "Hanga ammaatti gosti meeshaalee uumamuu hin danda'u. Jalqaba meeshaalee 
 msgid "No matching objects"
 msgstr "Wantoonni walsiman hin jiran"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Beeksisaaleen hin jiran"
 
@@ -1494,7 +1499,7 @@ msgstr "Bu'aan hin argamne"
 msgid "No results found."
 msgstr "Bu'aan hin argamne."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Hanga ammaatti RSS feed hin jiru"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Hanga ammaatti galmeen mata duree hin jiru — beeksisa itti aanu booda irra deebi'ii yaali."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Beeksisoonni hin dubbifamne hin jiran"
 
@@ -1529,10 +1534,10 @@ msgstr "Mul'annoon hin jiru"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Hin qabamne"
 msgid "Nothing found"
 msgstr "Wanti argame hin jiru"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Beeksisaalee"
 
@@ -1572,8 +1577,8 @@ msgstr "Beeksisaalee"
 msgid "Notifications: {0}"
 msgstr "Beeksisawwan: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Durtiidhaan beeksisi"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Abbaa qabeenyaa"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Maatii"
 
@@ -1713,7 +1718,7 @@ msgstr "Adeemsifamaa jira…"
 msgid "Prompt saved"
 msgstr "Gaaffii olkaa'ame"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Qabeenyaalee"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Argamni RSS haqameera"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "RSS feed"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "RSS feed"
 
@@ -1916,14 +1921,14 @@ msgstr "Sanbata"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Olkaa'i"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Olkaa'aa jira..."
 
@@ -2078,7 +2083,7 @@ msgstr "Madda fi galma qindeessi"
 msgid "Settings"
 msgstr "Qindaa'inoota"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Hunda agarsiisi"
 
@@ -2141,8 +2146,8 @@ msgstr "Bal'aa"
 msgid "Start the discussion by adding the first comment."
 msgstr "Yaada jalqabaa dabaluudhaan marii jalqabi."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Daawwannaa dhaabsisi"
 
@@ -2241,11 +2246,15 @@ msgstr "Sarviichiin qooda daataa fuula weebii deebise."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Appiin kun passkey kee fayyadamuuf hayyama hin qabu. Qindaa'ina keessatti, Hayyamoota jalatti hayyami."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Kun beeksisa hunda, kan dubbifamee fi kan hin dubbifamin, bara baraan ni haqa."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Kun taphicha fi haasawa isaa bara baraan ni haqa. Wanti kun deebi'ee hin dandeenyu."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Kun marsaa kana bara baraan haqa. Dubbiftota RSS isa fayyadaman boodaa beeksisa kee argachuu hin danda'an."
 
@@ -2389,10 +2398,6 @@ msgstr "Olfe'i"
 msgid "Upload progress"
 msgstr "Adeemsa fe'umsaa"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Marsaa kana galaa'iinsoota beeksisa kee ammaaf fayyadami"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Passkey kee fayyadami"
@@ -2434,7 +2439,7 @@ msgstr "Ilaaltuu viidiyoo: {0}"
 msgid "View all notifications"
 msgstr "Beeksisa hunda daawwadhu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Bal'ina wantichaa daawwadhu fi sirreessi"
 
@@ -2446,8 +2451,8 @@ msgstr "Toofta daawwannaa"
 msgid "Voice recording is not supported in this browser"
 msgstr "Biraawzarii kana keessatti sagalee waraabuun hin deeggaramu"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Daawwadhu"
 

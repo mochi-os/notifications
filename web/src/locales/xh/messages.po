@@ -123,7 +123,7 @@ msgstr "Inqanaba lofikelelo"
 msgid "Account type"
 msgstr "Uhlobo lwe-akhawunti"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:423
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:425
 msgid "Activity"
 msgstr "Umsebenzi"
 
@@ -190,7 +190,7 @@ msgstr "Yongeza ithegi..."
 msgid "Add to existing notifications"
 msgstr "Yongeza kwizaziso ezikhoyo"
 
-#: src/components/rss-dialog.tsx:417
+#: src/components/rss-dialog.tsx:411
 msgid "Add to existing subscriptions"
 msgstr "Yongeza kwiinkululeko ezikhoyo"
 
@@ -248,7 +248,7 @@ msgstr "Nantoni na ebhalisele olu suselo iya kuyeka ukulufumana. Ungakhuphela i-
 msgid "Are you sure you want to delete \"{0}\"?"
 msgstr "Uqinisekile ufuna ukucima \"{0}\"?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:679
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:681
 msgid "Are you sure you want to delete \"{title}\"? This action cannot be undone."
 msgstr "Uqinisekile ufuna ukucima \"{title}\"? Esi senzo asinakubuyiswa."
 
@@ -334,7 +334,7 @@ msgstr "Ivinjelwe ngu"
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:238
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:248
-#: src/features/notification/index.tsx:83
+#: src/features/notification/index.tsx:84
 msgid "Blocked navigation to untrusted link"
 msgstr "Kuvalwe ukuya kwikhonkco elingathenjwayo"
 
@@ -381,9 +381,9 @@ msgstr "Ikhamera ayifumaneki"
 #: ../../../lib/web/src/features/access/access-list.tsx:268
 #: ../../../lib/web/src/features/accounts/account-add.tsx:201
 #: ../../../lib/web/src/features/accounts/account-verify.tsx:91
+#: src/components/rss-dialog.tsx:309
 #: src/components/rss-dialog.tsx:314
-#: src/components/rss-dialog.tsx:319
-#: src/components/rss-dialog.tsx:430
+#: src/components/rss-dialog.tsx:420
 msgid "Cancel"
 msgstr "Rhoxisa"
 
@@ -455,15 +455,20 @@ msgid "Clear"
 msgstr "Cima"
 
 #: ../../../lib/web/src/components/filter-bar.tsx:74
-#: src/features/notification/index.tsx:245
+#: src/features/notification/index.tsx:248
+#: src/features/notification/index.tsx:265
 msgid "Clear all"
 msgstr "Cima konke"
+
+#: src/features/notification/index.tsx:263
+msgid "Clear all notifications?"
+msgstr "Sula zonke izaziso?"
 
 #: ../../../lib/web/src/components/search-input.tsx:26
 msgid "Clear search"
 msgstr "Cima ukukhangela"
 
-#: src/features/notification/index.tsx:189
+#: src/features/notification/index.tsx:192
 msgid "Clearing notifications..."
 msgstr "Ukususa izaziso..."
 
@@ -544,7 +549,7 @@ msgid "Comments"
 msgstr "Izimvo"
 
 #. placeholder {0}: data.comments.count || 0
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:419
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:421
 msgid "Comments ({0})"
 msgstr "Izimvo ({0})"
 
@@ -598,16 +603,16 @@ msgid "Copied"
 msgstr "Ikopishiwe"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:25
-#: src/components/rss-dialog.tsx:127
-#: src/components/rss-dialog.tsx:139
+#: src/components/rss-dialog.tsx:122
+#: src/components/rss-dialog.tsx:134
 msgid "Copied to clipboard"
 msgstr "Kukotshelwe kwibhodi yokukotshela"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:64
-#: src/components/rss-dialog.tsx:334
-#: src/components/rss-dialog.tsx:343
-#: src/components/rss-dialog.tsx:460
-#: src/components/rss-dialog.tsx:469
+#: src/components/rss-dialog.tsx:329
+#: src/components/rss-dialog.tsx:338
+#: src/components/rss-dialog.tsx:450
+#: src/components/rss-dialog.tsx:459
 msgid "Copy"
 msgstr "Kotshela"
 
@@ -643,8 +648,8 @@ msgstr "Yenza"
 msgid "Create {entityLabel}"
 msgstr "Yenza {entityLabel}"
 
-#: src/components/rss-dialog.tsx:394
-#: src/components/rss-dialog.tsx:441
+#: src/components/rss-dialog.tsx:389
+#: src/components/rss-dialog.tsx:431
 msgid "Create feed"
 msgstr "Yenza ifidi"
 
@@ -652,11 +657,11 @@ msgstr "Yenza ifidi"
 msgid "Create new item"
 msgstr "Yenza into entsha"
 
-#: src/components/rss-dialog.tsx:270
+#: src/components/rss-dialog.tsx:265
 msgid "Create one to get started."
 msgstr "Yenza enye ukuze uqalise."
 
-#: src/components/rss-dialog.tsx:248
+#: src/components/rss-dialog.tsx:243
 msgid "Create RSS feed"
 msgstr "Yenza i-feed ye-RSS"
 
@@ -670,7 +675,7 @@ msgstr "Yenziwe"
 msgid "Created {field}"
 msgstr "Kwenziwe {field}"
 
-#: src/components/rss-dialog.tsx:150
+#: src/components/rss-dialog.tsx:145
 msgid "Creating RSS feed..."
 msgstr "Ukwenza i-feed ye-RSS..."
 
@@ -725,9 +730,9 @@ msgstr "Ukuhlela koqobo"
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:208
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:255
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx:317
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:682
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:78
-#: src/components/rss-dialog.tsx:489
+#: src/components/rss-dialog.tsx:479
 msgid "Delete"
 msgstr "Cima"
 
@@ -743,12 +748,12 @@ msgstr "Cima ikholamu"
 msgid "Delete comment"
 msgstr "Cima isiphawuli"
 
+#: src/components/rss-dialog.tsx:360
 #: src/components/rss-dialog.tsx:365
-#: src/components/rss-dialog.tsx:370
 msgid "Delete feed"
 msgstr "Cima ifidi"
 
-#: src/components/rss-dialog.tsx:487
+#: src/components/rss-dialog.tsx:477
 msgid "Delete feed?"
 msgstr "Cima ifidi?"
 
@@ -760,9 +765,9 @@ msgstr "Cima intsimi"
 msgid "Delete game?"
 msgstr "Cima umdlalo?"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:494
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:499
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:678
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:496
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:501
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:680
 msgid "Delete item"
 msgstr "Cima into"
 
@@ -792,7 +797,7 @@ msgstr "Kucinyiwe"
 msgid "Deleted {field}"
 msgstr "Kucinyiwe {field}"
 
-#: src/components/rss-dialog.tsx:204
+#: src/components/rss-dialog.tsx:199
 msgid "Deleting feed..."
 msgstr "Icima isondlo..."
 
@@ -854,9 +859,9 @@ msgid "Does not match the required pattern"
 msgstr "Ayihambelani nepateni efunekayo"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx:309
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:503
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:505
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:523
-#: src/components/rss-dialog.tsx:474
+#: src/components/rss-dialog.tsx:464
 msgid "Done"
 msgstr "Kwenziwe"
 
@@ -879,7 +884,7 @@ msgstr "Iphinda kabini"
 msgid "Dyslexia-friendly"
 msgstr "Yamkelekile kwidyslexia"
 
-#: src/components/rss-dialog.tsx:406
+#: src/components/rss-dialog.tsx:401
 msgid "e.g., Feedly, NewsBlur"
 msgstr "umz. Feedly, NewsBlur"
 
@@ -896,8 +901,8 @@ msgstr "Hlela {label}"
 msgid "Edit caption"
 msgstr "Hlela umbhalo"
 
+#: src/components/rss-dialog.tsx:346
 #: src/components/rss-dialog.tsx:351
-#: src/components/rss-dialog.tsx:356
 msgid "Edit feed"
 msgstr "Hlela i-feed"
 
@@ -947,7 +952,7 @@ msgstr "Faka ikhowudi evela kwi-imeyile yakho"
 msgid "Enter your authenticator code"
 msgstr "Faka ikhowudi yakho yesiqinisekisi"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:389
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:391
 msgid "Error"
 msgstr "Impazamo"
 
@@ -974,14 +979,14 @@ msgstr "Inkulu kakhulu"
 msgid "Failed to add account"
 msgstr "Ayiphumelelanga ukongeza iakhawunti"
 
-#: src/features/notification/index.tsx:191
+#: src/features/notification/index.tsx:194
 msgid "Failed to clear notifications"
 msgstr "Akuphumelelanga ukususa izaziso"
 
 #: ../../../lib/web/src/components/ui/copy-button.tsx:26
 #: ../../../lib/web/src/lib/toast-utils.ts:44
-#: src/components/rss-dialog.tsx:123
-#: src/components/rss-dialog.tsx:135
+#: src/components/rss-dialog.tsx:118
+#: src/components/rss-dialog.tsx:130
 msgid "Failed to copy"
 msgstr "Ayiphumelelanga ukukhuphela"
 
@@ -990,11 +995,11 @@ msgstr "Ayiphumelelanga ukukhuphela"
 msgid "Failed to create link"
 msgstr "Ayiphumelelanga ukudala ikhonkco"
 
-#: src/components/rss-dialog.tsx:152
+#: src/components/rss-dialog.tsx:147
 msgid "Failed to create RSS feed"
 msgstr "Akuphumelelanga ukwenza i-feed ye-RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:303
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:305
 msgid "Failed to delete"
 msgstr "Ayiphumelelanga ukucima"
 
@@ -1006,7 +1011,7 @@ msgstr "Ayiphumelelanga ukucima isiqhoboshelo"
 msgid "Failed to delete comment"
 msgstr "Ayiphumelelanga ukucima uluvo"
 
-#: src/components/rss-dialog.tsx:206
+#: src/components/rss-dialog.tsx:201
 msgid "Failed to delete feed"
 msgstr "Ayiphumelelanga ukucima ifidi"
 
@@ -1034,8 +1039,8 @@ msgstr "Ayiphumelelanga ukulayisha imbali"
 msgid "Failed to load image"
 msgstr "Ayikwazanga ukulayisha umfanekiso"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:390
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:393
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:392
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:395
 msgid "Failed to load item"
 msgstr "Ayiphumelelanga ukulayisha into"
 
@@ -1051,15 +1056,15 @@ msgstr "Ayiphumelelanga ukulayisha izikhumbuzo"
 msgid "Failed to load video"
 msgstr "Ayikwazanga ukulayisha ividiyo"
 
-#: src/features/notification/index.tsx:179
+#: src/features/notification/index.tsx:181
 msgid "Failed to mark all as read"
 msgstr "Ayiphumelelanga ukuphawula konke njengokufundiweyo"
 
-#: src/features/notification/index.tsx:169
+#: src/features/notification/index.tsx:171
 msgid "Failed to mark as read"
 msgstr "Akuphumelelanga ukuphawula njengokufundiweyo"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:317
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:319
 msgid "Failed to move"
 msgstr "Akuphumelelanga ukushenxisa"
 
@@ -1067,7 +1072,7 @@ msgstr "Akuphumelelanga ukushenxisa"
 msgid "Failed to post comment"
 msgstr "Ayiphumelelanga ukuposa uluvo"
 
-#: src/components/rss-dialog.tsx:186
+#: src/components/rss-dialog.tsx:181
 msgid "Failed to rename feed"
 msgstr "Ayiphumelelanga ukunika igama elitsha ifidi"
 
@@ -1079,7 +1084,7 @@ msgstr "Ayiphumelelanga ukusetha kwakhona isikhumbuzo"
 msgid "Failed to revoke RSS access"
 msgstr "Ayiphumelelanga ukurhoxisa ufikelelo lwe-RSS"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:273
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:275
 msgid "Failed to save"
 msgstr "Ayiphumelelanga ukugcina"
 
@@ -1099,11 +1104,11 @@ msgstr "Ayiphumelelanga ukuhlaziya udidi"
 msgid "Failed to update comment"
 msgstr "Ayiphumelelanga ukuhlaziya uluvo"
 
-#: src/components/rss-dialog.tsx:221
+#: src/components/rss-dialog.tsx:216
 msgid "Failed to update feed"
 msgstr "Ayiphumelelanga ukuhlaziya ifidi"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:288
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:290
 msgid "Failed to update watching"
 msgstr "Akuphumelelanga ukuhlaziya ukubukela"
 
@@ -1111,19 +1116,19 @@ msgstr "Akuphumelelanga ukuhlaziya ukubukela"
 msgid "Failed to upload attachment"
 msgstr "Ayiphumelelanga ukulayisha isiqhoboshelo"
 
-#: src/components/rss-dialog.tsx:249
+#: src/components/rss-dialog.tsx:244
 msgid "Feed created"
 msgstr "Ifidi idaliwe"
 
-#: src/components/rss-dialog.tsx:205
+#: src/components/rss-dialog.tsx:200
 msgid "Feed deleted"
 msgstr "Ifidi icinyiwe"
 
-#: src/components/rss-dialog.tsx:403
+#: src/components/rss-dialog.tsx:398
 msgid "Feed name"
 msgstr "Igama lefidi"
 
-#: src/components/rss-dialog.tsx:185
+#: src/components/rss-dialog.tsx:180
 msgid "Feed renamed"
 msgstr "Ifidi inikwe igama elitsha"
 
@@ -1239,7 +1244,7 @@ msgstr "Umhla ongasebenziyo"
 msgid "It seems like the page you're looking for <0/>does not exist or might have been removed."
 msgstr "Kubonakala ngathi iphepha olikhangelayo <0/>alikho okanye lisusiwe."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:449
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:451
 msgid "Item details"
 msgstr "Iinkcukacha zento"
 
@@ -1288,11 +1293,11 @@ msgstr "Layisha okungakumbi"
 msgid "Loading content…"
 msgstr "Iyalayisha umxholo…"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:373
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:375
 msgid "Loading item"
 msgstr "Kulayishwa into"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:374
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:376
 msgid "Loading item details"
 msgstr "Kulayishwa iinkcukacha zento"
 
@@ -1331,11 +1336,11 @@ msgstr "Ngesandla"
 msgid "Mark all as read"
 msgstr "Phawula konke njengokufundiwe"
 
-#: src/features/notification/index.tsx:230
+#: src/features/notification/index.tsx:233
 msgid "Mark all read"
 msgstr "Phawula konke ukuba kufundiwe"
 
-#: src/features/notification/index.tsx:176
+#: src/features/notification/index.tsx:178
 msgid "Marking all as read..."
 msgstr "Ukuphawula konke njengokufundiweyo..."
 
@@ -1472,7 +1477,7 @@ msgstr "Akukho ntlobo zezinto ezinokwenziwa okwangoku. Yenza izinto zomzali ezif
 msgid "No matching objects"
 msgstr "Akukho zinto zifananisayo"
 
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No notifications"
 msgstr "Akukho zaziso"
 
@@ -1494,7 +1499,7 @@ msgstr "Akukho ziphumo zifunyenweyo"
 msgid "No results found."
 msgstr "Akukho ziphumo zifumanekileyo."
 
-#: src/components/rss-dialog.tsx:269
+#: src/components/rss-dialog.tsx:264
 msgid "No RSS feeds yet"
 msgstr "Akukho zifidi ze-RSS okwangoku"
 
@@ -1513,7 +1518,7 @@ msgid "No topic record yet — try again after the next notification."
 msgstr "Akukho rekhodi yomxholo okwangoku — zama kwakhona emva kwesaziso esilandelayo."
 
 #: ../../../lib/web/src/components/layout/notification-menu.tsx:135
-#: src/features/notification/index.tsx:288
+#: src/features/notification/index.tsx:304
 msgid "No unread notifications"
 msgstr "Akukho zaziso ezingafundwanga"
 
@@ -1529,10 +1534,10 @@ msgstr "Akukho zinkangeleko"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:554
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:557
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:565
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:578
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:583
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:567
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:580
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:581
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:585
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:362
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:385
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx:388
@@ -1562,8 +1567,8 @@ msgstr "Akumiselwanga"
 msgid "Nothing found"
 msgstr "Akukho nto ifumanekileyo"
 
-#: src/features/notification/index.tsx:145
-#: src/features/notification/index.tsx:201
+#: src/features/notification/index.tsx:146
+#: src/features/notification/index.tsx:204
 msgid "Notifications"
 msgstr "Izaziso"
 
@@ -1572,8 +1577,8 @@ msgstr "Izaziso"
 msgid "Notifications: {0}"
 msgstr "Izaziso: {0}"
 
-#: src/components/rss-dialog.tsx:375
-#: src/components/rss-dialog.tsx:382
+#: src/components/rss-dialog.tsx:370
+#: src/components/rss-dialog.tsx:377
 msgid "Notify by default"
 msgstr "Yazisa ngokumiselweyo"
 
@@ -1643,8 +1648,8 @@ msgid "Owner"
 msgstr "Umnini"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx:546
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:561
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:577
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:563
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:579
 msgid "Parent"
 msgstr "Umzali"
 
@@ -1713,7 +1718,7 @@ msgstr "Iyasetyenzwa…"
 msgid "Prompt saved"
 msgstr "Isikhumbuzi sigciniwe"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:416
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:418
 msgid "Properties"
 msgstr "Iimpawu"
 
@@ -1892,12 +1897,12 @@ msgid "RSS access revoked"
 msgstr "Ufikelelo lwe-RSS lurhoxisiwe"
 
 #: ../../../lib/web/src/components/options-menu.tsx:171
-#: src/components/rss-dialog.tsx:145
+#: src/components/rss-dialog.tsx:140
 msgid "RSS feed"
 msgstr "Ifidi ye-RSS"
 
-#: src/components/rss-dialog.tsx:250
-#: src/features/notification/index.tsx:250
+#: src/components/rss-dialog.tsx:245
+#: src/features/notification/index.tsx:253
 msgid "RSS feeds"
 msgstr "Ii-feed ze-RSS"
 
@@ -1916,14 +1921,14 @@ msgstr "Umgqibelo"
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx:172
 #: ../../../lib/web/src/components/ui/editable-field-row.tsx:126
 #: ../../../lib/web/src/components/ui/secret-field.tsx:79
-#: src/components/rss-dialog.tsx:296
-#: src/components/rss-dialog.tsx:305
+#: src/components/rss-dialog.tsx:291
+#: src/components/rss-dialog.tsx:300
 msgid "Save"
 msgstr "Gcina"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx:156
-#: src/components/rss-dialog.tsx:184
-#: src/components/rss-dialog.tsx:219
+#: src/components/rss-dialog.tsx:179
+#: src/components/rss-dialog.tsx:214
 msgid "Saving..."
 msgstr "Iyagcina..."
 
@@ -2078,7 +2083,7 @@ msgstr "Misa indawo yokuqala neyokugqibela"
 msgid "Settings"
 msgstr "Iisetingi"
 
-#: src/features/notification/index.tsx:210
+#: src/features/notification/index.tsx:213
 msgid "Show all"
 msgstr "Bonisa konke"
 
@@ -2141,8 +2146,8 @@ msgstr "Banzi"
 msgid "Start the discussion by adding the first comment."
 msgstr "Qalisa ingxoxo ngokongeza ilizwi lokuqala."
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Stop watching"
 msgstr "Yeka ukubukela"
 
@@ -2241,11 +2246,15 @@ msgstr "Iseva ibuyise iphepha lewebhu endaweni yedatha."
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
 msgstr "Le app ayivumelekanga ukusebenzisa i-passkey yakho. Yivumele kwiiSetingi, phantsi kweeMvume."
 
+#: src/features/notification/index.tsx:264
+msgid "This permanently deletes every notification, read and unread."
+msgstr "Oku kuza kucima zonke izaziso ngokusisigxina, ezifundiweyo nezingafundwanga."
+
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx:70
 msgid "This permanently deletes the game and its chat. This cannot be undone."
 msgstr "Oku kuza kucima umdlalo nengxoxo yawo ngokusisigxina. Esi senzo asinakuguqulwa."
 
-#: src/components/rss-dialog.tsx:488
+#: src/components/rss-dialog.tsx:478
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
 msgstr "Oku kuza kuyicima ngokusisigxina le feed. Naziphi na izifundi ze-RSS ezisebenzisa yona azisayi kukwazi ukufikelela kwizaziso zakho."
 
@@ -2389,10 +2398,6 @@ msgstr "Layisha"
 msgid "Upload progress"
 msgstr "Inkqubela yokulayisha"
 
-#: src/components/rss-dialog.tsx:420
-msgid "Use this feed for your current notification subscriptions"
-msgstr "Sebenzisa le fidi kurhumo lwakho lwezaziso zangoku"
-
 #: ../../../lib/web/src/components/step-up-dialog.tsx:329
 msgid "Use your passkey"
 msgstr "Sebenzisa i-passkey yakho"
@@ -2434,7 +2439,7 @@ msgstr "Umboniso wevidiyo: {0}"
 msgid "View all notifications"
 msgstr "Bonisa zonke izaziso"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:450
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:452
 msgid "View and edit item details"
 msgstr "Bonisa kwaye uhlele iinkcukacha zento"
 
@@ -2446,8 +2451,8 @@ msgstr "Bonisa izilawuli"
 msgid "Voice recording is not supported in this browser"
 msgstr "Ushicilelo lwelizwi aluxhaswa kule bhrawuza"
 
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:479
-#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:484
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:481
+#: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx:486
 msgid "Watch"
 msgstr "Bukela"
 
