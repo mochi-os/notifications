@@ -2,9 +2,12 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // This file is part of Mochi, licensed under the GNU AGPL v3 with the
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
-
+import {
+  requestHelpers,
+  type NotificationCategory,
+  type NotificationTopic,
+} from '@mochi/web'
 import endpoints from '@/api/endpoints'
-import { requestHelpers, type NotificationCategory, type NotificationTopic } from '@mochi/web'
 
 const NO_TOAST = { mochi: { showGlobalErrorToast: false } } as const
 
@@ -41,16 +44,12 @@ const markAsRead = async (id: string): Promise<void> => {
   const formData = new URLSearchParams()
   formData.append('id', id)
 
-  await requestHelpers.post(
-    endpoints.notifications.read,
-    formData.toString(),
-    {
-      ...NO_TOAST,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    }
-  )
+  await requestHelpers.post(endpoints.notifications.read, formData.toString(), {
+    ...NO_TOAST,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  })
 }
 
 const markAllAsRead = async (): Promise<void> => {

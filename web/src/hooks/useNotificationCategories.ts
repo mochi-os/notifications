@@ -2,15 +2,14 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // This file is part of Mochi, licensed under the GNU AGPL v3 with the
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
-
 import { useState } from 'react'
+import { useLingui } from '@lingui/react/macro'
 import {
   toast,
   getErrorMessage,
   type NotificationCategory,
   type NotificationTopic,
 } from '@mochi/web'
-import { useLingui } from '@lingui/react/macro'
 import { notificationsApi } from '@/api/notifications'
 
 /**
@@ -21,7 +20,9 @@ import { notificationsApi } from '@/api/notifications'
 export function useNotificationCategories() {
   const { t } = useLingui()
   const [openKey, setOpenKey] = useState<string | null>(null)
-  const [categories, setCategories] = useState<NotificationCategory[] | null>(null)
+  const [categories, setCategories] = useState<NotificationCategory[] | null>(
+    null
+  )
   const [topic, setTopic] = useState<NotificationTopic | null>(null)
   const [saving, setSaving] = useState(false)
 
@@ -42,7 +43,9 @@ export function useNotificationCategories() {
     } catch (error) {
       // Reported rather than swallowed: this path used to fail invisibly.
       setCategories([])
-      toast.error(getErrorMessage(error, t`Failed to load notification categories`))
+      toast.error(
+        getErrorMessage(error, t`Failed to load notification categories`)
+      )
     }
   }
 
@@ -73,5 +76,14 @@ export function useNotificationCategories() {
     }
   }
 
-  return { keyFor, openKey, categories, topic, saving, open, close, changeCategory }
+  return {
+    keyFor,
+    openKey,
+    categories,
+    topic,
+    saving,
+    open,
+    close,
+    changeCategory,
+  }
 }

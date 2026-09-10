@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // This file is part of Mochi, licensed under the GNU AGPL v3 with the
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
-
 import { useState, useEffect, useRef } from 'react'
 import { Trans, useLingui } from '@lingui/react/macro'
 import {
@@ -31,7 +30,17 @@ import {
   TooltipContent,
   textUnchanged,
 } from '@mochi/web'
-import { Loader2, Copy, Check, Plus, Trash2, Rss, Pencil, X } from 'lucide-react'
+import {
+  Loader2,
+  Copy,
+  Check,
+  Plus,
+  Trash2,
+  Rss,
+  Pencil,
+  X,
+} from 'lucide-react'
+import endpoints from '@/api/endpoints'
 import {
   type RssFeed,
   useCreateRssFeedMutation,
@@ -39,7 +48,6 @@ import {
   useRenameRssFeedMutation,
   useToggleRssFeedEnabledMutation,
 } from '@/hooks/useRssFeeds'
-import endpoints from '@/api/endpoints'
 
 type DialogView = 'list' | 'create' | 'created'
 
@@ -208,14 +216,11 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
 
   const handleToggleEnabled = async (id: string, enabled: boolean) => {
     try {
-      await toastAction(
-        toggleEnabledMutation.mutateAsync({ id, enabled }),
-        {
-          loading: t`Saving...`,
-          success: false,
-          error: (err) => getErrorMessage(err, t`Failed to update feed`),
-        }
-      )
+      await toastAction(toggleEnabledMutation.mutateAsync({ id, enabled }), {
+        loading: t`Saving...`,
+        success: false,
+        error: (err) => getErrorMessage(err, t`Failed to update feed`),
+      })
     } catch {
       // toastAction already showed error
     }
@@ -237,7 +242,9 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
   return (
     <>
       <ResponsiveDialog open={open} onOpenChange={handleClose}>
-        <ResponsiveDialogContent onOpenAutoFocus={(event) => event.preventDefault()}>
+        <ResponsiveDialogContent
+          onOpenAutoFocus={(event) => event.preventDefault()}
+        >
           <ResponsiveDialogHeader>
             <ResponsiveDialogTitle>
               {view === 'create' && <Trans>Create RSS feed</Trans>}
@@ -395,14 +402,17 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
           {view === 'create' && (
             <div className='space-y-4'>
               <div className='space-y-2'>
-                <Label htmlFor='feed-name'><Trans>Feed name</Trans></Label>
+                <Label htmlFor='feed-name'>
+                  <Trans>Feed name</Trans>
+                </Label>
                 <Input
                   id='feed-name'
                   placeholder={t`e.g., Feedly, NewsBlur`}
                   value={newFeedName}
                   onChange={(e) => setNewFeedName(e.target.value)}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter' && !createMutation.isPending) handleCreate()
+                    if (e.key === 'Enter' && !createMutation.isPending)
+                      handleCreate()
                   }}
                 />
               </div>

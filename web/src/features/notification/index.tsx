@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // This file is part of Mochi, licensed under the GNU AGPL v3 with the
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
-
 import { useMemo, useState } from 'react'
 import { Trans, useLingui } from '@lingui/react/macro'
 import {
@@ -27,22 +26,16 @@ import { Button } from '@mochi/web/components/ui/button'
 import { Label } from '@mochi/web/components/ui/label'
 import { Switch } from '@mochi/web/components/ui/switch'
 import { cn } from '@mochi/web/lib/utils'
-import {
-  Bell,
-  Check,
-  Loader2,
-  Rss,
-  Trash2,
-} from 'lucide-react'
+import { Bell, Check, Loader2, Rss, Trash2 } from 'lucide-react'
 import type { Notification as ApiNotification } from '@/api/notifications'
-import { RssDialog } from '@/components/rss-dialog'
+import { useNotificationCategories } from '@/hooks/useNotificationCategories'
 import {
   useNotificationsQuery,
   useMarkAsReadMutation,
   useMarkAllAsReadMutation,
   useClearAllMutation,
 } from '@/hooks/useNotifications'
-import { useNotificationCategories } from '@/hooks/useNotificationCategories'
+import { RssDialog } from '@/components/rss-dialog'
 
 const STORAGE_KEY = 'notifications-show-all'
 const TRUSTED_EXTERNAL_REDIRECT_HOSTS = (
@@ -124,11 +117,19 @@ function NotificationItem({
         saving={categories.saving}
         open={
           categories.openKey ===
-          categories.keyFor(notification.app, notification.topic, notification.object)
+          categories.keyFor(
+            notification.app,
+            notification.topic,
+            notification.object
+          )
         }
         onOpenChange={(next) => {
           if (next) {
-            void categories.open(notification.app, notification.topic, notification.object)
+            void categories.open(
+              notification.app,
+              notification.topic,
+              notification.object
+            )
           } else {
             categories.close()
           }
@@ -177,8 +178,7 @@ export function Notifications() {
       await toastAction(markAllAsReadMutation.mutateAsync(), {
         loading: t`Marking all as read...`,
         success: false,
-        error: (err) =>
-          getErrorMessage(err, t`Failed to mark all as read`),
+        error: (err) => getErrorMessage(err, t`Failed to mark all as read`),
       })
     } catch {
       // toastAction already showed error
@@ -230,7 +230,9 @@ export function Notifications() {
                 ) : (
                   <Check className='me-1.5 size-4' />
                 )}
-                <span className='hidden md:inline'><Trans>Mark all read</Trans></span>
+                <span className='hidden md:inline'>
+                  <Trans>Mark all read</Trans>
+                </span>
               </Button>
             )}
             {allNotifications.length > 0 && (
@@ -245,12 +247,16 @@ export function Notifications() {
                 ) : (
                   <Trash2 className='me-1.5 size-4' />
                 )}
-                <span className='hidden md:inline'><Trans>Clear all</Trans></span>
+                <span className='hidden md:inline'>
+                  <Trans>Clear all</Trans>
+                </span>
               </Button>
             )}
             <Button variant='ghost' size='sm' onClick={() => setRssOpen(true)}>
               <Rss className='me-1.5 size-4' />
-              <span className='hidden md:inline'><Trans>RSS feeds</Trans></span>
+              <span className='hidden md:inline'>
+                <Trans>RSS feeds</Trans>
+              </span>
             </Button>
           </>
         }

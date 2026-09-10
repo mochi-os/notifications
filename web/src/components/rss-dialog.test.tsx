@@ -2,13 +2,12 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // This file is part of Mochi, licensed under the GNU AGPL v3 with the
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
-
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { i18n } from '@lingui/core'
+import { I18nProvider } from '@lingui/react'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { I18nProvider } from '@lingui/react'
-import { i18n } from '@lingui/core'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 
 const clipboard = vi.fn<(text: string) => Promise<boolean>>()
 const errorToast = vi.fn()
@@ -32,7 +31,13 @@ vi.mock('@mochi/web', async (importOriginal) => {
     requestHelpers: {
       ...actual.requestHelpers,
       get: vi.fn(async () => [
-        { id: 'feed-1', name: 'Everything', token: 'tok-1', created: 1, enabled: 1 },
+        {
+          id: 'feed-1',
+          name: 'Everything',
+          token: 'tok-1',
+          created: 1,
+          enabled: 1,
+        },
       ]),
       post: vi.fn(async () => ({})),
     },
@@ -72,7 +77,9 @@ describe('RssDialog', () => {
     const copy = await screen.findByRole('button', { name: 'Copy' })
     await userEvent.click(copy)
 
-    await waitFor(() => expect(errorToast).toHaveBeenCalledWith('Failed to copy'))
+    await waitFor(() =>
+      expect(errorToast).toHaveBeenCalledWith('Failed to copy')
+    )
   })
 
   it('stays silent when the clipboard write succeeds', async () => {
@@ -89,13 +96,17 @@ describe('RssDialog', () => {
     clipboard.mockResolvedValue(true)
     const { onOpenChange } = renderDialog()
 
-    await userEvent.click(await screen.findByRole('button', { name: 'Create feed' }))
+    await userEvent.click(
+      await screen.findByRole('button', { name: 'Create feed' })
+    )
     expect(await screen.findByLabelText('Feed name')).toBeInTheDocument()
 
     await userEvent.click(screen.getByRole('button', { name: 'Cancel' }))
 
     // Back on the list, and the dialog was never asked to close.
-    expect(await screen.findByRole('button', { name: 'Create feed' })).toBeInTheDocument()
+    expect(
+      await screen.findByRole('button', { name: 'Create feed' })
+    ).toBeInTheDocument()
     expect(screen.queryByLabelText('Feed name')).not.toBeInTheDocument()
     expect(onOpenChange).not.toHaveBeenCalled()
   })
@@ -107,11 +118,15 @@ describe('RssDialog', () => {
     clipboard.mockResolvedValue(true)
     renderDialog()
 
-    await userEvent.click(await screen.findByRole('button', { name: 'Create feed' }))
+    await userEvent.click(
+      await screen.findByRole('button', { name: 'Create feed' })
+    )
     await userEvent.type(await screen.findByLabelText('Feed name'), 'Abandoned')
     await userEvent.click(screen.getByRole('button', { name: 'Cancel' }))
 
-    await userEvent.click(await screen.findByRole('button', { name: 'Create feed' }))
+    await userEvent.click(
+      await screen.findByRole('button', { name: 'Create feed' })
+    )
     expect(await screen.findByLabelText('Feed name')).toHaveValue('')
   })
 })
