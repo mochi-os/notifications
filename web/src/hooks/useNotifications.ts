@@ -10,7 +10,7 @@ import {
   type NotificationsListResponse,
 } from '@/api/notifications'
 
-export const notificationKeys = {
+const notificationKeys = {
   all: () => ['notifications'] as const,
   list: () => [...notificationKeys.all(), 'list'] as const,
 }
