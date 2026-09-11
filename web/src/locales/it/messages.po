@@ -522,7 +522,6 @@ msgid "Colour"
 msgstr "Colore"
 
 #: ../../../lib/web/src/components/entity/entity-board-column.tsx
-#: ../../../lib/web/src/components/entity/entity-board-column.tsx
 msgid "Column actions"
 msgstr "Azioni colonna"
 
@@ -538,7 +537,6 @@ msgstr "Comodo"
 msgid "Command Palette"
 msgstr "Palette dei comandi"
 
-#: ../../../lib/web/src/components/entity/entity-comment-thread.tsx
 #: ../../../lib/web/src/components/entity/entity-comment-thread.tsx
 msgid "Comment actions"
 msgstr "Azioni commento"
@@ -1393,7 +1391,6 @@ msgid "Monday"
 msgstr "Lunedì"
 
 #: ../../../lib/web/src/components/options-menu.tsx
-#: ../../../lib/web/src/components/options-menu.tsx
 msgid "More options"
 msgstr "Altre opzioni"
 
@@ -1597,7 +1594,6 @@ msgid "Oops! Page Not Found!"
 msgstr "Oops! Pagina non trovata!"
 
 #: ../../../lib/web/src/components/layout/nav-group.tsx
-#: ../../../lib/web/src/components/layout/nav-group.tsx
 msgid "Open actions"
 msgstr "Apri azioni"
 
@@ -1611,7 +1607,6 @@ msgid "Open navigation"
 msgstr "Apri navigazione"
 
 #: ../../../lib/web/src/components/entity/entity-option-dialog.tsx
-#: ../../../lib/web/src/components/entity/entity-option-dialog.tsx
 msgid "Open option actions"
 msgstr "Apri azioni opzione"
 
@@ -1619,7 +1614,6 @@ msgstr "Apri azioni opzione"
 msgid "Open selected card"
 msgstr "Apri scheda selezionata"
 
-#: ../../../lib/web/src/components/entity/entity-view-sheet.tsx
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx
 msgid "Open view actions"
 msgstr "Apri azioni visualizzazione"
