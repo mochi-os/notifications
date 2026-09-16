@@ -205,10 +205,6 @@ msgstr "Ychwanegu at danysgrifiadau presennol"
 msgid "Add view"
 msgstr "Ychwanegu golwg"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Yn ychwanegu..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "Crëwyd {field}"
 msgid "Creating RSS feed..."
 msgstr "Yn creu ffrwd RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Yn creu..."
@@ -802,10 +797,6 @@ msgstr "Dilëwyd {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Yn dileu ffrwd..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Yn dileu..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Ymddiswyddo"
 msgid "Resign game?"
 msgstr "Ymddiswyddo o'r gêm?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Yn ymddiswyddo..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Ail-geisio"
@@ -1930,7 +1917,6 @@ msgstr "Dydd Sadwrn"
 msgid "Save"
 msgstr "Cadw"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

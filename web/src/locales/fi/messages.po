@@ -205,10 +205,6 @@ msgstr "Lisää olemassa oleviin tilauksiin"
 msgid "Add view"
 msgstr "Lisää näkymä"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Lisätään..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "Tekoäly"
@@ -681,7 +677,6 @@ msgstr "{field} luotu"
 msgid "Creating RSS feed..."
 msgstr "Luodaan RSS-syötettä..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Luodaan..."
@@ -802,10 +797,6 @@ msgstr "{field} poistettu"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Poistetaan syötettä..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Poistetaan..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Luovuta"
 msgid "Resign game?"
 msgstr "Luovutatko pelin?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Luovutetaan..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Yritä uudelleen"
@@ -1930,7 +1917,6 @@ msgstr "Lauantai"
 msgid "Save"
 msgstr "Tallenna"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

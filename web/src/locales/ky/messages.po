@@ -205,10 +205,6 @@ msgstr "Учурдагы жазылууларга кошуу"
 msgid "Add view"
 msgstr "Көрүнүш кошуу"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Кошулууда..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} түзүлдү"
 msgid "Creating RSS feed..."
 msgstr "RSS лента түзүлүүдө..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Түзүлүүдө..."
@@ -802,10 +797,6 @@ msgstr "{field} өчүрүлдү"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Тасма өчүрүлүүдө..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Жок кылынууда..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Баш тартуу"
 msgid "Resign game?"
 msgstr "Оюндан баш тартасызбы?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Баш тартылууда..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Кайра аракет кылуу"
@@ -1930,7 +1917,6 @@ msgstr "Ишемби"
 msgid "Save"
 msgstr "Сактоо"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

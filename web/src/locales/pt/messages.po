@@ -205,10 +205,6 @@ msgstr "Adicionar às subscrições existentes"
 msgid "Add view"
 msgstr "Adicionar vista"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "A adicionar..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "IA"
@@ -681,7 +677,6 @@ msgstr "Criado {field}"
 msgid "Creating RSS feed..."
 msgstr "Criando feed RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "A criar..."
@@ -802,10 +797,6 @@ msgstr "Eliminado {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "A eliminar o feed..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "A eliminar..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Desistir"
 msgid "Resign game?"
 msgstr "Desistir do jogo?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "A desistir..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Tentar novamente"
@@ -1930,7 +1917,6 @@ msgstr "Sábado"
 msgid "Save"
 msgstr "Guardar"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

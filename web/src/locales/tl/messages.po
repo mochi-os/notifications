@@ -205,10 +205,6 @@ msgstr "Idagdag sa mga umiiral na subscription"
 msgid "Add view"
 msgstr "Magdagdag ng view"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Idinadagdag..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "Ginawa ang {field}"
 msgid "Creating RSS feed..."
 msgstr "Gumagawa ng RSS feed..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Ginagawa..."
@@ -802,10 +797,6 @@ msgstr "Tinanggal ang {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Tinatanggal ang feed..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Dini-delete..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Sumuko"
 msgid "Resign game?"
 msgstr "Sumuko sa laro?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Sumusuko..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Subukang muli"
@@ -1930,7 +1917,6 @@ msgstr "Sabado"
 msgid "Save"
 msgstr "I-save"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

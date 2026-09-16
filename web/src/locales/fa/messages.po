@@ -205,10 +205,6 @@ msgstr "افزودن به اشتراک‌های موجود"
 msgid "Add view"
 msgstr "افزودن نما"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "در حال افزودن..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "هوش مصنوعی"
@@ -681,7 +677,6 @@ msgstr "{field} ایجاد شد"
 msgid "Creating RSS feed..."
 msgstr "در حال ساخت فید RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "در حال ساخت..."
@@ -802,10 +797,6 @@ msgstr "{field} حذف شد"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "در حال حذف فید..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "در حال حذف..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "تسلیم"
 msgid "Resign game?"
 msgstr "بازی را تسلیم می‌شوید؟"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "در حال تسلیم..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "تلاش دوباره"
@@ -1930,7 +1917,6 @@ msgstr "شنبه"
 msgid "Save"
 msgstr "ذخیره"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

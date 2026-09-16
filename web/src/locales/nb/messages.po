@@ -205,10 +205,6 @@ msgstr "Legg til i eksisterende abonnementer"
 msgid "Add view"
 msgstr "Legg til visning"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Legger til …"
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "KI"
@@ -681,7 +677,6 @@ msgstr "Opprettet {field}"
 msgid "Creating RSS feed..."
 msgstr "Oppretter RSS-strøm..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Oppretter …"
@@ -802,10 +797,6 @@ msgstr "Slettet {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Sletter feed..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Sletter …"
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Gi opp"
 msgid "Resign game?"
 msgstr "Gi opp partiet?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Gir opp …"
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Prøv igjen"
@@ -1930,7 +1917,6 @@ msgstr "Lørdag"
 msgid "Save"
 msgstr "Lagre"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

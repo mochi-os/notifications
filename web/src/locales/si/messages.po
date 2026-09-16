@@ -205,10 +205,6 @@ msgstr "පවතින දායකත්වයන් වෙත එක් ක�
 msgid "Add view"
 msgstr "දැක්මක් එක් කරන්න"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "එක් කරමින්..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} සාදන ලදී"
 msgid "Creating RSS feed..."
 msgstr "RSS සංග්‍රහය සාදමින්..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "නිර්මාණය කරමින්..."
@@ -802,10 +797,6 @@ msgstr "{field} මකා දමන ලදී"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "පෝෂණය මකමින්..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "මකමින්..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "ඉල්ලා අස්වන්න"
 msgid "Resign game?"
 msgstr "ක්‍රීඩාවෙන් ඉල්ලා අස්වන්නද?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "ඉල්ලා අස්වෙමින්..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "නැවත උත්සාහ කරන්න"
@@ -1930,7 +1917,6 @@ msgstr "සෙනසුරාදා"
 msgid "Save"
 msgstr "සුරකින්න"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

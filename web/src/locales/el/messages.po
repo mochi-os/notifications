@@ -205,10 +205,6 @@ msgstr "Προσθήκη σε υπάρχουσες συνδρομές"
 msgid "Add view"
 msgstr "Προσθήκη προβολής"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Προσθήκη..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "Δημιουργήθηκε {field}"
 msgid "Creating RSS feed..."
 msgstr "Δημιουργία ροής RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Δημιουργία..."
@@ -802,10 +797,6 @@ msgstr "Διαγράφηκε {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Διαγραφή ροής..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Διαγραφή..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Παραίτηση"
 msgid "Resign game?"
 msgstr "Παραίτηση από το παιχνίδι;"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Παραίτηση..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Δοκιμή ξανά"
@@ -1930,7 +1917,6 @@ msgstr "Σάββατο"
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

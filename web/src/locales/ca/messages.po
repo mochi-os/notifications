@@ -205,10 +205,6 @@ msgstr "Afegeix a les subscripcions existents"
 msgid "Add view"
 msgstr "Afegeix una vista"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "S'està afegint..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "IA"
@@ -681,7 +677,6 @@ msgstr "S'ha creat {field}"
 msgid "Creating RSS feed..."
 msgstr "S'està creant el canal RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "S'està creant..."
@@ -802,10 +797,6 @@ msgstr "S'ha suprimit {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Suprimint el canal..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Suprimint..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Abandona"
 msgid "Resign game?"
 msgstr "Vols abandonar la partida?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Abandonant..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Torna-ho a provar"
@@ -1930,7 +1917,6 @@ msgstr "Dissabte"
 msgid "Save"
 msgstr "Desa"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

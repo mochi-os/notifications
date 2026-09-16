@@ -205,10 +205,6 @@ msgstr "Дадаць да існуючых падпісак"
 msgid "Add view"
 msgstr "Дадаць выгляд"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Даданне..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "Створана {field}"
 msgid "Creating RSS feed..."
 msgstr "Стварэнне стужкі RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Стварэнне..."
@@ -802,10 +797,6 @@ msgstr "Выдалена {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Выдаленне стужкі..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Выдаленне..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Здацца"
 msgid "Resign game?"
 msgstr "Здацца ў гульні?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Здаемся..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Паўтарыць"
@@ -1930,7 +1917,6 @@ msgstr "Субота"
 msgid "Save"
 msgstr "Захаваць"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

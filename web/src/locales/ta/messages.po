@@ -205,10 +205,6 @@ msgstr "உள்ள சந்தாக்களுக்குச் சேர�
 msgid "Add view"
 msgstr "காட்சி சேர்"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "சேர்க்கிறது..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} உருவாக்கப்பட்டது"
 msgid "Creating RSS feed..."
 msgstr "RSS ஊட்டத்தை உருவாக்குகிறது..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "உருவாக்குகிறது..."
@@ -802,10 +797,6 @@ msgstr "{field} நீக்கப்பட்டது"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "ஊட்டத்தை நீக்குகிறது..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "நீக்குகிறது..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "விலகு"
 msgid "Resign game?"
 msgstr "விளையாட்டிலிருந்து விலகவா?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "விலகுகிறது..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "மீண்டும் முயற்சிக்கவும்"
@@ -1930,7 +1917,6 @@ msgstr "சனிக்கிழமை"
 msgid "Save"
 msgstr "சேமி"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

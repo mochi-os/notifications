@@ -205,10 +205,6 @@ msgstr "기존 구독에 추가"
 msgid "Add view"
 msgstr "뷰 추가"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "추가 중..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} 생성됨"
 msgid "Creating RSS feed..."
 msgstr "RSS 피드 생성 중..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "생성 중..."
@@ -802,10 +797,6 @@ msgstr "{field} 삭제됨"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "피드 삭제 중..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "삭제 중..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "기권"
 msgid "Resign game?"
 msgstr "게임을 기권할까요?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "기권 중..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "다시 시도"
@@ -1930,7 +1917,6 @@ msgstr "토요일"
 msgid "Save"
 msgstr "저장"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

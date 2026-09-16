@@ -205,10 +205,6 @@ msgstr "زیادکردن بۆ بەشداری هەبووەکان"
 msgid "Add view"
 msgstr "زیادکردنی ڕوانگە"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "زیادکردن..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} دروستکرا"
 msgid "Creating RSS feed..."
 msgstr "دروستکردنی فیدی RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "دروستکردن..."
@@ -802,10 +797,6 @@ msgstr "{field} سڕایەوە"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "سڕینەوەی فید..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "سڕینەوە..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "دەستلەکارکێشانەوە"
 msgid "Resign game?"
 msgstr "دەست لە یاری بکێشیتەوە؟"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "دەستلەکارکێشانەوە..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "دووبارە هەوڵبدەرەوە"
@@ -1930,7 +1917,6 @@ msgstr "شەممە"
 msgid "Save"
 msgstr "پاشەکەوتکردن"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

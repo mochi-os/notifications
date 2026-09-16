@@ -205,10 +205,6 @@ msgstr "मौजूदा सदस्यता में जोड़ीं"
 msgid "Add view"
 msgstr "दृश्य जोड़ीं"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "जोड़ल जा रहल बा..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} बनावल गइल"
 msgid "Creating RSS feed..."
 msgstr "RSS फीड बनावल जा रहल बा..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "बनावल जा रहल बा..."
@@ -802,10 +797,6 @@ msgstr "{field} मेटावल गइल"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "फ़ीड मेटावल जा रहल बा..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "मेटा रहल बा..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "हार मानीं"
 msgid "Resign game?"
 msgstr "खेल में हार मानीं?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "हार मान रहल बा..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "फेर से कोसिस करीं"
@@ -1930,7 +1917,6 @@ msgstr "शनिवार"
 msgid "Save"
 msgstr "सहेजीं"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

@@ -205,10 +205,6 @@ msgstr "ወደ ነባር ምዝገባዎች ጨምር"
 msgid "Add view"
 msgstr "እይታ ጨምር"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "በመጨመር ላይ..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} ተፈጥሯል"
 msgid "Creating RSS feed..."
 msgstr "የRSS ፊድ በመፍጠር ላይ..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "በመፍጠር ላይ..."
@@ -802,10 +797,6 @@ msgstr "{field} ተሰርዟል"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "ምግብ በመሰረዝ ላይ..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "በመሰረዝ ላይ..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "ለቀቅ"
 msgid "Resign game?"
 msgstr "ጨዋታ ይለቀቅ?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "በመልቀቅ ላይ..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "እንደገና ሞክር"
@@ -1930,7 +1917,6 @@ msgstr "ቅዳሜ"
 msgid "Save"
 msgstr "ያስቀምጡ"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

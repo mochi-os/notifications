@@ -205,10 +205,6 @@ msgstr "موجود سبسڪرپشنن ۾ شامل ڪريو"
 msgid "Add view"
 msgstr "نظارو شامل ڪريو"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "شامل ڪري رهيو آهي..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} ٺاهيو ويو"
 msgid "Creating RSS feed..."
 msgstr "RSS فيڊ ٺاهي رهيو آهي..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "ٺاهي رهيو آهي..."
@@ -802,10 +797,6 @@ msgstr "{field} ختم ڪيو ويو"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "فيڊ ڊهي رهي آهي..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "ختم ڪري رهيو آهي..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "هار مڃيو"
 msgid "Resign game?"
 msgstr "گيم هار مڃجي؟"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "هار مڃي رهيو آهي..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "ٻيهر ڪوشش ڪريو"
@@ -1930,7 +1917,6 @@ msgstr "ڇنڇر"
 msgid "Save"
 msgstr "محفوظ ڪريو"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

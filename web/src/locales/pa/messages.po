@@ -205,10 +205,6 @@ msgstr "ਮੌਜੂਦਾ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਵਿੱਚ 
 msgid "Add view"
 msgstr "ਦ੍ਰਿਸ਼ ਜੋੜੋ"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "ਜੋੜ ਰਹੇ ਹਾਂ..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} ਬਣਾਇਆ ਗਿਆ"
 msgid "Creating RSS feed..."
 msgstr "RSS ਫੀਡ ਬਣਾਈ ਜਾ ਰਹੀ ਹੈ..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "ਬਣਾ ਰਹੇ ਹਾਂ..."
@@ -802,10 +797,6 @@ msgstr "{field} ਮਿਟਾਇਆ ਗਿਆ"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "ਫੀਡ ਮਿਟਾਈ ਜਾ ਰਹੀ ਹੈ..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "ਮਿਟਾ ਰਹੇ ਹਾਂ..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "ਅਸਤੀਫ਼ਾ ਦਿਓ"
 msgid "Resign game?"
 msgstr "ਗੇਮ ਤੋਂ ਅਸਤੀਫ਼ਾ ਦੇਈਏ?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "ਅਸਤੀਫ਼ਾ ਦੇ ਰਿਹਾ ਹੈ..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
@@ -1930,7 +1917,6 @@ msgstr "ਸ਼ਨੀਵਾਰ"
 msgid "Save"
 msgstr "ਸੰਭਾਲੋ"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

@@ -205,10 +205,6 @@ msgstr "ရှိပြီးသား subscription များတွင် ထ
 msgid "Add view"
 msgstr "ကြည့်ရှုမှု ထည့်မည်"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "ထည့်နေသည်..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} ကို ဖန်တီးခဲ့သည်"
 msgid "Creating RSS feed..."
 msgstr "RSS ဖိဒ် ဖန်တီးနေသည်..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "ဖန်တီးနေသည်..."
@@ -802,10 +797,6 @@ msgstr "{field} ကို ဖျက်ခဲ့သည်"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "ဖိဒ်ကို ဖျက်နေသည်..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "ဖျက်နေသည်..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "ရှုံးကြောင်းပြော"
 msgid "Resign game?"
 msgstr "ဂိမ်း ရှုံးကြောင်းပြောမလား?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "ရှုံးကြောင်းပြောနေသည်..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "ထပ်စမ်းကြည့်ပါ"
@@ -1930,7 +1917,6 @@ msgstr "စနေနေ့"
 msgid "Save"
 msgstr "သိမ်းမည်"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

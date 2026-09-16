@@ -205,10 +205,6 @@ msgstr "Pridėti prie esamų prenumeratų"
 msgid "Add view"
 msgstr "Pridėti rodinį"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Pridedama..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "DI"
@@ -681,7 +677,6 @@ msgstr "{field} sukurta"
 msgid "Creating RSS feed..."
 msgstr "Kuriamas RSS kanalas..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Kuriama..."
@@ -802,10 +797,6 @@ msgstr "{field} ištrinta"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Trinamas srautas..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Ištrinama..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Pasiduoti"
 msgid "Resign game?"
 msgstr "Pasiduoti game?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Pasiduodama..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Bandyti dar kartą"
@@ -1930,7 +1917,6 @@ msgstr "Šeštadienis"
 msgid "Save"
 msgstr "Išsaugoti"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

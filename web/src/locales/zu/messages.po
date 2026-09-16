@@ -205,10 +205,6 @@ msgstr "Engeza ekubhaliseni okukhona"
 msgid "Add view"
 msgstr "Engeza umbukiso"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Iyengeza..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "I-AI"
@@ -681,7 +677,6 @@ msgstr "Kudalwe {field}"
 msgid "Creating RSS feed..."
 msgstr "Idala ifidi ye-RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Kuyadalwa..."
@@ -802,10 +797,6 @@ msgstr "Kususiwe {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Kususwa ifidi..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Kususwa..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Yeka"
 msgid "Resign game?"
 msgstr "Yeka umdlalo?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Iyayeka..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Zama futhi"
@@ -1930,7 +1917,6 @@ msgstr "UMgqibelo"
 msgid "Save"
 msgstr "Londoloza"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

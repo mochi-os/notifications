@@ -205,10 +205,6 @@ msgstr "Mavjud obunalarga qoʻshish"
 msgid "Add view"
 msgstr "Koʻrinish qoʻshish"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Qoʻshilmoqda..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -681,7 +677,6 @@ msgstr "{field} yaratildi"
 msgid "Creating RSS feed..."
 msgstr "RSS tasmasi yaratilmoqda..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
 msgid "Creating..."
 msgstr "Yaratilmoqda..."
@@ -802,10 +797,6 @@ msgstr "{field} oʻchirildi"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Tasma o'chirilmoqda..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Oʻchirilmoqda..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1867,10 +1858,6 @@ msgstr "Taslim boʻlish"
 msgid "Resign game?"
 msgstr "Oʻyindan voz kechilsinmi?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Taslim boʻlinmoqda..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Qayta urinish"
@@ -1930,7 +1917,6 @@ msgstr "Shanba"
 msgid "Save"
 msgstr "Saqlash"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."
