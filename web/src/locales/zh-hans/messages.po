@@ -677,10 +677,6 @@ msgstr "已创建{field}"
 msgid "Creating RSS feed..."
 msgstr "正在创建 RSS 源..."
 
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "创建中..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "当前位置"
@@ -1294,7 +1290,6 @@ msgstr "正在加载条目"
 msgid "Loading item details"
 msgstr "正在加载条目详情"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "加载中..."

@@ -677,10 +677,6 @@ msgstr "Skapade {field}"
 msgid "Creating RSS feed..."
 msgstr "Skapar RSS-flöde..."
 
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Skapar..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Nuvarande plats"
@@ -1294,7 +1290,6 @@ msgstr "Läser in objekt"
 msgid "Loading item details"
 msgstr "Läser in objektsdetaljer"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Läser in..."

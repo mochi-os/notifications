@@ -677,10 +677,6 @@ msgstr "Ustvarjeno {field}"
 msgid "Creating RSS feed..."
 msgstr "Ustvarjanje vira RSS..."
 
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Ustvarjanje ..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Trenutna lokacija"
@@ -1294,7 +1290,6 @@ msgstr "Nalaganje elementa"
 msgid "Loading item details"
 msgstr "Nalaganje podrobnosti elementa"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Nalaganje..."

@@ -677,10 +677,6 @@ msgstr "{field} बनावल गइल"
 msgid "Creating RSS feed..."
 msgstr "RSS फीड बनावल जा रहल बा..."
 
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "बनावल जा रहल बा..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "मौजूदा जगह"
@@ -1294,7 +1290,6 @@ msgstr "आइटम लोड हो रहल बा"
 msgid "Loading item details"
 msgstr "आइटम विवरण लोड हो रहल बा"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "लोड हो रहल बा..."

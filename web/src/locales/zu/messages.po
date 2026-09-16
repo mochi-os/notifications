@@ -677,10 +677,6 @@ msgstr "Kudalwe {field}"
 msgid "Creating RSS feed..."
 msgstr "Idala ifidi ye-RSS..."
 
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Kuyadalwa..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Indawo yamanje"
@@ -1294,7 +1290,6 @@ msgstr "Kulayishwa into"
 msgid "Loading item details"
 msgstr "Kulayishwa imininingwane yento"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Kulayishwa..."

@@ -677,10 +677,6 @@ msgstr "Ստեղծվել է {field}"
 msgid "Creating RSS feed..."
 msgstr "RSS հոսք է ստեղծվում..."
 
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Ստեղծվում է…"
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Ընթացիկ վայրը"
@@ -1294,7 +1290,6 @@ msgstr "Տարրը բեռնվում է"
 msgid "Loading item details"
 msgstr "Տարրի մանրամասները բեռնվում են"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Բեռնվում է..."

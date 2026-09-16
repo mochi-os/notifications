@@ -677,10 +677,6 @@ msgstr "{field} دروستکرا"
 msgid "Creating RSS feed..."
 msgstr "دروستکردنی فیدی RSS..."
 
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "دروستکردن..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "شوێنی ئێستا"
@@ -1294,7 +1290,6 @@ msgstr "بڕگە بار دەکرێت"
 msgid "Loading item details"
 msgstr "وردەکارییەکانی بڕگە بار دەکرێن"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "بار دەکرێت..."

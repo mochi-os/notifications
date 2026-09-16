@@ -677,10 +677,6 @@ msgstr "{field} digawé"
 msgid "Creating RSS feed..."
 msgstr "Nggawe feed RSS..."
 
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Nggawé..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Lokasi saiki"
@@ -1294,7 +1290,6 @@ msgstr "Mbukak item"
 msgid "Loading item details"
 msgstr "Mbukak detail item"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Mbukak..."

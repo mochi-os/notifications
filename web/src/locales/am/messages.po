@@ -677,10 +677,6 @@ msgstr "{field} ተፈጥሯል"
 msgid "Creating RSS feed..."
 msgstr "የRSS ፊድ በመፍጠር ላይ..."
 
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "በመፍጠር ላይ..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "የአሁኑ ቦታ"
@@ -1294,7 +1290,6 @@ msgstr "ንጥል በመጫን ላይ"
 msgid "Loading item details"
 msgstr "የንጥል ዝርዝሮች በመጫን ላይ"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "በመጫን ላይ..."
