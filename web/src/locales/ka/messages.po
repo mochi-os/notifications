@@ -205,10 +205,6 @@ msgstr "არსებულ ხელმოწერებში დამა�
 msgid "Add view"
 msgstr "ხედის დამატება"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "დამატება..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "შეიქმნა {field}"
 msgid "Creating RSS feed..."
 msgstr "RSS არხის შექმნა..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "იქმნება..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "მიმდინარე მდებარეობა"
@@ -807,10 +798,6 @@ msgstr "წაიშალა {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "ფიდის წაშლა..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "იშლება..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "ელემენტის ჩატვირთვა"
 msgid "Loading item details"
 msgstr "ელემენტის დეტალების ჩატვირთვა"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "იტვირთება..."
@@ -1872,10 +1858,6 @@ msgstr "ჩაბარება"
 msgid "Resign game?"
 msgstr "თამაშის ჩაბარება?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "ჩაბარება..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "ხელახლა ცდა"
@@ -1935,7 +1917,6 @@ msgstr "შაბათი"
 msgid "Save"
 msgstr "შენახვა"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

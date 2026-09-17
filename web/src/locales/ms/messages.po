@@ -205,10 +205,6 @@ msgstr "Tambah ke langganan sedia ada"
 msgid "Add view"
 msgstr "Tambah paparan"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Menambah..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "{field} dicipta"
 msgid "Creating RSS feed..."
 msgstr "Mencipta suapan RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Mencipta..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Lokasi semasa"
@@ -807,10 +798,6 @@ msgstr "{field} dipadamkan"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Memadam suapan..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Memadam..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Memuatkan item"
 msgid "Loading item details"
 msgstr "Memuatkan butiran item"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Memuatkan..."
@@ -1872,10 +1858,6 @@ msgstr "Letak jawatan"
 msgid "Resign game?"
 msgstr "Letak jawatan permainan?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Meletakkan jawatan..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Cuba lagi"
@@ -1935,7 +1917,6 @@ msgstr "Sabtu"
 msgid "Save"
 msgstr "Simpan"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

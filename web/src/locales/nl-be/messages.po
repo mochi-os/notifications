@@ -205,10 +205,6 @@ msgstr "Toevoegen aan bestaande abonnementen"
 msgid "Add view"
 msgstr "Weergave toevoegen"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Toevoegen..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "{field} aangemaakt"
 msgid "Creating RSS feed..."
 msgstr "RSS-feed maken..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Aanmaken..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Huidige locatie"
@@ -807,10 +798,6 @@ msgstr "{field} verwijderd"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Feed verwijderen..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Verwijderen..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Item laden"
 msgid "Loading item details"
 msgstr "Itemdetails laden"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Laden..."
@@ -1872,10 +1858,6 @@ msgstr "Opgeven"
 msgid "Resign game?"
 msgstr "Spel opgeven?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Bezig met opgeven..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Opnieuw proberen"
@@ -1935,7 +1917,6 @@ msgstr "Zaterdag"
 msgid "Save"
 msgstr "Opslaan"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

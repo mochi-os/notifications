@@ -205,10 +205,6 @@ msgstr "Embojuaju ñembojuaju oĩvape"
 msgid "Add view"
 msgstr "Embojuaju view"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Embojuajuhína..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "{field} ojejapo"
 msgid "Creating RSS feed..."
 msgstr "Ojejapohína RSS feed..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Embojeguávahína..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Tenda ag̃agua"
@@ -807,10 +798,6 @@ msgstr "{field} oñemboguete"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Ojejukahína marandu..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Hundihína..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Ojembogue artículo"
 msgid "Loading item details"
 msgstr "Ojembogue artículo detalles"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Ojembogue..."
@@ -1872,10 +1858,6 @@ msgstr "Ehasa"
 msgid "Resign game?"
 msgstr "Ehasa ñembosarái?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Ohasahína..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Eha'ã jey"
@@ -1935,7 +1917,6 @@ msgstr "Saturday"
 msgid "Save"
 msgstr "Ñongatu"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

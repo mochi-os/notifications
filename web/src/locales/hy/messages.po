@@ -205,10 +205,6 @@ msgstr "Ավելացնել գոյություն ունեցող բաժանորդ�
 msgid "Add view"
 msgstr "Ավելացնել տեսք"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Ավելացվում է..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "Ստեղծվել է {field}"
 msgid "Creating RSS feed..."
 msgstr "RSS հոսք է ստեղծվում..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Ստեղծվում է…"
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Ընթացիկ վայրը"
@@ -807,10 +798,6 @@ msgstr "Ջնջվել է {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Հոսքը ջնջվում է..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Ջնջվում է..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Տարրը բեռնվում է"
 msgid "Loading item details"
 msgstr "Տարրի մանրամասները բեռնվում են"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Բեռնվում է..."
@@ -1872,10 +1858,6 @@ msgstr "Հանձնվել"
 msgid "Resign game?"
 msgstr "Հանձնվե՞լ խաղում։"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Հանձնվում..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Կրկին փորձել"
@@ -1935,7 +1917,6 @@ msgstr "Շաբաթ"
 msgid "Save"
 msgstr "Պահպանել"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

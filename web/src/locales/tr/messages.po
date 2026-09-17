@@ -205,10 +205,6 @@ msgstr "Mevcut aboneliklere ekle"
 msgid "Add view"
 msgstr "Görünüm ekle"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Ekleniyor..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "{field} oluşturuldu"
 msgid "Creating RSS feed..."
 msgstr "RSS akışı oluşturuluyor..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Oluşturuluyor..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Mevcut konum"
@@ -807,10 +798,6 @@ msgstr "{field} silindi"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Akış siliniyor..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Siliniyor..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Öğe yükleniyor"
 msgid "Loading item details"
 msgstr "Öğe ayrıntıları yükleniyor"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Yükleniyor..."
@@ -1872,10 +1858,6 @@ msgstr "Çekil"
 msgid "Resign game?"
 msgstr "Oyundan çekilsin mi?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Çekiliyor..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Yeniden dene"
@@ -1935,7 +1917,6 @@ msgstr "Cumartesi"
 msgid "Save"
 msgstr "Kaydet"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

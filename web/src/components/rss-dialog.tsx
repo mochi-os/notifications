@@ -31,7 +31,6 @@ import {
   textUnchanged,
 } from '@mochi/web'
 import {
-  Loader2,
   Copy,
   Check,
   Plus,
@@ -294,15 +293,10 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
                                 variant='ghost'
                                 size='sm'
                                 onClick={handleSaveEdit}
-                                disabled={renameMutation.isPending}
+                                loading={renameMutation.isPending}
+                                icon={<Check className='h-4 w-4' />}
                                 aria-label={t`Save`}
-                              >
-                                {renameMutation.isPending ? (
-                                  <Loader2 className='h-4 w-4 animate-spin' />
-                                ) : (
-                                  <Check className='h-4 w-4' />
-                                )}
-                              </Button>
+                              />
                             </TooltipTrigger>
                             <TooltipContent>{t`Save`}</TooltipContent>
                           </Tooltip>
@@ -364,10 +358,13 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
                                   size='sm'
                                   onClick={() => setDeleteId(feed.id)}
                                   disabled={deleteMutation.isPending}
+                                  loading={
+                                    deleteMutation.isPending &&
+                                    deleteMutation.variables === feed.id
+                                  }
+                                  icon={<Trash2 className='h-4 w-4' />}
                                   aria-label={t`Delete feed`}
-                                >
-                                  <Trash2 className='h-4 w-4' />
-                                </Button>
+                                />
                               </TooltipTrigger>
                               <TooltipContent>{t`Delete feed`}</TooltipContent>
                             </Tooltip>
@@ -431,13 +428,9 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
                 </Button>
                 <Button
                   onClick={handleCreate}
-                  disabled={createMutation.isPending}
+                  loading={createMutation.isPending}
+                  icon={<Plus className='h-4 w-4' />}
                 >
-                  {createMutation.isPending ? (
-                    <Loader2 className='h-4 w-4 animate-spin' />
-                  ) : (
-                    <Plus className='h-4 w-4' />
-                  )}
                   <Trans>Create feed</Trans>
                 </Button>
               </ResponsiveDialogFooter>

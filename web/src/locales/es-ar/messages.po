@@ -205,10 +205,6 @@ msgstr "Agregá a las suscripciones existentes"
 msgid "Add view"
 msgstr "Agregá una vista"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr ""
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr ""
@@ -686,11 +682,6 @@ msgstr ""
 msgid "Creating RSS feed..."
 msgstr ""
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr ""
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr ""
@@ -806,10 +797,6 @@ msgstr ""
 
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
-msgstr ""
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
 msgstr ""
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
@@ -1308,7 +1295,6 @@ msgstr ""
 msgid "Loading item details"
 msgstr ""
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr ""
@@ -1872,10 +1858,6 @@ msgstr ""
 msgid "Resign game?"
 msgstr ""
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr ""
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr ""
@@ -1935,7 +1917,6 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

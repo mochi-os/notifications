@@ -205,10 +205,6 @@ msgstr "Soramii jiranitti dabali"
 msgid "Add view"
 msgstr "Mul'ata dabali"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Dabalaa jira..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "{field} uumameera"
 msgid "Creating RSS feed..."
 msgstr "Feedii RSS uumaa jira..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Uumaa jira..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Bakka ammaa"
@@ -807,10 +798,6 @@ msgstr "{field} haqameera"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Feed haqaa jira..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Haqaa jira..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Iddoo fe'aa jiraa"
 msgid "Loading item details"
 msgstr "Bal'ina iddoo fe'aa jiraa"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Fe'aa jiraa..."
@@ -1872,10 +1858,6 @@ msgstr "Keessaa ba'i"
 msgid "Resign game?"
 msgstr "Taphaa keessaa ba'uuf?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Keessaa ba'aa jira..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Irra deebi'ii yaali"
@@ -1935,7 +1917,6 @@ msgstr "Sanbata"
 msgid "Save"
 msgstr "Olkaa'i"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

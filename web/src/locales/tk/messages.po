@@ -205,10 +205,6 @@ msgstr "Bar bolan abunalara goşmak"
 msgid "Add view"
 msgstr "Görnüş goşmak"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Goşulýar..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "{field} döredildi"
 msgid "Creating RSS feed..."
 msgstr "RSS akymy döredilýär..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Döredilýär..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Häzirki ýer"
@@ -807,10 +798,6 @@ msgstr "{field} pozuldy"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Akym pozulýar..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Pozulýar..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Element ýüklenýär"
 msgid "Loading item details"
 msgstr "Element jikme-jiklikleri ýüklenýär"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Ýüklenýär..."
@@ -1872,10 +1858,6 @@ msgstr "Resign et"
 msgid "Resign game?"
 msgstr "Oýny resign etmek?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Resign edilýär..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Gaýtadan synanyş"
@@ -1935,7 +1917,6 @@ msgstr "Şenbe"
 msgid "Save"
 msgstr "Saklaýyş"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

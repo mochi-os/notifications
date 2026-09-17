@@ -205,10 +205,6 @@ msgstr "添加到现有订阅"
 msgid "Add view"
 msgstr "添加视图"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "添加中..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "已创建{field}"
 msgid "Creating RSS feed..."
 msgstr "正在创建 RSS 源..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "创建中..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "当前位置"
@@ -807,10 +798,6 @@ msgstr "已删除{field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "正在删除动态..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "删除中..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "正在加载条目"
 msgid "Loading item details"
 msgstr "正在加载条目详情"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "加载中..."
@@ -1872,10 +1858,6 @@ msgstr "认输"
 msgid "Resign game?"
 msgstr "认输?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "正在认输..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "重试"
@@ -1935,7 +1917,6 @@ msgstr "星期六"
 msgid "Save"
 msgstr "保存"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

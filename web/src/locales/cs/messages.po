@@ -205,10 +205,6 @@ msgstr "Přidat ke stávajícím odběrům"
 msgid "Add view"
 msgstr "Přidat zobrazení"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Přidávání..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "Vytvořeno {field}"
 msgid "Creating RSS feed..."
 msgstr "Vytváření kanálu RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Vytváření..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Aktuální poloha"
@@ -807,10 +798,6 @@ msgstr "Smazáno {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Mazání kanálu..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Mazání..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Načítám položku"
 msgid "Loading item details"
 msgstr "Načítám podrobnosti položky"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Načítám..."
@@ -1872,10 +1858,6 @@ msgstr "Vzdát"
 msgid "Resign game?"
 msgstr "Vzdát hru?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Vzdávání…"
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Zkusit znovu"
@@ -1935,7 +1917,6 @@ msgstr "Sobota"
 msgid "Save"
 msgstr "Uložit"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

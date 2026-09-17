@@ -205,10 +205,6 @@ msgstr "Ƙara cikin biyan kuɗin da ake da shi"
 msgid "Add view"
 msgstr "Ƙara view"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Ana ƙarawa..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "An ƙirƙiri {field}"
 msgid "Creating RSS feed..."
 msgstr "Ana ƙirƙirar tashar RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Ana ƙirƙira..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Wurin yanzu"
@@ -807,10 +798,6 @@ msgstr "An share {field}"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Ana share feed..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Ana goge..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Ana saukar da abu"
 msgid "Loading item details"
 msgstr "Ana saukar da bayanan abu"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Ana saukarwa..."
@@ -1872,10 +1858,6 @@ msgstr "Yi murabus"
 msgid "Resign game?"
 msgstr "A yi murabus daga wasa?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Ana murabus..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Sake gwadawa"
@@ -1935,7 +1917,6 @@ msgstr "Asabar"
 msgid "Save"
 msgstr "Adana"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

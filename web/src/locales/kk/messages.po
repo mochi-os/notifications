@@ -205,10 +205,6 @@ msgstr "Бар жазылымдарға қосу"
 msgid "Add view"
 msgstr "Көрініс қосу"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Қосылуда..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "{field} жасалды"
 msgid "Creating RSS feed..."
 msgstr "RSS арнасы жасалуда..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Құрылуда..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Ағымдағы орын"
@@ -807,10 +798,6 @@ msgstr "{field} жойылды"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Арна жойылуда..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Жойылуда..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Элемент жүктелуде"
 msgid "Loading item details"
 msgstr "Элемент мәліметтері жүктелуде"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Жүктелуде..."
@@ -1872,10 +1858,6 @@ msgstr "Бас тарту"
 msgid "Resign game?"
 msgstr "Ойыннан бас тарту керек пе?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Бас тарту..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Қайталап көру"
@@ -1935,7 +1917,6 @@ msgstr "Сенбі"
 msgid "Save"
 msgstr "Сақтау"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."

@@ -26,7 +26,7 @@ import { Button } from '@mochi/web/components/ui/button'
 import { Label } from '@mochi/web/components/ui/label'
 import { Switch } from '@mochi/web/components/ui/switch'
 import { cn } from '@mochi/web/lib/utils'
-import { Bell, Check, Loader2, Rss, Trash2 } from 'lucide-react'
+import { Bell, Check, Rss, Trash2 } from 'lucide-react'
 import type { Notification as ApiNotification } from '@/api/notifications'
 import { useNotificationCategories } from '@/hooks/useNotificationCategories'
 import {
@@ -223,13 +223,9 @@ export function Notifications() {
                 variant='ghost'
                 size='sm'
                 onClick={handleMarkAllAsRead}
-                disabled={markAllAsReadMutation.isPending}
+                loading={markAllAsReadMutation.isPending}
+                icon={<Check className='me-1.5 size-4' />}
               >
-                {markAllAsReadMutation.isPending ? (
-                  <Loader2 className='me-1.5 size-4 animate-spin' />
-                ) : (
-                  <Check className='me-1.5 size-4' />
-                )}
                 <span className='hidden md:inline'>
                   <Trans>Mark all read</Trans>
                 </span>
@@ -240,13 +236,9 @@ export function Notifications() {
                 variant='ghost'
                 size='sm'
                 onClick={() => setClearing(true)}
-                disabled={clearAllMutation.isPending}
+                loading={clearAllMutation.isPending}
+                icon={<Trash2 className='me-1.5 size-4' />}
               >
-                {clearAllMutation.isPending ? (
-                  <Loader2 className='me-1.5 size-4 animate-spin' />
-                ) : (
-                  <Trash2 className='me-1.5 size-4' />
-                )}
                 <span className='hidden md:inline'>
                   <Trans>Clear all</Trans>
                 </span>

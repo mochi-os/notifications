@@ -205,10 +205,6 @@ msgstr "Ajoute nan abònman ki egziste"
 msgid "Add view"
 msgstr "Ajoute vi"
 
-#: ../../../lib/web/src/features/access/access-dialog.tsx
-msgid "Adding..."
-msgstr "Ap ajoute..."
-
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "AI"
 msgstr "AI"
@@ -686,11 +682,6 @@ msgstr "{field} kreye"
 msgid "Creating RSS feed..."
 msgstr "Ap kreye fil RSS..."
 
-#: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
-msgid "Creating..."
-msgstr "Ap kreye..."
-
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
 msgstr "Kote ou ye kounye a"
@@ -807,10 +798,6 @@ msgstr "{field} efase"
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
 msgstr "Ap efase fil..."
-
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Deleting..."
-msgstr "Ap efase..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1308,7 +1295,6 @@ msgstr "Ap chaje atik"
 msgid "Loading item details"
 msgstr "Ap chaje detay atik"
 
-#: ../../../lib/web/src/components/ui/load-more.tsx
 #: ../../../lib/web/src/features/document/document-page.tsx
 msgid "Loading..."
 msgstr "Ap chaje..."
@@ -1872,10 +1858,6 @@ msgstr "Demisyone"
 msgid "Resign game?"
 msgstr "Demisyone jwèt?"
 
-#: ../../../lib/web/src/components/game/game-end-dialogs.tsx
-msgid "Resigning..."
-msgstr "Ap demisyone..."
-
 #: ../../../lib/web/src/components/attachment-composer.tsx
 msgid "Retry"
 msgstr "Eseye ankò"
@@ -1935,7 +1917,6 @@ msgstr "Samdi"
 msgid "Save"
 msgstr "Sove"
 
-#: ../../../lib/web/src/components/ai-prompts-editor.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Saving..."
