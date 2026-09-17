@@ -371,10 +371,10 @@ else
     fail "RSS destination counts in the test send" "$RESULT"
 fi
 
-if notifications_curl "/-/rss?token=$FEED_TOKEN" | grep -q "Test notification"; then
+if notifications_curl "/rss?token=$FEED_TOKEN" | grep -q "Test notification"; then
     pass "Test row reaches the RSS feed"
 else
-    fail "Test row reaches the RSS feed" "$(notifications_curl "/-/rss?token=$FEED_TOKEN" | head -c 300)"
+    fail "Test row reaches the RSS feed" "$(notifications_curl "/rss?token=$FEED_TOKEN" | head -c 300)"
 fi
 
 # All three in-app-ish destinations together: web + device + rss.

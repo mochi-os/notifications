@@ -89,7 +89,7 @@ fi
 
 # Test: RSS with feed token
 if [ -n "$FEED_TOKEN" ]; then
-    RESULT=$(curl -s "http://localhost:8081/notifications/-/rss?token=$FEED_TOKEN")
+    RESULT=$(curl -s "http://localhost:8081/notifications/rss?token=$FEED_TOKEN")
     if echo "$RESULT" | grep -q '<?xml' && echo "$RESULT" | grep -q '<rss'; then
         pass "RSS feed accessible with token"
     else
@@ -99,7 +99,7 @@ fi
 
 # Test: RSS feed shows feed name in title
 if [ -n "$FEED_TOKEN" ]; then
-    RESULT=$(curl -s "http://localhost:8081/notifications/-/rss?token=$FEED_TOKEN")
+    RESULT=$(curl -s "http://localhost:8081/notifications/rss?token=$FEED_TOKEN")
     if echo "$RESULT" | grep -q '<title>Test Feed</title>'; then
         pass "RSS feed title is feed name"
     else
@@ -138,7 +138,7 @@ else
 fi
 
 # Test: Subscribed feed carries the routed notification
-RESULT=$(curl -s "http://localhost:8081/notifications/-/rss?token=$FEED_TOKEN")
+RESULT=$(curl -s "http://localhost:8081/notifications/rss?token=$FEED_TOKEN")
 if echo "$RESULT" | grep -q 'rss-routing-probe-body'; then
     pass "Subscribed feed carries routed notification"
 else
@@ -146,7 +146,7 @@ else
 fi
 
 # Test: Unsubscribed feed serves valid XML without the notification
-RESULT=$(curl -s "http://localhost:8081/notifications/-/rss?token=$UNSUB_TOKEN")
+RESULT=$(curl -s "http://localhost:8081/notifications/rss?token=$UNSUB_TOKEN")
 if echo "$RESULT" | grep -q '<rss' && ! echo "$RESULT" | grep -q 'rss-routing-probe-body'; then
     pass "Unsubscribed feed excludes routed notification"
 else
@@ -155,7 +155,7 @@ fi
 
 # Test: Disabling a feed revokes its token until re-enabled
 notif_curl POST "/-/rss/update" -d "id=$RSS_FEED_ID&enabled=0" > /dev/null
-RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/-/rss?token=$FEED_TOKEN")
+RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/rss?token=$FEED_TOKEN")
 if [ "$RESULT" = "404" ]; then
     pass "Disabled feed returns 404"
 else
@@ -163,7 +163,7 @@ else
 fi
 
 notif_curl POST "/-/rss/update" -d "id=$RSS_FEED_ID&enabled=1" > /dev/null
-RESULT=$(curl -s "http://localhost:8081/notifications/-/rss?token=$FEED_TOKEN")
+RESULT=$(curl -s "http://localhost:8081/notifications/rss?token=$FEED_TOKEN")
 if echo "$RESULT" | grep -q 'rss-routing-probe-body'; then
     pass "Re-enabled feed serves content again"
 else
@@ -173,7 +173,7 @@ fi
 # Test: enabled=true means enabled (only "1" was parsed as true, so boolean
 # form silently disabled the feed)
 notif_curl POST "/-/rss/update" -d "id=$RSS_FEED_ID&enabled=true" > /dev/null
-RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/-/rss?token=$FEED_TOKEN")
+RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/rss?token=$FEED_TOKEN")
 if [ "$RESULT" = "200" ]; then
     pass "enabled=true keeps the feed enabled"
 else
@@ -359,7 +359,7 @@ fi
 # Test: Over-long feed token with session auth returns 404 (characterization:
 # same result as an unknown token; the cap only skips the lookup)
 LONG_FEED_TOKEN=$(python3 -c "print('k' * 1000)")
-RESULT=$("$CURL_HELPER" -a admin "/notifications/-/rss?token=$LONG_FEED_TOKEN")
+RESULT=$("$CURL_HELPER" -a admin "/notifications/rss?token=$LONG_FEED_TOKEN")
 if echo "$RESULT" | grep -q "Feed not found"; then
     pass "Over-long feed token returns 404"
 else
@@ -367,7 +367,7 @@ else
 fi
 
 # Test: Invalid feed token returns 401
-RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/-/rss?token=invalid_token_12345")
+RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/rss?token=invalid_token_12345")
 if [ "$RESULT" = "401" ]; then
     pass "Invalid feed token returns 401"
 else
@@ -386,7 +386,7 @@ fi
 
 # Test: Deleted feed token no longer works
 if [ -n "$FEED_TOKEN" ]; then
-    RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/-/rss?token=$FEED_TOKEN")
+    RESULT=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8081/notifications/rss?token=$FEED_TOKEN")
     if [ "$RESULT" = "401" ]; then
         pass "Deleted feed token returns 401"
     else

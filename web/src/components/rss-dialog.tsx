@@ -93,7 +93,7 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
   }, [open])
 
   const buildRssUrl = (token: string) => {
-    return `${window.location.origin}${getAppPath()}/-/rss?token=${token}`
+    return `${window.location.origin}${getAppPath()}/rss?token=${token}`
   }
 
   const {
