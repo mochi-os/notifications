@@ -357,7 +357,11 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
                                   variant='ghost'
                                   size='sm'
                                   onClick={() => setDeleteId(feed.id)}
-                                  loading={deleteMutation.isPending}
+                                  disabled={deleteMutation.isPending}
+                                  loading={
+                                    deleteMutation.isPending &&
+                                    deleteMutation.variables === feed.id
+                                  }
                                   icon={<Trash2 className='h-4 w-4' />}
                                   aria-label={t`Delete feed`}
                                 />
