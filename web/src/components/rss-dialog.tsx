@@ -30,15 +30,7 @@ import {
   TooltipContent,
   textUnchanged,
 } from '@mochi/web'
-import {
-  Copy,
-  Check,
-  Plus,
-  Trash2,
-  Rss,
-  Pencil,
-  X,
-} from 'lucide-react'
+import { Copy, Check, Plus, Trash2, Rss, Pencil, X } from 'lucide-react'
 import endpoints from '@/api/endpoints'
 import {
   type RssFeed,
