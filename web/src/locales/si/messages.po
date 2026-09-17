@@ -331,6 +331,11 @@ msgstr "බැනරය ඉවත් කළා"
 msgid "Banner updated"
 msgstr "බැනරය යාවත්කාලීන කළා"
 
+#: ../../../lib/web/src/components/member-list.tsx
+#: ../../../lib/web/src/components/member-list.tsx
+msgid "Block {name}"
+msgstr "{name} අවහිර කරන්න"
+
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Blocked by"
@@ -653,7 +658,7 @@ msgstr "{entityLabel} සාදන්න"
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Create feed"
-msgstr "පෝෂණයක් නිර්මාණය කරන්න"
+msgstr "සංග්‍රහයක් නිර්මාණය කරන්න"
 
 #: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx
 msgid "Create new item"
@@ -665,7 +670,7 @@ msgstr "ආරම්භ කිරීමට එකක් නිර්මාණය
 
 #: src/components/rss-dialog.tsx
 msgid "Create RSS feed"
-msgstr "RSS පෝෂණයක් සාදන්න"
+msgstr "RSS සංග්‍රහයක් සාදන්න"
 
 #: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx
@@ -753,11 +758,11 @@ msgstr "අදහස මකන්න"
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Delete feed"
-msgstr "පෝෂණය මකන්න"
+msgstr "සංග්‍රහය මකන්න"
 
 #: src/components/rss-dialog.tsx
 msgid "Delete feed?"
-msgstr "පෝෂණය මකන්නද?"
+msgstr "සංග්‍රහය මකන්නද?"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx
 msgid "Delete field"
@@ -801,7 +806,7 @@ msgstr "{field} මකා දමන ලදී"
 
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
-msgstr "පෝෂණය මකමින්..."
+msgstr "සංග්‍රහය මකමින්..."
 
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx
 msgid "Deleting..."
@@ -906,7 +911,7 @@ msgstr "සිරස්තලය සංස්කරණය කරන්න"
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Edit feed"
-msgstr "පෝෂණය සංස්කරණය කරන්න"
+msgstr "සංග්‍රහය සංස්කරණය කරන්න"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx
 msgid "Edit field"
@@ -1015,7 +1020,7 @@ msgstr "අදහස මැකීමට අසමත් විය"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to delete feed"
-msgstr "පෝෂණය මැකීමට අසමත් විය"
+msgstr "සංග්‍රහය මැකීමට අසමත් විය"
 
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Failed to delete link"
@@ -1076,7 +1081,7 @@ msgstr "අදහස පළ කිරීමට අසමත් විය"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to rename feed"
-msgstr "පෝෂණය නැවත නම් කිරීමට අසමත් විය"
+msgstr "සංග්‍රහය නැවත නම් කිරීමට අසමත් විය"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx
 msgid "Failed to reset prompt"
@@ -1108,7 +1113,7 @@ msgstr "අදහස යාවත්කාලීන කිරීමට අසම
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to update feed"
-msgstr "පෝෂණය යාවත්කාලීන කිරීමට අසමත් විය"
+msgstr "සංග්‍රහය යාවත්කාලීන කිරීමට අසමත් විය"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to update watching"
@@ -1120,19 +1125,19 @@ msgstr "ඇමුණුම උඩුගත කිරීමට අසමත් �
 
 #: src/components/rss-dialog.tsx
 msgid "Feed created"
-msgstr "පෝෂණය සාදන ලදී"
+msgstr "සංග්‍රහය සාදන ලදී"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed deleted"
-msgstr "පෝෂණය මකන ලදී"
+msgstr "සංග්‍රහය මකන ලදී"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed name"
-msgstr "පෝෂණ නාමය"
+msgstr "සංග්‍රහ නාමය"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed renamed"
-msgstr "පෝෂණය නැවත නම් කරන ලදී"
+msgstr "සංග්‍රහය නැවත නම් කරන ලදී"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
@@ -1502,7 +1507,7 @@ msgstr "ප්‍රතිඵල හමු නොවීය."
 
 #: src/components/rss-dialog.tsx
 msgid "No RSS feeds yet"
-msgstr "තවම RSS පෝෂණ නොමැත"
+msgstr "තවම RSS සංග්‍රහ නොමැත"
 
 #: ../../../lib/web/src/components/entity/entity-board-container.tsx
 #: ../../../lib/web/src/components/entity/entity-board-container.tsx
@@ -1903,12 +1908,12 @@ msgstr "RSS ප්‍රවේශය අවලංගු කරන ලදී"
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
 msgid "RSS feed"
-msgstr "RSS පෝෂණය"
+msgstr "RSS සංග්‍රහය"
 
 #: src/components/rss-dialog.tsx
 #: src/features/notification/index.tsx
 msgid "RSS feeds"
-msgstr "RSS පෝෂණ"
+msgstr "RSS සංග්‍රහ"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "RSS URL copied to clipboard"
@@ -2260,7 +2265,7 @@ msgstr "මෙය ක්‍රීඩාව සහ එහි කතාබස් �
 
 #: src/components/rss-dialog.tsx
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
-msgstr "මෙය මෙම පෝෂණය ස්ථිරවම මකා දමයි. එය භාවිතා කරන කිසිදු RSS කියවනයකට ඔබේ දැනුම්දීම් වෙත තවදුරටත් ප්‍රවේශ විය නොහැක."
+msgstr "මෙය මෙම සංග්‍රහය ස්ථිරවම මකා දමයි. එය භාවිතා කරන කිසිදු RSS කියවනයකට ඔබේ දැනුම්දීම් වෙත තවදුරටත් ප්‍රවේශ විය නොහැක."
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Thursday"

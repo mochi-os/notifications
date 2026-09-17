@@ -331,6 +331,11 @@ msgstr "已移除橫幅"
 msgid "Banner updated"
 msgstr "已更新橫幅"
 
+#: ../../../lib/web/src/components/member-list.tsx
+#: ../../../lib/web/src/components/member-list.tsx
+msgid "Block {name}"
+msgstr "封鎖{name}"
+
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Blocked by"
@@ -665,7 +670,7 @@ msgstr "建立一個以開始使用。"
 
 #: src/components/rss-dialog.tsx
 msgid "Create RSS feed"
-msgstr "建立 RSS 摘要"
+msgstr "建立 RSS 訊息來源"
 
 #: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx
@@ -679,7 +684,7 @@ msgstr "已建立{field}"
 
 #: src/components/rss-dialog.tsx
 msgid "Creating RSS feed..."
-msgstr "正在建立 RSS 摘要..."
+msgstr "正在建立 RSS 訊息來源..."
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/ui/create-entity-dialog.tsx
@@ -801,7 +806,7 @@ msgstr "已刪除{field}"
 
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
-msgstr "正在刪除動態..."
+msgstr "正在刪除訊息來源..."
 
 #: ../../../lib/web/src/components/game/game-end-dialogs.tsx
 msgid "Deleting..."
@@ -999,7 +1004,7 @@ msgstr "建立連結失敗"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to create RSS feed"
-msgstr "無法建立 RSS 摘要"
+msgstr "無法建立 RSS 訊息來源"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to delete"
@@ -1015,7 +1020,7 @@ msgstr "刪除留言失敗"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to delete feed"
-msgstr "刪除摘要失敗"
+msgstr "刪除訊息來源失敗"
 
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Failed to delete link"
@@ -1076,7 +1081,7 @@ msgstr "張貼留言失敗"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to rename feed"
-msgstr "重新命名摘要失敗"
+msgstr "重新命名訊息來源失敗"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx
 msgid "Failed to reset prompt"
@@ -1108,7 +1113,7 @@ msgstr "更新留言失敗"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to update feed"
-msgstr "更新摘要失敗"
+msgstr "更新訊息來源失敗"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to update watching"
@@ -1120,19 +1125,19 @@ msgstr "上傳附件失敗"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed created"
-msgstr "摘要已建立"
+msgstr "訊息來源已建立"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed deleted"
-msgstr "摘要已刪除"
+msgstr "訊息來源已刪除"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed name"
-msgstr "摘要名稱"
+msgstr "訊息來源名稱"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed renamed"
-msgstr "摘要已重新命名"
+msgstr "訊息來源已重新命名"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
@@ -1903,12 +1908,12 @@ msgstr "已撤銷 RSS 存取權限"
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
 msgid "RSS feed"
-msgstr "RSS 動態"
+msgstr "RSS 訊息來源"
 
 #: src/components/rss-dialog.tsx
 #: src/features/notification/index.tsx
 msgid "RSS feeds"
-msgstr "RSS 摘要"
+msgstr "RSS 訊息來源"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "RSS URL copied to clipboard"
@@ -2260,7 +2265,7 @@ msgstr "此操作將永久刪除對局及其聊天記錄，且無法復原。"
 
 #: src/components/rss-dialog.tsx
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
-msgstr "此操作將永久刪除這個摘要。使用該摘要的任何 RSS 閱讀器都將無法再存取你的通知。"
+msgstr "此操作將永久刪除這個訊息來源。使用該訊息來源的任何 RSS 閱讀器都將無法再存取你的通知。"
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Thursday"
