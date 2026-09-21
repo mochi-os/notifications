@@ -1890,7 +1890,7 @@ msgstr "RSS jeike oñemboyke"
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
 msgid "RSS feed"
-msgstr "RSS feed"
+msgstr "Canal RSS"
 
 #: src/components/rss-dialog.tsx
 #: src/features/notification/index.tsx

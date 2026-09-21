@@ -1890,7 +1890,7 @@ msgstr "Nabawi ang RSS access"
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
 msgid "RSS feed"
-msgstr "RSS feed"
+msgstr "Feed ng RSS"
 
 #: src/components/rss-dialog.tsx
 #: src/features/notification/index.tsx

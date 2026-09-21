@@ -1890,7 +1890,7 @@ msgstr "RSS पहुँच रद्द भइल"
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
 msgid "RSS feed"
-msgstr "RSS feed"
+msgstr "RSS फीड"
 
 #: src/components/rss-dialog.tsx
 #: src/features/notification/index.tsx

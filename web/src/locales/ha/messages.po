@@ -1890,7 +1890,7 @@ msgstr "An soke damar shiga RSS"
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
 msgid "RSS feed"
-msgstr "RSS feed"
+msgstr "Ciyarwar RSS"
 
 #: src/components/rss-dialog.tsx
 #: src/features/notification/index.tsx
