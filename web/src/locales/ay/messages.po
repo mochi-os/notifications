@@ -710,7 +710,7 @@ msgstr "Default AI cuenta"
 
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx
 msgid "Default sort"
-msgstr "Default ch'ulluwi"
+msgstr "Nayrïri sumaña"
 
 #: ../../../lib/web/src/components/entity/entity-board-column.tsx
 #: ../../../lib/web/src/components/entity/entity-board-column.tsx
@@ -1883,7 +1883,7 @@ msgstr "RSS mantaña jarq'atawa"
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
 msgid "RSS feed"
-msgstr "RSS feed"
+msgstr "Canal RSS"
 
 #: src/components/rss-dialog.tsx
 #: src/features/notification/index.tsx
@@ -2243,7 +2243,7 @@ msgstr "Akax wiñayatak aka token apaqatani. Kuna git clientesnakax apnaqipkix j
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Thursday"
-msgstr "Pacha formato"
+msgstr "Jueves"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx
 msgid "To"
@@ -2282,7 +2282,7 @@ msgstr "Patxa nivel"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx
 msgid "Travelling"
-msgstr "Yaqha thaqhañ término yant'am"
+msgstr "Sarnaqaskiwa"
 
 #: ../../../lib/web/src/components/search-entity-page.tsx
 msgid "Try adjusting your search terms"
@@ -2291,11 +2291,11 @@ msgstr "Mayamp yant'am"
 #: ../../../lib/web/src/features/errors/general-error.tsx
 #: ../../../lib/web/src/features/errors/general-error.tsx
 msgid "Try again"
-msgstr "Yaqha thaqhañ términonak yant'am."
+msgstr "Wasitat yant'am"
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Tuesday"
-msgstr "Tipo"
+msgstr "Martes"
 
 #: ../../../lib/web/src/components/entity/add-field-dialog.tsx
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx
@@ -2351,7 +2351,7 @@ msgstr "Unidades"
 #: ../../../lib/web/src/components/tree-table-header.tsx
 #: ../../../lib/web/src/features/accounts/types.ts
 msgid "Unknown"
-msgstr "Janiw yatxatat browser"
+msgstr "Jan uñt'ata"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Unsubscribe"
@@ -2375,7 +2375,7 @@ msgstr "{field} machaqachata"
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
 msgid "Upload"
-msgstr ".json archivo apayaña"
+msgstr "Apkataña"
 
 #: ../../../lib/web/src/components/ui/upload-progress.tsx
 msgid "Upload progress"
@@ -2402,7 +2402,7 @@ msgstr "Verificación código apayata"
 #: ../../../lib/web/src/components/step-up-dialog.tsx
 #: ../../../lib/web/src/features/accounts/account-verify.tsx
 msgid "Verify"
-msgstr "Verificaña ukat habilitaña"
+msgstr "Verificaña"
 
 #: ../../../lib/web/src/features/accounts/account-verify.tsx
 msgid "Verify email address"
@@ -2455,7 +2455,7 @@ msgstr "<0>{0}</0> ukar mä chiqapa yatiyawi khitanipxta. Correo electrónico ch
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Wednesday"
-msgstr "Semanax aka uru qalltani"
+msgstr "Miércoles"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx
 msgid "You do not have access to this section."
