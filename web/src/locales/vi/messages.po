@@ -1424,7 +1424,7 @@ msgstr "Độ dài tối thiểu"
 
 #: ../../../lib/web/src/features/accounts/types.ts
 msgid "Mochi web"
-msgstr "Mochi web"
+msgstr "Web Mochi"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Moderation"
@@ -1483,9 +1483,13 @@ msgid "Network error"
 msgstr "Lỗi mạng"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "New"
 msgstr "Mới"
+
+#: ../../../lib/web/src/components/ui/sort-selector.tsx
+msgctxt "sort order"
+msgid "New"
+msgstr "Mới nhất"
 
 #: ../../../lib/web/src/components/game/game-empty-state.tsx
 #: ../../../lib/web/src/components/game/game-empty-state.tsx
@@ -1642,9 +1646,13 @@ msgstr "Thông báo: {0}"
 msgid "Notify by default"
 msgstr "Thông báo theo mặc định"
 
+#: ../../../lib/web/src/hooks/use-field-type-labels.ts
+msgid "Number"
+msgstr "Số"
+
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx
-#: ../../../lib/web/src/hooks/use-field-type-labels.ts
+msgctxt "item number"
 msgid "Number"
 msgstr "Số"
 
@@ -2061,7 +2069,7 @@ msgstr "Đang tìm kiếm..."
 
 #: ../../../lib/web/src/hooks/use-field-type-labels.ts
 msgid "Select"
-msgstr "Chọn"
+msgstr "Lựa chọn"
 
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx
 msgid "Select a field"
@@ -2224,7 +2232,7 @@ msgstr "Ngừng theo dõi"
 
 #: ../../../lib/web/src/features/access/access-list.tsx
 msgid "Subject"
-msgstr "Tiêu đề"
+msgstr "Người dùng hoặc nhóm"
 
 #: ../../../lib/web/src/components/comment-composer.tsx
 msgid "Submit comment"
@@ -2248,9 +2256,13 @@ msgstr "Chủ nhật"
 msgid "Switch to view 1-9"
 msgstr "Chuyển sang chế độ xem 1-9"
 
+#: ../../../lib/web/src/lib/preference-utils.ts
+#: ../../../lib/web/src/lib/preference-utils.ts
+msgid "System"
+msgstr "Hệ thống"
+
 #: ../../../lib/web/src/components/audit-timeline.tsx
-#: ../../../lib/web/src/lib/preference-utils.ts
-#: ../../../lib/web/src/lib/preference-utils.ts
+msgctxt "actor"
 msgid "System"
 msgstr "Hệ thống"
 
@@ -2366,7 +2378,7 @@ msgstr "Quá nhiều yêu cầu"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "Top"
-msgstr "Đầu"
+msgstr "Hàng đầu"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx
 msgid "Travelling"

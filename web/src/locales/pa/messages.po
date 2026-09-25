@@ -908,7 +908,7 @@ msgstr "ਹੋ ਗਿਆ"
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx
 msgid "Download"
-msgstr "ਡਾਊਨਲੋਡ"
+msgstr "ਡਾਊਨਲੋਡ ਕਰੋ"
 
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
 #: ../../../lib/web/src/components/ui/image-lightbox.tsx
@@ -1240,7 +1240,7 @@ msgstr "ਇਤਿਹਾਸ"
 #: ../../../lib/web/src/components/layout/top-bar.tsx
 #: ../../../lib/web/src/components/layout/top-bar.tsx
 msgid "Home"
-msgstr "ਮੁੱਖ"
+msgstr "ਹੋਮ"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "Hot"
@@ -1483,9 +1483,13 @@ msgid "Network error"
 msgstr "ਨੈੱਟਵਰਕ ਗੜਬੜ"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "New"
 msgstr "ਨਵਾਂ"
+
+#: ../../../lib/web/src/components/ui/sort-selector.tsx
+msgctxt "sort order"
+msgid "New"
+msgstr "ਸਭ ਤੋਂ ਨਵੇਂ"
 
 #: ../../../lib/web/src/components/game/game-empty-state.tsx
 #: ../../../lib/web/src/components/game/game-empty-state.tsx
@@ -1630,7 +1634,7 @@ msgstr "ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ"
 #: src/features/notification/index.tsx
 #: src/features/notification/index.tsx
 msgid "Notifications"
-msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
+msgstr "ਸੂਚਨਾਵਾਂ"
 
 #. placeholder {0}: unread.length
 #: ../../../lib/web/src/components/layout/notification-menu.tsx
@@ -1642,9 +1646,13 @@ msgstr "ਸੂਚਨਾਵਾਂ: {0}"
 msgid "Notify by default"
 msgstr "ਡਿਫਾਲਟ ਤੌਰ 'ਤੇ ਨੋਟੀਫਾਈ ਕਰੋ"
 
+#: ../../../lib/web/src/hooks/use-field-type-labels.ts
+msgid "Number"
+msgstr "ਨੰਬਰ"
+
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx
-#: ../../../lib/web/src/hooks/use-field-type-labels.ts
+msgctxt "item number"
 msgid "Number"
 msgstr "ਨੰਬਰ"
 
@@ -2061,7 +2069,7 @@ msgstr "ਖੋਜ ਰਿਹਾ ਹੈ..."
 
 #: ../../../lib/web/src/hooks/use-field-type-labels.ts
 msgid "Select"
-msgstr "ਚੁਣੋ"
+msgstr "ਚੋਣ"
 
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx
 msgid "Select a field"
@@ -2224,7 +2232,7 @@ msgstr "ਦੇਖਣਾ ਬੰਦ ਕਰੋ"
 
 #: ../../../lib/web/src/features/access/access-list.tsx
 msgid "Subject"
-msgstr "ਵਿਸ਼ਾ"
+msgstr "ਉਪਭੋਗਤਾ ਜਾਂ ਗਰੁੱਪ"
 
 #: ../../../lib/web/src/components/comment-composer.tsx
 msgid "Submit comment"
@@ -2248,9 +2256,13 @@ msgstr "ਐਤਵਾਰ"
 msgid "Switch to view 1-9"
 msgstr "ਦ੍ਰਿਸ਼ 1-9 'ਤੇ ਜਾਓ"
 
+#: ../../../lib/web/src/lib/preference-utils.ts
+#: ../../../lib/web/src/lib/preference-utils.ts
+msgid "System"
+msgstr "ਸਿਸਟਮ"
+
 #: ../../../lib/web/src/components/audit-timeline.tsx
-#: ../../../lib/web/src/lib/preference-utils.ts
-#: ../../../lib/web/src/lib/preference-utils.ts
+msgctxt "actor"
 msgid "System"
 msgstr "ਸਿਸਟਮ"
 
@@ -2358,7 +2370,7 @@ msgstr "ਦ੍ਰਿਸ਼ ਵਿਕਲਪ ਟੌਗਲ ਕਰੋ"
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx
 msgid "Toggle watched filter"
-msgstr "watched ਫਿਲਟਰ ਟੌਗਲ ਕਰੋ"
+msgstr "ਨਿਗਰਾਨੀ ਅਧੀਨ ਫਿਲਟਰ ਟੌਗਲ ਕਰੋ"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx
 msgid "Too many requests"
@@ -2366,7 +2378,7 @@ msgstr "ਬਹੁਤ ਜ਼ਿਆਦਾ ਬੇਨਤੀਆਂ"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "Top"
-msgstr "ਉੱਪਰ"
+msgstr "ਸਭ ਤੋਂ ਵਧੀਆ"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx
 msgid "Travelling"

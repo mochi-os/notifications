@@ -1056,7 +1056,7 @@ msgstr "سڕینەوەی بۆچوون سەرکەوتوو نەبوو"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to delete feed"
-msgstr "سڕینەوەی Feed سەرکەوتوو نەبوو"
+msgstr "سڕینەوەی فید سەرکەوتوو نەبوو"
 
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Failed to delete link"
@@ -1064,7 +1064,7 @@ msgstr "سڕینەوەی بەستەر سەرکەوتوو نەبوو"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Failed to get RSS token"
-msgstr "وەرگرتنی Token ـی RSS سەرکەوتوو نەبوو"
+msgstr "وەرگرتنی تۆکنی RSS سەرکەوتوو نەبوو"
 
 #: ../../../lib/web/src/hooks/use-load-more.ts
 msgid "Failed to load"
@@ -1117,11 +1117,11 @@ msgstr "ناردنی بۆچوون سەرکەوتوو نەبوو"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to rename feed"
-msgstr "گۆڕینی ناوی Feed سەرکەوتوو نەبوو"
+msgstr "گۆڕینی ناوی فید سەرکەوتوو نەبوو"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx
 msgid "Failed to reset prompt"
-msgstr "ڕێکخستنەوەی Prompt سەرکەوتوو نەبوو"
+msgstr "ڕێکخستنەوەی پرۆمپت سەرکەوتوو نەبوو"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Failed to revoke RSS access"
@@ -1133,7 +1133,7 @@ msgstr "پاشەکەوتکردن سەرکەوتوو نەبوو"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx
 msgid "Failed to save prompt"
-msgstr "پاشەکەوتکردنی Prompt سەرکەوتوو نەبوو"
+msgstr "پاشەکەوتکردنی پرۆمپت سەرکەوتوو نەبوو"
 
 #: ../../../lib/web/src/components/banner-section.tsx
 msgid "Failed to update banner"
@@ -1149,7 +1149,7 @@ msgstr "نوێکردنەوەی بۆچوون سەرکەوتوو نەبوو"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to update feed"
-msgstr "نوێکردنەوەی Feed سەرکەوتوو نەبوو"
+msgstr "نوێکردنەوەی فید سەرکەوتوو نەبوو"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to update watching"
@@ -1161,19 +1161,19 @@ msgstr "بارکردنی هاوپێچ سەرکەوتوو نەبوو"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed created"
-msgstr "Feed دروست کرا"
+msgstr "فید دروست کرا"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed deleted"
-msgstr "Feed سڕایەوە"
+msgstr "فید سڕایەوە"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed name"
-msgstr "ناوی Feed"
+msgstr "ناوی فید"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed renamed"
-msgstr "ناوی Feed گۆڕدرا"
+msgstr "ناوی فید گۆڕدرا"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
@@ -1412,7 +1412,7 @@ msgstr "پەیام"
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Metric"
-msgstr "Metric"
+msgstr "مەتری"
 
 #: ../../../lib/web/src/lib/shell-errors.ts
 msgid "Microphone permission denied"
@@ -1483,9 +1483,13 @@ msgid "Network error"
 msgstr "هەڵەی تۆڕ"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
-#: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "New"
 msgstr "نوێ"
+
+#: ../../../lib/web/src/components/ui/sort-selector.tsx
+msgctxt "sort order"
+msgid "New"
+msgstr "نوێترین"
 
 #: ../../../lib/web/src/components/game/game-empty-state.tsx
 #: ../../../lib/web/src/components/game/game-empty-state.tsx
@@ -1642,9 +1646,13 @@ msgstr "ئاگادارکردنەوەکان: {0}"
 msgid "Notify by default"
 msgstr "ئاگادارکردنەوە بەشێوەی بنەڕەت"
 
+#: ../../../lib/web/src/hooks/use-field-type-labels.ts
+msgid "Number"
+msgstr "ژمارە"
+
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx
 #: ../../../lib/web/src/components/entity/entity-view-sheet.tsx
-#: ../../../lib/web/src/hooks/use-field-type-labels.ts
+msgctxt "item number"
 msgid "Number"
 msgstr "ژمارە"
 
@@ -2224,7 +2232,7 @@ msgstr "وازبهێنە لە چاودێری"
 
 #: ../../../lib/web/src/features/access/access-list.tsx
 msgid "Subject"
-msgstr "بابەت"
+msgstr "بەکارهێنەر یان گرووپ"
 
 #: ../../../lib/web/src/components/comment-composer.tsx
 msgid "Submit comment"
@@ -2248,9 +2256,13 @@ msgstr "یەکشەممە"
 msgid "Switch to view 1-9"
 msgstr "بگۆڕە بۆ پیشاندانی ١-٩"
 
+#: ../../../lib/web/src/lib/preference-utils.ts
+#: ../../../lib/web/src/lib/preference-utils.ts
+msgid "System"
+msgstr "سیستەم"
+
 #: ../../../lib/web/src/components/audit-timeline.tsx
-#: ../../../lib/web/src/lib/preference-utils.ts
-#: ../../../lib/web/src/lib/preference-utils.ts
+msgctxt "actor"
 msgid "System"
 msgstr "سیستەم"
 
@@ -2366,7 +2378,7 @@ msgstr "داواکاری زۆر زیاد"
 
 #: ../../../lib/web/src/components/ui/sort-selector.tsx
 msgid "Top"
-msgstr "سەرەوە"
+msgstr "باشترین"
 
 #: ../../../lib/web/src/components/travelling-picker.tsx
 msgid "Travelling"
