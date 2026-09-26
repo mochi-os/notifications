@@ -1290,7 +1290,7 @@ msgstr "آئٹم کی تفصیلات"
 
 #: ../../../lib/web/src/lib/locale-format.ts
 msgid "Just now"
-msgstr "ابھی"
+msgstr "ابھی ابھی"
 
 #: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx
 msgid "Keyboard shortcuts"
@@ -1540,7 +1540,7 @@ msgstr "کوئی مماثل آبجیکٹس نہیں"
 
 #: src/features/notification/index.tsx
 msgid "No notifications"
-msgstr "کوئی notifications نہیں"
+msgstr "کوئی اطلاعات نہیں"
 
 #: ../../../lib/web/src/components/entity/entity-field-editor.tsx
 #: ../../../lib/web/src/components/person-picker.tsx

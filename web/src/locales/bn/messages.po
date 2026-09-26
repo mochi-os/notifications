@@ -1631,7 +1631,7 @@ msgstr "কিছুই পাওয়া যায়নি"
 #: src/features/notification/index.tsx
 #: src/features/notification/index.tsx
 msgid "Notifications"
-msgstr "নোটিফিকেশন"
+msgstr "বিজ্ঞপ্তি"
 
 #. placeholder {0}: unread.length
 #: ../../../lib/web/src/components/layout/notification-menu.tsx

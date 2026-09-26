@@ -1739,7 +1739,7 @@ msgstr "格式(正規表示式)"
 
 #: ../../../lib/web/src/components/person-picker.tsx
 msgid "People"
-msgstr "人員"
+msgstr "聯絡人"
 
 #: ../../../lib/web/src/components/comment-composer.tsx
 #: ../../../lib/web/src/features/errors/general-error.tsx

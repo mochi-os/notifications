@@ -832,7 +832,7 @@ msgstr "Ta bort ditt konto på den gamla servern"
 
 #: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 msgid "Deleted"
-msgstr "Raderade"
+msgstr "Borttagen"
 
 #: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 msgid "Deleted {field}"
@@ -1631,7 +1631,7 @@ msgstr "Inget hittades"
 #: src/features/notification/index.tsx
 #: src/features/notification/index.tsx
 msgid "Notifications"
-msgstr "Notiser"
+msgstr "Aviseringar"
 
 #. placeholder {0}: unread.length
 #: ../../../lib/web/src/components/layout/notification-menu.tsx

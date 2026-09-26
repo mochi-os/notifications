@@ -1540,7 +1540,7 @@ msgstr "Дал келген объекттер жок"
 
 #: src/features/notification/index.tsx
 msgid "No notifications"
-msgstr "Билдирмелер жок"
+msgstr "Эскертмелер жок"
 
 #: ../../../lib/web/src/components/entity/entity-field-editor.tsx
 #: ../../../lib/web/src/components/person-picker.tsx

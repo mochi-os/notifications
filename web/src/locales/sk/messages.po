@@ -1631,7 +1631,7 @@ msgstr "Nič sa nenašlo"
 #: src/features/notification/index.tsx
 #: src/features/notification/index.tsx
 msgid "Notifications"
-msgstr "Oznámenia"
+msgstr "Notifikácie"
 
 #. placeholder {0}: unread.length
 #: ../../../lib/web/src/components/layout/notification-menu.tsx

@@ -1540,7 +1540,7 @@ msgstr "ကိုက်ညီသော object များ မရှိပါ"
 
 #: src/features/notification/index.tsx
 msgid "No notifications"
-msgstr "အသိပေးချက်များ မရှိပါ"
+msgstr "အကြောင်းကြားချက်များ မရှိပါ"
 
 #: ../../../lib/web/src/components/entity/entity-field-editor.tsx
 #: ../../../lib/web/src/components/person-picker.tsx

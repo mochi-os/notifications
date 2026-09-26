@@ -1540,7 +1540,7 @@ msgstr "कौनो मेल खाए वाला ऑब्जेक्ट �
 
 #: src/features/notification/index.tsx
 msgid "No notifications"
-msgstr "कौनो सूचना नइखे"
+msgstr "कवनो सूचना नइखे"
 
 #: ../../../lib/web/src/components/entity/entity-field-editor.tsx
 #: ../../../lib/web/src/components/person-picker.tsx

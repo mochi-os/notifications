@@ -1401,7 +1401,7 @@ msgstr "Miseensota"
 
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx
 msgid "Menu"
-msgstr "Menu"
+msgstr "Liisticha"
 
 #: ../../../lib/web/src/components/game/game-chat-input.tsx
 msgid "Message"
@@ -1425,7 +1425,7 @@ msgstr "Mochi marsariitii"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Moderation"
-msgstr "Too'annoo"
+msgstr "To'annoo"
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Monday"

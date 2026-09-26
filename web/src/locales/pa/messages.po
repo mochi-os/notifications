@@ -1401,7 +1401,7 @@ msgstr "ਮੈਂਬਰ"
 
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx
 msgid "Menu"
-msgstr "ਮੇਨੂ"
+msgstr "ਮੀਨੂ"
 
 #: ../../../lib/web/src/components/game/game-chat-input.tsx
 msgid "Message"
@@ -1540,7 +1540,7 @@ msgstr "ਕੋਈ ਮੇਲ ਖਾਂਦਾ ਆਬਜੈਕਟ ਨਹੀਂ"
 
 #: src/features/notification/index.tsx
 msgid "No notifications"
-msgstr "ਕੋਈ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨਹੀਂ"
+msgstr "ਕੋਈ ਸੂਚਨਾ ਨਹੀਂ"
 
 #: ../../../lib/web/src/components/entity/entity-field-editor.tsx
 #: ../../../lib/web/src/components/person-picker.tsx

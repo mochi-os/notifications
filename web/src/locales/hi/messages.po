@@ -1290,7 +1290,7 @@ msgstr "आइटम विवरण"
 
 #: ../../../lib/web/src/lib/locale-format.ts
 msgid "Just now"
-msgstr "अभी"
+msgstr "अभी-अभी"
 
 #: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx
 msgid "Keyboard shortcuts"
