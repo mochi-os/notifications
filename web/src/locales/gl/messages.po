@@ -1737,7 +1737,7 @@ msgstr "Chave de acceso"
 #: ../../../lib/web/src/components/step-up-dialog.tsx
 #: ../../../lib/web/src/lib/shell-errors.ts
 msgid "Passkey verification failed. Please try again."
-msgstr "Fallou a verificación da clave de acceso. Téntao de novo."
+msgstr "Fallou a verificación da chave de acceso. Téntao de novo."
 
 #: ../../../lib/web/src/components/restore-banner.tsx
 msgid "Passkeys"
@@ -1745,7 +1745,7 @@ msgstr "Chaves de acceso"
 
 #: ../../../lib/web/src/lib/shell-errors.ts
 msgid "Passkeys are not available in this browser"
-msgstr "Os passkeys non están dispoñibles neste navegador"
+msgstr "As chaves de acceso non están dispoñibles neste navegador"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx
 msgid "Pattern (regex)"
@@ -2338,7 +2338,7 @@ msgstr "A solicitude de micrófono non recibiu resposta"
 
 #: ../../../lib/web/src/lib/shell-errors.ts
 msgid "The passkey request was not answered"
-msgstr "A solicitude de passkey non recibiu resposta"
+msgstr "A solicitude da chave de acceso non recibiu resposta"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx
 msgid "The requested content could not be found."
@@ -2350,7 +2350,7 @@ msgstr "O servidor devolveu unha páxina web en lugar de datos."
 
 #: ../../../lib/web/src/lib/shell-errors.ts
 msgid "This app is not allowed to use your passkey. Allow it in Settings, under Permissions."
-msgstr "Esta aplicación non ten permiso para usar o teu passkey. Permíteo en Configuración, en Permisos."
+msgstr "Esta aplicación non ten permiso para usar a túa chave de acceso. Permíteo en Configuración, en Permisos."
 
 #: src/features/notification/index.tsx
 msgid "This permanently deletes every notification, read and unread."
@@ -2478,7 +2478,7 @@ msgstr "Descoñecido"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Unsubscribe"
-msgstr "Cancelar subscrición"
+msgstr "Anular subscrición"
 
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 #: ../../../lib/web/src/lib/entity-title.ts
@@ -2506,7 +2506,7 @@ msgstr "Progreso da subida"
 
 #: ../../../lib/web/src/components/step-up-dialog.tsx
 msgid "Use your passkey"
-msgstr "Usa a túa clave de acceso"
+msgstr "Usa a túa chave de acceso"
 
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx
 #: ../../../lib/web/src/features/access/access-dialog.tsx
