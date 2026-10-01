@@ -472,6 +472,7 @@ export function RssDialog({ open, onOpenChange }: RssDialogProps) {
         title={t`Delete feed?`}
         desc={t`This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications.`}
         confirmText={t`Delete`}
+        icon={<Trash2 className='size-4' />}
         destructive
         handleConfirm={() => {
           void handleDelete()

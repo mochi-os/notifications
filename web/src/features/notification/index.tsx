@@ -261,6 +261,7 @@ export function Notifications() {
         title={t`Clear all notifications?`}
         desc={t`This permanently deletes every notification, read and unread.`}
         confirmText={t`Clear all`}
+        icon={<Trash2 className='size-4' />}
         destructive
         handleConfirm={() => {
           void handleClearAll()
