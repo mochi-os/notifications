@@ -108,7 +108,7 @@ msgstr "{totalCount, plural, one {# element} two {# elementa} few {# elementi} o
 
 #: ../../../lib/web/src/components/entity/entity-comment-thread.tsx
 msgid "{totalDescendants, plural, one {# reply} other {+# more replies}}"
-msgstr "{totalDescendants, plural, one {# odgovor} two {+# več odgovorov} few {+# več odgovorov} other {+# več odgovorov}}"
+msgstr "{totalDescendants, plural, one {# odgovor} two {še +# odgovora} few {še +# odgovori} other {še +# odgovorov}}"
 
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
@@ -266,7 +266,7 @@ msgstr "Kdor koli, ki je prijavljen"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Anything subscribed to this feed will stop receiving it. You can copy a new URL afterwards."
-msgstr "Vse, kar je naročeno na ta vir, ga ne bo več prejemalo. Nato lahko kopirate nov URL."
+msgstr "Vse, kar je naročeno na ta kanal, ga ne bo več prejemalo. Nato lahko kopirate nov URL."
 
 #. placeholder {0}: deleteTarget?.name
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
@@ -707,7 +707,7 @@ msgstr "Ustvari {entityLabel}"
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Create feed"
-msgstr "Ustvari vir"
+msgstr "Ustvari kanal"
 
 #: ../../../lib/web/src/components/entity/keyboard-shortcuts-help.tsx
 msgid "Create new item"
@@ -719,7 +719,7 @@ msgstr "Ustvarite enega za začetek."
 
 #: src/components/rss-dialog.tsx
 msgid "Create RSS feed"
-msgstr "Ustvari RSS vir"
+msgstr "Ustvari RSS kanal"
 
 #: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 #: ../../../lib/web/src/components/entity/entity-view-options-bar.tsx
@@ -733,7 +733,7 @@ msgstr "Ustvarjeno {field}"
 
 #: src/components/rss-dialog.tsx
 msgid "Creating RSS feed..."
-msgstr "Ustvarjanje vira RSS..."
+msgstr "Ustvarjanje kanala RSS..."
 
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
@@ -802,11 +802,11 @@ msgstr "Izbriši komentar"
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Delete feed"
-msgstr "Izbriši vir"
+msgstr "Izbriši kanal"
 
 #: src/components/rss-dialog.tsx
 msgid "Delete feed?"
-msgstr "Izbriši vir?"
+msgstr "Izbriši kanal?"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx
 msgid "Delete field"
@@ -850,7 +850,7 @@ msgstr "Izbrisano {field}"
 
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
-msgstr "Brisanje vira..."
+msgstr "Brisanje kanala..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -950,7 +950,7 @@ msgstr "Uredi napis"
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Edit feed"
-msgstr "Uredi vir"
+msgstr "Uredi kanal"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx
 msgid "Edit field"
@@ -1051,7 +1051,7 @@ msgstr "Neuspešno ustvarjanje povezave"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to create RSS feed"
-msgstr "Ustvarjanje vira RSS ni uspelo"
+msgstr "Ustvarjanje kanala RSS ni uspelo"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to delete"
@@ -1067,7 +1067,7 @@ msgstr "Neuspešno brisanje komentarja"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to delete feed"
-msgstr "Neuspešno brisanje vira"
+msgstr "Neuspešno brisanje kanala"
 
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Failed to delete link"
@@ -1128,7 +1128,7 @@ msgstr "Neuspešna objava komentarja"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to rename feed"
-msgstr "Neuspešno preimenovanje vira"
+msgstr "Neuspešno preimenovanje kanala"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx
 msgid "Failed to reset prompt"
@@ -1136,7 +1136,7 @@ msgstr "Neuspešna ponastavitev poziva"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Failed to revoke RSS access"
-msgstr "Preklic dostopa RSS ni uspel"
+msgstr "Odvzem dostopa RSS ni uspel"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to save"
@@ -1160,7 +1160,7 @@ msgstr "Neuspešna posodobitev komentarja"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to update feed"
-msgstr "Neuspešna posodobitev vira"
+msgstr "Neuspešna posodobitev kanala"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to update watching"
@@ -1172,19 +1172,19 @@ msgstr "Neuspešno nalaganje priponke"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed created"
-msgstr "Vir ustvarjen"
+msgstr "Kanal ustvarjen"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed deleted"
-msgstr "Vir izbrisan"
+msgstr "Kanal izbrisan"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed name"
-msgstr "Ime vira"
+msgstr "Ime kanala"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed renamed"
-msgstr "Vir preimenovan"
+msgstr "Kanal preimenovan"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
@@ -1576,7 +1576,7 @@ msgstr "Ni najdenih rezultatov."
 
 #: src/components/rss-dialog.tsx
 msgid "No RSS feeds yet"
-msgstr "Še ni RSS virov"
+msgstr "Še ni RSS kanalov"
 
 #: ../../../lib/web/src/components/entity/entity-board-container.tsx
 #: ../../../lib/web/src/components/entity/entity-board-container.tsx
@@ -1992,17 +1992,17 @@ msgstr "Vrstice združi po"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "RSS access revoked"
-msgstr "Dostop RSS preklican"
+msgstr "Dostop RSS odvzet"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
 msgid "RSS feed"
-msgstr "RSS vir"
+msgstr "RSS kanal"
 
 #: src/components/rss-dialog.tsx
 #: src/features/notification/index.tsx
 msgid "RSS feeds"
-msgstr "RSS viri"
+msgstr "RSS kanali"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "RSS URL copied to clipboard"
@@ -2362,7 +2362,7 @@ msgstr "To bo trajno izbrisalo igro in njen klepet. Tega dejanja ni mogoče razv
 
 #: src/components/rss-dialog.tsx
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
-msgstr "S tem boste trajno izbrisali ta vir. Vsi bralniki RSS, ki ga uporabljajo, ne bodo več mogli dostopati do vaših obvestil."
+msgstr "S tem boste trajno izbrisali ta kanal. Vsi bralniki RSS, ki ga uporabljajo, ne bodo več mogli dostopati do vaših obvestil."
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Thursday"

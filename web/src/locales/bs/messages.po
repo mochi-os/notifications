@@ -733,7 +733,7 @@ msgstr "Kreirano {field}"
 
 #: src/components/rss-dialog.tsx
 msgid "Creating RSS feed..."
-msgstr "Kreiranje RSS izvora..."
+msgstr "Kreiranje RSS kanala..."
 
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
@@ -1051,7 +1051,7 @@ msgstr "Kreiranje veze nije uspjelo"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to create RSS feed"
-msgstr "Kreiranje RSS izvora nije uspjelo"
+msgstr "Kreiranje RSS kanala nije uspjelo"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to delete"

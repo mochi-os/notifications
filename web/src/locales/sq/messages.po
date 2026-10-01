@@ -850,7 +850,7 @@ msgstr "U fshi {field}"
 
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
-msgstr "Po fshihet burimi..."
+msgstr "Po fshihet feed-i..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -950,7 +950,7 @@ msgstr "Modifiko legjendën"
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Edit feed"
-msgstr "Redakto burimin"
+msgstr "Redakto feed-in"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx
 msgid "Edit field"
@@ -1136,7 +1136,7 @@ msgstr "Rivendosja e udhëzimit dështoi"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Failed to revoke RSS access"
-msgstr "Anulimi i aksesit RSS dështoi"
+msgstr "Revokimi i qasjes RSS dështoi"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to save"
@@ -1992,7 +1992,7 @@ msgstr "Rreshtat grupohen sipas"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "RSS access revoked"
-msgstr "Aksesi RSS u anulua"
+msgstr "Qasja RSS u revokua"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
@@ -2362,7 +2362,7 @@ msgstr "Kjo do të fshijë përgjithmonë lojën dhe bisedën e saj. Ky veprim n
 
 #: src/components/rss-dialog.tsx
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
-msgstr "Kjo do të fshijë përgjithmonë këtë burim. Çdo lexues RSS që e përdor nuk do të mund të aksesojë më njoftimet e tua."
+msgstr "Kjo do të fshijë përgjithmonë këtë feed. Çdo lexues RSS që e përdor nuk do të mund të aksesojë më njoftimet e tua."
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Thursday"

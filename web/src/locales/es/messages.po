@@ -733,7 +733,7 @@ msgstr "{field} creado"
 
 #: src/components/rss-dialog.tsx
 msgid "Creating RSS feed..."
-msgstr "Creando fuente RSS..."
+msgstr "Creando feed RSS..."
 
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
@@ -1051,7 +1051,7 @@ msgstr "Error al crear el enlace"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to create RSS feed"
-msgstr "No se pudo crear la fuente RSS"
+msgstr "No se pudo crear el feed RSS"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to delete"

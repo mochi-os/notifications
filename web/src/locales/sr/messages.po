@@ -108,7 +108,7 @@ msgstr "{totalCount, plural, one {# ставка} few {# ставке} other {# 
 
 #: ../../../lib/web/src/components/entity/entity-comment-thread.tsx
 msgid "{totalDescendants, plural, one {# reply} other {+# more replies}}"
-msgstr "{totalDescendants, plural, one {# одговор} few {+# додатних одговора} other {+# додатних одговора}}"
+msgstr "{totalDescendants, plural, one {# одговор} few {+# додатна одговора} other {+# додатних одговора}}"
 
 #: ../../../lib/web/src/components/layout/mochi-menu.tsx
 msgid "{unreadCount, plural, one {Open menu (# unread notification)} other {Open menu (# unread notifications)}}"
@@ -266,7 +266,7 @@ msgstr "Свако ко је пријављен"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Anything subscribed to this feed will stop receiving it. You can copy a new URL afterwards."
-msgstr "Све што је претплаћено на овај извор престаће да га прима. Затим можете копирати нови URL."
+msgstr "Све што је претплаћено на овај фид престаће да га прима. Затим можете копирати нови URL."
 
 #. placeholder {0}: deleteTarget?.name
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
@@ -733,7 +733,7 @@ msgstr "Направљено {field}"
 
 #: src/components/rss-dialog.tsx
 msgid "Creating RSS feed..."
-msgstr "Креирање RSS извора..."
+msgstr "Креирање RSS фида..."
 
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
@@ -1051,7 +1051,7 @@ msgstr "Креирање везе није успело"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to create RSS feed"
-msgstr "Креирање RSS извора није успело"
+msgstr "Креирање RSS фида није успело"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to delete"
@@ -1576,7 +1576,7 @@ msgstr "Нема пронађених резултата."
 
 #: src/components/rss-dialog.tsx
 msgid "No RSS feeds yet"
-msgstr "Још нема RSS извора"
+msgstr "Још нема RSS фидова"
 
 #: ../../../lib/web/src/components/entity/entity-board-container.tsx
 #: ../../../lib/web/src/components/entity/entity-board-container.tsx
@@ -1997,12 +1997,12 @@ msgstr "RSS приступ опозван"
 #: ../../../lib/web/src/components/options-menu.tsx
 #: src/components/rss-dialog.tsx
 msgid "RSS feed"
-msgstr "RSS извор"
+msgstr "RSS фид"
 
 #: src/components/rss-dialog.tsx
 #: src/features/notification/index.tsx
 msgid "RSS feeds"
-msgstr "RSS извори"
+msgstr "RSS фидови"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "RSS URL copied to clipboard"

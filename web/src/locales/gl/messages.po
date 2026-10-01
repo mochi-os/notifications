@@ -266,7 +266,7 @@ msgstr "Calquera que iniciase sesión"
 
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Anything subscribed to this feed will stop receiving it. You can copy a new URL afterwards."
-msgstr "Todo o subscrito a esta fonte deixará de recibila. Despois podes copiar un URL novo."
+msgstr "Todo o subscrito a este fío deixará de recibilo. Despois podes copiar un URL novo."
 
 #. placeholder {0}: deleteTarget?.name
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
@@ -733,7 +733,7 @@ msgstr "{field} creado"
 
 #: src/components/rss-dialog.tsx
 msgid "Creating RSS feed..."
-msgstr "Creando fonte RSS..."
+msgstr "Creando fío RSS..."
 
 #: ../../../lib/web/src/components/map-view.tsx
 msgid "Current location"
@@ -850,7 +850,7 @@ msgstr "{field} eliminado"
 
 #: src/components/rss-dialog.tsx
 msgid "Deleting feed..."
-msgstr "Eliminando a fonte..."
+msgstr "Eliminando o fío..."
 
 #: ../../../lib/web/src/components/ui/sort-direction-button.tsx
 msgid "Descending"
@@ -1051,7 +1051,7 @@ msgstr "Non se puido crear a ligazón"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to create RSS feed"
-msgstr "Non se puido crear a fonte RSS"
+msgstr "Non se puido crear o fío RSS"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to delete"
@@ -1067,7 +1067,7 @@ msgstr "Non se puido eliminar o comentario"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to delete feed"
-msgstr "Non se puido eliminar a fonte"
+msgstr "Non se puido eliminar o fío"
 
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Failed to delete link"
@@ -1128,7 +1128,7 @@ msgstr "Non se puido publicar o comentario"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to rename feed"
-msgstr "Non se puido renomear a fonte"
+msgstr "Non se puido renomear o fío"
 
 #: ../../../lib/web/src/components/ai-prompts-editor.tsx
 msgid "Failed to reset prompt"
@@ -1160,7 +1160,7 @@ msgstr "Non se puido actualizar o comentario"
 
 #: src/components/rss-dialog.tsx
 msgid "Failed to update feed"
-msgstr "Non se puido actualizar a fonte"
+msgstr "Non se puido actualizar o fío"
 
 #: ../../../lib/web/src/components/entity/entity-object-detail-panel.tsx
 msgid "Failed to update watching"
@@ -1172,19 +1172,19 @@ msgstr "Non se puido subir o anexo"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed created"
-msgstr "Fonte creada"
+msgstr "Fío creado"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed deleted"
-msgstr "Fonte eliminada"
+msgstr "Fío eliminado"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed name"
-msgstr "Nome da fonte"
+msgstr "Nome do fío"
 
 #: src/components/rss-dialog.tsx
 msgid "Feed renamed"
-msgstr "Fonte renomeada"
+msgstr "Fío renomeado"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 #: ../../../lib/web/src/components/entity/entity-object-attachments.tsx
@@ -2362,7 +2362,7 @@ msgstr "Isto eliminará permanentemente a partida e a súa conversa. Esta acció
 
 #: src/components/rss-dialog.tsx
 msgid "This will permanently delete this feed. Any RSS readers using it will no longer be able to access your notifications."
-msgstr "Isto eliminará permanentemente esta fonte. Calquera lector RSS que a use xa non poderá acceder ás túas notificacións."
+msgstr "Isto eliminará permanentemente este fío. Calquera lector RSS que o use xa non poderá acceder ás túas notificacións."
 
 #: ../../../lib/web/src/lib/preference-utils.ts
 msgid "Thursday"

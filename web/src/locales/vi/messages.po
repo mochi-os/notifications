@@ -950,7 +950,7 @@ msgstr "Sửa chú thích"
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Edit feed"
-msgstr "Chỉnh sửa nguồn"
+msgstr "Chỉnh sửa nguồn cấp"
 
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx
 msgid "Edit field"
