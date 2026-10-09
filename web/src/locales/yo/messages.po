@@ -111,7 +111,7 @@ msgstr "{opponentName} fún ní ìdábọ̀"
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} nínú {totalLabel}"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "{topicLabel} moved to the {categoryLabel} category"
 msgstr "A ti gbé {topicLabel} lọ sí ẹ̀ka {categoryLabel}"
 
@@ -473,7 +473,7 @@ msgstr "Àlàyé"
 msgid "Category for these notifications"
 msgstr "Ẹ̀ka fún àwọn ìfitónilétí wọ̀nyí"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Category updated"
 msgstr "A ti ṣe àtúnyẹ̀wò ẹ̀ka"
 
@@ -1120,7 +1120,7 @@ msgstr "Kò ṣeé gbé àwòrán wọlé"
 msgid "Failed to load item"
 msgstr "Kò lè ṣí ohun lọ̀"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to load notification categories"
 msgstr "Kò lè ṣí àwọn ẹ̀ka ìfìtọ́nisí lọ̀"
 
@@ -1172,7 +1172,7 @@ msgstr "Kò lè fi prompt pamọ́"
 msgid "Failed to update banner"
 msgstr "Kò lè mú banner dòde"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to update category"
 msgstr "Kò lè mú ẹ̀ka dòde"
 

@@ -111,7 +111,7 @@ msgstr "{opponentName} zaproponował remis"
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} z {totalLabel}"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "{topicLabel} moved to the {categoryLabel} category"
 msgstr "{topicLabel} przeniesiono do kategorii {categoryLabel}"
 
@@ -473,7 +473,7 @@ msgstr "Podpis"
 msgid "Category for these notifications"
 msgstr "Kategoria tych powiadomień"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Category updated"
 msgstr "Kategoria zaktualizowana"
 
@@ -1120,7 +1120,7 @@ msgstr "Nie udało się wczytać obrazu"
 msgid "Failed to load item"
 msgstr "Nie udało się załadować elementu"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to load notification categories"
 msgstr "Nie udało się załadować kategorii powiadomień"
 
@@ -1172,7 +1172,7 @@ msgstr "Nie udało się zapisać polecenia"
 msgid "Failed to update banner"
 msgstr "Nie udało się zaktualizować banera"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to update category"
 msgstr "Nie udało się zaktualizować kategorii"
 

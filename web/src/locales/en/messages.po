@@ -111,7 +111,7 @@ msgstr "{opponentName} offered a draw"
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} of {totalLabel}"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "{topicLabel} moved to the {categoryLabel} category"
 msgstr "{topicLabel} moved to the {categoryLabel} category"
 
@@ -473,7 +473,7 @@ msgstr "Caption"
 msgid "Category for these notifications"
 msgstr "Category for these notifications"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Category updated"
 msgstr "Category updated"
 
@@ -1120,7 +1120,7 @@ msgstr "Failed to load image"
 msgid "Failed to load item"
 msgstr "Failed to load item"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to load notification categories"
 msgstr "Failed to load notification categories"
 
@@ -1172,7 +1172,7 @@ msgstr "Failed to save prompt"
 msgid "Failed to update banner"
 msgstr "Failed to update banner"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to update category"
 msgstr "Failed to update category"
 

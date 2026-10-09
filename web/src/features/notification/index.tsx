@@ -31,6 +31,7 @@ import type { Notification as ApiNotification } from '@/api/notifications'
 import { useNotificationCategories } from '@/hooks/useNotificationCategories'
 import {
   useNotificationsQuery,
+  useNotificationsLiveRefresh,
   useMarkAsReadMutation,
   useMarkAllAsReadMutation,
   useClearAllMutation,
@@ -149,6 +150,7 @@ export function Notifications() {
   const [rssOpen, setRssOpen] = useState(false)
 
   const { data, isLoading, error, refetch } = useNotificationsQuery()
+  useNotificationsLiveRefresh()
 
   const markAsReadMutation = useMarkAsReadMutation()
   const markAllAsReadMutation = useMarkAllAsReadMutation()

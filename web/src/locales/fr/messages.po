@@ -111,7 +111,7 @@ msgstr "{opponentName} a proposé la nulle"
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} sur {totalLabel}"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "{topicLabel} moved to the {categoryLabel} category"
 msgstr "{topicLabel} a été déplacé vers la catégorie {categoryLabel}"
 
@@ -473,7 +473,7 @@ msgstr "Légende"
 msgid "Category for these notifications"
 msgstr "Catégorie de ces notifications"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Category updated"
 msgstr "Catégorie mise à jour"
 
@@ -1120,7 +1120,7 @@ msgstr "Échec du chargement de l'image"
 msgid "Failed to load item"
 msgstr "Échec du chargement de l'élément"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to load notification categories"
 msgstr "Échec du chargement des catégories de notifications"
 
@@ -1172,7 +1172,7 @@ msgstr "Échec de l'enregistrement de l'invite"
 msgid "Failed to update banner"
 msgstr "Échec de la mise à jour de la bannière"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to update category"
 msgstr "Échec de la mise à jour de la catégorie"
 

@@ -111,7 +111,7 @@ msgstr "{opponentName} beraberlik teklif etti"
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} / {totalLabel}"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "{topicLabel} moved to the {categoryLabel} category"
 msgstr "{topicLabel}, {categoryLabel} kategorisine taşındı"
 
@@ -473,7 +473,7 @@ msgstr "Resim yazısı"
 msgid "Category for these notifications"
 msgstr "Bu bildirimler için kategori"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Category updated"
 msgstr "Kategori güncellendi"
 
@@ -1120,7 +1120,7 @@ msgstr "Görsel yüklenemedi"
 msgid "Failed to load item"
 msgstr "Öğe yüklenemedi"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to load notification categories"
 msgstr "Bildirim kategorileri yüklenemedi"
 
@@ -1172,7 +1172,7 @@ msgstr "Komut kaydedilemedi"
 msgid "Failed to update banner"
 msgstr "Afiş güncellenemedi"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to update category"
 msgstr "Kategori güncellenemedi"
 

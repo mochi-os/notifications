@@ -111,7 +111,7 @@ msgstr "{opponentName} unike idrowu"
 msgid "{sentLabel} of {totalLabel}"
 msgstr "{sentLabel} kwi-{totalLabel}"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "{topicLabel} moved to the {categoryLabel} category"
 msgstr "{topicLabel} ngoku iseludidini {categoryLabel}"
 
@@ -473,7 +473,7 @@ msgstr "Umbhalo"
 msgid "Category for these notifications"
 msgstr "Udidi lwezi zaziso"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Category updated"
 msgstr "Udidi luhlaziyiwe"
 
@@ -1120,7 +1120,7 @@ msgstr "Ayikwazanga ukulayisha umfanekiso"
 msgid "Failed to load item"
 msgstr "Ayiphumelelanga ukulayisha into"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to load notification categories"
 msgstr "Ayiphumelelanga ukulayisha iindidi zezaziso"
 
@@ -1172,7 +1172,7 @@ msgstr "Ayiphumelelanga ukugcina isikhumbuzo"
 msgid "Failed to update banner"
 msgstr "Ayiphumelelanga ukuhlaziya ibhena"
 
-#: src/hooks/useNotificationCategories.ts
+#: ../../../lib/web/src/hooks/use-notification-category-picker.ts
 msgid "Failed to update category"
 msgstr "Ayiphumelelanga ukuhlaziya udidi"
 
