@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Comharraich gach nì mar leughte"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Comharraich mar leughte"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "A’ comharrachadh a h-uile mar leughte..."
 

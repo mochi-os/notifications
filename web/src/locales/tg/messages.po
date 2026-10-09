@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Аломатгузории ҳама хондашуда"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Ҳамчун хондашуда қайд кардан"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Ҳама ҳамчун хондашуда қайд карда мешаванд..."
 

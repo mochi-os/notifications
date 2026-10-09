@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Emarka opavave oñemoñe'ẽmahaicha"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Emarka oñemoñe'ẽmahaicha"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Oñemarkahína opavave oñemoñe'ẽmahaicha..."
 

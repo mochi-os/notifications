@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Immarka kollox maqru"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Immarka bħala moqri"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Qed nimmarka kollox bħala moqri..."
 

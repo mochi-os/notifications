@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Sàmì sí gbogbo gẹ́gẹ́ bí kíkà"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Sàmì sí pé a ti kà"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Ń samì sí gbogbo rẹ̀ bíi tí a ti kà..."
 

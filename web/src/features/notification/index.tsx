@@ -16,6 +16,7 @@ import {
   useFormat,
   getSafeNavigationTarget,
   shellNavigateExternal,
+  shellOpenExternal,
   toast,
   toastAction,
   getErrorMessage,
@@ -25,6 +26,11 @@ import {
 import { Button } from '@mochi/web/components/ui/button'
 import { Label } from '@mochi/web/components/ui/label'
 import { Switch } from '@mochi/web/components/ui/switch'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@mochi/web/components/ui/tooltip'
 import { cn } from '@mochi/web/lib/utils'
 import { Bell, Check, Rss, Trash2 } from 'lucide-react'
 import type { Notification as ApiNotification } from '@/api/notifications'
@@ -49,35 +55,49 @@ const TRUSTED_EXTERNAL_REDIRECT_HOSTS = (
 function NotificationItem({
   notification,
   onMarkAsRead,
+  marking,
   categories,
 }: {
   notification: ApiNotification
   onMarkAsRead: (id: string) => void
+  marking: boolean
   categories: ReturnType<typeof useNotificationCategories>
 }) {
   const { t } = useLingui()
   const { formatTimestamp } = useFormat()
   const isUnread = notification.read === 0
 
+  // The link as a place this page may send the reader, or null: an unsafe
+  // link is refused the same way whichever button asked for it.
+  const safeTarget = () => {
+    if (!notification.link) return null
+    const target = getSafeNavigationTarget(
+      notification.link,
+      window.location.origin,
+      {
+        trustedExternalHosts: TRUSTED_EXTERNAL_REDIRECT_HOSTS,
+      }
+    )
+    if (!target) toast.error(t`Blocked navigation to untrusted link`)
+    return target
+  }
+
   const handleClick = () => {
     if (isUnread) {
       onMarkAsRead(notification.id)
     }
+    const target = safeTarget()
+    if (target) shellNavigateExternal(target)
+  }
 
-    if (notification.link) {
-      const safeTarget = getSafeNavigationTarget(
-        notification.link,
-        window.location.origin,
-        {
-          trustedExternalHosts: TRUSTED_EXTERNAL_REDIRECT_HOSTS,
-        }
-      )
-      if (safeTarget) {
-        shellNavigateExternal(safeTarget)
-      } else {
-        toast.error(t`Blocked navigation to untrusted link`)
-      }
+  // Middle click opens the link in a new tab and leaves this page where it
+  // is, as the bell does.
+  const handleMiddleClick = () => {
+    if (isUnread) {
+      onMarkAsRead(notification.id)
     }
+    const target = safeTarget()
+    if (target) shellOpenExternal(target)
   }
 
   return (
@@ -90,6 +110,11 @@ function NotificationItem({
       <button
         type='button'
         onClick={handleClick}
+        onAuxClick={(event) => {
+          if (event.button !== 1) return
+          event.preventDefault()
+          handleMiddleClick()
+        }}
         className='flex flex-1 items-start gap-3 text-start'
       >
         <NotificationSourceIcon
@@ -112,6 +137,22 @@ function NotificationItem({
           </p>
         </div>
       </button>
+      {isUnread && (
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <button
+              type='button'
+              aria-label={t`Mark as read`}
+              onClick={() => onMarkAsRead(notification.id)}
+              disabled={marking}
+              className='text-muted-foreground hover:bg-hover hover:text-foreground active:bg-interactive-active mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md transition-colors disabled:opacity-50'
+            >
+              <Check className='size-3.5' />
+            </button>
+          </TooltipTrigger>
+          <TooltipContent>{t`Mark as read`}</TooltipContent>
+        </Tooltip>
+      )}
       <NotificationCategoryButton
         categories={categories.categories}
         topic={categories.topic}
@@ -313,6 +354,10 @@ export function Notifications() {
                       key={notification.id}
                       notification={notification}
                       onMarkAsRead={handleMarkAsRead}
+                      marking={
+                        markAsReadMutation.isPending &&
+                        markAsReadMutation.variables === notification.id
+                      }
                       categories={categoryPicker}
                     />
                   ))}

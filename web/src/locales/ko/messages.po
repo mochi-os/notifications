@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "모두 읽음 처리"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "읽음으로 표시"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "모두 읽음으로 표시하는 중..."
 

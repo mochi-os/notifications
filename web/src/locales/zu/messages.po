@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Maka konke njengokufundiwe"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Maka njengefundiwe"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Iphawula konke njengokufundiwe..."
 

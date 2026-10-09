@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "ټول د لوستل شویو په توګه نښه کړئ"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "د لوستل شوي په توګه نښه کړئ"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "ټول د لوستل شوي په توګه نښل کیږي..."
 

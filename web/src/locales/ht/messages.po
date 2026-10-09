@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Make tout kòm li"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Make kòm li"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Ap make tout kòm li..."
 

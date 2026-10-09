@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "ทำเครื่องหมายว่าอ่านแล้วทั้งหมด"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "ทำเครื่องหมายว่าอ่านแล้ว"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "กำลังทำเครื่องหมายทั้งหมดว่าอ่านแล้ว..."
 

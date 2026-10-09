@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Označi vse prebrano"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Označi kot prebrano"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Označevanje vsega kot prebrano..."
 

@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "سڀ پڙهيل نشانبر ڪريو"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "پڙهيل طور نشان لڳايو"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "سڀ پڙهيل طور نشان لڳائي رهيو آهي..."
 

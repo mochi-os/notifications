@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Alama duka karanta"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Yi alama a matsayin an karanta"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Ana yiwa duka alama a matsayin an karanta..."
 

@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Tandai semua sudah dibaca"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Tandai sudah dibaca"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Menandai semua sebagai sudah dibaca..."
 

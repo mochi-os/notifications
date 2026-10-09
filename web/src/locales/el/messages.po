@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Σήμανση όλων ως αναγνωσμένα"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Σήμανση ως αναγνωσμένο"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Επισήμανση όλων ως αναγνωσμένων..."
 

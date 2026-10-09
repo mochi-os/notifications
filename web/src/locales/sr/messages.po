@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Означи све прочитаним"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Означи као прочитано"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Означавање свега као прочитано..."
 

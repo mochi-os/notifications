@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Hunda dubbifame"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Akka dubbifametti mallatteessi"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Hunda akka dubbifametti mallatteessaa jira..."
 

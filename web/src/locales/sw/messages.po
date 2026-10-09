@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Weka zote zimesomwa"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Weka alama kuwa imesomwa"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Inaweka zote kuwa zimesomwa..."
 

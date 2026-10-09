@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Hemmesini okaldy diýip belgile"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Okalan diýip belle"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Ählisi okaldy diýip bellenýär..."
 

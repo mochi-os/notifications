@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Marcio'r cyfan wedi'u darllen"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Nodi fel wedi'i darllen"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Yn nodi popeth fel wedi'i ddarllen..."
 

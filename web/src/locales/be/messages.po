@@ -1416,6 +1416,11 @@ msgid "Mark all read"
 msgstr "Адзначыць усе прачытаныя"
 
 #: src/features/notification/index.tsx
+#: src/features/notification/index.tsx
+msgid "Mark as read"
+msgstr "Пазначыць як прачытанае"
+
+#: src/features/notification/index.tsx
 msgid "Marking all as read..."
 msgstr "Адзначэнне ўсіх як прачытаныя..."
 
