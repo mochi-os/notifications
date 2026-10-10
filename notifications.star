@@ -225,11 +225,14 @@ def expire_due():
 	)
 	return True
 
+# An unread notification goes 30 days after it arrived; a read one 7 days
+# after it was read, so the list keeps a week of history whatever its age
+# when it was opened. read holds the time it was read.
 def expire():
 	if not expire_due():
 		return
 	now = mochi.time.now()
-	mochi.db.execute("delete from notifications where (read = 0 and created < ?) or (read != 0 and created < ?)", now - 30 * 86400, now - 7 * 86400)
+	mochi.db.execute("delete from notifications where (read = 0 and created < ?) or (read != 0 and read < ?)", now - 30 * 86400, now - 7 * 86400)
 
 def clear_where(where, args):
 	mochi.db.execute("delete from notifications where " + where, *args)
@@ -237,9 +240,10 @@ def clear_where(where, args):
 def function_clear_all(context):
 	clear_where("1=1", [])
 
-# clear/app and clear/object act on the CALLING app's own notifications only:
-# the app comes from context (stamped by core), never from an argument, so one
-# app cannot clear another's rows. Callers pass just the object.
+# clear/app, clear/object and delete/object act on the CALLING app's own
+# notifications only: the app comes from context (stamped by core), never from
+# an argument, so one app cannot touch another's rows. Callers pass just the
+# object.
 def function_clear_app(context):
 	app = context.get("app", "")
 	if not app:
@@ -247,7 +251,21 @@ def function_clear_app(context):
 	clear_where("app = ?", [app])
 	return True
 
+# The user has seen the object, as an app says when they open it: its
+# notifications are marked read, not deleted, so the list's All view keeps
+# them until they expire. Clients refetch on clear_object and Android takes
+# the object's notifications off the phone.
 def function_clear_object(context, object=""):
+	app = context.get("app", "")
+	if not app:
+		return False
+	mochi.db.execute("update notifications set read = ? where app = ? and object = ? and read = 0", mochi.time.now(), app, object)
+	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object})
+	return True
+
+# The object no longer exists, as an app says when it is deleted: its
+# notifications would link to nothing, so they go.
+def function_delete_object(context, object=""):
 	app = context.get("app", "")
 	if not app:
 		return False

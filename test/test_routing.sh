@@ -245,6 +245,71 @@ fi
 test_curl "/test_notifications_cleanup?object=read-probe" > /dev/null
 
 # ============================================================================
+# HISTORY TESTS
+# ============================================================================
+
+echo ""
+echo "--- History Tests ---"
+
+# A probe's row in the list as "read" (0 or the time it was read), or "none"
+probe_state() {
+    notif_curl GET "/-/list" | python3 -c "
+import sys, json
+rows = [r for r in json.load(sys.stdin)['data'] if r['object'] == '$1']
+print(rows[0]['read'] if rows else 'none')
+" 2>/dev/null
+}
+
+# Test: An app clearing an object the user opened marks its notifications read
+# and keeps them, so the list's All view still shows them
+test_curl "/test_notifications_emit?object=history-probe&body=history-probe-body" > /dev/null
+test_curl "/test_notifications_cleanup?object=history-probe&read=1" > /dev/null
+STATE=$(probe_state history-probe)
+if [ "$STATE" != "none" ] && [ "$STATE" != "0" ]; then
+    pass "clear/object marks the notification read and keeps it"
+else
+    fail "clear/object marks the notification read and keeps it" "read=$STATE"
+fi
+
+# Test: delete/object, for an object that no longer exists, removes them
+test_curl "/test_notifications_cleanup?object=history-probe" > /dev/null
+STATE=$(probe_state history-probe)
+if [ "$STATE" = "none" ]; then
+    pass "delete/object removes the notification"
+else
+    fail "delete/object removes the notification" "read=$STATE"
+fi
+
+# Expiry counts a read notification's week from when it was read, not from
+# when it arrived. The rows are backdated in the instance's own database, then
+# the hourly sweep is made due and a list request runs it.
+ADMIN_UID=$(sqlite3 -readonly /home/alistair/var/lib/mochi/db/users.db "select uid from users where role='administrator' limit 1")
+NOTIF_DB="/home/alistair/var/lib/mochi/users/$ADMIN_UID/notifications/db/notifications.db"
+NOW=$(date +%s)
+test_curl "/test_notifications_emit?object=expire-recent-probe&body=expire-recent-body" > /dev/null
+test_curl "/test_notifications_emit?object=expire-old-probe&body=expire-old-body" > /dev/null
+test_curl "/test_notifications_cleanup?object=expire-recent-probe&read=1" > /dev/null
+test_curl "/test_notifications_cleanup?object=expire-old-probe&read=1" > /dev/null
+sqlite3 -cmd ".timeout 5000" "$NOTIF_DB" "
+update notifications set created = $NOW - 20 * 86400, read = $NOW - 86400 where object = 'expire-recent-probe';
+update notifications set read = $NOW - 8 * 86400 where object = 'expire-old-probe';
+update maintenance set time = 0 where name = 'expire';"
+STATE=$(probe_state expire-recent-probe)
+if [ "$STATE" != "none" ]; then
+    pass "Read a day ago, arrived 20 days ago: kept"
+else
+    fail "Read a day ago, arrived 20 days ago: kept" "expired by its arrival time"
+fi
+STATE=$(probe_state expire-old-probe)
+if [ "$STATE" = "none" ]; then
+    pass "Read 8 days ago: expired"
+else
+    fail "Read 8 days ago: expired" "read=$STATE"
+fi
+test_curl "/test_notifications_cleanup?object=expire-recent-probe" > /dev/null
+test_curl "/test_notifications_cleanup?object=expire-old-probe" > /dev/null
+
+# ============================================================================
 # PUSH QUEUE SCOPING TESTS
 # ============================================================================
 
