@@ -5,7 +5,7 @@
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
 
 {
-	"version": "3.92",
+	"version": "3.93",
 	"label": "app.name",
 	"paths": ["notifications"],
 	"services": ["notifications"],
@@ -53,6 +53,7 @@
 		"clear/all": {"function": "function_clear_all", "permission": "notifications/write"},
 		"clear/app": {"function": "function_clear_app"},
 		"clear/object": {"function": "function_clear_object"},
+		"delete/object": {"function": "function_delete_object"},
 		"list": {"function": "function_list", "permission": "notifications/read"},
 		"read": {"function": "function_read", "permission": "notifications/read"},
 		"read/all": {"function": "function_read_all", "permission": "notifications/read"},
