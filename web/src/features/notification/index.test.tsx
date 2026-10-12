@@ -14,7 +14,7 @@ const post = vi.fn(async (..._args: unknown[]) => ({}))
 const navigate = vi.fn()
 const openTab = vi.fn((_url: string) => true)
 
-const row = (id: string, read: number) => ({
+const row = (id: string, read: number, created = 1) => ({
   id,
   app: 'chat',
   topic: 'message',
@@ -22,9 +22,15 @@ const row = (id: string, read: number) => ({
   content: `Message ${id}`,
   link: `/chat/${id}`,
   count: 1,
-  created: 1,
+  created,
   read,
 })
+
+const getRaw = vi.fn(async () => ({
+  data: [row('unread', 0), row('seen', 5)],
+  count: 1,
+  total: 1,
+}))
 
 // Partial mock: the page pulls its layout and primitives from @mochi/web and
 // they have to keep rendering, so only the requests, the two ways out of the
@@ -35,11 +41,7 @@ vi.mock('@mochi/web', async (importOriginal) => {
     ...actual,
     requestHelpers: {
       ...actual.requestHelpers,
-      getRaw: vi.fn(async () => ({
-        data: [row('unread', 0), row('seen', 5)],
-        count: 1,
-        total: 1,
-      })),
+      getRaw: () => getRaw(),
       post: (...args: unknown[]) => post(...args),
     },
     shellNavigateExternal: (url: string) => navigate(url),
@@ -67,6 +69,12 @@ describe('Notifications', () => {
     post.mockClear()
     navigate.mockClear()
     openTab.mockClear()
+    getRaw.mockReset()
+    getRaw.mockResolvedValue({
+      data: [row('unread', 0), row('seen', 5)],
+      count: 1,
+      total: 1,
+    })
   })
 
   it('marks one notification read from its button and stays on the page', async () => {
@@ -104,5 +112,25 @@ describe('Notifications', () => {
     expect(navigate).not.toHaveBeenCalled()
     await waitFor(() => expect(post).toHaveBeenCalledTimes(1))
     expect(post.mock.calls[0][1]).toBe('id=unread')
+  })
+
+  // -/list sends rows oldest first; the page shows them newest first.
+  it('shows the newest notification first regardless of list order', async () => {
+    getRaw.mockResolvedValue({
+      data: [row('oldest', 0, 1), row('newest', 0, 3), row('middle', 0, 2)],
+      count: 3,
+      total: 3,
+    })
+    mount()
+
+    await screen.findByText('Message newest')
+    const order = screen
+      .getAllByText(/Message (oldest|middle|newest)/)
+      .map((el) => el.textContent)
+    expect(order).toEqual([
+      'Message newest',
+      'Message middle',
+      'Message oldest',
+    ])
   })
 })
