@@ -60,11 +60,14 @@ const clearAll = async (): Promise<void> => {
   await requestHelpers.post(endpoints.notifications.clearAll, {}, NO_TOAST)
 }
 
+// requestHelpers.get hands back what is inside the server's data envelope,
+// not the envelope: reading .data off it again gave undefined, and the picker
+// waited on categories that never arrived.
 const listCategories = async (): Promise<NotificationCategory[]> => {
-  const response = await requestHelpers.get<{ data: NotificationCategory[] }>(
+  const categories = await requestHelpers.get<NotificationCategory[] | null>(
     endpoints.categories.list
   )
-  return response.data
+  return categories ?? []
 }
 
 const lookupTopic = async (
@@ -73,10 +76,10 @@ const lookupTopic = async (
   object: string
 ): Promise<NotificationTopic | null> => {
   const params = new URLSearchParams({ app, topic, object })
-  const response = await requestHelpers.get<{ data: NotificationTopic | null }>(
+  const row = await requestHelpers.get<NotificationTopic | null>(
     `${endpoints.topics.lookup}?${params.toString()}`
   )
-  return response.data
+  return row ?? null
 }
 
 const setTopicCategory = async (
