@@ -198,12 +198,7 @@ export function Notifications() {
   const clearAllMutation = useClearAllMutation()
   const [clearing, setClearing] = useState(false)
 
-  // -/list sends the rows oldest first, matching lib/web's shared bell list
-  // (notification-menu.tsx) so the two agree once both are sorted.
-  const allNotifications = useMemo(
-    () => [...(data?.data ?? [])].sort((a, b) => b.created - a.created),
-    [data]
-  )
+  const allNotifications = useMemo(() => data?.data ?? [], [data])
   const unreadCount = useMemo(
     () => allNotifications.filter((n) => n.read === 0).length,
     [allNotifications]
