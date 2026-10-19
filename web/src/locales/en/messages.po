@@ -246,6 +246,10 @@ msgstr "Add view"
 msgid "AI"
 msgstr "AI"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "All comments"
+msgstr "All comments"
+
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 msgid "All day"
@@ -663,6 +667,10 @@ msgstr "Contextual information and details."
 msgid "Continue"
 msgstr "Continue"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "Continue this thread"
+msgstr "Continue this thread"
+
 #: ../../../lib/web/src/components/step-up-dialog.tsx
 msgid "Continue with {label}"
 msgstr "Continue with {label}"
@@ -675,6 +683,7 @@ msgstr "Continue with {providerLabel}"
 msgid "Copied"
 msgstr "Copied"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
@@ -1061,6 +1070,7 @@ msgstr "Failed to add account"
 msgid "Failed to clear notifications"
 msgstr "Failed to clear notifications"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: ../../../lib/web/src/lib/toast-utils.ts
 #: src/components/rss-dialog.tsx
@@ -2217,6 +2227,11 @@ msgstr "Set origin and destination"
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Settings"
 msgstr "Settings"
+
+#: ../../../lib/web/src/components/comment-share-button.tsx
+#: ../../../lib/web/src/components/comment-share-button.tsx
+msgid "Share"
+msgstr "Share"
 
 #: src/features/notification/index.tsx
 msgid "Show all"

@@ -246,6 +246,10 @@ msgstr "Додати подання"
 msgid "AI"
 msgstr "AI"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "All comments"
+msgstr ""
+
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 msgid "All day"
@@ -663,6 +667,10 @@ msgstr "Контекстна інформація та деталі."
 msgid "Continue"
 msgstr "Продовжити"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "Continue this thread"
+msgstr ""
+
 #: ../../../lib/web/src/components/step-up-dialog.tsx
 msgid "Continue with {label}"
 msgstr "Продовжити з {label}"
@@ -675,6 +683,7 @@ msgstr "Продовжити з {providerLabel}"
 msgid "Copied"
 msgstr "Скопійовано"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
@@ -1061,6 +1070,7 @@ msgstr "Не вдалося додати обліковий запис"
 msgid "Failed to clear notifications"
 msgstr "Не вдалося очистити сповіщення"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: ../../../lib/web/src/lib/toast-utils.ts
 #: src/components/rss-dialog.tsx
@@ -2217,6 +2227,11 @@ msgstr "Встановити пункти відправлення та приз
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Settings"
 msgstr "Налаштування"
+
+#: ../../../lib/web/src/components/comment-share-button.tsx
+#: ../../../lib/web/src/components/comment-share-button.tsx
+msgid "Share"
+msgstr ""
 
 #: src/features/notification/index.tsx
 msgid "Show all"

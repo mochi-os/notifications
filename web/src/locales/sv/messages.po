@@ -246,6 +246,10 @@ msgstr "Lägg till vy"
 msgid "AI"
 msgstr "AI"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "All comments"
+msgstr ""
+
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 msgid "All day"
@@ -663,6 +667,10 @@ msgstr "Kontextuell information och detaljer."
 msgid "Continue"
 msgstr "Fortsätt"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "Continue this thread"
+msgstr ""
+
 #: ../../../lib/web/src/components/step-up-dialog.tsx
 msgid "Continue with {label}"
 msgstr "Fortsätt med {label}"
@@ -675,6 +683,7 @@ msgstr "Fortsätt med {providerLabel}"
 msgid "Copied"
 msgstr "Kopierat"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
@@ -1061,6 +1070,7 @@ msgstr "Kunde inte lägga till konto"
 msgid "Failed to clear notifications"
 msgstr "Det gick inte att rensa aviseringar"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: ../../../lib/web/src/lib/toast-utils.ts
 #: src/components/rss-dialog.tsx
@@ -2217,6 +2227,11 @@ msgstr "Ange ursprung och destination"
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Settings"
 msgstr "Inställningar"
+
+#: ../../../lib/web/src/components/comment-share-button.tsx
+#: ../../../lib/web/src/components/comment-share-button.tsx
+msgid "Share"
+msgstr ""
 
 #: src/features/notification/index.tsx
 msgid "Show all"

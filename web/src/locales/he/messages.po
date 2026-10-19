@@ -246,6 +246,10 @@ msgstr "הוסף תצוגה"
 msgid "AI"
 msgstr "AI"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "All comments"
+msgstr ""
+
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 msgid "All day"
@@ -663,6 +667,10 @@ msgstr "מידע קונטקסטואלי ופרטים."
 msgid "Continue"
 msgstr "המשך"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "Continue this thread"
+msgstr ""
+
 #: ../../../lib/web/src/components/step-up-dialog.tsx
 msgid "Continue with {label}"
 msgstr "המשך עם {label}"
@@ -675,6 +683,7 @@ msgstr "המשך עם {providerLabel}"
 msgid "Copied"
 msgstr "הועתק"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
@@ -1061,6 +1070,7 @@ msgstr "הוספת החשבון נכשלה"
 msgid "Failed to clear notifications"
 msgstr "ניקוי ההתראות נכשל"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: ../../../lib/web/src/lib/toast-utils.ts
 #: src/components/rss-dialog.tsx
@@ -2217,6 +2227,11 @@ msgstr "קבע מקור ויעד"
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Settings"
 msgstr "הגדרות"
+
+#: ../../../lib/web/src/components/comment-share-button.tsx
+#: ../../../lib/web/src/components/comment-share-button.tsx
+msgid "Share"
+msgstr ""
 
 #: src/features/notification/index.tsx
 msgid "Show all"
