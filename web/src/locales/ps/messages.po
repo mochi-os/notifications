@@ -246,6 +246,10 @@ msgstr "لید اضافه کړئ"
 msgid "AI"
 msgstr "AI"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "All comments"
+msgstr ""
+
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 msgid "All day"
@@ -663,6 +667,10 @@ msgstr "د شالید معلومات او توضیحات."
 msgid "Continue"
 msgstr "دوام ورکړئ"
 
+#: ../../../lib/web/src/components/comment-thread-context.tsx
+msgid "Continue this thread"
+msgstr ""
+
 #: ../../../lib/web/src/components/step-up-dialog.tsx
 msgid "Continue with {label}"
 msgstr "د {label} سره دوام ورکړئ"
@@ -675,6 +683,7 @@ msgstr "د {providerLabel} سره دوام ورکړئ"
 msgid "Copied"
 msgstr "کاپي شو"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
@@ -1061,6 +1070,7 @@ msgstr "د حساب اضافه کولو پاتې راغلل"
 msgid "Failed to clear notifications"
 msgstr "خبرتیاوې پاکې نه شوې"
 
+#: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/ui/copy-button.tsx
 #: ../../../lib/web/src/lib/toast-utils.ts
 #: src/components/rss-dialog.tsx
@@ -2217,6 +2227,11 @@ msgstr "سرچینه او منزل وټاکئ"
 #: ../../../lib/web/src/components/options-menu.tsx
 msgid "Settings"
 msgstr "تنظیمات"
+
+#: ../../../lib/web/src/components/comment-share-button.tsx
+#: ../../../lib/web/src/components/comment-share-button.tsx
+msgid "Share"
+msgstr ""
 
 #: src/features/notification/index.tsx
 msgid "Show all"
