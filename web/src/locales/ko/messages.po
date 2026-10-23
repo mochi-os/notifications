@@ -248,7 +248,7 @@ msgstr "AI"
 
 #: ../../../lib/web/src/components/comment-thread-context.tsx
 msgid "All comments"
-msgstr ""
+msgstr "모든 댓글"
 
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
@@ -669,7 +669,7 @@ msgstr "계속"
 
 #: ../../../lib/web/src/components/comment-thread-context.tsx
 msgid "Continue this thread"
-msgstr ""
+msgstr "이 스레드 계속 보기"
 
 #: ../../../lib/web/src/components/step-up-dialog.tsx
 msgid "Continue with {label}"
@@ -2231,7 +2231,7 @@ msgstr "설정"
 #: ../../../lib/web/src/components/comment-share-button.tsx
 #: ../../../lib/web/src/components/comment-share-button.tsx
 msgid "Share"
-msgstr ""
+msgstr "공유"
 
 #: src/features/notification/index.tsx
 msgid "Show all"
