@@ -12,6 +12,7 @@ import {
   getRouterBasepath,
   I18nProvider,
   startRoutePrefetch,
+  RouteError,
   type Catalogs,
 } from '@mochi/web'
 // Generated Routes
@@ -181,11 +182,15 @@ const catalogs: Catalogs = {
 
 const queryClient = createQueryClient()
 
+// A route without its own errorComponent gets no boundary at all, so a page
+// error climbed to __root and replaced the sidebar along with it. The default
+// gives every route its own boundary, so the error stays in the content pane.
 const router = createRouter({
   routeTree,
   context: { queryClient },
   basepath: getRouterBasepath(),
   defaultPreload: false,
+  defaultErrorComponent: RouteError,
 })
 
 // Fetch page code on hover, press or focus; never route data
