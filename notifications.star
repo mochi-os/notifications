@@ -235,7 +235,7 @@ def expire():
 	mochi.db.execute("delete from notifications where (read = 0 and created < ?) or (read != 0 and read < ?)", now - 30 * 86400, now - 7 * 86400)
 
 def clear_where(where, args):
-	mochi.db.execute("delete from notifications where " + where, *args)
+	return mochi.db.execute("delete from notifications where " + where, *args)
 
 def function_clear_all(context):
 	clear_where("1=1", [])
@@ -253,14 +253,18 @@ def function_clear_app(context):
 
 # The user has seen the object, as an app says when they open it: its
 # notifications are marked read, not deleted, so the list's All view keeps
-# them until they expire. Clients refetch on clear_object and Android takes
-# the object's notifications off the phone.
+# them until they expire. Android takes the object's notifications off the
+# phone on clear_object whatever changed here, since a phone whose socket was
+# down when they were read still shows them. The frame says how many rows
+# changed, and the bell fetches its list again only when some did: apps call
+# this on every open of a feed, forum, chat or game, and each frame made every
+# open bell download its whole list again.
 def function_clear_object(context, object=""):
 	app = context.get("app", "")
 	if not app:
 		return False
-	mochi.db.execute("update notifications set read = ? where app = ? and object = ? and read = 0", mochi.time.now(), app, object)
-	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object})
+	changed = mochi.db.execute("update notifications set read = ? where app = ? and object = ? and read = 0", mochi.time.now(), app, object)
+	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object, "changed": changed})
 	return True
 
 # The object no longer exists, as an app says when it is deleted: its
@@ -269,9 +273,14 @@ def function_delete_object(context, object=""):
 	app = context.get("app", "")
 	if not app:
 		return False
-	clear_where("app = ? and object = ?", [app, object])
-	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object})
+	changed = clear_where("app = ? and object = ?", [app, object])
+	mochi.websocket.write("notifications", {"type": "clear_object", "app": app, "object": object, "changed": changed})
 	return True
+
+# Which rows the bell lists follows each topic's category and each category's
+# destinations, so a change to either says so and open bells fetch again.
+def categories_changed():
+	mochi.websocket.write("notifications", {"type": "categories"})
 
 # The join and condition restricting notifications n to the rows a surface
 # sees, with the condition's arguments. A surface is where a notification is
@@ -743,10 +752,12 @@ def notifications_commit_hook(table, kind, row_uid):
 	if not row:
 		return
 
-	# Tell every subscribed client - browser tabs, the Android badge - to
-	# refetch. Unconditional on purpose: each client's list is filtered by its
-	# own surface on read (surface_filter), so a row hidden from the bell is
-	# announced and then not returned.
+	# Tell every subscribed client - browser tabs, the Android badge. The
+	# frame carries the row as the bell lists it, and whether the bell lists
+	# it at all (surface_filter, for "web"), so the bell adds it to the list it
+	# holds rather than downloading the whole list again; the other surfaces
+	# refetch their own.
+	join, condition, args = surface_filter("web")
 	mochi.websocket.write("notifications", {
 		"type": "new",
 		"id": row["id"],
@@ -755,9 +766,11 @@ def notifications_commit_hook(table, kind, row_uid):
 		"object": row["object"],
 		"content": row["content"],
 		"link": row["link"],
+		"sender": row["sender"],
 		"count": row["count"],
 		"created": row["created"],
 		"read": row["read"],
+		"web": mochi.db.exists("select 1 from notifications n" + join + " where n.id=? and " + condition, row["id"], *args),
 	})
 
 	# A refresh carries no new event: the content changed, the count did not,
@@ -901,6 +914,8 @@ def function_category_update(context, id=None, label=None, destinations=None, de
 			set_default(id)
 	if destinations != None and id != "0":
 		apply_destinations(id, destinations)
+	if default or destinations != None:
+		categories_changed()
 	return True
 
 def function_category_delete(context, id=None, reassign=None):
@@ -922,6 +937,7 @@ def function_category_delete(context, id=None, reassign=None):
 	row_remove("categories", "id = ?", [id])
 	if was_default:
 		set_default(reassign)
+	categories_changed()
 	return True
 
 def function_category_test(context, id=None):
@@ -1104,6 +1120,7 @@ def function_topic_category_set(context, app="", topic="", object="", category=N
 		if not mochi.db.exists("select 1 from categories where id = ?", category):
 			return False
 		row_set("topics", "app = ? and topic = ? and object = ?", [app, topic, object], {"category": category})
+	categories_changed()
 	return True
 
 def function_topic_lookup(context, app="", topic="", object=""):
