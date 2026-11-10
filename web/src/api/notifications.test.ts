@@ -2,8 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // This file is part of Mochi, licensed under the GNU AGPL v3 with the
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
-import apiClient from '@mochi/web/lib/api-client'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { notificationsApi } from './notifications'
 
 // The server's own bodies, served through the real request helper: what these
@@ -23,22 +22,18 @@ const bodies: Record<string, unknown> = {
   },
 }
 
-const original = apiClient.defaults.adapter
-
 describe('notificationsApi', () => {
   beforeEach(() => {
-    const serve = async (config: { url?: string }) => ({
-      data: bodies[(config.url ?? '').split('?')[0]],
-      status: 200,
-      statusText: 'OK',
-      headers: {},
-      config,
-    })
-    apiClient.defaults.adapter = serve as unknown as typeof original
+    // The server's answer to the path the request reached, under the app.
+    const serve = async (url: string) =>
+      new Response(
+        JSON.stringify(bodies[url.split('?')[0].replace(/^.*?\/-\//, '-/')])
+      )
+    vi.stubGlobal('fetch', serve)
   })
 
   afterEach(() => {
-    apiClient.defaults.adapter = original
+    vi.unstubAllGlobals()
   })
 
   it('returns the categories the server lists', async () => {
