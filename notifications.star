@@ -301,6 +301,10 @@ def surface_filter(surface, device=""):
 	return join, condition, [type, target]
 
 def function_list(context, surface="", device=""):
+	# The bell asks here on every page load and is, for many people, the only
+	# list they open, so expiry runs here as on the notifications page:
+	# without it a bell-only reader's list kept every row they ever read.
+	expire()
 	join, condition, args = surface_filter(surface, device)
 	where = " where " + condition if condition else ""
 	return mochi.db.rows("select n.* from notifications n" + join + where + " order by n.created", *args)
