@@ -12,6 +12,7 @@
 
 	"architecture": {"engine": "starlark", "version": 4},
 	"execute": ["notifications.star"],
+	"require": {"version": {"minimum": "2.0.20"}},
 
 	"database": {
 		"schema": 5,
