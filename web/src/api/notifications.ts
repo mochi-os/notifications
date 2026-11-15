@@ -24,20 +24,21 @@ export interface Notification {
   read: number
 }
 
+// The rows alone: the page applies the notifications socket's frames to them
+// (useNotificationsLiveRefresh), and the badge counts the server sends beside
+// them are not kept, as no frame says how they change.
 export interface NotificationsListResponse {
   data: Notification[]
-  count: number
-  total: number
 }
 
 const listNotifications = async (): Promise<NotificationsListResponse> => {
   // This page is a browser surface: a category with the web switch off is
   // not shown here.
-  const response = await requestHelpers.getRaw<NotificationsListResponse>(
+  const response = await requestHelpers.getRaw<{ data?: Notification[] }>(
     endpoints.notifications.list,
     { params: { surface: 'web' } }
   )
-  return response ?? { data: [], count: 0, total: 0 }
+  return { data: response?.data ?? [] }
 }
 
 const markAsRead = async (id: string): Promise<void> => {
