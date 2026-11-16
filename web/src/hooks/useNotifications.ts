@@ -4,10 +4,15 @@
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
 import { useEffect } from 'react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { onShellMessage, optimistic, useQueryWithError } from '@mochi/web'
+import {
+  applyNotificationsFrame,
+  entityWebsocketManager,
+  useAuthStore,
+  useQueryWithError,
+  type NotificationFrame,
+} from '@mochi/web'
 import {
   notificationsApi,
-  type Notification,
   type NotificationsListResponse,
 } from '@/api/notifications'
 
@@ -22,71 +27,73 @@ export const useNotificationsQuery = () =>
     queryFn: () => notificationsApi.list(),
   })
 
-// The shell's bell holds the one notifications socket and passes each event
-// down to the app frames, so the page refetches on that and opens no socket.
+// The page's own notifications socket, opened with this page's token. Core
+// delivers the notifications app's frames only to connections a token for that
+// app opened, and the page's is one, so it hears them as the bell does and
+// applies each to the list it holds with the bell's reducer, rather than
+// downloading the whole list again for every notification, read and open
+// chat. A frame the reducer cannot take fetches the list, and so does every
+// open of the socket, the first included: whatever was sent before it was
+// there never arrived.
 export const useNotificationsLiveRefresh = () => {
   const queryClient = useQueryClient()
-  useEffect(
-    () =>
-      onShellMessage((message) => {
-        if (message.type !== 'notification-update') return
-        void queryClient.invalidateQueries({
-          queryKey: notificationKeys.list(),
-        })
-      }),
-    [queryClient]
-  )
+  const ready = useAuthStore((state) => state.isInitialized)
+  const token = useAuthStore((state) => state.token !== '')
+  useEffect(() => {
+    // Without the token the socket would be tagged with no app and hear
+    // nothing the notifications app sends.
+    if (!ready || !token) return
+    return entityWebsocketManager.subscribe(
+      'notifications',
+      (frame) => {
+        applyNotificationsFrame(
+          queryClient,
+          notificationKeys.list(),
+          frame as NotificationFrame
+        )
+      },
+      {
+        open: () =>
+          void queryClient.invalidateQueries({
+            queryKey: notificationKeys.list(),
+          }),
+      }
+    )
+  }, [queryClient, ready, token])
 }
 
-// A row goes read on the click and comes back unread if the server refuses;
-// the caller says so. The server stamps `read` with the time in seconds.
-const markRead =
-  (which: (notification: Notification) => boolean) =>
-  (old: NotificationsListResponse) => {
-    const now = Math.floor(Date.now() / 1000)
-    return {
-      ...old,
-      data: old.data.map((notification) =>
-        notification.read === 0 && which(notification)
-          ? { ...notification, read: now }
-          : notification
-      ),
-    }
-  }
+// A read lands in the held list as it is asked for, as its frame lands it in
+// every other tab, so the list is not fetched again for it: the frame this
+// page's socket then hears changes nothing. A refused read fetches the list
+// again, which says what is read, since a frame applied meanwhile would be lost
+// by putting back what was there before the click.
+const refused = (queryClient: ReturnType<typeof useQueryClient>) =>
+  void queryClient.invalidateQueries({ queryKey: notificationKeys.list() })
 
 export const useMarkAsReadMutation = () => {
   const queryClient = useQueryClient()
-  const patch = optimistic(queryClient, (id: string) => [
-    {
-      filters: { queryKey: notificationKeys.list(), exact: true },
-      update: markRead((notification) => notification.id === id),
-    },
-  ])
   return useMutation({
     mutationFn: (id: string) => notificationsApi.markAsRead(id),
-    onMutate: patch.onMutate,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: notificationKeys.all() })
+    onMutate: (id) => {
+      applyNotificationsFrame(queryClient, notificationKeys.list(), {
+        type: 'read',
+        id,
+      })
     },
-    onError: (_error, _id, context) => patch.rollback(context),
+    onError: () => refused(queryClient),
   })
 }
 
 export const useMarkAllAsReadMutation = () => {
   const queryClient = useQueryClient()
-  const patch = optimistic<void>(queryClient, () => [
-    {
-      filters: { queryKey: notificationKeys.list(), exact: true },
-      update: markRead(() => true),
-    },
-  ])
   return useMutation({
     mutationFn: () => notificationsApi.markAllAsRead(),
-    onMutate: patch.onMutate,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: notificationKeys.all() })
+    onMutate: () => {
+      applyNotificationsFrame(queryClient, notificationKeys.list(), {
+        type: 'read_all',
+      })
     },
-    onError: (_error, _variables, context) => patch.rollback(context),
+    onError: () => refused(queryClient),
   })
 }
 

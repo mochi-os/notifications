@@ -301,6 +301,10 @@ def surface_filter(surface, device=""):
 	return join, condition, [type, target]
 
 def function_list(context, surface="", device=""):
+	# The bell asks here on every page load and is, for many people, the only
+	# list they open, so expiry runs here as on the notifications page:
+	# without it a bell-only reader's list kept every row they ever read.
+	expire()
 	join, condition, args = surface_filter(surface, device)
 	where = " where " + condition if condition else ""
 	return mochi.db.rows("select n.* from notifications n" + join + where + " order by n.created", *args)
@@ -809,6 +813,8 @@ def notifications_commit_hook(table, kind, row_uid):
 		if dest["type"] == "account":
 			account_id = dest["target"]
 			push_queue_if_unifiedpush(account_id, row["app"], row["topic"], row["object"], row["title"], row["body"], row["link"], row["id"])
+			# Queued, so the app that raised the notification - a chat message
+			# arriving, a comment - is not held a round trip per device.
 			mochi.account.notify(
 				account=account_id,
 				app=row["app"],
@@ -817,7 +823,8 @@ def notifications_commit_hook(table, kind, row_uid):
 				title=row["title"],
 				body=row["body"],
 				link=row["link"],
-				id=row["id"]
+				id=row["id"],
+				queue=True
 			)
 		# Surfaces (web) and rss destinations need no delivery: both are
 		# applied when the rows are read.
