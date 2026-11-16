@@ -8,6 +8,23 @@ import { notificationsApi } from './notifications'
 // The server's own bodies, served through the real request helper: what these
 // calls return depends on how that helper opens the data envelope.
 const bodies: Record<string, unknown> = {
+  '-/list': {
+    data: [
+      {
+        id: 'n1',
+        app: 'chat',
+        topic: 'message',
+        object: 'o1',
+        content: 'Hello',
+        link: '/chat/o1',
+        count: 2,
+        created: 1,
+        read: 0,
+      },
+    ],
+    count: 1,
+    total: 2,
+  },
   '-/categories/list': {
     data: [{ id: '1', label: 'Normal', default: 1, destinations: [] }],
   },
@@ -34,6 +51,21 @@ describe('notificationsApi', () => {
 
   afterEach(() => {
     vi.unstubAllGlobals()
+  })
+
+  // The page applies the socket's frames to the rows it holds, and no frame
+  // says how the badge counts beside them change: kept, they would go stale.
+  it('holds the rows the server lists and nothing beside them', async () => {
+    const list = await notificationsApi.list()
+    expect(Object.keys(list)).toEqual(['data'])
+    expect(list.data.map((row) => row.id)).toEqual(['n1'])
+  })
+
+  it('holds no rows for a list the server sends none of', async () => {
+    const saved = bodies['-/list']
+    bodies['-/list'] = { data: null }
+    expect(await notificationsApi.list()).toEqual({ data: [] })
+    bodies['-/list'] = saved
   })
 
   it('returns the categories the server lists', async () => {
