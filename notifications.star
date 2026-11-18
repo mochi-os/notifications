@@ -300,6 +300,15 @@ def surface_filter(surface, device=""):
 	condition = "(t.category is null or exists (select 1 from destinations d where d.category = t.category and d.type = ? and d.target = ?))"
 	return join, condition, [type, target]
 
+# Which of the user's devices list a row of topic, its topics row or None, by
+# surface_filter's rule: every one when the row has no topic or the topic no
+# category, which the frame says as everywhere, else those the category names.
+def surface_devices(topic):
+	if not topic or topic["category"] == None:
+		return True, []
+	rows = mochi.db.rows("select target from destinations where category=? and type='device'", topic["category"])
+	return False, [row["target"] for row in rows or []]
+
 def function_list(context, surface="", device=""):
 	# The bell asks here on every page load and is, for many people, the only
 	# list they open, so expiry runs here as on the notifications page:
@@ -307,7 +316,7 @@ def function_list(context, surface="", device=""):
 	expire()
 	join, condition, args = surface_filter(surface, device)
 	where = " where " + condition if condition else ""
-	return mochi.db.rows("select n.* from notifications n" + join + where + " order by n.created", *args)
+	return mochi.db.rows("select n.* from notifications n" + join + where + " order by n.created, n.id", *args)
 
 def function_read(context, id):
 	now = mochi.time.now()
@@ -756,18 +765,25 @@ def notifications_commit_hook(table, kind, row_uid):
 	if not row:
 		return
 
+	topic_row = mochi.db.row(
+		"select category from topics where app = ? and topic = ? and object = ?",
+		row["app"], row["topic"], row["object"]
+	)
+
 	# Tell every subscribed client - browser tabs, the Android badge. The
-	# frame carries the row as the bell lists it, and whether the bell lists
-	# it at all (surface_filter, for "web"), so the bell adds it to the list it
-	# holds rather than downloading the whole list again; the other surfaces
-	# refetch their own.
+	# frame carries the row as the lists show it, whether the browser surface
+	# lists it at all (surface_filter, for "web"), and which of the user's
+	# devices list it, so the bell and each phone add it to the list they
+	# hold rather than downloading the whole list again.
 	join, condition, args = surface_filter("web")
+	everywhere, devices = surface_devices(topic_row)
 	mochi.websocket.write("notifications", {
 		"type": "new",
 		"id": row["id"],
 		"app": row["app"],
 		"topic": row["topic"],
 		"object": row["object"],
+		"title": row["title"],
 		"content": row["content"],
 		"link": row["link"],
 		"sender": row["sender"],
@@ -775,6 +791,8 @@ def notifications_commit_hook(table, kind, row_uid):
 		"created": row["created"],
 		"read": row["read"],
 		"web": mochi.db.exists("select 1 from notifications n" + join + " where n.id=? and " + condition, row["id"], *args),
+		"everywhere": everywhere,
+		"devices": devices,
 	})
 
 	# A refresh carries no new event: the content changed, the count did not,
@@ -793,10 +811,6 @@ def notifications_commit_hook(table, kind, row_uid):
 	if row["app"] == "notifications" and row["topic"] == "test":
 		return
 
-	topic_row = mochi.db.row(
-		"select category from topics where app = ? and topic = ? and object = ?",
-		row["app"], row["topic"], row["object"]
-	)
 	if not topic_row:
 		return
 	category = topic_row["category"]
@@ -849,7 +863,11 @@ def function_topic_remove(context, topic="", object=""):
 	app = context.get("app", "")
 	if not app:
 		return False
+	if not mochi.db.exists("select 1 from topics where app=? and topic=? and object=?", app, topic, object):
+		return True
 	row_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
+	# The topic's rows now show on every surface, as a row with no topic does.
+	categories_changed()
 	return True
 
 # Label to render for a category: the two seeds store English literals, so they
@@ -1148,6 +1166,8 @@ def function_topic_delete(context, app="", topic="", object=""):
 	):
 		return False
 	row_remove("topics", "app = ? and topic = ? and object = ?", [app, topic, object])
+	# The topic's rows now show on every surface, as a row with no topic does.
+	categories_changed()
 	return True
 
 def function_destinations_available(context):
