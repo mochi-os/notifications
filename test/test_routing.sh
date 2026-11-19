@@ -37,8 +37,13 @@ notif_curl() {
 
 # Drive the test app's probe actions; they are not public, so use the admin
 # session.
+# A test action is not a read: POST it, with any query in the path sent as the
+# form body, since core reads a POST's inputs from its body.
 test_curl() {
-    "$CURL_HELPER" -a admin -X GET "/test$1"
+    local path="${1%%\?*}"
+    local query=""
+    [[ "$1" == *\?* ]] && query="${1#*\?}"
+    "$CURL_HELPER" -a admin -X POST -d "$query" "/test$path"
 }
 
 # Helper to make settings requests (for account creation)

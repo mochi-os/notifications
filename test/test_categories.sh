@@ -223,7 +223,7 @@ sys.exit(0 if any(r['app'] == 'notifications' and r['topic'] == 'test' and r['ob
 }
 
 # Clear a previous interrupted run's probe and categories.
-"$CURL_HELPER" "/test/test_notifications_cleanup?topic=$PROBE_TOPIC&object=$PROBE_OBJECT" > /dev/null 2>&1
+"$CURL_HELPER" -X POST -d "topic=$PROBE_TOPIC&object=$PROBE_OBJECT" "/test/test_notifications_cleanup" > /dev/null 2>&1
 for stale in $(settings_curl GET "/-/notifications/categories" | python3 -c "
 import sys, json
 print(' '.join(c['id'] for c in json.load(sys.stdin) if c['label'] in ('SurfaceOn', 'SurfaceOff', 'SurfaceDevice', 'SurfaceRss', 'SurfaceAll')))" 2>/dev/null); do
@@ -247,7 +247,7 @@ fi
 
 # A real send through the routing pipeline; the topic is created with the
 # default category, then moved.
-RESULT=$("$CURL_HELPER" "/test/test_notifications_emit?topic=$PROBE_TOPIC&object=$PROBE_OBJECT&title=Surface%20probe&body=surface-probe-body")
+RESULT=$("$CURL_HELPER" -X POST -d "topic=$PROBE_TOPIC&object=$PROBE_OBJECT&title=Surface%20probe&body=surface-probe-body" "/test/test_notifications_emit")
 if echo "$RESULT" | grep -q '"sent":1'; then
     pass "Emit surface probe"
 else
@@ -416,7 +416,7 @@ notifications_curl "/-/rss/delete" -X POST -d "id=$FEED_ID" > /dev/null
 
 # Clean up: the probe and its topic, the bell entry the test send wrote,
 # then the categories.
-"$CURL_HELPER" "/test/test_notifications_cleanup?topic=$PROBE_TOPIC&object=$PROBE_OBJECT" > /dev/null 2>&1
+"$CURL_HELPER" -X POST -d "topic=$PROBE_TOPIC&object=$PROBE_OBJECT" "/test/test_notifications_cleanup" > /dev/null 2>&1
 TEST_ROW=$(notifications_curl "/-/list" | CATEGORY="$ON_ID" python3 -c "
 import sys, json, os
 rows = json.load(sys.stdin).get('data') or []

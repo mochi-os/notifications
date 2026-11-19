@@ -85,3 +85,34 @@ describe('notificationsApi', () => {
     ).toBeNull()
   })
 })
+
+describe('notificationsApi.lookupTopic', () => {
+  let asked: URL[] = []
+
+  beforeEach(() => {
+    asked = []
+    vi.stubGlobal('fetch', async (input: string | URL) => {
+      asked.push(new URL(String(input), window.location.origin))
+      return new Response(JSON.stringify({ data: null }))
+    })
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  // The app, topic and object come from a notification's sender: each stays
+  // in its own query value, whatever it holds, and the path is the action's.
+  it('keeps each value in its own query value', async () => {
+    await notificationsApi.lookupTopic('../delete', 'x?y=1&z=2', 'a/b#c')
+    expect(asked).toHaveLength(1)
+    const [address] = asked
+    expect(address.pathname).toMatch(/\/-\/topics\/lookup$/)
+    expect([...address.searchParams]).toEqual([
+      ['app', '../delete'],
+      ['topic', 'x?y=1&z=2'],
+      ['object', 'a/b#c'],
+    ])
+    expect(address.hash).toBe('')
+  })
+})
