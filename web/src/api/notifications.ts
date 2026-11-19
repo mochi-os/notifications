@@ -76,9 +76,9 @@ const lookupTopic = async (
   topic: string,
   object: string
 ): Promise<NotificationTopic | null> => {
-  const params = new URLSearchParams({ app, topic, object })
   const row = await requestHelpers.get<NotificationTopic | null>(
-    `${endpoints.topics.lookup}?${params.toString()}`
+    endpoints.topics.lookup,
+    { params: { app, topic, object } }
   )
   return row ?? null
 }

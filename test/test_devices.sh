@@ -178,7 +178,7 @@ echo "--- The device surface ---"
 CURL_HELPER="/home/alistair/mochi/claude/scripts/curl.sh"
 PROBE_TOPIC="device"
 PROBE_OBJECT="device-probe"
-"$CURL_HELPER" "/test/test_notifications_cleanup?topic=$PROBE_TOPIC&object=$PROBE_OBJECT" > /dev/null 2>&1
+"$CURL_HELPER" -X POST -d "topic=$PROBE_TOPIC&object=$PROBE_OBJECT" "/test/test_notifications_cleanup" > /dev/null 2>&1
 
 # Exit 0 when the probe row is in -/list, with the Device header when
 # DEVICE_HEADER is set.
@@ -190,7 +190,7 @@ sys.exit(0 if any(r['topic'] == os.environ['PROBE_TOPIC'] and r['object'] == os.
 }
 
 SURFACE_OFF_ID=$(settings_curl POST "/-/notifications/categories/create" --data-urlencode "label=DeviceSurfaceOff" --data-urlencode 'destinations=[{"type":"web","target":""}]' | json_field id)
-"$CURL_HELPER" "/test/test_notifications_emit?topic=$PROBE_TOPIC&object=$PROBE_OBJECT&title=Device%20probe&body=device-probe-body" > /dev/null
+"$CURL_HELPER" -X POST -d "topic=$PROBE_TOPIC&object=$PROBE_OBJECT&title=Device%20probe&body=device-probe-body" "/test/test_notifications_emit" > /dev/null
 PROBE_APP=$(settings_curl GET "/-/notifications/topics" | PROBE_TOPIC="$PROBE_TOPIC" PROBE_OBJECT="$PROBE_OBJECT" python3 -c "
 import sys, json, os
 rows = json.load(sys.stdin)
@@ -240,7 +240,7 @@ else
     pass "A registered device is its own surface whatever the query asks"
 fi
 
-"$CURL_HELPER" "/test/test_notifications_cleanup?topic=$PROBE_TOPIC&object=$PROBE_OBJECT" > /dev/null 2>&1
+"$CURL_HELPER" -X POST -d "topic=$PROBE_TOPIC&object=$PROBE_OBJECT" "/test/test_notifications_cleanup" > /dev/null 2>&1
 settings_curl POST "/-/notifications/categories/delete" -d "id=$SURFACE_OFF_ID&reassign=0" > /dev/null
 
 echo ""
