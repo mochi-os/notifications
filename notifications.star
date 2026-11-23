@@ -318,6 +318,13 @@ def function_list(context, surface="", device=""):
 	where = " where " + condition if condition else ""
 	return mochi.db.rows("select n.* from notifications n" + join + where + " order by n.created, n.id", *args)
 
+# One notification by its id, as list answers it, or None: for a caller
+# told of a new one, which need not read every row to find it.
+def function_get(context, id=""):
+	if not id:
+		return None
+	return mochi.db.row("select * from notifications where id=?", id)
+
 def function_read(context, id):
 	now = mochi.time.now()
 	# Look up the row's app/topic/object so subscribers (notably the Android

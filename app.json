@@ -58,6 +58,7 @@
 		"clear/object": {"function": "function_clear_object", "open": true},
 		"delete/object": {"function": "function_delete_object", "open": true},
 		"list": {"function": "function_list", "permission": "notifications/read"},
+		"get": {"function": "function_get", "permission": "notifications/read"},
 		"read": {"function": "function_read", "permission": "notifications/read"},
 		"read/all": {"function": "function_read_all", "permission": "notifications/read"},
 		"send": {"function": "function_send", "open": true},
