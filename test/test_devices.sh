@@ -269,7 +269,7 @@ else
 fi
 
 # Half a pair is the client's mistake, refused here as a 400 before core is
-# asked; keys core cannot seal to are refused by core.
+# asked.
 for KEYS in "\"auth\":\"$AUTH\"" "\"p256dh\":\"$P256DH\""; do
     RESULT=$(notifications_curl POST "/-/push/register/fcm" -H "Content-Type: application/json" -w "\n%{http_code}" \
         -d "{\"token\":\"fcm-token-1\",\"installation\":\"install-1\",\"label\":\"Renamed phone\",$KEYS}")
@@ -280,13 +280,26 @@ for KEYS in "\"auth\":\"$AUTH\"" "\"p256dh\":\"$P256DH\""; do
     fi
 done
 
-RESULT=$(notifications_curl POST "/-/push/register/fcm" -H "Content-Type: application/json" \
-    -d "{\"token\":\"fcm-token-1\",\"installation\":\"install-1\",\"label\":\"Renamed phone\",\"auth\":\"$AUTH\",\"p256dh\":\"$AUTH\"}")
-if [ -z "$(echo "$RESULT" | json_field data id)" ]; then
-    pass "FCM registration with keys nothing can be sealed to is refused"
-else
-    fail "FCM registration with keys nothing can be sealed to is refused" "$RESULT"
-fi
+# So are keys nothing can be sealed to, which core would refuse by aborting
+# the registration as a server fault: a secret that is not base64 or not 16
+# bytes, a public key of the wrong length, and points not on P-256 (the RFC
+# key with its last bit flipped, and the origin).
+OFF_CURVE="BCVxsr7N_eNgVRqvHtD0zTZsEc6-VV-JvLexhqUzORcxaOzi6-AYWXvTBHm4bjyPjs7Vd8pZGH6SRpkNtoIAiw8"
+ORIGIN="BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+for KEYS in \
+    "\"auth\":\"not*base64!\",\"p256dh\":\"$P256DH\"" \
+    "\"auth\":\"AAAAAAAAAAAAAAAAAAAA\",\"p256dh\":\"$P256DH\"" \
+    "\"auth\":\"$AUTH\",\"p256dh\":\"$AUTH\"" \
+    "\"auth\":\"$AUTH\",\"p256dh\":\"$OFF_CURVE\"" \
+    "\"auth\":\"$AUTH\",\"p256dh\":\"$ORIGIN\""; do
+    RESULT=$(notifications_curl POST "/-/push/register/fcm" -H "Content-Type: application/json" -w "\n%{http_code}" \
+        -d "{\"token\":\"fcm-token-1\",\"installation\":\"install-1\",\"label\":\"Renamed phone\",$KEYS}")
+    if [ "$(echo "$RESULT" | tail -n 1)" = "400" ] && echo "$RESULT" | grep -q "Invalid push subscription"; then
+        pass "FCM registration with keys nothing can be sealed to {$KEYS} is refused as a bad request"
+    else
+        fail "FCM registration with keys nothing can be sealed to {$KEYS} is refused as a bad request" "$RESULT"
+    fi
+done
 
 # The connected-accounts pages fold a bound account under its device, so the
 # settings accounts list must say which device an account belongs to.

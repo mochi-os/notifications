@@ -1370,16 +1370,55 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint="", d
 	push_account_bind(result)
 	return result
 
+# P-256, the curve a Web Push receiver's public key is a point on: its field's
+# prime and its b.
+_P256_PRIME = 0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff
+_P256_B = 0x5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b
+
+# push_key(text) -> bytes or None: A subscription key decoded as core decodes
+# one: base64, standard or URL-safe, its padding optional.
+def push_key(text):
+	if len(text) % 4:
+		text += "=" * (4 - len(text) % 4)
+	decoded = mochi.decode.base64(text)
+	if decoded == None and "+" not in text and "/" not in text:
+		decoded = mochi.decode.base64(text.replace("-", "+").replace("_", "/"))
+	return decoded
+
+# push_keys_valid(auth, p256dh) -> bool: Whether a device's Web Push keys are
+# ones core can seal a message to: a 16-byte secret and an uncompressed P-256
+# point. Core refuses any other by aborting the registration, so they are
+# checked here and refused as the client's mistake.
+def push_keys_valid(auth, p256dh):
+	secret = push_key(auth)
+	point = push_key(p256dh)
+	if secret == None or point == None or len(secret) != 16 or len(point) != 65:
+		return False
+	values = list(point.elems())
+	if values[0] != 4:
+		return False
+	x = 0
+	for value in values[1:33]:
+		x = x * 256 + value
+	y = 0
+	for value in values[33:]:
+		y = y * 256 + value
+	if x >= _P256_PRIME or y >= _P256_PRIME:
+		return False
+	return (y * y - x * x * x + 3 * x - _P256_B) % _P256_PRIME == 0
+
 # Stores an FCM device token keyed by Firebase Installations ID: core upserts,
 # so a token refresh updates the row in place and a second device gets its own
 # row. label is the device's name; device the registered device, or "". auth
 # and p256dh are the device's Web Push keys, which core seals each message to
 # so that Google relays ciphertext; a client that sends none is sent plain
-# fields.
+# fields. Both or neither, and ones core can seal to.
 def push_register_fcm(context, token="", installation="", label="", device="", auth="", p256dh=""):
 	if not token or not installation:
 		return None
 	if len(token) > 512 or len(installation) > 256 or len(label) > 256 or len(auth) > 512 or len(p256dh) > 512:
+		return None
+	if (auth == "") != (p256dh == "") or (auth and not push_keys_valid(auth, p256dh)):
 		return None
 	# The app spells this `installation` on its own routes and in the drain
 	# envelope; core's account field is `install_id`, so translate here
@@ -1608,12 +1647,15 @@ def action_push_register(a):
 
 def action_push_register_fcm(a):
 	"""Register the client's FCM device token, keyed by Firebase Installations ID,
-	with the device's Web Push keys when it sends them: both or neither."""
+	with the device's Web Push keys when it sends them: both or neither, and
+	keys core can seal a message to."""
 	token = a.input("token", "").strip()
 	installation = a.input("installation", "").strip()
 	auth = a.input("auth", "").strip()
 	p256dh = a.input("p256dh", "").strip()
 	if not token or not installation or (auth == "") != (p256dh == ""):
+		return a.error.label(400, "errors.invalid_subscription")
+	if auth and (len(auth) > 512 or len(p256dh) > 512 or not push_keys_valid(auth, p256dh)):
 		return a.error.label(400, "errors.invalid_subscription")
 	label = a.input("label", "").strip()
 	result = push_register_fcm(None, token=token, installation=installation, label=label, device=device_header(a), auth=auth, p256dh=p256dh)
