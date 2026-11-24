@@ -14,9 +14,13 @@ const post = vi.fn(async (..._args: unknown[]) => ({}))
 const navigate = vi.fn()
 const openTab = vi.fn((_url: string) => true)
 
-const row = (id: string, read: number) => ({
+// The app is named by id, which on a server running published apps is an
+// entity id no route serves; the list says the path it is served at.
+const row = (id: string, read: number, sender?: string) => ({
   id,
-  app: 'chat',
+  app: '12254aHfG39LqrizXg8Wv7',
+  path: 'chat',
+  sender,
   topic: 'message',
   object: id,
   content: `Message ${id}`,
@@ -36,7 +40,7 @@ vi.mock('@mochi/web', async (importOriginal) => {
     requestHelpers: {
       ...actual.requestHelpers,
       getRaw: vi.fn(async () => ({
-        data: [row('unread', 0), row('seen', 5)],
+        data: [row('unread', 0), row('seen', 5), row('sent', 5, 'person1')],
         count: 1,
         total: 1,
       })),
@@ -104,5 +108,18 @@ describe('Notifications', () => {
     expect(navigate).not.toHaveBeenCalled()
     await waitFor(() => expect(post).toHaveBeenCalledTimes(1))
     expect(post.mock.calls[0][1]).toBe('id=unread')
+  })
+
+  it("shows the app's icon from its path, and a sender's avatar instead", async () => {
+    mount()
+    const text = await screen.findByText('Message unread')
+    const icon = text.closest('button')!.querySelector('img')
+    expect(icon?.getAttribute('src')).toBe('/chat/images/icon.svg')
+
+    const sent = (await screen.findByText('Message sent')).closest('button')!
+    const sources = Array.from(sent.querySelectorAll('img')).map((image) =>
+      image.getAttribute('src')
+    )
+    expect(sources).not.toContain('/chat/images/icon.svg')
   })
 })

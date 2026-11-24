@@ -14,6 +14,8 @@ const NO_TOAST = { mochi: { showGlobalErrorToast: false } } as const
 export interface Notification {
   id: string
   app: string
+  /** The path the app is served at, which locates its icon; '' for none. */
+  path?: string
   topic: string
   object: string
   content: string

@@ -118,7 +118,7 @@ function NotificationItem({
         className='flex flex-1 items-start gap-3 text-start'
       >
         <NotificationSourceIcon
-          app={notification.app}
+          app={notification.path ?? notification.app}
           sender={notification.sender}
           isUnread={isUnread}
         />

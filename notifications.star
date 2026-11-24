@@ -309,6 +309,17 @@ def surface_devices(topic):
 	rows = mochi.db.rows("select target from destinations where category=? and type='device'", topic["category"])
 	return False, [row["target"] for row in rows or []]
 
+# The path each app is served at, by app id: a row names its app by id, which
+# on a server running published apps is an entity id no route serves, and the
+# lists find the app's icon by its path.
+def app_paths():
+	paths = {}
+	for entry in mochi.app.list():
+		served = entry.get("paths") or []
+		if served:
+			paths[entry["id"]] = served[0]
+	return paths
+
 def function_list(context, surface="", device=""):
 	# The bell asks here on every page load and is, for many people, the only
 	# list they open, so expiry runs here as on the notifications page:
@@ -316,7 +327,11 @@ def function_list(context, surface="", device=""):
 	expire()
 	join, condition, args = surface_filter(surface, device)
 	where = " where " + condition if condition else ""
-	return mochi.db.rows("select n.* from notifications n" + join + where + " order by n.created, n.id", *args)
+	rows = mochi.db.rows("select n.* from notifications n" + join + where + " order by n.created, n.id", *args) or []
+	paths = app_paths()
+	for row in rows:
+		row["path"] = paths.get(row["app"], "")
+	return rows
 
 # One notification by its id, as list answers it, or None: for a caller
 # told of a new one, which need not read every row to find it.
@@ -788,6 +803,7 @@ def notifications_commit_hook(table, kind, row_uid):
 		"type": "new",
 		"id": row["id"],
 		"app": row["app"],
+		"path": app_paths().get(row["app"], ""),
 		"topic": row["topic"],
 		"object": row["object"],
 		"title": row["title"],
@@ -1356,11 +1372,14 @@ def function_push_register(context, label="", auth="", p256dh="", endpoint="", d
 
 # Stores an FCM device token keyed by Firebase Installations ID: core upserts,
 # so a token refresh updates the row in place and a second device gets its own
-# row. label is the device's name; device the registered device, or "".
-def push_register_fcm(context, token="", installation="", label="", device=""):
+# row. label is the device's name; device the registered device, or "". auth
+# and p256dh are the device's Web Push keys, which core seals each message to
+# so that Google relays ciphertext; a client that sends none is sent plain
+# fields.
+def push_register_fcm(context, token="", installation="", label="", device="", auth="", p256dh=""):
 	if not token or not installation:
 		return None
-	if len(token) > 512 or len(installation) > 256 or len(label) > 256:
+	if len(token) > 512 or len(installation) > 256 or len(label) > 256 or len(auth) > 512 or len(p256dh) > 512:
 		return None
 	# The app spells this `installation` on its own routes and in the drain
 	# envelope; core's account field is `install_id`, so translate here
@@ -1370,6 +1389,9 @@ def push_register_fcm(context, token="", installation="", label="", device=""):
 		kwargs["label"] = label
 	if device:
 		kwargs["device"] = device
+	if auth or p256dh:
+		kwargs["auth"] = auth
+		kwargs["p256dh"] = p256dh
 	result = mochi.account.add("fcm", **kwargs)
 	if not result or not result.get("id"):
 		return result
@@ -1585,13 +1607,16 @@ def action_push_register(a):
 	return {"data": result}
 
 def action_push_register_fcm(a):
-	"""Register the client's FCM device token, keyed by Firebase Installations ID."""
+	"""Register the client's FCM device token, keyed by Firebase Installations ID,
+	with the device's Web Push keys when it sends them: both or neither."""
 	token = a.input("token", "").strip()
 	installation = a.input("installation", "").strip()
-	if not token or not installation:
+	auth = a.input("auth", "").strip()
+	p256dh = a.input("p256dh", "").strip()
+	if not token or not installation or (auth == "") != (p256dh == ""):
 		return a.error.label(400, "errors.invalid_subscription")
 	label = a.input("label", "").strip()
-	result = push_register_fcm(None, token=token, installation=installation, label=label, device=device_header(a))
+	result = push_register_fcm(None, token=token, installation=installation, label=label, device=device_header(a), auth=auth, p256dh=p256dh)
 	if not result:
 		return a.error.label(500, "errors.registration_failed")
 	return {"data": result}
