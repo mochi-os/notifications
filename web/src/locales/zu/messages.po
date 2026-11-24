@@ -694,7 +694,7 @@ msgstr "Kukopishiwe"
 #: src/components/rss-dialog.tsx
 #: src/components/rss-dialog.tsx
 msgid "Copied to clipboard"
-msgstr "Kukopishelwe kwi-clipboard"
+msgstr "Kukopishelwe ku-clipboard"
 
 #: ../../../lib/web/src/components/calendar/month-grid.tsx
 #: ../../../lib/web/src/components/calendar/month-grid.tsx
