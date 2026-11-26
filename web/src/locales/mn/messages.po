@@ -386,6 +386,7 @@ msgstr "Хоёртын файлыг харуулахгүй"
 msgid "Block {name}"
 msgstr "{name}-г блоклох"
 
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Blocked by"
@@ -397,6 +398,7 @@ msgstr "Блоклосон"
 msgid "Blocked navigation to untrusted link"
 msgstr "Найдвартай биш холбоос руу шилжихийг блоклосон"
 
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Blocks"
 msgstr "Блокууд"
@@ -489,6 +491,10 @@ msgstr "Өөрчилсөн"
 #: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 msgid "Changed {field}"
 msgstr "{field} өөрчилсөн"
+
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
+msgid "Changed class"
+msgstr "Анги өөрчлөгдсөн"
 
 #: ../../../lib/web/src/components/calendar/month-grid.tsx
 #: ../../../lib/web/src/components/calendar/time-grid.tsx
@@ -955,6 +961,7 @@ msgstr "Татах"
 msgid "Download failed"
 msgstr "Татаж чадсангүй"
 
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Duplicates"
 msgstr "Давхардлууд"
@@ -1362,6 +1369,7 @@ msgstr "Цайвар"
 msgid "Link"
 msgstr "Холбоос"
 
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Links"
 msgstr "Холбоосууд"
@@ -1497,10 +1505,6 @@ msgstr "Бусад сонголтууд"
 msgid "Moved"
 msgstr "Зөөсөн"
 
-#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
-msgid "Moved {field}"
-msgstr "{field} зөөсөн"
-
 #. placeholder {0}: dayName(dragging.day)
 #. placeholder {0}: dayName(opening(current, format.zonedDay))
 #: ../../../lib/web/src/components/calendar/month-grid.tsx
@@ -1559,6 +1563,10 @@ msgstr "Дараа сар"
 #: ../../../lib/web/src/components/calendar/date-header.tsx
 msgid "Next year"
 msgstr "Дараа жил"
+
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
+msgid "No"
+msgstr "Үгүй"
 
 #: ../../../lib/web/src/components/entity/entity-create-object-dialog.tsx
 msgid "No {parentClassNames} to add to"
@@ -1896,6 +1904,7 @@ msgstr "Нэвтрэх рүү дахин чиглүүлж байна."
 msgid "Reduce interest"
 msgstr "Сонирхлыг бууруулах"
 
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
 #: ../../../lib/web/src/components/entity/entity-object-links.tsx
 msgid "Relates"
 msgstr "Холбоотой"
@@ -2438,6 +2447,10 @@ msgstr "Хэт олон хүсэлт"
 msgid "Top"
 msgstr "Шилдэг"
 
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
+msgid "Top level"
+msgstr "Дээд түвшин"
+
 #: ../../../lib/web/src/components/travelling-picker.tsx
 msgid "Travelling"
 msgstr "Аялж байна"
@@ -2499,6 +2512,11 @@ msgid "United States"
 msgstr "АНУ"
 
 #: ../../../lib/web/src/components/audit-timeline.tsx
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
+#: ../../../lib/web/src/components/entity/entity-board-card.tsx
 #: ../../../lib/web/src/components/entity/entity-field-dialog.tsx
 #: ../../../lib/web/src/components/tree-row.tsx
 #: ../../../lib/web/src/components/tree-row.tsx
@@ -2614,6 +2632,10 @@ msgstr "Лхагва гараг"
 #: ../../../lib/web/src/components/calendar/date-header.tsx
 msgid "Year"
 msgstr "Жил"
+
+#: ../../../lib/web/src/components/entity/entity-activity-list.tsx
+msgid "Yes"
+msgstr "Тийм"
 
 #: ../../../lib/web/src/features/errors/general-error.tsx
 msgid "You do not have access to this section."
